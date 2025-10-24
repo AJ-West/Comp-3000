@@ -5,8 +5,11 @@
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3_image/SDL_image.h>
+#include "tinyxml2.h"
+#include "levelManager.h"
 
 using namespace std;
+using namespace tinyxml2;
 
 SDL_Window* window;
 SDL_Renderer* renderer;
@@ -41,7 +44,9 @@ void init_environment() {
 
 int main()
 {
+    system("pause");
     init_environment();
+    levelManager("test level.xml");
 
     while (isRunning) {
         //handle input

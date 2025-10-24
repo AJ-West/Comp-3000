@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp" />
+    <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SDL\SDL\SDL\VisualC\SDL\SDL.vcxproj">
@@ -151,6 +153,10 @@
     <ProjectReference Include="..\..\..\SDL\SDL\SDL_ttf\VisualC\SDL_ttf.vcxproj">
       <Project>{dddbd07d-dc76-4af6-8d02-3e2deb6ee255}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="levelManager.h" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
