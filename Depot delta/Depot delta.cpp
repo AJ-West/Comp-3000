@@ -8,6 +8,9 @@
 #include "tinyxml2.h"
 #include "levelManager.h"
 
+#include "unitObject.h"
+#include "renderComponent.h"
+
 using namespace std;
 using namespace tinyxml2;
 
@@ -40,13 +43,18 @@ void init_environment() {
         return;
     }
     isRunning = true;
+
+
 }
 
 int main()
 {
-    system("pause");
+    //system("pause");
     init_environment();
-    levelManager("test level.xml");
+    //levelManager("test level.xml");
+
+	UnitObj* unit = new UnitObj();
+    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
 
     while (isRunning) {
         //handle input
@@ -56,6 +64,9 @@ int main()
                 isRunning = false;
             }
         }
+		SDL_RenderClear(renderer);
+        unit->Update();
+		SDL_RenderPresent(renderer);
     }
 
     return 0;

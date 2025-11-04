@@ -1,3 +1,4 @@
-﻿  levelManager.cpp
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(41,21): warning C4553: '==': result of expression not used; did you intend '='?
+﻿  Depot delta.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(23,17): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(28,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

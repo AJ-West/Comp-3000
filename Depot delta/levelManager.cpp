@@ -38,7 +38,7 @@ levelManager::levelManager(const char* filename)
         tilemap[y_count][x_count] = atoi(data->GetText());
         x_count++;
         if (x_count == x_cells) {
-            x_count == 0;
+            x_count = 0;
             y_count++;
         }
         data = data->NextSiblingElement("data");

@@ -16,6 +16,12 @@
     <Filter Include="Source Files\Dependecies">
       <UniqueIdentifier>{d59f1cc5-3497-49d0-a3fa-eb12e4e2358c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Units">
+      <UniqueIdentifier>{fdeee422-9b91-47ed-9238-cbd8df778b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\components">
+      <UniqueIdentifier>{370b5a7b-d784-413b-90b0-2ccca598b9bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp">
@@ -34,6 +40,18 @@
     </ClInclude>
     <ClInclude Include="levelManager.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unitObject.h">
+      <Filter>Source Files\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="buttonBase.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="renderComponent.h">
+      <Filter>Source Files\components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
