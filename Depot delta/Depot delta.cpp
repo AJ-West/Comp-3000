@@ -10,6 +10,8 @@
 
 #include "unitObject.h"
 #include "renderComponent.h"
+#include "buttonComponent.h"
+#include "movementComponent.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -55,6 +57,8 @@ int main()
 
 	UnitObj* unit = new UnitObj();
     unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
+    unit->AddComponent(make_shared<buttonComponent>(unit));
+    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
 
     while (isRunning) {
         //handle input
@@ -62,6 +66,22 @@ int main()
         while (SDL_PollEvent(&event) != 0) {
             if (event.type == SDL_EVENT_QUIT) {
                 isRunning = false;
+            }
+            else if (event.type == SDL_EVENT_MOUSE_MOTION) {
+                unit->checkHover(event.motion.x, event.motion.y);
+            }
+            else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+                if (event.button.button == SDL_BUTTON_LEFT) {
+                    if (unit->getHovering()) {
+                        unit->onClick();
+                        cout << "clicked";
+                        break;
+                    }
+                    else if (unit->getSelected()) {
+						unit->clickAway();
+						cout << "moved";
+                    }
+                }
             }
         }
 		SDL_RenderClear(renderer);

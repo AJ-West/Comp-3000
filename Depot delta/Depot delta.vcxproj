@@ -156,11 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="buttonBase.h" />
+    <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="gameObject.h" />
     <ClInclude Include="levelManager.h" />
+    <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="unitObject.h" />
+    <ClInclude Include="usefulFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

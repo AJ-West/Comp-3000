@@ -53,5 +53,14 @@
     <ClInclude Include="renderComponent.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
+    <ClInclude Include="buttonComponent.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="usefulFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="movementComponent.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,12 +14,15 @@ public:
 	~BaseButton() {}
 
 	bool checkClick() {return false;}
-	void onClick() {
+	/*void onClick() {
 		if (func)
 			func();
 		else
 			level(num);
-	}
+	}*/
+
+	virtual void onClick() = 0;
+
 	void checkHover(int x, int y) {
 		isHover = isWithinRect(x, y);
 	}
