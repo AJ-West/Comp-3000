@@ -4,35 +4,29 @@
 
 class UnitObj : public GameObject, public BaseButton {
 public:
-	UnitObj() : GameObject() {}
+	UnitObj(int x, int y) : GameObject(x,y) {}
 
 	virtual void onClick() override {
 		selected = !selected;
 	}
 
 	void clickAway() {
-		SDL_GetMouseState(&x, &y);
-		SDL_FRect rect = getDimensions();
-		direction = normalise({ x - (rect.x + rect.w / 2), y - (rect.y + rect.h / 2) });
-		cout << direction.first << ", " << direction.second << endl;
+		SDL_GetMouseState(&tx, &ty);
 	}
 
 	//getters
 	bool getSelected() { return selected; }
 	bool getHovering() { return hovering; }
-	pair<float, float> getDirection() { return direction; }
-	pair<float, float> getTargetPos() { return pair<float, float>{x,y}; }
+	pair<float, float> getTargetPos() { return pair<float, float>{tx,ty}; }
 
 	//setters
 	void setHovering(bool hover) { hovering = hover; }
-	void setDirection(pair<float, float> dir) { direction = dir; }
+	virtual void setTarget(float x, float y) { tx = x; ty = y; };
 
 private:
 	bool selected = false;
 	bool hovering = false;
 
-	float x = 0;
-	float y = 0;
-
-	pair<float, float> direction = { 0,0 };
+	float tx = NULL;
+	float ty = NULL;
 };

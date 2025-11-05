@@ -30,7 +30,10 @@ protected:
 
 class GameObject {
 public:
-	GameObject(){}
+	GameObject(int x, int y){
+		size.x = x;
+		size.y = y;
+	}
 
 	//add a component to the GameObject
 	template <typename T> void AddComponent(shared_ptr<T> component) {
@@ -60,12 +63,11 @@ public:
 
 
 	//virtual getters
-	virtual pair<float, float> getDirection() = 0;
 	virtual pair<float, float> getTargetPos() = 0;
 	
 	//virtual setters
 	virtual void setHovering(bool hover) = 0;
-	virtual void setDirection(pair<float,float> dir) = 0;
+	virtual void setTarget(float x, float y) = 0;
 
 private:
 	unordered_map<string, shared_ptr<Component>> components;// Store components

@@ -20,6 +20,9 @@ SDL_Window* window;
 SDL_Renderer* renderer;
 bool isRunning;
 
+vector<UnitObj*> unitList;
+
+
 //creates the window, renderer and font for the game
 void init_environment() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -49,16 +52,64 @@ void init_environment() {
 
 }
 
+void make_units() {
+    UnitObj* unit = new UnitObj(20,20);
+    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
+    unit->AddComponent(make_shared<buttonComponent>(unit));
+    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
+	unitList.emplace_back(unit);
+
+    unit = new UnitObj(300,20);
+    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
+    unit->AddComponent(make_shared<buttonComponent>(unit));
+    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
+    unitList.emplace_back(unit);
+}
+
+void checkUnitHover(SDL_Event event) {
+	for (auto& unit : unitList) {
+        unit->checkHover(event.motion.x, event.motion.y);
+	}
+}
+
+void checkClick() {
+	UnitObj* selectedUnit = nullptr;
+    //see if there is a currently selected unit
+    for (auto& unit : unitList) {
+        if (unit->getSelected()) {
+			selectedUnit = unit;
+            break;
+        }
+    }
+
+	bool selectedSomething = false;
+
+	//see if a unit has been clicked
+    for (auto& unit : unitList) {
+        if (unit->getHovering()) {
+            unit->onClick();
+            if (selectedUnit) {
+                selectedUnit->onClick();
+            }
+            selectedUnit = unit;
+            selectedSomething = true;
+            break;
+        }
+    }
+    
+    if (!selectedSomething) {
+        selectedUnit->clickAway();
+    }
+}
+
+
 int main()
 {
     //system("pause");
     init_environment();
     //levelManager("test level.xml");
 
-	UnitObj* unit = new UnitObj();
-    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
-    unit->AddComponent(make_shared<buttonComponent>(unit));
-    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
+    make_units();
 
     while (isRunning) {
         //handle input
@@ -68,24 +119,18 @@ int main()
                 isRunning = false;
             }
             else if (event.type == SDL_EVENT_MOUSE_MOTION) {
-                unit->checkHover(event.motion.x, event.motion.y);
+				checkUnitHover(event);
             }
             else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
                 if (event.button.button == SDL_BUTTON_LEFT) {
-                    if (unit->getHovering()) {
-                        unit->onClick();
-                        cout << "clicked";
-                        break;
-                    }
-                    else if (unit->getSelected()) {
-						unit->clickAway();
-						cout << "moved";
-                    }
+					checkClick();
                 }
             }
         }
 		SDL_RenderClear(renderer);
-        unit->Update();
+        for (auto& unit : unitList) {
+            unit->Update();
+        }
 		SDL_RenderPresent(renderer);
     }
 

@@ -1,8 +1,14 @@
 ﻿  Depot delta.cpp
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(25,17): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(30,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(34,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Depot%20delta.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(35,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Depot%20delta.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(28,17): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(33,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         [
@@ -15,15 +21,15 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'Depot%20delta.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(37,33):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(9,35):
   	see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-  		C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(37,33):
-  		see the first reference to 'std::pair<float,float>::pair' in 'UnitObj::UnitObj'
+  		C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(9,3):
+  		see the first reference to 'std::pair<float,float>::pair' in 'movementComponent::update'
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         with
@@ -44,7 +50,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'Depot%20delta.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(61,24):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(59,24):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,double>(UnitObj *&,double &&)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,_Ty>(UnitObj *&,_Ty &&)' being compiled
