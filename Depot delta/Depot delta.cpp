@@ -6,19 +6,17 @@
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3_image/SDL_image.h>
 #include "tinyxml2.h"
-#include "levelManager.h"
+#include "mapLoader.h"
 
 #include "unitObject.h"
 #include "renderComponent.h"
 #include "buttonComponent.h"
 #include "movementComponent.h"
 
+#include "variables.h"
+
 using namespace std;
 using namespace tinyxml2;
-
-SDL_Window* window;
-SDL_Renderer* renderer;
-bool isRunning;
 
 vector<UnitObj*> unitList;
 
@@ -35,7 +33,7 @@ void init_environment() {
         isRunning = false;
         return;
     }
-    window = SDL_CreateWindow("Depot delta", 1440, 900, SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow("Depot delta", screenWidth, screenHeight, SDL_WINDOW_RESIZABLE);
     if (window == nullptr) {
         cerr << "Window cannot be created: SDL_ERROR" << SDL_GetError() << endl;
         isRunning = false;
@@ -47,9 +45,16 @@ void init_environment() {
         isRunning = false;
         return;
     }
+
+	float scaleX = static_cast<float>(screenWidth) / ResolutionWidth;
+	float scaleY = static_cast<float>(screenHeight) / ResolutionHeight;
+
+    //Can be used for setting resolution (will be useful when adding settings)
+	//SDL_SetRenderScale(renderer, scaleX, scaleY);
+    //Used to render consistenly regardless of screensize
+	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth, ResolutionHeight, SDL_LOGICAL_PRESENTATION_OVERSCAN);
+
     isRunning = true;
-
-
 }
 
 void make_units() {
@@ -86,7 +91,7 @@ void checkClick() {
 
 	//see if a unit has been clicked
     for (auto& unit : unitList) {
-        if (unit->getHovering()) {
+        if (unit->getHovering() && !unit->getSelected()) {
             unit->onClick();
             if (selectedUnit) {
                 selectedUnit->onClick();
@@ -95,9 +100,16 @@ void checkClick() {
             selectedSomething = true;
             break;
         }
+        else if (unit->getHovering() && unit->getSelected()) {
+			selectedUnit = nullptr;
+			unit->onClick();
+			selectedSomething = true;
+			break;
+
+        }
     }
     
-    if (!selectedSomething) {
+    if (!selectedSomething && selectedUnit) {
         selectedUnit->clickAway();
     }
 }
@@ -105,9 +117,9 @@ void checkClick() {
 
 int main()
 {
-    //system("pause");
+    system("pause");
     init_environment();
-    LevelManager manager("test level.xml", renderer);
+    MapLoader manager("maps/test.xml", renderer);
 
     make_units();
 

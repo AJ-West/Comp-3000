@@ -11,7 +11,7 @@ public:
 	}
 
 	void clickAway() {
-		SDL_GetMouseState(&tx, &ty);
+		getScaledMousePos(&tx, &ty);
 	}
 
 	//getters

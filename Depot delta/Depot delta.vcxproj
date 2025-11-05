@@ -140,8 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp" />
-    <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="mapLoader.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SDL\SDL\SDL\VisualC\SDL\SDL.vcxproj">
@@ -158,12 +159,13 @@
     <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="gameObject.h" />
-    <ClInclude Include="levelManager.h" />
+    <ClInclude Include="mapLoader.h" />
     <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="unitObject.h" />
     <ClInclude Include="usefulFunctions.h" />
+    <ClInclude Include="variables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

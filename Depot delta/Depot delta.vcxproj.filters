@@ -22,6 +22,9 @@
     <Filter Include="Source Files\components">
       <UniqueIdentifier>{370b5a7b-d784-413b-90b0-2ccca598b9bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UseThroughout">
+      <UniqueIdentifier>{939b043c-6f9f-4169-ac89-309a268a2856}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp">
@@ -30,15 +33,18 @@
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Source Files\Dependecies</Filter>
     </ClCompile>
-    <ClCompile Include="levelManager.cpp">
+    <ClCompile Include="mapLoader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="variables.cpp">
+      <Filter>Source Files\UseThroughout</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
       <Filter>Source Files\Dependecies</Filter>
     </ClInclude>
-    <ClInclude Include="levelManager.h">
+    <ClInclude Include="mapLoader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="gameObject.h">
@@ -56,11 +62,14 @@
     <ClInclude Include="buttonComponent.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="usefulFunctions.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="movementComponent.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="usefulFunctions.h">
+      <Filter>Source Files\UseThroughout</Filter>
+    </ClInclude>
+    <ClInclude Include="variables.h">
+      <Filter>Source Files\UseThroughout</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

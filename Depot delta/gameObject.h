@@ -64,6 +64,7 @@ public:
 
 	//virtual getters
 	virtual pair<float, float> getTargetPos() = 0;
+	virtual bool getHovering() = 0;
 	
 	//virtual setters
 	virtual void setHovering(bool hover) = 0;
