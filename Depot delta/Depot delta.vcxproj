@@ -142,6 +142,7 @@
     <ClCompile Include="Depot delta.cpp" />
     <ClCompile Include="mapLoader.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="usefulFunctions.cpp" />
     <ClCompile Include="variables.cpp" />
   </ItemGroup>
   <ItemGroup>

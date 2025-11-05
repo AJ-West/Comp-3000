@@ -4,7 +4,7 @@
 
 class UnitObj : public GameObject, public BaseButton {
 public:
-	UnitObj(int x, int y) : GameObject(x,y) {}
+	UnitObj(int x, int y, int id) : GameObject(x,y), ID(id) {}
 
 	virtual void onClick() override {
 		selected = !selected;
@@ -29,4 +29,6 @@ private:
 
 	float tx = NULL;
 	float ty = NULL;
+
+	int ID;
 };

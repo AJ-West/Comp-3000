@@ -39,6 +39,9 @@
     <ClCompile Include="variables.cpp">
       <Filter>Source Files\UseThroughout</Filter>
     </ClCompile>
+    <ClCompile Include="usefulFunctions.cpp">
+      <Filter>Source Files\UseThroughout</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">

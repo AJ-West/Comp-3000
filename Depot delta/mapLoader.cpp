@@ -17,10 +17,10 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
         if (layerName == "Tilemap") {
             loadTilemap(layer);
         }
-		layer = layer->NextSiblingElement("layer");
-       // else if (layerName == "Entities") {
-         //   loadEntities(layer);
-        //}
+        else if (layerName == "Entities") {
+            loadEntities(layer);
+        }
+        layer = layer->NextSiblingElement("layers");
 
     }
 
@@ -43,26 +43,6 @@ MapLoader::~MapLoader()
 
 void MapLoader::loadTilemap(XMLElement* layer)
 {
-    /*XMLElement* data = layer->FirstChildElement("data");
-    cell_width = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
-    cell_height = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
-    x_cells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
-    y_cells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
-    cout << y_cells;
-    cout << x_cells;
-    tilelocs.resize(y_cells, vector<int>(x_cells, 0));
-    int x_count = 0;
-    int y_count = 0;
-    data = layer->FirstChildElement("data");
-    while (data) {
-        tilelocs[y_count][x_count] = atoi(data->GetText());
-        x_count++;
-        if (x_count == x_cells) {
-            x_count = 0;
-            y_count++;
-        }
-        data = data->NextSiblingElement("data");
-    }*/
     cell_width = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
     cell_height = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
     x_cells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
@@ -86,19 +66,17 @@ void MapLoader::loadTilemap(XMLElement* layer)
 
 void MapLoader::loadEntities(XMLElement* layer)
 {
-    for (int i = 0; i < y_cells; i++) {
-        vector<SDL_FRect> row;
-        for (int j = 0; j < x_cells; j++) {
-            div_t loc = div(tilelocs[i][j], 8); // Use tilelocs as needed
-            SDL_FRect cell;
-            cell.x = loc.rem * cell_width;
-            cell.y = loc.quot * cell_height;
-            cell.w = cell_width;
-            cell.h = cell_height;
-            row.push_back(cell);
-        }
-        tilemap.push_back(row);
-    }
+    XMLElement* entity = layer->FirstChildElement("entities");
+	while (entity) {
+		string name = string(entity->FirstChildElement("name")->GetText());
+		if (name == "Basic unit") {
+			int x = atoi(entity->FirstChildElement("x")->GetText());
+			int y = atoi(entity->FirstChildElement("y")->GetText());
+			UnitObj* unit = new UnitObj(x, y);
+			unitList.emplace_back(unit);
+		}
+		entity = entity->NextSiblingElement("entities");
+	}
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {

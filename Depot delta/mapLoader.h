@@ -6,6 +6,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include "string"
+#include "unitObject.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -21,6 +22,9 @@ public:
 
 	void renderTileMap(SDL_Renderer* renderer);
 
+	//getters
+	vector<UnitObj*> getUnitList() { return unitList; }
+
 private:
 	int width, height;
     int cell_width, cell_height;
@@ -29,4 +33,6 @@ private:
     vector<vector<SDL_FRect>> tilemap;
 
 	SDL_Texture* tilemapTexture;
+	
+	vector<UnitObj*> unitList;
 };

@@ -58,17 +58,11 @@ void init_environment() {
 }
 
 void make_units() {
-    UnitObj* unit = new UnitObj(20,20);
-    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
-    unit->AddComponent(make_shared<buttonComponent>(unit));
-    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
-	unitList.emplace_back(unit);
-
-    unit = new UnitObj(300,20);
-    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
-    unit->AddComponent(make_shared<buttonComponent>(unit));
-    unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
-    unitList.emplace_back(unit);
+    for (auto& unit : unitList) {
+        unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
+        unit->AddComponent(make_shared<buttonComponent>(unit));
+        unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
+    }
 }
 
 void checkUnitHover(SDL_Event event) {
@@ -120,6 +114,7 @@ int main()
     system("pause");
     init_environment();
     MapLoader manager("maps/test.xml", renderer);
+	unitList = manager.getUnitList();
 
     make_units();
 

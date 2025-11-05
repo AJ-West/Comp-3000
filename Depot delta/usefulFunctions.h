@@ -2,19 +2,15 @@
 #include <iostream>
 #include "variables.h"
 
+#ifndef USEFULFUNCTIONS_H
+#define USEFULFUNCTIONS_H
+
 using namespace std;
 
-pair<float, float> normalise(pair<float, float> vector) {
-	float magnitude = sqrt(vector.first * vector.first + vector.second * vector.second);
-	return { vector.first / magnitude, vector.second / magnitude };
-}
+pair<float, float> normalise(pair<float, float> vector);
 
-float mag(float a) {
-	return sqrt(a * a);
-}
+float mag(float a);
 
-void getScaledMousePos(float* x, float* y) {
-	float mx, my;
-	SDL_GetMouseState(&mx, &my);
-	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y);
-}
+void getScaledMousePos(float* x, float* y);
+
+#endif
