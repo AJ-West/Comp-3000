@@ -6,7 +6,13 @@ class renderComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		SDL_FRect size = owner->getDimensions();
+		size.x -= camera.x;
+		size.y -= camera.y;
 		SDL_RenderTexture(renderer, texture, NULL, &size);
+		if (owner->getSelected()) {
+			SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+			SDL_RenderRect(renderer, &size);
+		}
 	}
 
 	SDL_Texture* loadTexture(const char* filePath) {

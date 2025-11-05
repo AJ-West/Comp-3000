@@ -13,4 +13,6 @@ void getScaledMousePos(float* x, float* y) {
 	float mx, my;
 	SDL_GetMouseState(&mx, &my);
 	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y);
+	*x = *x + camera.x;
+	*y = *y + camera.y;
 }

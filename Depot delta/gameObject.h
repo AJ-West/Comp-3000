@@ -10,6 +10,7 @@
 #include <SDL3/SDL.h>
 
 #include "usefulFunctions.h"
+#include "variables.h"
 
 
 using namespace std;
@@ -61,12 +62,18 @@ public:
 	void setY(float y) { size.y = y; }
 	void setDimensions(SDL_FRect newSize) { size = newSize; }
 
-
 	//virtual getters
+	virtual bool getSelected() { return false; }
+
+	//virtual setters
+
+
+	//pure virtual getters
 	virtual pair<float, float> getTargetPos() = 0;
 	virtual bool getHovering() = 0;
 	
-	//virtual setters
+	
+	//pure virtual setters
 	virtual void setHovering(bool hover) = 0;
 	virtual void setTarget(float x, float y) = 0;
 

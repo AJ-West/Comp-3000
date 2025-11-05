@@ -1,6 +1,6 @@
 #pragma once
-
-#include  <SDL3/SDL.h>
+#include <iostream>
+#include <SDL3/SDL.h>
 
 #ifndef VARIABLES_H
 #define VARIABLES_H
@@ -9,10 +9,70 @@ extern int screenWidth;
 extern int screenHeight;
 extern int ResolutionWidth;
 extern int ResolutionHeight;
+extern int worldWidth;
+extern int worldHeight;
 
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
 
 extern bool isRunning;
+
+struct Camera {
+	int x;
+	int y;
+	int width;
+	int height;
+
+	int x_dir = 0;
+	int y_dir = 0;
+
+	void keyDown(SDL_Keycode key) {
+		switch (key) {
+		case SDLK_W:
+			y_dir = -1;
+			break;
+		case SDLK_S:
+			y_dir = 1;
+			break;
+		case SDLK_A:
+			x_dir = -1;
+			break;
+		case SDLK_D:
+			x_dir = 1;
+			break;
+		default:
+			break;
+		}
+	}
+
+	void keyUp(SDL_Keycode key) {
+		switch (key) {
+		case SDLK_W: case SDLK_S:
+			y_dir = 0;
+			break;
+		case SDLK_A: case SDLK_D:
+			x_dir = 0;
+			break;
+		default:
+			break;
+		}
+	}
+
+	void update() {
+		x += x_dir;
+		y += y_dir;
+		clamp();
+	}
+
+	void clamp() {
+		if (x < 0) x = 0;
+		if (y < 0) y = 0;
+		if (x + width > worldWidth) x = worldWidth - width;
+		if (y + height > worldHeight) y = worldHeight - height;
+	}
+
+};
+
+extern Camera camera;
 
 #endif // !VARIABLES_H

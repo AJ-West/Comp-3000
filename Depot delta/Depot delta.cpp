@@ -61,7 +61,7 @@ void make_units() {
     for (auto& unit : unitList) {
         unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
         unit->AddComponent(make_shared<buttonComponent>(unit));
-        unit->AddComponent(make_shared<movementComponent>(unit, 0.05));
+        unit->AddComponent(make_shared<movementComponent>(unit, 0.5));
     }
 }
 
@@ -115,7 +115,6 @@ int main()
     init_environment();
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();
-
     make_units();
 
     while (isRunning) {
@@ -133,14 +132,23 @@ int main()
 					checkClick();
                 }
             }
+            else if (event.type == SDL_EVENT_KEY_DOWN) {
+                camera.keyDown(event.key.key);
+            }
+            else if (event.type == SDL_EVENT_KEY_UP) {
+                camera.keyUp(event.key.key);
+            }
         }
 		SDL_RenderClear(renderer);
 		manager.renderTileMap(renderer);
         for (auto& unit : unitList) {
             unit->Update();
         }
+		camera.update();
 		SDL_RenderPresent(renderer);
     }
+
+	manager.saveFile("maps/test.xml", unitList);
 
     return 0;
 }

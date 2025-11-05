@@ -18,6 +18,7 @@ public:
 	bool getSelected() { return selected; }
 	bool getHovering() { return hovering; }
 	pair<float, float> getTargetPos() { return pair<float, float>{tx,ty}; }
+	int getID() { return ID; }
 
 	//setters
 	void setHovering(bool hover) { hovering = hover; }

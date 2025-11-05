@@ -20,6 +20,8 @@ public:
 	void loadTilemap(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
 
+	void saveFile(const char* filename, vector<UnitObj*> units);
+
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters

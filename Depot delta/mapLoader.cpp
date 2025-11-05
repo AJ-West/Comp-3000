@@ -6,11 +6,6 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
     XMLDocument doc;
     doc.LoadFile(filename);
     XMLElement* root = doc.RootElement();
-    cout << root->FirstChildElement("ogmoVersion")->GetText();
-    cout << root->FirstChildElement("width")->GetText();
-    cout << root->FirstChildElement("height")->GetText();
-    cout << root->FirstChildElement("offsetX")->GetText();
-    cout << root->FirstChildElement("offsetY")->GetText();
     XMLElement* layer = root->FirstChildElement("layers");
     while (layer) {
         string layerName = string(layer->FirstChildElement("name")->GetText());
@@ -72,7 +67,8 @@ void MapLoader::loadEntities(XMLElement* layer)
 		if (name == "Basic unit") {
 			int x = atoi(entity->FirstChildElement("x")->GetText());
 			int y = atoi(entity->FirstChildElement("y")->GetText());
-			UnitObj* unit = new UnitObj(x, y);
+			int id = atoi(entity->FirstChildElement("id")->GetText());
+			UnitObj* unit = new UnitObj(x, y, id);
 			unitList.emplace_back(unit);
 		}
 		entity = entity->NextSiblingElement("entities");
@@ -80,13 +76,46 @@ void MapLoader::loadEntities(XMLElement* layer)
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {
-    SDL_FRect destRect{0,0,cell_width,cell_height};
+    SDL_FRect destRect{-camera.x,-camera.y,cell_width,cell_height};
     for (auto& row : tilemap) {
         for (auto& column : row) {
             SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
             destRect.x += cell_width;
         }
-		destRect.x = 0;
+		destRect.x = -camera.x;
 		destRect.y += cell_height;
+    }
+}
+
+void MapLoader::saveFile(const char* filename, vector<UnitObj*> units)
+{
+    XMLDocument doc;
+    doc.LoadFile(filename);
+    XMLElement* root = doc.RootElement();
+    XMLElement* layer = root->FirstChildElement("layers");
+    bool found = false;
+    while (!found && layer) {
+		if (string(layer->FirstChildElement("name")->GetText()) == "Entities") {
+			found = true;
+			break;
+		}
+		layer = layer->NextSiblingElement("layers");
+    }
+    if (found) {
+        XMLElement* entity = layer->FirstChildElement("entities");
+        while (entity) {
+            for (auto& unit : units) {
+                if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+					entity->FirstChildElement("x")->SetText(static_cast<int>(unit->getDimensions().x));
+					entity->FirstChildElement("y")->SetText(static_cast<int>(unit->getDimensions().y));
+					break;
+                }
+            }
+			entity = entity->NextSiblingElement("entities");
+        }
+		doc.SaveFile(filename);
+    }
+    else{
+        cerr << "Unable to save file! " << endl;
     }
 }
