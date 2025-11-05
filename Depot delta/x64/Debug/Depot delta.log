@@ -1,68 +1,10 @@
-﻿  Depot delta.cpp
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(34,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
-  
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(35,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
-  
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(28,17): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(33,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(71,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:             _Ty1=float
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         ]
-  (compiling source file 'Depot%20delta.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16):
-  the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(9,35):
-  	see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
-          with
-          [
-              _Other1=int,
-              _Other2=int
-          ]
-  		C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(9,3):
-  		see the first reference to 'std::pair<float,float>::pair' in 'movementComponent::update'
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:             _Ty2=float
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         ]
-  (compiling source file 'Depot%20delta.cpp')
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:             _Ty=double
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         ]
-  (compiling source file 'Depot%20delta.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
-  the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(59,24):
-  	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,double>(UnitObj *&,double &&)' being compiled
-  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
-  	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,_Ty>(UnitObj *&,_Ty &&)' being compiled
-          with
-          [
-              _Ty=double
-          ]
-  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2094,18):
-  	see reference to function template instantiation 'void std::_Construct_in_place<_Ty,UnitObj*&,double>(_Ty &,UnitObj *&,double &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=movementComponent
-          ]
-  
+﻿  levelManager.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(72,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(73,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(74,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(75,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(83,28): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(83,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(83,39): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(83,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

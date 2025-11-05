@@ -1,7 +1,7 @@
 #include "levelManager.h"
 
 
-levelManager::levelManager(const char* filename)
+LevelManager::LevelManager(const char* filename, SDL_Renderer* renderer)
 {
     XMLDocument doc;
     doc.LoadFile(filename);
@@ -30,12 +30,12 @@ levelManager::levelManager(const char* filename)
     y_cells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
     cout << y_cells;
     cout << x_cells;
-    tilemap.resize(y_cells, vector<int>(x_cells, 0));
+    tilelocs.resize(y_cells, vector<int>(x_cells, 0));
     int x_count = 0;
     int y_count = 0;
     data = layer->FirstChildElement("data");
     while (data) {
-        tilemap[y_count][x_count] = atoi(data->GetText());
+        tilelocs[y_count][x_count] = atoi(data->GetText());
         x_count++;
         if (x_count == x_cells) {
             x_count = 0;
@@ -43,8 +43,50 @@ levelManager::levelManager(const char* filename)
         }
         data = data->NextSiblingElement("data");
     }
+	loadTileMap();
+
+    SDL_Surface* surface = IMG_Load("art/environment/tilemap.png");
+    if (!surface) {
+        cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
+        return;
+    }
+    tilemapTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_DestroySurface(surface); // Free the surface after creating the texture
+    if (!tilemapTexture) {
+        cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
+        return;
+    }
 }
 
-levelManager::~levelManager()
+LevelManager::~LevelManager()
 {
+}
+
+void LevelManager::loadTileMap()
+{
+	for (int i = 0; i < y_cells; i++) {
+		vector<SDL_FRect> row;
+		for (int j = 0; j < x_cells; j++) {
+            div_t loc = div(tilelocs[i][j], 8); // Use tilelocs as needed
+			SDL_FRect cell;
+			cell.x = loc.rem * cell_width;
+			cell.y = loc.quot * cell_height;
+			cell.w = cell_width;
+			cell.h = cell_height;
+			row.push_back(cell);
+		}
+		tilemap.push_back(row);
+	}
+}
+
+void LevelManager::renderTileMap(SDL_Renderer* renderer) {
+    SDL_FRect destRect{0,0,cell_width,cell_height};
+    for (auto& row : tilemap) {
+        for (auto& column : row) {
+            SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
+            destRect.x += cell_width;
+        }
+		destRect.x = 0;
+		destRect.y += cell_height;
+    }
 }

@@ -3,19 +3,28 @@
 #include "tinyxml2.h"
 #include <vector>
 #include <sstream>
+#include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
 
 using namespace std;
 using namespace tinyxml2;
 
-class levelManager
+class LevelManager
 {
 public:
-	levelManager(const char* filename);
-	~levelManager();
+	LevelManager(const char* filename, SDL_Renderer* renderer);
+	~LevelManager();
+
+	void loadTileMap();
+
+	void renderTileMap(SDL_Renderer* renderer);
 
 private:
 	int width, height;
     int cell_width, cell_height;
 	int x_cells, y_cells;
-    vector<vector<int>> tilemap;
+    vector<vector<int>> tilelocs;
+    vector<vector<SDL_FRect>> tilemap;
+
+	SDL_Texture* tilemapTexture;
 };
