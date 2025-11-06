@@ -70,6 +70,9 @@ void MapLoader::loadEntities(XMLElement* layer)
 			int id = atoi(entity->FirstChildElement("id")->GetText());
 			UnitObj* unit = new UnitObj(x, y, id);
 			unitList.emplace_back(unit);
+            if (entity->FirstChildElement("target_x")) {
+                unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
+            }
 		}
 		entity = entity->NextSiblingElement("entities");
 	}
@@ -108,6 +111,18 @@ void MapLoader::saveFile(const char* filename, vector<UnitObj*> units)
                 if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
 					entity->FirstChildElement("x")->SetText(static_cast<int>(unit->getDimensions().x));
 					entity->FirstChildElement("y")->SetText(static_cast<int>(unit->getDimensions().y));
+                    if (entity->FirstChildElement("target_x")) {
+                        entity->FirstChildElement("target_x")->SetText(unit->getTargetPos().first);
+                        entity->FirstChildElement("target_y")->SetText(unit->getTargetPos().second);
+                    }
+                    else {
+                        XMLElement* target = doc.NewElement("target_x");
+                        target->SetText(unit->getTargetPos().first);
+                        entity->InsertAfterChild(entity->FirstChildElement("originY"), target);
+                        target = doc.NewElement("target_y");
+                        target->SetText(unit->getTargetPos().second);
+                        entity->InsertAfterChild(entity->FirstChildElement("target_x"), target);
+                    }
 					break;
                 }
             }
