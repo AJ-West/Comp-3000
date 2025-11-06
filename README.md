@@ -1,5 +1,6 @@
 # Comp-3000 - DEPOT DELTA
 
+<img width="900" height="528" alt="image" src="https://github.com/user-attachments/assets/16d5f7af-fa5e-4ce4-8e24-c4d2dfdea015" />
 
 
 Depot Delta is a Real Time Strategy (RTS) game where you need to manage your resources and personnel to survive incoming waves of zombies. Your supply lines are crucial as this is how you will restock units that are keeping the hordes at bay. With limited survivors and resources to begin with you can adventure to find more but then need to consider how you will return them to the depot so they can help you in the fight. Personal once damaged will need to be rescued by medical units creating a balance of keep fighting or retreat to fight another day as once you lose a unit it is lost for good. 
@@ -17,8 +18,10 @@ There are a variety of video games I really enjoy but you must play online again
 To begin with the art in the game is going to be simple yet clear images to show what is being represented. This is because I want to focus on the mechanical side of the game not the gamification/polish of it. Example art is below:
 
 Basic Unit:
+<img width="296" height="300" alt="image" src="https://github.com/user-attachments/assets/99bd7051-ba9e-4aec-9072-3221c2f9504d" />
 
 
 Basic Zombie:
+<img width="336" height="354" alt="image" src="https://github.com/user-attachments/assets/64da8269-56c6-42a9-b22e-6f870bfbf385" />
 
 
