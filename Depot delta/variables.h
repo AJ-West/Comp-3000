@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SDL3/SDL.h>
+#include <SDL3_ttf/SDL_ttf.h>
 
 #ifndef VARIABLES_H
 #define VARIABLES_H
@@ -21,6 +22,8 @@ extern int worldHeight;
 // SDL
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
+extern TTF_Font* font;
+extern int FONT_SIZE;
 
 extern bool isRunning;
 

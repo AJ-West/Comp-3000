@@ -17,6 +17,8 @@ int worldHeight = 1088;
 // SDL
 SDL_Window* window;
 SDL_Renderer* renderer;
+TTF_Font* font;
+int FONT_SIZE = 16;
 
 bool isRunning;
 

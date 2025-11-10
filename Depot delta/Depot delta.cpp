@@ -47,6 +47,12 @@ void init_environment() {
         isRunning = false;
         return;
     }
+    font = TTF_OpenFont("art/BorderWall.ttf", FONT_SIZE);
+    if (font == nullptr) {
+        cerr << "Font cannot be loaded: TTF_ERROR" << SDL_GetError() << endl;
+        isRunning = false;
+        return;
+    }
 
 	float scaleX = static_cast<float>(screenWidth) / ResolutionWidth;
 	float scaleY = static_cast<float>(screenHeight) / ResolutionHeight;
