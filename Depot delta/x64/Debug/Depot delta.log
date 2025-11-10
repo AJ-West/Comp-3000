@@ -1,0 +1,23 @@
+﻿  mapLoader.cpp
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\GameObject.h(35,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'mapLoader.cpp')
+  
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\GameObject.h(36,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'mapLoader.cpp')
+  
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(51,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(52,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(53,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(54,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(74,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(74,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,24): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,24): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,34): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,44): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,44): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,55): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(82,55): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\final year\Comp-3000\Depot delta\mapLoader.cpp(88,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Depot delta.vcxproj -> C:\Users\User\Documents\final year\Comp-3000\Depot delta\x64\Debug\Depot delta.exe
