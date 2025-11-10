@@ -163,6 +163,7 @@
     <ClInclude Include="mapLoader.h" />
     <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
+    <ClInclude Include="resourceComponent.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="unitObject.h" />
     <ClInclude Include="usefulFunctions.h" />

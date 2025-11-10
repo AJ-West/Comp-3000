@@ -13,6 +13,7 @@
 #include "renderComponent.h"
 #include "buttonComponent.h"
 #include "movementComponent.h"
+#include "resourceComponent.h"
 
 #include "variables.h"
 
@@ -58,10 +59,13 @@ void init_environment() {
 }
 
 void make_units() {
+    vector<int> max = { 100, 100, 100, 100, 100 };
+    vector<int> count = { 50, 50, 50, 50, 50 };
     for (auto& unit : unitList) {
         unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
         unit->AddComponent(make_shared<buttonComponent>(unit));
         unit->AddComponent(make_shared<movementComponent>(unit, 50));
+        unit->AddComponent(make_shared<resourceComponent>(unit, max, count));
     }
 }
 

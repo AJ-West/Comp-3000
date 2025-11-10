@@ -84,4 +84,13 @@ struct Camera {
 
 extern Camera camera;
 
+enum Resource {
+	PERSONNEL,
+	AMMUNITION,
+	DOS,
+	FUEL,
+	SCRAP,
+	RESOURCE_COUNT
+};
+
 #endif // !VARIABLES_H

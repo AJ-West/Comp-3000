@@ -74,5 +74,8 @@
     <ClInclude Include="variables.h">
       <Filter>Source Files\UseThroughout</Filter>
     </ClInclude>
+    <ClInclude Include="resourceComponent.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
