@@ -5,6 +5,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3_image/SDL_image.h>
+
 #include "tinyxml2.h"
 #include "mapLoader.h"
 
@@ -19,7 +20,6 @@ using namespace std;
 using namespace tinyxml2;
 
 vector<UnitObj*> unitList;
-
 
 //creates the window, renderer and font for the game
 void init_environment() {
@@ -61,7 +61,7 @@ void make_units() {
     for (auto& unit : unitList) {
         unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
         unit->AddComponent(make_shared<buttonComponent>(unit));
-        unit->AddComponent(make_shared<movementComponent>(unit, 0.5));
+        unit->AddComponent(make_shared<movementComponent>(unit, 50));
     }
 }
 
@@ -111,13 +111,17 @@ void checkClick() {
 
 int main()
 {
-    system("pause");
+    //system("pause");
     init_environment();
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();
     make_units();
 
+	Uint32 lastTime = SDL_GetTicks();
+
     while (isRunning) {
+        Uint32 frameStart = SDL_GetTicks();
+
         //handle input
         SDL_Event event;
         while (SDL_PollEvent(&event) != 0) {
@@ -139,6 +143,11 @@ int main()
                 camera.keyUp(event.key.key);
             }
         }
+
+        Uint32 currentTime = SDL_GetTicks();
+        deltaTime = (currentTime - lastTime) / 1000.0f;
+        lastTime = currentTime;
+
 		SDL_RenderClear(renderer);
 		manager.renderTileMap(renderer);
         for (auto& unit : unitList) {
@@ -146,6 +155,12 @@ int main()
         }
 		camera.update();
 		SDL_RenderPresent(renderer);
+
+        // Frame rate capping
+        Uint32 frameTime = SDL_GetTicks() - frameStart;
+        if (frameTime < frameDelay) {
+            SDL_Delay(frameDelay - frameTime);
+        }
     }
 
 	manager.saveFile("maps/test.xml", unitList);

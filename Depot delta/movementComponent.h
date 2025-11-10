@@ -13,7 +13,7 @@ public:
 			float distance = std::sqrt(dx * dx + dy * dy);
 
 			if (distance > 1.0f) { // Avoid jitter when close
-				float moveDist = speed;
+				float moveDist = speed*deltaTime;
 				if (moveDist > distance) {
 					moveDist = distance;
 					owner->setTarget(NULL, NULL);

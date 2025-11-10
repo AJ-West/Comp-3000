@@ -5,6 +5,12 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
+// Frame rate handling
+extern const int FPS;
+extern const int frameDelay;
+extern float deltaTime;
+
+// Screen
 extern int screenWidth;
 extern int screenHeight;
 extern int ResolutionWidth;
@@ -12,19 +18,22 @@ extern int ResolutionHeight;
 extern int worldWidth;
 extern int worldHeight;
 
+// SDL
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
 
 extern bool isRunning;
 
 struct Camera {
-	int x;
-	int y;
+	float x;
+	float y;
 	int width;
 	int height;
 
 	int x_dir = 0;
 	int y_dir = 0;
+
+	int speed = 150;
 
 	void keyDown(SDL_Keycode key) {
 		switch (key) {
@@ -59,8 +68,8 @@ struct Camera {
 	}
 
 	void update() {
-		x += x_dir;
-		y += y_dir;
+		x += x_dir * speed * deltaTime;
+		y += y_dir * speed * deltaTime;
 		clamp();
 	}
 
