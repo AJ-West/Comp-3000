@@ -43,7 +43,7 @@ public:
 	}
 
 	//get a component from GameObject
-	template <typename T> shared_ptr<T> AddComponent() {
+	template <typename T> shared_ptr<T> getComponent() {
 		return static_pointer_cast<T>(components[typeid(T).name()]);
 	}
 
@@ -53,6 +53,9 @@ public:
 			pair.second->update(this);
 		}
 	}
+
+	// Pure virtual functions
+	virtual void renderHover(SDL_Renderer* renderer) = 0;
 
 	//getters
 	SDL_Texture getTexture() { return texture; }

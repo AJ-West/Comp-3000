@@ -21,7 +21,7 @@ public:
 		clampResources(AMMUNITION);
 		clampResources(DOS);
 		clampResources(FUEL);
-		clampResources(DOS);
+		clampResources(SCRAP);
 	}
 
 	void clampResources(int index) {
@@ -37,6 +37,17 @@ public:
 		}
 	}
 
+	void renderResources(SDL_Renderer* renderer) {
+		SDL_FRect size{camera.x + camera.width/9*2, camera.y + camera.height - 75, camera.width/18, 50};
+		//SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+		//SDL_RenderRect(renderer, &size);
+		for (int i = 0; i < resourceTextures.size(); i++) {
+			SDL_RenderTexture(renderer, resourceTextures[i], NULL, &size);
+			size.x += size.w*2;
+		}
+		cout << "render" << '\n';
+	}
+
 	//getters
 	vector<int> getResourcesCount() { return resourcesCount; }
 
@@ -44,7 +55,7 @@ public:
 	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }
 	void setResourceIncrease(int index, int amount) { resourceIncrease[index] = amount; }
 
-	resourceComponent(GameObject* obj, vector<int> max, vector<int> count): Component(obj), resourcesMax(max), resourcesCount(count) {
+	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
 		resourceUsage = vector<int>(max.size(), 0);
 		resourceIncrease = vector<int>(max.size(), 0);
 	}
@@ -54,6 +65,7 @@ private:
 	vector<int> resourcesCount;	
 	vector<int> resourceUsage;
 	vector<int> resourceIncrease;
+	vector<SDL_Texture*> resourceTextures;
 
 	int timeCount = 0;
 };

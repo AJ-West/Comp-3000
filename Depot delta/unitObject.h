@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "buttonBase.h"
+#include "resourceComponent.h"
 
 class UnitObj : public GameObject, public BaseButton {
 public:
@@ -12,6 +13,13 @@ public:
 
 	void clickAway() {
 		getScaledMousePos(&tx, &ty);
+	}
+
+	void renderHover(SDL_Renderer* renderer) {
+		auto rComp = getComponent<resourceComponent>();
+		if (rComp) {
+			rComp->renderResources(renderer);
+		}
 	}
 
 	//getters
