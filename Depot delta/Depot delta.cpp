@@ -141,7 +141,7 @@ void checkClick() {
 
 int main()
 {
-    //system("pause");
+    system("pause");
     init_environment();
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();

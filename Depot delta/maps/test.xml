@@ -8463,19 +8463,14 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
-<<<<<<< HEAD
-            <x>329</x>
-            <y>73</y>
-=======
-            <x>660</x>
-            <y>127</y>
->>>>>>> 90a16a340f1b6968cbd55d1b3bb57d5342015a38
+            <x>96</x>
+            <y>81</y>
             <width>2</width>
             <height>2</height>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>681</target_x>
-            <target_y>147</target_y>
+            <target_x>116</target_x>
+            <target_y>101</target_y>
         </entities>
         <entities eid="32855006">
             <name>Basic unit</name>
