@@ -5,7 +5,7 @@
 
 class UnitObj : public GameObject, public BaseButton {
 public:
-	UnitObj(int x, int y, int id) : GameObject(x,y), ID(id) {}
+	UnitObj(int x, int y, int width, int height, int id) : GameObject(x,y, width, height), ID(id) {}
 
 	virtual void onClick() override {
 		selected = !selected;
@@ -18,7 +18,7 @@ public:
 	void renderHover(SDL_Renderer* renderer) {
 		auto rComp = getComponent<resourceComponent>();
 		if (rComp) {
-			rComp->renderResources(renderer);
+			rComp->renderResources(renderer, iSize, tSize);
 		}
 	}
 
@@ -40,4 +40,7 @@ private:
 	float ty = NULL;
 
 	int ID;
+
+	SDL_FRect iSize{ camera.x + 10, camera.y + camera.height - 75, 50, 50 };
+	SDL_FRect tSize{ camera.x + 60, camera.y + camera.height - 75, 100, 50 };
 };

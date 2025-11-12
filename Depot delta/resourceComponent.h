@@ -37,19 +37,17 @@ public:
 		}
 	}
 
-	void renderResources(SDL_Renderer* renderer) {
-		SDL_FRect iSize{camera.x + 10, camera.y + camera.height - 75, 50, 50};
-		SDL_FRect tSize{camera.x + 60, camera.y + camera.height - 75, 100, 50};
+	void renderResources(SDL_Renderer* renderer, SDL_FRect iSize, SDL_FRect tSize) {
 		//SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 		//SDL_RenderRect(renderer, &size);
 		for (int i = 0; i < resourceTextures.size(); i++) {
 			SDL_RenderTexture(renderer, resourceTextures[i], NULL, &iSize);
-			iSize.x += 150;
+			iSize.x += iSize.w + tSize.w;
 			string countText = to_string(resourcesCount[i]) + "/" + to_string(resourcesMax[i]);
 			SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 0,0,255,128 });
 			SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 			SDL_RenderTexture(renderer, texture, NULL, &tSize);
-			tSize.x += 150;
+			tSize.x += iSize.w + tSize.w;
 		}
 	}
 

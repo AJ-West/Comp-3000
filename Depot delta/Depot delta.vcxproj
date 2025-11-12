@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp" />
+    <ClCompile Include="depot.cpp" />
     <ClCompile Include="mapLoader.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="usefulFunctions.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
+    <ClInclude Include="depot.h" />
     <ClInclude Include="gameObject.h" />
     <ClInclude Include="mapLoader.h" />
     <ClInclude Include="movementComponent.h" />

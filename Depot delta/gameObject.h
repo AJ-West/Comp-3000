@@ -32,9 +32,11 @@ protected:
 
 class GameObject {
 public:
-	GameObject(int x, int y){
+	GameObject(int x, int y, int width, int height){
 		size.x = x;
 		size.y = y;
+		size.w = width*tileWidth;
+		size.h = height*tileHeight;
 	}
 
 	//add a component to the GameObject
@@ -73,18 +75,18 @@ public:
 
 
 	//pure virtual getters
-	virtual pair<float, float> getTargetPos() = 0;
+	virtual pair<float, float> getTargetPos() { return pair<float, float>{NULL, NULL}; };
 	virtual bool getHovering() = 0;
 	
 	
 	//pure virtual setters
 	virtual void setHovering(bool hover) = 0;
-	virtual void setTarget(float x, float y) = 0;
+	virtual void setTarget(float x, float y) { cout << "target set"; }
 
 private:
 	unordered_map<string, shared_ptr<Component>> components;// Store components
 
 	SDL_Texture texture;
 
-	SDL_FRect size{0,0,tileWidth, tileHeight};
+	SDL_FRect size{0,0,0,0};
 };

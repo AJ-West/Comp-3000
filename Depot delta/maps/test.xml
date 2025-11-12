@@ -8463,26 +8463,36 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
-            <x>37</x>
-            <y>98</y>
-            <width>2</width>
-            <height>2</height>
-            <originX>8</originX>
-            <originY>8</originY>
-            <target_x>45</target_x>
-            <target_y>107</target_y>
-        </entities>
-        <entities eid="32855006">
-            <name>Basic unit</name>
-            <id>4</id>
-            <x>188</x>
-            <y>213</y>
+            <x>192</x>
+            <y>96</y>
             <width>2</width>
             <height>2</height>
             <originX>8</originX>
             <originY>8</originY>
             <target_x>0</target_x>
             <target_y>0</target_y>
+        </entities>
+        <entities eid="32855006">
+            <name>Basic unit</name>
+            <id>4</id>
+            <x>80</x>
+            <y>56</y>
+            <width>2</width>
+            <height>2</height>
+            <originX>8</originX>
+            <originY>8</originY>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
+        </entities>
+        <entities eid="95492584">
+            <name>depot</name>
+            <id>7</id>
+            <x>128</x>
+            <y>152</y>
+            <width>8</width>
+            <height>8</height>
+            <originX>0</originX>
+            <originY>0</originY>
         </entities>
     </layers>
 </root>

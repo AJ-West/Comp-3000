@@ -10,6 +10,8 @@
 #include "mapLoader.h"
 
 #include "unitObject.h"
+#include "depot.h"
+
 #include "renderComponent.h"
 #include "buttonComponent.h"
 #include "movementComponent.h"
@@ -21,7 +23,8 @@ using namespace std;
 using namespace tinyxml2;
 
 vector<UnitObj*> unitList;
-UnitObj* hoveredUnit = nullptr;
+DepotObj* depot;
+GameObject* hoveredUnit = nullptr;
 
 //creates the window, renderer and font for the game
 void init_environment() {
@@ -97,6 +100,21 @@ void make_units() {
     }
 }
 
+void makeDepot() {
+    vector<SDL_Texture*> resourceTextures = loadResourceTextures();
+    vector<int> max = { 1000, 1000, 1000, 1000, 1000 };
+    vector<int> count = { 500, 500, 500, 500, 500 };
+    depot->AddComponent(make_shared<renderComponent>(depot, renderer, "draftArt/depot.png"));
+    depot->AddComponent(make_shared<buttonComponent>(depot));
+    depot->AddComponent(make_shared<movementComponent>(depot, 50));
+    depot->AddComponent(make_shared<resourceComponent>(depot, max, count, resourceTextures));
+	depot->getComponent<resourceComponent>()->setResourceIncrease(PERSONNEL, 5);
+	depot->getComponent<resourceComponent>()->setResourceIncrease(AMMUNITION, 5);
+	depot->getComponent<resourceComponent>()->setResourceIncrease(DOS, 5);
+	depot->getComponent<resourceComponent>()->setResourceIncrease(FUEL, 5);
+	depot->getComponent<resourceComponent>()->setResourceIncrease(SCRAP, 5);
+}
+
 void checkUnitHover(SDL_Event event) {
 	for (auto& unit : unitList) {
         unit->checkHover(event.motion.x, event.motion.y);
@@ -147,6 +165,9 @@ int main()
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();
     make_units();
+	depot = manager.getDepot();
+    makeDepot();
+    
 
 	Uint32 lastTime = SDL_GetTicks();
 
@@ -188,13 +209,18 @@ int main()
 				hoveredUnit = unit;
             }
         }
+		depot->Update();
 		camera.update();
         if (hoveredUnit) {
-            SDL_FRect unitRes = { camera.x, camera.y + screenHeight - 100, camera.width, 100 };
+            SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.width, 100 };
             SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
             SDL_RenderFillRect(renderer, &unitRes);
             hoveredUnit->renderHover(renderer);
         }
+        SDL_FRect depotRes = { 0, 0, camera.width, 40 };
+        SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
+        SDL_RenderFillRect(renderer, &depotRes);
+        depot->renderHover(renderer);
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderPresent(renderer);
 

@@ -69,12 +69,21 @@ void MapLoader::loadEntities(XMLElement* layer)
 			int x = atoi(entity->FirstChildElement("x")->GetText());
 			int y = atoi(entity->FirstChildElement("y")->GetText());
 			int id = atoi(entity->FirstChildElement("id")->GetText());
-			UnitObj* unit = new UnitObj(x, y, id);
+            int width = atoi(entity->FirstChildElement("width")->GetText())/2; // div 2 as ogmo editor does not allow value of 1
+            int height = atoi(entity->FirstChildElement("height")->GetText())/2;
+			UnitObj* unit = new UnitObj(x, y, width, height, id);
 			unitList.emplace_back(unit);
             if (entity->FirstChildElement("target_x")) {
                 unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
             }
 		}
+        if (name == "depot") {
+            int x = atoi(entity->FirstChildElement("x")->GetText());
+            int y = atoi(entity->FirstChildElement("y")->GetText());
+            int width = atoi(entity->FirstChildElement("width")->GetText()) / 2; // div 2 as ogmo editor does not allow value of 1
+            int height = atoi(entity->FirstChildElement("height")->GetText()) / 2;
+            depot = new DepotObj(x, y, width, height);
+        }
 		entity = entity->NextSiblingElement("entities");
 	}
 }

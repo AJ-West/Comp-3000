@@ -42,6 +42,9 @@
     <ClCompile Include="usefulFunctions.cpp">
       <Filter>Source Files\UseThroughout</Filter>
     </ClCompile>
+    <ClCompile Include="depot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="resourceComponent.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="depot.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

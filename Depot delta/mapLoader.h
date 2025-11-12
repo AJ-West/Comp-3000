@@ -7,6 +7,7 @@
 #include <SDL3_image/SDL_image.h>
 #include "string"
 #include "unitObject.h"
+#include "depot.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -26,6 +27,7 @@ public:
 
 	//getters
 	vector<UnitObj*> getUnitList() { return unitList; }
+	DepotObj* getDepot() { return depot; }
 
 private:
 	int width, height;
@@ -34,6 +36,7 @@ private:
     vector<vector<SDL_FRect>> tilemap;
 
 	SDL_Texture* tilemapTexture;
-	
+
+	DepotObj* depot;
 	vector<UnitObj*> unitList;
 };
