@@ -86,5 +86,5 @@ private:
 
 	SDL_Texture texture;
 
-	SDL_FRect size{0,0,40,40};
+	SDL_FRect size{0,0,tileWidth, tileHeight};
 };

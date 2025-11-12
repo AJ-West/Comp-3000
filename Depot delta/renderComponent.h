@@ -22,6 +22,7 @@ public:
 			return nullptr;
 		}
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
 		SDL_DestroySurface(surface); // Free the surface after creating the texture
 		if (!texture) {
 			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;

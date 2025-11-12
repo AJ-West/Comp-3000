@@ -25,6 +25,7 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
         return;
     }
     tilemapTexture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_SetTextureScaleMode(tilemapTexture, SDL_SCALEMODE_PIXELART);
     SDL_DestroySurface(surface); // Free the surface after creating the texture
     if (!tilemapTexture) {
         cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
@@ -38,8 +39,8 @@ MapLoader::~MapLoader()
 
 void MapLoader::loadTilemap(XMLElement* layer)
 {
-    cell_width = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
-    cell_height = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
+    tileWidth = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
+    tileHeight = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
     x_cells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
     y_cells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
     XMLElement* data = layer->FirstChildElement("data");
@@ -48,10 +49,10 @@ void MapLoader::loadTilemap(XMLElement* layer)
 		for (int j = 0; j < x_cells; j++) {
             div_t loc = div(atoi(data->GetText()), 8); // gettile value as int then conver to location on tilemap spritesheet
 			SDL_FRect cell;
-			cell.x = loc.rem * cell_width;
-			cell.y = loc.quot * cell_height;
-			cell.w = cell_width;
-			cell.h = cell_height;
+			cell.x = loc.rem * tileWidth;
+			cell.y = loc.quot * tileHeight;
+			cell.w = tileWidth;
+			cell.h = tileHeight;
 			row.push_back(cell);
             data = data->NextSiblingElement("data");
 		}
@@ -79,14 +80,14 @@ void MapLoader::loadEntities(XMLElement* layer)
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {
-    SDL_FRect destRect{-camera.x,-camera.y,cell_width,cell_height};
+    SDL_FRect destRect{-camera.x,-camera.y,tileWidth,tileHeight };
     for (auto& row : tilemap) {
         for (auto& column : row) {
             SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
-            destRect.x += cell_width;
+            destRect.x += tileWidth;
         }
 		destRect.x = -camera.x;
-		destRect.y += cell_height;
+		destRect.y += tileHeight;
     }
 }
 

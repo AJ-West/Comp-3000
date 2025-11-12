@@ -19,6 +19,10 @@ extern int ResolutionHeight;
 extern int worldWidth;
 extern int worldHeight;
 
+//Scaling art
+extern float tileWidth;
+extern float tileHeight;
+
 // SDL
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;

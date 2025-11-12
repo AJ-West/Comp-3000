@@ -60,7 +60,7 @@ void init_environment() {
     //Can be used for setting resolution (will be useful when adding settings)
 	//SDL_SetRenderScale(renderer, scaleX, scaleY);
     //Used to render consistenly regardless of screensize
-	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth, ResolutionHeight, SDL_LOGICAL_PRESENTATION_OVERSCAN);
+	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth, ResolutionHeight, SDL_LOGICAL_PRESENTATION_LETTERBOX);
 
     isRunning = true;
 }
@@ -77,6 +77,7 @@ vector<SDL_Texture*> loadResourceTextures() {
     for (int i = 0; i < resourceFiles.size(); i++) {
         SDL_Surface* surface = IMG_Load(resourceFiles[i]);
         SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+        SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
         SDL_DestroySurface(surface); // Free the surface after creating the texture
         resourceTextures.push_back(texture);
     }
@@ -194,7 +195,7 @@ int main()
             SDL_RenderFillRect(renderer, &unitRes);
             hoveredUnit->renderHover(renderer);
         }
-        
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderPresent(renderer);
 
         // Frame rate capping

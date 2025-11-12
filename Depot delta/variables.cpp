@@ -14,6 +14,10 @@ int ResolutionHeight = 1080/2;
 int worldWidth = 1984;
 int worldHeight = 1088;
 
+//Scaling art
+float tileWidth;
+float tileHeight;
+
 // SDL
 SDL_Window* window;
 SDL_Renderer* renderer;

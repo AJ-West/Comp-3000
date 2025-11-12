@@ -8463,20 +8463,20 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
-            <x>96</x>
-            <y>81</y>
+            <x>37</x>
+            <y>98</y>
             <width>2</width>
             <height>2</height>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>116</target_x>
-            <target_y>101</target_y>
+            <target_x>45</target_x>
+            <target_y>107</target_y>
         </entities>
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>4</id>
-            <x>101</x>
-            <y>142</y>
+            <x>188</x>
+            <y>213</y>
             <width>2</width>
             <height>2</height>
             <originX>8</originX>
