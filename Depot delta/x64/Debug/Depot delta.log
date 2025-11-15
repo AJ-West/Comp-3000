@@ -1,34 +1,16 @@
-﻿  Depot delta.cpp
+﻿  mapSaver.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.h(86,46): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.h(87,49): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(36,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(37,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(33,17): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(38,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(55,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(75,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(75,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(78,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(78,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(170,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(173,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(197,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(219,55): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(219,55): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(219,68): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(219,68): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(224,44): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(224,44): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(232,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\Depot delta.cpp(233,23): warning C4018: '<': signed/unsigned mismatch
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         [
@@ -38,7 +20,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         [
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:             _Ty1=float
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16): warning C4244:         ]
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,16):
   the template instantiation context (the oldest one first) is
   	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(75,71):
@@ -60,6 +42,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         [
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:             _Ty2=float
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\utility(250,54): warning C4244:         ]
-  (compiling source file 'Depot%20delta.cpp')
+  (compiling source file 'mapSaver.cpp')
   
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

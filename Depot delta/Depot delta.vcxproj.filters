@@ -28,16 +28,16 @@
     <Filter Include="Source Files\Convoys">
       <UniqueIdentifier>{be913c6e-3b8b-48f1-a312-b23bc90677c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\fileHandling">
+      <UniqueIdentifier>{4e633951-c1ab-4141-bf3d-effcef43366c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Depot delta.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Source Files\Dependecies</Filter>
-    </ClCompile>
-    <ClCompile Include="mapLoader.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="variables.cpp">
       <Filter>Source Files\UseThroughout</Filter>
@@ -45,16 +45,19 @@
     <ClCompile Include="usefulFunctions.cpp">
       <Filter>Source Files\UseThroughout</Filter>
     </ClCompile>
-    <ClCompile Include="depot.cpp">
+    <ClCompile Include="levelManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mapLoader.cpp">
+      <Filter>Source Files\fileHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="mapSaver.cpp">
+      <Filter>Source Files\fileHandling</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
       <Filter>Source Files\Dependecies</Filter>
-    </ClInclude>
-    <ClInclude Include="mapLoader.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="gameObject.h">
       <Filter>Source Files</Filter>
@@ -83,11 +86,20 @@
     <ClInclude Include="resourceComponent.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="depot.h">
+    <ClInclude Include="depotObject.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="convoyObject.h">
       <Filter>Source Files\Convoys</Filter>
+    </ClInclude>
+    <ClInclude Include="levelManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mapLoader.h">
+      <Filter>Source Files\fileHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="mapSaver.h">
+      <Filter>Source Files\fileHandling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

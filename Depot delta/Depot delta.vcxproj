@@ -139,9 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Depot delta.cpp" />
-    <ClCompile Include="depot.cpp" />
+    <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="mapLoader.cpp" />
+    <ClCompile Include="mapSaver.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="usefulFunctions.cpp" />
     <ClCompile Include="variables.cpp" />
@@ -161,9 +162,11 @@
     <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="convoyObject.h" />
-    <ClInclude Include="depot.h" />
+    <ClInclude Include="depotObject.h" />
     <ClInclude Include="gameObject.h" />
+    <ClInclude Include="levelManager.h" />
     <ClInclude Include="mapLoader.h" />
+    <ClInclude Include="mapSaver.h" />
     <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="resourceComponent.h" />

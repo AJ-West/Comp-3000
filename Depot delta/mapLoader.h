@@ -7,7 +7,7 @@
 #include <SDL3_image/SDL_image.h>
 #include "string"
 #include "unitObject.h"
-#include "depot.h"
+#include "depotObject.h"
 #include "convoyObject.h"
 
 #include "renderComponent.h"
@@ -35,17 +35,9 @@ public:
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 
-	void save_unit(XMLElement* entity, XMLDocument& doc, vector<UnitObj*> units);
-	void save_convoy(XMLElement* entity, XMLDocument& doc, vector<ConvoyObj*> convoys);
-	void save_depot(XMLElement* entity, XMLDocument& doc, DepotObj* depot);
-
 	vector<SDL_Texture*> loadResourceTextures();
 
-	void saveFile(const char* filename, vector<UnitObj*> units, DepotObj* depot);
-
 	void renderTileMap(SDL_Renderer* renderer);
-
-	void save_resources(XMLElement* entity, XMLDocument& doc, GameObject* unit);
 
 	//getters
 	vector<UnitObj*> getUnitList() { return unitList; }
