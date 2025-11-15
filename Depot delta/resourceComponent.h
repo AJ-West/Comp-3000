@@ -52,7 +52,7 @@ public:
 	}
 
 	//getters
-	vector<int> getResourcesCount() { return resourcesCount; }
+	int getResourcesCount(int index) { return resourcesCount[index]; }
 
 	//setters
 	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }

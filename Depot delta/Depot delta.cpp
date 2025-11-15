@@ -231,7 +231,7 @@ int main()
         }
     }
 
-	manager.saveFile("maps/test.xml", unitList);
+	manager.saveFile("maps/test.xml", unitList, depot);
 
     return 0;
 }

@@ -21,9 +21,14 @@ public:
 	void loadTilemap(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
 
-	void saveFile(const char* filename, vector<UnitObj*> units);
+	void saveFile(const char* filename, vector<UnitObj*> units, DepotObj* depot);
 
 	void renderTileMap(SDL_Renderer* renderer);
+
+	void save_unit(XMLElement* entity, XMLDocument& doc, vector<UnitObj*> units);
+	void save_depot(XMLElement* entity, XMLDocument& doc, DepotObj* depot);
+
+	void save_resources(XMLElement* entity, XMLDocument& doc, GameObject* unit);
 
 	//getters
 	vector<UnitObj*> getUnitList() { return unitList; }

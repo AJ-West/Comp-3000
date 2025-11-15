@@ -8471,6 +8471,13 @@
             <originY>8</originY>
             <target_x>0</target_x>
             <target_y>0</target_y>
+            <Resources>
+                <Personnel>50</Personnel>
+                <Ammunition>50</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>50</Fuel>
+                <Scrap>50</Scrap>
+            </Resources>
         </entities>
         <entities eid="32855006">
             <name>Basic unit</name>
@@ -8483,6 +8490,13 @@
             <originY>8</originY>
             <target_x>0</target_x>
             <target_y>0</target_y>
+            <Resources>
+                <Personnel>50</Personnel>
+                <Ammunition>50</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>50</Fuel>
+                <Scrap>50</Scrap>
+            </Resources>
         </entities>
         <entities eid="95492584">
             <name>depot</name>
@@ -8493,6 +8507,13 @@
             <height>8</height>
             <originX>0</originX>
             <originY>0</originY>
+            <Resources>
+                <Personnel>520</Personnel>
+                <Ammunition>520</Ammunition>
+                <DoS>520</DoS>
+                <Fuel>520</Fuel>
+                <Scrap>520</Scrap>
+            </Resources>
         </entities>
     </layers>
 </root>
