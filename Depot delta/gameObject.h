@@ -62,31 +62,32 @@ public:
 	//getters
 	SDL_Texture getTexture() { return texture; }
 	SDL_FRect getDimensions() { return size; }
+	bool getSelected() { return selected; }
+	bool getHovering() { return hovering; }
 
 	//setters
 	void setX(float x) { size.x = x; }
 	void setY(float y) { size.y = y; }
 	void setDimensions(SDL_FRect newSize) { size = newSize; }
-
-	//virtual getters
-	virtual bool getSelected() { return false; }
-
-	//virtual setters
-
+	void setHovering(bool hover) { hovering = hover; }
 
 	//pure virtual getters
 	virtual pair<float, float> getTargetPos() { return pair<float, float>{NULL, NULL}; };
-	virtual bool getHovering() = 0;
-	
 	
 	//pure virtual setters
-	virtual void setHovering(bool hover) = 0;
 	virtual void setTarget(float x, float y) { cout << "target set"; }
-
+protected:
+	bool selected = false;
+	bool hovering = false;
+	float tx = NULL;
+	float ty = NULL;
 private:
 	unordered_map<string, shared_ptr<Component>> components;// Store components
 
 	SDL_Texture texture;
 
-	SDL_FRect size{0,0,0,0};
+	SDL_FRect size{ NULL, NULL, NULL, NULL };
+
+	SDL_FRect iSize{ NULL, NULL, NULL, NULL };
+	SDL_FRect tSize{ NULL, NULL, NULL, NULL };
 };

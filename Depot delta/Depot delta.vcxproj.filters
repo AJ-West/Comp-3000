@@ -25,6 +25,9 @@
     <Filter Include="Source Files\UseThroughout">
       <UniqueIdentifier>{939b043c-6f9f-4169-ac89-309a268a2856}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Convoys">
+      <UniqueIdentifier>{be913c6e-3b8b-48f1-a312-b23bc90677c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Depot delta.cpp">
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="depot.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="convoyObject.h">
+      <Filter>Source Files\Convoys</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

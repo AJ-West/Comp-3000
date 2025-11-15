@@ -11,6 +11,7 @@
 
 #include "unitObject.h"
 #include "depot.h"
+#include "convoyObject.h"
 
 #include "renderComponent.h"
 #include "buttonComponent.h"
@@ -23,6 +24,7 @@ using namespace std;
 using namespace tinyxml2;
 
 vector<UnitObj*> unitList;
+vector<ConvoyObj*> convoyList;
 DepotObj* depot;
 GameObject* hoveredUnit = nullptr;
 
@@ -68,37 +70,30 @@ void init_environment() {
     isRunning = true;
 }
 
-vector<SDL_Texture*> loadResourceTextures() {
-    vector<SDL_Texture*> resourceTextures;
-    vector<const char*> resourceFiles = {
-        "draftArt/resources/Personnel.png",
-        "draftArt/resources/Ammo.png",
-        "draftArt/resources/DoS.png",
-        "draftArt/resources/Fuel.png",
-        "draftArt/resources/Scrap.png"
-    };
-    for (int i = 0; i < resourceFiles.size(); i++) {
-        SDL_Surface* surface = IMG_Load(resourceFiles[i]);
-        SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-        SDL_DestroySurface(surface); // Free the surface after creating the texture
-        resourceTextures.push_back(texture);
-    }
-    return resourceTextures;
-}
-
 void checkUnitHover(SDL_Event event) {
 	for (auto& unit : unitList) {
         unit->checkHover(event.motion.x, event.motion.y);
 	}
+    for (auto& convoy : convoyList) {
+        convoy->checkHover(event.motion.x, event.motion.y);
+    }
 }
 
 void checkClick() {
 	UnitObj* selectedUnit = nullptr;
+	ConvoyObj* selectedConvoy = nullptr;
     //see if there is a currently selected unit
     for (auto& unit : unitList) {
         if (unit->getSelected()) {
 			selectedUnit = unit;
+            break;
+        }
+    }
+
+    //see if there is a currently selected convoy
+    for (auto& convoy : convoyList) {
+        if (convoy->getSelected()) {
+            selectedConvoy = convoy;
             break;
         }
     }
@@ -124,10 +119,43 @@ void checkClick() {
 
         }
     }
+
+    if (!selectedSomething) {
+        //see if a convoy has been clicked
+        for (auto& convoy : convoyList) {
+            if (convoy->getHovering() && !convoy->getSelected()) {
+                convoy->onClick();
+                if (selectedConvoy) {
+                    selectedConvoy->onClick();
+                }
+                selectedConvoy = convoy;
+                selectedSomething = true;
+                if (selectedUnit) {
+					selectedUnit->onClick();
+					selectedUnit = nullptr;
+                }
+                break;
+            }
+            else if (convoy->getHovering() && convoy->getSelected()) {
+                selectedConvoy = nullptr;
+                convoy->onClick();
+                selectedSomething = true;
+                break;
+
+            }
+        }
+    }
+    else if (selectedConvoy) {
+		selectedConvoy->onClick();
+		selectedConvoy = nullptr;
+    }
     
     if (!selectedSomething && selectedUnit) {
         selectedUnit->clickAway();
-    }
+	}
+	else if (!selectedSomething && selectedConvoy) {
+		selectedConvoy->clickAway();
+	}
 }
 
 int main()
@@ -137,7 +165,7 @@ int main()
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();
 	depot = manager.getDepot();
-    
+	convoyList = manager.getConvoyList();
 
 	Uint32 lastTime = SDL_GetTicks();
 
@@ -177,6 +205,12 @@ int main()
             unit->Update();
             if (unit->getHovering()) {
 				hoveredUnit = unit;
+            }
+        }
+        for (auto& convoy : convoyList) {
+            convoy->Update();
+            if (convoy->getHovering()) {
+                hoveredUnit = convoy;
             }
         }
 		depot->Update();

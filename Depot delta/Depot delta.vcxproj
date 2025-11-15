@@ -160,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
+    <ClInclude Include="convoyObject.h" />
     <ClInclude Include="depot.h" />
     <ClInclude Include="gameObject.h" />
     <ClInclude Include="mapLoader.h" />

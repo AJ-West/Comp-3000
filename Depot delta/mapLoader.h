@@ -8,6 +8,7 @@
 #include "string"
 #include "unitObject.h"
 #include "depot.h"
+#include "convoyObject.h"
 
 #include "renderComponent.h"
 #include "buttonComponent.h"
@@ -27,10 +28,16 @@ public:
 	void loadEntities(XMLElement* layer);
 	
 	void loadUnit(XMLElement* layer);
+	void loadConvoy(XMLElement* layer);
 	void loadDepot(XMLElement* layer);
 
 	void addUnitComponents(UnitObj* unit, XMLElement* entity);
+	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
+
+	void save_unit(XMLElement* entity, XMLDocument& doc, vector<UnitObj*> units);
+	void save_convoy(XMLElement* entity, XMLDocument& doc, vector<ConvoyObj*> convoys);
+	void save_depot(XMLElement* entity, XMLDocument& doc, DepotObj* depot);
 
 	vector<SDL_Texture*> loadResourceTextures();
 
@@ -38,13 +45,11 @@ public:
 
 	void renderTileMap(SDL_Renderer* renderer);
 
-	void save_unit(XMLElement* entity, XMLDocument& doc, vector<UnitObj*> units);
-	void save_depot(XMLElement* entity, XMLDocument& doc, DepotObj* depot);
-
 	void save_resources(XMLElement* entity, XMLDocument& doc, GameObject* unit);
 
 	//getters
 	vector<UnitObj*> getUnitList() { return unitList; }
+	vector<ConvoyObj*> getConvoyList() { return convoyList; }
 	DepotObj* getDepot() { return depot; }
 
 private:
@@ -57,4 +62,5 @@ private:
 
 	DepotObj* depot;
 	vector<UnitObj*> unitList;
+	vector<ConvoyObj*> convoyList;
 };

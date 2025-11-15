@@ -71,6 +71,9 @@ void MapLoader::loadEntities(XMLElement* layer)
         if (name == "depot") {
 			loadDepot(entity);
         }
+        if (name == "Basic Convoy") {
+            loadConvoy(entity);
+        }
 		entity = entity->NextSiblingElement("entities");
 	}
 }
@@ -80,8 +83,8 @@ void MapLoader::loadUnit(XMLElement* entity)
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = atoi(entity->FirstChildElement("width")->GetText()) / 2; // div 2 as ogmo editor does not allow value of 1
-    int height = atoi(entity->FirstChildElement("height")->GetText()) / 2;
+    int width = 1; // number of tiles
+    int height = 1;
     UnitObj* unit = new UnitObj(x, y, width, height, id);
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
@@ -107,12 +110,45 @@ void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
     unit->AddComponent(make_shared<resourceComponent>(unit, max, count, loadResourceTextures()));
 }
 
+void MapLoader::loadConvoy(XMLElement* entity)
+{
+    int x = atoi(entity->FirstChildElement("x")->GetText());
+    int y = atoi(entity->FirstChildElement("y")->GetText());
+    int id = atoi(entity->FirstChildElement("id")->GetText());
+    int width = 1; // number of tiles
+    int height = 1;
+    ConvoyObj* convoy = new ConvoyObj(x, y, width, height, id);
+    if (entity->FirstChildElement("target_x")) {
+        convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
+    }
+    addConvoyComponents(convoy, entity);
+    convoyList.emplace_back(convoy);
+}
+
+void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
+    convoy->AddComponent(make_shared<renderComponent>(convoy, renderer, "draftArt/basicConvoy.png"));
+    convoy->AddComponent(make_shared<buttonComponent>(convoy));
+    convoy->AddComponent(make_shared<movementComponent>(convoy, 100));
+    vector<int> max = { 100, 100, 100, 100, 100 };
+    vector<int> count = { 50, 50, 50, 50, 50 };
+    if (entity->FirstChildElement("Resources")) {
+        XMLElement* resources = entity->FirstChildElement("Resources");
+        count[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        count[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        count[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        count[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+    }
+    convoy->AddComponent(make_shared<resourceComponent>(convoy, max, count, loadResourceTextures()));
+}
+
+
 void MapLoader::loadDepot(XMLElement* entity)
 {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
-    int width = atoi(entity->FirstChildElement("width")->GetText()) / 2; // div 2 as ogmo editor does not allow value of 1
-    int height = atoi(entity->FirstChildElement("height")->GetText()) / 2;
+    int width = 4; // number of tiles 
+    int height = 4;
     depot = new DepotObj(x, y, width, height);
 	addDepotComponents(depot, entity);
 }
@@ -226,6 +262,31 @@ void MapLoader::save_unit(XMLElement* entity, XMLDocument& doc, vector<UnitObj*>
         }
     }
 }
+
+void MapLoader::save_convoy(XMLElement* entity, XMLDocument& doc, vector<ConvoyObj*> convoys)
+{
+    for (auto& convoy : convoys) {
+        if (convoy->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+            entity->FirstChildElement("x")->SetText(static_cast<int>(convoy->getDimensions().x));
+            entity->FirstChildElement("y")->SetText(static_cast<int>(convoy->getDimensions().y));
+            if (entity->FirstChildElement("target_x")) {
+                entity->FirstChildElement("target_x")->SetText(convoy->getTargetPos().first);
+                entity->FirstChildElement("target_y")->SetText(convoy->getTargetPos().second);
+            }
+            else {
+                XMLElement* target = doc.NewElement("target_x");
+                target->SetText(convoy->getTargetPos().first);
+                entity->InsertAfterChild(entity->FirstChildElement("originY"), target);
+                target = doc.NewElement("target_y");
+                target->SetText(convoy->getTargetPos().second);
+                entity->InsertAfterChild(entity->FirstChildElement("target_x"), target);
+            }
+            save_resources(entity, doc, convoy);
+            break;
+        }
+    }
+}
+
 
 void MapLoader::save_depot(XMLElement* entity, XMLDocument& doc, DepotObj* depot)
 {
