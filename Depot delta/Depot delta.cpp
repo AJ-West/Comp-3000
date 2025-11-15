@@ -87,34 +87,6 @@ vector<SDL_Texture*> loadResourceTextures() {
     return resourceTextures;
 }
 
-
-void make_units() {
-	vector<SDL_Texture*> resourceTextures = loadResourceTextures();
-    vector<int> max = { 100, 100, 100, 100, 100 };
-    vector<int> count = { 50, 50, 50, 50, 50 };
-    for (auto& unit : unitList) {
-        unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
-        unit->AddComponent(make_shared<buttonComponent>(unit));
-        unit->AddComponent(make_shared<movementComponent>(unit, 50));
-        unit->AddComponent(make_shared<resourceComponent>(unit, max, count, resourceTextures));
-    }
-}
-
-void makeDepot() {
-    vector<SDL_Texture*> resourceTextures = loadResourceTextures();
-    vector<int> max = { 1000, 1000, 1000, 1000, 1000 };
-    vector<int> count = { 500, 500, 500, 500, 500 };
-    depot->AddComponent(make_shared<renderComponent>(depot, renderer, "draftArt/depot.png"));
-    depot->AddComponent(make_shared<buttonComponent>(depot));
-    depot->AddComponent(make_shared<movementComponent>(depot, 50));
-    depot->AddComponent(make_shared<resourceComponent>(depot, max, count, resourceTextures));
-	depot->getComponent<resourceComponent>()->setResourceIncrease(PERSONNEL, 5);
-	depot->getComponent<resourceComponent>()->setResourceIncrease(AMMUNITION, 5);
-	depot->getComponent<resourceComponent>()->setResourceIncrease(DOS, 5);
-	depot->getComponent<resourceComponent>()->setResourceIncrease(FUEL, 5);
-	depot->getComponent<resourceComponent>()->setResourceIncrease(SCRAP, 5);
-}
-
 void checkUnitHover(SDL_Event event) {
 	for (auto& unit : unitList) {
         unit->checkHover(event.motion.x, event.motion.y);
@@ -164,9 +136,7 @@ int main()
     init_environment();
     MapLoader manager("maps/test.xml", renderer);
 	unitList = manager.getUnitList();
-    make_units();
 	depot = manager.getDepot();
-    makeDepot();
     
 
 	Uint32 lastTime = SDL_GetTicks();

@@ -9,6 +9,11 @@
 #include "unitObject.h"
 #include "depot.h"
 
+#include "renderComponent.h"
+#include "buttonComponent.h"
+#include "movementComponent.h"
+#include "resourceComponent.h"
+
 using namespace std;
 using namespace tinyxml2;
 
@@ -20,6 +25,14 @@ public:
 
 	void loadTilemap(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
+	
+	void loadUnit(XMLElement* layer);
+	void loadDepot(XMLElement* layer);
+
+	void addUnitComponents(UnitObj* unit, XMLElement* entity);
+	void addDepotComponents(DepotObj* unit, XMLElement* entity);
+
+	vector<SDL_Texture*> loadResourceTextures();
 
 	void saveFile(const char* filename, vector<UnitObj*> units, DepotObj* depot);
 

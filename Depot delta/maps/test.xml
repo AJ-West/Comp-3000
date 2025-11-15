@@ -8508,11 +8508,11 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>520</Personnel>
-                <Ammunition>520</Ammunition>
-                <DoS>520</DoS>
-                <Fuel>520</Fuel>
-                <Scrap>520</Scrap>
+                <Personnel>545</Personnel>
+                <Ammunition>545</Ammunition>
+                <DoS>545</DoS>
+                <Fuel>545</Fuel>
+                <Scrap>545</Scrap>
             </Resources>
         </entities>
     </layers>
