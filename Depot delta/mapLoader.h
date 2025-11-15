@@ -46,7 +46,7 @@ public:
 
 private:
 	int width, height;
-	int x_cells, y_cells;
+	int xCells, yCells;
     vector<vector<int>> tilelocs;
     vector<vector<SDL_FRect>> tilemap;
 

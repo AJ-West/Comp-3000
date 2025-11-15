@@ -24,13 +24,14 @@ public:
 	MapSaver(const char* filename);
 	~MapSaver();
 
-	void save_unit(XMLElement* entity, vector<UnitObj*> units);
-	void save_convoy(XMLElement* entity, vector<ConvoyObj*> convoys);
-	void save_depot(XMLElement* entity, DepotObj* depot);
+	void saveUnit(XMLElement* entity, vector<UnitObj*> units);
+	void saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys);
+	void saveDepot(XMLElement* entity, DepotObj* depot);
 
 	void saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys);
 
-	void save_resources(XMLElement* entity, GameObject* unit);
+	void saveResources(XMLElement* entity, GameObject* obj);
+	void saveMovement(XMLElement* entity, GameObject* obj);
 
 private:
 	XMLDocument doc;

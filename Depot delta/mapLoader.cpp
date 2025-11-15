@@ -41,12 +41,12 @@ void MapLoader::loadTilemap(XMLElement* layer)
 {
     tileWidth = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
     tileHeight = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
-    x_cells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
-    y_cells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
+    xCells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
+    yCells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
     XMLElement* data = layer->FirstChildElement("data");
-	for (int i = 0; i < y_cells; i++) {
+	for (int i = 0; i < yCells; i++) {
 		vector<SDL_FRect> row;
-		for (int j = 0; j < x_cells; j++) {
+		for (int j = 0; j < xCells; j++) {
             div_t loc = div(atoi(data->GetText()), 8); // gettile value as int then conver to location on tilemap spritesheet
 			SDL_FRect cell;
 			cell.x = loc.rem * tileWidth;
