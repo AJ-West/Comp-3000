@@ -143,6 +143,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapLoader.cpp" />
     <ClCompile Include="mapSaver.cpp" />
+    <ClCompile Include="selectedHandler.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="usefulFunctions.cpp" />
     <ClCompile Include="variables.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="resourceComponent.h" />
+    <ClInclude Include="selectedHandler.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="unitObject.h" />
     <ClInclude Include="usefulFunctions.h" />

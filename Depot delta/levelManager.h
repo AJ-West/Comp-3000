@@ -6,6 +6,7 @@
 #include "tinyxml2.h"
 #include "mapLoader.h"
 #include "mapSaver.h"
+#include "selectedHandler.h"
 
 #include "unitObject.h"
 #include "depotObject.h"
@@ -30,9 +31,6 @@ public:
 	void handleInput(SDL_Event event);
 	void render();
 
-	void checkHover(SDL_Event event);
-	void checkClick();
-
 private:
 	SDL_Renderer* renderer;
 
@@ -41,5 +39,7 @@ private:
 	vector<ConvoyObj*> convoyList;
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;
+
+	SelectedHandler* selector;
 };
 

@@ -5,6 +5,10 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     unitList = mapLoader->getUnitList();
     depot = mapLoader->getDepot();
     convoyList = mapLoader->getConvoyList();
+	vector<GameObject*> allObjects;
+	allObjects.insert(allObjects.end(), unitList.begin(), unitList.end());
+	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
+	selector = new SelectedHandler(allObjects);
 }
 
 LevelManager::~LevelManager()
@@ -20,11 +24,11 @@ void LevelManager::exit()
 void LevelManager::handleInput(SDL_Event event)
 {
     if (event.type == SDL_EVENT_MOUSE_MOTION) {
-        checkHover(event);
+		selector->checkHover(event);
             }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
-            checkClick();
+			selector->checkClick();
         }
             }
     else if (event.type == SDL_EVENT_KEY_DOWN) {
@@ -63,93 +67,4 @@ void LevelManager::render()
     SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
     SDL_RenderFillRect(renderer, &depotRes);
     depot->renderHover(renderer);
-}
-
-
-void LevelManager::checkHover(SDL_Event event) {
-    for (auto& unit : unitList) {
-        unit->checkHover(event.motion.x, event.motion.y);
-    }
-    for (auto& convoy : convoyList) {
-        convoy->checkHover(event.motion.x, event.motion.y);
-    }
-}
-
-void LevelManager::checkClick() {
-    UnitObj* selectedUnit = nullptr;
-    ConvoyObj* selectedConvoy = nullptr;
-    //see if there is a currently selected unit
-    for (auto& unit : unitList) {
-        if (unit->getSelected()) {
-            selectedUnit = unit;
-            break;
-        }
-    }
-
-    //see if there is a currently selected convoy
-    for (auto& convoy : convoyList) {
-        if (convoy->getSelected()) {
-            selectedConvoy = convoy;
-            break;
-        }
-    }
-
-    bool selectedSomething = false;
-
-    //see if a unit has been clicked
-    for (auto& unit : unitList) {
-        if (unit->getHovering() && !unit->getSelected()) {
-            unit->onClick();
-            if (selectedUnit) {
-                selectedUnit->onClick();
-            }
-            selectedUnit = unit;
-            selectedSomething = true;
-            break;
-        }
-        else if (unit->getHovering() && unit->getSelected()) {
-            selectedUnit = nullptr;
-            unit->onClick();
-            selectedSomething = true;
-            break;
-
-        }
-    }
-
-    if (!selectedSomething) {
-        //see if a convoy has been clicked
-        for (auto& convoy : convoyList) {
-            if (convoy->getHovering() && !convoy->getSelected()) {
-                convoy->onClick();
-                if (selectedConvoy) {
-                    selectedConvoy->onClick();
-                }
-                selectedConvoy = convoy;
-                selectedSomething = true;
-                if (selectedUnit) {
-                    selectedUnit->onClick();
-                    selectedUnit = nullptr;
-                }
-                break;
-            }
-            else if (convoy->getHovering() && convoy->getSelected()) {
-                selectedConvoy = nullptr;
-                convoy->onClick();
-                selectedSomething = true;
-                break;
-
-            }
-        }
-    }
-    else if (selectedConvoy) {
-        selectedConvoy->onClick();
-        selectedConvoy = nullptr;
-    }
-
-    if (!selectedSomething && selectedUnit) {
-        selectedUnit->clickAway();
-    }
-    else if (!selectedSomething && selectedConvoy) {
-        selectedConvoy->clickAway();
-    }
 }

@@ -1,9 +1,8 @@
 #pragma once
 #include "GameObject.h"
-#include "buttonBase.h"
 #include "resourceComponent.h"
 
-class ConvoyObj : public GameObject, public BaseButton {
+class ConvoyObj : public GameObject {
 public:
 	ConvoyObj(int x, int y, int width, int height, int id) : GameObject(x, y, width, height), ID(id) {}
 
@@ -11,7 +10,7 @@ public:
 		selected = !selected;
 	}
 
-	void clickAway() {
+	void clickAway() { // set target pos to clicked position
 		getScaledMousePos(&tx, &ty);
 	}
 

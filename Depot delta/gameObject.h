@@ -12,6 +12,7 @@
 
 #include "usefulFunctions.h"
 #include "variables.h"
+#include "buttonBase.h"
 
 
 using namespace std;
@@ -30,7 +31,7 @@ protected:
 	GameObject* owner;
 };
 
-class GameObject {
+class GameObject : public BaseButton {
 public:
 	GameObject(int x, int y, int width, int height){
 		size.x = x;
@@ -58,6 +59,7 @@ public:
 
 	// Pure virtual functions
 	virtual void renderHover(SDL_Renderer* renderer) = 0;
+	virtual void clickAway() = 0; // used for when clicking away from the selected object
 
 	//getters
 	SDL_Texture getTexture() { return texture; }
