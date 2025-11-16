@@ -66,6 +66,7 @@ public:
 	SDL_FRect getDimensions() { return size; }
 	bool getSelected() { return selected; }
 	bool getHovering() { return hovering; }
+	SDL_FRect getSize() { return size; }
 
 	//setters
 	void setX(float x) { size.x = x; }

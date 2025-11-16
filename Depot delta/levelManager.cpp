@@ -25,18 +25,21 @@ void LevelManager::handleInput(SDL_Event event)
 {
     if (event.type == SDL_EVENT_MOUSE_MOTION) {
 		selector->checkHover(event);
-            }
+    }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
 			selector->checkClick();
         }
-            }
+        else if (event.button.button == SDL_BUTTON_RIGHT) {
+            selector->rightClick();
+        }
+    }
     else if (event.type == SDL_EVENT_KEY_DOWN) {
         camera.keyDown(event.key.key);
-            }
+    }
     else if (event.type == SDL_EVENT_KEY_UP) {
         camera.keyUp(event.key.key);
-            }
+    }
 }
 
 void LevelManager::render()

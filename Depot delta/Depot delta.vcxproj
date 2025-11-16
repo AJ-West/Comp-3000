@@ -171,6 +171,7 @@
     <ClInclude Include="movementComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="resourceComponent.h" />
+    <ClInclude Include="resourceTransferComponent.h" />
     <ClInclude Include="selectedHandler.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="unitObject.h" />

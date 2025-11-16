@@ -19,12 +19,16 @@ void SelectedHandler::checkHover(SDL_Event event) {
 	hoveredObj = nullptr;
 }
 
+void SelectedHandler::deselectObject() {
+    selectedObject->onClick();
+    selectedObject = nullptr;
+}
+
 void SelectedHandler::checkClick() {
     bool selectedSomething = false;
     if (selectedObject && hoveredObj) { // if something is selected
         if (selectedObject->getHovering()) { // if deselecting current object
-            selectedObject->onClick();
-            selectedObject = nullptr;
+			deselectObject();
             selectedSomething = true;
         }
         else {
@@ -42,4 +46,22 @@ void SelectedHandler::checkClick() {
     if (!selectedSomething && selectedObject) { // clicked away
         selectedObject->clickAway();
     }
+}
+
+void SelectedHandler::rightClick() {
+	if (selectedObject) {
+        if (typeid(*selectedObject).name() == typeid(ConvoyObj).name()) {
+			if (!hoveredObj || typeid(*hoveredObj).name() == typeid(ConvoyObj).name()) {
+				deselectObject();
+				return;
+            }
+            else {
+                //add resource transfer component
+				selectedObject->getComponent<resourceTransferComponent>()->initiateTransfer(hoveredObj);
+            }
+        }
+        else {
+			deselectObject();
+        }
+	}
 }

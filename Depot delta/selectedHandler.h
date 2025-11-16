@@ -8,6 +8,9 @@
 #include "mapSaver.h"
 
 #include "gameObject.h"
+#include "convoyObject.h"
+
+#include "resourceTransferComponent.h"
 
 #include "variables.h"
 
@@ -21,6 +24,9 @@ public:
 
 	void checkHover(SDL_Event event);
 	void checkClick();
+	void rightClick();
+
+	void deselectObject();
 
 private:
 	SDL_Renderer* renderer;

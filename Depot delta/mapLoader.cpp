@@ -140,6 +140,7 @@ void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     convoy->AddComponent(make_shared<resourceComponent>(convoy, max, count, loadResourceTextures()));
+    convoy->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, 50));
 }
 
 

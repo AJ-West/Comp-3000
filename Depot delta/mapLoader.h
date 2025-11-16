@@ -14,6 +14,7 @@
 #include "buttonComponent.h"
 #include "movementComponent.h"
 #include "resourceComponent.h"
+#include "resourceTransferComponent.h"
 
 using namespace std;
 using namespace tinyxml2;

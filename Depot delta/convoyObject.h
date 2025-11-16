@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "resourceComponent.h"
+#include "resourceTransferComponent.h"
 
 class ConvoyObj : public GameObject {
 public:
@@ -18,6 +19,10 @@ public:
 		auto rComp = getComponent<resourceComponent>();
 		if (rComp) {
 			rComp->renderResources(renderer, iSize, tSize);
+		}
+		auto rTComp = getComponent<resourceTransferComponent>();
+		if (rTComp) {
+			rTComp->renderTransferArea();
 		}
 	}
 

@@ -68,7 +68,7 @@ void init_environment() {
 	//SDL_SetRenderScale(renderer, scaleX, scaleY);
     //Used to render consistenly regardless of screensize
 	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth, ResolutionHeight, SDL_LOGICAL_PRESENTATION_LETTERBOX);
-
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     isRunning = true;
 }
 

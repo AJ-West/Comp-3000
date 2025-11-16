@@ -110,5 +110,8 @@
     <ClInclude Include="selectedHandler.h">
       <Filter>Source Files\level handling</Filter>
     </ClInclude>
+    <ClInclude Include="resourceTransferComponent.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
