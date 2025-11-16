@@ -6,8 +6,41 @@ class resourceTransferComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		if (transfering) { 
+			checkTime();
 			renderTransferIndicator();
 			checkTransfer(); 
+		}
+	}
+
+	void checkTime() {
+		timeCount += 1;
+		if (timeCount == 60) {
+			timeCount = 0;
+			transferResource();
+		}
+	}
+
+	void transferResource() {
+		bool increase = false;
+		for (int i = 0; i < transferRate.size(); i++) {
+			if (ownerResComp->getResourcesCount(i) < transferRate[i]) {
+				ownerResComp->setResourceUsage(i, ownerResComp->getResourcesCount(i));
+				targetResComp->setResourceIncrease(i, ownerResComp->getResourcesCount(i));
+				increase = true;
+			}
+			else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) {
+				ownerResComp->setResourceUsage(i, targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i));
+				targetResComp->setResourceIncrease(i, targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i));
+				increase = true;
+			}
+			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i)){
+				ownerResComp->setResourceUsage(i, transferRate[i]);
+				targetResComp->setResourceIncrease(i, transferRate[i]);
+				increase = true;
+			}
+		}
+		if (!increase) {
+			stopTransfer();
 		}
 	}
 
@@ -29,6 +62,8 @@ public:
 		//TO-DO: transfer resources between depot and convoy
 		if (checkDistance()) {
 			transfering = true;
+			ownerResComp = owner->getComponent<resourceComponent>();
+			targetResComp = target->getComponent<resourceComponent>();
 			cout << "Initiating resource transfer" << endl;
 		}
 		else {
@@ -45,6 +80,8 @@ public:
 	void stopTransfer() {
 		transfering = false;
 		target = nullptr;
+		ownerResComp = nullptr;
+		targetResComp = nullptr;
 		cout << "Stopping resource transfer" << endl;
 	}
 
@@ -62,13 +99,20 @@ public:
 		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2, ownerRect.y + ownerRect.h / 2, targetRect.x + targetRect.w / 2, targetRect.y + targetRect.h / 2);
 	}
 
-	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance) : Component(obj), renderer(SDL_Renderer), transferDistance(distance) {	}
+	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
 	virtual ~resourceTransferComponent() {}
 private:
 	GameObject* target;
 	SDL_Renderer* renderer;
 
+	shared_ptr<resourceComponent> ownerResComp = nullptr;
+	shared_ptr<resourceComponent> targetResComp = nullptr;
+
+	vector<int> transferRate;
+
 	bool transfering = false;
 
 	float transferDistance;
+
+	int timeCount = 0;
 };

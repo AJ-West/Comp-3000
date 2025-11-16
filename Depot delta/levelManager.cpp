@@ -8,6 +8,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	vector<GameObject*> allObjects;
 	allObjects.insert(allObjects.end(), unitList.begin(), unitList.end());
 	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
+	allObjects.push_back(depot);
 	selector = new SelectedHandler(allObjects);
 }
 
@@ -45,6 +46,7 @@ void LevelManager::handleInput(SDL_Event event)
 void LevelManager::render()
 {
 	mapLoader->renderTileMap(renderer);
+    depot->Update();
     hoveredUnit = nullptr;
     for (auto& unit : unitList) {
         unit->Update();
@@ -58,7 +60,6 @@ void LevelManager::render()
             hoveredUnit = convoy;
         }
     }
-    depot->Update();
     camera.update();
     if (hoveredUnit) {
         SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.width, 100 };

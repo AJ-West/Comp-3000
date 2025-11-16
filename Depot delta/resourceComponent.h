@@ -53,6 +53,7 @@ public:
 
 	//getters
 	int getResourcesCount(int index) { return resourcesCount[index]; }
+	int getResourcesMax(int index) { return resourcesMax[index]; }
 
 	//setters
 	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }
