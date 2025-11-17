@@ -15,6 +15,7 @@
 #include "movementComponent.h"
 #include "resourceComponent.h"
 #include "resourceTransferComponent.h"
+#include "pathfindingComponent.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -56,4 +57,6 @@ private:
 	DepotObj* depot;
 	vector<UnitObj*> unitList;
 	vector<ConvoyObj*> convoyList;
+
+	vector<vector<Tile>> grid;
 };

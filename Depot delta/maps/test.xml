@@ -8463,12 +8463,12 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
-            <x>9</x>
-            <y>123</y>
+            <x>297</x>
+            <y>66</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>17</target_x>
-            <target_y>132</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
@@ -8480,12 +8480,12 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>4</id>
-            <x>27</x>
-            <y>84</y>
+            <x>8</x>
+            <y>175</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>35</target_x>
-            <target_y>92</target_y>
+            <target_x>16</target_x>
+            <target_y>184</target_y>
             <Resources>
                 <Personnel>90</Personnel>
                 <Ammunition>90</Ammunition>
@@ -8512,12 +8512,12 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>8</id>
-            <x>56</x>
-            <y>83</y>
+            <x>40</x>
+            <y>72</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>64</target_x>
-            <target_y>91</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>10</Personnel>
                 <Ammunition>10</Ammunition>

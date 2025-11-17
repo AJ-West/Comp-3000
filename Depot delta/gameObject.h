@@ -75,7 +75,7 @@ public:
 	void setHovering(bool hover) { hovering = hover; }
 
 	//pure virtual getters
-	virtual pair<float, float> getTargetPos() { return pair<float, float>{NULL, NULL}; };
+	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
 	
 	//pure virtual setters
 	virtual void setTarget(float x, float y) { cout << "target set"; }

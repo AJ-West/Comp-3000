@@ -43,11 +43,13 @@ void MapLoader::loadTilemap(XMLElement* layer)
     tileHeight = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
     xCells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
     yCells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
+	grid.resize(yCells, vector<Tile>(xCells));
     XMLElement* data = layer->FirstChildElement("data");
 	for (int i = 0; i < yCells; i++) {
 		vector<SDL_FRect> row;
 		for (int j = 0; j < xCells; j++) {
-            div_t loc = div(atoi(data->GetText()), 8); // gettile value as int then conver to location on tilemap spritesheet
+			int pos = atoi(data->GetText()); // position in spritesheet
+            div_t loc = div(pos, 8); // gettile value as int then conver to location on tilemap spritesheet
 			SDL_FRect cell;
 			cell.x = loc.rem * tileWidth;
 			cell.y = loc.quot * tileHeight;
@@ -55,6 +57,7 @@ void MapLoader::loadTilemap(XMLElement* layer)
 			cell.h = tileHeight;
 			row.push_back(cell);
             data = data->NextSiblingElement("data");
+            if (pos == 9) { grid[i][j].walkable = true; } // if tile is generic (hardcoded while using basic tilemap)
 		}
 		tilemap.push_back(row);
 	}
@@ -86,10 +89,10 @@ void MapLoader::loadUnit(XMLElement* entity)
     int width = 1; // number of tiles
     int height = 1;
     UnitObj* unit = new UnitObj(x, y, width, height, id);
+    addUnitComponents(unit, entity);
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    addUnitComponents(unit, entity);
     unitList.emplace_back(unit);
 }
 
@@ -108,6 +111,7 @@ void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
 		count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     unit->AddComponent(make_shared<resourceComponent>(unit, max, count, loadResourceTextures()));
+    unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
 }
 
 void MapLoader::loadConvoy(XMLElement* entity)
@@ -118,10 +122,10 @@ void MapLoader::loadConvoy(XMLElement* entity)
     int width = 1; // number of tiles
     int height = 1;
     ConvoyObj* convoy = new ConvoyObj(x, y, width, height, id);
+    addConvoyComponents(convoy, entity);
     if (entity->FirstChildElement("target_x")) {
         convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    addConvoyComponents(convoy, entity);
     convoyList.emplace_back(convoy);
 }
 
@@ -142,6 +146,7 @@ void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
     convoy->AddComponent(make_shared<resourceComponent>(convoy, max, count, loadResourceTextures()));
 	vector<int> transferRate = { 5,5,5,5,5 };
     convoy->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, 50, transferRate));
+    convoy->AddComponent(make_shared<pathfindingComponent>(convoy, grid));
 }
 
 
@@ -201,6 +206,8 @@ void MapLoader::renderTileMap(SDL_Renderer* renderer) {
     for (auto& row : tilemap) {
         for (auto& column : row) {
             SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
+            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+			SDL_RenderRect(renderer, &destRect);
             destRect.x += tileWidth;
         }
 		destRect.x = -camera.x;

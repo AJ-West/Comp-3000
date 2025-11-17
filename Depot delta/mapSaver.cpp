@@ -106,15 +106,15 @@ void MapSaver::saveMovement(XMLElement* entity, GameObject* obj) {
     entity->FirstChildElement("x")->SetText(static_cast<int>(obj->getDimensions().x));
     entity->FirstChildElement("y")->SetText(static_cast<int>(obj->getDimensions().y));
     if (entity->FirstChildElement("target_x")) {
-        entity->FirstChildElement("target_x")->SetText(obj->getTargetPos().first);
-        entity->FirstChildElement("target_y")->SetText(obj->getTargetPos().second);
+        entity->FirstChildElement("target_x")->SetText(obj->getTargetPos().x);
+        entity->FirstChildElement("target_y")->SetText(obj->getTargetPos().y);
     }
     else {
         XMLElement* target = doc.NewElement("target_x");
-        target->SetText(obj->getTargetPos().first);
+        target->SetText(obj->getTargetPos().x);
         entity->InsertAfterChild(entity->FirstChildElement("originY"), target);
         target = doc.NewElement("target_y");
-        target->SetText(obj->getTargetPos().second);
+        target->SetText(obj->getTargetPos().y);
         entity->InsertAfterChild(entity->FirstChildElement("target_x"), target);
     }
 }

@@ -13,6 +13,7 @@ public:
 
 	void clickAway() { // set target pos to clicked position
 		getScaledMousePos(&tx, &ty);
+		pathToTarget();
 	}
 
 	void renderHover(SDL_Renderer* renderer) {
@@ -27,11 +28,22 @@ public:
 	}
 
 	//getters
-	pair<float, float> getTargetPos() { return pair<float, float>{tx, ty}; }
+	Vec2 getTargetPos() { return Vec2{tx, ty}; }
 	int getID() { return ID; }
 
 	//setters
-	virtual void setTarget(float x, float y) { tx = x; ty = y; };
+	virtual void setTarget(float x, float y) { 
+		tx = x; ty = y;
+		pathToTarget();
+	};
+
+	void pathToTarget() {
+		Vec2 target = { tx,ty };
+		SDL_FRect size = getDimensions();
+		Vec2 origin = { size.x + size.w / 2, size.y + size.h / 2 };
+		auto pathComp = getComponent<pathfindingComponent>();
+		pathComp->computeFlowField(target, origin);
+	}
 
 private:
 	int ID;

@@ -13,6 +13,9 @@ int ResolutionHeight = 1080/2;
 
 int worldWidth = 1984;
 int worldHeight = 1088;
+const int WORLD_TILE_SIZE = 16;
+const int WORLD_TILE_COLS = worldWidth / WORLD_TILE_SIZE;
+const int WORLD_TILE_ROWS = worldHeight / WORLD_TILE_SIZE;
 
 //Scaling art
 float tileWidth;

@@ -169,6 +169,7 @@
     <ClInclude Include="mapLoader.h" />
     <ClInclude Include="mapSaver.h" />
     <ClInclude Include="movementComponent.h" />
+    <ClInclude Include="pathfindingComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="resourceComponent.h" />
     <ClInclude Include="resourceTransferComponent.h" />

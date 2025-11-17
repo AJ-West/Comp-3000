@@ -18,6 +18,9 @@ extern int ResolutionWidth;
 extern int ResolutionHeight;
 extern int worldWidth;
 extern int worldHeight;
+extern const int WORLD_TILE_SIZE;
+extern const int WORLD_TILE_COLS;
+extern const int WORLD_TILE_ROWS;
 
 //Scaling art
 extern float tileWidth;
@@ -98,6 +101,17 @@ enum Resource {
 	FUEL,
 	SCRAP,
 	RESOURCE_COUNT
+};
+
+struct Vec2 {
+	float x;
+	float y;
+};
+
+struct Tile {
+	bool walkable = false;
+	int cost = INT_MAX; // used for pathfinding
+	Vec2 direction = { 0,0 }; // used for flow field pathfinding
 };
 
 #endif // !VARIABLES_H
