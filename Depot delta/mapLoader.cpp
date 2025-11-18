@@ -57,7 +57,7 @@ void MapLoader::loadTilemap(XMLElement* layer)
 			cell.h = tileHeight;
 			row.push_back(cell);
             data = data->NextSiblingElement("data");
-            if (pos == 9) { grid[i][j].walkable = true; } // if tile is generic (hardcoded while using basic tilemap)
+            if (pos >= 20) { grid[i][j].walkable = true; } // if tile is generic (hardcoded while using basic tilemap)
 		}
 		tilemap.push_back(row);
 	}
@@ -206,8 +206,8 @@ void MapLoader::renderTileMap(SDL_Renderer* renderer) {
     for (auto& row : tilemap) {
         for (auto& column : row) {
             SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-			SDL_RenderRect(renderer, &destRect);
+            //SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+			//SDL_RenderRect(renderer, &destRect);
             destRect.x += tileWidth;
         }
 		destRect.x = -camera.x;
