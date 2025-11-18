@@ -8,8 +8,8 @@ float deltaTime = 0;
 // Screen
 int screenWidth = 1920/2;
 int screenHeight = 1080/2;
-int ResolutionWidth = 1920/2;
-int ResolutionHeight = 1080/2;
+int ResolutionWidth = screenWidth/2;
+int ResolutionHeight = screenHeight/2;
 
 int worldWidth = 1984;
 int worldHeight = 1088;
