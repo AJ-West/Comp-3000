@@ -22,6 +22,8 @@
 
 #include "levelManager.h"
 
+#include "dayCycle.h"
+
 using namespace std;
 using namespace tinyxml2;
 
@@ -78,6 +80,8 @@ int main()
     init_environment();
 	LevelManager manager(renderer);
 
+    dayCycle cycle;
+
 	Uint32 lastTime = SDL_GetTicks();
 
     while (isRunning) {
@@ -100,6 +104,8 @@ int main()
 
 		SDL_RenderClear(renderer);
         manager.render();
+        cycle.update();
+        cycle.render(renderer);
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderPresent(renderer);
 
