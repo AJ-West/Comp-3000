@@ -152,10 +152,10 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(44,61):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(37,17): warning C4804: '<': unsafe use of type 'bool' in operation
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(42,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(59,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(98,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(101,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(124,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(140,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(152,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(153,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(94,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(97,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(110,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(125,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(137,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(138,23): warning C4018: '<': signed/unsigned mismatch
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe
