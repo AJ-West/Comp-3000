@@ -63,15 +63,24 @@ void init_environment() {
         return;
     }
 
-	float scaleX = static_cast<float>(screenWidth) / ResolutionWidth;
-	float scaleY = static_cast<float>(screenHeight) / ResolutionHeight;
+	float scaleX = 1;
+	float scaleY = 1;
 
     //Can be used for setting resolution (will be useful when adding settings)
-	//SDL_SetRenderScale(renderer, scaleX, scaleY);
+	SDL_SetRenderScale(renderer, zoom, zoom);
     //Used to render consistenly regardless of screensize
 	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth, ResolutionHeight, SDL_LOGICAL_PRESENTATION_LETTERBOX);
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     isRunning = true;
+}
+
+void clamp_zoom() {
+    if (zoom > 2.0f) {
+        zoom = 2.0f;
+    }
+    else if (zoom < 0.5f) {
+        zoom = 0.5f;
+    }
 }
 
 int main()
@@ -80,7 +89,7 @@ int main()
     init_environment();
 	LevelManager manager(renderer);
 
-    dayCycle cycle;
+    //dayCycle cycle;
 
 	Uint32 lastTime = SDL_GetTicks();
 
@@ -93,6 +102,21 @@ int main()
             if (event.type == SDL_EVENT_QUIT) {
                 isRunning = false;
             }
+            else if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+                //mouse position before zoom
+                float mxb = NULL;
+                float myb = NULL;
+                getScaledMousePos(&mxb, &myb);
+                zoom += event.wheel.y * 0.1; // zoom in or out based on mouse wheel scroll
+                clamp_zoom();
+                SDL_SetRenderScale(renderer, zoom, zoom);
+                //mouse position after zoom
+                float mxa = NULL;
+                float mya = NULL;
+                getScaledMousePos(&mxa, &mya);
+                camera.x += mxb - mxa;
+                camera.y += myb - mya;
+            }
             else {
 				manager.handleInput(event);
             }
@@ -104,8 +128,8 @@ int main()
 
 		SDL_RenderClear(renderer);
         manager.render();
-        cycle.update();
-        cycle.render(renderer);
+        //cycle.update();
+        //cycle.render(renderer);
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderPresent(renderer);
 

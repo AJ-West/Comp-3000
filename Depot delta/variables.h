@@ -22,6 +22,9 @@ extern const int WORLD_TILE_SIZE;
 extern const int WORLD_TILE_COLS;
 extern const int WORLD_TILE_ROWS;
 
+//camera zoom
+extern float zoom;
+
 //Scaling art
 extern float tileWidth;
 extern float tileHeight;
