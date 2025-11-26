@@ -5,9 +5,11 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     unitList = mapLoader->getUnitList();
     depot = mapLoader->getDepot();
     convoyList = mapLoader->getConvoyList();
+	zombieList = mapLoader->getZombieList();
 	vector<GameObject*> allObjects;
 	allObjects.insert(allObjects.end(), unitList.begin(), unitList.end());
 	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
+	allObjects.insert(allObjects.end(), zombieList.begin(), zombieList.end());
 	allObjects.push_back(depot);
 	selector = new SelectedHandler(allObjects);
 }
@@ -60,6 +62,7 @@ void LevelManager::render()
             hoveredUnit = convoy;
         }
     }
+    for (auto& zombie : zombieList) { zombie->Update(); }
     camera.update();
     if (hoveredUnit) {
         SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.width, 100 };

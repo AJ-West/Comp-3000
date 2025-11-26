@@ -77,7 +77,13 @@ void MapLoader::loadEntities(XMLElement* layer)
         if (name == "Basic Convoy") {
             loadConvoy(entity);
         }
+        if (name == "Basic Zombie") {
+            loadZombie(entity);
+        }
 		entity = entity->NextSiblingElement("entities");
+	}
+	for (auto& zombie : zombieList) {
+		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitList);
 	}
 }
 
@@ -147,6 +153,28 @@ void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
 	vector<int> transferRate = { 5,5,5,5,5 };
     convoy->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, 50, transferRate));
     convoy->AddComponent(make_shared<pathfindingComponent>(convoy, grid));
+}
+
+void MapLoader::loadZombie(XMLElement* entity)
+{
+    int x = atoi(entity->FirstChildElement("x")->GetText());
+    int y = atoi(entity->FirstChildElement("y")->GetText());
+    int id = atoi(entity->FirstChildElement("id")->GetText());
+    int width = 1; // number of tiles
+    int height = 1;
+    ZombieObj* zombie = new ZombieObj(x, y, width, height, id);
+    addZombieComponents(zombie, entity);
+    if (entity->FirstChildElement("target_x")) {
+        zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
+    }
+    zombieList.emplace_back(zombie);
+}
+
+void MapLoader::addZombieComponents(ZombieObj* zombie, XMLElement* entity) {
+    zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
+    zombie->AddComponent(make_shared<movementComponent>(zombie, 10));
+    zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+	zombie->AddComponent(make_shared<nearestComponent>(zombie));
 }
 
 

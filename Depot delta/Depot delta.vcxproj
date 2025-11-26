@@ -147,6 +147,7 @@
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="usefulFunctions.cpp" />
     <ClCompile Include="variables.cpp" />
+    <ClCompile Include="zombieObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SDL\SDL\SDL\VisualC\SDL\SDL.vcxproj">
@@ -169,6 +170,7 @@
     <ClInclude Include="mapLoader.h" />
     <ClInclude Include="mapSaver.h" />
     <ClInclude Include="movementComponent.h" />
+    <ClInclude Include="nearestComponent.h" />
     <ClInclude Include="pathfindingComponent.h" />
     <ClInclude Include="renderComponent.h" />
     <ClInclude Include="resourceComponent.h" />
@@ -178,6 +180,7 @@
     <ClInclude Include="unitObject.h" />
     <ClInclude Include="usefulFunctions.h" />
     <ClInclude Include="variables.h" />
+    <ClInclude Include="zombieObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

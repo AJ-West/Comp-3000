@@ -9,6 +9,7 @@
 #include "unitObject.h"
 #include "depotObject.h"
 #include "convoyObject.h"
+#include "zombieObject.h"
 
 #include "renderComponent.h"
 #include "buttonComponent.h"
@@ -16,6 +17,7 @@
 #include "resourceComponent.h"
 #include "resourceTransferComponent.h"
 #include "pathfindingComponent.h"
+#include "nearestComponent.h"
 
 using namespace std;
 using namespace tinyxml2;
@@ -31,10 +33,12 @@ public:
 	
 	void loadUnit(XMLElement* layer);
 	void loadConvoy(XMLElement* layer);
+	void loadZombie(XMLElement* layer);
 	void loadDepot(XMLElement* layer);
 
 	void addUnitComponents(UnitObj* unit, XMLElement* entity);
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
+	void addZombieComponents(ZombieObj* zombie, XMLElement* entity);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 
 	vector<SDL_Texture*> loadResourceTextures();
@@ -44,6 +48,7 @@ public:
 	//getters
 	vector<UnitObj*> getUnitList() { return unitList; }
 	vector<ConvoyObj*> getConvoyList() { return convoyList; }
+	vector<ZombieObj*> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
 
 private:
@@ -57,6 +62,7 @@ private:
 	DepotObj* depot;
 	vector<UnitObj*> unitList;
 	vector<ConvoyObj*> convoyList;
+	vector<ZombieObj*> zombieList;
 
 	vector<vector<Tile>> grid;
 };

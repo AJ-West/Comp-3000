@@ -8463,12 +8463,12 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
-            <x>283</x>
-            <y>347</y>
+            <x>59</x>
+            <y>184</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>291</target_x>
-            <target_y>356</target_y>
+            <target_x>67</target_x>
+            <target_y>193</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
@@ -8480,12 +8480,12 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>4</id>
-            <x>80</x>
-            <y>56</y>
+            <x>78</x>
+            <y>52</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <target_x>86</target_x>
+            <target_y>60</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
@@ -8502,22 +8502,22 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>760</Personnel>
-                <Ammunition>760</Ammunition>
-                <DoS>760</DoS>
-                <Fuel>760</Fuel>
-                <Scrap>760</Scrap>
+                <Personnel>1000</Personnel>
+                <Ammunition>1000</Ammunition>
+                <DoS>1000</DoS>
+                <Fuel>1000</Fuel>
+                <Scrap>1000</Scrap>
             </Resources>
         </entities>
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>8</id>
-            <x>176</x>
-            <y>290</y>
+            <x>30</x>
+            <y>128</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>185</target_x>
-            <target_y>299</target_y>
+            <target_x>38</target_x>
+            <target_y>136</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
@@ -8525,6 +8525,14 @@
                 <Fuel>50</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
+        </entities>
+        <entities eid="15533228">
+            <name>Basic Zombie</name>
+            <id>9</id>
+            <x>152</x>
+            <y>32</y>
+            <originX>0</originX>
+            <originY>0</originY>
         </entities>
     </layers>
 </root>

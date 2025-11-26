@@ -34,6 +34,9 @@
     <Filter Include="Source Files\level handling">
       <UniqueIdentifier>{3165784b-016c-4840-b63a-7048e177f376}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\zombies">
+      <UniqueIdentifier>{14a8e848-2fa7-48d8-8898-3282f17b280a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="selectedHandler.cpp">
       <Filter>Source Files\level handling</Filter>
+    </ClCompile>
+    <ClCompile Include="zombieObject.cpp">
+      <Filter>Source Files\zombies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +120,12 @@
       <Filter>Source Files\components</Filter>
     </ClInclude>
     <ClInclude Include="pathfindingComponent.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="zombieObject.h">
+      <Filter>Source Files\zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="nearestComponent.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,7 @@
 #include "unitObject.h"
 #include "depotObject.h"
 #include "convoyObject.h"
+#include "zombieObject.h"
 
 #include "renderComponent.h"
 #include "buttonComponent.h"
@@ -37,6 +38,7 @@ private:
 	MapLoader* mapLoader;
 	vector<UnitObj*> unitList;
 	vector<ConvoyObj*> convoyList;
+	vector<ZombieObj*> zombieList;
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;
 

@@ -59,7 +59,7 @@ public:
 
 	// Pure virtual functions
 	virtual void renderHover(SDL_Renderer* renderer) = 0;
-	virtual void clickAway() = 0; // used for when clicking away from the selected object
+	virtual void clickAway() { cout << "clickAway"; }; // used for when clicking away from the selected object
 
 	//getters
 	SDL_Texture getTexture() { return texture; }
