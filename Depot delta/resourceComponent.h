@@ -52,6 +52,8 @@ public:
 	}
 
 	//getters
+	vector<int> getAllResourceCount() { return resourcesCount; }
+	vector<int> getAllResourceMax() { return resourcesCount; }
 	int getResourcesCount(int index) { return resourcesCount[index]; }
 	int getResourcesMax(int index) { return resourcesMax[index]; }
 

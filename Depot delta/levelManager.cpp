@@ -12,6 +12,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects.insert(allObjects.end(), zombieList.begin(), zombieList.end());
 	allObjects.push_back(depot);
 	selector = new SelectedHandler(allObjects);
+
+    UI = new levelUI(renderer, "art/UI/level/Level.png");
 }
 
 LevelManager::~LevelManager()
@@ -65,13 +67,17 @@ void LevelManager::render()
     for (auto& zombie : zombieList) { zombie->Update(); }
     camera.update();
     if (hoveredUnit) {
-        SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.width, 100 };
+        SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.dimen.w, 100 };
         SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
         SDL_RenderFillRect(renderer, &unitRes);
         hoveredUnit->renderHover(renderer);
     }
-    SDL_FRect depotRes = { 0, 0, camera.width, 40 };
+    SDL_FRect depotRes = { 0, 0, screenWidth, 40 };
     SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
     SDL_RenderFillRect(renderer, &depotRes);
-    depot->renderHover(renderer);
+    //depot->renderHover(renderer);
+    UI->render();
+    depot->renderResources(renderer);
+
+    
 }

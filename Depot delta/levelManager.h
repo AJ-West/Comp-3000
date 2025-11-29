@@ -8,6 +8,8 @@
 #include "mapSaver.h"
 #include "selectedHandler.h"
 
+#include "levelUI.h"
+
 #include "unitObject.h"
 #include "depotObject.h"
 #include "convoyObject.h"
@@ -34,6 +36,8 @@ public:
 
 private:
 	SDL_Renderer* renderer;
+
+	levelUI* UI;
 
 	MapLoader* mapLoader;
 	vector<UnitObj*> unitList;

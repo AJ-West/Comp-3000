@@ -37,6 +37,9 @@
     <Filter Include="Source Files\zombies">
       <UniqueIdentifier>{14a8e848-2fa7-48d8-8898-3282f17b280a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UI%27s">
+      <UniqueIdentifier>{57c631b0-2868-44a5-a340-a571e788ceaf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="zombieObject.cpp">
       <Filter>Source Files\zombies</Filter>
+    </ClCompile>
+    <ClCompile Include="UIHandler.cpp">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClCompile>
+    <ClCompile Include="levelUI.h">
+      <Filter>Source Files\UI%27s</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="nearestComponent.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="UIHandler.h">
+      <Filter>Source Files\UI%27s</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

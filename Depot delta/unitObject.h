@@ -44,6 +44,6 @@ public:
 private:
 	int ID;
 
-	SDL_FRect iSize{ camera.x + 10, camera.y + camera.height - 75, 50, 50 };
-	SDL_FRect tSize{ camera.x + 60, camera.y + camera.height - 75, 100, 50 };
+	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + camera.dimen.h - 75, 50, 50 };
+	SDL_FRect tSize{ camera.dimen.x + 60, camera.dimen.y + camera.dimen.h - 75, 100, 50 };
 };

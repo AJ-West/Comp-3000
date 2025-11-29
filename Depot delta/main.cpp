@@ -85,7 +85,6 @@ void clamp_zoom() {
 
 int main()
 {
-    system("pause");
     init_environment();
 	LevelManager manager(renderer);
 
@@ -114,8 +113,10 @@ int main()
                 float mxa = NULL;
                 float mya = NULL;
                 getScaledMousePos(&mxa, &mya);
-                camera.x += mxb - mxa;
-                camera.y += myb - mya;
+                camera.dimen.x += mxb - mxa;
+                camera.dimen.y += myb - mya;
+                camera.dimen.w = ResolutionWidth/zoom;
+                camera.dimen.h = ResolutionHeight/zoom;
             }
             else {
 				manager.handleInput(event);

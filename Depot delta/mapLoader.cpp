@@ -230,7 +230,7 @@ vector<SDL_Texture*> MapLoader::loadResourceTextures() {
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {
-    SDL_FRect destRect{-camera.x,-camera.y,tileWidth,tileHeight };
+    SDL_FRect destRect{-camera.dimen.x,-camera.dimen.y,tileWidth,tileHeight };
     for (auto& row : tilemap) {
         for (auto& column : row) {
             SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
@@ -238,7 +238,7 @@ void MapLoader::renderTileMap(SDL_Renderer* renderer) {
 			//SDL_RenderRect(renderer, &destRect);
             destRect.x += tileWidth;
         }
-		destRect.x = -camera.x;
+		destRect.x = -camera.dimen.x;
 		destRect.y += tileHeight;
     }
 }

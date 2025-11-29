@@ -6,8 +6,8 @@ class renderComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		SDL_FRect size = owner->getDimensions();
-		size.x -= camera.x;
-		size.y -= camera.y;
+		size.x -= camera.dimen.x;
+		size.y -= camera.dimen.y;
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 		if (owner->getSelected()) {
 			SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);

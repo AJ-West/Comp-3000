@@ -38,10 +38,7 @@ extern int FONT_SIZE;
 extern bool isRunning;
 
 struct Camera {
-	float x;
-	float y;
-	int width;
-	int height;
+	SDL_FRect dimen{0,0,0,0};
 
 	int x_dir = 0;
 	int y_dir = 0;
@@ -81,16 +78,16 @@ struct Camera {
 	}
 
 	void update() {
-		x += x_dir * speed * deltaTime;
-		y += y_dir * speed * deltaTime;
+		dimen.x += x_dir * speed * deltaTime;
+		dimen.y += y_dir * speed * deltaTime;
 		clamp();
 	}
 
 	void clamp() {
-		if (x < 0) x = 0;
-		if (y < 0) y = 0;
-		if (x + width > worldWidth) x = worldWidth - width;
-		if (y + height > worldHeight) y = worldHeight - height;
+		if (dimen.x < 0) dimen.x = 0;
+		if (dimen.y < 0) dimen.y = 0;
+		if (dimen.x + dimen.w > worldWidth) dimen.x = worldWidth - dimen.w;
+		if (dimen.y + dimen.h > worldHeight) dimen.y = worldHeight - dimen.h;
 	}
 
 };

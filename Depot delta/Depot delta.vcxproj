@@ -140,11 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="levelUI.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mapLoader.cpp" />
     <ClCompile Include="mapSaver.cpp" />
     <ClCompile Include="selectedHandler.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="UIHandler.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="usefulFunctions.cpp" />
     <ClCompile Include="variables.cpp" />
     <ClCompile Include="zombieObject.cpp" />
@@ -177,6 +183,9 @@
     <ClInclude Include="resourceTransferComponent.h" />
     <ClInclude Include="selectedHandler.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="UIHandler.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="unitObject.h" />
     <ClInclude Include="usefulFunctions.h" />
     <ClInclude Include="variables.h" />

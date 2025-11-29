@@ -41,7 +41,7 @@ public:
 
 	void render(SDL_Renderer* renderer) {
 		SDL_SetRenderDrawColor(renderer, rgba[0], rgba[1], rgba[2], rgba[3]);
-		SDL_FRect screen{ camera.x, camera.y, camera.width, camera.height };
+		SDL_FRect screen{ camera.dimen.x, camera.dimen.y, camera.dimen.w, camera.dimen.h };
 		SDL_RenderFillRect(renderer, &screen);
 	}
 
