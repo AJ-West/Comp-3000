@@ -5,7 +5,7 @@
 
 class UnitObj : public GameObject {
 public:
-	UnitObj(int x, int y, int width, int height, int id) : GameObject(x,y, width, height), ID(id) {}
+	UnitObj(int x, int y, int width, int height, int health, int id) : GameObject(x,y, width, height, health), ID(id) {}
 
 	void onClick() {
 		selected = !selected;
@@ -44,5 +44,5 @@ public:
 private:
 	int ID;
 
-	SDL_FRect tSize{ 1254.0f / 1440.0f * camera.dimen.w, 132.0f / 960.0f * camera.dimen.h, 182.0f / 1440.0f * camera.dimen.w, 48.0f / 960.0f * camera.dimen.h };
+	SDL_FRect tSize{ 1254.0f / 1440.0f * camera.dimen.w, 60.0f / 960.0f * camera.dimen.h, 182.0f / 1440.0f * camera.dimen.w, 48.0f / 960.0f * camera.dimen.h };
 };

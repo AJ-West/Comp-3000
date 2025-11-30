@@ -5,7 +5,7 @@
 
 class ZombieObj : public GameObject {
 public:
-	ZombieObj(int x, int y, int width, int height, int id) : GameObject(x, y, width, height), ID(id) {}
+	ZombieObj(int x, int y, int width, int height, int health, int id) : GameObject(x, y, width, height, health), ID(id) {}
 
 	void renderHover(SDL_Renderer* renderer) { cout << "render hover"; } // need at a later date to show zombie health on hover
 

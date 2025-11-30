@@ -8463,6 +8463,7 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>3</id>
+            <health>100</health>
             <x>59</x>
             <y>184</y>
             <originX>8</originX>
@@ -8480,6 +8481,7 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>4</id>
+            <health>100</health>
             <x>78</x>
             <y>52</y>
             <originX>8</originX>
@@ -8497,6 +8499,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>7</id>
+            <health>1000</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8512,6 +8515,7 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>8</id>
+            <health>100</health>
             <x>30</x>
             <y>128</y>
             <originX>0</originX>
@@ -8529,6 +8533,7 @@
         <entities eid="15533228">
             <name>Basic Zombie</name>
             <id>9</id>
+            <health>100</health>
             <x>152</x>
             <y>32</y>
             <originX>0</originX>

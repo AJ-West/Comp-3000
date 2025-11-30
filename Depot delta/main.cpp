@@ -85,6 +85,7 @@ void clamp_zoom() {
 
 int main()
 {
+    system("pause");
     init_environment();
 	LevelManager manager(renderer);
 

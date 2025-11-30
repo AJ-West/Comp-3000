@@ -16,17 +16,11 @@
     <Filter Include="Source Files\Dependecies">
       <UniqueIdentifier>{d59f1cc5-3497-49d0-a3fa-eb12e4e2358c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Units">
-      <UniqueIdentifier>{fdeee422-9b91-47ed-9238-cbd8df778b99}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\components">
       <UniqueIdentifier>{370b5a7b-d784-413b-90b0-2ccca598b9bc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\UseThroughout">
       <UniqueIdentifier>{939b043c-6f9f-4169-ac89-309a268a2856}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Convoys">
-      <UniqueIdentifier>{be913c6e-3b8b-48f1-a312-b23bc90677c7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\fileHandling">
       <UniqueIdentifier>{4e633951-c1ab-4141-bf3d-effcef43366c}</UniqueIdentifier>
@@ -34,11 +28,20 @@
     <Filter Include="Source Files\level handling">
       <UniqueIdentifier>{3165784b-016c-4840-b63a-7048e177f376}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\zombies">
-      <UniqueIdentifier>{14a8e848-2fa7-48d8-8898-3282f17b280a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\UI%27s">
       <UniqueIdentifier>{57c631b0-2868-44a5-a340-a571e788ceaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities">
+      <UniqueIdentifier>{6f465eff-ebca-4d6e-8d61-7ebfa1cf8ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\Units">
+      <UniqueIdentifier>{fdeee422-9b91-47ed-9238-cbd8df778b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\zombies">
+      <UniqueIdentifier>{14a8e848-2fa7-48d8-8898-3282f17b280a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\Convoys">
+      <UniqueIdentifier>{be913c6e-3b8b-48f1-a312-b23bc90677c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,7 +70,7 @@
       <Filter>Source Files\level handling</Filter>
     </ClCompile>
     <ClCompile Include="zombieObject.cpp">
-      <Filter>Source Files\zombies</Filter>
+      <Filter>Source Files\entities\zombies</Filter>
     </ClCompile>
     <ClCompile Include="UIHandler.cpp">
       <Filter>Source Files\UI%27s</Filter>
@@ -87,7 +90,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="unitObject.h">
-      <Filter>Source Files\Units</Filter>
+      <Filter>Source Files\entities\Units</Filter>
     </ClInclude>
     <ClInclude Include="buttonBase.h">
       <Filter>Source Files</Filter>
@@ -114,7 +117,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="convoyObject.h">
-      <Filter>Source Files\Convoys</Filter>
+      <Filter>Source Files\entities\Convoys</Filter>
     </ClInclude>
     <ClInclude Include="levelManager.h">
       <Filter>Source Files</Filter>
@@ -135,7 +138,7 @@
       <Filter>Source Files\components</Filter>
     </ClInclude>
     <ClInclude Include="zombieObject.h">
-      <Filter>Source Files\zombies</Filter>
+      <Filter>Source Files\entities\zombies</Filter>
     </ClInclude>
     <ClInclude Include="nearestComponent.h">
       <Filter>Source Files\components</Filter>

@@ -91,10 +91,11 @@ void MapLoader::loadUnit(XMLElement* entity)
 {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
+    int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = 1; // number of tiles
     int height = 1;
-    UnitObj* unit = new UnitObj(x, y, width, height, id);
+    UnitObj* unit = new UnitObj(x, y, width, height, health, id);
     addUnitComponents(unit, entity);
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
@@ -124,10 +125,11 @@ void MapLoader::loadConvoy(XMLElement* entity)
 {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
+    int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = 1; // number of tiles
     int height = 1;
-    ConvoyObj* convoy = new ConvoyObj(x, y, width, height, id);
+    ConvoyObj* convoy = new ConvoyObj(x, y, width, height, health, id);
     addConvoyComponents(convoy, entity);
     if (entity->FirstChildElement("target_x")) {
         convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
@@ -159,10 +161,11 @@ void MapLoader::loadZombie(XMLElement* entity)
 {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
+    int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = 1; // number of tiles
     int height = 1;
-    ZombieObj* zombie = new ZombieObj(x, y, width, height, id);
+    ZombieObj* zombie = new ZombieObj(x, y, width, height, health, id);
     addZombieComponents(zombie, entity);
     if (entity->FirstChildElement("target_x")) {
         zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
@@ -182,9 +185,10 @@ void MapLoader::loadDepot(XMLElement* entity)
 {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
+    int health = atoi(entity->FirstChildElement("health")->GetText());
     int width = 4; // number of tiles 
     int height = 4;
-    depot = new DepotObj(x, y, width, height);
+    depot = new DepotObj(x, y, width, height, health);
 	addDepotComponents(depot, entity);
 }
 

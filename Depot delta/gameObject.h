@@ -33,7 +33,7 @@ protected:
 
 class GameObject : public BaseButton {
 public:
-	GameObject(int x, int y, int width, int height){
+	GameObject(int x, int y, int width, int height, int vHealth): health(vHealth){
 		size.x = x;
 		size.y = y;
 		size.w = width*tileWidth;
@@ -67,6 +67,8 @@ public:
 	bool getSelected() { return selected; }
 	bool getHovering() { return hovering; }
 	SDL_FRect getSize() { return size; }
+	int getHealth() { return health; }
+	int getMaxHealth() { return maxHealth; }
 
 	//setters
 	void setX(float x) { size.x = x; }
@@ -84,7 +86,11 @@ protected:
 	bool hovering = false;
 	float tx = NULL;
 	float ty = NULL;
+
+	int health;
+	int maxHealth = 1000;
 private:
+
 	unordered_map<string, shared_ptr<Component>> components;// Store components
 
 	SDL_Texture texture;
