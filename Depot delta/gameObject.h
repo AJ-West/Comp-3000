@@ -90,7 +90,4 @@ private:
 	SDL_Texture texture;
 
 	SDL_FRect size{ NULL, NULL, NULL, NULL };
-
-	SDL_FRect iSize{ NULL, NULL, NULL, NULL };
-	SDL_FRect tSize{ NULL, NULL, NULL, NULL };
 };

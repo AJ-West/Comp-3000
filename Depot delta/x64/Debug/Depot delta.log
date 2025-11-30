@@ -118,10 +118,6 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(70,51): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(70,51): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(75,34): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(75,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   main.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\GameObject.h(37,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'main.cpp')

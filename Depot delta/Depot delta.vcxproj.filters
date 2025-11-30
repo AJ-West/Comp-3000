@@ -75,6 +75,9 @@
     <ClCompile Include="levelUI.h">
       <Filter>Source Files\UI%27s</Filter>
     </ClCompile>
+    <ClCompile Include="levelUI.cpp">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">

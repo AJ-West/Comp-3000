@@ -19,7 +19,7 @@ public:
 	void renderHover(SDL_Renderer* renderer) {
 		auto rComp = getComponent<resourceComponent>();
 		if (rComp) {
-			rComp->renderResources(renderer, iSize, tSize);
+			rComp->renderResources(renderer, tSize);
 		}
 		auto rTComp = getComponent<resourceTransferComponent>();
 		if (rTComp) {
@@ -48,6 +48,5 @@ public:
 private:
 	int ID;
 
-	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + camera.dimen.h - 75, 50, 50 };
-	SDL_FRect tSize{ camera.dimen.x + 60, camera.dimen.y + camera.dimen.h - 75, 100, 50 };
+	SDL_FRect tSize{ 1254.0f / 1440.0f * camera.dimen.w, 132.0f / 960.0f * camera.dimen.h, 182.0f / 1440.0f * camera.dimen.w, 48.0f / 960.0f * camera.dimen.h };
 };

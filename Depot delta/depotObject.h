@@ -15,7 +15,7 @@ public:
 		getScaledMousePos(&tx, &ty);
 	}
 
-	void renderHover(SDL_Renderer* renderer) {
+	void renderHover(SDL_Renderer* renderer) { // needs removing when creating a subobject for zombie/convoy/unit
 		cout << "renderHover";
 	}
 

@@ -67,15 +67,12 @@ void LevelManager::render()
     for (auto& zombie : zombieList) { zombie->Update(); }
     camera.update();
     if (hoveredUnit) {
-        SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.dimen.w, 100 };
-        SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
-        SDL_RenderFillRect(renderer, &unitRes);
+        //SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.dimen.w, 100 };
+        //SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
+        //SDL_RenderFillRect(renderer, &unitRes);
+        UI->renderResourceHover();
         hoveredUnit->renderHover(renderer);
     }
-    SDL_FRect depotRes = { 0, 0, screenWidth, 40 };
-    SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
-    SDL_RenderFillRect(renderer, &depotRes);
-    //depot->renderHover(renderer);
     UI->render();
     depot->renderResources(renderer);
 
