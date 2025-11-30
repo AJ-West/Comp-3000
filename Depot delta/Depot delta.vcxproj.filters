@@ -146,5 +146,8 @@
     <ClInclude Include="UIHandler.h">
       <Filter>Source Files\UI%27s</Filter>
     </ClInclude>
+    <ClInclude Include="dayCycle.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

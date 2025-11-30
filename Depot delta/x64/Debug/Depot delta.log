@@ -1,1 +1,43 @@
-﻿  Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe
+﻿  levelUI.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         ]
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         ]
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         ]
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         ]
+  (compiling source file 'levelUI.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
+  (compiling source file 'levelUI.cpp')
+  
+  Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

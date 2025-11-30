@@ -171,6 +171,7 @@
     <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="convoyObject.h" />
+    <ClInclude Include="dayCycle.h" />
     <ClInclude Include="depotObject.h" />
     <ClInclude Include="gameObject.h" />
     <ClInclude Include="levelManager.h" />

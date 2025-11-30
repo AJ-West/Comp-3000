@@ -103,6 +103,13 @@ enum Resource {
 	RESOURCE_COUNT
 };
 
+enum time { 
+	second,
+	minute,
+	hour,
+	day
+};
+
 struct Vec2 {
 	float x;
 	float y;

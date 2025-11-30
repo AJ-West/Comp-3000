@@ -9,6 +9,7 @@
 #include "selectedHandler.h"
 
 #include "levelUI.h"
+#include "dayCycle.h"
 
 #include "unitObject.h"
 #include "depotObject.h"
@@ -47,5 +48,7 @@ private:
 	GameObject* hoveredUnit = nullptr;
 
 	SelectedHandler* selector;
+
+	dayCycle* time;
 };
 

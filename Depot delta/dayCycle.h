@@ -6,8 +6,6 @@
 
 using namespace std;
 
-enum time {second, minute, hour, day};
-
 class dayCycle {
 public:
 	dayCycle() {};
@@ -44,6 +42,9 @@ public:
 		SDL_FRect screen{ camera.dimen.x, camera.dimen.y, camera.dimen.w, camera.dimen.h };
 		SDL_RenderFillRect(renderer, &screen);
 	}
+
+	//getters
+	vector<int> getDayTime() { return dayTime; }
 
 private:
 	vector<int> dayTime{ 0,0,12,0 }; // start at midday

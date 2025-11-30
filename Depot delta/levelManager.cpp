@@ -13,7 +13,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects.push_back(depot);
 	selector = new SelectedHandler(allObjects);
 
-    UI = new levelUI(renderer, "art/UI/level/Level.png");
+    time = new dayCycle();
+    UI = new levelUI(renderer, "art/UI/level/Level.png", time);
 }
 
 LevelManager::~LevelManager()
@@ -49,6 +50,7 @@ void LevelManager::handleInput(SDL_Event event)
 
 void LevelManager::render()
 {
+    time->update();
 	mapLoader->renderTileMap(renderer);
     depot->Update();
     hoveredUnit = nullptr;
@@ -74,7 +76,6 @@ void LevelManager::render()
         hoveredUnit->renderHover(renderer);
     }
     UI->render();
-    depot->renderResources(renderer);
-
-    
+    UI->renderTime();
+    depot->renderResources(renderer);    
 }
