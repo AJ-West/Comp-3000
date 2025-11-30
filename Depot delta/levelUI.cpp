@@ -33,7 +33,12 @@ void levelUI::renderTime() {
 	if (iMin < 10) {
 		sMin = "0" + sMin;
 	}
-	string countText = to_string(cTime[hour]) + ":" + sMin;
+	int iHour = cTime[hour];
+	string sHour = to_string(iHour);
+	if (iHour < 10) {
+		sHour = "0" + sHour;
+	}
+	string countText = sHour + ":" + sMin;
 	SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 255,255,255,255 });
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_RenderTexture(renderer, texture, NULL, &timeSize);
