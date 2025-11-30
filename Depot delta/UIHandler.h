@@ -20,6 +20,5 @@ public:
 
 protected:
 	SDL_Renderer* renderer;
-private:	
-	SDL_Texture* texture;
+	SDL_Texture* texture;	
 };

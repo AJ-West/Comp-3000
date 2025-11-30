@@ -10,6 +10,7 @@
 
 #include "levelUI.h"
 #include "dayCycle.h"
+#include "transferBox.h"
 
 #include "unitObject.h"
 #include "depotObject.h"
@@ -50,5 +51,9 @@ private:
 	SelectedHandler* selector;
 
 	dayCycle* time;
+
+	transferBox* box;
+
+	bool textInput = false;
 };
 

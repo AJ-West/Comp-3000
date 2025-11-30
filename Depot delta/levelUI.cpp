@@ -2,6 +2,7 @@
 
 levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, dayCycle* gameTime) : UIHandler(renderer, filePath), time(gameTime) {
 	loadResourceHoverTexture();
+	createTransferBox();
 }
 levelUI::~levelUI() {}
 

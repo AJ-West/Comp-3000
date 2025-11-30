@@ -23,6 +23,7 @@ public:
 	~SelectedHandler();
 
 	void checkHover(SDL_Event event);
+
 	void checkClick();
 	void rightClick();
 

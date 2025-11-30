@@ -149,6 +149,7 @@
     <ClCompile Include="mapSaver.cpp" />
     <ClCompile Include="selectedHandler.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="transferBox.cpp" />
     <ClCompile Include="UIHandler.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -184,7 +185,9 @@
     <ClInclude Include="resourceComponent.h" />
     <ClInclude Include="resourceTransferComponent.h" />
     <ClInclude Include="selectedHandler.h" />
+    <ClInclude Include="textInput.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="transferBox.h" />
     <ClInclude Include="UIHandler.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>

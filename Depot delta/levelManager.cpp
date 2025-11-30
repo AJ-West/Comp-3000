@@ -15,6 +15,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", time);
+    box = new transferBox();
 }
 
 LevelManager::~LevelManager()
@@ -34,13 +35,26 @@ void LevelManager::handleInput(SDL_Event event)
     }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
-			selector->checkClick();
+            if (!textInput) {
+                if (UI->checkClickInput()) {
+                    textInput = true;
+                    return;
+                }
+                textInput = false;
+                selector->checkClick();
+            }
         }
         else if (event.button.button == SDL_BUTTON_RIGHT) {
-            selector->rightClick();
+            if (!textInput) {
+                selector->rightClick();
+            }
         }
     }
     else if (event.type == SDL_EVENT_KEY_DOWN) {
+        if (textInput) {
+            UI->textInput(event.key.key);
+            return;
+        }
         camera.keyDown(event.key.key);
     }
     else if (event.type == SDL_EVENT_KEY_UP) {
@@ -69,13 +83,10 @@ void LevelManager::render()
     for (auto& zombie : zombieList) { zombie->Update(); }
     camera.update();
     if (hoveredUnit) {
-        //SDL_FRect unitRes = { 0, 0 + screenHeight - 100, camera.dimen.w, 100 };
-        //SDL_SetRenderDrawColor(renderer, 139, 69, 19, 255); // Saddle brown for resource bar background
-        //SDL_RenderFillRect(renderer, &unitRes);
         UI->renderResourceHover();
         hoveredUnit->renderHover(renderer);
     }
     UI->render();
     UI->renderTime();
-    depot->renderResources(renderer);    
+    depot->renderResources(renderer);
 }

@@ -81,6 +81,9 @@
     <ClCompile Include="levelUI.cpp">
       <Filter>Source Files\UI%27s</Filter>
     </ClCompile>
+    <ClCompile Include="transferBox.cpp">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
@@ -148,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="dayCycle.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="transferBox.h">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClInclude>
+    <ClInclude Include="textInput.h">
+      <Filter>Source Files\UI%27s</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -42,7 +42,6 @@ public:
 	//setters
 	void setIsDisplayed(bool display) { isDisplayed = display; }
 	void setFunc(function<void()> function) { func = function; }
-	void setLevel(function<void(int)> levelLoad, int number) { level = levelLoad; num = number; }
 
 	//getters
 	bool getIsDisplayed() { return isDisplayed; }
@@ -53,7 +52,6 @@ private:
 	bool isHover = false;
 
 	function<void()> func;
-	function<void(int)> level;
 	int num;
 
 	SDL_Texture* texture;
