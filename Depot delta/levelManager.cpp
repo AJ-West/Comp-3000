@@ -15,7 +15,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", time);
-    box = new transferBox();
+    UI->createTransferBox();
 }
 
 LevelManager::~LevelManager()

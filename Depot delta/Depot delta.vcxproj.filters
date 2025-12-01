@@ -158,5 +158,8 @@
     <ClInclude Include="textInput.h">
       <Filter>Source Files\UI%27s</Filter>
     </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

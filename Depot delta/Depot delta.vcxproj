@@ -188,6 +188,7 @@
     <ClInclude Include="textInput.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="transferBox.h" />
+    <ClInclude Include="UIElement.h" />
     <ClInclude Include="UIHandler.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>

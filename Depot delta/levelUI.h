@@ -27,47 +27,11 @@ public:
 	}
 
 	void textInput(SDL_Keycode key) {
-		switch (key)
-		{
-		case SDLK_0:
-			box->updateText("0");
-			break;
-		case SDLK_1:
-			box->updateText("1");
-			break;
-		case SDLK_2:
-			box->updateText("2");
-			break;
-		case SDLK_3:
-			box->updateText("3");
-			break;
-		case SDLK_4:
-			box->updateText("4");
-			break;
-		case SDLK_5:
-			box->updateText("5");
-			break;
-		case SDLK_6:
-			box->updateText("6");
-			break;
-		case SDLK_7:
-			box->updateText("7");
-			break;
-		case SDLK_8:
-			box->updateText("8");
-			break;
-		case SDLK_9:
-			box->updateText("9");
-			break;
-		case SDLK_BACKSPACE:
-			box->updateText("b");
-			break;
-
-		}
+		box->update(key);
 	}
 
 	void createTransferBox() {
-		box = new transferBox();
+		box = new transferBox({ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 10, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 10, camera.dimen.w / 5, camera.dimen.h / 5 });
 	}
 
 	bool checkClickInput() { // checks if clicked on an input box in the UI
@@ -75,7 +39,7 @@ public:
 		float cx, cy;
 		getScaledMousePos(&cx, &cy);
 		if (box->checkClick(cx, cy)) {
-			return true;
+			return box->findClickedElement(cx, cy);
 		}
 		return false;
 	}

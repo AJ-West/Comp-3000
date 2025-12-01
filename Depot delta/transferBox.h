@@ -5,43 +5,49 @@
 #include <SDL3_image/SDL_image.h>
 
 #include "variables.h"
+#include "textInput.h"
 
-class transferBox {
+class textInput;
+
+class transferBox: public UIElement {
 public:
-	transferBox(){}
+	transferBox(SDL_FRect rSize) : UIElement(rSize) {
+		elements.push_back(new textInput({ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 }, new intRestriction()));
+	}
 	~transferBox(){}
 
-	bool checkClick(float x, float y) {
-		if (x < input.x) return false;
-		if (x > input.x + input.w) return false;
-		if (y < input.y) return false;
-		if (y > input.y + input.h) return false;
-		return true;
+	void update(SDL_Keycode key) {
+		if (selectedElement) {
+			selectedElement->update(key);
+		}
 	}
 
 	void render(SDL_Renderer* renderer){
 		SDL_SetRenderDrawColor(renderer, 81, 72, 65, 255);
 		SDL_RenderFillRect(renderer, &outline);
-		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-		SDL_RenderFillRect(renderer, &input);
-		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
-		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-		SDL_RenderTexture(renderer, texture, NULL, &input);
-	}
-
-	void updateText(string num) {
-		if (num == "b") {
-			if (!text.empty()) { text.pop_back(); }
-			return;
+		for (auto elem : elements) {
+			elem->render(renderer);
 		}
-		text = text + num;
 	}
 
-	void check_input(){}
+	bool findClickedElement(float cx, float cy) {
+		for (auto elem : elements) {
+			if (elem->checkClick(cx, cy)) {
+				selectedElement = elem;
+				return true;
+			}
+		}
+		selectedElement = nullptr;
+			return false;
+	}
 
 private:
 	SDL_FRect outline{camera.dimen.x + camera.dimen.w/2 - camera.dimen.w/10, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 10 , camera.dimen.w / 5 , camera.dimen.h / 5 };
 	SDL_FRect input{ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 };
 
 	string text = "";
+
+	vector<UIElement*> elements;
+
+	UIElement* selectedElement = nullptr;
 };
