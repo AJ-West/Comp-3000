@@ -35,14 +35,12 @@ void LevelManager::handleInput(SDL_Event event)
     }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
-            if (!textInput) {
-                if (UI->checkClickInput()) {
-                    textInput = true;
-                    return;
-                }
-                textInput = false;
-                selector->checkClick();
+            if (UI->checkClickInput()) {
+                textInput = true;
+                return;
             }
+            textInput = false;
+            selector->checkClick();
         }
         else if (event.button.button == SDL_BUTTON_RIGHT) {
             if (!textInput) {

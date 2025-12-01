@@ -31,7 +31,7 @@ public:
 	}
 
 	void createTransferBox() {
-		box = new transferBox({ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 10, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 10, camera.dimen.w / 5, camera.dimen.h / 5 });
+		box = new transferBox({ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 6, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 6 , camera.dimen.w / 3 , camera.dimen.h / 3 });
 	}
 
 	bool checkClickInput() { // checks if clicked on an input box in the UI

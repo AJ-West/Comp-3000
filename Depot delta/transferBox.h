@@ -12,7 +12,16 @@ class textInput;
 class transferBox: public UIElement {
 public:
 	transferBox(SDL_FRect rSize) : UIElement(rSize) {
-		elements.push_back(new textInput({ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 }, new intRestriction()));
+		//Personnel count
+		elements.push_back(new textInput({ outline.x + outline.w/11, outline.y+outline.h/2 - outline.h/6, outline.w/11 , outline.h / 3 }, new intRestriction()));
+		//Ammo count
+		elements.push_back(new textInput({ outline.x + 3 * outline.w / 11, outline.y + outline.h / 2 - outline.h / 6, outline.w / 11 , outline.h / 3 }, new intRestriction()));
+		//DoS count
+		elements.push_back(new textInput({ outline.x + 5 * outline.w / 11, outline.y + outline.h / 2 - outline.h / 6, outline.w / 11 , outline.h / 3 }, new intRestriction()));
+		//Fuel count
+		elements.push_back(new textInput({ outline.x + 7 * outline.w / 11, outline.y + outline.h / 2 - outline.h / 6, outline.w / 11 , outline.h / 3 }, new intRestriction()));
+		//Scrap count
+		elements.push_back(new textInput({ outline.x + 9 * outline.w / 11, outline.y + outline.h / 2 - outline.h / 6, outline.w / 11 , outline.h / 3 }, new intRestriction()));
 	}
 	~transferBox(){}
 
@@ -42,7 +51,7 @@ public:
 	}
 
 private:
-	SDL_FRect outline{camera.dimen.x + camera.dimen.w/2 - camera.dimen.w/10, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 10 , camera.dimen.w / 5 , camera.dimen.h / 5 };
+	SDL_FRect outline{camera.dimen.x + camera.dimen.w/2 - camera.dimen.w/6, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 6 , camera.dimen.w / 3 , camera.dimen.h / 3 };
 	SDL_FRect input{ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 };
 
 	string text = "";
