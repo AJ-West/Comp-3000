@@ -161,5 +161,8 @@
     <ClInclude Include="UIElement.h">
       <Filter>Source Files\UI%27s</Filter>
     </ClInclude>
+    <ClInclude Include="transferDirectionButton.h">
+      <Filter>Source Files\UI%27s</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -30,6 +30,8 @@ public:
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 	}
 
+	using UIElement::update;
+
 	void update(SDL_Keycode key) {
 		if (!restrict->checkRestriction(key)) { return; }
 		if (key == SDLK_BACKSPACE) {
