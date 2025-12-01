@@ -30,16 +30,18 @@ public:
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 	}
 
-	using UIElement::update;
-
-	void update(SDL_Keycode key) {
-		if (!restrict->checkRestriction(key)) { return; }
+	bool update(SDL_Keycode key) {
+		if (!restrict->checkRestriction(key)) { return false; }
 		if (key == SDLK_BACKSPACE) {
 			if (!text.empty()) { text.pop_back(); }
-			return;
+			return false;
 		}
 		text = text + SDL_GetKeyName(key);
+		return false;
 	}
+
+	//getters
+	string getText() { return text; }
 
 private:
 	restriction* restrict;

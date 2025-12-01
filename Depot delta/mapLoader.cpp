@@ -118,6 +118,8 @@ void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
 		count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     unit->AddComponent(make_shared<resourceComponent>(unit, max, count, loadResourceTextures()));
+    vector<int> transferRate = { 5,5,5,5,5 };
+    unit->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, 50, transferRate));
     unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
 }
 

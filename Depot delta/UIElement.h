@@ -11,7 +11,7 @@ public:
 	UIElement(SDL_FRect rSize): size(rSize) {}
 	~UIElement() {}
 
-	virtual void update(SDL_Keycode key) = 0;
+	virtual bool update(SDL_Keycode key) = 0;
 
 	bool checkClick(float x, float y) {
 		if (x < size.x) return false;
@@ -22,6 +22,9 @@ public:
 	}
 
 	virtual void render(SDL_Renderer* renderer) = 0;
+
+	//getters
+	virtual string getText() { return "N/A"; }
 
 protected:
 	SDL_FRect size;

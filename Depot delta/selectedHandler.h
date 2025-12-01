@@ -10,6 +10,8 @@
 #include "gameObject.h"
 #include "convoyObject.h"
 
+#include "levelUI.h"
+
 #include "resourceTransferComponent.h"
 
 #include "variables.h"
@@ -19,7 +21,7 @@ using namespace tinyxml2;
 
 class SelectedHandler {
 public:
-    SelectedHandler(vector<GameObject*> objs);
+    SelectedHandler(vector<GameObject*> objs, levelUI* lUI);
 	~SelectedHandler();
 
 	void checkHover(SDL_Event event);
@@ -36,4 +38,6 @@ private:
     GameObject* hoveredObj = nullptr;
 
 	vector<GameObject*> allObjects;
+
+	levelUI* UI;
 };

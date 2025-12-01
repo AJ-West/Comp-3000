@@ -11,11 +11,11 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
 	allObjects.insert(allObjects.end(), zombieList.begin(), zombieList.end());
 	allObjects.push_back(depot);
-	selector = new SelectedHandler(allObjects);
 
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", time);
-    UI->createTransferBox();
+
+    selector = new SelectedHandler(allObjects, UI);
 }
 
 LevelManager::~LevelManager()

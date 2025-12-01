@@ -1,6 +1,6 @@
 #include "selectedHandler.h"
 
-SelectedHandler::SelectedHandler(vector<GameObject*> objs) : allObjects(objs)
+SelectedHandler::SelectedHandler(vector<GameObject*> objs, levelUI* lUI) : allObjects(objs), UI(lUI)
 {
 }
 
@@ -56,8 +56,7 @@ void SelectedHandler::rightClick() {
 				return;
             }
             else {
-                //add resource transfer component
-				selectedObject->getComponent<resourceTransferComponent>()->initiateTransfer(hoveredObj);
+                UI->createTransferBox(hoveredObj, selectedObject);
             }
         }
         else {

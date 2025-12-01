@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "resourceComponent.h"
 #include <SDL3_image/SDL_image.h>
 
 class resourceTransferComponent : public Component {// renderers the object
@@ -22,24 +23,35 @@ public:
 
 	void transferResource() {
 		bool increase = false;
+		bool change = false;
+		//amount of a resource transfered
+		int transferNum = 0;
 		for (int i = 0; i < transferRate.size(); i++) {
-			if (ownerResComp->getResourcesCount(i) < transferRate[i]) {
-				ownerResComp->setResourceUsage(i, ownerResComp->getResourcesCount(i));
-				targetResComp->setResourceIncrease(i, ownerResComp->getResourcesCount(i));
+			transferNum = 0;
+			if (ownerResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
+				transferNum = ownerResComp->getResourcesCount(i);
 				increase = true;
 			}
-			else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) {
-				ownerResComp->setResourceUsage(i, targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i));
-				targetResComp->setResourceIncrease(i, targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i));
+			else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) { // transfer enough to fill up the target
+				transferNum = targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i);
 				increase = true;
 			}
-			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i)){
-				ownerResComp->setResourceUsage(i, transferRate[i]);
-				targetResComp->setResourceIncrease(i, transferRate[i]);
+			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i) && transferAmount[i] != 0) { // transfer normally
+				transferNum = transferRate[i];
 				increase = true;
+			}
+			if (increase) {
+				if (transferAmount[i] < transferNum) { // if transferNum would transfer more than requested
+					transferNum = transferAmount[i];
+					transferAmount[i] = 0;
+				}
+				ownerResComp->setResourceUsage(i, transferNum);
+				targetResComp->setResourceIncrease(i, transferNum);
+				transferAmount[i] = transferAmount[i] - transferNum;
+				change = true;
 			}
 		}
-		if (!increase) {
+		if (!change) {
 			stopTransfer();
 		}
 	}
@@ -57,8 +69,9 @@ public:
 		return false;
 	}
 
-	void initiateTransfer(GameObject* targetobj) {
+	void initiateTransfer(GameObject* targetobj, vector<int> toTransfer) {
 		target = targetobj;
+		transferAmount = toTransfer;
 		//TO-DO: transfer resources between depot and convoy
 		if (checkDistance()) {
 			transfering = true;
@@ -109,6 +122,8 @@ private:
 	shared_ptr<resourceComponent> targetResComp = nullptr;
 
 	vector<int> transferRate;
+
+	vector<int> transferAmount{ 0,0,0,0,0 };
 
 	bool transfering = false;
 

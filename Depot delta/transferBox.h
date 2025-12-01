@@ -5,14 +5,17 @@
 #include <SDL3_image/SDL_image.h>
 
 #include "variables.h"
+#include "gameObject.h"
 #include "textInput.h"
 #include "transferDirectionButton.h"
+
+#include "resourceTransferComponent.h"
 
 class textInput;
 
 class transferBox: public UIElement {
 public:
-	transferBox(SDL_FRect rSize) : UIElement(rSize) {
+	transferBox(SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : UIElement(rSize), unit(sUnit), convoy(sConvoy) {
 		//Load transfer box texture
 		SDL_Surface* surface = IMG_Load("art/UI/level/transfer.png");
 		if (!surface) {
@@ -44,10 +47,11 @@ public:
 	}
 	~transferBox(){}
 
-	void update(SDL_Keycode key) {
+	bool update(SDL_Keycode key) {
 		if (selectedElement) {
 			selectedElement->update(key);
 		}
+		return false;
 	}
 
 	void render(SDL_Renderer* renderer){
@@ -64,16 +68,37 @@ public:
 			if (elem->checkClick(cx, cy)) {
 				if (auto e = dynamic_cast<textInput*>(elem)) {
 					selectedElement = elem;
-					return true;
 				}
 				else if (auto e = dynamic_cast<transferDirectionButton*>(elem)) {
-					elem->update(NULL);
+					vector<int> amounts;
+					for (auto elem : elements) { // get value of each resource input
+						if (typeid(*elem).name() == typeid(textInput).name()) {
+							if (elem->getText() != "") {
+								amounts.push_back(stoi(elem->getText()));
+							}
+							else {
+								amounts.push_back(0);
+							}
+						}
+					}
+					if (elem->update(NULL)) {
+						convoy->getComponent<resourceTransferComponent>()->initiateTransfer(unit, amounts);
+					}
+					else {
+						unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, amounts);
+					}
+					//should remove transfer box on beginning of transfer
+					toDelete = true;
 				}
+				return true;
 			}
 		}
 		selectedElement = nullptr;
 			return false;
 	}
+	
+	//getters
+	bool getToDelete() { return toDelete; }
 
 private:
 	SDL_Texture* texture;
@@ -85,4 +110,9 @@ private:
 	vector<UIElement*> elements;
 
 	UIElement* selectedElement = nullptr;
+
+	GameObject* unit;
+	GameObject* convoy;
+
+	bool toDelete = false;
 };
