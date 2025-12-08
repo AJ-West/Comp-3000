@@ -16,3 +16,10 @@ void getScaledMousePos(float* x, float* y) {
 	*x = *x + camera.dimen.x;
 	*y = *y + camera.dimen.y;
 }
+/*
+void getScaledMousePos(float* x, float* y) {
+	float mx = 0, my = 0;
+	SDL_GetMouseState(&mx, &my); // logical coords when logical presentation is active
+	*x = (float)mx;
+	*y = (float)my;
+}*/
