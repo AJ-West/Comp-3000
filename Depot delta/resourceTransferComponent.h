@@ -28,15 +28,18 @@ public:
 		int transferNum = 0;
 		for (int i = 0; i < transferRate.size(); i++) {
 			transferNum = 0;
+			if (transferAmount[i] == 0) continue;
+
 			if (ownerResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
 				transferNum = ownerResComp->getResourcesCount(i);
+				transferRate[i] = 0;
 				increase = true;
 			}
 			else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) { // transfer enough to fill up the target
 				transferNum = targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i);
 				increase = true;
 			}
-			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i) && transferAmount[i] != 0) { // transfer normally
+			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i)) { // transfer normally
 				transferNum = transferRate[i];
 				increase = true;
 			}

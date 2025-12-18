@@ -1,5 +1,7 @@
 #include "selectedHandler.h"
 
+#include "levelUI.h"
+
 SelectedHandler::SelectedHandler(vector<GameObject*> objs, levelUI* lUI) : allObjects(objs), UI(lUI)
 {
 }

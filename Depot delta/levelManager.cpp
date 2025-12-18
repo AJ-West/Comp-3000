@@ -1,4 +1,7 @@
 #include "levelManager.h"
+
+#include "levelUI.h"
+
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
     mapLoader = new MapLoader("maps/test.xml", renderer);

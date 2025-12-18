@@ -10,14 +10,14 @@
 #include "gameObject.h"
 #include "convoyObject.h"
 
-#include "levelUI.h"
-
 #include "resourceTransferComponent.h"
 
 #include "variables.h"
 
 using namespace std;
 using namespace tinyxml2;
+
+class levelUI;
 
 class SelectedHandler {
 public:
