@@ -48,7 +48,7 @@ public:
 					delete box;
 					box = nullptr;
 				}
-				return clicked;
+				return true;
 			}
 		}
 		return false;

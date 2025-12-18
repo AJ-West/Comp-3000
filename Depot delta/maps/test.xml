@@ -8486,8 +8486,8 @@
             <y>62</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>313.5</target_x>
-            <target_y>69.5</target_y>
+            <target_x>313</target_x>
+            <target_y>69</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
