@@ -8516,12 +8516,12 @@
             <name>Basic Convoy</name>
             <id>8</id>
             <health>100</health>
-            <x>435</x>
-            <y>78</y>
+            <x>354</x>
+            <y>55</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <target_x>363</target_x>
+            <target_y>63</target_y>
             <Resources>
                 <Personnel>0</Personnel>
                 <Ammunition>25</Ammunition>
