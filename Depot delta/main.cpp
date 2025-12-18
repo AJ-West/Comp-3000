@@ -72,14 +72,13 @@ void init_SDL_environment() {
         return;
     }
 
-    //Can be used for setting resolution (will be useful when adding settings)
-	//SDL_SetRenderScale(renderer, zoom, zoom);
     //Used to render consistenly regardless of screensize
 	SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth/zoom, ResolutionHeight/zoom, SDL_LOGICAL_PRESENTATION_LETTERBOX);
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     isRunning = true;
 }
 
+//creates ImGui
 ImGuiIO& init_ImGui_environment() {
     // Initialize ImGui context
     IMGUI_CHECKVERSION();
@@ -95,46 +94,6 @@ ImGuiIO& init_ImGui_environment() {
     ImGui_ImplSDLRenderer3_Init(renderer);
 
     return io;
-}
-
-void clamp_zoom() {
-    if (zoom > 2.0f) {
-        zoom = 2.0f;
-    }
-    else if (zoom < 0.5f) {
-        zoom = 0.5f;
-    }
-}
-
-void handleInput(SDL_Event event, ImGuiIO* io, LevelManager* manager) {
-    ImGui_ImplSDL3_ProcessEvent(&event);
-    if (event.type == SDL_EVENT_QUIT) {
-        isRunning = false;
-    }
-    else if (event.type == SDL_EVENT_MOUSE_WHEEL) {
-        //mouse position before zoom
-        float mxb = 0.0f;
-        float myb = 0.0f;
-        getScaledMousePos(&mxb, &myb);
-        zoom += event.wheel.y * 0.1; // zoom in or out based on mouse wheel scroll
-        clamp_zoom();
-        SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth / zoom, ResolutionHeight / zoom, SDL_LOGICAL_PRESENTATION_LETTERBOX);
-        //SDL_SetRenderScale(renderer, zoom, zoom);
-        //mouse position after zoom
-        float mxa = 0.0f;
-        float mya = 0.0f;
-        getScaledMousePos(&mxa, &mya);
-        camera.dimen.x += mxb - mxa;
-        camera.dimen.y += myb - mya;
-        camera.dimen.w = ResolutionWidth / zoom;
-        camera.dimen.h = ResolutionHeight / zoom;
-    }
-    else if (event.type == SDL_EVENT_KEY_DOWN && event.key.key == SDLK_GRAVE) { // enter/exit dev mode
-        dev_mode = !dev_mode;
-    }
-    else {
-        manager->handleInput(event);
-    }
 }
 
 int main()
@@ -157,7 +116,16 @@ int main()
         //handle input
         SDL_Event event;
         while (SDL_PollEvent(&event) != 0) {
-            handleInput(event, &io, &manager);
+            ImGui_ImplSDL3_ProcessEvent(&event);
+            if (event.type == SDL_EVENT_QUIT) { // exit game
+                isRunning = false;
+            }
+            else if (event.type == SDL_EVENT_KEY_DOWN && event.key.key == SDLK_GRAVE) { // enter/exit dev mode
+                dev_mode = !dev_mode;
+            }
+            else {
+                manager.handleInput(event);
+            }
         }
         Uint32 currentTime = SDL_GetTicks();
         deltaTime = (currentTime - lastTime) / 1000.0f;
@@ -217,7 +185,7 @@ int main()
         }
     }
 
-	manager.exit();
+	manager.saveOnExit();
 
     // Cleanup
     ImGui_ImplSDLRenderer3_Shutdown();

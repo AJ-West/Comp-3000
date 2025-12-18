@@ -31,10 +31,14 @@ class LevelManager {
 public:
 	LevelManager (SDL_Renderer* SDL_Renderer);
 	~LevelManager ();
-	void exit();
+	void saveOnExit();
 
 	void handleInput(SDL_Event event);
 	void render();
+
+	//Handle game zoom
+	void zoomChange(SDL_Event event);
+	void clampZoom();
 
 private:
 	SDL_Renderer* renderer;

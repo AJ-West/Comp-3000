@@ -22,16 +22,21 @@ LevelManager::~LevelManager()
 {
 }
 
-void LevelManager::exit()
+//On closing the game saves what is needed to be saved
+void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
     saver.saveFile(unitList, depot, convoyList);
 }
 
+// Handles user input
 void LevelManager::handleInput(SDL_Event event)
 {
     if (event.type == SDL_EVENT_MOUSE_MOTION) {
 		selector->checkHover(event);
+    }
+    else if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+        zoomChange(event);
     }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
@@ -60,6 +65,7 @@ void LevelManager::handleInput(SDL_Event event)
     }
 }
 
+//Renders the screen
 void LevelManager::render()
 {
     time->update();
@@ -87,4 +93,35 @@ void LevelManager::render()
     UI->render();
     UI->renderTime();
     depot->renderResources(renderer);
+}
+
+
+//Handles zoom change
+void LevelManager::zoomChange(SDL_Event event) {
+    //mouse position before zoom
+    float mxb = 0.0f;
+    float myb = 0.0f;
+    getScaledMousePos(&mxb, &myb);
+    zoom += event.wheel.y * 0.1; // zoom in or out based on mouse wheel scroll
+    clampZoom();
+    SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth / zoom, ResolutionHeight / zoom, SDL_LOGICAL_PRESENTATION_LETTERBOX);
+    //SDL_SetRenderScale(renderer, zoom, zoom);
+    //mouse position after zoom
+    float mxa = 0.0f;
+    float mya = 0.0f;
+    getScaledMousePos(&mxa, &mya);
+    camera.dimen.x += mxb - mxa;
+    camera.dimen.y += myb - mya;
+    camera.dimen.w = ResolutionWidth / zoom;
+    camera.dimen.h = ResolutionHeight / zoom;
+}
+
+// Keeps zoom within ok range
+void LevelManager::clampZoom(){
+    if (zoom > 2.0f) {
+        zoom = 2.0f;
+    }
+    else if (zoom < 0.5f) {
+        zoom = 0.5f;
+    }
 }
