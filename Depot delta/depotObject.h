@@ -1,9 +1,8 @@
 #pragma once
 #include "GameObject.h"
-#include "buttonBase.h"
 #include "resourceComponent.h"
 
-class DepotObj : public GameObject, public BaseButton {
+class DepotObj : public GameObject{
 public:
 	DepotObj(int x, int y, int width, int height, int health) : GameObject(x, y, width, height, health) {}
 

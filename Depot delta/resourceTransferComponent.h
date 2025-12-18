@@ -115,7 +115,7 @@ public:
 	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
 	virtual ~resourceTransferComponent() {}
 private:
-	GameObject* target;
+	GameObject* target = nullptr;
 	SDL_Renderer* renderer;
 
 	shared_ptr<resourceComponent> ownerResComp = nullptr;

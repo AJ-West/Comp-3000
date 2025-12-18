@@ -8482,12 +8482,12 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>100</health>
-            <x>371</x>
-            <y>55</y>
+            <x>305</x>
+            <y>62</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>380</target_x>
-            <target_y>63</target_y>
+            <target_x>313.5</target_x>
+            <target_y>69.5</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>50</Ammunition>
@@ -8516,12 +8516,12 @@
             <name>Basic Convoy</name>
             <id>8</id>
             <health>100</health>
-            <x>354</x>
-            <y>55</y>
+            <x>318</x>
+            <y>64</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>363</target_x>
-            <target_y>63</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>0</Personnel>
                 <Ammunition>25</Ammunition>

@@ -46,7 +46,7 @@ private:
 	vector<UnitObj*> nearbyUnits;
 	UnitObj* nearestUnit = nullptr;
 
-	float distanceToNearest;
+	float distanceToNearest = FLT_MAX;
 
 	float sightDistance = 200.0f; // distance to check for nearby units
 	float searchDistance = sightDistance + 100.0f; // distance to search for units

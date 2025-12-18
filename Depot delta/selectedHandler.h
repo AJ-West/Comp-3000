@@ -32,8 +32,6 @@ public:
 	void deselectObject();
 
 private:
-	SDL_Renderer* renderer;
-
 	GameObject* selectedObject = nullptr;
     GameObject* hoveredObj = nullptr;
 

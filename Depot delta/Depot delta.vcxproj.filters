@@ -179,9 +179,6 @@
     <ClInclude Include="transferDirectionButton.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClInclude>
-    <ClInclude Include="buttonBase.h">
-      <Filter>Source Files\gameFiles</Filter>
-    </ClInclude>
     <ClInclude Include="dayCycle.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>

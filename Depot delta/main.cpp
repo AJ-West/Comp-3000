@@ -13,31 +13,12 @@
 #include <imgui/backends/imgui_impl_sdl3.h>
 #include <imgui/backends/imgui_impl_sdlrenderer3.h>
 
-#include "tinyxml2.h"
-#include "mapLoader.h"
-
-#include "unitObject.h"
-#include "depotObject.h"
-#include "convoyObject.h"
-
-#include "renderComponent.h"
-#include "buttonComponent.h"
-#include "movementComponent.h"
-#include "resourceComponent.h"
-
 #include "variables.h"
-
+#include "mapLoader.h"
 #include "levelManager.h"
-
 #include "dayCycle.h"
 
 using namespace std;
-using namespace tinyxml2;
-
-vector<UnitObj*> unitList;
-vector<ConvoyObj*> convoyList;
-DepotObj* depot;
-GameObject* hoveredUnit = nullptr;
 
 bool dev_mode = false;
 
@@ -156,6 +137,7 @@ int main()
         ImGui_ImplSDL3_NewFrame();
         ImGui::NewFrame();
 
+        // Devmode
         if (dev_mode) {
             ImGui::SetNextWindowPos(ImVec2(camera.dimen.x, camera.dimen.y), ImGuiCond_Appearing);
             ImGui::SetNextWindowSize(ImVec2(camera.dimen.w, camera.dimen.h), ImGuiCond_Appearing);

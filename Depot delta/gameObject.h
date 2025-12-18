@@ -12,7 +12,6 @@
 
 #include "usefulFunctions.h"
 #include "variables.h"
-#include "buttonBase.h"
 
 
 using namespace std;
@@ -31,9 +30,9 @@ protected:
 	GameObject* owner;
 };
 
-class GameObject : public BaseButton {
+class GameObject { 
 public:
-	GameObject(int x, int y, int width, int height, int vHealth): health(vHealth){
+	GameObject(float x, float y, float width, float height, int vHealth): health(vHealth){
 		size.x = x;
 		size.y = y;
 		size.w = width*tileWidth;
@@ -55,6 +54,19 @@ public:
 		for (auto& pair : components) {
 			pair.second->update(this);
 		}
+	}
+
+	//might be removable to use button component instead
+	virtual void onClick() = 0;
+	void checkHover(int x, int y) {
+		isHover = isWithinRect(x, y);
+	}
+	bool isWithinRect(int x, int y) {
+		if (x < size.x) return false;
+		if (x > size.x + size.w) return false;
+		if (y < size.y) return false;
+		if (y > size.y + size.h) return false;
+		return true;
 	}
 
 	// Pure virtual functions
@@ -90,6 +102,7 @@ protected:
 	int health;
 	int maxHealth = 1000;
 private:
+	bool isHover = false;
 
 	unordered_map<string, shared_ptr<Component>> components;// Store components
 

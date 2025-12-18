@@ -101,7 +101,7 @@ public:
 	bool getToDelete() { return toDelete; }
 
 private:
-	SDL_Texture* texture;
+	SDL_Texture* texture = nullptr;
 
 	SDL_FRect input{ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 };
 

@@ -176,7 +176,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buttonBase.h" />
     <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="convoyObject.h" />
     <ClInclude Include="dayCycle.h" />
