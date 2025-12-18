@@ -50,7 +50,6 @@ public:
 			if (increase) {
 				if (transferAmount[i] < transferNum) { // if transferNum would transfer more than requested
 					transferNum = transferAmount[i];
-					transferAmount[i] = 0;
 				}
 				ownerResComp->setResourceUsage(i, transferNum);
 				targetResComp->setResourceIncrease(i, transferNum);
