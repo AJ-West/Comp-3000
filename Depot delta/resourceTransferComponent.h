@@ -7,8 +7,8 @@ class resourceTransferComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		if (transfering) { 
-			checkTime();
 			renderTransferIndicator();
+			checkTime();
 			checkTransfer(); 
 		}
 	}
@@ -28,7 +28,11 @@ public:
 		int transferNum = 0;
 		for (int i = 0; i < transferRate.size(); i++) {
 			transferNum = 0;
-			if (transferAmount[i] == 0) continue;
+			if (transferAmount[i] == 0) {
+				ownerResComp->setResourceUsage(i, 0);
+				targetResComp->setResourceIncrease(i, 0);
+				continue;
+			} 
 
 			if (ownerResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
 				transferNum = ownerResComp->getResourcesCount(i);

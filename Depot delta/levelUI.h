@@ -1,6 +1,4 @@
-#ifndef LEVELUI_HEADER
-#define LEVELUI_HEADER
-
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -40,5 +38,3 @@ private:
 
 	transferBox* box = nullptr;
 };
-
-#endif
