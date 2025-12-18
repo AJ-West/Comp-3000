@@ -41,5 +41,6 @@ void levelUI::renderTime() {
 	string countText = sHour + ":" + sMin;
 	SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 255,255,255,255 });
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FRect timeSize{ 62.0f / 1440.0f * camera.dimen.w, 9.0f / 960.0f * camera.dimen.h , 66.0f / 1440.0f * camera.dimen.w , 30.0f / 960.0f * camera.dimen.h };
 	SDL_RenderTexture(renderer, texture, NULL, &timeSize);
 }
