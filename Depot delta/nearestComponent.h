@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "unitObject.h"
+#include "depotObject.h"
 
 class nearestComponent : public Component {
 public:
@@ -17,11 +18,17 @@ public:
 				}
 			}
 		}
+		if (distanceToUnit(depot) < distanceToNearest) {
+			nearestUnit = nullptr;
+			distanceToNearest = distanceToUnit(depot);
+			owner->setTarget(depot->getPos().x, depot->getPos().x);
+			owner->setTargetObject(depot);
+		}
 		if (nearestUnit && distanceToNearest > searchDistance) {
 			nearestUnit = nullptr;
 			distanceToNearest = FLT_MAX;
-			owner->setTarget(NULL, NULL);
-			owner->setTargetObject(nullptr);
+			owner->setTarget(depot->getPos().x, depot->getPos().x);
+			owner->setTargetObject(depot);
 		}
 		else if (nearestUnit) {
 			owner->setTarget(nearestUnit->getDimensions().x + nearestUnit->getDimensions().w / 2, nearestUnit->getDimensions().y + nearestUnit->getDimensions().h / 2);
@@ -30,7 +37,7 @@ public:
 		}
 	}
 
-	float distanceToUnit(UnitObj* unit) {
+	float distanceToUnit(GameObject* unit) {
 		SDL_FRect dimensions = owner->getDimensions();
 		SDL_FRect unitDimensions = unit->getDimensions();
 		float dx = (unitDimensions.x + unitDimensions.w / 2) - (dimensions.x + dimensions.w / 2);
@@ -40,6 +47,7 @@ public:
 
 	//setters
 	void setnearbyUnits(vector<UnitObj*> units) { nearbyUnits = units; }
+	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 
 	nearestComponent(GameObject* obj) : Component(obj) {}
 	virtual ~nearestComponent() {}
@@ -47,6 +55,8 @@ public:
 private:
 	vector<UnitObj*> nearbyUnits;
 	UnitObj* nearestUnit = nullptr;
+
+	DepotObj* depot = nullptr;
 
 	float distanceToNearest = FLT_MAX;
 

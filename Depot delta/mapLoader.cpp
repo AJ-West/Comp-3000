@@ -87,6 +87,7 @@ void MapLoader::loadEntities(XMLElement* layer)
     }
 	for (auto& zombie : zombieList) {
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitList);
+        zombie->getComponent<nearestComponent>()->setDepot(depot);
 	}
 }
 
