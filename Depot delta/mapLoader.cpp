@@ -82,11 +82,16 @@ void MapLoader::loadEntities(XMLElement* layer)
         }
 		entity = entity->NextSiblingElement("entities");
 	}
+    vector<GameObject*> unitConvoys;
     for (auto& unit : unitList) {
         unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+        unitConvoys.push_back(unit);
+    }
+    for (auto& convoy : convoyList) {
+        unitConvoys.push_back(convoy);
     }
 	for (auto& zombie : zombieList) {
-		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitList);
+		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);
         zombie->getComponent<nearestComponent>()->setDepot(depot);
 	}
 }

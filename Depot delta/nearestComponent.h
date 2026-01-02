@@ -46,15 +46,15 @@ public:
 	}
 
 	//setters
-	void setnearbyUnits(vector<UnitObj*> units) { nearbyUnits = units; }
+	void setnearbyUnits(vector<GameObject*> units) { nearbyUnits = units; }
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 
 	nearestComponent(GameObject* obj) : Component(obj) {}
 	virtual ~nearestComponent() {}
 
 private:
-	vector<UnitObj*> nearbyUnits;
-	UnitObj* nearestUnit = nullptr;
+	vector<GameObject*> nearbyUnits;
+	GameObject* nearestUnit = nullptr;
 
 	DepotObj* depot = nullptr;
 
