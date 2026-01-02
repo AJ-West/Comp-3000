@@ -21,9 +21,11 @@ public:
 			nearestUnit = nullptr;
 			distanceToNearest = FLT_MAX;
 			owner->setTarget(NULL, NULL);
+			owner->setTargetObject(nullptr);
 		}
 		else if (nearestUnit) {
 			owner->setTarget(nearestUnit->getDimensions().x + nearestUnit->getDimensions().w / 2, nearestUnit->getDimensions().y + nearestUnit->getDimensions().h / 2);
+			owner->setTargetObject(nearestUnit);
 			distanceToNearest = distanceToUnit(nearestUnit);
 		}
 	}

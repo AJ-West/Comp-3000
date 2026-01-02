@@ -9,6 +9,12 @@ float mag(float a) {
 	return sqrt(a * a);
 }
 
+float getDistance(Vec2 a, Vec2 b) {
+	float xDist = a.x - b.x;
+	float yDist = a.y - b.y;
+	return sqrt(xDist * xDist + yDist * yDist);
+}
+
 void getScaledMousePos(float* x, float* y) {
 	float mx, my;
 	SDL_GetMouseState(&mx, &my);

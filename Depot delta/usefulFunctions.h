@@ -11,6 +11,8 @@ pair<float, float> normalise(pair<float, float> vector);
 
 float mag(float a);
 
+float getDistance(Vec2 a, Vec2 b);
+
 void getScaledMousePos(float* x, float* y);
 
 #endif

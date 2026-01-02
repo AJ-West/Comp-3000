@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "resourceComponent.h"
 #include "pathfindingComponent.h"
+#include "usefulFunctions.h"
 
 class ZombieObj : public GameObject {
 public:
@@ -23,9 +24,27 @@ public:
 		Vec2 target = { tx,ty };
 		SDL_FRect size = getDimensions();
 		Vec2 origin = { size.x + size.w / 2, size.y + size.h / 2 };
-		auto pathComp = getComponent<pathfindingComponent>();
-		pathComp->computeFlowField(target, origin);
+		if (checkForAttack(target, origin)) {
+			attack();
+		}
+		else {
+			auto pathComp = getComponent<pathfindingComponent>();
+			pathComp->computeFlowField(target, origin);
+		}
 	}
+
+	void attack() {
+		Uint32 currentTime = SDL_GetTicks();
+		if (currentTime - lastAttackTime >= attackCooldownMS) { 
+			targetObject->takeDamage(5); 
+			lastAttackTime = currentTime;
+		}
+	}
+
+	bool checkForAttack(Vec2 target, Vec2 origin) {
+		return (getDistance(target, origin) < 15);
+	}
+
 	//unit object functions not needed for zombies
 
 	void onClick() {
@@ -38,6 +57,9 @@ public:
 
 private:
 	int ID;
+
+	Uint32 attackCooldownMS = 1000; // 1 sec
+	Uint32 lastAttackTime = 0;
 
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + camera.dimen.h - 75, 50, 50 };
 	SDL_FRect tSize{ camera.dimen.x + 60, camera.dimen.y + camera.dimen.h - 75, 100, 50 };

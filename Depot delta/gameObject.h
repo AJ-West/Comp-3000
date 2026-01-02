@@ -69,6 +69,10 @@ public:
 		return true;
 	}
 
+	virtual void takeDamage(int damage) {health -= damage;}
+
+	virtual void setTargetObject(GameObject* object) { targetObject = object; }
+
 	// Pure virtual functions
 	virtual void renderHover(SDL_Renderer* renderer) = 0;
 	virtual void clickAway() { cout << "clickAway"; }; // used for when clicking away from the selected object
@@ -99,8 +103,11 @@ protected:
 	float tx = NULL;
 	float ty = NULL;
 
-	int health;
+	int health = 100;
 	int maxHealth = 1000;
+
+	GameObject* targetObject = nullptr;
+
 private:
 	bool isHover = false;
 
@@ -109,4 +116,6 @@ private:
 	SDL_Texture texture;
 
 	SDL_FRect size{ NULL, NULL, NULL, NULL };
+
+	
 };
