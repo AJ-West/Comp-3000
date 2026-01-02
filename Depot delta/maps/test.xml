@@ -8482,12 +8482,12 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>100</health>
-            <x>283</x>
-            <y>75</y>
+            <x>317</x>
+            <y>93</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>305</target_x>
-            <target_y>99.5</target_y>
+            <target_x>325.5</target_x>
+            <target_y>100.5</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>48</Ammunition>

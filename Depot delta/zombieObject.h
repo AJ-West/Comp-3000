@@ -28,6 +28,7 @@ public:
 			attack();
 		}
 		else {
+			attacking = false;
 			auto pathComp = getComponent<pathfindingComponent>();
 			pathComp->computeFlowField(target, origin);
 		}
@@ -38,6 +39,7 @@ public:
 		if (currentTime - lastAttackTime >= attackCooldownMS) { 
 			targetObject->takeDamage(5); 
 			lastAttackTime = currentTime;
+			attacking = true;
 		}
 	}
 

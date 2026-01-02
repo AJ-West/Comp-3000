@@ -85,12 +85,14 @@ public:
 	SDL_FRect getSize() { return size; }
 	int getHealth() { return health; }
 	int getMaxHealth() { return maxHealth; }
+	bool getAttacking() { return attacking; }
 
 	//setters
 	void setX(float x) { size.x = x; }
 	void setY(float y) { size.y = y; }
 	void setDimensions(SDL_FRect newSize) { size = newSize; }
 	void setHovering(bool hover) { hovering = hover; }
+	void setAttacking(bool attack) { attacking = attack; }
 
 	//pure virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
@@ -105,6 +107,8 @@ protected:
 
 	int health = 100;
 	int maxHealth = 1000;
+
+	bool attacking = false;
 
 	GameObject* targetObject = nullptr;
 

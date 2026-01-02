@@ -13,6 +13,10 @@ public:
 			SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 			SDL_RenderRect(renderer, &size);
 		}
+		if (owner->getAttacking()) {
+			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+			SDL_RenderRect(renderer, &size);
+		}
 	}
 
 	SDL_Texture* loadTexture(const char* filePath) {
