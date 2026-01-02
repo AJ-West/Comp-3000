@@ -69,7 +69,10 @@ public:
 		return true;
 	}
 
-	virtual void takeDamage(int damage) {health -= damage;}
+	virtual void takeDamage(int damage) {
+		health -= damage;
+		if (health <= 0) { alive = false; }
+	}
 
 	virtual void setTargetObject(GameObject* object) { targetObject = object; }
 
@@ -80,12 +83,14 @@ public:
 	//getters
 	SDL_Texture getTexture() { return texture; }
 	SDL_FRect getDimensions() { return size; }
+	Vec2 getPos() { return { size.x + size.w / 2, size.y + size.h / 2 }; }
 	bool getSelected() { return selected; }
 	bool getHovering() { return hovering; }
 	SDL_FRect getSize() { return size; }
 	int getHealth() { return health; }
 	int getMaxHealth() { return maxHealth; }
 	bool getAttacking() { return attacking; }
+	bool getAlive() { return alive; }
 
 	//setters
 	void setX(float x) { size.x = x; }
@@ -109,6 +114,8 @@ protected:
 	int maxHealth = 1000;
 
 	bool attacking = false;
+
+	bool alive = true;
 
 	GameObject* targetObject = nullptr;
 

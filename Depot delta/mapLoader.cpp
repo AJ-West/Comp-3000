@@ -82,6 +82,9 @@ void MapLoader::loadEntities(XMLElement* layer)
         }
 		entity = entity->NextSiblingElement("entities");
 	}
+    for (auto& unit : unitList) {
+        unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+    }
 	for (auto& zombie : zombieList) {
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitList);
 	}
@@ -121,6 +124,7 @@ void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
     vector<int> transferRate = { 5,5,5,5,5 };
     unit->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, 50, transferRate));
     unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
+    unit->AddComponent(make_shared<attackComponent>(unit, 5, 100, 500));
 }
 
 void MapLoader::loadConvoy(XMLElement* entity)

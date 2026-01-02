@@ -215,5 +215,8 @@
     <ClInclude Include="imgui\backends\imgui_impl_sdlrenderer3.h">
       <Filter>Source Files\imgui\backend</Filter>
     </ClInclude>
+    <ClInclude Include="attackComponent.h">
+      <Filter>Source Files\gameFiles\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

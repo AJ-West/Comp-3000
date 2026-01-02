@@ -18,6 +18,7 @@
 #include "resourceTransferComponent.h"
 #include "pathfindingComponent.h"
 #include "nearestComponent.h"
+#include "attackComponent.h"
 
 using namespace std;
 using namespace tinyxml2;
