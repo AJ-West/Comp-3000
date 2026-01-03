@@ -9,6 +9,7 @@
 #include "unitObject.h"
 #include "depotObject.h"
 #include "convoyObject.h"
+#include "zombieObject.h"
 
 #include "renderComponent.h"
 #include "buttonComponent.h"
@@ -26,10 +27,12 @@ public:
 
 	void saveUnit(XMLElement* entity, vector<UnitObj*> units);
 	void saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys);
+	void saveZombie(XMLElement* entity, vector<ZombieObj*> zombie);
 	void saveDepot(XMLElement* entity, DepotObj* depot);
 
-	void saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys);
+	void saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys, vector<ZombieObj*> zombies);
 
+	void saveHealth(XMLElement* entity, GameObject* obj);
 	void saveResources(XMLElement* entity, GameObject* obj);
 	void saveMovement(XMLElement* entity, GameObject* obj);
 

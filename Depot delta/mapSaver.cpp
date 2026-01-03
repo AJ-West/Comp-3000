@@ -10,7 +10,7 @@ MapSaver::~MapSaver()
 {
 }
 
-void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys)
+void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys, vector<ZombieObj*> zombies)
 {
     XMLElement* root = doc.RootElement();
     XMLElement* layer = root->FirstChildElement("layers");
@@ -35,6 +35,9 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
 			else if (name == "Basic Convoy") {
 				saveConvoy(entity, convoys);
 			}
+            else if (name == "Basic Zombie") {
+                saveZombie(entity, zombies);
+            }
             entity = entity->NextSiblingElement("entities");
         }
         doc.SaveFile(filename);
@@ -48,6 +51,7 @@ void MapSaver::saveUnit(XMLElement* entity, vector<UnitObj*> units)
 {
     for (auto& unit : units) {
         if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+            saveHealth(entity, unit);
 			saveMovement(entity, unit);
             saveResources(entity, unit);
             break;
@@ -59,6 +63,7 @@ void MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
 {
     for (auto& convoy : convoys) {
         if (convoy->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+            saveHealth(entity, convoy);
 			saveMovement(entity, convoy);
             saveResources(entity, convoy);
             break;
@@ -66,9 +71,24 @@ void MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
     }
 }
 
+void MapSaver::saveZombie(XMLElement* entity, vector<ZombieObj*> zombies) {
+    for (auto& zombie : zombies) {
+        if (zombie->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+            saveHealth(entity, zombie);
+            saveMovement(entity, zombie);
+            break;
+        }
+    }
+}
+
 void MapSaver::saveDepot(XMLElement* entity, DepotObj* depot)
 {
+    saveHealth(entity, depot);
     saveResources(entity, depot);
+}
+
+void MapSaver::saveHealth(XMLElement* entity, GameObject* obj) {
+    entity->FirstChildElement("health")->SetText(static_cast<int>(obj->getHealth()));
 }
 
 void MapSaver::saveResources(XMLElement* entity, GameObject* obj) {

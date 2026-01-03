@@ -29,7 +29,7 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
-    saver.saveFile(unitList, depot, convoyList);
+    saver.saveFile(unitList, depot, convoyList, zombieList);
 }
 
 // Handles user input

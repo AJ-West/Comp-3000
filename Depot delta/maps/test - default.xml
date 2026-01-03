@@ -8533,13 +8533,11 @@
         <entities eid="15533228">
             <name>Basic Zombie</name>
             <id>9</id>
-            <health>0</health>
-            <x>178</x>
-            <y>82</y>
+            <health>100</health>
+            <x>152</x>
+            <y>32</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>212</target_x>
-            <target_y>137</target_y>
         </entities>
     </layers>
 </root>
