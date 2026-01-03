@@ -6,6 +6,7 @@
 class nearestComponent : public Component {
 public:
 	virtual void update(GameObject* owner) { // update target based off of closest unit (need to add convoys too at later date)
+		nearestUnit = nullptr;
 		for (auto unit : nearbyUnits) {
 			if (distanceToUnit(unit) <= sightDistance) {
 				if (!nearestUnit) {

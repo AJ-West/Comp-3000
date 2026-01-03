@@ -1,4 +1,7 @@
 #pragma once
+
+#include <algorithm>
+
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3_image/SDL_image.h>
@@ -45,6 +48,7 @@ private:
 	levelUI* UI;
 
 	MapLoader* mapLoader;
+	vector<GameObject*> unitConvoys;
 	vector<UnitObj*> unitList;
 	vector<ConvoyObj*> convoyList;
 	vector<ZombieObj*> zombieList;

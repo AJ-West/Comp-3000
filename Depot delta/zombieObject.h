@@ -37,9 +37,16 @@ public:
 	void attack() {
 		Uint32 currentTime = SDL_GetTicks();
 		if (currentTime - lastAttackTime >= attackCooldownMS) { 
-			targetObject->takeDamage(5); 
-			lastAttackTime = currentTime;
-			attacking = true;
+			if (targetObject->getHealth() <= 0) {
+				targetObject = nullptr;
+				tx = NULL;
+				ty = NULL;
+			}
+			else {
+				targetObject->takeDamage(5);
+				lastAttackTime = currentTime;
+				attacking = true;
+			}
 		}
 	}
 

@@ -1,159 +1,641 @@
-﻿  mapSaver.cpp
+﻿  levelManager.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,20): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,43): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,54): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,34): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,42): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,53): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,23): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,35): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         with
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         [
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:             _Ty=float
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         ]
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         with
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         [
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:             _Ty=float
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         ]
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         with
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         [
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:             _Ty=float
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         ]
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305: 'initializing': truncation from 'double' to '_Ty'
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         with
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         [
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:             _Ty=float
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         ]
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'mapSaver.cpp')
+  (compiling source file 'levelManager.cpp')
   
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(59,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(26,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(27,36): warning C4018: '>=': signed/unsigned mismatch
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         ]
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         ]
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         ]
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         ]
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
+  (compiling source file 'levelManager.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(169,27): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(171,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(171,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,20): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,43): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,54): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,34): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,42): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,53): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,23): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,35): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(59,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(26,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(27,36): warning C4018: '>=': signed/unsigned mismatch
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(27,17): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(32,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(49,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(57,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(57,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(92,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(95,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(111,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(164,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(165,23): warning C4018: '<': signed/unsigned mismatch
+  selectedHandler.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(20,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(24,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(25,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,20): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(39,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,43): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(45,54): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(51,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(52,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,30): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(54,38): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,34): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(79,42): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,45): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(80,53): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,23): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(91,35): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(8,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,38): warning C4305:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,46): warning C4305:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,54): warning C4305:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305: 'initializing': truncation from 'double' to '_Ty'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(57,62): warning C4305:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\depotObject.h(7,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(8,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(59,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(26,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(27,36): warning C4018: '>=': signed/unsigned mismatch
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(35,18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(37,37): warning C4244:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,69): warning C4244:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,60): warning C4244:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,51): warning C4244:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244: 'argument': conversion from '_Ty' to 'Uint8', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         with
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         [
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:             _Ty=float
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
+  (compiling source file 'selectedHandler.cpp')
+  
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\selectedHandler.cpp(16,57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\selectedHandler.cpp(16,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

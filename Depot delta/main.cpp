@@ -79,7 +79,7 @@ ImGuiIO& init_ImGui_environment() {
 
 int main()
 {
-    //system("pause");
+    system("pause");
     
     //initiate the environment
     init_SDL_environment();

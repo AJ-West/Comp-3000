@@ -9,7 +9,9 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     depot = mapLoader->getDepot();
     convoyList = mapLoader->getConvoyList();
 	zombieList = mapLoader->getZombieList();
-	vector<GameObject*> allObjects;
+    unitConvoys.insert(unitConvoys.end(), unitList.begin(), unitList.end());
+    unitConvoys.insert(unitConvoys.end(), convoyList.begin(), convoyList.end());
+    vector<GameObject*> allObjects;
 	allObjects.insert(allObjects.end(), unitList.begin(), unitList.end());
 	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
 	allObjects.insert(allObjects.end(), zombieList.begin(), zombieList.end());
@@ -29,6 +31,21 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
+    unitList.erase(
+        remove_if(unitList.begin(), unitList.end(),
+            [](const UnitObj* ptr) { return ptr == nullptr; }),
+        unitList.end()
+    );
+    convoyList.erase(
+        remove_if(convoyList.begin(), convoyList.end(),
+            [](const ConvoyObj* ptr) { return ptr == nullptr; }),
+        convoyList.end()
+    );
+    zombieList.erase(
+        remove_if(zombieList.begin(), zombieList.end(),
+            [](const ZombieObj* ptr) { return ptr == nullptr; }),
+        zombieList.end()
+    );
     saver.saveFile(unitList, depot, convoyList, zombieList);
 }
 
@@ -75,19 +92,63 @@ void LevelManager::render()
 	mapLoader->renderTileMap(renderer);
     depot->Update();
     hoveredUnit = nullptr;
-    for (auto& unit : unitList) {
-        unit->Update();
-        if (unit->getHovering()) {
-            hoveredUnit = unit;
+    /*for (auto& unit : unitList) {
+        if (unit) {
+            unit->Update();
+            if (unit->getHealth() <= 0) {
+                if (unit->getSelected()) {
+                    selector->setSelected(nullptr);
+                }
+                delete unit;
+                unit = nullptr;
+            }
+            else if (unit->getHovering()) {
+                hoveredUnit = unit;
+            }
         }
     }
+    unitList.erase(
+        remove_if(unitList.begin(), unitList.end(),
+            [](const UnitObj* ptr) { return ptr == nullptr; }),
+        unitList.end()
+    );
     for (auto& convoy : convoyList) {
         convoy->Update();
         if (convoy->getHovering()) {
             hoveredUnit = convoy;
         }
+    }*/
+    for (auto& unit : unitConvoys) {
+        if (unit) {
+            unit->Update();
+            if (unit->getHealth() <= 0) {
+                //if (unit->getSelected()) {
+                  //  selector->setSelected(nullptr);
+                //}
+                delete unit;
+                unit = nullptr;
+            }
+            else if (unit->getHovering()) {
+                hoveredUnit = unit;
+            }
+        }
     }
-    for (auto& zombie : zombieList) { zombie->Update(); }
+    unitConvoys.erase(
+        remove_if(unitConvoys.begin(), unitConvoys.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        unitConvoys.end()
+    );
+    selector->setAllObjects(unitConvoys);
+    for (auto& zombie : zombieList) { 
+        if (zombie) {
+            zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);
+            zombie->Update();
+            if (zombie->getHealth() <= 0) {
+                delete zombie;
+                zombie = nullptr;
+            }
+        }
+    }
     camera.update();
     if (hoveredUnit) {
         UI->renderResourceHover();

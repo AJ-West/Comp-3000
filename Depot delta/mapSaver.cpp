@@ -24,21 +24,32 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
     }
     if (found) {
         XMLElement* entity = layer->FirstChildElement("entities");
+        XMLElement* deleteEntity = nullptr;
 		while (entity) { // identify each entity and save its data
             string name = string(entity->FirstChildElement("name")->GetText());
             if (name == "Basic unit") {
-                saveUnit(entity, units);
+                if (!saveUnit(entity, units)) {
+                    deleteEntity = entity;
+                }
             }
             else if (name == "depot") {
                 saveDepot(entity, depot);
             }
 			else if (name == "Basic Convoy") {
-				saveConvoy(entity, convoys);
+                if (!saveConvoy(entity, convoys)) {
+                    deleteEntity = entity;
+                }
 			}
             else if (name == "Basic Zombie") {
-                saveZombie(entity, zombies);
+                if (!saveZombie(entity, zombies)) { 
+                    deleteEntity = entity; 
+                }
             }
             entity = entity->NextSiblingElement("entities");
+            if (deleteEntity) {
+                layer->DeleteChild(deleteEntity);
+                deleteEntity = nullptr;
+            }
         }
         doc.SaveFile(filename);
     }
@@ -47,38 +58,41 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
     }
 }
 
-void MapSaver::saveUnit(XMLElement* entity, vector<UnitObj*> units)
+bool MapSaver::saveUnit(XMLElement* entity, vector<UnitObj*> units)
 {
     for (auto& unit : units) {
         if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
             saveHealth(entity, unit);
 			saveMovement(entity, unit);
             saveResources(entity, unit);
-            break;
+            return true;
         }
     }
+    return false;
 }
 
-void MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
+bool MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
 {
     for (auto& convoy : convoys) {
         if (convoy->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
             saveHealth(entity, convoy);
 			saveMovement(entity, convoy);
             saveResources(entity, convoy);
-            break;
+            return true;
         }
     }
+    return false;
 }
 
-void MapSaver::saveZombie(XMLElement* entity, vector<ZombieObj*> zombies) {
+bool MapSaver::saveZombie(XMLElement* entity, vector<ZombieObj*> zombies) {
     for (auto& zombie : zombies) {
         if (zombie->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
             saveHealth(entity, zombie);
             saveMovement(entity, zombie);
-            break;
+            return true;
         }
     }
+    return false;
 }
 
 void MapSaver::saveDepot(XMLElement* entity, DepotObj* depot)

@@ -25,9 +25,9 @@ public:
 	MapSaver(const char* filename);
 	~MapSaver();
 
-	void saveUnit(XMLElement* entity, vector<UnitObj*> units);
-	void saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys);
-	void saveZombie(XMLElement* entity, vector<ZombieObj*> zombie);
+	bool saveUnit(XMLElement* entity, vector<UnitObj*> units);
+	bool saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys);
+	bool saveZombie(XMLElement* entity, vector<ZombieObj*> zombie);
 	void saveDepot(XMLElement* entity, DepotObj* depot);
 
 	void saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys, vector<ZombieObj*> zombies);

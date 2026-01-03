@@ -12,10 +12,12 @@ SelectedHandler::~SelectedHandler()
 
 void SelectedHandler::checkHover(SDL_Event event) {
     for (auto& obj : allObjects) {
-        obj->checkHover(event.motion.x, event.motion.y);
-		if (obj->getHovering()) {
-            hoveredObj = obj;
-            return;
+        if (obj) {
+            obj->checkHover(event.motion.x, event.motion.y);
+            if (obj->getHovering()) {
+                hoveredObj = obj;
+                return;
+            }
         }
     }
 	hoveredObj = nullptr;

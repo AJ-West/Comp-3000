@@ -8462,32 +8462,14 @@
         <gridCellsY>136</gridCellsY>
         <entities eid="32855006">
             <name>Basic unit</name>
-            <id>3</id>
-            <health>100</health>
-            <x>204</x>
-            <y>129</y>
-            <originX>8</originX>
-            <originY>8</originY>
-            <target_x>212</target_x>
-            <target_y>138</target_y>
-            <Resources>
-                <Personnel>100</Personnel>
-                <Ammunition>75</Ammunition>
-                <DoS>60</DoS>
-                <Fuel>60</Fuel>
-                <Scrap>60</Scrap>
-            </Resources>
-        </entities>
-        <entities eid="32855006">
-            <name>Basic unit</name>
             <id>4</id>
-            <health>100</health>
-            <x>322</x>
-            <y>164</y>
+            <health>70</health>
+            <x>209</x>
+            <y>104</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>330</target_x>
-            <target_y>172</target_y>
+            <target_x>218</target_x>
+            <target_y>112</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>48</Ammunition>
@@ -8499,7 +8481,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>7</id>
-            <health>1000</health>
+            <health>745</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8533,13 +8515,35 @@
         <entities eid="15533228">
             <name>Basic Zombie</name>
             <id>9</id>
-            <health>0</health>
-            <x>178</x>
-            <y>82</y>
+            <health>660</health>
+            <x>152</x>
+            <y>152</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>212</target_x>
-            <target_y>137</target_y>
+            <target_x>160</target_x>
+            <target_y>160</target_y>
+        </entities>
+        <entities eid="15533228">
+            <name>Basic Zombie</name>
+            <id>10</id>
+            <health>1000</health>
+            <x>152</x>
+            <y>152</y>
+            <originX>0</originX>
+            <originY>0</originY>
+            <target_x>160</target_x>
+            <target_y>160</target_y>
+        </entities>
+        <entities eid="15533228">
+            <name>Basic Zombie</name>
+            <id>11</id>
+            <health>1000</health>
+            <x>152</x>
+            <y>152</y>
+            <originX>0</originX>
+            <originY>0</originY>
+            <target_x>160</target_x>
+            <target_y>160</target_y>
         </entities>
     </layers>
 </root>

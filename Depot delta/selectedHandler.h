@@ -31,6 +31,10 @@ public:
 
 	void deselectObject();
 
+	//setters
+	void setSelected(GameObject* selected) { selectedObject = selected; }
+	void setAllObjects(vector<GameObject*> objects) { allObjects = objects; }
+
 private:
 	GameObject* selectedObject = nullptr;
     GameObject* hoveredObj = nullptr;
