@@ -2,6 +2,8 @@
 #include <SDL3/SDL.h>
 #include "variables.h"
 #include "usefulFunctions.h"
+#include <random>
+#include <iomanip>
 
 struct Bullet {
 	Vec2 pos, vel;
@@ -11,7 +13,7 @@ struct Bullet {
 	int lifetime;
 
 	void init(Vec2 pVec, SDL_FRect target) {
-		Vec2 tVec = Vec2{ target.x + target.w / 2, target.y + target.h / 2 };
+		Vec2 tVec = Vec2{ (target.x + target.w / 2) + target.w* randDir(), (target.y + target.h / 2)+ target.h* randDir()};
 		//bullet init pos
 		pos.x = pVec.x;
 		pos.y = pVec.y;
@@ -23,6 +25,11 @@ struct Bullet {
 		lifetime = mag(tVec.sub(pVec))/ mag(vel);
 		cout << lifetime << '\n';
 		inUse = true;
+	}
+
+	// creates random value between -0.5 and 0.5 to add bullet spread
+	float randDir() {
+		return (static_cast<float>(rand()) / RAND_MAX) - 0.5f;
 	}
 
 	void update() {
@@ -48,10 +55,10 @@ struct Bullet {
 
 class bulletHandler {
 public:
-	void spawnBullet(Vec2 pVec, Vec2 tVec) {
+	void spawnBullet(Vec2 pVec, SDL_FRect target) {
 		for (int i = 0; i < POOL_SIZE; i++) {
 			if (!bullets[i].getInUse()) {
-				bullets[i].init(pVec, tVec);
+				bullets[i].init(pVec, target);
 				return;
 			}
 		}
@@ -78,4 +85,5 @@ public:
 private:
 	static const int POOL_SIZE = 150;
 	Bullet bullets[POOL_SIZE];
+
 };

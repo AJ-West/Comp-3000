@@ -40,7 +40,7 @@ public:
 		}
 		if (currentTime - lastBulletTime >= bulletCooldownMS) {
 			lastBulletTime = currentTime;
-			bullets->spawnBullet(owner->getPos(), target->getPos());
+			bullets->spawnBullet(owner->getPos(), target->getDimensions());
 		}
 		renderAttack();
 	}

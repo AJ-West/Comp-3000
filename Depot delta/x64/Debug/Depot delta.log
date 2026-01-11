@@ -156,7 +156,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(19,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(25,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(73,25): warning C4305: 'initializing': truncation from 'int' to 'float'
@@ -373,7 +373,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(19,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(25,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(73,25): warning C4305: 'initializing': truncation from 'int' to 'float'
@@ -597,7 +597,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(19,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(25,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(73,25): warning C4305: 'initializing': truncation from 'int' to 'float'
@@ -801,7 +801,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\movementComponent.h(11,201): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(19,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\bulletHandler.h(25,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(73,25): warning C4305: 'initializing': truncation from 'int' to 'float'
