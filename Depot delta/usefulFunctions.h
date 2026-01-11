@@ -7,9 +7,10 @@
 
 using namespace std;
 
-pair<float, float> normalise(pair<float, float> vector);
+Vec2 normalise(Vec2 vec);
 
 float mag(float a);
+float mag(Vec2 vec);
 
 float getDistance(Vec2 a, Vec2 b);
 

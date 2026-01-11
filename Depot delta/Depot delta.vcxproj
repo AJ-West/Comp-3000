@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="attackComponent.h" />
+    <ClInclude Include="bulletHandler.h" />
     <ClInclude Include="buttonComponent.h" />
     <ClInclude Include="convoyObject.h" />
     <ClInclude Include="dayCycle.h" />

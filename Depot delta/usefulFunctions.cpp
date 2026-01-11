@@ -1,12 +1,16 @@
 #include "usefulFunctions.h"
 
-pair<float, float> normalise(pair<float, float> vector) {
-	float magnitude = sqrt(vector.first * vector.first + vector.second * vector.second);
-	return { vector.first / magnitude, vector.second / magnitude };
+Vec2 normalise(Vec2 vec) {
+	float magnitude = sqrt(vec.x * vec.x + vec.y * vec.y);
+	return { vec.x / magnitude, vec.y / magnitude };
 }
 
 float mag(float a) {
 	return sqrt(a * a);
+}
+
+float mag(Vec2 vec) {
+	return sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
 float getDistance(Vec2 a, Vec2 b) {

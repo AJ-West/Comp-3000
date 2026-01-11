@@ -218,5 +218,8 @@
     <ClInclude Include="attackComponent.h">
       <Filter>Source Files\gameFiles\components</Filter>
     </ClInclude>
+    <ClInclude Include="bulletHandler.h">
+      <Filter>Source Files\gameFiles\entities</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

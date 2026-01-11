@@ -8481,7 +8481,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>7</id>
-            <health>745</health>
+            <health>0</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8514,25 +8514,14 @@
         </entities>
         <entities eid="15533228">
             <name>Basic Zombie</name>
-            <id>9</id>
-            <health>660</health>
-            <x>152</x>
-            <y>152</y>
-            <originX>0</originX>
-            <originY>0</originY>
-            <target_x>160</target_x>
-            <target_y>160</target_y>
-        </entities>
-        <entities eid="15533228">
-            <name>Basic Zombie</name>
             <id>10</id>
-            <health>1000</health>
+            <health>595</health>
             <x>152</x>
             <y>152</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>160</target_x>
-            <target_y>160</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
         </entities>
         <entities eid="15533228">
             <name>Basic Zombie</name>
@@ -8542,8 +8531,8 @@
             <y>152</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>160</target_x>
-            <target_y>160</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
         </entities>
     </layers>
 </root>

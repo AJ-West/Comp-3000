@@ -1,12 +1,16 @@
 #pragma once
 #include "GameObject.h"
 #include <SDL3_image/SDL_image.h>
+#include "bulletHandler.h"
 
 class attackComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		if (target == nullptr) { checkRange(); }
-		else { attack(); }
+		else { 
+			bullets->update();
+			attack();
+		}
 	}
 
 	void checkRange() {
@@ -34,6 +38,10 @@ public:
 			}
 			owner->setAttacking(true);
 		}
+		if (currentTime - lastBulletTime >= bulletCooldownMS) {
+			lastBulletTime = currentTime;
+			bullets->spawnBullet(owner->getPos(), target->getPos());
+		}
 		renderAttack();
 	}
 
@@ -42,19 +50,25 @@ public:
 		Vec2 ownerPos = owner->getPos();
 		Vec2 targetPos = target->getPos();
 		SDL_RenderLine(renderer, ownerPos.x, ownerPos.y, targetPos.x, targetPos.y);
+		bullets->render(renderer);
 	}
 
 	void setPotentialTargets(vector<ZombieObj*> potTargets) { targets = potTargets; }
 
-	attackComponent(GameObject* obj, int damage, int range, int cooldown) : Component(obj), maxDamage(damage), attackRange(range), attackCooldownMS(cooldown) {}
+	attackComponent(GameObject* obj, int damage, int range, int cooldown) : Component(obj), maxDamage(damage), attackRange(range), attackCooldownMS(cooldown) {
+		bulletCooldownMS = attackCooldownMS / 5;
+	}
 	virtual ~attackComponent() {}
 private:
 	Uint32 lastAttackTime = 0;
+	Uint32 lastBulletTime = 0;
 	int maxDamage;
 	int attackRange;
 	int attackCooldownMS;
+	int bulletCooldownMS;
 	vector<ZombieObj*> targets;
 	ZombieObj* target = nullptr;
+	bulletHandler* bullets = new bulletHandler();
 
 	float targetDistance = INT_MAX;
 };

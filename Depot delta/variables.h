@@ -113,6 +113,54 @@ enum time {
 struct Vec2 {
 	float x;
 	float y;
+
+	Vec2 add(int val) {
+		this->x += val;
+		this->y += val;
+		return *this;
+	}
+
+	Vec2 add(Vec2 vals) {
+		this->x += vals.x;
+		this->y += vals.y;
+		return *this;
+	}
+
+	Vec2 sub(int val) {
+		this->x -= val;
+		this->y -= val;
+		return *this;
+	}
+
+	Vec2 sub(Vec2 vals) {
+		this->x -= vals.x;
+		this->y -= vals.y;
+		return *this;
+	}
+
+	Vec2 mul(int mult) {
+		this->x *= mult;
+		this->y *= mult;
+		return *this;
+	}
+
+	Vec2 mul(Vec2 mults) {
+		this->x *= mults.x;
+		this->y *= mults.y;
+		return *this;
+	}
+
+	Vec2 div(int mult) {
+		this->x = this->x/mult;
+		this->y = this->y/mult;
+		return *this;
+	}
+
+	Vec2 div(Vec2 mults) {
+		this->x *= this->x / mults.x;
+		this->y *= this->y / mults.y;
+		return *this;
+	}
 };
 
 struct Tile {
