@@ -8515,7 +8515,7 @@
         <entities eid="15533228">
             <name>Basic Zombie</name>
             <id>11</id>
-            <health>835</health>
+            <health>780</health>
             <x>151</x>
             <y>151</y>
             <originX>0</originX>

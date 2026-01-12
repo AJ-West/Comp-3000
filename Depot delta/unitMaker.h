@@ -15,7 +15,7 @@ class textInput;
 
 class unitMaker : public ResourceBox {
 public:
-	unitMaker(SDL_FRect rSize, vector<UnitObj*>* gameUnits, vector<ConvoyObj*>* gameConvoys, DepotObj* gameDepot) : ResourceBox(rSize), units(gameUnits), convoys(gameConvoys), depot(gameDepot) {
+	unitMaker(SDL_FRect rSize, vector<GameObject*> gameObjs, DepotObj* gameDepot) : ResourceBox(rSize), allObjects(gameObjs), depot(gameDepot) {
 		//add make unit button
 		elements.push_back(new newUnitButton({ size.x + 74.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, true));
 		//add cancel button
@@ -51,9 +51,9 @@ public:
 		//Spawn just above depot in the center
 		pos.x = pos.x + pos.w;
 		pos.y = pos.y + 25;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, units->size());
+		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, allObjects.size());
 		addUnitComponents(unit, amounts);
-		units->emplace_back(unit);
+		allObjects.emplace_back(unit);
 	}
 
 	void addUnitComponents(UnitObj* unit, vector<int> amounts) {
@@ -72,9 +72,9 @@ public:
 		//Spawn just above depot in the center
 		pos.x = pos.x + pos.w;
 		pos.y = pos.y + 25;
-		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, convoys->size());
+		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, allObjects.size());
 		addConvoyComponents(convoy, amounts);
-		convoys->emplace_back(convoy);
+		allObjects.emplace_back(convoy);
 	}
 
 	void addConvoyComponents(ConvoyObj* convoy, vector<int> amounts) {
@@ -89,7 +89,5 @@ public:
 
 private:
 	DepotObj* depot;
-	vector<UnitObj*>* units;
-	vector<ConvoyObj*>* convoys;
-
+	vector<GameObject*> allObjects;
 };

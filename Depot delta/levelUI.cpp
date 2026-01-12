@@ -62,6 +62,10 @@ void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 	box = new transferBox({ 390.0f / 1440.0f * camera.dimen.w, 360.0f / 960.0f * camera.dimen.h, 660.0f / 1440.0f * camera.dimen.w , 240.0f / 960.0f * camera.dimen.h }, sUnit, sConvoy);
 }
 
+void levelUI::createNewUnitBox(vector<GameObject*> gameObjs, DepotObj* gameDepot) {
+	box = new unitMaker({ 390.0f / 1440.0f * camera.dimen.w, 360.0f / 960.0f * camera.dimen.h, 660.0f / 1440.0f * camera.dimen.w , 240.0f / 960.0f * camera.dimen.h }, gameObjs, gameDepot);
+}
+
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	//get click positon
 	float cx, cy;

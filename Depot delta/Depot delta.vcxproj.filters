@@ -185,9 +185,6 @@
     <ClInclude Include="dayCycle.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>
-    <ClInclude Include="depotObject.h">
-      <Filter>Source Files\gameFiles</Filter>
-    </ClInclude>
     <ClInclude Include="gameObject.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>
@@ -238,6 +235,9 @@
     </ClInclude>
     <ClInclude Include="resourceBox.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
+    </ClInclude>
+    <ClInclude Include="depotObject.h">
+      <Filter>Source Files\gameFiles\entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

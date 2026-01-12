@@ -20,7 +20,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", time);
 
-    selector = new SelectedHandler(allObjects, UI);
+    selector = new SelectedHandler(allObjects, depot, UI);
 }
 
 LevelManager::~LevelManager()
@@ -92,39 +92,10 @@ void LevelManager::render()
 	mapLoader->renderTileMap(renderer);
     depot->Update();
     hoveredUnit = nullptr;
-    /*for (auto& unit : unitList) {
-        if (unit) {
-            unit->Update();
-            if (unit->getHealth() <= 0) {
-                if (unit->getSelected()) {
-                    selector->setSelected(nullptr);
-                }
-                delete unit;
-                unit = nullptr;
-            }
-            else if (unit->getHovering()) {
-                hoveredUnit = unit;
-            }
-        }
-    }
-    unitList.erase(
-        remove_if(unitList.begin(), unitList.end(),
-            [](const UnitObj* ptr) { return ptr == nullptr; }),
-        unitList.end()
-    );
-    for (auto& convoy : convoyList) {
-        convoy->Update();
-        if (convoy->getHovering()) {
-            hoveredUnit = convoy;
-        }
-    }*/
     for (auto& unit : unitConvoys) {
         if (unit) {
             unit->Update();
             if (unit->getHealth() <= 0) {
-                //if (unit->getSelected()) {
-                  //  selector->setSelected(nullptr);
-                //}
                 delete unit;
                 unit = nullptr;
             }
@@ -138,7 +109,7 @@ void LevelManager::render()
             [](const GameObject* ptr) { return ptr == nullptr; }),
         unitConvoys.end()
     );
-    selector->setAllObjects(unitConvoys);
+    //selector->setAllObjects(unitConvoys);
     for (auto& zombie : zombieList) { 
         if (zombie) {
             zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);

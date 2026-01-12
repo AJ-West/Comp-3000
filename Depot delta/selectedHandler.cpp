@@ -2,7 +2,7 @@
 
 #include "levelUI.h"
 
-SelectedHandler::SelectedHandler(vector<GameObject*> objs, levelUI* lUI) : allObjects(objs), UI(lUI)
+SelectedHandler::SelectedHandler(vector<GameObject*> objs, DepotObj* dep, levelUI* lUI) : allObjects(objs), depot(dep), UI(lUI)
 {
 }
 
@@ -11,7 +11,7 @@ SelectedHandler::~SelectedHandler()
 }
 
 void SelectedHandler::checkHover(SDL_Event event) {
-    for (auto& obj : allObjects) {
+    for (auto &obj : allObjects) {
         if (obj) {
             obj->checkHover(event.motion.x, event.motion.y);
             if (obj->getHovering()) {
@@ -19,6 +19,11 @@ void SelectedHandler::checkHover(SDL_Event event) {
                 return;
             }
         }
+    }
+    depot->checkHover(event.motion.x, event.motion.y);
+    if (depot->getHovering()) {
+        hoveredObj = depot;
+        return;
     }
 	hoveredObj = nullptr;
 }
@@ -44,6 +49,9 @@ void SelectedHandler::checkClick() {
     }
     else if (hoveredObj) {
         hoveredObj->onClick();
+        if (typeid(*hoveredObj).name() == typeid(DepotObj).name()) {
+            UI->createNewUnitBox(allObjects, depot);
+        }
         selectedObject = hoveredObj;
         selectedSomething = true;
     }

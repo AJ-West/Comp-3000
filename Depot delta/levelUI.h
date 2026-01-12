@@ -3,8 +3,9 @@
 #include <string>
 
 #include "UIHandler.h"
+#include "resourceBox.h"
+#include "unitMaker.h"
 #include "dayCycle.h"
-
 
 using namespace std;
 
@@ -27,14 +28,14 @@ public:
 	void textInput(SDL_Keycode key);
 
 	void createTransferBox(GameObject* sUnit, GameObject* sConvoy);
+	void createNewUnitBox(vector<GameObject*> gameObjs, DepotObj* gameDepot);
 
 	bool checkClickInput();
 
 private:
 	SDL_Texture* resourceHoverTexture;
 
-	dayCycle* time;
-	
+	dayCycle* time;	
 
-	transferBox* box = nullptr;
+	ResourceBox* box = nullptr;
 };

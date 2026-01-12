@@ -21,7 +21,7 @@ class levelUI;
 
 class SelectedHandler {
 public:
-    SelectedHandler(vector<GameObject*> objs, levelUI* lUI);
+    SelectedHandler(vector<GameObject*> objs, DepotObj* dep, levelUI* lUI);
 	~SelectedHandler();
 
 	void checkHover(SDL_Event event);
@@ -38,6 +38,8 @@ public:
 private:
 	GameObject* selectedObject = nullptr;
     GameObject* hoveredObj = nullptr;
+
+	DepotObj* depot;
 
 	vector<GameObject*> allObjects;
 
