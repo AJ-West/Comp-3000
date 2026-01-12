@@ -3,6 +3,8 @@
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
+#include <vector>
+
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
@@ -168,5 +170,8 @@ struct Tile {
 	int cost = INT_MAX; // used for pathfinding
 	Vec2 direction = { 0,0 }; // used for flow field pathfinding
 };
+
+//Used to store the movable world map
+extern std::vector<std::vector<Tile>> grid;
 
 #endif // !VARIABLES_H

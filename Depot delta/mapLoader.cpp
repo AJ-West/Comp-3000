@@ -113,24 +113,16 @@ void MapLoader::loadUnit(XMLElement* entity)
 }
 
 void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
-    unit->AddComponent(make_shared<renderComponent>(unit, renderer, "draftArt/basicUnit.png"));
-    unit->AddComponent(make_shared<buttonComponent>(unit));
-    unit->AddComponent(make_shared<movementComponent>(unit, 50));
-    vector<int> max = { 100, 100, 100, 100, 100 };
-    vector<int> count = { 50, 50, 50, 50, 50 };
+    unitStats stats;
     if (entity->FirstChildElement("Resources")) {
 		XMLElement* resources = entity->FirstChildElement("Resources");
-		count[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
-		count[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
-		count[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
-		count[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
-		count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+		stats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        stats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        stats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        stats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        stats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
-    unit->AddComponent(make_shared<resourceComponent>(unit, max, count, loadResourceTextures()));
-    vector<int> transferRate = { 5,5,5,5,5 };
-    unit->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, 50, transferRate));
-    unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
-    unit->AddComponent(make_shared<attackComponent>(unit, 5, 100, 500));
+    stats.addComponents(unit);
 }
 
 void MapLoader::loadConvoy(XMLElement* entity)
@@ -150,23 +142,16 @@ void MapLoader::loadConvoy(XMLElement* entity)
 }
 
 void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
-    convoy->AddComponent(make_shared<renderComponent>(convoy, renderer, "draftArt/basicConvoy.png"));
-    convoy->AddComponent(make_shared<buttonComponent>(convoy));
-    convoy->AddComponent(make_shared<movementComponent>(convoy, 100));
-    vector<int> max = { 100, 100, 100, 100, 100 };
-    vector<int> count = { 50, 50, 50, 50, 50 };
+    convoyStats stats;
     if (entity->FirstChildElement("Resources")) {
         XMLElement* resources = entity->FirstChildElement("Resources");
-        count[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
-        count[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
-        count[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
-        count[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
-        count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+        stats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        stats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        stats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        stats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        stats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
-    convoy->AddComponent(make_shared<resourceComponent>(convoy, max, count, loadResourceTextures()));
-	vector<int> transferRate = { 5,5,5,5,5 };
-    convoy->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, 50, transferRate));
-    convoy->AddComponent(make_shared<pathfindingComponent>(convoy, grid));
+    stats.addComponents(convoy);
 }
 
 void MapLoader::loadZombie(XMLElement* entity)
@@ -191,7 +176,6 @@ void MapLoader::addZombieComponents(ZombieObj* zombie, XMLElement* entity) {
     zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
 	zombie->AddComponent(make_shared<nearestComponent>(zombie));
 }
-
 
 void MapLoader::loadDepot(XMLElement* entity)
 {
@@ -224,25 +208,6 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
     depot->getComponent<resourceComponent>()->setResourceIncrease(DOS, 5);
     depot->getComponent<resourceComponent>()->setResourceIncrease(FUEL, 5);
     depot->getComponent<resourceComponent>()->setResourceIncrease(SCRAP, 5);
-}
-
-vector<SDL_Texture*> MapLoader::loadResourceTextures() {
-    vector<SDL_Texture*> resourceTextures;
-    vector<const char*> resourceFiles = {
-        "draftArt/resources/Personnel.png",
-        "draftArt/resources/Ammo.png",
-        "draftArt/resources/DoS.png",
-        "draftArt/resources/Fuel.png",
-        "draftArt/resources/Scrap.png"
-    };
-    for (int i = 0; i < resourceFiles.size(); i++) {
-        SDL_Surface* surface = IMG_Load(resourceFiles[i]);
-        SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-        SDL_DestroySurface(surface); // Free the surface after creating the texture
-        resourceTextures.push_back(texture);
-    }
-    return resourceTextures;
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {

@@ -26,6 +26,28 @@ void getScaledMousePos(float* x, float* y) {
 	*x = *x + camera.dimen.x;
 	*y = *y + camera.dimen.y;
 }
+
+vector<SDL_Texture*> loadResourceTextures() {
+	vector<SDL_Texture*> resourceTextures;
+	vector<const char*> resourceFiles = {
+		"draftArt/resources/Personnel.png",
+		"draftArt/resources/Ammo.png",
+		"draftArt/resources/DoS.png",
+		"draftArt/resources/Fuel.png",
+		"draftArt/resources/Scrap.png"
+	};
+	for (int i = 0; i < resourceFiles.size(); i++) {
+		SDL_Surface* surface = IMG_Load(resourceFiles[i]);
+		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
+		SDL_DestroySurface(surface); // Free the surface after creating the texture
+		resourceTextures.push_back(texture);
+	}
+	return resourceTextures;
+}
+
+
+
 /*
 void getScaledMousePos(float* x, float* y) {
 	float mx = 0, my = 0;

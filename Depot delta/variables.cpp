@@ -33,3 +33,5 @@ int FONT_SIZE = 20;
 bool isRunning;
 
 Camera camera = { 0,0, ResolutionWidth, ResolutionHeight };
+
+std::vector<std::vector<Tile>> grid;

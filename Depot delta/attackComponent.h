@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include <SDL3_image/SDL_image.h>
 #include "bulletHandler.h"
+#include "zombieObject.h"
 
 class attackComponent : public Component {// renderers the object
 public:

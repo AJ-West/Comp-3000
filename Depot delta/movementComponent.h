@@ -1,6 +1,8 @@
 #pragma once
 #include "GameObject.h"
 
+#include "pathfindingComponent.h"
+
 class movementComponent : public Component {
 public:
 	virtual void update(GameObject* owner) { // update position based off direction of movement

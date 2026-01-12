@@ -23,7 +23,6 @@ struct Bullet {
 		vel = normalise(Vec2{ tVec.x - pVec.x, tVec.y - pVec.y });
 		//how long until the bullet reaches its target
 		lifetime = mag(tVec.sub(pVec))/ mag(vel);
-		cout << lifetime << '\n';
 		inUse = true;
 	}
 

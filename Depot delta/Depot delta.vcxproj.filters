@@ -93,9 +93,6 @@
     <ClCompile Include="levelUI.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClCompile>
-    <ClCompile Include="levelUI.cpp">
-      <Filter>Source Files\gameFiles\UI%27s</Filter>
-    </ClCompile>
     <ClCompile Include="levelManager.cpp">
       <Filter>Source Files\gameFiles</Filter>
     </ClCompile>
@@ -122,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="transferBox.cpp">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
+    </ClCompile>
+    <ClCompile Include="levelUI.cpp">
+      <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

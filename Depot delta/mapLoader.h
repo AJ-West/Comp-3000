@@ -42,8 +42,6 @@ public:
 	void addZombieComponents(ZombieObj* zombie, XMLElement* entity);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 
-	vector<SDL_Texture*> loadResourceTextures();
-
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters
@@ -64,6 +62,4 @@ private:
 	vector<UnitObj*> unitList;
 	vector<ConvoyObj*> convoyList;
 	vector<ZombieObj*> zombieList;
-
-	vector<vector<Tile>> grid;
 };

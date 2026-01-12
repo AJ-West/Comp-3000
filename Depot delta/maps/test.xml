@@ -8471,7 +8471,7 @@
             <target_x>218</target_x>
             <target_y>112</target_y>
             <Resources>
-                <Personnel>50</Personnel>
+                <Personnel>46</Personnel>
                 <Ammunition>53</Ammunition>
                 <DoS>90</DoS>
                 <Fuel>0</Fuel>
@@ -8505,7 +8505,7 @@
             <target_x>0</target_x>
             <target_y>0</target_y>
             <Resources>
-                <Personnel>0</Personnel>
+                <Personnel>4</Personnel>
                 <Ammunition>22</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>100</Fuel>
@@ -8515,7 +8515,7 @@
         <entities eid="15533228">
             <name>Basic Zombie</name>
             <id>11</id>
-            <health>1000</health>
+            <health>835</health>
             <x>151</x>
             <y>151</y>
             <originX>0</originX>
