@@ -8497,7 +8497,7 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>3</id>
-            <health>90</health>
+            <health>20</health>
             <x>79</x>
             <y>95</y>
             <originX>0</originX>
@@ -8532,10 +8532,10 @@
             <name>Basic unit</name>
             <id>5</id>
             <health>100</health>
-            <x>42</x>
-            <y>141</y>
-            <target_x>50</target_x>
-            <target_y>149</target_y>
+            <x>58</x>
+            <y>104</y>
+            <target_x>66</target_x>
+            <target_y>112</target_y>
             <Resources>
                 <Personnel>24</Personnel>
                 <Ammunition>0</Ammunition>
@@ -8580,10 +8580,10 @@
             <name>Basic unit</name>
             <id>8</id>
             <health>100</health>
-            <x>192</x>
-            <y>175</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <x>243</x>
+            <y>185</y>
+            <target_x>252</target_x>
+            <target_y>193</target_y>
             <Resources>
                 <Personnel>2</Personnel>
                 <Ammunition>0</Ammunition>

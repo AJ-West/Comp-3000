@@ -1,4 +1,11 @@
-﻿  levelManager.cpp
+﻿  imgui_impl_sdl3.cpp
+  imgui_impl_sdlrenderer3.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  levelManager.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
@@ -107,13 +114,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -212,13 +219,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(48,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(49,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(51,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(52,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitMaker.h(73,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -240,7 +247,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'levelManager.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -360,13 +367,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -465,13 +472,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(48,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(49,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(51,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(52,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitMaker.h(73,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -490,7 +497,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'levelUI.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -610,13 +617,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelUI.h')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -715,13 +722,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(48,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(49,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(51,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(52,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'levelUI.h')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitMaker.h(73,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -740,7 +747,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'levelUI.h')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -860,13 +867,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -965,13 +972,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(48,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(49,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(51,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(52,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(27,17): warning C4804: '<': unsafe use of type 'bool' in operation
@@ -979,16 +986,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(32,24): w
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(49,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(57,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(57,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(99,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(102,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(118,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(171,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(172,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(96,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(99,27): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(115,28): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(168,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\main.cpp(169,23): warning C4018: '<': signed/unsigned mismatch
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -1108,13 +1115,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1184,7 +1191,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'mapLoader.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -1327,13 +1334,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapSaver.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1395,7 +1402,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'mapSaver.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -1515,13 +1522,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1620,13 +1627,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42):
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dayCycle.h(41,42): warning C4244:         ]
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(48,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(49,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(51,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(50,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.h(52,66): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitMaker.h(73,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -1649,7 +1656,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'selectedHandler.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(71,22):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(76,22):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,UnitObj*&,int&>(UnitObj *&,int &)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<UnitObj*&,int&>(UnitObj *&,int &)' being compiled
@@ -1660,5 +1667,16 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
               _Ty=movementComponent
           ]
   
+  tinyxml2.cpp
+  transferBox.cpp
+  UIHandler.cpp
+  usefulFunctions.cpp
+  variables.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+  zombieObject.cpp
   Generating Code...
+x64\Debug\levelUI.obj : warning LNK4042: object specified more than once; extras ignored
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

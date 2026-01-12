@@ -5,12 +5,12 @@
 #include "UIHandler.h"
 #include "resourceBox.h"
 #include "unitMaker.h"
+#include "transferBox.h"
 #include "dayCycle.h"
 #include "levelManager.h"
 
 using namespace std;
 
-class transferBox;
 class GameObject;
 
 class levelUI : public UIHandler {

@@ -17,8 +17,8 @@ struct Bullet {
 		//bullet init pos
 		pos.x = pVec.x;
 		pos.y = pVec.y;
-		size.x = pos.x - size.w/2;
-		size.y = pos.y - size.h/2;
+		size.x = (pos.x - size.w / 2) - camera.dimen.x;
+		size.y = (pos.y - size.h / 2) - camera.dimen.y;
 		//bullet velocity
 		vel = normalise(Vec2{ tVec.x - pVec.x, tVec.y - pVec.y });
 		//how long until the bullet reaches its target
@@ -39,10 +39,10 @@ struct Bullet {
 		}
 	}
 
-	void render(SDL_Renderer*) {
+	void render(SDL_Renderer* renderer) {
 		if (inUse) {
-			size.x = pos.x - size.w / 2;
-			size.y = pos.y - size.h / 2;
+			size.x = pos.x - size.w / 2 - camera.dimen.x;
+			size.y = pos.y - size.h / 2 - camera.dimen.y;
 			SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
 			SDL_RenderFillRect(renderer, &size);
 		}

@@ -11,7 +11,9 @@
 
 class UnitObj : public GameObject {
 public:
-	UnitObj(int x, int y, int width, int height, int health, int id) : GameObject(x,y, width, height, health), ID(id) {}
+	UnitObj(int x, int y, int width, int height, int health, int id) : GameObject(x, y, width, height, health), ID(id) {
+		maxHealth = 100;
+	}
 
 	void onClick() {
 		selected = !selected;
@@ -33,6 +35,7 @@ public:
 	//getters
 	Vec2 getTargetPos() { return Vec2{tx,ty}; }
 	int getID() { return ID; }
+	virtual int getMaxHealth() { return maxHealth; }
 
 	//setters
 	virtual void setTarget(float x, float y) { 
@@ -50,11 +53,13 @@ public:
 
 private:
 	int ID;
+	int maxHealth = 100;
 };
 
 struct unitStats {
 	const char* art = "draftArt/basicUnit.png";
 	int movementSpeed = 50;
+	int maxHealth = 100;
 	std::vector<int> rMax = { 100, 100, 100, 100, 100 };
 	std::vector<int> rCount = { 50, 50, 50, 50, 50 };
 

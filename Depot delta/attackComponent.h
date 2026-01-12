@@ -50,7 +50,7 @@ public:
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 		Vec2 ownerPos = owner->getPos();
 		Vec2 targetPos = target->getPos();
-		SDL_RenderLine(renderer, ownerPos.x, ownerPos.y, targetPos.x, targetPos.y);
+		SDL_RenderLine(renderer, ownerPos.x - camera.dimen.x, ownerPos.y - camera.dimen.y, targetPos.x - camera.dimen.x, targetPos.y - camera.dimen.y);
 		bullets->render(renderer);
 	}
 

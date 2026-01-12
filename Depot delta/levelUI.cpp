@@ -1,5 +1,6 @@
 #include "levelUI.h"
-#include "transferBox.h"
+
+#include "gameObject.h"
 
 levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, LevelManager* lManager, dayCycle* gameTime) : UIHandler(renderer, filePath), manager(lManager), time(gameTime) {
 	loadResourceHoverTexture();

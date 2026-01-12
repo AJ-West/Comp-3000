@@ -26,6 +26,8 @@
 
 #include "variables.h"
 
+class levelUI;
+
 using namespace std;
 using namespace tinyxml2;
 

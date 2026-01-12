@@ -36,6 +36,7 @@ public:
 	//getters
 	Vec2 getTargetPos() { return Vec2{tx, ty}; }
 	int getID() { return ID; }
+	virtual int getMaxHealth() { return maxHealth; }
 
 	//setters
 	virtual void setTarget(float x, float y) { 
@@ -53,13 +54,13 @@ public:
 
 private:
 	int ID;
-
-	
+	int maxHealth = 100;	
 };
 
 struct convoyStats {
 	const char* art = "draftArt/basicConvoy.png";
 	int movementSpeed = 100;
+	int maxHealth = 100;
 	std::vector<int> rMax = { 100, 100, 100, 100, 100 };
 	std::vector<int> rCount = { 50, 50, 50, 50, 50 };
 

@@ -89,7 +89,6 @@ public:
 	bool getHovering() { return hovering; }
 	SDL_FRect getSize() { return size; }
 	int getHealth() { return health; }
-	int getMaxHealth() { return maxHealth; }
 	bool getAttacking() { return attacking; }
 	bool getAlive() { return alive; }
 
@@ -103,6 +102,7 @@ public:
 	//virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
 	virtual int getID() { return 0; }
+	virtual int getMaxHealth() { return maxHealth; }
 	
 	//virtual setters
 	virtual void setTarget(float x, float y) { cout << "target set"; }

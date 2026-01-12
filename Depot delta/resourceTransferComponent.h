@@ -107,7 +107,7 @@ public:
 	void renderTransferArea() {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 100); // Green color
 		SDL_FRect ownerRect = owner->getSize();
-		SDL_FRect indicatorRect = { ownerRect.x+ownerRect.w/2 - transferDistance /2, ownerRect.y + ownerRect.h/2 - transferDistance / 2, transferDistance, transferDistance };
+		SDL_FRect indicatorRect = { ownerRect.x + ownerRect.w / 2 - transferDistance / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - transferDistance / 2 - camera.dimen.y, transferDistance, transferDistance };
 		SDL_RenderFillRect(renderer, &indicatorRect);
 	}
 
@@ -115,7 +115,7 @@ public:
 		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
 		SDL_FRect ownerRect = owner->getSize();
 		SDL_FRect targetRect = target->getSize();
-		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2, ownerRect.y + ownerRect.h / 2, targetRect.x + targetRect.w / 2, targetRect.y + targetRect.h / 2);
+		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - camera.dimen.x, targetRect.x + targetRect.w / 2, targetRect.y + targetRect.h / 2);
 	}
 
 	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
