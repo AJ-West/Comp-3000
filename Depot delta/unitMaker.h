@@ -19,9 +19,9 @@ class unitMaker : public ResourceBox {
 public:
 	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(rSize), manager(lManager), depot(gameDepot) {
 		//add make unit button
-		elements.push_back(new newUnitButton({ size.x + 74.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, true));
+		elements.push_back(new newUnitButton({ size.x + 74.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, true));
 		//add cancel button
-		elements.push_back(new newUnitButton({ size.x + 394.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, false));
+		elements.push_back(new newUnitButton({ size.x + 394.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, false));
 	}
 	~unitMaker() {}	
 

@@ -7,11 +7,11 @@ public:
 	transferDirectionButton(SDL_FRect rSize, bool tToUnit) : UIElement(rSize), toUnit(tToUnit){
 		if (toUnit) {
 			text = "Convoy -> Unit";
-			size = { 464.0f / 1440.0f * camera.dimen.w, 500.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w, 48.0f / 960.0f * camera.dimen.h };
+			size = { 464.0f * camera.xScale, 500.0f * camera.yScale, 192.0f * camera.xScale, 48.0f * camera.yScale };
 		}
 		else {
 			text = "Unit -> Convoy";
-			size = { 784.0f / 1440.0f * camera.dimen.w, 500.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w, 48.0f / 960.0f * camera.dimen.h };
+			size = { 784.0f * camera.xScale, 500.0f * camera.yScale, 192.0f * camera.xScale, 48.0f * camera.yScale };
 		}
 		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
 		texture = SDL_CreateTextureFromSurface(renderer, surface);

@@ -23,6 +23,8 @@ extern int worldHeight;
 extern const int WORLD_TILE_SIZE;
 extern const int WORLD_TILE_COLS;
 extern const int WORLD_TILE_ROWS;
+extern const float DESIGN_SCALE_X;
+extern const float DESIGN_SCALE_Y;
 
 //camera zoom
 extern float zoom;
@@ -41,6 +43,9 @@ extern bool isRunning;
 
 struct Camera {
 	SDL_FRect dimen{0,0,0,0};
+
+	float xScale;
+	float yScale;
 
 	int x_dir = 0;
 	int y_dir = 0;

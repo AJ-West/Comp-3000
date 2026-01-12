@@ -9,9 +9,9 @@ class transferBox: public ResourceBox {
 public:
 	transferBox(SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : ResourceBox(rSize), unit(sUnit), convoy(sConvoy) {
 		//add convoy->unit button
-		elements.push_back(new transferDirectionButton({ size.x + 74.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, true));
+		elements.push_back(new transferDirectionButton({ size.x + 74.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, true));
 		//add unit->convoy button
-		elements.push_back(new transferDirectionButton({ size.x + 394.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, false));
+		elements.push_back(new transferDirectionButton({ size.x + 394.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, false));
 	}
 	~transferBox(){}
 

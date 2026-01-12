@@ -87,6 +87,13 @@ int main()
 
 	LevelManager manager(renderer);
 
+    //Set up default camera scale for drawing
+    camera.xScale = camera.dimen.w / DESIGN_SCALE_X;
+    camera.yScale = camera.dimen.h / DESIGN_SCALE_Y;
+
+    cout << camera.xScale << '\n';
+    cout << camera.yScale << '\n';
+    
     //dayCycle cycle;
 
 	Uint32 lastTime = SDL_GetTicks();

@@ -16,6 +16,8 @@ int worldHeight = 1088;
 const int WORLD_TILE_SIZE = 16;
 const int WORLD_TILE_COLS = worldWidth / WORLD_TILE_SIZE;
 const int WORLD_TILE_ROWS = worldHeight / WORLD_TILE_SIZE;
+const float DESIGN_SCALE_X = 1440.0f;
+const float DESIGN_SCALE_Y = 960.0f;
 
 // camera zoom
 float zoom = 1.0;

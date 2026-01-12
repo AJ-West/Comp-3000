@@ -8498,12 +8498,12 @@
             <name>Basic Convoy</name>
             <id>3</id>
             <health>90</health>
-            <x>193</x>
-            <y>102</y>
+            <x>79</x>
+            <y>95</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <target_x>86</target_x>
+            <target_y>103</target_y>
             <Resources>
                 <Personnel>4</Personnel>
                 <Ammunition>22</Ammunition>

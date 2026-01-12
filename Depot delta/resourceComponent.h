@@ -42,7 +42,7 @@ public:
 		SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 255,255,255,255 });
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 		SDL_RenderTexture(renderer, texture, NULL, &tSize);
-		tSize.y += 72.0f / 960.0f * camera.dimen.h;
+		tSize.y += 72.0f * camera.yScale;
 		for (int i = 0; i < resourceTextures.size(); i++) {
 			string countText = to_string(resourcesCount[i]) + "/" + to_string(resourcesMax[i]);
 			SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 255,255,255,255 });

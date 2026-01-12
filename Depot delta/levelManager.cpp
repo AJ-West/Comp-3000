@@ -149,6 +149,9 @@ void LevelManager::zoomChange(SDL_Event event) {
     camera.dimen.y += myb - mya;
     camera.dimen.w = ResolutionWidth / zoom;
     camera.dimen.h = ResolutionHeight / zoom;
+    //Update camera draw scale
+    camera.xScale = camera.dimen.w / DESIGN_SCALE_X;
+    camera.yScale = camera.dimen.h / DESIGN_SCALE_Y;
 }
 
 // Keeps zoom within ok range

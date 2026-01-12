@@ -25,10 +25,10 @@ public:
 			vector<int> resourceMax = rComp->getAllResourceMax();
 			//start x pos 
 			//tSize.x = 312 / static_cast<float>(ResolutionWidth) * 100;
-			tSize.x = 312.0f/1440.0f * camera.dimen.w;
-			tSize.y = 9.0f/960.0f * camera.dimen.h;
-			tSize.w = 111.0f / 1440.0f * camera.dimen.w;
-			tSize.h = 30.0f / 960.0f * camera.dimen.h;
+			tSize.x = 312.0f * camera.xScale;
+			tSize.y = 9.0f * camera.yScale;
+			tSize.w = 111.0f * camera.xScale;
+			tSize.h = 30.0f * camera.yScale;
 
 			string countText = to_string(health) + "/" + to_string(maxHealth);
 			SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 255,255,255,255 });
@@ -53,7 +53,7 @@ public:
 private:
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + 5, 30, 30 };
 	//SDL_FRect tSize{ 312/ static_cast<float>(ResolutionWidth) *100, 5 / static_cast<float>(ResolutionWidth) * 100, 111 / camera.dimen.w * 100, 30 / camera.dimen.h * 100 };
-	SDL_FRect tSize{ 312.0f / 1440.0f * camera.dimen.w, 9.0f / 960.0f * camera.dimen.h, 111.0f / 1440.0f * camera.dimen.w, 30.0f / 960.0f * camera.dimen.h };
+	SDL_FRect tSize{ 312.0f * camera.xScale, 9.0f * camera.yScale, 111.0f * camera.xScale, 30.0f * camera.yScale };
 	vector<float> temp{ 464.0f/1440.0f, 0.4215, 0.5291, 0.6347, 0.7402, 0 };
 	//SDL_FRect tSize{ 65, 5, 23, 30 / camera.dimen.h * 100 };
 };

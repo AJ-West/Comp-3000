@@ -31,15 +31,15 @@ public:
 			return;
 		}
 		//Personnel count
-		elements.push_back(new textInput({ size.x + 74.0f / 1440.0f * camera.dimen.w, size.y + 28.0f / 960.0f * camera.dimen.h, 64.0f / 1440.0f * camera.dimen.w , 64.0f / 960.0f * camera.dimen.h }, new intRestriction()));
+		elements.push_back(new textInput({ size.x + 74.0f * camera.xScale, size.y + 28.0f * camera.yScale, 64.0f * camera.xScale , 64.0f * camera.yScale }, new intRestriction()));
 		//Ammo count
-		elements.push_back(new textInput({ size.x + 202.0f / 1440.0f * camera.dimen.w, size.y + 28.0f / 960.0f * camera.dimen.h, 64.0f / 1440.0f * camera.dimen.w , 64.0f / 960.0f * camera.dimen.h }, new intRestriction()));
+		elements.push_back(new textInput({ size.x + 202.0f * camera.xScale, size.y + 28.0f * camera.yScale, 64.0f * camera.xScale , 64.0f * camera.yScale }, new intRestriction()));
 		//DoS count
-		elements.push_back(new textInput({ size.x + 330.0f / 1440.0f * camera.dimen.w, size.y + 28.0f / 960.0f * camera.dimen.h, 64.0f / 1440.0f * camera.dimen.w , 64.0f / 960.0f * camera.dimen.h }, new intRestriction()));
+		elements.push_back(new textInput({ size.x + 330.0f * camera.xScale, size.y + 28.0f * camera.yScale, 64.0f * camera.xScale , 64.0f * camera.yScale }, new intRestriction()));
 		//Fuel count
-		elements.push_back(new textInput({ size.x + 458.0f / 1440.0f * camera.dimen.w, size.y + 28.0f / 960.0f * camera.dimen.h, 64.0f / 1440.0f * camera.dimen.w , 64.0f / 960.0f * camera.dimen.h }, new intRestriction()));
+		elements.push_back(new textInput({ size.x + 458.0f * camera.xScale, size.y + 28.0f * camera.yScale, 64.0f * camera.xScale , 64.0f * camera.yScale }, new intRestriction()));
 		//Scrap count
-		elements.push_back(new textInput({ size.x + 586.0f / 1440.0f * camera.dimen.w, size.y + 28.0f / 960.0f * camera.dimen.h, 64.0f / 1440.0f * camera.dimen.w , 64.0f / 960.0f * camera.dimen.h }, new intRestriction()));
+		elements.push_back(new textInput({ size.x + 586.0f * camera.xScale, size.y + 28.0f * camera.yScale, 64.0f * camera.xScale , 64.0f * camera.yScale }, new intRestriction()));
 	}
 	~ResourceBox() {}
 
