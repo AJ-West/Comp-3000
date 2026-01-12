@@ -1,7 +1,7 @@
 #include "levelUI.h"
 #include "transferBox.h"
 
-levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, dayCycle* gameTime) : UIHandler(renderer, filePath), time(gameTime) {
+levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, LevelManager* lManager, dayCycle* gameTime) : UIHandler(renderer, filePath), manager(lManager), time(gameTime) {
 	loadResourceHoverTexture();
 }
 levelUI::~levelUI() {}
@@ -62,8 +62,8 @@ void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 	box = new transferBox({ 390.0f / 1440.0f * camera.dimen.w, 360.0f / 960.0f * camera.dimen.h, 660.0f / 1440.0f * camera.dimen.w , 240.0f / 960.0f * camera.dimen.h }, sUnit, sConvoy);
 }
 
-void levelUI::createNewUnitBox(vector<GameObject*> gameObjs, DepotObj* gameDepot) {
-	box = new unitMaker({ 390.0f / 1440.0f * camera.dimen.w, 360.0f / 960.0f * camera.dimen.h, 660.0f / 1440.0f * camera.dimen.w , 240.0f / 960.0f * camera.dimen.h }, gameObjs, gameDepot);
+void levelUI::createNewUnitBox(DepotObj* gameDepot) {
+	box = new unitMaker({ 390.0f / 1440.0f * camera.dimen.w, 360.0f / 960.0f * camera.dimen.h, 660.0f / 1440.0f * camera.dimen.w , 240.0f / 960.0f * camera.dimen.h }, manager, gameDepot);
 }
 
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
@@ -76,6 +76,7 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 			if (clicked && box->getToDelete()) {
 				delete box;
 				box = nullptr;
+				return false;
 			}
 			return true;
 		}

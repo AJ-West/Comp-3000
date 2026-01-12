@@ -18,7 +18,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects.push_back(depot);
 
     time = new dayCycle();
-    UI = new levelUI(renderer, "art/UI/level/Level.png", time);
+    UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 
     selector = new SelectedHandler(allObjects, depot, UI);
 }
@@ -128,6 +128,11 @@ void LevelManager::render()
     UI->render();
     UI->renderTime();
     depot->renderResources(renderer);
+}
+
+void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
+    unitConvoys.emplace_back(unitConvoy);
+    selector->setAllObjects(unitConvoys);
 }
 
 

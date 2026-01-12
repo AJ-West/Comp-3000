@@ -38,9 +38,14 @@ public:
 	void handleInput(SDL_Event event);
 	void render();
 
+	void addUnitConvoy(GameObject* unitConvoy);
+
 	//Handle game zoom
 	void zoomChange(SDL_Event event);
 	void clampZoom();
+
+	//getters
+	int getUnitConvoysSize() { return unitConvoys.size(); }
 
 private:
 	SDL_Renderer* renderer;

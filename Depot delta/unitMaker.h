@@ -1,5 +1,7 @@
 #pragma once
 
+#include "levelManager.h"
+
 #include "depotObject.h"
 #include "unitObject.h"
 #include "convoyObject.h"
@@ -15,7 +17,7 @@ class textInput;
 
 class unitMaker : public ResourceBox {
 public:
-	unitMaker(SDL_FRect rSize, vector<GameObject*> gameObjs, DepotObj* gameDepot) : ResourceBox(rSize), allObjects(gameObjs), depot(gameDepot) {
+	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(rSize), manager(lManager), depot(gameDepot) {
 		//add make unit button
 		elements.push_back(new newUnitButton({ size.x + 74.0f / 1440.0f * camera.dimen.w, size.y + 140.0f / 960.0f * camera.dimen.h, 192.0f / 1440.0f * camera.dimen.w , 48.0f / 960.0f * camera.dimen.h }, true));
 		//add cancel button
@@ -41,7 +43,7 @@ public:
 		else { // make new convoy
 			makeConvoy(amounts);
 		}
-		//should remove transfer box on beginning of transfer
+		//should remove box on beginning of transfer
 		toDelete = true;
 	}
 
@@ -49,11 +51,11 @@ public:
 	{
 		SDL_FRect pos = depot->getDimensions();
 		//Spawn just above depot in the center
-		pos.x = pos.x + pos.w;
-		pos.y = pos.y + 25;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, allObjects.size());
+		pos.x = pos.x + pos.w/2;
+		pos.y = pos.y + pos.h/2 + 25;
+		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, manager->getUnitConvoysSize());
 		addUnitComponents(unit, amounts);
-		allObjects.emplace_back(unit);
+		manager->addUnitConvoy(unit);
 	}
 
 	void addUnitComponents(UnitObj* unit, vector<int> amounts) {
@@ -72,9 +74,9 @@ public:
 		//Spawn just above depot in the center
 		pos.x = pos.x + pos.w;
 		pos.y = pos.y + 25;
-		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, allObjects.size());
+		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, manager->getUnitConvoysSize());
 		addConvoyComponents(convoy, amounts);
-		allObjects.emplace_back(convoy);
+		manager->addUnitConvoy(convoy);
 	}
 
 	void addConvoyComponents(ConvoyObj* convoy, vector<int> amounts) {
@@ -89,5 +91,6 @@ public:
 
 private:
 	DepotObj* depot;
-	vector<GameObject*> allObjects;
+
+	LevelManager* manager;
 };
