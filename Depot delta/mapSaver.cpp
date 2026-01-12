@@ -10,7 +10,7 @@ MapSaver::~MapSaver()
 {
 }
 
-void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyObj*> convoys, vector<ZombieObj*> zombies)
+void MapSaver::saveFile(vector<GameObject*> unitConvoys, DepotObj* depot, vector<ZombieObj*> zombies)
 {
     XMLElement* root = doc.RootElement();
     XMLElement* layer = root->FirstChildElement("layers");
@@ -25,21 +25,20 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
     if (found) {
         XMLElement* entity = layer->FirstChildElement("entities");
         XMLElement* deleteEntity = nullptr;
+        vector<int> IDInUse;
 		while (entity) { // identify each entity and save its data
             string name = string(entity->FirstChildElement("name")->GetText());
-            if (name == "Basic unit") {
-                if (!saveUnit(entity, units)) {
+            if (name == "Basic unit" || name == "Basic Convoy") {
+                if (!saveUnit(entity, unitConvoys)) {
                     deleteEntity = entity;
+                }
+                else {
+                    IDInUse.emplace_back(atoi(entity->FirstChildElement("id")->GetText()));
                 }
             }
             else if (name == "depot") {
                 saveDepot(entity, depot);
             }
-			else if (name == "Basic Convoy") {
-                if (!saveConvoy(entity, convoys)) {
-                    deleteEntity = entity;
-                }
-			}
             else if (name == "Basic Zombie") {
                 if (!saveZombie(entity, zombies)) { 
                     deleteEntity = entity; 
@@ -51,6 +50,17 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
                 deleteEntity = nullptr;
             }
         }
+        entity = layer->FirstChildElement("entities");
+        for (auto unit : unitConvoys) {
+            bool found = false;
+            auto it = find(IDInUse.begin(), IDInUse.end(), unit->getID());
+            if (it != IDInUse.end()) {
+                found = true;
+            }
+            if (!found) {
+                saveNewUnit(layer, unit);
+            }
+        }
         doc.SaveFile(filename);
     }
     else {
@@ -58,7 +68,7 @@ void MapSaver::saveFile(vector<UnitObj*> units, DepotObj* depot, vector<ConvoyOb
     }
 }
 
-bool MapSaver::saveUnit(XMLElement* entity, vector<UnitObj*> units)
+bool MapSaver::saveUnit(XMLElement* entity, vector<GameObject*> units)
 {
     for (auto& unit : units) {
         if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
@@ -69,6 +79,34 @@ bool MapSaver::saveUnit(XMLElement* entity, vector<UnitObj*> units)
         }
     }
     return false;
+}
+
+void MapSaver::saveNewUnit(XMLElement* layer, GameObject* unit) {
+    XMLElement* entity = doc.NewElement("entities");
+    XMLElement* name = doc.NewElement("name");
+    XMLElement* id = doc.NewElement("id");
+    XMLElement* health = doc.NewElement("health");
+    XMLElement* x = doc.NewElement("x");
+    XMLElement* y = doc.NewElement("y");
+
+    if (typeid(*unit).name() == typeid(UnitObj).name()) {
+        name->SetText("Basic unit");
+    }
+    else {
+        name->SetText("Basic Convoy");
+    }
+    entity->InsertEndChild(name);
+    id->SetText(unit->getID());
+    entity->InsertEndChild(id);
+    entity->InsertEndChild(health);
+    entity->InsertEndChild(x);
+    entity->InsertEndChild(y);
+
+    saveHealth(entity, unit);
+    saveMovement(entity, unit);
+    saveResources(entity, unit);
+
+    layer->InsertEndChild(entity);
 }
 
 bool MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
@@ -146,7 +184,7 @@ void MapSaver::saveMovement(XMLElement* entity, GameObject* obj) {
     else {
         XMLElement* target = doc.NewElement("target_x");
         target->SetText(obj->getTargetPos().x);
-        entity->InsertAfterChild(entity->FirstChildElement("originY"), target);
+        entity->InsertAfterChild(entity->FirstChildElement("y"), target);
         target = doc.NewElement("target_y");
         target->SetText(obj->getTargetPos().y);
         entity->InsertAfterChild(entity->FirstChildElement("target_x"), target);

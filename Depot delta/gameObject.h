@@ -74,6 +74,7 @@ public:
 		if (health <= 0) { alive = false; }
 	}
 
+	GameObject* getTargetObject() { return targetObject; }
 	virtual void setTargetObject(GameObject* object) { targetObject = object; }
 
 	// Pure virtual functions
@@ -99,10 +100,11 @@ public:
 	void setHovering(bool hover) { hovering = hover; }
 	void setAttacking(bool attack) { attacking = attack; }
 
-	//pure virtual getters
+	//virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
+	virtual int getID() { return 0; }
 	
-	//pure virtual setters
+	//virtual setters
 	virtual void setTarget(float x, float y) { cout << "target set"; }
 protected:
 	bool selected = false;

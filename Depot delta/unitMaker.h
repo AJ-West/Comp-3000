@@ -37,23 +37,40 @@ public:
 				}
 			}
 		}
-		if (elem->update(NULL)) { // make new unit
-			makeUnit(amounts);
+		auto rComp = depot->getComponent<resourceComponent>();
+		vector<int> counts = rComp->getAllResourceCount();
+		if (checkAmounts(counts, amounts)) {
+			if (elem->update(NULL)) { // make new unit
+				makeUnit(amounts);
+			}
+			else { // make new convoy
+				makeConvoy(amounts);
+			}
+			// Remove amount values from the depot
+			for (int i = 0; i < counts.size(); i++) {
+				rComp->setResourcesCount(i, counts[i] - amounts[i]);
+			}
+			//should remove box on beginning of transfer
+			toDelete = true;
 		}
-		else { // make new convoy
-			makeConvoy(amounts);
+	}
+
+	bool checkAmounts(vector<int> counts, vector<int> amounts) {
+		for (int i = 0; i < counts.size(); i++) {
+			if (counts[i] - amounts[i] < 0) {
+				return false;
+			}
 		}
-		//should remove box on beginning of transfer
-		toDelete = true;
+		return true;
 	}
 
 	void makeUnit(vector<int> amounts)
 	{
 		SDL_FRect pos = depot->getDimensions();
-		//Spawn just above depot in the center
-		pos.x = pos.x + pos.w/2;
-		pos.y = pos.y + pos.h/2 + 25;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, manager->getUnitConvoysSize());
+		//Spawn just right of the depot in the center
+		pos.x = pos.x + pos.w/2 - (30 / 1440.0f * camera.dimen.h);
+		pos.y = pos.y + pos.h;
+		UnitObj* unit = new UnitObj(pos.x, pos.y, 1, 1, 100, manager->getNextID());
 		addUnitComponents(unit, amounts);
 		manager->addUnitConvoy(unit);
 	}
@@ -73,8 +90,8 @@ public:
 		SDL_FRect pos = depot->getDimensions();
 		//Spawn just above depot in the center
 		pos.x = pos.x + pos.w;
-		pos.y = pos.y + 25;
-		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, manager->getUnitConvoysSize());
+		pos.y = pos.y + pos.h / 2;
+		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, manager->getNextID());
 		addConvoyComponents(convoy, amounts);
 		manager->addUnitConvoy(convoy);
 	}

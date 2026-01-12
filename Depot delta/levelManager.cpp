@@ -31,22 +31,17 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
-    unitList.erase(
-        remove_if(unitList.begin(), unitList.end(),
-            [](const UnitObj* ptr) { return ptr == nullptr; }),
-        unitList.end()
-    );
-    convoyList.erase(
-        remove_if(convoyList.begin(), convoyList.end(),
-            [](const ConvoyObj* ptr) { return ptr == nullptr; }),
-        convoyList.end()
+    unitConvoys.erase(
+        remove_if(unitConvoys.begin(), unitConvoys.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        unitConvoys.end()
     );
     zombieList.erase(
         remove_if(zombieList.begin(), zombieList.end(),
             [](const ZombieObj* ptr) { return ptr == nullptr; }),
         zombieList.end()
     );
-    saver.saveFile(unitList, depot, convoyList, zombieList);
+    saver.saveFile(unitConvoys, depot, zombieList);
 }
 
 // Handles user input

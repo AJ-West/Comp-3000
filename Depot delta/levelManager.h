@@ -46,6 +46,8 @@ public:
 
 	//getters
 	int getUnitConvoysSize() { return unitConvoys.size(); }
+	int getZombiesSize() { return zombieList.size(); }
+	int getNextID() { return unitConvoys.size() + zombieList.size() + 2; } // add 1 for depot and new object for total number of objects
 
 private:
 	SDL_Renderer* renderer;

@@ -54,13 +54,14 @@ public:
 
 	//getters
 	vector<int> getAllResourceCount() { return resourcesCount; }
-	vector<int> getAllResourceMax() { return resourcesCount; }
+	vector<int> getAllResourceMax() { return resourcesMax; }
 	int getResourcesCount(int index) { return resourcesCount[index]; }
 	int getResourcesMax(int index) { return resourcesMax[index]; }
 
 	//setters
 	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }
 	void setResourceIncrease(int index, int amount) { resourceIncrease[index] = amount; }
+	void setResourcesCount(int index, int amount) { resourcesCount[index] = amount; }
 
 	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
 		resourceUsage = vector<int>(max.size(), 0);
