@@ -52,6 +52,15 @@
     <Filter Include="Source Files\imgui\backend">
       <UniqueIdentifier>{7f55e0d5-8fc3-462c-ba6f-610f9d0de7e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\UI%27s\Resource boxes">
+      <UniqueIdentifier>{4ef38191-cf4b-4f56-8780-9f724ea2a3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameFiles\UI%27s\Resource boxes\unitMakerBox">
+      <UniqueIdentifier>{7a916fa2-bf05-4ad4-999a-4aad18c56f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameFiles\UI%27s\Resource boxes\transferBox">
+      <UniqueIdentifier>{9ae1e957-fc06-46a1-b462-e868b287e35a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -87,9 +96,6 @@
     <ClCompile Include="levelUI.cpp">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClCompile>
-    <ClCompile Include="transferBox.cpp">
-      <Filter>Source Files\gameFiles\UI%27s</Filter>
-    </ClCompile>
     <ClCompile Include="levelManager.cpp">
       <Filter>Source Files\gameFiles</Filter>
     </ClCompile>
@@ -113,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="imgui\backends\imgui_impl_sdlrenderer3.cpp">
       <Filter>Source Files\imgui\backend</Filter>
+    </ClCompile>
+    <ClCompile Include="transferBox.cpp">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,16 +176,10 @@
     <ClInclude Include="UIHandler.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClInclude>
-    <ClInclude Include="transferBox.h">
-      <Filter>Source Files\gameFiles\UI%27s</Filter>
-    </ClInclude>
     <ClInclude Include="textInput.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClInclude>
     <ClInclude Include="UIElement.h">
-      <Filter>Source Files\gameFiles\UI%27s</Filter>
-    </ClInclude>
-    <ClInclude Include="transferDirectionButton.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClInclude>
     <ClInclude Include="dayCycle.h">
@@ -220,6 +223,21 @@
     </ClInclude>
     <ClInclude Include="bulletHandler.h">
       <Filter>Source Files\gameFiles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="transferBox.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
+    </ClInclude>
+    <ClInclude Include="transferDirectionButton.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
+    </ClInclude>
+    <ClInclude Include="newUnitButton.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\unitMakerBox</Filter>
+    </ClInclude>
+    <ClInclude Include="unitMaker.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\unitMakerBox</Filter>
+    </ClInclude>
+    <ClInclude Include="resourceBox.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

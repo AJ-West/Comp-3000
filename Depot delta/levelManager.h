@@ -59,8 +59,6 @@ private:
 
 	dayCycle* time;
 
-	transferBox* box;
-
 	bool textInput = false;
 };
 

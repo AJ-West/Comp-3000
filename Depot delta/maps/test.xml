@@ -8472,7 +8472,7 @@
             <target_y>112</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>48</Ammunition>
+                <Ammunition>53</Ammunition>
                 <DoS>90</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
@@ -8497,16 +8497,16 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>8</id>
-            <health>100</health>
-            <x>20</x>
-            <y>191</y>
+            <health>90</health>
+            <x>193</x>
+            <y>102</y>
             <originX>0</originX>
             <originY>0</originY>
             <target_x>0</target_x>
             <target_y>0</target_y>
             <Resources>
                 <Personnel>0</Personnel>
-                <Ammunition>27</Ammunition>
+                <Ammunition>22</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>100</Fuel>
                 <Scrap>40</Scrap>
@@ -8514,21 +8514,10 @@
         </entities>
         <entities eid="15533228">
             <name>Basic Zombie</name>
-            <id>10</id>
-            <health>380</health>
-            <x>152</x>
-            <y>152</y>
-            <originX>0</originX>
-            <originY>0</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-        </entities>
-        <entities eid="15533228">
-            <name>Basic Zombie</name>
             <id>11</id>
             <health>1000</health>
-            <x>152</x>
-            <y>152</y>
+            <x>151</x>
+            <y>151</y>
             <originX>0</originX>
             <originY>0</originY>
             <target_x>0</target_x>
