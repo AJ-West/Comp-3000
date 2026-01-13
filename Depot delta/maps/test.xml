@@ -8464,12 +8464,12 @@
             <name>Basic unit</name>
             <id>1</id>
             <health>5</health>
-            <x>176</x>
-            <y>104</y>
+            <x>152</x>
+            <y>115</y>
             <originX>8</originX>
             <originY>8</originY>
             <target_x>160</target_x>
-            <target_y>124.5</target_y>
+            <target_y>124</target_y>
             <Resources>
                 <Personnel>46</Personnel>
                 <Ammunition>0</Ammunition>
@@ -8515,11 +8515,11 @@
         <entities eid="21794767">
             <name>Basic unit</name>
             <id>4</id>
-            <health>100</health>
-            <x>93</x>
-            <y>131</y>
-            <target_x>101</target_x>
-            <target_y>139</target_y>
+            <health>80</health>
+            <x>97</x>
+            <y>220</y>
+            <target_x>106</target_x>
+            <target_y>229</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>5</Ammunition>

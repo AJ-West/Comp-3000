@@ -1,6 +1,7 @@
 #include "levelManager.h"
 
 #include "levelUI.h"
+#include "zombieSpawner.h"
 
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
@@ -19,6 +20,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
+
+    spawner = new ZombieSpawner(this);
 
     selector = new SelectedHandler(allObjects, depot, UI);
 }
@@ -85,6 +88,7 @@ void LevelManager::render()
 {
     time->update();
 	mapLoader->renderTileMap(renderer);
+    spawner->checkIfSpawn();
     depot->Update();
     hoveredUnit = nullptr;
     for (auto& unit : unitConvoys) {
@@ -128,6 +132,10 @@ void LevelManager::render()
 void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
     unitConvoys.emplace_back(unitConvoy);
     selector->setAllObjects(unitConvoys);
+}
+
+void LevelManager::addZombie(ZombieObj* zombie) {
+    zombieList.emplace_back(zombie);
 }
 
 

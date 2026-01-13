@@ -39,7 +39,7 @@ public:
 
 	void addUnitComponents(UnitObj* unit, XMLElement* entity);
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
-	void addZombieComponents(ZombieObj* zombie, XMLElement* entity);
+	void addZombieComponents(ZombieObj* zombie);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 
 	void renderTileMap(SDL_Renderer* renderer);

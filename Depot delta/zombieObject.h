@@ -1,8 +1,11 @@
 #pragma once
 #include "GameObject.h"
-#include "resourceComponent.h"
-#include "pathfindingComponent.h"
 #include "usefulFunctions.h"
+
+#include "renderComponent.h"
+#include "movementComponent.h"
+#include "pathfindingComponent.h"
+#include "nearestComponent.h"
 
 class ZombieObj : public GameObject {
 public:
@@ -72,4 +75,19 @@ private:
 
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + camera.dimen.h - 75, 50, 50 };
 	SDL_FRect tSize{ camera.dimen.x + 60, camera.dimen.y + camera.dimen.h - 75, 100, 50 };
+};
+
+struct zombieStats {
+	const char* art = "draftArt/basicZombie.png";
+	int movementSpeed = 25;
+	int maxHealth = 100;
+
+	int size = 1; // how many tiles it takes up
+
+	void addComponents(ZombieObj* zombie) {
+		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
+		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie->AddComponent(make_shared<nearestComponent>(zombie));
+	}
 };

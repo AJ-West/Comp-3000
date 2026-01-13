@@ -163,18 +163,16 @@ void MapLoader::loadZombie(XMLElement* entity)
     int width = 1; // number of tiles
     int height = 1;
     ZombieObj* zombie = new ZombieObj(x, y, width, height, health, id);
-    addZombieComponents(zombie, entity);
+    addZombieComponents(zombie);
     if (entity->FirstChildElement("target_x")) {
         zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
     zombieList.emplace_back(zombie);
 }
 
-void MapLoader::addZombieComponents(ZombieObj* zombie, XMLElement* entity) {
-    zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
-    zombie->AddComponent(make_shared<movementComponent>(zombie, 10));
-    zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
-	zombie->AddComponent(make_shared<nearestComponent>(zombie));
+void MapLoader::addZombieComponents(ZombieObj* zombie) {
+    zombieStats stats;
+    stats.addComponents(zombie);
 }
 
 void MapLoader::loadDepot(XMLElement* entity)

@@ -39,11 +39,13 @@ public:
 	}
 
 	float distanceToUnit(GameObject* unit) {
-		SDL_FRect dimensions = owner->getDimensions();
-		SDL_FRect unitDimensions = unit->getDimensions();
-		float dx = (unitDimensions.x + unitDimensions.w / 2) - (dimensions.x + dimensions.w / 2);
-		float dy = (unitDimensions.y + unitDimensions.h / 2) - (dimensions.y + dimensions.h / 2);
-		return sqrt(dx * dx + dy * dy);
+		if (unit) { // no unit if zombie has just spawned
+			SDL_FRect dimensions = owner->getDimensions();
+			SDL_FRect unitDimensions = unit->getDimensions();
+			float dx = (unitDimensions.x + unitDimensions.w / 2) - (dimensions.x + dimensions.w / 2);
+			float dy = (unitDimensions.y + unitDimensions.h / 2) - (dimensions.y + dimensions.h / 2);
+			return sqrt(dx * dx + dy * dy);
+		}
 	}
 
 	//setters

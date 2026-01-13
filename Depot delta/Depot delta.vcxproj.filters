@@ -245,5 +245,8 @@
     <ClInclude Include="movementComponent.h">
       <Filter>Source Files\gameFiles\components\movementComponent</Filter>
     </ClInclude>
+    <ClInclude Include="zombieSpawner.h">
+      <Filter>Source Files\gameFiles\entities\zombies</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

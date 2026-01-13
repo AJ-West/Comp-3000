@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 // SDL includes
 #include <SDL3/SDL.h>
@@ -91,6 +93,9 @@ int main()
     camera.xScale = camera.dimen.w / DESIGN_SCALE_X;
     camera.yScale = camera.dimen.h / DESIGN_SCALE_Y;
     
+    //set random seed
+    srand(static_cast<unsigned int>(time(0)));
+
     //dayCycle cycle;
 
 	Uint32 lastTime = SDL_GetTicks();

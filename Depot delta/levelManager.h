@@ -27,6 +27,7 @@
 #include "variables.h"
 
 class levelUI;
+class ZombieSpawner;
 
 using namespace std;
 using namespace tinyxml2;
@@ -41,6 +42,7 @@ public:
 	void render();
 
 	void addUnitConvoy(GameObject* unitConvoy);
+	void addZombie(ZombieObj* zombie);
 
 	//Handle game zoom
 	void zoomChange(SDL_Event event);
@@ -50,11 +52,14 @@ public:
 	int getUnitConvoysSize() { return unitConvoys.size(); }
 	int getZombiesSize() { return zombieList.size(); }
 	int getNextID() { return unitConvoys.size() + zombieList.size() + 2; } // add 1 for depot and new object for total number of objects
+	DepotObj* getDepot() { return depot; } 
+	vector<GameObject*> getUnitConvoys() { return unitConvoys; }
 
 private:
 	SDL_Renderer* renderer;
 
 	levelUI* UI;
+	ZombieSpawner* spawner;
 
 	MapLoader* mapLoader;
 	vector<GameObject*> unitConvoys;
