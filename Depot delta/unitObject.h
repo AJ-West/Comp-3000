@@ -20,7 +20,7 @@ public:
 	}
 
 	void clickAway() { // set target pos to clicked position
-		getScaledMousePos(&tx, &ty);
+		getMapScaledMousePos(&tx, &ty);
 		pathToTarget();
 	}
 

@@ -61,6 +61,11 @@ public:
 
 	bool findClickedElement(float cx, float cy) {
 		for (auto elem : elements) {
+			SDL_FRect size = elem->getSize();
+			cout << 'x: ' << size.x << '\n';
+			cout << 'y: ' << size.y << '\n';
+			cout << 'w: ' << size.w << '\n';
+			cout << 'h: ' << size.h << '\n';
 			if (elem->checkClick(cx, cy)) {
 				if (auto e = dynamic_cast<textInput*>(elem)) { 
 					selectedElement = elem; 

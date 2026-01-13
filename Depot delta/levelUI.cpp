@@ -70,8 +70,10 @@ void levelUI::createNewUnitBox(DepotObj* gameDepot) {
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	//get click positon
 	float cx, cy;
-	getScaledMousePos(&cx, &cy);
-	if (box) {
+	getUIScaledMousePos(&cx, &cy);
+	if (box != nullptr) {
+		cout << "cx: " << cx << '\n';
+		cout << "cy: " << cy << '\n';
 		if (box->checkClick(cx, cy)) {
 			bool clicked = box->findClickedElement(cx, cy);
 			if (clicked && box->getToDelete()) {

@@ -13,7 +13,7 @@ public:
 	bool isWithinRect() {
 		SDL_FRect rect = owner->getDimensions();
 		float x, y;
-		getScaledMousePos(&x, &y);
+		getMapScaledMousePos(&x, &y);
 		if (x < rect.x) return false;
 		if (x > rect.x + rect.w) return false;
 		if (y < rect.y) return false;

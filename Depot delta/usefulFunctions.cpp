@@ -19,12 +19,20 @@ float getDistance(Vec2 a, Vec2 b) {
 	return sqrt(xDist * xDist + yDist * yDist);
 }
 
-void getScaledMousePos(float* x, float* y) {
+void getMapScaledMousePos(float* x, float* y) {
 	float mx, my;
 	SDL_GetMouseState(&mx, &my);
 	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y);
 	*x = *x + camera.dimen.x;
 	*y = *y + camera.dimen.y;
+}
+
+void getUIScaledMousePos(float* x, float* y) {
+	float mx, my;
+	SDL_GetMouseState(&mx, &my);
+	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y);
+	*x = *x;
+	*y = *y;
 }
 
 vector<SDL_Texture*> loadResourceTextures() {

@@ -25,6 +25,7 @@ public:
 
 	//getters
 	virtual string getText() { return "N/A"; }
+	virtual SDL_FRect getSize() { return size; }
 
 protected:
 	SDL_FRect size;

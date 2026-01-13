@@ -16,7 +16,8 @@ float mag(Vec2 vec);
 
 float getDistance(Vec2 a, Vec2 b);
 
-void getScaledMousePos(float* x, float* y);
+void getMapScaledMousePos(float* x, float* y);
+void getUIScaledMousePos(float* x, float* y);
 
 vector<SDL_Texture*> loadResourceTextures();
 

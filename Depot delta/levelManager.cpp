@@ -136,7 +136,7 @@ void LevelManager::zoomChange(SDL_Event event) {
     //mouse position before zoom
     float mxb = 0.0f;
     float myb = 0.0f;
-    getScaledMousePos(&mxb, &myb);
+    getMapScaledMousePos(&mxb, &myb);
     zoom += event.wheel.y * 0.1; // zoom in or out based on mouse wheel scroll
     clampZoom();
     SDL_SetRenderLogicalPresentation(renderer, ResolutionWidth / zoom, ResolutionHeight / zoom, SDL_LOGICAL_PRESENTATION_LETTERBOX);
@@ -144,7 +144,7 @@ void LevelManager::zoomChange(SDL_Event event) {
     //mouse position after zoom
     float mxa = 0.0f;
     float mya = 0.0f;
-    getScaledMousePos(&mxa, &mya);
+    getMapScaledMousePos(&mxa, &mya);
     camera.dimen.x += mxb - mxa;
     camera.dimen.y += myb - mya;
     camera.dimen.w = ResolutionWidth / zoom;

@@ -1,11 +1,4 @@
-﻿  imgui_impl_sdl3.cpp
-  imgui_impl_sdlrenderer3.cpp
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  levelManager.cpp
+﻿  levelManager.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
@@ -1667,16 +1660,5 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
               _Ty=movementComponent
           ]
   
-  tinyxml2.cpp
-  transferBox.cpp
-  UIHandler.cpp
-  usefulFunctions.cpp
-  variables.cpp
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-  zombieObject.cpp
   Generating Code...
-x64\Debug\levelUI.obj : warning LNK4042: object specified more than once; extras ignored
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe
