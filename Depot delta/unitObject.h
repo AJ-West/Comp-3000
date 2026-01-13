@@ -22,6 +22,7 @@ public:
 	void clickAway() { // set target pos to clicked position
 		getMapScaledMousePos(&tx, &ty);
 		pathToTarget();
+		getComponent<resourceComponent>()->setResourceUsage(FUEL, 1);
 	}
 
 	void renderHover(SDL_Renderer* renderer) {
@@ -78,5 +79,13 @@ struct unitStats {
 		unit->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, rTransferDistance, rTransferRate));
 		unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
 		unit->AddComponent(make_shared<attackComponent>(unit, aDamage, aRange, aCooldown));
+	}
+
+	void assignHasResource(UnitObj* unit) {
+		auto rComp = unit->getComponent<resourceComponent>();
+		if (rComp) {
+			vector<bool> hasResources{ rCount[PERSONNEL] == 0, rCount[AMMUNITION] == 0, rCount[DOS] == 0, rCount[FUEL] == 0, rCount[SCRAP] == 0 };
+			rComp->setHasResource(hasResources);
+		}
 	}
 };

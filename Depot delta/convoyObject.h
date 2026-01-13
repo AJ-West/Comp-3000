@@ -19,6 +19,7 @@ public:
 	void clickAway() { // set target pos to clicked position
 		getMapScaledMousePos(&tx, &ty);
 		pathToTarget();
+		getComponent<resourceComponent>()->setResourceUsage(FUEL, 1);
 	}
 
 	void renderHover(SDL_Renderer* renderer) {

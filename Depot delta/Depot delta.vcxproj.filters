@@ -61,6 +61,9 @@
     <Filter Include="Source Files\gameFiles\UI%27s\Resource boxes\transferBox">
       <UniqueIdentifier>{9ae1e957-fc06-46a1-b462-e868b287e35a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\components\movementComponent">
+      <UniqueIdentifier>{53e91b03-1a60-4a44-8ecd-7cc9a4834d03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -123,6 +126,9 @@
     <ClCompile Include="levelUI.cpp">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClCompile>
+    <ClCompile Include="movementComponent.cpp">
+      <Filter>Source Files\gameFiles\components\movementComponent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
@@ -135,9 +141,6 @@
       <Filter>Source Files\gameFiles\components</Filter>
     </ClInclude>
     <ClInclude Include="buttonComponent.h">
-      <Filter>Source Files\gameFiles\components</Filter>
-    </ClInclude>
-    <ClInclude Include="movementComponent.h">
       <Filter>Source Files\gameFiles\components</Filter>
     </ClInclude>
     <ClInclude Include="usefulFunctions.h">
@@ -238,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="depotObject.h">
       <Filter>Source Files\gameFiles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="movementComponent.h">
+      <Filter>Source Files\gameFiles\components\movementComponent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

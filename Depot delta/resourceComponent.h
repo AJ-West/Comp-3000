@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include <SDL3_image/SDL_image.h>
+#include "movementComponent.h"
 
 class resourceComponent : public Component {// renderers the object
 public:
@@ -21,11 +22,13 @@ public:
 		clampResources(AMMUNITION);
 		clampResources(DOS);
 		clampResources(FUEL);
+		if (hasResource[FUEL] != tempHasResource[FUEL]) { checkFuel(); }
 		clampResources(SCRAP);
 	}
 
 	void clampResources(int index) {
 		int change = resourceIncrease[index] - resourceUsage[index];
+		tempHasResource[FUEL] = true;
 		if (resourcesCount[index] + change <= resourcesMax[index] && resourcesCount[index] + change >= 0) {
 			resourcesCount[index] += resourceIncrease[index] - resourceUsage[index];
 		}
@@ -33,7 +36,22 @@ public:
 			resourcesCount[index] = resourcesMax[index];
 		}
 		else {
+			tempHasResource[FUEL] = false;
 			resourcesCount[index] = 0;
+		}
+	}
+
+	void checkFuel() {
+		hasResource[FUEL] = tempHasResource[FUEL];
+		auto mComp = owner->getComponent<movementComponent>();
+		if (mComp) {
+			if (hasResource[FUEL]) {
+				mComp->setSpeed(mComp->getSpeed() * 2);
+			}
+			else
+			{
+				mComp->setSpeed(mComp->getSpeed() / 2);
+			}
 		}
 	}
 
@@ -62,6 +80,7 @@ public:
 	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }
 	void setResourceIncrease(int index, int amount) { resourceIncrease[index] = amount; }
 	void setResourcesCount(int index, int amount) { resourcesCount[index] = amount; }
+	void setHasResource(vector<bool> loadHasResource) { hasResource = loadHasResource; }
 
 	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
 		resourceUsage = vector<int>(max.size(), 0);
@@ -74,6 +93,8 @@ private:
 	vector<int> resourceUsage;
 	vector<int> resourceIncrease;
 	vector<SDL_Texture*> resourceTextures;
+	vector<bool> hasResource = { true, true, true, true, true };
+	vector<bool> tempHasResource = { true, true, true, true, true };
 
 	int timeCount = 0;
 };
