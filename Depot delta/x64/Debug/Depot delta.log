@@ -1,4 +1,11 @@
-﻿  levelManager.cpp
+﻿  imgui_impl_sdl3.cpp
+  imgui_impl_sdlrenderer3.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  levelManager.cpp
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\pathfindingComponent.h(19,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
@@ -95,16 +102,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -348,16 +355,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -598,16 +605,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.h')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'levelUI.h')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -848,16 +855,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'main.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1096,16 +1103,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapLoader.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapLoader.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1315,16 +1322,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapSaver.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'mapSaver.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1503,16 +1510,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(9,8
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieObject.h(38,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(74,25): warning C4305: 'initializing': truncation from 'int' to 'float'
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(87,25): warning C4305: 'initializing': truncation from 'int' to 'float'
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(31,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(44,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(32,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(45,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'selectedHandler.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(42,36): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\attackComponent.h(55,36): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'selectedHandler.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\unitObject.h(14,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1660,5 +1667,16 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
               _Ty=movementComponent
           ]
   
+  tinyxml2.cpp
+  transferBox.cpp
+  UIHandler.cpp
+  usefulFunctions.cpp
+  variables.cpp
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,24): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\variables.cpp(37,41): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+  zombieObject.cpp
   Generating Code...
+x64\Debug\levelUI.obj : warning LNK4042: object specified more than once; extras ignored
   Depot delta.vcxproj -> C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\Depot delta.exe

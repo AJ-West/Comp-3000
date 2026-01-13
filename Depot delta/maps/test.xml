@@ -8463,7 +8463,7 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>1</id>
-            <health>70</health>
+            <health>5</health>
             <x>161</x>
             <y>111</y>
             <originX>8</originX>
@@ -8472,7 +8472,7 @@
             <target_y>119</target_y>
             <Resources>
                 <Personnel>46</Personnel>
-                <Ammunition>53</Ammunition>
+                <Ammunition>0</Ammunition>
                 <DoS>90</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
@@ -8487,7 +8487,7 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>955</Personnel>
+                <Personnel>1000</Personnel>
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
@@ -8516,221 +8516,13 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>100</health>
-            <x>148</x>
-            <y>238</y>
-            <target_x>156</target_x>
-            <target_y>246</target_y>
+            <x>93</x>
+            <y>131</y>
+            <target_x>101</target_x>
+            <target_y>139</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>50</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>5</id>
-            <health>100</health>
-            <x>58</x>
-            <y>104</y>
-            <target_x>66</target_x>
-            <target_y>112</target_y>
-            <Resources>
-                <Personnel>24</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic Convoy</name>
-            <id>6</id>
-            <health>100</health>
-            <x>290</x>
-            <y>123</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>25</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>7</id>
-            <health>100</health>
-            <x>193</x>
-            <y>148</y>
-            <target_x>201.22189</target_x>
-            <target_y>156.67307</target_y>
-            <Resources>
-                <Personnel>23</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>8</id>
-            <health>100</health>
-            <x>142</x>
-            <y>52</y>
-            <target_x>149</target_x>
-            <target_y>60</target_y>
-            <Resources>
-                <Personnel>2</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>9</id>
-            <health>100</health>
-            <x>47</x>
-            <y>173</y>
-            <target_x>55</target_x>
-            <target_y>180</target_y>
-            <Resources>
-                <Personnel>23</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>10</id>
-            <health>100</health>
-            <x>80</x>
-            <y>221</y>
-            <target_x>88</target_x>
-            <target_y>229</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>11</id>
-            <health>100</health>
-            <x>179</x>
-            <y>244</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>12</id>
-            <health>100</health>
-            <x>156</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>13</id>
-            <health>100</health>
-            <x>153</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>14</id>
-            <health>100</health>
-            <x>154</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>0</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>15</id>
-            <health>100</health>
-            <x>154</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>0</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>16</id>
-            <health>100</health>
-            <x>154</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>17</id>
-            <health>100</health>
-            <x>155</x>
-            <y>216</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>55</Personnel>
-                <Ammunition>0</Ammunition>
+                <Ammunition>5</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>0</Scrap>

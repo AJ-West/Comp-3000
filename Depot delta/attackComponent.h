@@ -3,14 +3,17 @@
 #include <SDL3_image/SDL_image.h>
 #include "bulletHandler.h"
 #include "zombieObject.h"
+#include "resourceComponent.h"
 
 class attackComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
 		if (target == nullptr) { checkRange(); }
 		else { 
-			bullets->update();
-			attack();
+			if (checkResources()) {
+				bullets->update();
+				attack();
+			}
 		}
 	}
 
@@ -23,8 +26,18 @@ public:
 				target = potTarget;
 				targetDistance = distance;
 				owner->setTargetObject(potTarget);
+				owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 5);
+				return;
 			}
+			owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 0);
 		}
+	}
+
+	bool checkResources() {
+		if (owner->getComponent<resourceComponent>()->getResourcesCount(AMMUNITION) <= 0) {
+			return false;
+		}
+		return true;
 	}
 
 	void attack() {
