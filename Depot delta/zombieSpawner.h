@@ -11,7 +11,7 @@ public:
 		Uint32 currentTime = SDL_GetTicks();
 		if (currentTime - sLastTime >= static_cast<int>(sCooldownMS)) {
 			sLastTime = currentTime;
-			sCooldownMS *= 0.9;
+			sCooldownMS *= 0.99;
 			manager->addZombie(spawnZombie());
 			return true;
 		}
