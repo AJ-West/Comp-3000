@@ -19,7 +19,8 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
 
     }
 
-    SDL_Surface* surface = IMG_Load("art/environment/tilemap.png");
+    //SDL_Surface* surface = IMG_Load("art/environment/tilemap.png");
+    SDL_Surface* surface = IMG_Load("draftArt/map.png");
     if (!surface) {
         cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
         return;
@@ -209,15 +210,16 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {
-    SDL_FRect destRect{-camera.dimen.x,-camera.dimen.y,tileWidth,tileHeight };
-    for (auto& row : tilemap) {
-        for (auto& column : row) {
-            SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
+    SDL_FRect destRect{-camera.dimen.x,-camera.dimen.y,worldWidth,worldHeight };
+    SDL_RenderTexture(renderer, tilemapTexture, NULL, &destRect);
+    //for (auto& row : tilemap) {
+      //  for (auto& column : row) {
+        //    SDL_RenderTexture(renderer, tilemapTexture, &column, &destRect);
             //SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 			//SDL_RenderRect(renderer, &destRect);
-            destRect.x += tileWidth;
-        }
-		destRect.x = -camera.dimen.x;
-		destRect.y += tileHeight;
-    }
+          //  destRect.x += tileWidth;
+        //}
+		//destRect.x = -camera.dimen.x;
+		//destRect.y += tileHeight;
+    //}
 }
