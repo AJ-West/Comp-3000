@@ -7,13 +7,15 @@ public:
 	ZombieSpawner(LevelManager* lManager): manager(lManager) {}
 	~ZombieSpawner() {}
 
-	void checkIfSpawn() {
+	bool checkIfSpawn() {
 		Uint32 currentTime = SDL_GetTicks();
 		if (currentTime - sLastTime >= static_cast<int>(sCooldownMS)) {
 			sLastTime = currentTime;
 			sCooldownMS *= 0.9;
 			manager->addZombie(spawnZombie());
+			return true;
 		}
+		return false;
 	}
 
 	ZombieObj* spawnZombie() {

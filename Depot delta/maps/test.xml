@@ -8472,7 +8472,7 @@
             <target_y>124</target_y>
             <Resources>
                 <Personnel>46</Personnel>
-                <Ammunition>0</Ammunition>
+                <Ammunition>100</Ammunition>
                 <DoS>90</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
@@ -8506,7 +8506,7 @@
             <target_y>0</target_y>
             <Resources>
                 <Personnel>4</Personnel>
-                <Ammunition>22</Ammunition>
+                <Ammunition>100</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>67</Fuel>
                 <Scrap>40</Scrap>
@@ -8522,7 +8522,7 @@
             <target_y>229</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>5</Ammunition>
+                <Ammunition>100</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>0</Scrap>

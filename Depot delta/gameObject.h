@@ -71,7 +71,9 @@ public:
 
 	virtual void takeDamage(int damage) {
 		health -= damage;
-		if (health <= 0) { alive = false; }
+		if (health <= 0) { 
+			alive = false; 
+		}
 	}
 
 	GameObject* getTargetObject() { return targetObject; }

@@ -21,15 +21,17 @@ public:
 		SDL_FRect pos = owner->getDimensions();
 		Vec2 own{ pos.x + pos.w / 2, pos.y + pos.h / 2 };
 		for (auto& potTarget : targets) {
-			float distance = getDistance(own, potTarget->getPos());
-			if (distance < targetDistance && distance < attackRange) {
-				target = potTarget;
-				targetDistance = distance;
-				owner->setTargetObject(potTarget);
-				owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 5);
-				return;
+			if (potTarget) {
+				float distance = getDistance(own, potTarget->getPos());
+				if (distance < targetDistance && distance < attackRange) {
+					target = potTarget;
+					targetDistance = distance;
+					owner->setTargetObject(potTarget);
+					owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 5);
+					return;
+				}
+				owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 0);
 			}
-			owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 0);
 		}
 	}
 

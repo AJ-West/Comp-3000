@@ -88,7 +88,16 @@ void LevelManager::render()
 {
     time->update();
 	mapLoader->renderTileMap(renderer);
-    spawner->checkIfSpawn();
+    if (spawner->checkIfSpawn()) {
+        for (auto& unit : unitConvoys) {
+            if (unit) {
+                unit->Update();
+                if (typeid(*unit).name() == typeid(UnitObj).name()) {
+                    unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+                }
+            }
+        }
+    }
     depot->Update();
     hoveredUnit = nullptr;
     for (auto& unit : unitConvoys) {
