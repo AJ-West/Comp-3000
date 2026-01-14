@@ -188,9 +188,6 @@
     <ClInclude Include="dayCycle.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>
-    <ClInclude Include="gameObject.h">
-      <Filter>Source Files\gameFiles</Filter>
-    </ClInclude>
     <ClInclude Include="levelManager.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>
@@ -247,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="zombieSpawner.h">
       <Filter>Source Files\gameFiles\entities\zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="gameObject.h">
+      <Filter>Source Files\gameFiles\entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

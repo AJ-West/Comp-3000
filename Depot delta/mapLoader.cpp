@@ -103,8 +103,8 @@ void MapLoader::loadUnit(XMLElement* entity)
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = 1; // number of tiles
-    int height = 1;
+    int width = 4; // number of tiles
+    int height = 4;
     UnitObj* unit = new UnitObj(x, y, width, height, health, id);
     addUnitComponents(unit, entity);
     if (entity->FirstChildElement("target_x")) {
@@ -132,8 +132,8 @@ void MapLoader::loadConvoy(XMLElement* entity)
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = 1; // number of tiles
-    int height = 1;
+    int width = 4; // number of tiles
+    int height = 4;
     ConvoyObj* convoy = new ConvoyObj(x, y, width, height, health, id);
     addConvoyComponents(convoy, entity);
     if (entity->FirstChildElement("target_x")) {
@@ -161,8 +161,8 @@ void MapLoader::loadZombie(XMLElement* entity)
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = 1; // number of tiles
-    int height = 1;
+    int width = 4; // number of tiles
+    int height = 4;
     ZombieObj* zombie = new ZombieObj(x, y, width, height, health, id);
     addZombieComponents(zombie);
     if (entity->FirstChildElement("target_x")) {
@@ -181,8 +181,8 @@ void MapLoader::loadDepot(XMLElement* entity)
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
-    int width = 4; // number of tiles 
-    int height = 4;
+    int width = 16; // number of tiles 
+    int height = 16;
     depot = new DepotObj(x, y, width, height, health);
 	addDepotComponents(depot, entity);
 }

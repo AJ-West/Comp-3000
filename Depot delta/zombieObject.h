@@ -82,7 +82,7 @@ struct zombieStats {
 	int movementSpeed = 25;
 	int maxHealth = 100;
 
-	int size = 1; // how many tiles it takes up
+	int size = 4; // how many tiles it takes up
 
 	void addComponents(ZombieObj* zombie) {
 		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
