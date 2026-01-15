@@ -169,7 +169,7 @@ void LevelManager::clampZoom(){
     if (zoom > 2.0f) {
         zoom = 2.0f;
     }
-    else if (zoom < 0.5f) {
-        zoom = 0.5f;
+    else if (zoom < 0.25f) {
+        zoom = 0.25f;
     }
 }
