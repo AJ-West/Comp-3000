@@ -139,31 +139,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="imgui\backends\imgui_impl_sdl3.cpp" />
-    <ClCompile Include="imgui\backends\imgui_impl_sdlrenderer3.cpp" />
-    <ClCompile Include="imgui\imgui.cpp" />
-    <ClCompile Include="imgui\imgui_demo.cpp" />
-    <ClCompile Include="imgui\imgui_draw.cpp" />
-    <ClCompile Include="imgui\imgui_tables.cpp" />
-    <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="levelManager.cpp" />
-    <ClCompile Include="levelUI.cpp" />
-    <ClCompile Include="levelUI.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mapLoader.cpp" />
-    <ClCompile Include="mapSaver.cpp" />
-    <ClCompile Include="movementComponent.cpp" />
-    <ClCompile Include="selectedHandler.cpp" />
-    <ClCompile Include="tinyxml2.cpp" />
-    <ClCompile Include="transferBox.cpp" />
-    <ClCompile Include="UIHandler.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="usefulFunctions.cpp" />
-    <ClCompile Include="variables.cpp" />
-    <ClCompile Include="zombieObject.cpp" />
+    <ClCompile Include="dependencies\imgui\backends\imgui_impl_sdl3.cpp" />
+    <ClCompile Include="dependencies\imgui\backends\imgui_impl_sdlrenderer3.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_demo.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_draw.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_tables.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="dependencies\tinyxml2.cpp" />
+    <ClCompile Include="gameFiles\components\movementComponent.cpp" />
+    <ClCompile Include="gameFiles\entities\Zombies\zombieObject.cpp" />
+    <ClCompile Include="gameFiles\fileHandling\mapLoader.cpp" />
+    <ClCompile Include="gameFiles\fileHandling\mapSaver.cpp" />
+    <ClCompile Include="gameFiles\levelHandling\levelManager.cpp" />
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler.cpp" />
+    <ClCompile Include="gameFiles\main.cpp" />
+    <ClCompile Include="gameFiles\UI\levelUI.cpp" />
+    <ClCompile Include="gameFiles\UI\resourceBoxes\transferBox.cpp" />
+    <ClCompile Include="gameFiles\UI\UIHandler.cpp" />
+    <ClCompile Include="gameFiles\useThroughout\usefulFunctions.cpp" />
+    <ClCompile Include="gameFiles\useThroughout\variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\SDL\SDL\SDL\VisualC\SDL\SDL.vcxproj">
@@ -177,47 +172,46 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="attackComponent.h" />
-    <ClInclude Include="bulletHandler.h" />
-    <ClInclude Include="buttonComponent.h" />
-    <ClInclude Include="convoyObject.h" />
-    <ClInclude Include="dayCycle.h" />
-    <ClInclude Include="depotObject.h" />
-    <ClInclude Include="gameObject.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_sdl3.h" />
-    <ClInclude Include="imgui\backends\imgui_impl_sdlrenderer3.h" />
-    <ClInclude Include="imgui\imconfig.h" />
-    <ClInclude Include="imgui\imgui.h" />
-    <ClInclude Include="imgui\imgui_internal.h" />
-    <ClInclude Include="imgui\imstb_rectpack.h" />
-    <ClInclude Include="imgui\imstb_textedit.h" />
-    <ClInclude Include="imgui\imstb_truetype.h" />
-    <ClInclude Include="levelManager.h" />
-    <ClInclude Include="mapLoader.h" />
-    <ClInclude Include="mapSaver.h" />
-    <ClInclude Include="movementComponent.h" />
-    <ClInclude Include="nearestComponent.h" />
-    <ClInclude Include="newUnitButton.h" />
-    <ClInclude Include="pathfindingComponent.h" />
-    <ClInclude Include="renderComponent.h" />
-    <ClInclude Include="resourceBox.h" />
-    <ClInclude Include="resourceComponent.h" />
-    <ClInclude Include="resourceTransferComponent.h" />
-    <ClInclude Include="selectedHandler.h" />
-    <ClInclude Include="textInput.h" />
-    <ClInclude Include="tinyxml2.h" />
-    <ClInclude Include="transferBox.h" />
-    <ClInclude Include="transferDirectionButton.h" />
-    <ClInclude Include="UIElement.h" />
-    <ClInclude Include="UIHandler.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="unitMaker.h" />
-    <ClInclude Include="unitObject.h" />
-    <ClInclude Include="usefulFunctions.h" />
-    <ClInclude Include="variables.h" />
-    <ClInclude Include="zombieObject.h" />
-    <ClInclude Include="zombieSpawner.h" />
+    <ClInclude Include="dependencies\imgui\backends\imgui_impl_sdl3.h" />
+    <ClInclude Include="dependencies\imgui\backends\imgui_impl_sdlrenderer3.h" />
+    <ClInclude Include="dependencies\imgui\imconfig.h" />
+    <ClInclude Include="dependencies\imgui\imgui.h" />
+    <ClInclude Include="dependencies\imgui\imgui_internal.h" />
+    <ClInclude Include="dependencies\imgui\imstb_rectpack.h" />
+    <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
+    <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
+    <ClInclude Include="dependencies\tinyxml2.h" />
+    <ClInclude Include="gameFiles\components\attackComponent.h" />
+    <ClInclude Include="gameFiles\components\buttonComponent.h" />
+    <ClInclude Include="gameFiles\components\movementComponent.h" />
+    <ClInclude Include="gameFiles\components\nearestComponent.h" />
+    <ClInclude Include="gameFiles\components\pathfindingComponent.h" />
+    <ClInclude Include="gameFiles\components\renderComponent.h" />
+    <ClInclude Include="gameFiles\components\resourceComponent.h" />
+    <ClInclude Include="gameFiles\components\resourceTransferComponent.h" />
+    <ClInclude Include="gameFiles\entities\Convoys\convoyObject.h" />
+    <ClInclude Include="gameFiles\entities\Depot\depotObject.h" />
+    <ClInclude Include="gameFiles\entities\gameObject.h" />
+    <ClInclude Include="gameFiles\entities\Units\bulletHandler.h" />
+    <ClInclude Include="gameFiles\entities\Units\unitObject.h" />
+    <ClInclude Include="gameFiles\entities\Zombies\zombieObject.h" />
+    <ClInclude Include="gameFiles\entities\Zombies\zombieSpawner.h" />
+    <ClInclude Include="gameFiles\fileHandling\mapLoader.h" />
+    <ClInclude Include="gameFiles\fileHandling\mapSaver.h" />
+    <ClInclude Include="gameFiles\levelHandling\levelManager.h" />
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler.h" />
+    <ClInclude Include="gameFiles\misc\dayCycle.h" />
+    <ClInclude Include="gameFiles\UI\levelUI.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\newUnitButton.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\resourceBox.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\transferBox.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\transferDirectionButton.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\unitMaker.h" />
+    <ClInclude Include="gameFiles\UI\textInput.h" />
+    <ClInclude Include="gameFiles\UI\UIElement.h" />
+    <ClInclude Include="gameFiles\UI\UIHandler.h" />
+    <ClInclude Include="gameFiles\useThroughout\usefulFunctions.h" />
+    <ClInclude Include="gameFiles\useThroughout\variables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
