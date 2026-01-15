@@ -29,16 +29,6 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
-    unitConvoys.erase(
-        remove_if(unitConvoys.begin(), unitConvoys.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        unitConvoys.end()
-    );
-    zombieList.erase(
-        remove_if(zombieList.begin(), zombieList.end(),
-            [](const ZombieObj* ptr) { return ptr == nullptr; }),
-        zombieList.end()
-    );
     saver.saveFile(unitConvoys, depot, zombieList);
 }
 
@@ -106,11 +96,6 @@ void LevelManager::render()
             }
         }
     }
-    unitConvoys.erase(
-        remove_if(unitConvoys.begin(), unitConvoys.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        unitConvoys.end()
-    );
     for (auto& zombie : zombieList) { 
         if (zombie) {
             zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);
@@ -129,6 +114,17 @@ void LevelManager::render()
     UI->render();
     UI->renderTime();
     depot->renderResources(renderer);
+
+    unitConvoys.erase(
+        remove_if(unitConvoys.begin(), unitConvoys.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        unitConvoys.end()
+    );
+    zombieList.erase(
+        remove_if(zombieList.begin(), zombieList.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        zombieList.end()
+    );
 }
 
 void LevelManager::addUnitConvoy(GameObject* unitConvoy) {

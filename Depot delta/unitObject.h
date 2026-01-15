@@ -68,7 +68,7 @@ struct unitStats {
 	std::vector<int> rTransferRate = { 5,5,5,5,5 };
 
 	int aDamage = 5;
-	int aRange = 100;
+	int aRange = 500;
 	int aCooldown = 500;
 
 	void addComponents(UnitObj* unit) {

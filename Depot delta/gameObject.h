@@ -6,6 +6,8 @@
 #include <queue>
 #include <cmath>
 #include <unordered_map>
+#include <map>
+#include <typeindex>
 #include <vector>
 
 #include <SDL3/SDL.h>
@@ -41,12 +43,16 @@ public:
 
 	//add a component to the GameObject
 	template <typename T> void AddComponent(shared_ptr<T> component) {
-		components[typeid(T).name()] = component;
+		components[type_index(typeid(T))] = component;
 	}
 
 	//get a component from GameObject
 	template <typename T> shared_ptr<T> getComponent() {
-		return static_pointer_cast<T>(components[typeid(T).name()]);
+		auto it = components.find(type_index(typeid(T)));
+		if (it != components.end()) {
+			return static_pointer_cast<T>(it->second);
+		}
+		return nullptr;
 	}
 
 	//update all components
@@ -126,7 +132,8 @@ protected:
 private:
 	bool isHover = false;
 
-	unordered_map<string, shared_ptr<Component>> components;// Store components
+	//unordered_map<string, shared_ptr<Component>> components;// Store components
+	map<type_index, shared_ptr<Component>> components;// Store components
 
 	SDL_Texture texture;
 
