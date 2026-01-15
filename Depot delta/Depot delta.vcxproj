@@ -148,6 +148,7 @@
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="dependencies\tinyxml2.cpp" />
     <ClCompile Include="gameFiles\components\movementComponent.cpp" />
+    <ClCompile Include="gameFiles\entities\humanObject.cpp" />
     <ClCompile Include="gameFiles\entities\Zombies\zombieObject.cpp" />
     <ClCompile Include="gameFiles\fileHandling\mapLoader.cpp" />
     <ClCompile Include="gameFiles\fileHandling\mapSaver.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="gameFiles\entities\Convoys\convoyObject.h" />
     <ClInclude Include="gameFiles\entities\Depot\depotObject.h" />
     <ClInclude Include="gameFiles\entities\gameObject.h" />
+    <ClInclude Include="gameFiles\entities\humanObject.h" />
     <ClInclude Include="gameFiles\entities\Units\bulletHandler.h" />
     <ClInclude Include="gameFiles\entities\Units\unitObject.h" />
     <ClInclude Include="gameFiles\entities\Zombies\zombieObject.h" />
@@ -200,6 +202,7 @@
     <ClInclude Include="gameFiles\fileHandling\mapSaver.h" />
     <ClInclude Include="gameFiles\levelHandling\levelManager.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler.h" />
+    <ClInclude Include="gameFiles\main.h" />
     <ClInclude Include="gameFiles\misc\dayCycle.h" />
     <ClInclude Include="gameFiles\UI\levelUI.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\newUnitButton.h" />

@@ -1,5 +1,5 @@
 #pragma once
-#include "gameFiles/entities/gameObject.h"
+#include "gameFiles/entities/humanObject.h"
 
 #include "gameFiles/components/renderComponent.h"
 #include "gameFiles/components/buttonComponent.h"
@@ -9,23 +9,11 @@
 #include "gameFiles/components/pathfindingComponent.h"
 #include "gameFiles/components/attackComponent.h"
 
-class UnitObj : public GameObject {
+class UnitObj : public HumanObj {
 public:
-	UnitObj(int x, int y, int width, int height, int health, int id) : GameObject(x, y, width, height, health), ID(id) {
-		maxHealth = 100;
-	}
+	UnitObj(int x, int y, int width, int height, int health, int id) : HumanObj(x, y, width, height, health, id) {}
 
-	void onClick() {
-		selected = !selected;
-	}
-
-	void clickAway() { // set target pos to clicked position
-		getMapScaledMousePos(&tx, &ty);
-		pathToTarget();
-		getComponent<resourceComponent>()->setResourceUsage(FUEL, 1);
-	}
-
-	void renderHover(SDL_Renderer* renderer) {
+	virtual void renderHover(SDL_Renderer* renderer) {
 		auto rComp = getComponent<resourceComponent>();
 		if (rComp) {
 			SDL_FRect tSize{ 1254.0f * camera.xScale, 60.0f * camera.yScale, 182.0f * camera.xScale, 48.0f * camera.yScale };
@@ -36,29 +24,6 @@ public:
 	virtual void updateTargets(vector<ZombieObj*> list) {
 		getComponent<attackComponent>()->setPotentialTargets(list);
 	};
-
-	//getters
-	Vec2 getTargetPos() { return Vec2{tx,ty}; }
-	int getID() { return ID; }
-	virtual int getMaxHealth() { return maxHealth; }
-
-	//setters
-	virtual void setTarget(float x, float y) { 
-		tx = x; ty = y; 
-		pathToTarget();
-	};
-
-	void pathToTarget() {
-		Vec2 target = { tx,ty };
-		SDL_FRect size = getDimensions();
-		Vec2 origin = { size.x + size.w / 2, size.y + size.h / 2 };
-		auto pathComp = getComponent<pathfindingComponent>();
-		pathComp->computeFlowField(target, origin);
-	}
-
-private:
-	int ID;
-	int maxHealth = 100;
 };
 
 struct unitStats {

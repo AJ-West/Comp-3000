@@ -8498,10 +8498,10 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>45</health>
-            <x>351</x>
-            <y>374</y>
-            <target_x>383</target_x>
-            <target_y>407</target_y>
+            <x>395</x>
+            <y>332</y>
+            <target_x>513</target_x>
+            <target_y>285</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>0</Ammunition>
