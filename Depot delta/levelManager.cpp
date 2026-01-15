@@ -6,16 +6,11 @@
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
     mapLoader = new MapLoader("maps/test.xml", renderer);
-    unitList = mapLoader->getUnitList();
+    unitConvoys = mapLoader->getUnitConvoyList();
     depot = mapLoader->getDepot();
-    convoyList = mapLoader->getConvoyList();
 	zombieList = mapLoader->getZombieList();
-    unitConvoys.insert(unitConvoys.end(), unitList.begin(), unitList.end());
-    unitConvoys.insert(unitConvoys.end(), convoyList.begin(), convoyList.end());
     vector<GameObject*> allObjects;
-	allObjects.insert(allObjects.end(), unitList.begin(), unitList.end());
-	allObjects.insert(allObjects.end(), convoyList.begin(), convoyList.end());
-	allObjects.insert(allObjects.end(), zombieList.begin(), zombieList.end());
+	allObjects.insert(allObjects.end(), unitConvoys.begin(), unitConvoys.end());
 	allObjects.push_back(depot);
 
     time = new dayCycle();
@@ -91,7 +86,6 @@ void LevelManager::render()
     if (spawner->checkIfSpawn()) {
         for (auto& unit : unitConvoys) {
             if (unit) {
-                unit->Update();
                 if (typeid(*unit).name() == typeid(UnitObj).name()) {
                     unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
                 }
@@ -117,7 +111,6 @@ void LevelManager::render()
             [](const GameObject* ptr) { return ptr == nullptr; }),
         unitConvoys.end()
     );
-    //selector->setAllObjects(unitConvoys);
     for (auto& zombie : zombieList) { 
         if (zombie) {
             zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);

@@ -8479,18 +8479,18 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>8</id>
-            <health>100</health>
-            <x>20</x>
-            <y>191</y>
+            <health>95</health>
+            <x>16</x>
+            <y>279</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <target_x>48</target_x>
+            <target_y>311</target_y>
             <Resources>
                 <Personnel>0</Personnel>
                 <Ammunition>27</Ammunition>
                 <DoS>0</DoS>
-                <Fuel>100</Fuel>
+                <Fuel>95</Fuel>
                 <Scrap>40</Scrap>
             </Resources>
         </entities>
@@ -8498,13 +8498,13 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>60</health>
-            <x>162</x>
-            <y>237</y>
-            <target_x>171</target_x>
-            <target_y>245</target_y>
+            <x>351</x>
+            <y>374</y>
+            <target_x>383</target_x>
+            <target_y>407</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>45</Ammunition>
+                <Ammunition>30</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>0</Scrap>

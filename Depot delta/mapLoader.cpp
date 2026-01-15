@@ -83,16 +83,13 @@ void MapLoader::loadEntities(XMLElement* layer)
         }
 		entity = entity->NextSiblingElement("entities");
 	}
-    vector<GameObject*> unitConvoys;
-    for (auto& unit : unitList) {
-        unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
-        unitConvoys.push_back(unit);
-    }
-    for (auto& convoy : convoyList) {
-        unitConvoys.push_back(convoy);
+    for (auto& unit : unitConvoyList) {
+        if (typeid(*unit).name() == typeid(UnitObj).name()) { 
+            unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+        }
     }
 	for (auto& zombie : zombieList) {
-		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoys);
+		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoyList);
         zombie->getComponent<nearestComponent>()->setDepot(depot);
 	}
 }
@@ -110,7 +107,7 @@ void MapLoader::loadUnit(XMLElement* entity)
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    unitList.emplace_back(unit);
+    unitConvoyList.emplace_back(unit);
 }
 
 void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
@@ -139,7 +136,7 @@ void MapLoader::loadConvoy(XMLElement* entity)
     if (entity->FirstChildElement("target_x")) {
         convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    convoyList.emplace_back(convoy);
+    unitConvoyList.emplace_back(convoy);
 }
 
 void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {

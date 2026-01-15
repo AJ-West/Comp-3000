@@ -63,8 +63,6 @@ private:
 
 	MapLoader* mapLoader;
 	vector<GameObject*> unitConvoys;
-	vector<UnitObj*> unitList;
-	vector<ConvoyObj*> convoyList;
 	vector<ZombieObj*> zombieList;
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;

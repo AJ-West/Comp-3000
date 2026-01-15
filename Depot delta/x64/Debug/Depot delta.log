@@ -249,9 +249,9 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieSpawner.h(35
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\zombieSpawner.h(35,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(157,27): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(159,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(159,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(150,27): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(152,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\levelManager.cpp(152,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'levelManager.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
@@ -1166,16 +1166,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\convoyObject.h(13,
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(43,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(44,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(111,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(111,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(140,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(140,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(169,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(169,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(213,56): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(213,56): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(213,67): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(213,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(108,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(108,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(137,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(137,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(166,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(166,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(210,56): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(210,56): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(210,67): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(210,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'mapLoader.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
@@ -1199,7 +1199,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.3313
   (compiling source file 'mapLoader.cpp')
   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
   the template instantiation context (the oldest one first) is
-  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(193,25):
+  	C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\mapLoader.cpp(190,25):
   	see reference to function template instantiation 'std::shared_ptr<movementComponent> std::make_shared<movementComponent,DepotObj*&,int>(DepotObj *&,int &&)' being compiled
   	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
   	see reference to function template instantiation 'std::_Ref_count_obj2<movementComponent>::_Ref_count_obj2<DepotObj*&,_Ty>(DepotObj *&,_Ty &&)' being compiled
