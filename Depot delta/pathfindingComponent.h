@@ -7,12 +7,7 @@ public:
 
 	bool computeFlowField(Vec2 target, Vec2 origin) {
         // Reset grid
-        for (auto& row : grid) {
-            for (auto& cell : row) {
-                cell.cost = INT_MAX;
-                cell.direction = { 0, 0 };
-            }
-        }
+        mGrid = grid;
 
         //convert target to target cell
         Vec2 targetCell{ 0,0 };
@@ -36,22 +31,22 @@ public:
         // queue for searching (Breadth First Search)
         std::queue<Vec2> q;
         // Initialize target cell
-        grid[target.y][target.x].cost = 0;
+        mGrid[target.y][target.x].cost = 0;
         q.push(target);
 
         // BFS to compute costs while origin not found and all cells have not been checked
         while (!q.empty() && !foundO) {
             Vec2 current = q.front(); q.pop();
-            int currentCost = grid[current.y][current.x].cost;
+            int currentCost = mGrid[current.y][current.x].cost;
 
             for (auto dir : directions) {
                 Vec2 next = { current.x + dir.x, current.y + dir.y };
                 if (next.x >= 0 && next.x < WORLD_TILE_COLS && // if in bounds
                     next.y >= 0 && next.y < WORLD_TILE_ROWS &&
-                    grid[next.y][next.x].walkable && // if walkable
-                    grid[next.y][next.x].cost > currentCost + 1) { // if not visited or found a cheaper path
+                    mGrid[next.y][next.x].walkable && // if walkable
+                    mGrid[next.y][next.x].cost > currentCost + 1) { // if not visited or found a cheaper path
 
-                    grid[next.y][next.x].cost = currentCost + 1;
+                    mGrid[next.y][next.x].cost = currentCost + 1;
                     q.push(next);
                 }
                 if (next.x == origin.x && next.y == origin.y) {
@@ -67,21 +62,21 @@ public:
         // Compute flow direction for each cell
         for (int y = 0; y < WORLD_TILE_ROWS; y++) {
             for (int x = 0; x < WORLD_TILE_COLS; x++) {
-                if (!grid[y][x].walkable || grid[y][x].cost == INT_MAX) continue; // skip obstacles and cells which would be slower
+                if (!mGrid[y][x].walkable || mGrid[y][x].cost == INT_MAX) continue; // skip obstacles and cells which would be slower
 
-                int bestCost = grid[y][x].cost;
+                int bestCost = mGrid[y][x].cost;
                 Vec2 bestDir = { 0, 0 };
 
                 for (auto dir : directions) {
                     Vec2 next = { x + dir.x, y + dir.y };
                     if (next.x >= 0 && next.x < WORLD_TILE_COLS &&
                         next.y >= 0 && next.y < WORLD_TILE_ROWS &&
-                        grid[next.y][next.x].cost < bestCost) {
-                        bestCost = grid[next.y][next.x].cost;
+                        mGrid[next.y][next.x].cost < bestCost) {
+                        bestCost = mGrid[next.y][next.x].cost;
                         bestDir = dir;
                     }
                 }
-                grid[y][x].direction = bestDir;
+                mGrid[y][x].direction = bestDir;
             }
         }
 	}
@@ -91,12 +86,12 @@ public:
 		return grid[position.y][position.x].direction;
 	}
 
-	pathfindingComponent(GameObject* obj, vector<vector<Tile>> worldGrid) : Component(obj), grid(worldGrid){}
+	pathfindingComponent(GameObject* obj, vector<vector<Tile>> worldGrid) : Component(obj), mGrid(worldGrid){}
 	virtual ~pathfindingComponent() {}
 
 private:
 	// The grid representing the world for pathfinding
-	vector<vector<Tile>> grid;
+	vector<vector<Tile>> mGrid;
 	// Directions for neighbor tiles (up, down, left, right, and diagonals)
 	const vector<Vec2> directions = { {0,-1},{0,1},{-1,0},{1,0},{1,1},{1,-1},{-1,-1},{-1,1} };
 };
