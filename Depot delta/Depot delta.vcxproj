@@ -155,6 +155,8 @@
     <ClCompile Include="gameFiles\levelHandling\levelManager.cpp" />
     <ClCompile Include="gameFiles\levelHandling\selectedHandler.cpp" />
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\handleSelected.cpp" />
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.cpp" />
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.cpp" />
     <ClCompile Include="gameFiles\main.cpp" />
     <ClCompile Include="gameFiles\UI\levelUI.cpp" />
     <ClCompile Include="gameFiles\UI\resourceBoxes\resourceBox.cpp" />
@@ -205,6 +207,8 @@
     <ClInclude Include="gameFiles\levelHandling\levelManager.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\handleSelected.h" />
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.h" />
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.h" />
     <ClInclude Include="gameFiles\main.h" />
     <ClInclude Include="gameFiles\misc\dayCycle.h" />
     <ClInclude Include="gameFiles\UI\levelUI.h" />

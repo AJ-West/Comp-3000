@@ -6,6 +6,9 @@
 #include "gameFiles/entities/humanObject.h"
 #include "gameFiles/entities/Depot/depotObject.h"
 
+#include "gameFiles/levelHandling/selectedHandler/states/UnitSelected.h"
+#include "gameFiles/levelHandling/selectedHandler/states/DepotSelected.h"
+
 enum ObjectType convert(const char* str) {
 	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
 	if (strcmp(str, typeid(UnitObj).name()) == 0) return Human;
@@ -37,6 +40,12 @@ void HandleSelected::decideState(LevelManager* manager) {
 				setState(make_shared<UnitSelected>(manager, human, this, UI));
 			}
 			break;
+		case Depot:
+			// downcasting check to pass correct object
+			if (DepotObj* depot = dynamic_cast<DepotObj*>(hovered)) {
+				setState(make_shared<DepotSelected>(manager, depot, this, UI));
+			}
+			break;
 		default:
 			currentState.reset();
 			break;
@@ -58,43 +67,4 @@ void HandleSelected::checkHover(SDL_Event event) {
 		}
 	}
 	hovered = nullptr;
-}
-
-UnitSelected::UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelected* handler, levelUI* lUI) : SelectedState(lManager, handler), selected(unit), UI(lUI) {
-	selected->onClick();
-}
-UnitSelected::~UnitSelected() {}
-
-void UnitSelected::handleInput(SDL_Event event) {
-	if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-		if (event.button.button == SDL_BUTTON_LEFT) {
-			leftClick();
-		}
-		else if (event.button.button == SDL_BUTTON_RIGHT) {
-			rightClick();
-		}
-	}
-}
-
-void UnitSelected::leftClick() {
-	if (!handler->getHovered()) { // move unit to click pos
-		selected->clickAway();
-	}
-	else { // if clicking on another object
-		selected->onClick();
-		deselect();
-	}
-}
-
-void UnitSelected::rightClick() {
-	if (handler->getHovered()) { // if right clicking on another unit initiate transfer
-		if (selected->getComponent<resourceTransferComponent>()->checkDistance(selected->getDimensions(), handler->getHovered()->getDimensions())) {
-			UI->createTransferBox(handler->getHovered(), selected);
-			manager->setPaused(true);
-		}
-	}
-	else {  // unselect unit
-		selected->onClick();
-		deselect();
-	}
 }

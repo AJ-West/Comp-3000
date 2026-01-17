@@ -53,19 +53,3 @@ private:
 	vector<GameObject*> allObjects;
 	levelUI* UI;
 };
-
-class UnitSelected :public SelectedState {
-public:
-	UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelected* handleS, levelUI* lUI);
-	~UnitSelected();
-
-	virtual void handleInput(SDL_Event event);
-
-	void leftClick();
-
-	void rightClick();
-private:
-	HumanObj* selected;
-
-	levelUI* UI;
-};

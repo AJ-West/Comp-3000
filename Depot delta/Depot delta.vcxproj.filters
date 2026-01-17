@@ -106,6 +106,9 @@
     <Filter Include="Source Files\gameFiles\entities\humans\Convoys">
       <UniqueIdentifier>{be913c6e-3b8b-48f1-a312-b23bc90677c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\level handling\selectedHandler\states">
+      <UniqueIdentifier>{67697b95-7c08-4397-800e-1f1e4440985f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -176,6 +179,12 @@
     </ClCompile>
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\handleSelected.cpp">
       <Filter>Source Files\gameFiles\level handling\selectedHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.cpp">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.cpp">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +316,12 @@
     </ClInclude>
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\handleSelected.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.h">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.h">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
