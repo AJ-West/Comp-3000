@@ -63,9 +63,18 @@ public:
 	}
 
 	bool checkDistance() {
-		//TO-DO: check distance between depot and convoy to transfer resources
 		SDL_FRect ownerRect = owner->getSize();
 		SDL_FRect targetRect = target->getSize();
+		float dx = (ownerRect.x + ownerRect.w / 2) - (targetRect.x + targetRect.w / 2);
+		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
+		float distance = sqrt(dx * dx + dy * dy);
+		if (distance <= transferDistance) {
+			return true;
+		}
+		return false;
+	}
+
+	bool checkDistance(SDL_FRect ownerRect, SDL_FRect targetRect) {
 		float dx = (ownerRect.x + ownerRect.w / 2) - (targetRect.x + targetRect.w / 2);
 		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
 		float distance = sqrt(dx * dx + dy * dy);

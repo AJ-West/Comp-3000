@@ -13,10 +13,11 @@ class HumanObj;
 class DepotObj;
 class GameObject; 
 class levelUI;
+class HandleSelected;
 
 class SelectedState {
 public:
-	SelectedState(LevelManager* lManager) : manager(lManager){}
+	SelectedState(LevelManager* lManager, HandleSelected* handleS) : manager(lManager), handler(handleS){}
 	~SelectedState(){}
 
 	virtual void handleInput(SDL_Event event) = 0;
@@ -26,6 +27,7 @@ public:
 protected:
 	bool destroy = false;
 	LevelManager* manager;
+	HandleSelected* handler;
 };
 
 class HandleSelected {
@@ -41,10 +43,12 @@ public:
 
 	void checkHover(SDL_Event event);
 
+	GameObject* getHovered() { return hovered; }
+
 private:
 	shared_ptr<SelectedState> currentState;
 
-	shared_ptr<GameObject> hovered = nullptr;
+	GameObject* hovered = nullptr;
 
 	vector<GameObject*> allObjects;
 	levelUI* UI;
@@ -52,7 +56,7 @@ private:
 
 class UnitSelected :public SelectedState {
 public:
-	UnitSelected(LevelManager* lManager, HumanObj* unit, shared_ptr<GameObject> hover, levelUI* lUI);
+	UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelected* handleS, levelUI* lUI);
 	~UnitSelected();
 
 	virtual void handleInput(SDL_Event event);
@@ -62,7 +66,6 @@ public:
 	void rightClick();
 private:
 	HumanObj* selected;
-	shared_ptr<GameObject> hovered;
 
 	levelUI* UI;
 };

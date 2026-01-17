@@ -7,8 +7,6 @@
 #include "gameFiles/entities/Depot/depotObject.h"
 
 enum ObjectType convert(const char* str) {
-	cout << str << "t" << '\n';
-	cout << typeid(HumanObj).name() << "t" << '\n';
 	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
 	if (strcmp(str, typeid(UnitObj).name()) == 0) return Human;
 	if (strcmp(str, typeid(ConvoyObj).name()) == 0) return Human;
@@ -30,13 +28,13 @@ void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 
 void HandleSelected::decideState(LevelManager* manager) {
 	if (hovered) {
-		enum ObjectType type = convert(typeid(*(hovered.get())).name());
+		enum ObjectType type = convert(typeid(*hovered).name());
 		switch (type)
 		{
 		case Human:
 			// downcasting check to pass correct object
-			if (shared_ptr<HumanObj> human = static_pointer_cast<HumanObj>(hovered)) {
-				setState(make_shared<UnitSelected>(manager, human.get(), hovered, UI));
+			if (HumanObj* human = dynamic_cast<HumanObj*>(hovered)) {
+				setState(make_shared<UnitSelected>(manager, human, this, UI));
 			}
 			break;
 		default:
@@ -54,36 +52,15 @@ void HandleSelected::checkHover(SDL_Event event) {
 		if (obj) {
 			obj->checkHover(event.motion.x, event.motion.y);
 			if (obj->getHovering()) {
-				enum ObjectType type = convert(typeid(*obj).name());
-				switch (type)
-				{
-				case Human:
-					// downcasting check to pass correct object
-					if (HumanObj* human = dynamic_cast<HumanObj*>(obj)) {
-						hovered = make_shared<HumanObj>(*human);
-					}
-					break;
-				case Depot:
-					// downcasting check to pass correct object
-					if (DepotObj* depot = dynamic_cast<DepotObj*>(obj)) {
-						hovered = make_shared<DepotObj>(*depot);
-					}
-					break;
-				default:
-					hovered.reset();
-					break;
-				}
+				hovered = obj;
 				return;
 			}
 		}
 	}
-	hovered.reset();
+	hovered = nullptr;
 }
 
-UnitSelected::UnitSelected(LevelManager* lManager, HumanObj* unit, shared_ptr<GameObject> hover, levelUI* lUI) : SelectedState(lManager), selected(unit), hovered(hover), UI(lUI) {
-	//duplicates pointer to avoid unit changing when hovered changes
-	unit = new HumanObj(*unit);
-	selected = unit;
+UnitSelected::UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelected* handler, levelUI* lUI) : SelectedState(lManager, handler), selected(unit), UI(lUI) {
 	selected->onClick();
 }
 UnitSelected::~UnitSelected() {}
@@ -100,7 +77,7 @@ void UnitSelected::handleInput(SDL_Event event) {
 }
 
 void UnitSelected::leftClick() {
-	if (!hovered) { // move unit to click pos
+	if (!handler->getHovered()) { // move unit to click pos
 		selected->clickAway();
 	}
 	else { // if clicking on another object
@@ -110,9 +87,11 @@ void UnitSelected::leftClick() {
 }
 
 void UnitSelected::rightClick() {
-	if (hovered) { // if right clicking on another unit initiate transfer
-		UI->createTransferBox(hovered.get(), selected);
-		manager->setPaused(true);
+	if (handler->getHovered()) { // if right clicking on another unit initiate transfer
+		if (selected->getComponent<resourceTransferComponent>()->checkDistance(selected->getDimensions(), handler->getHovered()->getDimensions())) {
+			UI->createTransferBox(handler->getHovered(), selected);
+			manager->setPaused(true);
+		}
 	}
 	else {  // unselect unit
 		selected->onClick();
