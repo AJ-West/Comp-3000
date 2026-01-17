@@ -12,6 +12,7 @@
 #include "gameFiles/fileHandling/mapSaver.h"
 
 #include "gameFiles/levelHandling/selectedHandler.h"
+#include "gameFiles/levelHandling/selectedHandler/handleSelected.h"
 
 #include "gameFiles/misc/dayCycle.h"
 
@@ -26,6 +27,7 @@
 #include "gameFiles/components/resourceComponent.h"
 
 #include "gameFiles/useThroughout/variables.h"
+
 
 class levelUI;
 class ZombieSpawner;
@@ -75,6 +77,7 @@ private:
 	GameObject* hoveredUnit = nullptr;
 
 	SelectedHandler* selector;
+	HandleSelected* handler;
 
 	dayCycle* time;
 

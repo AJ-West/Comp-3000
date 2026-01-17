@@ -8476,38 +8476,40 @@
                 <Scrap>1000</Scrap>
             </Resources>
         </entities>
+        <entities eid="32855006">
+            <name>Basic unit</name>
+            <id>2</id>
+            <health>100</health>
+            <x>180</x>
+            <y>106</y>
+            <originX>8</originX>
+            <originY>8</originY>
+            <target_x>212</target_x>
+            <target_y>138</target_y>
+            <Resources>
+                <Personnel>100</Personnel>
+                <Ammunition>0</Ammunition>
+                <DoS>60</DoS>
+                <Fuel>60</Fuel>
+                <Scrap>60</Scrap>
+            </Resources>
+        </entities>
         <entities eid="21794766">
             <name>Basic Convoy</name>
-            <id>8</id>
-            <health>95</health>
-            <x>411</x>
-            <y>274</y>
+            <id>3</id>
+            <health>60</health>
+            <x>20</x>
+            <y>191</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>443.33334</target_x>
-            <target_y>306.66666</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>0</Personnel>
                 <Ammunition>27</Ammunition>
                 <DoS>0</DoS>
-                <Fuel>95</Fuel>
+                <Fuel>100</Fuel>
                 <Scrap>40</Scrap>
-            </Resources>
-        </entities>
-        <entities eid="21794767">
-            <name>Basic unit</name>
-            <id>4</id>
-            <health>45</health>
-            <x>480</x>
-            <y>253</y>
-            <target_x>513</target_x>
-            <target_y>285</target_y>
-            <Resources>
-                <Personnel>50</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
             </Resources>
         </entities>
     </layers>

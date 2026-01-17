@@ -117,6 +117,11 @@ enum time {
 	day
 };
 
+enum ObjectType {
+	Human,
+	Depot
+};
+
 struct Vec2 {
 	float x;
 	float y;

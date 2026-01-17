@@ -18,7 +18,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     spawner = new ZombieSpawner(this);
 
-    selector = new SelectedHandler(allObjects, depot, UI);
+    //selector = new SelectedHandler(allObjects, depot, UI);
+    handler = new HandleSelected(allObjects, UI);
 }
 
 LevelManager::~LevelManager()
@@ -35,14 +36,16 @@ void LevelManager::saveOnExit()
 // Handles user input
 void LevelManager::handleInput(SDL_Event event)
 {
-    if (event.type == SDL_EVENT_MOUSE_MOTION) {
-		selector->checkHover(event);
-    }
-    else if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+    //if (event.type == SDL_EVENT_MOUSE_MOTION) {
+		//selector->checkHover(event);
+		//handler->checkHover(event);
+    //}
+    //else
+    if (event.type == SDL_EVENT_MOUSE_WHEEL) {
         zoomChange(event);
     }
     else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-        if (event.button.button == SDL_BUTTON_LEFT) {
+        /*if (event.button.button == SDL_BUTTON_LEFT) {
             if (UI->checkClickInput()) {
                 textInput = true;
                 return;
@@ -54,7 +57,8 @@ void LevelManager::handleInput(SDL_Event event)
             if (!textInput) {
                 selector->rightClick(this);
             }
-        }
+        }*/
+        handler->handleInput(event, this);
     }
     else if (event.type == SDL_EVENT_KEY_DOWN) {
         if (textInput) {
