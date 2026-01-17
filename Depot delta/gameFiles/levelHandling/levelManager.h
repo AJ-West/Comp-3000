@@ -15,8 +15,6 @@
 
 #include "gameFiles/misc/dayCycle.h"
 
-#include "gameFiles/UI/resourceBoxes/transferBox.h"
-
 #include "gameFiles/entities/Units/unitObject.h"
 #include "gameFiles/entities/Depot/depotObject.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
@@ -42,7 +40,10 @@ public:
 	void saveOnExit();
 
 	void handleInput(SDL_Event event);
+
 	void render();
+	void unpausedRender();
+	void pausedRender();
 
 	void addUnitConvoy(GameObject* unitConvoy);
 	void addZombie(ZombieObj* zombie);
@@ -57,6 +58,9 @@ public:
 	int getNextID() { return unitConvoys.size() + zombieList.size() + 2; } // add 1 for depot and new object for total number of objects
 	DepotObj* getDepot() { return depot; } 
 	vector<GameObject*> getUnitConvoys() { return unitConvoys; }
+
+	//setters
+	void setPaused(bool pause) { paused = pause; }
 
 private:
 	SDL_Renderer* renderer;
@@ -75,5 +79,7 @@ private:
 	dayCycle* time;
 
 	bool textInput = false;
+
+	bool paused = false;
 };
 

@@ -1,6 +1,7 @@
 #include "selectedHandler.h"
 
 #include "gameFiles/UI/levelUI.h"
+#include "gameFiles/levelHandling/levelManager.h"
 
 SelectedHandler::SelectedHandler(vector<GameObject*> objs, DepotObj* dep, levelUI* lUI) : allObjects(objs), depot(dep), UI(lUI)
 {
@@ -60,7 +61,7 @@ void SelectedHandler::checkClick() {
     }
 }
 
-void SelectedHandler::rightClick() {
+void SelectedHandler::rightClick(LevelManager* manager) {
 	if (selectedObject) {
         if (typeid(*selectedObject).name() == typeid(ConvoyObj).name()) {
 			if (!hoveredObj || typeid(*hoveredObj).name() == typeid(ConvoyObj).name()) {
@@ -69,6 +70,7 @@ void SelectedHandler::rightClick() {
             }
             else {
                 UI->createTransferBox(hoveredObj, selectedObject);
+                manager->setPaused(true);
             }
         }
         else {

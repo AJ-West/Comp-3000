@@ -156,6 +156,7 @@
     <ClCompile Include="gameFiles\levelHandling\selectedHandler.cpp" />
     <ClCompile Include="gameFiles\main.cpp" />
     <ClCompile Include="gameFiles\UI\levelUI.cpp" />
+    <ClCompile Include="gameFiles\UI\resourceBoxes\resourceBox.cpp" />
     <ClCompile Include="gameFiles\UI\resourceBoxes\transferBox.cpp" />
     <ClCompile Include="gameFiles\UI\UIHandler.cpp" />
     <ClCompile Include="gameFiles\useThroughout\usefulFunctions.cpp" />

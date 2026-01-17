@@ -4,10 +4,11 @@
 #include "gameFiles/components/resourceTransferComponent.h"
 
 class textInput;
+class LevelManager;
 
 class transferBox: public ResourceBox {
 public:
-	transferBox(SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : ResourceBox(rSize), unit(sUnit), convoy(sConvoy) {
+	transferBox(LevelManager* lManager, SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : ResourceBox(lManager, rSize), unit(sUnit), convoy(sConvoy) {
 		//add convoy->unit button
 		elements.push_back(new transferDirectionButton({ size.x + 74.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, true));
 		//add unit->convoy button
@@ -33,6 +34,7 @@ public:
 		else {
 			unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, amounts);
 		}
+		unPause();
 		//should remove transfer box on beginning of transfer
 		toDelete = true;
 	}

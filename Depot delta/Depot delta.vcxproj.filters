@@ -171,6 +171,9 @@
     <ClCompile Include="gameFiles\entities\humanObject.cpp">
       <Filter>Source Files\gameFiles\entities</Filter>
     </ClCompile>
+    <ClCompile Include="gameFiles\UI\resourceBoxes\resourceBox.cpp">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameFiles\components\movementComponent.h">

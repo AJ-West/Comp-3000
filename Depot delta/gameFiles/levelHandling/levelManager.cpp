@@ -52,7 +52,7 @@ void LevelManager::handleInput(SDL_Event event)
         }
         else if (event.button.button == SDL_BUTTON_RIGHT) {
             if (!textInput) {
-                selector->rightClick();
+                selector->rightClick(this);
             }
         }
     }
@@ -71,8 +71,18 @@ void LevelManager::handleInput(SDL_Event event)
 //Renders the screen
 void LevelManager::render()
 {
+    if (!paused) {
+        unpausedRender();
+    }
+    else {
+        pausedRender();
+    }
+}
+
+void LevelManager::unpausedRender()
+{
     time->update();
-	mapLoader->renderTileMap(renderer);
+    mapLoader->renderTileMap(renderer);
     if (spawner->checkIfSpawn()) {
         for (auto& unit : unitConvoys) {
             if (unit) {
@@ -96,7 +106,7 @@ void LevelManager::render()
             }
         }
     }
-    for (auto& zombie : zombieList) { 
+    for (auto& zombie : zombieList) {
         if (zombie) {
             zombie->updateTargets(unitConvoys);
             zombie->Update();
@@ -127,6 +137,30 @@ void LevelManager::render()
     );
 }
 
+void LevelManager::pausedRender()
+{    
+    mapLoader->renderTileMap(renderer);
+    depot->getComponent<renderComponent>()->update(depot);
+    hoveredUnit = nullptr;
+    for (auto& unit : unitConvoys) {
+        if (unit) {
+            unit->getComponent<renderComponent>()->update(unit);
+        }
+    }
+    for (auto& zombie : zombieList) {
+        if (zombie) {
+            zombie->getComponent<renderComponent>()->update(zombie);
+        }
+    }
+    if (hoveredUnit) {
+        UI->renderResourceHover();
+        hoveredUnit->renderHover(renderer);
+    }
+    UI->render();
+    UI->renderTime();
+    depot->renderResources(renderer);
+}
+
 void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
     unitConvoys.emplace_back(unitConvoy);
     selector->setAllObjects(unitConvoys);
@@ -135,7 +169,6 @@ void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
 void LevelManager::addZombie(ZombieObj* zombie) {
     zombieList.emplace_back(zombie);
 }
-
 
 //Handles zoom change
 void LevelManager::zoomChange(SDL_Event event) {

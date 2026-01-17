@@ -18,6 +18,7 @@ using namespace std;
 using namespace tinyxml2;
 
 class levelUI;
+class LevelManager;
 
 class SelectedHandler {
 public:
@@ -27,7 +28,7 @@ public:
 	void checkHover(SDL_Event event);
 
 	void checkClick();
-	void rightClick();
+	void rightClick(LevelManager* manager);
 
 	void deselectObject();
 

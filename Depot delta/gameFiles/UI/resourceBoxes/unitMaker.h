@@ -14,10 +14,11 @@
 #include "gameFiles/components/attackComponent.h"
 
 class textInput;
+class LevelManager;
 
 class unitMaker : public ResourceBox {
 public:
-	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(rSize), manager(lManager), depot(gameDepot) {
+	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(lManager, rSize), depot(gameDepot) {
 		//add make unit button
 		elements.push_back(new newUnitButton({ size.x + 74.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, true));
 		//add cancel button
