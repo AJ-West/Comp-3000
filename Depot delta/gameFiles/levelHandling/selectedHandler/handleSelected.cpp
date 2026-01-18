@@ -8,6 +8,7 @@
 
 #include "gameFiles/levelHandling/selectedHandler/states/UnitSelected.h"
 #include "gameFiles/levelHandling/selectedHandler/states/DepotSelected.h"
+#include "gameFiles/levelHandling/selectedHandler/states/transferState.h"
 
 enum ObjectType convert(const char* str) {
 	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
@@ -24,36 +25,59 @@ void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 	}
 	else {
 		if (hovered && event.button.button == SDL_BUTTON_LEFT) {
+			stateEnum = selectHuman;
 			decideState(manager);
+		}
+		if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+			manager->zoomChange(event);
+		}
+		else if (event.type == SDL_EVENT_KEY_DOWN) {
+			camera.keyDown(event.key.key);
+		}
+		else if (event.type == SDL_EVENT_KEY_UP) {
+			camera.keyUp(event.key.key);
 		}
 	}
 }
 
 void HandleSelected::decideState(LevelManager* manager) {
-	if (hovered) {
-		enum ObjectType type = convert(typeid(*hovered).name());
-		switch (type)
-		{
-		case Human:
-			// downcasting check to pass correct object
-			if (HumanObj* human = dynamic_cast<HumanObj*>(hovered)) {
-				setState(make_shared<UnitSelected>(manager, human, this, UI));
+	switch (stateEnum) {
+	case selectHuman:
+	case selectDepot:
+		if (hovered) { // if clicked on different unit
+			enum ObjectType type = convert(typeid(*hovered).name());
+			switch (type)
+			{
+			case Human:
+				// downcasting check to pass correct object
+				if (HumanObj* human = dynamic_cast<HumanObj*>(hovered)) {
+					setState(make_shared<UnitSelected>(manager, human, this, UI));
+				}
+				break;
+			case Depot:
+				// downcasting check to pass correct object
+				if (DepotObj* depot = dynamic_cast<DepotObj*>(hovered)) {
+					setState(make_shared<DepotSelected>(manager, depot, this, UI));
+				}
+				break;
+			default:
+				currentState.reset();
+				break;
 			}
-			break;
-		case Depot:
-			// downcasting check to pass correct object
-			if (DepotObj* depot = dynamic_cast<DepotObj*>(hovered)) {
-				setState(make_shared<DepotSelected>(manager, depot, this, UI));
-			}
-			break;
-		default:
-			currentState.reset();
-			break;
 		}
-	}
-	else {
+		else {
+			currentState.reset();
+		}
+		break;
+	case selectTransfer:
+		setState(make_shared<TransferState>(manager, origin, hovered, this, UI));
+		origin = nullptr;
+		break;
+	default:
 		currentState.reset();
-	}	
+		break;
+	}
+	stateEnum = INT8_MAX;	
 }
 
 void HandleSelected::checkHover(SDL_Event event) {

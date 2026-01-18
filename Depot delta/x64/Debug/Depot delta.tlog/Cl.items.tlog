@@ -15,6 +15,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\selectedHandler.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\selectedHandler.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\selectedHandler\handleSelected.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\handleSelected.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\selectedHandler\states\depotSelected.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\depotSelected.obj
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\selectedHandler\states\transferState.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\transferState.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\selectedHandler\states\UnitSelected.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\UnitSelected.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\main.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\levelUI.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\levelUI.obj

@@ -8480,15 +8480,15 @@
             <name>Basic unit</name>
             <id>2</id>
             <health>100</health>
-            <x>169</x>
-            <y>94</y>
+            <x>87</x>
+            <y>96</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>201</target_x>
-            <target_y>125</target_y>
+            <target_x>119.5</target_x>
+            <target_y>128.5</target_y>
             <Resources>
                 <Personnel>100</Personnel>
-                <Ammunition>0</Ammunition>
+                <Ammunition>27</Ammunition>
                 <DoS>60</DoS>
                 <Fuel>60</Fuel>
                 <Scrap>60</Scrap>
@@ -8498,15 +8498,15 @@
             <name>Basic Convoy</name>
             <id>3</id>
             <health>60</health>
-            <x>56</x>
-            <y>61</y>
+            <x>92</x>
+            <y>136</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>88</target_x>
-            <target_y>93</target_y>
+            <target_x>124</target_x>
+            <target_y>169</target_y>
             <Resources>
                 <Personnel>0</Personnel>
-                <Ammunition>27</Ammunition>
+                <Ammunition>0</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>100</Fuel>
                 <Scrap>40</Scrap>

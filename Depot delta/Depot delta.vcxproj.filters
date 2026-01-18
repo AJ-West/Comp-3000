@@ -186,6 +186,9 @@
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.cpp">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClCompile>
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\transferState.cpp">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameFiles\components\movementComponent.h">
@@ -321,6 +324,9 @@
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.h">
+      <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\transferState.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
   </ItemGroup>

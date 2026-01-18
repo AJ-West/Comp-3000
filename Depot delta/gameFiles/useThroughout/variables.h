@@ -122,6 +122,13 @@ enum ObjectType {
 	Depot
 };
 
+enum selectedStates {
+	selectHuman,
+	selectDepot,
+	selectTransfer,
+	selectNewUnit
+};
+
 struct Vec2 {
 	float x;
 	float y;

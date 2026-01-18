@@ -8,11 +8,10 @@ using namespace std;
 
 class UnitSelected;
 class LevelManager;
-class LevelUI;
+class levelUI;
 class HumanObj;
 class DepotObj;
 class GameObject; 
-class levelUI;
 class HandleSelected;
 
 class SelectedState {
@@ -45,11 +44,17 @@ public:
 
 	GameObject* getHovered() { return hovered; }
 
+	void setStateEnum(int state) { stateEnum = state; }
+	void setOrigin(GameObject* org) { origin = org; }
+
 private:
 	shared_ptr<SelectedState> currentState;
 
 	GameObject* hovered = nullptr;
+	GameObject* origin = nullptr;
 
 	vector<GameObject*> allObjects;
 	levelUI* UI;
+
+	int stateEnum = INT8_MAX;
 };

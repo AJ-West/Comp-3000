@@ -1,5 +1,6 @@
 #pragma once
 #include "gameFiles/levelHandling/selectedHandler/states/UnitSelected.h"
+#include "gameFiles/levelHandling/selectedHandler/states/transferState.h"
 
 #include "gameFiles/UI/levelUI.h"
 #include "gameFiles/levelHandling/levelManager.h"
@@ -12,13 +13,22 @@ UnitSelected::UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelecte
 UnitSelected::~UnitSelected() {}
 
 void UnitSelected::handleInput(SDL_Event event) {
-	if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+	if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+		manager->zoomChange(event);
+	}
+	else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
 		if (event.button.button == SDL_BUTTON_LEFT) {
 			leftClick();
 		}
 		else if (event.button.button == SDL_BUTTON_RIGHT) {
 			rightClick();
 		}
+	}
+	else if (event.type == SDL_EVENT_KEY_DOWN) {
+		camera.keyDown(event.key.key);
+	}
+	else if (event.type == SDL_EVENT_KEY_UP) {
+		camera.keyUp(event.key.key);
 	}
 }
 
@@ -35,8 +45,9 @@ void UnitSelected::leftClick() {
 void UnitSelected::rightClick() {
 	if (handler->getHovered()) { // if right clicking on another unit initiate transfer
 		if (selected->getComponent<resourceTransferComponent>()->checkDistance(selected->getDimensions(), handler->getHovered()->getDimensions())) {
-			UI->createTransferBox(handler->getHovered(), selected);
-			manager->setPaused(true);
+			handler->setStateEnum(selectTransfer);
+			handler->setOrigin(selected);
+			deselect();
 		}
 	}
 	else {  // unselect unit

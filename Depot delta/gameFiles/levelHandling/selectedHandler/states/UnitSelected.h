@@ -6,14 +6,9 @@
 
 using namespace std;
 
-class UnitSelected;
 class LevelManager;
 class LevelUI;
 class HumanObj;
-class DepotObj;
-class GameObject; 
-class levelUI;
-class HandleSelected;
 
 class UnitSelected :public SelectedState {
 public:
