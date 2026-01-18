@@ -84,3 +84,11 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	}
 	return false;
 }
+
+void levelUI::deleteBox() {
+	if (box) {
+		box->unPause();
+		delete box;
+		box = nullptr;
+	}
+}

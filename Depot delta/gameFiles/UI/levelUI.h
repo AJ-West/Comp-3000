@@ -35,6 +35,7 @@ public:
 	bool checkClickInput();
 
 	void deleteBox() { if (box) { 
+		box->unPause();
 		delete box;
 		box = nullptr;
 	} }
