@@ -8,7 +8,6 @@ void movementComponent::update(GameObject* owner) { // update position based off
 	if (target.x != 0 && target.y != 0) {
 		//get flow direction of current cell
 		Vec2 direction = owner->getComponent<pathfindingComponent>()->getFlowDirection({ static_cast<float>(div(dimensions.x + dimensions.w / 2, WORLD_TILE_SIZE).quot), static_cast<float>(div(dimensions.y + dimensions.h / 2, WORLD_TILE_SIZE).quot) });
-		//cout << "Direction: " << direction.x << "," << direction.y << "\n";
 		float dx = target.x - (dimensions.x + dimensions.w / 2);
 		float dy = target.y - (dimensions.y + dimensions.h / 2);
 		float distance = std::sqrt(dx * dx + dy * dy);

@@ -35,7 +35,7 @@ void DepotSelected::handleInput(SDL_Event event) {
 }
 
 void DepotSelected::leftClick() { // needs changing for input on new unit box
-	depot->onClick();
+	handler->setStateEnum(selectNewUnit);
 	deselect();
 }
 

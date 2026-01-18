@@ -34,6 +34,11 @@ public:
 
 	bool checkClickInput();
 
+	void deleteBox() { if (box) { 
+		delete box;
+		box = nullptr;
+	} }
+
 private:
 	SDL_Texture* resourceHoverTexture;
 

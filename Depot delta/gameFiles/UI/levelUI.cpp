@@ -72,8 +72,6 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	float cx, cy;
 	getUIScaledMousePos(&cx, &cy);
 	if (box != nullptr) {
-		cout << "cx: " << cx << '\n';
-		cout << "cy: " << cy << '\n';
 		if (box->checkClick(cx, cy)) {
 			bool clicked = box->findClickedElement(cx, cy);
 			if (clicked && box->getToDelete()) {

@@ -9,6 +9,7 @@
 #include "gameFiles/levelHandling/selectedHandler/states/UnitSelected.h"
 #include "gameFiles/levelHandling/selectedHandler/states/DepotSelected.h"
 #include "gameFiles/levelHandling/selectedHandler/states/transferState.h"
+#include "gameFiles/levelHandling/selectedHandler/states/newUnitState.h"
 
 enum ObjectType convert(const char* str) {
 	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
@@ -61,20 +62,23 @@ void HandleSelected::decideState(LevelManager* manager) {
 				}
 				break;
 			default:
-				currentState.reset();
+				currentState = nullptr;
 				break;
 			}
 		}
 		else {
-			currentState.reset();
+			currentState = nullptr;
 		}
 		break;
 	case selectTransfer:
 		setState(make_shared<TransferState>(manager, origin, hovered, this, UI));
 		origin = nullptr;
 		break;
+	case selectNewUnit:
+		setState(make_shared<NewUnitState>(manager, hovered, this, UI));
+		break;
 	default:
-		currentState.reset();
+		currentState = nullptr;
 		break;
 	}
 	stateEnum = INT8_MAX;	
@@ -83,7 +87,7 @@ void HandleSelected::decideState(LevelManager* manager) {
 void HandleSelected::checkHover(SDL_Event event) {
 	for (auto& obj : allObjects) {
 		if (obj) {
-			obj->checkHover(event.motion.x, event.motion.y);
+			//if(obj->checkHover(event.motion.x, event.motion.y)){
 			if (obj->getHovering()) {
 				hovered = obj;
 				return;

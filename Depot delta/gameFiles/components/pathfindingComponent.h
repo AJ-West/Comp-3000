@@ -82,7 +82,6 @@ public:
 	}
 
 	Vec2 getFlowDirection(Vec2 position) {
-		//cout << "Getting flow direction at: " << position.x << "," << position.y << "\n";
 		return grid[position.y][position.x].direction;
 	}
 

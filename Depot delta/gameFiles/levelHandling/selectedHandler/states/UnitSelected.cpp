@@ -43,6 +43,7 @@ void UnitSelected::leftClick() {
 }
 
 void UnitSelected::rightClick() {
+	selected->onClick();
 	if (handler->getHovered()) { // if right clicking on another unit initiate transfer
 		if (selected->getComponent<resourceTransferComponent>()->checkDistance(selected->getDimensions(), handler->getHovered()->getDimensions())) {
 			handler->setStateEnum(selectTransfer);
@@ -51,7 +52,6 @@ void UnitSelected::rightClick() {
 		}
 	}
 	else {  // unselect unit
-		selected->onClick();
 		deselect();
 	}
 }

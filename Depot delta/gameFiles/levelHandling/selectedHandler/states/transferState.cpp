@@ -37,5 +37,7 @@ void TransferState::leftClick() {
 }
 
 void TransferState::rightClick() {
+	UI->deleteBox();
+	handler->setStateEnum(INT8_MAX);
 	deselect();
 }

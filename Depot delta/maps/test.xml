@@ -8480,33 +8480,33 @@
             <name>Basic unit</name>
             <id>2</id>
             <health>100</health>
-            <x>87</x>
-            <y>96</y>
+            <x>25</x>
+            <y>53</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>119.5</target_x>
-            <target_y>128.5</target_y>
+            <target_x>57</target_x>
+            <target_y>85</target_y>
             <Resources>
-                <Personnel>100</Personnel>
-                <Ammunition>27</Ammunition>
-                <DoS>60</DoS>
-                <Fuel>60</Fuel>
-                <Scrap>60</Scrap>
+                <Personnel>50</Personnel>
+                <Ammunition>48</Ammunition>
+                <DoS>90</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
         </entities>
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>3</id>
-            <health>60</health>
-            <x>92</x>
-            <y>136</y>
+            <health>100</health>
+            <x>47</x>
+            <y>91</y>
             <originX>0</originX>
             <originY>0</originY>
-            <target_x>124</target_x>
-            <target_y>169</target_y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>0</Personnel>
-                <Ammunition>0</Ammunition>
+                <Ammunition>27</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>100</Fuel>
                 <Scrap>40</Scrap>

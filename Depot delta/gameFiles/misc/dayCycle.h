@@ -33,7 +33,6 @@ public:
 	}
 	void updateFilter() {
 		int filterTime = mag(dayTime[2] - 12);
-		cout << filterTime << '\n';
 		rgba[3] = filterTime * filterTime * 1.25;
 	}
 

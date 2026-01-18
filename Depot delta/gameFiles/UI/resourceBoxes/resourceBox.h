@@ -31,6 +31,11 @@ public:
 
 	void unPause();
 
+	void deleteBox() {
+		toDelete = true;
+		unPause();
+	}
+
 	//getters
 	bool getToDelete() { return toDelete; }
 
