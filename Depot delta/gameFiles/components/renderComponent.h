@@ -35,6 +35,8 @@ public:
 		return texture;
 	}
 
+	SDL_Texture* getTexture() { return texture; }
+
 	renderComponent(GameObject* obj, SDL_Renderer* Crenderer, const char* filePath) : Component(obj), renderer(Crenderer){
 		texture = loadTexture(filePath);
 	};

@@ -23,7 +23,6 @@ public:
 	~textInput() {}
 
 	virtual void render(SDL_Renderer* renderer) {
-		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 		SDL_RenderFillRect(renderer, &size);
 		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);

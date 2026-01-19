@@ -20,6 +20,8 @@ public:
 	ResourceBox(LevelManager* lManager, SDL_FRect rSize);
 	~ResourceBox() {}
 
+	void addTextInputs();
+
 	bool update(SDL_Keycode key);
 
 	void render(SDL_Renderer* renderer);

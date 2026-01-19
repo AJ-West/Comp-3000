@@ -8480,12 +8480,12 @@
             <name>Basic unit</name>
             <id>2</id>
             <health>100</health>
-            <x>22</x>
-            <y>91</y>
+            <x>82</x>
+            <y>48</y>
             <originX>8</originX>
             <originY>8</originY>
-            <target_x>54.5</target_x>
-            <target_y>123.5</target_y>
+            <target_x>115</target_x>
+            <target_y>80</target_y>
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>38</Ammunition>

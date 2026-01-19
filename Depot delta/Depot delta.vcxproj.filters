@@ -335,5 +335,8 @@
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\newUnitState.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStats.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

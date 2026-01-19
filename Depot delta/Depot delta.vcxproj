@@ -221,6 +221,7 @@
     <ClInclude Include="gameFiles\UI\resourceBoxes\transferBox.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\transferDirectionButton.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\unitMaker.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStats.h" />
     <ClInclude Include="gameFiles\UI\textInput.h" />
     <ClInclude Include="gameFiles\UI\UIElement.h" />
     <ClInclude Include="gameFiles\UI\UIHandler.h" />
