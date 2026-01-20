@@ -22,7 +22,7 @@ void movementComponent::update(GameObject* owner) { // update position based off
 				owner->setDimensions({ dimensions.x + dx / distance * moveDist, dimensions.y + dy / distance * moveDist, dimensions.w, dimensions.h });
 			}
 			if (typeid(*owner).name() == typeid(UnitObj).name() || typeid(*owner).name() == typeid(ConvoyObj).name()) {
-				owner->getComponent<resourceComponent>()->setResourceUsage(FUEL, 0);
+				owner->getComponent<resourceComponent>()->setResourceChange(FUEL, 0);
 			}
 		}
 		else {

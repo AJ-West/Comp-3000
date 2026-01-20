@@ -10,7 +10,7 @@ void HumanObj::onClick() {
 void HumanObj::clickAway() { // set target pos to clicked position
 	getMapScaledMousePos(&tx, &ty);
 	pathToTarget();
-	getComponent<resourceComponent>()->setResourceUsage(FUEL, 1);
+	getComponent<resourceComponent>()->setResourceChange(FUEL, -1);
 }
 
 void HumanObj::pathToTarget() {

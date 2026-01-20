@@ -199,11 +199,11 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     depot->AddComponent(make_shared<resourceComponent>(depot, max, count, loadResourceTextures()));
-    depot->getComponent<resourceComponent>()->setResourceIncrease(PERSONNEL, 5);
-    depot->getComponent<resourceComponent>()->setResourceIncrease(AMMUNITION, 5);
-    depot->getComponent<resourceComponent>()->setResourceIncrease(DOS, 5);
-    depot->getComponent<resourceComponent>()->setResourceIncrease(FUEL, 5);
-    depot->getComponent<resourceComponent>()->setResourceIncrease(SCRAP, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(PERSONNEL, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(DOS, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 5);
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {

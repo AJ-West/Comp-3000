@@ -74,22 +74,24 @@ void transferBox::addArrows() {
 
 void transferBox::transferDirectionButtonClicked(UIElement* elem) {
 	vector<int> amounts;
+	int i = 0;
 	for (auto elem : elements) { // get value of each resource input
 		if (typeid(*elem).name() == typeid(textInput).name()) {
 			if (elem->getText() != "") {
-				amounts.push_back(stoi(elem->getText()));
+				if (arrows[i]->getToSecond()) {
+					amounts.push_back(stoi(elem->getText()));
+				}
+				else{
+					amounts.push_back(stoi(elem->getText())*-1);
+				}
 			}
 			else {
 				amounts.push_back(0);
 			}
+			i++;
 		}
 	}
-	if (elem->update(NULL)) {
-		convoy->getComponent<resourceTransferComponent>()->initiateTransfer(unit, amounts);
-	}
-	else {
-		unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, amounts);
-	}
+	unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, amounts);
 	unPause();
 	//should remove transfer box on beginning of transfer
 	toDelete = true;

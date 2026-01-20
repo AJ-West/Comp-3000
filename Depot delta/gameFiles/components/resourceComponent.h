@@ -27,16 +27,15 @@ public:
 	}
 
 	void clampResources(int index) {
-		int change = resourceIncrease[index] - resourceUsage[index];
-		tempHasResource[FUEL] = true;
-		if (resourcesCount[index] + change <= resourcesMax[index] && resourcesCount[index] + change >= 0) {
-			resourcesCount[index] += resourceIncrease[index] - resourceUsage[index];
+		tempHasResource[index] = true;
+		if (resourcesCount[index] + resourceChange[index] <= resourcesMax[index] && resourcesCount[index] + resourceChange[index] >= 0) {
+			resourcesCount[index] += resourceChange[index];
 		}
-		else if (resourcesCount[index] + change > resourcesMax[index]) {
+		else if (resourcesCount[index] + resourceChange[index] > resourcesMax[index]) {
 			resourcesCount[index] = resourcesMax[index];
 		}
 		else {
-			tempHasResource[FUEL] = false;
+			tempHasResource[index] = false;
 			resourcesCount[index] = 0;
 		}
 	}
@@ -77,21 +76,18 @@ public:
 	int getResourcesMax(int index) { return resourcesMax[index]; }
 
 	//setters
-	void setResourceUsage(int index, int amount) { resourceUsage[index] = amount; }
-	void setResourceIncrease(int index, int amount) { resourceIncrease[index] = amount; }
+	void setResourceChange(int index, int amount) { resourceChange[index] = amount; }
 	void setResourcesCount(int index, int amount) { resourcesCount[index] = amount; }
 	void setHasResource(vector<bool> loadHasResource) { hasResource = loadHasResource; }
 
 	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
-		resourceUsage = vector<int>(max.size(), 0);
-		resourceIncrease = vector<int>(max.size(), 0);
+		resourceChange = vector<int>(max.size(), 0);
 	}
 	virtual ~resourceComponent() {}
 private:
 	vector<int> resourcesMax;	
 	vector<int> resourcesCount;	
-	vector<int> resourceUsage;
-	vector<int> resourceIncrease;
+	vector<int> resourceChange;
 	vector<SDL_Texture*> resourceTextures;
 	vector<bool> hasResource = { true, true, true, true, true };
 	vector<bool> tempHasResource = { true, true, true, true, true };

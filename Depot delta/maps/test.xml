@@ -8479,7 +8479,7 @@
         <entities eid="32855006">
             <name>Basic unit</name>
             <id>2</id>
-            <health>100</health>
+            <health>85</health>
             <x>82</x>
             <y>48</y>
             <originX>8</originX>
@@ -8488,8 +8488,8 @@
             <target_y>80</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>38</Ammunition>
-                <DoS>90</DoS>
+                <Ammunition>5</Ammunition>
+                <DoS>70</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
@@ -8506,8 +8506,8 @@
             <target_y>0</target_y>
             <Resources>
                 <Personnel>0</Personnel>
-                <Ammunition>27</Ammunition>
-                <DoS>0</DoS>
+                <Ammunition>70</Ammunition>
+                <DoS>25</DoS>
                 <Fuel>100</Fuel>
                 <Scrap>40</Scrap>
             </Resources>

@@ -27,10 +27,11 @@ public:
 					target = potTarget;
 					targetDistance = distance;
 					owner->setTargetObject(potTarget);
-					owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 5);
+					//owner->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, -5);
+					cout << "firing" << '\n';
 					return;
 				}
-				owner->getComponent<resourceComponent>()->setResourceUsage(AMMUNITION, 0);
+				//owner->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 0);
 			}
 		}
 	}
@@ -46,13 +47,21 @@ public:
 		Uint32 currentTime = SDL_GetTicks();
 		if (currentTime - lastAttackTime >= attackCooldownMS) {
 			lastAttackTime = currentTime;
-			target->takeDamage(5);
-			if (!target->getAlive()) {
-				target = nullptr;
-				owner->setAttacking(false);
-				return;
+			auto rComp = owner->getComponent<resourceComponent>();
+			int count = rComp->getResourcesCount(AMMUNITION);
+			if (count > 0) {
+				rComp->setResourcesCount(AMMUNITION, count - 1);
+				target->takeDamage(5);
+				if (!target->getAlive()) {
+					target = nullptr;
+					owner->setAttacking(false);
+					return;
+				}
+				owner->setAttacking(true);
 			}
-			owner->setAttacking(true);
+			else {
+				owner->setAttacking(false);
+			}
 		}
 		if (currentTime - lastBulletTime >= bulletCooldownMS) {
 			lastBulletTime = currentTime;

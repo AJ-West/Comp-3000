@@ -23,38 +23,64 @@ public:
 
 	void transferResource() {
 		bool increase = false;
+		bool decrease = false;
 		bool change = false;
 		//amount of a resource transfered
 		int transferNum = 0;
 		for (int i = 0; i < transferRate.size(); i++) {
 			transferNum = 0;
 			if (transferAmount[i] == 0) {
-				ownerResComp->setResourceUsage(i, 0);
-				targetResComp->setResourceIncrease(i, 0);
+				ownerResComp->setResourceChange(i, 0);
+				targetResComp->setResourceChange(i, 0);
 				continue;
 			} 
-
-			if (ownerResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
-				transferNum = ownerResComp->getResourcesCount(i);
-				transferRate[i] = 0;
-				increase = true;
-			}
-			else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) { // transfer enough to fill up the target
-				transferNum = targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i);
-				increase = true;
-			}
-			else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i)) { // transfer normally
-				transferNum = transferRate[i];
-				increase = true;
-			}
-			if (increase) {
-				if (transferAmount[i] < transferNum) { // if transferNum would transfer more than requested
-					transferNum = transferAmount[i];
+			else if (transferAmount[i] > 0) {
+				if (ownerResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
+					transferNum = ownerResComp->getResourcesCount(i);
+					transferRate[i] = 0;
+					increase = true;
 				}
-				ownerResComp->setResourceUsage(i, transferNum);
-				targetResComp->setResourceIncrease(i, transferNum);
-				transferAmount[i] = transferAmount[i] - transferNum;
-				change = true;
+				else if (targetResComp->getResourcesMax(i) < targetResComp->getResourcesCount(i) + transferRate[i]) { // transfer enough to fill up the target
+					transferNum = targetResComp->getResourcesMax(i) - targetResComp->getResourcesCount(i);
+					increase = true;
+				}
+				else if (targetResComp->getResourcesMax(i) != targetResComp->getResourcesCount(i)) { // transfer normally
+					transferNum = transferRate[i];
+					increase = true;
+				}
+				if (increase) {
+					if (transferAmount[i] < transferNum) { // if transferNum would transfer more than requested
+						transferNum = transferAmount[i];
+					}
+					ownerResComp->setResourceChange(i, -transferNum);
+					targetResComp->setResourceChange(i, transferNum);
+					transferAmount[i] = transferAmount[i] - transferNum;
+					change = true;
+				}
+			}
+			else if (transferAmount[i] < 0) {
+				if (targetResComp->getResourcesCount(i) < transferRate[i]) { // transfer last of the resource amount
+					transferNum = targetResComp->getResourcesCount(i);
+					transferRate[i] = 0;
+					decrease = true;
+				}
+				else if (ownerResComp->getResourcesMax(i) < ownerResComp->getResourcesCount(i) + transferRate[i]) { // transfer enough to fill up the target
+					transferNum = ownerResComp->getResourcesMax(i) - ownerResComp->getResourcesCount(i);
+					decrease = true;
+				}
+				else if (ownerResComp->getResourcesMax(i) != ownerResComp->getResourcesCount(i)) { // transfer normally
+					transferNum = transferRate[i];
+					decrease = true;
+				}
+				if (decrease) {
+					if (mag(transferAmount[i]) < transferNum) { // if transferNum would transfer more than requested
+						transferNum = transferAmount[i];
+					}
+					ownerResComp->setResourceChange(i, transferNum);
+					targetResComp->setResourceChange(i, -transferNum);
+					transferAmount[i] = transferAmount[i] + transferNum;
+					change = true;
+				}
 			}
 		}
 		if (!change) {
