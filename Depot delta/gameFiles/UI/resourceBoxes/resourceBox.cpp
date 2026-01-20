@@ -50,16 +50,15 @@ void ResourceBox::render(SDL_Renderer* renderer) {
 
 bool ResourceBox::findClickedElement(float cx, float cy) {
 	for (auto elem : elements) {
-		SDL_FRect size = elem->getSize();
 		if (elem->checkClick(cx, cy)) {
-			if (auto e = dynamic_cast<textInput*>(elem)) { 
-				selectedElement = elem; 
-			}
-			else if (auto e = dynamic_cast<transferDirectionButton*>(elem)) { 
+			if (auto e = dynamic_cast<transferDirectionButton*>(elem)) { 
 				transferDirectionButtonClicked(elem);	
 			}
 			else if (auto e = dynamic_cast<newUnitButton*>(elem)) {
 				newUnitButtonClicked(elem);
+			}
+			else {
+				selectedElement = elem;
 			}
 			return true;
 		}

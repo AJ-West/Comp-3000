@@ -40,6 +40,7 @@ public:
 
 	//getters
 	bool getToDelete() { return toDelete; }
+	UIElement* getSelectedElement() { return selectedElement; }
 
 protected:
 	vector<UIElement*> elements;

@@ -36,6 +36,8 @@ public:
 
 	void deleteBox();
 
+	ResourceBox* getBox() { return box; }
+
 private:
 	SDL_Texture* resourceHoverTexture;
 

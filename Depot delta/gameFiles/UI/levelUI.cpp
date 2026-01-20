@@ -79,7 +79,7 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 				box = nullptr;
 				return false;
 			}
-			return true;
+			return clicked;
 		}
 	}
 	return false;

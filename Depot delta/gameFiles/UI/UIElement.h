@@ -12,6 +12,7 @@ public:
 	~UIElement() {}
 
 	virtual bool update(SDL_Keycode key) = 0;
+	virtual void update() {}
 
 	bool checkClick(float x, float y) {
 		if (x < size.x) return false;

@@ -2,6 +2,7 @@
 
 #include "gameFiles/UI/resourceBoxes/resourceBox.h"
 #include "gameFiles/components/resourceTransferComponent.h"
+#include "arrowButton.h"
 
 class textInput;
 class LevelManager;
@@ -13,9 +14,13 @@ public:
 
 	void addUnitInfo(GameObject* unit, bool second);
 
+	void addArrows();
+
 	virtual void transferDirectionButtonClicked(UIElement* elem);
 
 private:
 	GameObject* unit;
 	GameObject* convoy;
+
+	vector<arrowButton*> arrows;
 };

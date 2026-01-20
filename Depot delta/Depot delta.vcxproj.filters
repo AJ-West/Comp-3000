@@ -338,5 +338,8 @@
     <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStats.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\UI\resourceBoxes\arrowButton.h">
+      <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

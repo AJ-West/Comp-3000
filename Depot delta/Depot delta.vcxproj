@@ -216,6 +216,7 @@
     <ClInclude Include="gameFiles\main.h" />
     <ClInclude Include="gameFiles\misc\dayCycle.h" />
     <ClInclude Include="gameFiles\UI\levelUI.h" />
+    <ClInclude Include="gameFiles\UI\resourceBoxes\arrowButton.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\newUnitButton.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\resourceBox.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\transferBox.h" />

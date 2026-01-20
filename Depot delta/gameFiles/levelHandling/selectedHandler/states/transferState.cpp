@@ -31,7 +31,9 @@ void TransferState::handleInput(SDL_Event event) {
 
 void TransferState::leftClick() {
 	if (UI->checkClickInput()) {
-		textInput = true;
+		UIElement* selectedElement = UI->getBox()->getSelectedElement();
+		if (typeid(selectedElement).name() == typeid(textInput).name()) { textInput = true; }
+		else { selectedElement->update(); }
 		return;
 	}
 }
