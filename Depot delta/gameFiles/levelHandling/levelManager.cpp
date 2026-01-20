@@ -134,7 +134,7 @@ void LevelManager::pausedRender()
 
 void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
     unitConvoys.emplace_back(unitConvoy);
-    selector->setAllObjects(unitConvoys);
+    handler->setAllObjects(unitConvoys);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {

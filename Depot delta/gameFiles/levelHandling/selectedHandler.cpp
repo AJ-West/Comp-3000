@@ -50,9 +50,9 @@ void SelectedHandler::checkClick() {
     }
     else if (hoveredObj) {
         hoveredObj->onClick();
-        if (typeid(*hoveredObj).name() == typeid(DepotObj).name()) {
-            UI->createNewUnitBox(depot);
-        }
+        //if (typeid(*hoveredObj).name() == typeid(DepotObj).name()) {
+          //  UI->createNewUnitBox(depot);
+        //}
         selectedObject = hoveredObj;
         selectedSomething = true;
     }

@@ -6,7 +6,8 @@
 #include "gameFiles/entities/Depot/depotObject.h"
 
 NewUnitState::NewUnitState(LevelManager* lManager, GameObject* dep, HandleSelected* handler, levelUI* lUI) : SelectedState(lManager, handler), depot(dynamic_cast<DepotObj*>(dep)), UI(lUI) {
-	UI->createNewUnitBox(depot);
+	UI->createNewUnitBox(depot, manager);
+	depot->onClick();
 	manager->setPaused(true);
 }
 NewUnitState::~NewUnitState() {}
@@ -30,12 +31,15 @@ void NewUnitState::handleInput(SDL_Event event) {
 
 void NewUnitState::leftClick() {
 	if (UI->checkClickInput()) {
-		textInput = true;
+		UIElement* selectedElement = UI->getBox()->getSelectedElement();
+		if (typeid(selectedElement).name() == typeid(textInput).name()) { textInput = true; }
+		else { selectedElement->update(); }
 		return;
 	}
 }
 
 void NewUnitState::rightClick() {
 	UI->deleteBox();
+	depot->onClick();
 	deselect();
 }

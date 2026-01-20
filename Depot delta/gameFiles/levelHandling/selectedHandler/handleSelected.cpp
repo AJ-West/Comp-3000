@@ -58,7 +58,7 @@ void HandleSelected::decideState(LevelManager* manager) {
 			case Depot:
 				// downcasting check to pass correct object
 				if (DepotObj* depot = dynamic_cast<DepotObj*>(hovered)) {
-					setState(make_shared<DepotSelected>(manager, depot, this, UI));
+					setState(make_shared<NewUnitState>(manager, depot, this, UI));
 				}
 				break;
 			default:

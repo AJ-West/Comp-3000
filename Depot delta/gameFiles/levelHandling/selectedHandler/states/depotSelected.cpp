@@ -9,7 +9,7 @@
 
 DepotSelected::DepotSelected(LevelManager* lManager, DepotObj* dep, HandleSelected* handler, levelUI* lUI) : SelectedState(lManager, handler), depot(dep), UI(lUI) {
 	depot->onClick();
-	UI->createNewUnitBox(depot);
+	//UI->createNewUnitBox(depot);
 	manager->setPaused(true);
 }
 DepotSelected::~DepotSelected() {}

@@ -20,9 +20,9 @@ class unitMaker : public ResourceBox {
 public:
 	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(lManager, rSize), depot(gameDepot) {
 		//add make unit button
-		elements.push_back(new newUnitButton({ size.x + 74.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, true));
+		elements.push_back(new newUnitButton({ size.x + 245.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
 		//add cancel button
-		elements.push_back(new newUnitButton({ size.x + 394.0f * camera.xScale, size.y + 140.0f * camera.yScale, 192.0f * camera.xScale , 48.0f * camera.yScale }, false));
+		elements.push_back(new newUnitButton({ size.x + 585.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, false));
 	}
 	~unitMaker() {}	
 
@@ -51,8 +51,10 @@ public:
 			for (int i = 0; i < counts.size(); i++) {
 				rComp->setResourcesCount(i, counts[i] - amounts[i]);
 			}
+			unPause();
 			//should remove box on beginning of transfer
 			toDelete = true;
+			depot->onClick();
 		}
 	}
 
@@ -109,6 +111,4 @@ public:
 
 private:
 	DepotObj* depot;
-
-	LevelManager* manager;
 };

@@ -46,6 +46,7 @@ public:
 
 	void setStateEnum(int state) { stateEnum = state; }
 	void setOrigin(GameObject* org) { origin = org; }
+	void setAllObjects(vector<GameObject*> objects) { allObjects = objects; }
 
 private:
 	shared_ptr<SelectedState> currentState;

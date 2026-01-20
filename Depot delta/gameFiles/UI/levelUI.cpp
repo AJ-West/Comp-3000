@@ -63,8 +63,8 @@ void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 	box = new transferBox(manager, { 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, sUnit, sConvoy);
 }
 
-void levelUI::createNewUnitBox(DepotObj* gameDepot) {
-	box = new unitMaker({ 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, manager, gameDepot);
+void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {
+	box = new unitMaker({ 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, lManager, gameDepot);
 }
 
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI

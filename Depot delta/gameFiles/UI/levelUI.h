@@ -30,7 +30,7 @@ public:
 	void textInput(SDL_Keycode key);
 
 	void createTransferBox(GameObject* sUnit, GameObject* sConvoy);
-	void createNewUnitBox(DepotObj* gameDepot);
+	void createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager);
 
 	bool checkClickInput();
 

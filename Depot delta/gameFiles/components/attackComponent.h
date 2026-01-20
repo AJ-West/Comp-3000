@@ -27,11 +27,9 @@ public:
 					target = potTarget;
 					targetDistance = distance;
 					owner->setTargetObject(potTarget);
-					//owner->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, -5);
 					cout << "firing" << '\n';
 					return;
 				}
-				//owner->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 0);
 			}
 		}
 	}
