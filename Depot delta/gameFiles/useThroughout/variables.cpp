@@ -36,4 +36,8 @@ bool isRunning;
 
 Camera camera = { 0,0, ResolutionWidth, ResolutionHeight };
 
+unitUpgrades unitUpg;
+convoyUpgrades convoyUpg;
+depotUpgrades depotUpg;
+
 std::vector<std::vector<Tile>> grid;

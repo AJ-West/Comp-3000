@@ -46,8 +46,6 @@ void UnitSelected::rightClick() {
 	selected->onClick();
 	GameObject* hovered = handler->getHovered();
 	if (hovered) { // if right clicking on another unit initiate transfer
-		cout << "hovered: " << hovered << '\n';
-		cout << "selected: " << selected << '\n';
 		if (hovered != selected) {
 			if (selected->getComponent<resourceTransferComponent>()->checkDistance(selected->getDimensions(), handler->getHovered()->getDimensions())) {
 				handler->setStateEnum(selectTransfer);

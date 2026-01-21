@@ -109,6 +109,12 @@
     <Filter Include="Source Files\gameFiles\level handling\selectedHandler\states">
       <UniqueIdentifier>{67697b95-7c08-4397-800e-1f1e4440985f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\UI%27s\techTree">
+      <UniqueIdentifier>{5e95e973-db4a-4589-8b7c-49e32b0acdec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameFiles\UI%27s\techTree\upgrades">
+      <UniqueIdentifier>{71165f2e-7009-4e9a-89d9-6193fc098761}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -191,6 +197,9 @@
     </ClCompile>
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\newUnitState.cpp">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\UI\techTree\techTree.cpp">
+      <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +349,21 @@
     </ClInclude>
     <ClInclude Include="gameFiles\UI\resourceBoxes\arrowButton.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes\transferBox</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\techTree.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\upgrades\convoyUpgrades.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\upgrades\depotUpgrades.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\upgrades\unitUpgrades.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\tech.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
