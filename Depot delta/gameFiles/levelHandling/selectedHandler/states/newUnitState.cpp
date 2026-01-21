@@ -36,6 +36,9 @@ void NewUnitState::leftClick() {
 		else { selectedElement->update(); }
 		return;
 	}
+	if (!UI->getBox()) { // if box has been removed
+		deselect();
+	}
 }
 
 void NewUnitState::rightClick() {

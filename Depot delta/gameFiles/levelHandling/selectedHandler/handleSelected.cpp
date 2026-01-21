@@ -25,7 +25,7 @@ void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 		if (currentState->endState()) { decideState(manager); } // sets to nullptr
 	}
 	else {
-		if (hovered && event.button.button == SDL_BUTTON_LEFT) {
+		if (hovered && event.button.button == SDL_BUTTON_LEFT && event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
 			stateEnum = selectHuman;
 			decideState(manager);
 		}
