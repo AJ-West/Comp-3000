@@ -134,7 +134,8 @@ enum selectedStates {
 	selectHuman,
 	selectDepot,
 	selectTransfer,
-	selectNewUnit
+	selectNewUnit,
+	selectTree
 };
 
 struct Vec2 {

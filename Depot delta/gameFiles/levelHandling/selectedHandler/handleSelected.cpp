@@ -10,6 +10,7 @@
 #include "gameFiles/levelHandling/selectedHandler/states/DepotSelected.h"
 #include "gameFiles/levelHandling/selectedHandler/states/transferState.h"
 #include "gameFiles/levelHandling/selectedHandler/states/newUnitState.h"
+#include "gameFiles/levelHandling/selectedHandler/states/treeSelected.h"
 
 enum ObjectType convert(const char* str) {
 	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
@@ -29,8 +30,12 @@ void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 			stateEnum = selectHuman;
 			decideState(manager);
 		}
-		if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+		else if (event.type == SDL_EVENT_MOUSE_WHEEL) {	
 			manager->zoomChange(event);
+		}
+		else if (event.type == SDL_EVENT_KEY_DOWN && event.key.key == SDLK_TAB) {
+			stateEnum = selectTree;
+			decideState(manager);
 		}
 		else if (event.type == SDL_EVENT_KEY_DOWN) {
 			camera.keyDown(event.key.key);
@@ -76,6 +81,9 @@ void HandleSelected::decideState(LevelManager* manager) {
 		break;
 	case selectNewUnit:
 		setState(make_shared<NewUnitState>(manager, hovered, this, UI));
+		break;
+	case selectTree:
+		setState(make_shared<TreeSelected>(manager, this, UI));
 		break;
 	default:
 		currentState = nullptr;

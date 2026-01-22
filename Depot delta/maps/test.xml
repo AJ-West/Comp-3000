@@ -8488,7 +8488,7 @@
             <target_y>88</target_y>
             <Resources>
                 <Personnel>40</Personnel>
-                <Ammunition>5</Ammunition>
+                <Ammunition>0</Ammunition>
                 <DoS>70</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
@@ -8497,7 +8497,7 @@
         <entities eid="21794766">
             <name>Basic Convoy</name>
             <id>3</id>
-            <health>100</health>
+            <health>70</health>
             <x>86</x>
             <y>14</y>
             <originX>0</originX>
@@ -8515,7 +8515,7 @@
         <entities>
             <name>Basic unit</name>
             <id>4</id>
-            <health>100</health>
+            <health>35</health>
             <x>250</x>
             <y>408</y>
             <target_x>0</target_x>

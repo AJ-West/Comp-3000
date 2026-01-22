@@ -3,14 +3,15 @@
 enum techStatus{
 	affordable,
 	unaffordable,
+	unlocked,
 	locked,
 	purchased
 };
 
-class tech {
+class Tech {
 public:
-	tech(int tCost) : cost(tCost) {}
-	~tech(){}
+	Tech(int tCost, SDL_FRect iSize) : cost(tCost), size(iSize) {}
+	~Tech(){}
 
 	void unlock(int money){
 		if (money < cost) { status = unaffordable; }
@@ -22,10 +23,17 @@ public:
 		effect();
 	}
 
-	virtual void effect() = 0;
+	void render(SDL_Renderer* renderer) {
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderFillRect(renderer, &size);
+	}
+
+	void effect() {}
 
 private:
 	int status = locked;
 
 	int cost;
+
+	SDL_FRect size;
 };

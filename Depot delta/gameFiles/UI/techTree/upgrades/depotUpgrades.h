@@ -12,8 +12,4 @@ struct depotUpgrades {
 
 	// Current values
 	pair<int, int> depotHealth{ 0,0 };
-	pair<int, int> depotHealth{ 0,0 };
-	pair<int, int> depotHealth{ 0,0 };
-	pair<int, int> depotHealth{ 0,0 };
-	pair<int, int> depotHealth{ 0,0 };
 };

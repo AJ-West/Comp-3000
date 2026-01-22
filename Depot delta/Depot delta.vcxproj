@@ -158,6 +158,7 @@
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.cpp" />
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\newUnitState.cpp" />
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\transferState.cpp" />
+    <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\treeSelected.cpp" />
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.cpp" />
     <ClCompile Include="gameFiles\main.cpp" />
     <ClCompile Include="gameFiles\UI\levelUI.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\newUnitState.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\transferState.h" />
+    <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\treeSelected.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\UnitSelected.h" />
     <ClInclude Include="gameFiles\main.h" />
     <ClInclude Include="gameFiles\misc\dayCycle.h" />

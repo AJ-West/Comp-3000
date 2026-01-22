@@ -13,6 +13,7 @@
 using namespace std;
 
 class GameObject;
+class TechTree;
 
 class levelUI : public UIHandler {
 public:
@@ -32,9 +33,12 @@ public:
 	void createTransferBox(GameObject* sUnit, GameObject* sConvoy);
 	void createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager);
 
+	void createTechTree();
+
 	bool checkClickInput();
 
 	void deleteBox();
+	void deleteTree();
 
 	ResourceBox* getBox() { return box; }
 
@@ -46,4 +50,5 @@ private:
 	dayCycle* time;	
 
 	ResourceBox* box = nullptr;
+	TechTree* tree = nullptr;
 };

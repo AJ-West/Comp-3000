@@ -28,7 +28,6 @@
 
 #include "gameFiles/useThroughout/variables.h"
 
-
 class levelUI;
 class ZombieSpawner;
 

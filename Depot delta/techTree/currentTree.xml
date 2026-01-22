@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <layers>
+        <name>depotUpgrades</name>
+        <entities>
+            <name>Increase Depot health</name>
+            <id>1</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.1</modifyValue> <!-- 10% production speed increase -->
+            <cost>50</cost>
+            <purchaseAmount>10</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Fuel production</name>
+            <id>2</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase DoS production</name>
+            <id>3</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Ammo production</name>
+            <id>4</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Scrap Costs</name>
+            <id>5</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.85</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Fuel Costs</name>
+            <id>6</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease DoS Costs</name>
+            <id>7</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Ammo Costs</name>
+            <id>8</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Ammo Costs</name>
+            <id>9</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase personnel capacity</name>
+            <id>10</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>2</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>depotUpgrades</upgradeLocation>
+        </entities>
+    </layers>
+    <layers>
+        <name>unitUpgrades</name>
+        <entities>
+            <name>Increase Unit Dos efficiency</name>
+            <id>1</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.95</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Unit Fuel efficiency</name>
+            <id>2</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>0.95</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase rate of fire</name>
+            <id>3</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Larger basic Infantry</name>
+            <id>4</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>2</modifyValue>
+            <cost>250</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Larger carrying capacity</name>
+            <id>5</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>2</modifyValue>
+            <cost>100</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase fuel efficiency</name>
+            <id>6</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.5</modifyValue>
+            <cost>150</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase rate of fire</name>
+            <id>7</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.2</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase damage</name>
+            <id>8</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.1</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>unitUpgrades</upgradeLocation>
+        </entities>
+    </layers>
+    <layers>
+        <name>convoyUpgrades</name>
+        <entities>
+            <name>Increase capacity</name>
+            <id>1</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>convoyUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase fuel efficiency</name>
+            <id>2</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>convoyUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase armour</name>
+            <id>3</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.15</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>convoyUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase speed</name>
+            <id>4</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.15</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>convoyUpgrades</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase capacity</name>
+            <id>5</id>
+            <status>unlocked</status>
+            <type>modifier</type>
+            <modifyValue>1.15</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>convoyUpgrades</upgradeLocation>
+        </entities>
+    </layers>
+</root>

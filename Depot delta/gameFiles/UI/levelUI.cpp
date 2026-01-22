@@ -1,6 +1,7 @@
 #include "gameFiles/UI/levelUI.h"
 
 #include "gameFiles/entities/gameObject.h"
+#include "gameFiles/UI/techTree/techTree.h"
 
 levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, LevelManager* lManager, dayCycle* gameTime) : UIHandler(renderer, filePath), manager(lManager), time(gameTime) {
 	loadResourceHoverTexture();
@@ -51,6 +52,9 @@ void levelUI::render() {
 	if (box) {
 		box->render(renderer);
 	}
+	if (tree) {
+		tree->render(renderer);
+	}
 	SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
 	SDL_RenderTexture(renderer, texture, NULL, &size);
 }
@@ -65,6 +69,10 @@ void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 
 void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {
 	box = new unitMaker({ 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, lManager, gameDepot);
+}
+
+void levelUI::createTechTree() {
+	tree = new TechTree(renderer, manager);
 }
 
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
@@ -90,5 +98,13 @@ void levelUI::deleteBox() {
 		box->unPause();
 		delete box;
 		box = nullptr;
+	}
+}
+
+void levelUI::deleteTree() {
+	if (tree) {
+		tree->unPause();
+		delete tree;
+		tree = nullptr;
 	}
 }
