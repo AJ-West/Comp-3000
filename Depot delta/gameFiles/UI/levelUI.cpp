@@ -72,13 +72,19 @@ void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {
 }
 
 void levelUI::createTechTree() {
-	tree = new TechTree(renderer, manager);
+	tree = new TechTree(renderer, manager, manager->getDepot());
 }
 
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	//get click positon
 	float cx, cy;
 	getUIScaledMousePos(&cx, &cy);
+	if (tree != nullptr) {
+		if (tree->checkClick(cx, cy)) {
+			bool clicked = tree->findClickedElement(cx, cy);
+			return clicked;
+		}
+	}
 	if (box != nullptr) {
 		if (box->checkClick(cx, cy)) {
 			bool clicked = box->findClickedElement(cx, cy);

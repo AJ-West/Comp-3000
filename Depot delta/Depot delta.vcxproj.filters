@@ -371,5 +371,8 @@
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\treeSelected.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\UI\techTree\techArrow.h">
+      <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

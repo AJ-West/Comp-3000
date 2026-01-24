@@ -11,7 +11,7 @@ public:
 	UIElement(SDL_FRect rSize): size(rSize) {}
 	~UIElement() {}
 
-	virtual bool update(SDL_Keycode key) = 0;
+	virtual bool update(SDL_Keycode key) { return false; };
 	virtual void update() {}
 
 	bool checkClick(float x, float y) {

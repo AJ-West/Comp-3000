@@ -22,8 +22,7 @@ void TreeSelected::handleInput(SDL_Event event) {
 }
 
 void TreeSelected::leftClick() { // needs changing to handle input for tech tree
-	UI->deleteTree();
-	deselect();
+	UI->checkClickInput();
 }
 
 void TreeSelected::rightClick() {

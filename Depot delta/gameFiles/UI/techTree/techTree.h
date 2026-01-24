@@ -4,7 +4,9 @@
 #include <iostream>
 #include <cstdlib>
 
+#include "gameFiles/entities/Depot/depotObject.h"
 #include "gameFiles/UI/techTree/tech.h"
+#include "gameFiles/UI/techTree/techArrow.h"
 #include "vector"
 
 using namespace std;
@@ -16,9 +18,9 @@ enum currentTech {
 	sizeOfT
 };
 
-class TechTree {
+class TechTree : public UIElement {
 public:
-	TechTree(SDL_Renderer* renderer, LevelManager* lManager): manager(lManager) {
+	TechTree(SDL_Renderer* renderer, LevelManager* lManager, DepotObj* depObj): UIElement(camera.dimen), manager(lManager), depot(depObj) {
 		readTechFile();
 		// Load resource hover texture
 		SDL_Surface* surface = IMG_Load("techTree/art/blueprint.png");
@@ -33,21 +35,76 @@ public:
 			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
 			return;
 		}
+
+		leftArrow = new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false);
+		rightArrow = new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true);
 	}
 	~TechTree(){
 		saveTechFile();
 	}
 
 	void readTechFile() {
-		for (int i = 0; i < 15; i++) {
+		/*for (int i = 0; i < 15; i++) {
 			div_t divV = div(i, 5);
 			SDL_FRect pos{0,0,0,0};
-			pos.w = camera.dimen.w / 24;
+			pos.w = size.w / 24;
 			pos.h = pos.w;
-			pos.x = camera.dimen.w/7 * (divV.rem+1) + camera.dimen.w / 14 - pos.w/2;
-			pos.y = camera.dimen.h / 3 * divV.quot + camera.dimen.h/6 - pos.h/2;
+			pos.x = size.w/7 * (divV.rem+1) + size.w / 14 - pos.w/2;
+			pos.y = size.h / 3 * divV.quot + size.h/6 - pos.h/2;
 
 			depotTechs.emplace_back(new Tech(200, pos));
+		}*/
+		XMLDocument doc;
+		doc.LoadFile("techTree/currentTree.xml");
+		XMLElement* root = doc.RootElement();
+		XMLElement* layer = root->FirstChildElement("layers");
+		while (layer) {
+			string layerName = string(layer->FirstChildElement("name")->GetText());
+			if (layerName == "depotUpgrades") {
+				loadUpgrades(layer, &depotTechs);
+			}
+			else if (layerName == "unitUpgrades") {
+				loadUpgrades(layer, &unitTechs);
+			}
+			else if (layerName == "convoyUpgrades") {
+				loadUpgrades(layer, &convoyTechs);
+			}
+			layer = layer->NextSiblingElement("layers");
+		}
+	}
+
+	void loadUpgrades(XMLElement* layer, vector<Tech*>* list) {
+		XMLElement* entity = layer->FirstChildElement("entities");
+		int i = 0;
+		SDL_FRect pos{ 0,0,0,0 };
+		while (entity) {
+			div_t divV = div(i, 5);
+			pos.w = size.w / 24;
+			pos.h = pos.w;
+			pos.x = size.w / 7 * (divV.rem + 1) + size.w / 14 - pos.w / 2;
+			pos.y = size.h / 3 * divV.quot + size.h / 6 - pos.h / 2;
+			i++;
+
+			string name = string(entity->FirstChildElement("name")->GetText());
+			//string keyName = string(entity->FirstChildElement("keyName")->GetText());
+			int cost = atoi(entity->FirstChildElement("cost")->GetText());
+			//Tech* newTech = new Tech(cost, pos, name, keyName);
+			Tech* newTech = new Tech(cost, pos, name);
+			newTech->setStatus(atoi(entity->FirstChildElement("status")->GetText()));
+			if (newTech->getStatus() == unlocked) {
+				setAffordable(newTech, cost);
+			}
+			list->emplace_back(newTech);
+			entity = entity->NextSiblingElement("entities");
+		}
+	}
+
+	void setAffordable(Tech* tech, int cost) {
+		if (cost < depot->getComponent<resourceComponent>()->getResourcesCount(SCRAP)) {
+			tech->setStatus(affordable);
+		}
+		else {
+			tech->setStatus(unaffordable);
 		}
 	}
 
@@ -56,27 +113,55 @@ public:
 	}
 
 	void render(SDL_Renderer* renderer) {
-		SDL_RenderTexture(renderer, background, NULL, &camera.dimen); // render background over whole screen
-		for (auto techBox : depotTechs) {
-			techBox->render(renderer);
-		}
-		/*switch (current) {
+		SDL_RenderTexture(renderer, background, NULL, &size); // render background over whole screen
+		switch (current) {
 		case depotT:
 			for (auto techBox : depotTechs) {
-				techBox->render();
+				techBox->render(renderer);
 			}
 			break;
 		case unitT:
 			for (auto techBox : unitTechs) {
-				techBox->render();
+				techBox->render(renderer);
 			}
 			break;
 		case convoyT:
 			for (auto techBox : convoyTechs) {
-				techBox->render();
+				techBox->render(renderer);
 			}
 			break;
-		}*/
+		}
+		leftArrow->render(renderer);
+		rightArrow->render(renderer);
+	}
+
+	bool findClickedElement(float cx, float cy) {
+		switch (current) {
+		case depotT:
+			for (auto techBox : depotTechs) {
+				if (techBox->checkClick(cx, cy)) {
+					return true;
+				}
+			}
+			break;
+		case unitT:
+			for (auto techBox : unitTechs) {
+				if (techBox->checkClick(cx, cy)) {
+					return true;
+				}
+			}
+			break;
+		case convoyT:
+			for (auto techBox : convoyTechs) {
+				if (techBox->checkClick(cx, cy)) {
+					return true;
+				}
+			}
+			break;
+		}
+		if (leftArrow->checkClick(cx, cy)) { prevArrowClick(); }
+		if (rightArrow->checkClick(cx, cy)) { nextArrowClick(); }
+		return false;
 	}
 
 	void nextArrowClick() {
@@ -100,9 +185,14 @@ private:
 
 	SDL_Texture* background;
 
+	TechArrow* leftArrow;
+	TechArrow* rightArrow;
+
 	vector<Tech*> depotTechs;
 	vector<Tech*> unitTechs;
 	vector<Tech*> convoyTechs;
+
+	DepotObj* depot;
 
 	LevelManager* manager;
 };

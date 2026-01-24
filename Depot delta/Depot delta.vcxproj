@@ -227,6 +227,7 @@
     <ClInclude Include="gameFiles\UI\resourceBoxes\unitMaker.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStats.h" />
     <ClInclude Include="gameFiles\UI\techTree\tech.h" />
+    <ClInclude Include="gameFiles\UI\techTree\techArrow.h" />
     <ClInclude Include="gameFiles\UI\techTree\techTree.h" />
     <ClInclude Include="gameFiles\UI\techTree\upgrades\convoyUpgrades.h" />
     <ClInclude Include="gameFiles\UI\techTree\upgrades\depotUpgrades.h" />
