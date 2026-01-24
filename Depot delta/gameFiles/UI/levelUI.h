@@ -41,6 +41,7 @@ public:
 	void deleteTree();
 
 	ResourceBox* getBox() { return box; }
+	TechTree* getTree() { return tree; }
 
 private:
 	SDL_Texture* resourceHoverTexture;

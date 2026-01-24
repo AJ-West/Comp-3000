@@ -45,6 +45,9 @@ void LevelManager::render()
     if (!paused) {
         unpausedRender();
     }
+    else if (UI->getTree()) {
+        UI->render();
+    }
     else {
         pausedRender();
     }

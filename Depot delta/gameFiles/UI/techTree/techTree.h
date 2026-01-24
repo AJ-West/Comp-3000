@@ -36,6 +36,9 @@ public:
 			return;
 		}
 
+		//define text box size
+		tSize = { size.x+size.w/4, size.y, size.w/2, size.h/10 };
+
 		leftArrow = new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false);
 		rightArrow = new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true);
 	}
@@ -44,16 +47,6 @@ public:
 	}
 
 	void readTechFile() {
-		/*for (int i = 0; i < 15; i++) {
-			div_t divV = div(i, 5);
-			SDL_FRect pos{0,0,0,0};
-			pos.w = size.w / 24;
-			pos.h = pos.w;
-			pos.x = size.w/7 * (divV.rem+1) + size.w / 14 - pos.w/2;
-			pos.y = size.h / 3 * divV.quot + size.h/6 - pos.h/2;
-
-			depotTechs.emplace_back(new Tech(200, pos));
-		}*/
 		XMLDocument doc;
 		doc.LoadFile("techTree/currentTree.xml");
 		XMLElement* root = doc.RootElement();
@@ -89,7 +82,7 @@ public:
 			//string keyName = string(entity->FirstChildElement("keyName")->GetText());
 			int cost = atoi(entity->FirstChildElement("cost")->GetText());
 			//Tech* newTech = new Tech(cost, pos, name, keyName);
-			Tech* newTech = new Tech(cost, pos, name);
+			Tech* newTech = new Tech(cost, pos, name, "example description");
 			newTech->setStatus(atoi(entity->FirstChildElement("status")->GetText()));
 			if (newTech->getStatus() == unlocked) {
 				setAffordable(newTech, cost);
@@ -119,20 +112,42 @@ public:
 			for (auto techBox : depotTechs) {
 				techBox->render(renderer);
 			}
+			checkHover(depotTechs, renderer);
 			break;
 		case unitT:
 			for (auto techBox : unitTechs) {
 				techBox->render(renderer);
 			}
+			checkHover(unitTechs, renderer);
 			break;
 		case convoyT:
 			for (auto techBox : convoyTechs) {
 				techBox->render(renderer);
 			}
+			checkHover(convoyTechs, renderer);
 			break;
 		}
+		renderText();
+
 		leftArrow->render(renderer);
 		rightArrow->render(renderer);
+	}
+
+	void renderText() {
+		string text = currentStrings[current];
+		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
+		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_RenderTexture(renderer, texture, NULL, &tSize);
+	}
+
+	void checkHover(vector<Tech*> currentTech, SDL_Renderer* renderer) {
+		float mx, my;
+		getUIScaledMousePos(&mx, &my);
+		for (auto tech : currentTech) {
+			if (tech->checkClick(mx, my)) {
+				tech->renderHover(renderer);
+			}
+		}
 	}
 
 	bool findClickedElement(float cx, float cy) {
@@ -182,6 +197,8 @@ public:
 
 private:
 	int current = depotT;
+	vector<string> currentStrings{ "Depot Technology", "Unit Technology", "Convoy Technology" };
+	SDL_FRect tSize;
 
 	SDL_Texture* background;
 

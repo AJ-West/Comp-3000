@@ -49,14 +49,16 @@ void levelUI::renderTime() {
 }
 
 void levelUI::render() {
-	if (box) {
-		box->render(renderer);
-	}
 	if (tree) {
 		tree->render(renderer);
 	}
-	SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
-	SDL_RenderTexture(renderer, texture, NULL, &size);
+	else {
+		if (box) {
+			box->render(renderer);
+		}
+		SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
+		SDL_RenderTexture(renderer, texture, NULL, &size);
+	}
 }
 
 void levelUI::textInput(SDL_Keycode key) {

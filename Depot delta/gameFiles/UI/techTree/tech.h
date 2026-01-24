@@ -18,7 +18,11 @@ enum techType{
 class Tech : public UIElement{
 public:
 	//Tech(int tCost, SDL_FRect size, string tName, string tKeyName) : UIElement(size), cost(tCost), name(tName), keyName(tKeyName) {}
-	Tech(int tCost, SDL_FRect size, string tName) : UIElement(size), cost(tCost), name(tName) {}
+	Tech(int tCost, SDL_FRect size, string tName, string desc) : UIElement(size), cost(tCost), name(tName), description(desc) {
+		SDL_Surface* surface = TTF_RenderText_Solid(font, desc.c_str(), desc.length(), { 0,0,0,255 });
+		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
+		tSize = { size.x - size.w, size.y+size.h, size.w * 3, size.h};
+	}
 	~Tech(){}
 
 	void unlock(int money){
@@ -49,6 +53,10 @@ public:
 		SDL_RenderFillRect(renderer, &size);
 	}
 
+	void renderHover(SDL_Renderer* renderer) {
+		SDL_RenderTexture(renderer, descriptionTexture, NULL, &tSize);
+	}
+
 	void effect() {}
 
 	//setters
@@ -64,6 +72,10 @@ private:
 	int status = locked;
 	int type = modifier;
 	float modifyValue = 0.0f;
+
+	string description;
+	SDL_Texture* descriptionTexture;
+	SDL_FRect tSize;
 
 	int purchaseAmount = 0;
 	int boughtAmount = 0;
