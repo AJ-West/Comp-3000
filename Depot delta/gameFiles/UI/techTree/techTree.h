@@ -29,9 +29,20 @@ public:
 			return;
 		}
 		background = SDL_CreateTextureFromSurface(renderer, surface);
-		//SDL_SetTextureScaleMode(background, SDL_SCALEMODE_PIXELART);
 		SDL_DestroySurface(surface); // Free the surface after creating the texture
 		if (!background) {
+			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
+			return;
+		}
+
+		surface = IMG_Load("techTree/art/scrap.png");
+		if (!surface) {
+			cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
+			return;
+		}
+		scrap = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_DestroySurface(surface); // Free the surface after creating the texture
+		if (!scrap) {
 			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
 			return;
 		}
@@ -39,11 +50,21 @@ public:
 		//define text box size
 		tSize = { size.x+size.w/4, size.y, size.w/2, size.h/10 };
 
+		scrapSize = { size.x + size.w - size.w / 6+size.w/20, size.y, size.w / 20, size.w / 20 };
+		depotScrapSize = { size.x + size.w - size.w / 6 + size.w / 10, size.y, size.w / 20, size.w / 20 };
+		updateDepotScrap();
+
 		leftArrow = new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false);
 		rightArrow = new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true);
 	}
 	~TechTree(){
 		saveTechFile();
+	}
+
+	void updateDepotScrap() {
+		string depScrap = to_string(depot->getComponent<resourceComponent>()->getResourcesCount(SCRAP));
+		SDL_Surface* surface = TTF_RenderText_Solid(font, depScrap.c_str(), depScrap.length(), { 0,0,0,255 });
+		depotScrap = SDL_CreateTextureFromSurface(renderer, surface);
 	}
 
 	void readTechFile() {
@@ -86,6 +107,18 @@ public:
 			setValues(entity, newTech, cost);
 			list->emplace_back(newTech);
 			entity = entity->NextSiblingElement("entities");
+		}
+	}
+
+	void updateAffordable() {
+		for (auto tech : depotTechs) {
+			setAffordable(tech, tech->getCost());
+		}
+		for (auto tech : unitTechs) {
+			setAffordable(tech, tech->getCost());
+		}
+		for (auto tech : convoyTechs) {
+			setAffordable(tech, tech->getCost());
 		}
 	}
 
@@ -141,6 +174,9 @@ public:
 		}
 		renderText();
 
+		SDL_RenderTexture(renderer, scrap, NULL, &scrapSize); // render scrap image
+		SDL_RenderTexture(renderer, depotScrap, NULL, &depotScrapSize); // render scrap text
+
 		leftArrow->render(renderer);
 		rightArrow->render(renderer);
 	}
@@ -169,6 +205,8 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						updateDepotScrap();
+						updateAffordable();
 					}
 					return true;
 				}
@@ -179,6 +217,8 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						updateDepotScrap();
+						updateAffordable();
 					}
 					return true;
 				}
@@ -189,6 +229,8 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						updateDepotScrap();
+						updateAffordable();
 					}
 					return true;
 				}
@@ -231,6 +273,11 @@ private:
 	vector<Tech*> convoyTechs;
 
 	DepotObj* depot;
+
+	SDL_Texture* scrap;
+	SDL_FRect scrapSize;
+	SDL_Texture* depotScrap;
+	SDL_FRect depotScrapSize;
 
 	LevelManager* manager;
 };
