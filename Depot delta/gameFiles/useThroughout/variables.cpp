@@ -41,3 +41,34 @@ convoyUpgrades convoyUpg;
 depotUpgrades depotUpg;
 
 std::vector<std::vector<Tile>> grid;
+
+unordered_map<string, float> depotTechVal = {
+	{"depotHealthIncrease", 1},
+	{"fuelProductionIncrease", 1},
+	{"dosProductionIncrease", 1},
+	{"ammoProductionIncrease", 1},
+	{"decreaseScrapCosts", 1},
+	{"decreaseFuelCosts", 1},
+	{"decreaseDoSCosts", 1},
+	{"decreaseAmmoCosts", 1},
+	{"increasePersonnelCapacity", 1},
+};
+
+unordered_map<string, float> unitTechVal = {
+	{"increaseUnitDoSEfficiency", 1},
+	{"increaseUnitFuelEfficiency", 1},
+	{"increaseRateOfFire", 1},
+	{"largerBasicInfantry", 1},
+	{"largerBasicCarryingCapacity", 1},
+	{"increaseBasicFuelEfficiency", 1},
+	{"increaseBasicRateOfFire", 1},
+	{"increaseBasicDamage", 1},
+};
+
+unordered_map<string, float> convoyTechVal = {
+	{"increaseConvoyCapacity", 1},
+	{"increaseConvoyFuelEfficiency", 1},
+	{"increaseBasicArmour", 1},
+	{"increaseBasicSpeed", 1},
+	{"increaseBasicCapacity", 1},
+};

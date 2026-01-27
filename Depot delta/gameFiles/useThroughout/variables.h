@@ -4,6 +4,7 @@
 #include <SDL3_ttf/SDL_ttf.h>
 
 #include <vector>
+#include <unordered_map>
 
 #include "gameFiles/UI/techTree/upgrades/unitUpgrades.h"
 #include "gameFiles/UI/techTree/upgrades/convoyUpgrades.h"
@@ -199,5 +200,12 @@ struct Tile {
 
 //Used to store the movable world map
 extern std::vector<std::vector<Tile>> grid;
+
+
+//TECH TREE
+
+extern unordered_map<string, float> depotTechVal;
+extern unordered_map<string, float> unitTechVal;
+extern unordered_map<string, float> convoyTechVal;
 
 #endif // !VARIABLES_H

@@ -8473,7 +8473,7 @@
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
-                <Scrap>1000</Scrap>
+                <Scrap>-100</Scrap>
             </Resources>
         </entities>
         <entities eid="32855006">

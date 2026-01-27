@@ -79,14 +79,11 @@ public:
 			i++;
 
 			string name = string(entity->FirstChildElement("name")->GetText());
-			//string keyName = string(entity->FirstChildElement("keyName")->GetText());
+			string keyName = string(entity->FirstChildElement("keyName")->GetText());
 			int cost = atoi(entity->FirstChildElement("cost")->GetText());
 			//Tech* newTech = new Tech(cost, pos, name, keyName);
-			Tech* newTech = new Tech(cost, pos, name, string(entity->FirstChildElement("description")->GetText()));
-			newTech->setStatus(atoi(entity->FirstChildElement("status")->GetText()));
-			if (newTech->getStatus() == unlocked) {
-				setAffordable(newTech, cost);
-			}
+			Tech* newTech = new Tech(cost, pos, name, string(entity->FirstChildElement("description")->GetText()), keyName, atoi(entity->FirstChildElement("upgradeLocation")->GetText()));
+			setValues(entity, newTech, cost);
 			list->emplace_back(newTech);
 			entity = entity->NextSiblingElement("entities");
 		}
@@ -99,6 +96,21 @@ public:
 		else {
 			tech->setStatus(unaffordable);
 		}
+	}
+
+	void setValues(XMLElement* entity, Tech* tech, int cost) {
+		tech->setID(atoi(entity->FirstChildElement("id")->GetText()));
+		tech->setStatus(atoi(entity->FirstChildElement("status")->GetText()));
+		if (tech->getStatus() == unlocked) {
+			setAffordable(tech, cost);
+		}
+		tech->setType(atoi(entity->FirstChildElement("type")->GetText()));
+		if (atoi(entity->FirstChildElement("type")->GetText()) == modifier) {
+			tech->setModifyValue(atoi(entity->FirstChildElement("modifyValue")->GetText()));
+		}
+		tech->setPurchaseAmount(atoi(entity->FirstChildElement("purchaseAmount")->GetText()));
+		tech->setBoughtAmount(atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+
 	}
 
 	void saveTechFile() {
@@ -155,6 +167,9 @@ public:
 		case depotT:
 			for (auto techBox : depotTechs) {
 				if (techBox->checkClick(cx, cy)) {
+					if (techBox->buy()) {
+						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+					}
 					return true;
 				}
 			}
@@ -162,6 +177,9 @@ public:
 		case unitT:
 			for (auto techBox : unitTechs) {
 				if (techBox->checkClick(cx, cy)) {
+					if (techBox->buy()) {
+						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+					}
 					return true;
 				}
 			}
@@ -169,6 +187,9 @@ public:
 		case convoyT:
 			for (auto techBox : convoyTechs) {
 				if (techBox->checkClick(cx, cy)) {
+					if (techBox->buy()) {
+						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+					}
 					return true;
 				}
 			}

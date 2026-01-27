@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cmath>
 #include <unordered_map>
 
 enum techStatus{
@@ -14,25 +15,24 @@ enum techType{
 	modifier,
 	unlock
 };
+enum listNames {
+	depotUpgrades,
+	unitUpgrades,
+	convoyUpgrades
+};
 
 class Tech : public UIElement{
 public:
-	//Tech(int tCost, SDL_FRect size, string tName, string tKeyName) : UIElement(size), cost(tCost), name(tName), keyName(tKeyName) {}
-	Tech(int tCost, SDL_FRect size, string tName, string desc) : UIElement(size), cost(tCost), name(tName), description(desc) {
+	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList) {
 		SDL_Surface* surface = TTF_RenderText_Solid(font, desc.c_str(), desc.length(), { 0,0,0,255 });
 		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
 		tSize = { size.x - size.w*2, size.y+size.h, size.w * 5, size.h};
 	}
 	~Tech(){}
 
-	void unlock(int money){
+	void checkAffordable(int money){
 		if (money < cost) { status = unaffordable; }
 		else { status = affordable; }
-	}
-
-	void onBuy() {
-		status = purchased;
-		effect();
 	}
 
 	void render(SDL_Renderer* renderer) {
@@ -57,16 +57,81 @@ public:
 		SDL_RenderTexture(renderer, descriptionTexture, NULL, &tSize);
 	}
 
-	void effect() {}
+	bool buy() { // when clicked
+		if (status == affordable) {
+			effect();
+			return true;
+		}
+		else if (status == unaffordable) { std::cout << "unaffordable"; } // need to update to inform player
+		return false;
+	}
+
+	void effect() {
+		switch (type)
+		{
+		case modifier:
+			modifierFunc();
+			break;
+		case unlock:
+			unlockFunc();
+			break;
+		}	
+		boughtAmount++;
+		if (boughtAmount == purchaseAmount) { status = purchased; }
+	}
+
+	void modifierFunc() {
+		switch (listBelong)
+		{
+		case depotUpgrades:
+			depotTechVal[keyName] *= modifyValue;
+			break;
+		case unitUpgrades:
+			unitTechVal[keyName] *= modifyValue;
+			break;
+		case convoyUpgrades:
+			convoyTechVal[keyName] *= modifyValue;
+			break;
+		}
+	}
+
+	void unlockFunc() {
+
+	}
+
+	void updateListValue() {
+		switch (listBelong)
+		{
+		case depotUpgrades:
+			depotTechVal[keyName] = std::pow(modifyValue, boughtAmount);
+			break;
+		case unitUpgrades:
+			unitTechVal[keyName] = std::pow(modifyValue, boughtAmount);
+			break;
+		case convoyUpgrades:
+			convoyTechVal[keyName] = std::pow(modifyValue, boughtAmount);
+			break;
+		}
+	}
 
 	//setters
+	void setID(int i) { id = i; }
 	void setStatus(int sStatus) { status = sStatus; }
+	void setType(int ty) { type = ty; }
+	void setModifyValue(float m) { modifyValue = m; }
+	void setPurchaseAmount(int p) { purchaseAmount = p; }
+	void setBoughtAmount(int b) { 
+		boughtAmount = b; 
+		updateListValue();
+	}
 
 	//getters
 	int getStatus() { return status; }
 	int getCost() { return cost; }
 
 private:
+	int listBelong;
+
 	string name;
 	int id;
 	int status = locked;
@@ -80,7 +145,7 @@ private:
 	int purchaseAmount = 0;
 	int boughtAmount = 0;
 
-	//string keyName;
+	string keyName;
 
 	int cost;
 };
