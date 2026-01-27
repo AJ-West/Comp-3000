@@ -21,7 +21,7 @@ public:
 	Tech(int tCost, SDL_FRect size, string tName, string desc) : UIElement(size), cost(tCost), name(tName), description(desc) {
 		SDL_Surface* surface = TTF_RenderText_Solid(font, desc.c_str(), desc.length(), { 0,0,0,255 });
 		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		tSize = { size.x - size.w, size.y+size.h, size.w * 3, size.h};
+		tSize = { size.x - size.w*2, size.y+size.h, size.w * 5, size.h};
 	}
 	~Tech(){}
 

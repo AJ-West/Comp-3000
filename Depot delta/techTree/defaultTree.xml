@@ -4,6 +4,7 @@
         <name>depotUpgrades</name>
         <entities>
             <name>Increase Depot health</name>
+            <description>Increase Depot health by 10%</description>
             <id>1</id>
             <status>2</status>
             <type>modifier</type>
@@ -15,6 +16,7 @@
         </entities>
         <entities>
             <name>Increase Fuel production</name>
+            <description>Increase Fuel production by 5%</description>
             <id>2</id>
             <status>2</status>
             <type>modifier</type>
@@ -26,6 +28,7 @@
         </entities>
         <entities>
             <name>Increase DoS production</name>
+            <description>Increase DoS production by 5%</description>
             <id>3</id>
             <status>2</status>
             <type>modifier</type>
@@ -37,6 +40,7 @@
         </entities>
         <entities>
             <name>Increase Ammo production</name>
+            <description>Increase Ammo production by 5%</description>
             <id>4</id>
             <status>2</status>
             <type>modifier</type>
@@ -48,6 +52,7 @@
         </entities>
         <entities>
             <name>Decrease Scrap Costs</name>
+            <description>Decrease Scrap costs by 15%</description>
             <id>5</id>
             <status>2</status>
             <type>modifier</type>
@@ -59,6 +64,7 @@
         </entities>
         <entities>
             <name>Decrease Fuel Costs</name>
+            <description>Decrease Fuel costs by 10%</description>
             <id>6</id>
             <status>2</status>
             <type>modifier</type>
@@ -70,6 +76,7 @@
         </entities>
         <entities>
             <name>Decrease DoS Costs</name>
+            <description>Decrease DoS costs by 10%</description>
             <id>7</id>
             <status>2</status>
             <type>modifier</type>
@@ -81,6 +88,7 @@
         </entities>
         <entities>
             <name>Decrease Ammo Costs</name>
+            <description>Decrease Ammo costs by 10%</description>
             <id>8</id>
             <status>2</status>
             <type>modifier</type>
@@ -91,19 +99,9 @@
             <upgradeLocation>depotUpgrades</upgradeLocation>
         </entities>
         <entities>
-            <name>Decrease Ammo Costs</name>
-            <id>9</id>
-            <status>2</status>
-            <type>modifier</type>
-            <modifyValue>0.9</modifyValue>
-            <cost>200</cost>
-            <purchaseAmount>1</purchaseAmount>
-            <boughtAmount>0</boughtAmount>
-            <upgradeLocation>depotUpgrades</upgradeLocation>
-        </entities>
-        <entities>
             <name>Increase personnel capacity</name>
-            <id>10</id>
+            <description>Double personnel capacity</description>
+            <id>9</id>
             <status>2</status>
             <type>modifier</type>
             <modifyValue>2</modifyValue>
@@ -117,6 +115,7 @@
         <name>unitUpgrades</name>
         <entities>
             <name>Increase Unit Dos efficiency</name>
+            <description>Increase Unit Dos efficiency by 5%</description>
             <id>1</id>
             <status>2</status>
             <type>modifier</type>
@@ -128,6 +127,7 @@
         </entities>
         <entities>
             <name>Increase Unit Fuel efficiency</name>
+            <description>Increase Unit Fuel efficiency by 5%</description>
             <id>2</id>
             <status>2</status>
             <type>modifier</type>
@@ -139,6 +139,7 @@
         </entities>
         <entities>
             <name>Increase rate of fire</name>
+            <description>Increase rate of fire by 5%</description>
             <id>3</id>
             <status>2</status>
             <type>modifier</type>
@@ -150,6 +151,7 @@
         </entities>
         <entities>
             <name>Larger basic Infantry</name>
+            <description>Double basic units max squad size</description>
             <id>4</id>
             <status>2</status>
             <type>modifier</type>
@@ -161,6 +163,7 @@
         </entities>
         <entities>
             <name>Larger carrying capacity</name>
+            <description>Double carrying capacity of basic units</description>
             <id>5</id>
             <status>2</status>
             <type>modifier</type>
@@ -172,10 +175,11 @@
         </entities>
         <entities>
             <name>Increase fuel efficiency</name>
+            <description>Increase fuel efficiency by 50% of basic units</description>
             <id>6</id>
             <status>2</status>
             <type>modifier</type>
-            <modifyValue>1.5</modifyValue>
+            <modifyValue>0.5</modifyValue>
             <cost>150</cost>
             <purchaseAmount>1</purchaseAmount>
             <boughtAmount>0</boughtAmount>
@@ -183,6 +187,7 @@
         </entities>
         <entities>
             <name>Increase rate of fire</name>
+            <description>Increase rate of fire by 20% of basic units</description>
             <id>7</id>
             <status>2</status>
             <type>modifier</type>
@@ -194,6 +199,7 @@
         </entities>
         <entities>
             <name>Increase damage</name>
+            <description>Increase damage by 10% of basic units</description>
             <id>8</id>
             <status>2</status>
             <type>modifier</type>
@@ -208,6 +214,7 @@
         <name>convoyUpgrades</name>
         <entities>
             <name>Increase capacity</name>
+            <description>Increase convoy capacity by 5%</description>
             <id>1</id>
             <status>2</status>
             <type>modifier</type>
@@ -219,6 +226,7 @@
         </entities>
         <entities>
             <name>Increase fuel efficiency</name>
+            <description>Increase convoy fuel efficiency by 5%</description>
             <id>2</id>
             <status>2</status>
             <type>modifier</type>
@@ -230,6 +238,7 @@
         </entities>
         <entities>
             <name>Increase armour</name>
+            <description>Increase basic convoy armour by 15%</description>
             <id>3</id>
             <status>2</status>
             <type>modifier</type>
@@ -241,6 +250,7 @@
         </entities>
         <entities>
             <name>Increase speed</name>
+            <description>Increase basic convoy speed by 15%</description>
             <id>4</id>
             <status>2</status>
             <type>modifier</type>
@@ -252,6 +262,7 @@
         </entities>
         <entities>
             <name>Increase capacity</name>
+            <description>Increase basic convoy capacity by 15%</description>
             <id>5</id>
             <status>2</status>
             <type>modifier</type>

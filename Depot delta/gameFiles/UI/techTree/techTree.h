@@ -82,7 +82,7 @@ public:
 			//string keyName = string(entity->FirstChildElement("keyName")->GetText());
 			int cost = atoi(entity->FirstChildElement("cost")->GetText());
 			//Tech* newTech = new Tech(cost, pos, name, keyName);
-			Tech* newTech = new Tech(cost, pos, name, "example description");
+			Tech* newTech = new Tech(cost, pos, name, string(entity->FirstChildElement("description")->GetText()));
 			newTech->setStatus(atoi(entity->FirstChildElement("status")->GetText()));
 			if (newTech->getStatus() == unlocked) {
 				setAffordable(newTech, cost);
