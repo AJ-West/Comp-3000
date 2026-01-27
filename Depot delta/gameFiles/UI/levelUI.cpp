@@ -111,6 +111,7 @@ void levelUI::deleteBox() {
 
 void levelUI::deleteTree() {
 	if (tree) {
+		tree->saveTechFile();
 		tree->unPause();
 		delete tree;
 		tree = nullptr;

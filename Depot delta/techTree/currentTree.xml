@@ -30,10 +30,11 @@
             <id>1</id>
             <status>2</status>
             <type>0</type>
-            <modifyValue>1.1</modifyValue> <!-- 10% production speed increase -->
-            <cost>50</cost>
+            <modifyValue>1.1</modifyValue>
+            <!-- 10% production speed increase -->
+            <cost>100</cost>
             <purchaseAmount>10</purchaseAmount>
-            <boughtAmount>0</boughtAmount>
+            <boughtAmount>1</boughtAmount>
             <upgradeLocation>0</upgradeLocation>
         </entities>
         <entities>

@@ -222,13 +222,13 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resou
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(97,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(106,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(108,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(109,35): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(111,35): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(112,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(114,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\techTree.h(142,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data

@@ -66,6 +66,8 @@ public:
 		return false;
 	}
 
+	void increaseCost(){ cost += cost; }
+
 	void effect() {
 		switch (type)
 		{
@@ -80,7 +82,7 @@ public:
 		if (boughtAmount == purchaseAmount) { status = purchased; }
 	}
 
-	void modifierFunc() {
+	void modifierFunc() { // used for upgrading existing stats
 		switch (listBelong)
 		{
 		case depotUpgrades:
@@ -95,7 +97,7 @@ public:
 		}
 	}
 
-	void unlockFunc() {
+	void unlockFunc() { // used for unlocking a feature e.g. new unit type
 
 	}
 
@@ -128,6 +130,9 @@ public:
 	//getters
 	int getStatus() { return status; }
 	int getCost() { return cost; }
+	int getID() { return id; }
+	int getPA() { return purchaseAmount; }
+	int getBA() { return boughtAmount; }
 
 private:
 	int listBelong;

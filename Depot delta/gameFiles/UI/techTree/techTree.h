@@ -147,8 +147,41 @@ public:
 	}
 
 	void saveTechFile() {
-
+		XMLDocument doc;
+		doc.LoadFile("techTree/currentTree.xml");
+		XMLElement* root = doc.RootElement();
+		XMLElement* layer = root->FirstChildElement("layers");
+		while (layer) {
+			string layerName = string(layer->FirstChildElement("name")->GetText());
+			if (layerName == "depotUpgrades") {
+				saveUpgrades(layer, &depotTechs);
+			}
+			else if (layerName == "unitUpgrades") {
+				saveUpgrades(layer, &unitTechs);
+			}
+			else if (layerName == "convoyUpgrades") {
+				saveUpgrades(layer, &convoyTechs);
+			}
+			layer = layer->NextSiblingElement("layers");
+		}
+		doc.SaveFile("techTree/currentTree.xml");
 	}
+
+	void saveUpgrades(XMLElement* layer, vector<Tech*>* list) {
+		XMLElement* entity = layer->FirstChildElement("entities");
+		while (entity) {
+			for (auto tech : *list) {
+				if (tech->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
+					entity->FirstChildElement("cost")->SetText(tech->getCost());
+					entity->FirstChildElement("purchaseAmount")->SetText(tech->getPA());
+					entity->FirstChildElement("boughtAmount")->SetText(tech->getBA());
+					entity->FirstChildElement("status")->SetText(tech->getStatus());
+				}
+			}
+			entity = entity->NextSiblingElement("entities");
+		}
+	}
+
 
 	void render(SDL_Renderer* renderer) {
 		SDL_RenderTexture(renderer, background, NULL, &size); // render background over whole screen
@@ -205,6 +238,7 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						techBox->increaseCost();
 						updateDepotScrap();
 						updateAffordable();
 					}
