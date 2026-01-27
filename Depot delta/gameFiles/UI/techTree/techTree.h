@@ -20,8 +20,9 @@ enum currentTech {
 
 class TechTree : public UIElement {
 public:
-	TechTree(SDL_Renderer* renderer, LevelManager* lManager, DepotObj* depObj): UIElement(camera.dimen), manager(lManager), depot(depObj) {
+	TechTree(SDL_Renderer* renderer, LevelManager* lManager, DepotObj* depObj) : UIElement({ 0, 0, camera.dimen.w, camera.dimen.h }), manager(lManager), depot(depObj) {
 		readTechFile();
+		updateAffordable();
 		// Load resource hover texture
 		SDL_Surface* surface = IMG_Load("techTree/art/blueprint.png");
 		if (!surface) {
@@ -48,7 +49,7 @@ public:
 		}
 
 		//define text box size
-		tSize = { size.x+size.w/4, size.y, size.w/2, size.h/10 };
+		tSize = { size.x + size.w / 4, size.y, size.w / 2, size.h / 10 };
 
 		scrapSize = { size.x + size.w - size.w / 6+size.w/20, size.y, size.w / 20, size.w / 20 };
 		depotScrapSize = { size.x + size.w - size.w / 6 + size.w / 10, size.y, size.w / 20, size.w / 20 };

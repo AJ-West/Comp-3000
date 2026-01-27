@@ -38,7 +38,7 @@ public:
 	void render(SDL_Renderer* renderer) {
 		switch (status) {
 		case affordable:
-			SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+			SDL_SetRenderDrawColor(renderer, boughtAmount*25, 255, boughtAmount * 25, 255);
 			break;
 		case unaffordable:
 			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
