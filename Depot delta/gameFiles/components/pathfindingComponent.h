@@ -82,6 +82,12 @@ public:
 	}
 
 	Vec2 getFlowDirection(Vec2 position) {
+        while(position.y >= grid.size()){
+            position.y -= 1;
+        }
+        while (position.x >= grid[position.y].size()) {
+            position.x -= 1;
+        }
 		return grid[position.y][position.x].direction;
 	}
 

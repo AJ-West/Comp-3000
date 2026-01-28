@@ -46,7 +46,7 @@ public:
 	void unpausedRender();
 	void pausedRender();
 
-	void addUnitConvoy(GameObject* unitConvoy);
+	void addUnitConvoy(HumanObj* unitConvoy);
 	void addZombie(ZombieObj* zombie);
 
 	//Handle game zoom
@@ -55,10 +55,10 @@ public:
 
 	//getters
 	int getUnitConvoysSize() { return unitConvoys.size(); }
+	vector<HumanObj*> getUnitConvoys() { return unitConvoys; }
 	int getZombiesSize() { return zombieList.size(); }
 	int getNextID() { return unitConvoys.size() + zombieList.size() + 2; } // add 1 for depot and new object for total number of objects
 	DepotObj* getDepot() { return depot; } 
-	vector<GameObject*> getUnitConvoys() { return unitConvoys; }
 
 	//setters
 	void setPaused(bool pause) { paused = pause; }
@@ -70,7 +70,7 @@ private:
 	ZombieSpawner* spawner;
 
 	MapLoader* mapLoader;
-	vector<GameObject*> unitConvoys;
+	vector<HumanObj*> unitConvoys;
 	vector<ZombieObj*> zombieList;
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;

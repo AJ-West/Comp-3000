@@ -13,22 +13,27 @@ UnitSelected::UnitSelected(LevelManager* lManager, HumanObj* unit, HandleSelecte
 UnitSelected::~UnitSelected() {}
 
 void UnitSelected::handleInput(SDL_Event event) {
-	if (event.type == SDL_EVENT_MOUSE_WHEEL) {
-		manager->zoomChange(event);
-	}
-	else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-		if (event.button.button == SDL_BUTTON_LEFT) {
-			leftClick();
+	if (selected) {
+		if (event.type == SDL_EVENT_MOUSE_WHEEL) {
+			manager->zoomChange(event);
 		}
-		else if (event.button.button == SDL_BUTTON_RIGHT) {
-			rightClick();
+		else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+			if (event.button.button == SDL_BUTTON_LEFT) {
+				leftClick();
+			}
+			else if (event.button.button == SDL_BUTTON_RIGHT) {
+				rightClick();
+			}
+		}
+		else if (event.type == SDL_EVENT_KEY_DOWN) {
+			camera.keyDown(event.key.key);
+		}
+		else if (event.type == SDL_EVENT_KEY_UP) {
+			camera.keyUp(event.key.key);
 		}
 	}
-	else if (event.type == SDL_EVENT_KEY_DOWN) {
-		camera.keyDown(event.key.key);
-	}
-	else if (event.type == SDL_EVENT_KEY_UP) {
-		camera.keyUp(event.key.key);
+	else {
+		deselect();
 	}
 }
 

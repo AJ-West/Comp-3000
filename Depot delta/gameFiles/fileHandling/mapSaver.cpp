@@ -10,7 +10,7 @@ MapSaver::~MapSaver()
 {
 }
 
-void MapSaver::saveFile(vector<GameObject*> unitConvoys, DepotObj* depot, vector<ZombieObj*> zombies)
+void MapSaver::saveFile(vector<HumanObj*> unitConvoys, DepotObj* depot, vector<ZombieObj*> zombies)
 {
     XMLElement* root = doc.RootElement();
     XMLElement* layer = root->FirstChildElement("layers");
@@ -68,7 +68,7 @@ void MapSaver::saveFile(vector<GameObject*> unitConvoys, DepotObj* depot, vector
     }
 }
 
-bool MapSaver::saveUnit(XMLElement* entity, vector<GameObject*> units)
+bool MapSaver::saveUnit(XMLElement* entity, vector<HumanObj*> units)
 {
     for (auto& unit : units) {
         if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
@@ -81,7 +81,7 @@ bool MapSaver::saveUnit(XMLElement* entity, vector<GameObject*> units)
     return false;
 }
 
-void MapSaver::saveNewUnit(XMLElement* layer, GameObject* unit) {
+void MapSaver::saveNewUnit(XMLElement* layer, HumanObj* unit) {
     XMLElement* entity = doc.NewElement("entities");
     XMLElement* name = doc.NewElement("name");
     XMLElement* id = doc.NewElement("id");

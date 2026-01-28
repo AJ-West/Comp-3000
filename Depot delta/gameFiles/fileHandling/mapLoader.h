@@ -45,7 +45,7 @@ public:
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters
-	vector<GameObject*> getUnitConvoyList() { return unitConvoyList; }
+	vector<HumanObj*> getUnitConvoyList() { return unitConvoyList; }
 	vector<ZombieObj*> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
 
@@ -58,6 +58,6 @@ private:
 	SDL_Texture* tilemapTexture;
 
 	DepotObj* depot;
-	vector<GameObject*> unitConvoyList;
+	vector<HumanObj*> unitConvoyList;
 	vector<ZombieObj*> zombieList;
 };

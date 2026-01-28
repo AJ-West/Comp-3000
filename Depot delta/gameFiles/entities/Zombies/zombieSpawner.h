@@ -25,13 +25,11 @@ public:
 		Vec2 pos = { 0,0 };
 		Vec2 depotPos = manager->getDepot()->getPos();
 		while (!spawnPosFound) {
-			pos = { (static_cast<float>(rand()) / RAND_MAX) * worldWidth, (static_cast<float>(rand()) / RAND_MAX) * worldHeight };
+			pos = { (static_cast<float>(rand()) / RAND_MAX) * (worldWidth-16), (static_cast<float>(rand()) / RAND_MAX) * (worldHeight-16) }; // -16 to ensure it doesnt spawn outside the map
 			if (getDistance(pos, depotPos) >= sDistanceFromDepot) {
 				spawnPosFound = true;
 			}
 		}
-		cout << "Pos X: " << pos.x << '\n';
-		cout << "Pos Y: " << pos.y << '\n';
 		ZombieObj* zombie = new ZombieObj(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID());
 		stats.addComponents(zombie);
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(manager->getUnitConvoys());

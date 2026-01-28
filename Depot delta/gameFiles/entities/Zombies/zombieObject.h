@@ -5,7 +5,7 @@
 #include "gameFiles/components/renderComponent.h"
 #include "gameFiles/components/movementComponent.h"
 #include "gameFiles/components/pathfindingComponent.h"
-#include "nearestComponent.h"
+#include "gameFiles/components/nearestComponent.h"
 
 class ZombieObj : public GameObject {
 public:
@@ -13,7 +13,7 @@ public:
 
 	void renderHover(SDL_Renderer* renderer) { cout << "render hover"; } // need at a later date to show zombie health on hover
 
-	virtual void updateTargets(vector<GameObject*> list) {
+	virtual void updateTargets(vector<HumanObj*> list) {
 		getComponent<nearestComponent>()->setnearbyUnits(list);
 	}
 

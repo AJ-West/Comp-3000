@@ -31,7 +31,7 @@ protected:
 
 class HandleSelected {
 public:
-	HandleSelected(vector<GameObject*> objects, levelUI* lUI) : allObjects(objects), UI(lUI) {}
+	HandleSelected(levelUI* lUI) : UI(lUI) {}
 	~HandleSelected() {}
 	
 	void setState(shared_ptr<SelectedState> state) { currentState = state; }
@@ -40,21 +40,18 @@ public:
 
 	void decideState(LevelManager* manager);
 
-	void checkHover(SDL_Event event);
+	void checkHover(SDL_Event event, LevelManager* manager);
 
 	GameObject* getHovered() { return hovered; }
 
 	void setStateEnum(int state) { stateEnum = state; }
 	void setOrigin(GameObject* org) { origin = org; }
-	void setAllObjects(vector<GameObject*> objects) { allObjects = objects; }
 
 private:
 	shared_ptr<SelectedState> currentState;
 
 	GameObject* hovered = nullptr;
 	GameObject* origin = nullptr;
-
-	vector<GameObject*> allObjects;
 	levelUI* UI;
 
 	int stateEnum = INT8_MAX;

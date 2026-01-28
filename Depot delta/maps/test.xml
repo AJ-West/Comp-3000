@@ -8463,7 +8463,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>0</health>
+            <health>855</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8473,75 +8473,7 @@
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
-                <Scrap>120</Scrap>
-            </Resources>
-        </entities>
-        <entities eid="32855006">
-            <name>Basic unit</name>
-            <id>2</id>
-            <health>85</health>
-            <x>71</x>
-            <y>56</y>
-            <originX>8</originX>
-            <originY>8</originY>
-            <target_x>103</target_x>
-            <target_y>88</target_y>
-            <Resources>
-                <Personnel>40</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>70</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>50</Scrap>
-            </Resources>
-        </entities>
-        <entities eid="21794766">
-            <name>Basic Convoy</name>
-            <id>3</id>
-            <health>70</health>
-            <x>86</x>
-            <y>14</y>
-            <originX>0</originX>
-            <originY>0</originY>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>10</Personnel>
-                <Ammunition>70</Ammunition>
-                <DoS>25</DoS>
-                <Fuel>100</Fuel>
-                <Scrap>40</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>4</id>
-            <health>35</health>
-            <x>250</x>
-            <y>408</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>5</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>5</DoS>
-                <Fuel>5</Fuel>
-                <Scrap>5</Scrap>
-            </Resources>
-        </entities>
-        <entities>
-            <name>Basic unit</name>
-            <id>5</id>
-            <health>100</health>
-            <x>250</x>
-            <y>408</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>5</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>5</DoS>
-                <Fuel>5</Fuel>
-                <Scrap>5</Scrap>
+                <Scrap>955</Scrap>
             </Resources>
         </entities>
     </layers>

@@ -20,8 +20,11 @@ enum ObjectType convert(const char* str) {
 };
 
 void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
-	checkHover(event);
+	checkHover(event, manager);
 	if (currentState) {
+		//if (stateEnum == selectHuman) {
+
+		//}
 		currentState->handleInput(event);
 		if (currentState->endState()) { decideState(manager); } // sets to nullptr
 	}
@@ -92,14 +95,20 @@ void HandleSelected::decideState(LevelManager* manager) {
 	stateEnum = INT8_MAX;	
 }
 
-void HandleSelected::checkHover(SDL_Event event) {
-	for (auto& obj : allObjects) {
+void HandleSelected::checkHover(SDL_Event event, LevelManager* manager) {
+	for (auto& obj : manager->getUnitConvoys()) {
 		if (obj) {
 			//if(obj->checkHover(event.motion.x, event.motion.y)){
 			if (obj->getHovering()) {
 				hovered = obj;
 				return;
 			}
+		}
+	}
+	if (auto obj = manager->getDepot()) {
+		if (obj->getHovering()) {
+			hovered = obj;
+			return;
 		}
 	}
 	hovered = nullptr;

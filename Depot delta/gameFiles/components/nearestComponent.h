@@ -6,6 +6,10 @@
 class nearestComponent : public Component {
 public:
 	virtual void update(GameObject* owner) { // update target based off of closest unit (need to add convoys too at later date)
+		findClosestTarget();
+	}
+
+	void findClosestTarget() {
 		nearestUnit = nullptr;
 		for (auto unit : nearbyUnits) {
 			if (distanceToUnit(unit) <= sightDistance) {
@@ -49,14 +53,19 @@ public:
 	}
 
 	//setters
-	void setnearbyUnits(vector<GameObject*> units) { nearbyUnits = units; }
+	void setnearbyUnits(vector<HumanObj*> units) { 
+		nearbyUnits = units;
+		if (depot) { // without will try to find a target before completed spawning
+			findClosestTarget();
+		}
+	}
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 
 	nearestComponent(GameObject* obj) : Component(obj) {}
 	virtual ~nearestComponent() {}
 
 private:
-	vector<GameObject*> nearbyUnits;
+	vector<HumanObj*> nearbyUnits;
 	GameObject* nearestUnit = nullptr;
 
 	DepotObj* depot = nullptr;

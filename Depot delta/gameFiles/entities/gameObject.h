@@ -79,6 +79,7 @@ public:
 		health -= damage;
 		if (health <= 0) { 
 			alive = false; 
+			if(selected){}
 		}
 	}
 

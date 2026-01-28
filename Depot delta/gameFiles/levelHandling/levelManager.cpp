@@ -18,8 +18,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     spawner = new ZombieSpawner(this);
 
-    //selector = new SelectedHandler(allObjects, depot, UI);
-    handler = new HandleSelected(allObjects, UI);
+    handler = new HandleSelected(UI);
 }
 
 LevelManager::~LevelManager()
@@ -72,6 +71,10 @@ void LevelManager::unpausedRender()
         if (unit) {
             unit->Update();
             if (unit->getHealth() <= 0) {
+                if (unit->getSelected()) {
+                    handler->setStateEnum(INT_MAX);
+                    handler->decideState(this);
+                }
                 delete unit;
                 unit = nullptr;
             }
@@ -80,6 +83,13 @@ void LevelManager::unpausedRender()
             }
         }
     }
+
+    unitConvoys.erase(
+        remove_if(unitConvoys.begin(), unitConvoys.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        unitConvoys.end()
+    );
+
     for (auto& zombie : zombieList) {
         if (zombie) {
             zombie->updateTargets(unitConvoys);
@@ -90,6 +100,13 @@ void LevelManager::unpausedRender()
             }
         }
     }
+
+    zombieList.erase(
+        remove_if(zombieList.begin(), zombieList.end(),
+            [](const GameObject* ptr) { return ptr == nullptr; }),
+        zombieList.end()
+    );
+
     camera.update();
     if (hoveredUnit) {
         UI->renderResourceHover();
@@ -98,17 +115,6 @@ void LevelManager::unpausedRender()
     UI->render();
     UI->renderTime();
     depot->renderResources(renderer);
-
-    unitConvoys.erase(
-        remove_if(unitConvoys.begin(), unitConvoys.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        unitConvoys.end()
-    );
-    zombieList.erase(
-        remove_if(zombieList.begin(), zombieList.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        zombieList.end()
-    );
 }
 
 void LevelManager::pausedRender()
@@ -135,9 +141,8 @@ void LevelManager::pausedRender()
     depot->renderResources(renderer);
 }
 
-void LevelManager::addUnitConvoy(GameObject* unitConvoy) {
+void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
     unitConvoys.emplace_back(unitConvoy);
-    handler->setAllObjects(unitConvoys);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
