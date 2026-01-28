@@ -8463,7 +8463,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>855</health>
+            <health>940</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8473,7 +8473,7 @@
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
-                <Scrap>955</Scrap>
+                <Scrap>320</Scrap>
             </Resources>
         </entities>
     </layers>

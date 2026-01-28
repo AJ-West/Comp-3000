@@ -181,3 +181,9 @@ void LevelManager::clampZoom(){
         zoom = 0.25f;
     }
 }
+
+void LevelManager::updateStats(string keyName, bool forUnit) {
+    for (auto unit : unitConvoys) {
+        unit->updateStats(keyName, forUnit);
+    }
+}

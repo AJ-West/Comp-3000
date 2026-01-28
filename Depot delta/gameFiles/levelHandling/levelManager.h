@@ -11,7 +11,6 @@
 #include "gameFiles/fileHandling/mapLoader.h"
 #include "gameFiles/fileHandling/mapSaver.h"
 
-#include "gameFiles/levelHandling/selectedHandler.h"
 #include "gameFiles/levelHandling/selectedHandler/handleSelected.h"
 
 #include "gameFiles/misc/dayCycle.h"
@@ -53,6 +52,8 @@ public:
 	void zoomChange(SDL_Event event);
 	void clampZoom();
 
+	void updateStats(string keyName, bool forUnit);
+
 	//getters
 	int getUnitConvoysSize() { return unitConvoys.size(); }
 	vector<HumanObj*> getUnitConvoys() { return unitConvoys; }
@@ -75,7 +76,6 @@ private:
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;
 
-	SelectedHandler* selector;
 	HandleSelected* handler;
 
 	dayCycle* time;

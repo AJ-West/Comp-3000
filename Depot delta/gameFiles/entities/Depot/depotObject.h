@@ -50,6 +50,42 @@ public:
 		}
 	}
 
+	void updateStats(string keyName) {
+		if (keyName == "depotHealthIncrease") {
+			maxHealth *= depotTechVal[keyName];
+			health *= depotTechVal[keyName];
+			return;
+		}
+		if (keyName == "fuelProductionIncrease") {
+			getComponent<resourceComponent>()->setResourceChange(FUEL, getComponent<resourceComponent>()->getResourceChange(FUEL));
+			return;
+		}
+		if (keyName == "dosProductionIncrease") {
+			getComponent<resourceComponent>()->setResourceChange(DOS, getComponent<resourceComponent>()->getResourceChange(DOS));
+			return;
+		}
+		if (keyName == "ammoProductionIncrease") {
+			getComponent<resourceComponent>()->setResourceChange(AMMUNITION, getComponent<resourceComponent>()->getResourceChange(AMMUNITION));
+			return;
+		}
+		if (keyName == "decreaseScrapCosts") { // need to do
+			return;
+		}
+		if (keyName == "decreaseFuelCosts") { // need to do
+			return;
+		}
+		if (keyName == "decreaseDoSCosts") { // need to do
+			return;
+		}
+		if (keyName == "decreaseAmmoCosts") { // need to do
+			return;
+		}
+		if (keyName == "increasePersonnelCapacity") {
+			getComponent<resourceComponent>()->setResourceMax(PERSONNEL, getComponent<resourceComponent>()->getResourcesMax(PERSONNEL));
+			return;
+		}
+	}
+
 private:
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + 5, 30, 30 };
 	//SDL_FRect tSize{ 312/ static_cast<float>(ResolutionWidth) *100, 5 / static_cast<float>(ResolutionWidth) * 100, 111 / camera.dimen.w * 100, 30 / camera.dimen.h * 100 };

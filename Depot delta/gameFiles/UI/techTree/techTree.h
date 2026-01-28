@@ -140,7 +140,7 @@ public:
 		}
 		tech->setType(atoi(entity->FirstChildElement("type")->GetText()));
 		if (atoi(entity->FirstChildElement("type")->GetText()) == modifier) {
-			tech->setModifyValue(atoi(entity->FirstChildElement("modifyValue")->GetText()));
+			tech->setModifyValue(atof(entity->FirstChildElement("modifyValue")->GetText()));
 		}
 		tech->setPurchaseAmount(atoi(entity->FirstChildElement("purchaseAmount")->GetText()));
 		tech->setBoughtAmount(atoi(entity->FirstChildElement("boughtAmount")->GetText()));
@@ -240,6 +240,9 @@ public:
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
 						techBox->increaseCost();
+						if (techBox->getType() == modifier) {
+							depot->updateStats(techBox->getKeyName());
+						}
 						updateDepotScrap();
 						updateAffordable();
 					}
@@ -252,6 +255,10 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						techBox->increaseCost();
+						if (techBox->getType() == modifier) {
+							depot->updateStats(techBox->getKeyName());
+						}
 						updateDepotScrap();
 						updateAffordable();
 					}
@@ -264,6 +271,10 @@ public:
 				if (techBox->checkClick(cx, cy)) {
 					if (techBox->buy()) {
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
+						techBox->increaseCost();
+						if (techBox->getType() == modifier) {
+							depot->updateStats(techBox->getKeyName());
+						}
 						updateDepotScrap();
 						updateAffordable();
 					}

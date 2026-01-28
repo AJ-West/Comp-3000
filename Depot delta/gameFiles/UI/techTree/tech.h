@@ -133,6 +133,8 @@ public:
 	int getID() { return id; }
 	int getPA() { return purchaseAmount; }
 	int getBA() { return boughtAmount; }
+	int getType() { return type; }
+	string getKeyName() { return keyName; }
 
 private:
 	int listBelong;

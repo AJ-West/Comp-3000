@@ -6,9 +6,7 @@
 #include <vector>
 #include <unordered_map>
 
-#include "gameFiles/UI/techTree/upgrades/unitUpgrades.h"
-#include "gameFiles/UI/techTree/upgrades/convoyUpgrades.h"
-#include "gameFiles/UI/techTree/upgrades/depotUpgrades.h"
+using namespace std;
 
 #ifndef VARIABLES_H
 #define VARIABLES_H
@@ -105,10 +103,6 @@ struct Camera {
 };
 
 extern Camera camera;
-
-extern unitUpgrades unitUpg;
-extern convoyUpgrades convoyUpg;
-extern depotUpgrades depotUpg;
 
 enum Resource {
 	PERSONNEL,

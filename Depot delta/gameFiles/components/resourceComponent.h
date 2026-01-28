@@ -74,11 +74,13 @@ public:
 	vector<int> getAllResourceMax() { return resourcesMax; }
 	int getResourcesCount(int index) { return resourcesCount[index]; }
 	int getResourcesMax(int index) { return resourcesMax[index]; }
+	int getResourceChange(int index) { return resourceChange[index]; }
 
 	//setters
 	void setResourceChange(int index, int amount) { resourceChange[index] = amount; }
 	void setResourcesCount(int index, int amount) { resourcesCount[index] = amount; }
 	void setHasResource(vector<bool> loadHasResource) { hasResource = loadHasResource; }
+	void setResourceMax(int index, int amount) { resourcesMax[index] = amount; }
 
 	void decreaseResourceCount(int index, int amount) { resourcesCount[index] -= amount; }
 

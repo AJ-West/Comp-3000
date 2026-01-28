@@ -20,3 +20,49 @@ void HumanObj::pathToTarget() {
 	auto pathComp = getComponent<pathfindingComponent>();
 	pathComp->computeFlowField(target, origin);
 }
+
+void HumanObj::updateStats(string keyName, bool forUnit) {
+	if (forUnit) {
+		if (keyName == "increaseUnitDoSEfficiency") {
+			return;
+		}
+		if (keyName == "increaseUnitFuelEfficiency") {
+			return;
+		}
+		if (keyName == "increaseRateOfFire") {
+			return;
+		}
+		if (keyName == "largerBasicInfantry") { // need to work out best way to seperate type of unit
+			return;
+		}
+		if (keyName == "largerBasicCarryingCapacity") {
+			return;
+		}
+		if (keyName == "increaseBasicFuelEfficiency") {
+			return;
+		}
+		if (keyName == "increaseBasicRateOfFire") {
+			return;
+		}
+		if (keyName == "increaseBasicDamage") {
+			return;
+		}
+	}
+	else {
+		if (keyName == "increaseConvoyCapacity") {
+			return;
+		}
+		if (keyName == "increaseConvoyFuelEfficiency") {
+			return;
+		}
+		if (keyName == "increaseBasicArmour") {
+			return;
+		}
+		if (keyName == "increaseBasicSpeed") {
+			return;
+		}
+		if (keyName == "increaseBasicCapacity") {
+			return;
+		}
+	}
+}

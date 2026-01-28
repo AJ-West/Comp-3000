@@ -24,6 +24,8 @@ public:
 
 	void pathToTarget();
 
+	void updateStats(string keyName, bool forUnit);
+
 private:
 	int ID;
 	int maxHealth = 100;

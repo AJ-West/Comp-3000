@@ -112,9 +112,6 @@
     <Filter Include="Source Files\gameFiles\UI%27s\techTree">
       <UniqueIdentifier>{5e95e973-db4a-4589-8b7c-49e32b0acdec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gameFiles\UI%27s\techTree\upgrades">
-      <UniqueIdentifier>{71165f2e-7009-4e9a-89d9-6193fc098761}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -134,9 +131,6 @@
     </ClCompile>
     <ClCompile Include="gameFiles\levelHandling\levelManager.cpp">
       <Filter>Source Files\gameFiles\level handling\levelManager</Filter>
-    </ClCompile>
-    <ClCompile Include="gameFiles\levelHandling\selectedHandler.cpp">
-      <Filter>Source Files\gameFiles\level handling\selectedHandler</Filter>
     </ClCompile>
     <ClCompile Include="gameFiles\useThroughout\usefulFunctions.cpp">
       <Filter>Source Files\gameFiles\UseThroughout</Filter>
@@ -260,9 +254,6 @@
     <ClInclude Include="gameFiles\levelHandling\levelManager.h">
       <Filter>Source Files\gameFiles\level handling\levelManager</Filter>
     </ClInclude>
-    <ClInclude Include="gameFiles\levelHandling\selectedHandler.h">
-      <Filter>Source Files\gameFiles\level handling\selectedHandler</Filter>
-    </ClInclude>
     <ClInclude Include="gameFiles\misc\dayCycle.h">
       <Filter>Source Files\gameFiles\misc</Filter>
     </ClInclude>
@@ -355,15 +346,6 @@
     </ClInclude>
     <ClInclude Include="gameFiles\UI\techTree\techTree.h">
       <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
-    </ClInclude>
-    <ClInclude Include="gameFiles\UI\techTree\upgrades\convoyUpgrades.h">
-      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
-    </ClInclude>
-    <ClInclude Include="gameFiles\UI\techTree\upgrades\depotUpgrades.h">
-      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
-    </ClInclude>
-    <ClInclude Include="gameFiles\UI\techTree\upgrades\unitUpgrades.h">
-      <Filter>Source Files\gameFiles\UI%27s\techTree\upgrades</Filter>
     </ClInclude>
     <ClInclude Include="gameFiles\UI\techTree\tech.h">
       <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>

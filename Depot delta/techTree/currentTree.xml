@@ -32,9 +32,9 @@
             <type>0</type>
             <modifyValue>1.1</modifyValue>
             <!-- 10% production speed increase -->
-            <cost>100</cost>
+            <cost>50</cost>
             <purchaseAmount>10</purchaseAmount>
-            <boughtAmount>1</boughtAmount>
+            <boughtAmount>0</boughtAmount>
             <upgradeLocation>0</upgradeLocation>
         </entities>
         <entities>
@@ -45,9 +45,9 @@
             <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
-            <cost>100</cost>
+            <cost>50</cost>
             <purchaseAmount>3</purchaseAmount>
-            <boughtAmount>1</boughtAmount>
+            <boughtAmount>0</boughtAmount>
             <upgradeLocation>0</upgradeLocation>
         </entities>
         <entities>
@@ -94,7 +94,7 @@
             <keyName>decreaseFuelCosts</keyName>
             <description>Decrease Fuel costs by 10%</description>
             <id>6</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -107,7 +107,7 @@
             <keyName>decreaseDoSCosts</keyName>
             <description>Decrease DoS costs by 10%</description>
             <id>7</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -120,7 +120,7 @@
             <keyName>decreaseAmmoCosts</keyName>
             <description>Decrease Ammo costs by 10%</description>
             <id>8</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -188,7 +188,7 @@
             <keyName>largerBasicInfantry</keyName>
             <description>Double basic units max squad size</description>
             <id>4</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>250</cost>
@@ -214,7 +214,7 @@
             <keyName>increaseBasicFuelEfficiency</keyName>
             <description>Increase fuel efficiency by 50% of basic units</description>
             <id>6</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.5</modifyValue>
             <cost>150</cost>
@@ -227,7 +227,7 @@
             <keyName>increaseBasicRateOfFire</keyName>
             <description>Increase rate of fire by 20% of basic units</description>
             <id>7</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.2</modifyValue>
             <cost>200</cost>
@@ -240,7 +240,7 @@
             <keyName>increaseBasicDamage</keyName>
             <description>Increase damage by 10% of basic units</description>
             <id>8</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.1</modifyValue>
             <cost>200</cost>
@@ -282,7 +282,7 @@
             <keyName>increaseBasicArmour</keyName>
             <description>Increase basic convoy armour by 15%</description>
             <id>3</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>
@@ -295,7 +295,7 @@
             <keyName>increaseBasicSpeed</keyName>
             <description>Increase basic convoy speed by 15%</description>
             <id>4</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>
@@ -308,7 +308,7 @@
             <keyName>increaseBasicCapacity</keyName>
             <description>Increase basic convoy capacity by 15%</description>
             <id>5</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>
