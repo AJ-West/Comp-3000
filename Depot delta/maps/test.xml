@@ -8473,7 +8473,23 @@
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
-                <Scrap>320</Scrap>
+                <Scrap>485</Scrap>
+            </Resources>
+        </entities>
+        <entities>
+            <name>Basic unit</name>
+            <id>3</id>
+            <health>100</health>
+            <x>380</x>
+            <y>343</y>
+            <target_x>412</target_x>
+            <target_y>375</target_y>
+            <Resources>
+                <Personnel>50</Personnel>
+                <Ammunition>2</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>50</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
         </entities>
     </layers>
