@@ -11,4 +11,5 @@ public:
 	virtual void updateTargets(vector<ZombieObj*> list);
 
 	virtual float getRateOfFire();
+	virtual int getDamage();
 };

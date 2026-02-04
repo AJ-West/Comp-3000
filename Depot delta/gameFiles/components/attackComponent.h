@@ -49,7 +49,7 @@ public:
 			int count = rComp->getResourcesCount(AMMUNITION);
 			if (count > 0) {
 				rComp->setResourcesCount(AMMUNITION, count - 1);
-				target->takeDamage(5);
+				target->takeDamage(owner->getDamage());
 				if (!target->getAlive()) {
 					target = nullptr;
 					owner->setAttacking(false);

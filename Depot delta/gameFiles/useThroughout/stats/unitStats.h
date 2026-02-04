@@ -15,8 +15,8 @@ struct UnitStats { // default
 	const char* art = "draftArt/basicUnit.png";
 	int movementSpeed = 50;
 	int maxHealth = 100;
-	std::vector<int> rMax = { 100, 100, 100, 100, 100 };
-	std::vector<int> rCount = { 50, 50, 50, 50, 50 };
+	std::vector<int> rMax = { 25, 250, 250, 250, 250 };
+	std::vector<int> rCount = { 25, 50, 50, 50, 50 };
 
 	int rTransferDistance = 50;
 	std::vector<int> rTransferRate = { 5,5,5,5,5 };
@@ -36,7 +36,11 @@ struct UnitStats { // default
 	}
 
 	float getROF() { // get rate of fire modifier
-		return unitTechVal.at("increaseRateOfFire") * unitTechVal.at("increaseBasicRateOfFire") * aCooldown;
+		return aCooldown * unitTechVal.at("increaseRateOfFire") * unitTechVal.at("increaseBasicRateOfFire");
+	}
+
+	int getDamage() {
+		return static_cast<int>(aDamage * unitTechVal.at("increaseBasicDamage"));
 	}
 
 	void assignHasResource(GameObject* unit) {

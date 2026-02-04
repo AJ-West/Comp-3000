@@ -19,3 +19,7 @@ void UnitObj::updateTargets(vector<ZombieObj*> list) {
 float UnitObj::getRateOfFire() {
 	return unitStats.getROF();
 }
+
+int UnitObj::getDamage() {
+	return unitStats.getDamage();
+}

@@ -115,8 +115,9 @@ public:
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
 	virtual int getID() { return 0; }
 	virtual int getMaxHealth() { return maxHealth; }
-	virtual float getRateOfFire() { return 1; }
-	
+	virtual float getRateOfFire() { return 1.0f; }
+	virtual int getDamage() { return 1; }
+
 	//virtual setters
 	virtual void setTarget(float x, float y) { cout << "target set"; }
 protected:
