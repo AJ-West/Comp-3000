@@ -77,19 +77,6 @@
             <upgradeLocation>0</upgradeLocation>
         </entities>
         <entities>
-            <name>Decrease Scrap Costs</name>
-            <keyName>decreaseScrapCosts</keyName>
-            <description>Decrease Scrap costs by 15%</description>
-            <id>5</id>
-            <status>2</status>
-            <type>0</type>
-            <modifyValue>0.85</modifyValue>
-            <cost>50</cost>
-            <purchaseAmount>3</purchaseAmount>
-            <boughtAmount>0</boughtAmount>
-            <upgradeLocation>0</upgradeLocation>
-        </entities>
-        <entities>
             <name>Decrease Fuel Costs</name>
             <keyName>decreaseFuelCosts</keyName>
             <description>Decrease Fuel costs by 10%</description>

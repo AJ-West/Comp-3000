@@ -43,7 +43,6 @@ unordered_map<string, float> depotTechVal = {
 	{"fuelProductionIncrease", 1},
 	{"dosProductionIncrease", 1},
 	{"ammoProductionIncrease", 1},
-	{"decreaseScrapCosts", 1},
 	{"decreaseFuelCosts", 1},
 	{"decreaseDoSCosts", 1},
 	{"decreaseAmmoCosts", 1},

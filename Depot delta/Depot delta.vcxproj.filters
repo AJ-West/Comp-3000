@@ -112,6 +112,9 @@
     <Filter Include="Source Files\gameFiles\UI%27s\techTree">
       <UniqueIdentifier>{5e95e973-db4a-4589-8b7c-49e32b0acdec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\UseThroughout\Stats">
+      <UniqueIdentifier>{834077ad-33bd-47d8-9bb2-2649ba06f6ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -197,6 +200,18 @@
     </ClCompile>
     <ClCompile Include="gameFiles\levelHandling\selectedHandler\states\treeSelected.cpp">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\useThroughout\stats\convoyStats.cpp">
+      <Filter>Source Files\gameFiles\UseThroughout\Stats</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\useThroughout\stats\unitStats.cpp">
+      <Filter>Source Files\gameFiles\UseThroughout\Stats</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\entities\Units\unitObject.cpp">
+      <Filter>Source Files\gameFiles\entities\humans\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\entities\Convoys\convoyObject.cpp">
+      <Filter>Source Files\gameFiles\entities\humans\Convoys</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -338,7 +353,7 @@
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\newUnitState.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler\states</Filter>
     </ClInclude>
-    <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStats.h">
+    <ClInclude Include="gameFiles\UI\resourceBoxes\UnitStatsBox.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
     </ClInclude>
     <ClInclude Include="gameFiles\UI\resourceBoxes\arrowButton.h">
@@ -355,6 +370,12 @@
     </ClInclude>
     <ClInclude Include="gameFiles\UI\techTree\techArrow.h">
       <Filter>Source Files\gameFiles\UI%27s\techTree</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\useThroughout\stats\convoyStats.h">
+      <Filter>Source Files\gameFiles\UseThroughout\Stats</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\useThroughout\stats\unitStats.h">
+      <Filter>Source Files\gameFiles\UseThroughout\Stats</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

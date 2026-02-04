@@ -23,22 +23,22 @@ void HumanObj::pathToTarget() {
 
 void HumanObj::updateStats(string keyName, bool forUnit) {
 	if (forUnit) {
-		if (keyName == "increaseUnitDoSEfficiency") {
+		if (keyName == "increaseUnitDoSEfficiency") { // need to do but requires rework to resource system
 			return;
 		}
-		if (keyName == "increaseUnitFuelEfficiency") {
+		if (keyName == "increaseUnitFuelEfficiency") { // need to do but requires rework to resource system
 			return;
 		}
 		if (keyName == "increaseRateOfFire") {
 			return;
 		}
-		if (keyName == "largerBasicInfantry") { // need to work out best way to seperate type of unit
+		if (keyName == "largerBasicInfantry") {
 			return;
 		}
 		if (keyName == "largerBasicCarryingCapacity") {
 			return;
 		}
-		if (keyName == "increaseBasicFuelEfficiency") {
+		if (keyName == "increaseBasicFuelEfficiency") { // need to do but requires rework to resource system
 			return;
 		}
 		if (keyName == "increaseBasicRateOfFire") {
@@ -52,7 +52,7 @@ void HumanObj::updateStats(string keyName, bool forUnit) {
 		if (keyName == "increaseConvoyCapacity") {
 			return;
 		}
-		if (keyName == "increaseConvoyFuelEfficiency") {
+		if (keyName == "increaseConvoyFuelEfficiency") { // need to do but requires rework to resource system
 			return;
 		}
 		if (keyName == "increaseBasicArmour") {

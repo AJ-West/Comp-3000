@@ -5,6 +5,8 @@
 #include "gameFiles/entities/Depot/depotObject.h"
 #include "gameFiles/entities/Units/unitObject.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
+#include "gameFiles/useThroughout/stats/unitStats.h"
+#include "gameFiles/useThroughout/stats/convoyStats.h"
 
 #include "gameFiles/UI/resourceBoxes/resourceBox.h"
 
@@ -79,13 +81,12 @@ public:
 	}
 
 	void addUnitComponents(UnitObj* unit, vector<int> amounts) {
-		unitStats stats;
-		stats.rCount[PERSONNEL] = amounts[PERSONNEL];
-		stats.rCount[AMMUNITION] = amounts[AMMUNITION];
-		stats.rCount[DOS] = amounts[DOS];
-		stats.rCount[FUEL] = amounts[FUEL];
-		stats.rCount[SCRAP] = amounts[SCRAP];
-		stats.addComponents(unit);		
+		unitStats.rCount[PERSONNEL] = amounts[PERSONNEL];
+		unitStats.rCount[AMMUNITION] = amounts[AMMUNITION];
+		unitStats.rCount[DOS] = amounts[DOS];
+		unitStats.rCount[FUEL] = amounts[FUEL];
+		unitStats.rCount[SCRAP] = amounts[SCRAP];
+		unitStats.addComponents(unit);
 	}
 
 	void makeConvoy(vector<int> amounts)
@@ -100,13 +101,12 @@ public:
 	}
 
 	void addConvoyComponents(ConvoyObj* convoy, vector<int> amounts) {
-		convoyStats stats;
-		stats.rCount[PERSONNEL] = amounts[PERSONNEL];
-		stats.rCount[AMMUNITION] = amounts[AMMUNITION];
-		stats.rCount[DOS] = amounts[DOS];
-		stats.rCount[FUEL] = amounts[FUEL];
-		stats.rCount[SCRAP] = amounts[SCRAP];
-		stats.addComponents(convoy);
+		convoyStats.rCount[PERSONNEL] = amounts[PERSONNEL];
+		convoyStats.rCount[AMMUNITION] = amounts[AMMUNITION];
+		convoyStats.rCount[DOS] = amounts[DOS];
+		convoyStats.rCount[FUEL] = amounts[FUEL];
+		convoyStats.rCount[SCRAP] = amounts[SCRAP];
+		convoyStats.addComponents(convoy);
 	}
 
 private:

@@ -1,5 +1,6 @@
 #include "gameFiles/fileHandling/mapLoader.h"
-
+#include "gameFiles/useThroughout/stats/unitStats.h"
+#include "gameFiles/useThroughout/stats/convoyStats.h"
 
 MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
 {
@@ -111,16 +112,15 @@ void MapLoader::loadUnit(XMLElement* entity)
 }
 
 void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
-    unitStats stats;
     if (entity->FirstChildElement("Resources")) {
 		XMLElement* resources = entity->FirstChildElement("Resources");
-		stats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
-        stats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
-        stats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
-        stats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
-        stats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+        unitStats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        unitStats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        unitStats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        unitStats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        unitStats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
-    stats.addComponents(unit);
+    unitStats.addComponents(unit);
 }
 
 void MapLoader::loadConvoy(XMLElement* entity)
@@ -140,16 +140,15 @@ void MapLoader::loadConvoy(XMLElement* entity)
 }
 
 void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
-    convoyStats stats;
     if (entity->FirstChildElement("Resources")) {
         XMLElement* resources = entity->FirstChildElement("Resources");
-        stats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
-        stats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
-        stats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
-        stats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
-        stats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+        convoyStats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        convoyStats.rCount[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        convoyStats.rCount[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        convoyStats.rCount[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        convoyStats.rCount[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
-    stats.addComponents(convoy);
+    convoyStats.addComponents(convoy);
 }
 
 void MapLoader::loadZombie(XMLElement* entity)

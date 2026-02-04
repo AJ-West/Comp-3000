@@ -68,16 +68,13 @@ public:
 			getComponent<resourceComponent>()->setResourceChange(AMMUNITION, getComponent<resourceComponent>()->getResourceChange(AMMUNITION));
 			return;
 		}
-		if (keyName == "decreaseScrapCosts") { // need to do
+		if (keyName == "decreaseFuelCosts") { // need to do but requires rework to resource system
 			return;
 		}
-		if (keyName == "decreaseFuelCosts") { // need to do
+		if (keyName == "decreaseDoSCosts") { // need to do but requires rework to resource system
 			return;
 		}
-		if (keyName == "decreaseDoSCosts") { // need to do
-			return;
-		}
-		if (keyName == "decreaseAmmoCosts") { // need to do
+		if (keyName == "decreaseAmmoCosts") { // need to do but requires rework to resource system
 			return;
 		}
 		if (keyName == "increasePersonnelCapacity") {

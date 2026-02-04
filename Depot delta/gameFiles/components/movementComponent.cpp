@@ -1,6 +1,6 @@
 #include "gameFiles/components/movementComponent.h"
-#include "gameFiles/entities/Units/unitObject.h"
-#include "gameFiles/entities/Convoys/convoyObject.h"
+#include "gameFiles/components/resourceComponent.h"
+#include "gameFiles/entities/humanObject.h"
 
 void movementComponent::update(GameObject* owner) { // update position based off direction of movement
 	SDL_FRect dimensions = owner->getDimensions();
@@ -21,7 +21,7 @@ void movementComponent::update(GameObject* owner) { // update position based off
 				} // Avoid overshooting
 				owner->setDimensions({ dimensions.x + dx / distance * moveDist, dimensions.y + dy / distance * moveDist, dimensions.w, dimensions.h });
 			}
-			if (typeid(*owner).name() == typeid(UnitObj).name() || typeid(*owner).name() == typeid(ConvoyObj).name()) {
+			if (typeid(*owner).name() == typeid(HumanObj).name()) {
 				owner->getComponent<resourceComponent>()->setResourceChange(FUEL, 0);
 			}
 		}

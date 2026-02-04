@@ -1,5 +1,5 @@
 #include "transferBox.h"
-#include "UnitStats.h"
+#include "UnitStatsBox.h"
 
 transferBox::transferBox(LevelManager* lManager, SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : ResourceBox(lManager, rSize), unit(sUnit), convoy(sConvoy) {
 	//add convoy->unit button
@@ -16,11 +16,11 @@ transferBox::~transferBox() {}
 void transferBox::addUnitInfo(GameObject* unit, bool second) {
 	if (second) {
 		SDL_FRect pos{ size.x + 539 * camera.xScale, size.y + 222 * camera.yScale, 303 * camera.xScale, 562 * camera.yScale };
-		elements.push_back(new UnitStats(unit, pos));
+		elements.push_back(new UnitStatsBox(unit, pos));
 		return;
 	}
 	SDL_FRect pos{ size.x + 157 * camera.xScale, size.y + 222 * camera.yScale, 318 * camera.xScale, 562 * camera.yScale };
-	elements.push_back(new UnitStats(unit, pos));
+	elements.push_back(new UnitStatsBox(unit, pos));
 }
 
 void transferBox::addArrows() {
