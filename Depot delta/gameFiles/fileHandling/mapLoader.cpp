@@ -84,6 +84,7 @@ void MapLoader::loadEntities(XMLElement* layer)
         }
 		entity = entity->NextSiblingElement("entities");
 	}
+    loadAllTransfer(layer);
     for (auto& unit : unitConvoyList) {
         if (typeid(*unit).name() == typeid(UnitObj).name()) { 
             unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
@@ -203,6 +204,38 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
     depot->getComponent<resourceComponent>()->setResourceChange(DOS, 5);
     depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 5);
     depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 5);
+}
+
+void MapLoader::loadAllTransfer(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string name = string(entity->FirstChildElement("name")->GetText());
+        if (name == "Basic Convoy") {
+            loadTransfer(entity);
+        }
+        entity = entity->NextSiblingElement("entities");
+    }
+}
+
+void MapLoader::loadTransfer(XMLElement* entity) {
+    for (auto unit : unitConvoyList) {
+        cout << entity->FirstChildElement("Transfering")->GetText() << '\n';
+        if (entity->FirstChildElement("Transfering")->GetText() != "- 1") {
+            if (XMLElement* resourceTransfer = entity->FirstChildElement("ResourceTransfer")) {
+                vector<int> transferAmount = { 0,0,0,0,0 };
+                transferAmount[PERSONNEL] = atoi(resourceTransfer->FirstChildElement("PersonnelChange")->GetText());
+                transferAmount[AMMUNITION] = atoi(resourceTransfer->FirstChildElement("AmmunitionChange")->GetText());
+                transferAmount[DOS] = atoi(resourceTransfer->FirstChildElement("DoSChange")->GetText());
+                transferAmount[FUEL] = atoi(resourceTransfer->FirstChildElement("FuelChange")->GetText());
+                transferAmount[SCRAP] = atoi(resourceTransfer->FirstChildElement("ScrapChange")->GetText());
+                for (auto convoy : unitConvoyList) {
+                    if (convoy->getID() == atoi(entity->FirstChildElement("Transfering")->GetText())) {
+                        unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, transferAmount);
+                    }
+                }
+            }
+        }
+    }
 }
 
 void MapLoader::renderTileMap(SDL_Renderer* renderer) {

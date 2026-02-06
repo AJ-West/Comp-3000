@@ -8463,7 +8463,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>940</health>
+            <health>930</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8473,45 +8473,28 @@
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
-                <Scrap>930</Scrap>
+                <Scrap>1000</Scrap>
             </Resources>
         </entities>
         <entities>
             <name>Basic unit</name>
             <id>2</id>
-            <health>70</health>
-            <x>439</x>
-            <y>272</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>90</health>
+            <x>209</x>
+            <y>433</y>
+            <target_x>241</target_x>
+            <target_y>465</target_y>
             <Resources>
-                <Personnel>10</Personnel>
-                <Ammunition>0</Ammunition>
+                <Personnel>25</Personnel>
+                <Ammunition>22</Ammunition>
                 <DoS>50</DoS>
-                <Fuel>29</Fuel>
-                <Scrap>45</Scrap>
-            </Resources>
-            <Transfering>-1</Transfering>
-        </entities>
-        <entities>
-            <name>Basic Convoy</name>
-            <id>3</id>
-            <health>100</health>
-            <x>415</x>
-            <y>231</y>
-            <target_x>447</target_x>
-            <target_y>262</target_y>
-            <Resources>
-                <Personnel>74</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>5</Fuel>
-                <Scrap>5</Scrap>
+                <Fuel>41</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
             <Transfering>2</Transfering>
             <ResourceTransfer>
-                <PersonnelChange>-5</PersonnelChange>
-                <AmmunitionChange>0</AmmunitionChange>
+                <PersonnelChange>0</PersonnelChange>
+                <AmmunitionChange>15</AmmunitionChange>
                 <DoSChange>0</DoSChange>
                 <FuelChange>0</FuelChange>
                 <ScrapChange>0</ScrapChange>
@@ -8521,18 +8504,25 @@
             <name>Basic Convoy</name>
             <id>4</id>
             <health>100</health>
-            <x>393</x>
-            <y>286</y>
+            <x>195</x>
+            <y>394</y>
             <target_x>0</target_x>
             <target_y>0</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
+                <Ammunition>25</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>17</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
-            <Transfering>-1</Transfering>
+            <Transfering>2</Transfering>
+            <ResourceTransfer>
+                <PersonnelChange>0</PersonnelChange>
+                <AmmunitionChange>15</AmmunitionChange>
+                <DoSChange>0</DoSChange>
+                <FuelChange>0</FuelChange>
+                <ScrapChange>0</ScrapChange>
+            </ResourceTransfer>
         </entities>
     </layers>
 </root>

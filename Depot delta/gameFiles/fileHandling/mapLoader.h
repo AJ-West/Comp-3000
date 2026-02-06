@@ -37,6 +37,9 @@ public:
 	void loadZombie(XMLElement* layer);
 	void loadDepot(XMLElement* layer);
 
+	void loadAllTransfer(XMLElement* layer);
+	void loadTransfer(XMLElement* entity);
+
 	void addUnitComponents(UnitObj* unit, XMLElement* entity);
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
 	void addZombieComponents(ZombieObj* zombie);

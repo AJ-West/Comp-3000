@@ -108,7 +108,6 @@ void MapSaver::saveNewUnit(XMLElement* layer, HumanObj* unit) {
     saveHealth(entity, unit);
     saveMovement(entity, unit);
     saveResources(entity, unit);
-    saveResourceTransfer(entity, unit);
 
     layer->InsertEndChild(entity);
 }
@@ -142,7 +141,6 @@ void MapSaver::saveDepot(XMLElement* entity, DepotObj* depot)
 {
     saveHealth(entity, depot);
     saveResources(entity, depot);
-    saveResourceTransfer(entity, depot);
 }
 
 void MapSaver::saveHealth(XMLElement* entity, GameObject* obj) {
