@@ -1,5 +1,7 @@
 #include "gameFiles/fileHandling/mapSaver.h"
 
+#include "gameFiles/components/resourceTransferComponent.h"
+
 MapSaver::MapSaver(const char* file)
 {
 	filename = file;
@@ -75,6 +77,7 @@ bool MapSaver::saveUnit(XMLElement* entity, vector<HumanObj*> units)
             saveHealth(entity, unit);
 			saveMovement(entity, unit);
             saveResources(entity, unit);
+            saveResourceTransfer(entity, unit);
             return true;
         }
     }
@@ -105,6 +108,7 @@ void MapSaver::saveNewUnit(XMLElement* layer, HumanObj* unit) {
     saveHealth(entity, unit);
     saveMovement(entity, unit);
     saveResources(entity, unit);
+    saveResourceTransfer(entity, unit);
 
     layer->InsertEndChild(entity);
 }
@@ -116,6 +120,7 @@ bool MapSaver::saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys)
             saveHealth(entity, convoy);
 			saveMovement(entity, convoy);
             saveResources(entity, convoy);
+            saveResourceTransfer(entity, convoy);
             return true;
         }
     }
@@ -137,6 +142,7 @@ void MapSaver::saveDepot(XMLElement* entity, DepotObj* depot)
 {
     saveHealth(entity, depot);
     saveResources(entity, depot);
+    saveResourceTransfer(entity, depot);
 }
 
 void MapSaver::saveHealth(XMLElement* entity, GameObject* obj) {
@@ -172,6 +178,54 @@ void MapSaver::saveResources(XMLElement* entity, GameObject* obj) {
         resources->InsertEndChild(scrap);
         entity->InsertEndChild(resources);
     }
+}
+
+void MapSaver::saveResourceTransfer(XMLElement* entity, GameObject* obj) {
+    shared_ptr<resourceTransferComponent> rTC;
+    if (rTC = obj->getComponent<resourceTransferComponent>()) {
+        if (!entity->FirstChildElement("Transfering")) {
+            XMLElement* transfering = doc.NewElement("Transfering");
+            entity->InsertEndChild(transfering);
+        }
+        if (saveTransfering(entity, rTC->getTarget(), rTC->getTransfering())) {
+            if (entity->FirstChildElement("ResourceTransfer")) {
+                XMLElement* resources = entity->FirstChildElement("ResourceTransfer");
+                resources->FirstChildElement("PersonnelChange")->SetText(rTC->getTransferAmount(PERSONNEL));
+                resources->FirstChildElement("AmmunitionChange")->SetText(rTC->getTransferAmount(AMMUNITION));
+                resources->FirstChildElement("DoSChange")->SetText(rTC->getTransferAmount(DOS));
+                resources->FirstChildElement("FuelChange")->SetText(rTC->getTransferAmount(FUEL));
+                resources->FirstChildElement("ScrapChange")->SetText(rTC->getTransferAmount(SCRAP));
+            }
+            else {
+                XMLElement* resources = doc.NewElement("ResourceTransfer");
+                XMLElement* personnel = doc.NewElement("PersonnelChange");
+                XMLElement* ammunition = doc.NewElement("AmmunitionChange");
+                XMLElement* dos = doc.NewElement("DoSChange");
+                XMLElement* fuel = doc.NewElement("FuelChange");
+                XMLElement* scrap = doc.NewElement("ScrapChange");
+                personnel->SetText(rTC->getTransferAmount(PERSONNEL));
+                ammunition->SetText(rTC->getTransferAmount(AMMUNITION));
+                dos->SetText(rTC->getTransferAmount(DOS));
+                fuel->SetText(rTC->getTransferAmount(FUEL));
+                scrap->SetText(rTC->getTransferAmount(SCRAP));
+                resources->InsertEndChild(personnel);
+                resources->InsertEndChild(ammunition);
+                resources->InsertEndChild(dos);
+                resources->InsertEndChild(fuel);
+                resources->InsertEndChild(scrap);
+                entity->InsertEndChild(resources);
+            }
+        }
+    }
+}
+
+bool MapSaver::saveTransfering(XMLElement* entity, GameObject* target, bool transfering){
+    int targetID = -1;
+    if (transfering) {
+        targetID = target->getID();
+    }
+    entity->FirstChildElement("Transfering")->SetText(targetID);
+    return targetID != -1;
 }
 
 void MapSaver::saveMovement(XMLElement* entity, GameObject* obj) {

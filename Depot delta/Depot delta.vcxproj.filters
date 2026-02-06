@@ -263,9 +263,6 @@
     <ClInclude Include="gameFiles\fileHandling\mapLoader.h">
       <Filter>Source Files\gameFiles\fileHandling\loading</Filter>
     </ClInclude>
-    <ClInclude Include="gameFiles\fileHandling\mapSaver.h">
-      <Filter>Source Files\gameFiles\fileHandling\saving</Filter>
-    </ClInclude>
     <ClInclude Include="gameFiles\levelHandling\levelManager.h">
       <Filter>Source Files\gameFiles\level handling\levelManager</Filter>
     </ClInclude>
@@ -376,6 +373,9 @@
     </ClInclude>
     <ClInclude Include="gameFiles\useThroughout\stats\unitStats.h">
       <Filter>Source Files\gameFiles\UseThroughout\Stats</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\fileHandling\mapSaver.h">
+      <Filter>Source Files\gameFiles\fileHandling\saving</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

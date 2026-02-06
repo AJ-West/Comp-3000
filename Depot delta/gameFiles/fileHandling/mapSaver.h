@@ -37,6 +37,8 @@ public:
 
 	void saveHealth(XMLElement* entity, GameObject* obj);
 	void saveResources(XMLElement* entity, GameObject* obj);
+	void saveResourceTransfer(XMLElement* entity, GameObject* obj);
+	bool saveTransfering(XMLElement* entity, GameObject* target, bool transfering);
 	void saveMovement(XMLElement* entity, GameObject* obj);
 
 private:

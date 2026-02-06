@@ -153,6 +153,11 @@ public:
 		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - camera.dimen.x, targetRect.x + targetRect.w / 2, targetRect.y + targetRect.h / 2);
 	}
 
+	//getters
+	GameObject* getTarget() { return target; }
+	bool getTransfering() { return transfering; }
+	int getTransferAmount(int index) { return transferAmount[index]; }
+
 	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
 	virtual ~resourceTransferComponent() {}
 private:
