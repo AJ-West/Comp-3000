@@ -19,6 +19,7 @@
 #include "gameFiles/entities/Depot/depotObject.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
 #include "gameFiles/entities/Zombies/zombieObject.h"
+#include "gameFiles/entities/Buildings/building.h"
 
 #include "gameFiles/components/renderComponent.h"
 #include "gameFiles/components/buttonComponent.h"
@@ -75,6 +76,7 @@ private:
 	vector<ZombieObj*> zombieList;
 	DepotObj* depot;
 	GameObject* hoveredUnit = nullptr;
+	BuildingObj* building;
 
 	HandleSelected* handler;
 

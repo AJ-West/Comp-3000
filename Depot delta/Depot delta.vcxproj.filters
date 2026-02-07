@@ -115,6 +115,9 @@
     <Filter Include="Source Files\gameFiles\UseThroughout\Stats">
       <UniqueIdentifier>{834077ad-33bd-47d8-9bb2-2649ba06f6ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\entities\buildings">
+      <UniqueIdentifier>{46b25afd-d90b-4c29-9368-4c2820f6fd8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -212,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="gameFiles\entities\Convoys\convoyObject.cpp">
       <Filter>Source Files\gameFiles\entities\humans\Convoys</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\entities\Buildings\building.cpp">
+      <Filter>Source Files\gameFiles\entities\buildings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +382,9 @@
     </ClInclude>
     <ClInclude Include="gameFiles\fileHandling\mapSaver.h">
       <Filter>Source Files\gameFiles\fileHandling\saving</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\entities\Buildings\building.h">
+      <Filter>Source Files\gameFiles\entities\buildings</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,6 +19,10 @@ public:
 
 	void updateResource() {
 		clampResources(PERSONNEL);
+		if (hasResource[PERSONNEL] != tempHasResource[PERSONNEL]) {
+			hasResource[PERSONNEL] = tempHasResource[PERSONNEL];
+			owner->setAlive(hasResource[PERSONNEL]);
+		}
 		clampResources(AMMUNITION);
 		clampResources(DOS);
 		clampResources(FUEL);

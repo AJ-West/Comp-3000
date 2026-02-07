@@ -19,6 +19,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     spawner = new ZombieSpawner(this);
 
     handler = new HandleSelected(UI);
+
+    building = new BuildingObj(5, 5, 8, 8, 100, PERSONNEL, true);
 }
 
 LevelManager::~LevelManager()
@@ -56,6 +58,9 @@ void LevelManager::unpausedRender()
 {
     time->update();
     mapLoader->renderTileMap(renderer);
+    building->Update();
+    building->render(renderer);
+    building->renderHover(renderer);
     if (spawner->checkIfSpawn()) {
         for (auto& unit : unitConvoys) {
             if (unit) {

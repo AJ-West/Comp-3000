@@ -148,6 +148,7 @@
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="dependencies\tinyxml2.cpp" />
     <ClCompile Include="gameFiles\components\movementComponent.cpp" />
+    <ClCompile Include="gameFiles\entities\Buildings\building.cpp" />
     <ClCompile Include="gameFiles\entities\Convoys\convoyObject.cpp" />
     <ClCompile Include="gameFiles\entities\humanObject.cpp" />
     <ClCompile Include="gameFiles\entities\Units\unitObject.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="gameFiles\components\renderComponent.h" />
     <ClInclude Include="gameFiles\components\resourceComponent.h" />
     <ClInclude Include="gameFiles\components\resourceTransferComponent.h" />
+    <ClInclude Include="gameFiles\entities\Buildings\building.h" />
     <ClInclude Include="gameFiles\entities\Convoys\convoyObject.h" />
     <ClInclude Include="gameFiles\entities\Depot\depotObject.h" />
     <ClInclude Include="gameFiles\entities\gameObject.h" />

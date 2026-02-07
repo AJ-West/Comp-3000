@@ -7,6 +7,7 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dependencies\imgui
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dependencies\imgui\imgui_widgets.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\imgui_widgets.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\dependencies\tinyxml2.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\tinyxml2.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\components\movementComponent.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\movementComponent.obj
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\entities\Buildings\building.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\building.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\entities\Convoys\convoyObject.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\convoyObject.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\entities\humanObject.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\humanObject.obj
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\entities\Units\unitObject.cpp;C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\x64\Debug\unitObject.obj

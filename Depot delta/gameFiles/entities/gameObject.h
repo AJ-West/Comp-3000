@@ -94,6 +94,7 @@ public:
 	virtual void clickAway() { cout << "clickAway"; }; // used for when clicking away from the selected object
 
 	//getters
+	map<type_index, shared_ptr<Component>> getComponents() { return components; }
 	SDL_Texture getTexture() { return texture; }
 	SDL_FRect getDimensions() { return size; }
 	Vec2 getPos() { return { size.x + size.w / 2, size.y + size.h / 2 }; }
@@ -110,6 +111,7 @@ public:
 	void setDimensions(SDL_FRect newSize) { size = newSize; }
 	void setHovering(bool hover) { hovering = hover; }
 	void setAttacking(bool attack) { attacking = attack; }
+	void setAlive(bool life) { alive = life; }
 
 	//virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };

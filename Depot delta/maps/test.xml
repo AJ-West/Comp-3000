@@ -8463,7 +8463,7 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>930</health>
+            <health>925</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8486,12 +8486,12 @@
             <target_y>465</target_y>
             <Resources>
                 <Personnel>25</Personnel>
-                <Ammunition>22</Ammunition>
+                <Ammunition>4</Ammunition>
                 <DoS>50</DoS>
                 <Fuel>41</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
-            <Transfering>2</Transfering>
+            <Transfering>-1</Transfering>
             <ResourceTransfer>
                 <PersonnelChange>0</PersonnelChange>
                 <AmmunitionChange>15</AmmunitionChange>
@@ -8503,19 +8503,19 @@
         <entities>
             <name>Basic Convoy</name>
             <id>4</id>
-            <health>100</health>
-            <x>195</x>
-            <y>394</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>90</health>
+            <x>39</x>
+            <y>108</y>
+            <target_x>71</target_x>
+            <target_y>140</target_y>
             <Resources>
                 <Personnel>50</Personnel>
-                <Ammunition>25</Ammunition>
+                <Ammunition>10</Ammunition>
                 <DoS>50</DoS>
-                <Fuel>17</Fuel>
+                <Fuel>6</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
-            <Transfering>2</Transfering>
+            <Transfering>-1</Transfering>
             <ResourceTransfer>
                 <PersonnelChange>0</PersonnelChange>
                 <AmmunitionChange>15</AmmunitionChange>
