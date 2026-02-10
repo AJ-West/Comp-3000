@@ -2,10 +2,11 @@
 #include "gameFiles/entities/gameObject.h"
 #include "gameFiles/components/resourceComponent.h"
 #include "gameFiles/components/buttonComponent.h"
+#include "gameFiles/components/renderComponent.h"
 
 class BuildingObj : public GameObject {
 public:
-	BuildingObj(int x, int y, int width, int height, int health, int type, bool used);
+	BuildingObj(int x, int y, int width, int height, int health, int type, bool used, SDL_Renderer* renderer);
 
 	virtual void Update();
 
@@ -14,8 +15,6 @@ public:
 	void clickAway();
 
 	void renderHover(SDL_Renderer* renderer);
-
-	void render(SDL_Renderer* renderer);
 
 private:
 

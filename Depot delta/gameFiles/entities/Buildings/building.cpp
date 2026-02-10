@@ -1,6 +1,6 @@
 #include "gameFiles/entities/Buildings/building.h"
 
-BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int type, bool used) : GameObject(x, y, width, height, health), rType(type) {
+BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int type, bool used, SDL_Renderer* renderer) : GameObject(x, y, width, height, health), rType(type) {
 	setAlive(used);
 
     vector<int> max = { 100, 100, 100, 100, 100 };
@@ -11,6 +11,7 @@ BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int ty
     AddComponent(make_shared<resourceComponent>(this, max, count, loadResourceTextures()));
     getComponent<resourceComponent>()->setResourceChange(rType, -5);
 	AddComponent(make_shared<buttonComponent>(this));
+	AddComponent(make_shared<renderComponent>(this, renderer, "draftArt/building.png"));
 }
 
 //update all components
@@ -20,6 +21,9 @@ void BuildingObj::Update() {
 		for (auto& pair : getComponents()) {
 			pair.second->update(this);
 		}
+	}
+	else {
+		getComponent<renderComponent>()->update(this);
 	}
 }
 
@@ -37,13 +41,4 @@ void BuildingObj::renderHover(SDL_Renderer* renderer) { // needs removing when c
 		SDL_FRect tSize{ 1254.0f * camera.xScale, 60.0f * camera.yScale, 182.0f * camera.xScale, 48.0f * camera.yScale };
 		rComp->renderResources(renderer, tSize);
 	}
-}
-
-void BuildingObj::render(SDL_Renderer* renderer) {
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	if (alive) { SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); }
-	SDL_FRect size = getDimensions();
-	size.x -= camera.dimen.x;
-	size.y -= camera.dimen.y;
-	SDL_RenderFillRect(renderer, &size);
 }

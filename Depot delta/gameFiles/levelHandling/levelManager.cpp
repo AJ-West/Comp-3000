@@ -19,7 +19,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     handler = new HandleSelected(UI);
 
-    building = make_shared<BuildingObj>(5, 5, 8, 8, 100, PERSONNEL, true);
+    building = make_shared<BuildingObj>(5, 5, 8, 8, 100, PERSONNEL, true, renderer);
     allObjects->emplace_back(building);
 }
 
@@ -59,8 +59,6 @@ void LevelManager::unpausedRender()
     time->update();
     mapLoader->renderTileMap(renderer);
     building->Update();
-    building->render(renderer);
-    building->renderHover(renderer);
     if (spawner->checkIfSpawn()) {
         for (auto& unit : *unitConvoys) {
             if (unit) {
