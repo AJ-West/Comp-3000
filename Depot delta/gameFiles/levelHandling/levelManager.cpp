@@ -7,11 +7,10 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
     mapLoader = new MapLoader("maps/test.xml", renderer);
     unitConvoys = mapLoader->getUnitConvoyList();
-    depot = mapLoader->getDepot();
-	zombieList = mapLoader->getZombieList();
-    vector<GameObject*> allObjects;
-	allObjects.insert(allObjects.end(), unitConvoys.begin(), unitConvoys.end());
-	allObjects.push_back(depot);
+    depot = shared_ptr<DepotObj>(mapLoader->getDepot());
+    zombieList = mapLoader->getZombieList();
+	allObjects->insert(allObjects->end(), unitConvoys->begin(), unitConvoys->end());
+	allObjects->emplace_back(depot);
 
     time = new dayCycle();
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
@@ -20,7 +19,8 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 
     handler = new HandleSelected(UI);
 
-    building = new BuildingObj(5, 5, 8, 8, 100, PERSONNEL, true);
+    building = make_shared<BuildingObj>(5, 5, 8, 8, 100, PERSONNEL, true);
+    allObjects->emplace_back(building);
 }
 
 LevelManager::~LevelManager()
@@ -31,7 +31,7 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
-    saver.saveFile(unitConvoys, depot, zombieList);
+    saver.saveFile(*unitConvoys, depot, *zombieList);
 }
 
 // Handles user input
@@ -62,7 +62,7 @@ void LevelManager::unpausedRender()
     building->render(renderer);
     building->renderHover(renderer);
     if (spawner->checkIfSpawn()) {
-        for (auto& unit : unitConvoys) {
+        for (auto& unit : *unitConvoys) {
             if (unit) {
                 if (typeid(*unit).name() == typeid(UnitObj).name()) {
                     unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
@@ -70,9 +70,10 @@ void LevelManager::unpausedRender()
             }
         }
     }
+
     depot->Update();
     hoveredUnit = nullptr;
-    for (auto& unit : unitConvoys) {
+    for (auto& unit : *unitConvoys) {
         if (unit) {
             unit->Update();
             if (unit->getHealth() <= 0) {
@@ -80,8 +81,6 @@ void LevelManager::unpausedRender()
                     handler->setStateEnum(INT_MAX);
                     handler->decideState(this);
                 }
-                delete unit;
-                unit = nullptr;
             }
             else if (unit->getHovering()) {
                 hoveredUnit = unit;
@@ -89,27 +88,23 @@ void LevelManager::unpausedRender()
         }
     }
 
-    unitConvoys.erase(
-        remove_if(unitConvoys.begin(), unitConvoys.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        unitConvoys.end()
+    unitConvoys->erase(
+        remove_if(unitConvoys->begin(), unitConvoys->end(),
+            [](shared_ptr<HumanObj> ptr) { return ptr->getHealth() <= 0; }),
+        unitConvoys->end()
     );
 
-    for (auto& zombie : zombieList) {
+    for (auto& zombie : *zombieList) {
         if (zombie) {
             zombie->updateTargets(unitConvoys);
             zombie->Update();
-            if (zombie->getHealth() <= 0) {
-                delete zombie;
-                zombie = nullptr;
-            }
         }
     }
 
-    zombieList.erase(
-        remove_if(zombieList.begin(), zombieList.end(),
-            [](const GameObject* ptr) { return ptr == nullptr; }),
-        zombieList.end()
+    zombieList->erase(
+        remove_if(zombieList->begin(), zombieList->end(),
+            [](shared_ptr<ZombieObj> ptr) { return ptr->getHealth() <= 0; }),
+        zombieList->end()
     );
 
     camera.update();
@@ -125,16 +120,16 @@ void LevelManager::unpausedRender()
 void LevelManager::pausedRender()
 {    
     mapLoader->renderTileMap(renderer);
-    depot->getComponent<renderComponent>()->update(depot);
+    depot->getComponent<renderComponent>()->update(depot.get());
     hoveredUnit = nullptr;
-    for (auto& unit : unitConvoys) {
+    for (auto& unit : *unitConvoys) {
         if (unit) {
-            unit->getComponent<renderComponent>()->update(unit);
+            unit->getComponent<renderComponent>()->update(unit.get());
         }
     }
-    for (auto& zombie : zombieList) {
+    for (auto& zombie : *zombieList) {
         if (zombie) {
-            zombie->getComponent<renderComponent>()->update(zombie);
+            zombie->getComponent<renderComponent>()->update(zombie.get());
         }
     }
     if (hoveredUnit) {
@@ -147,11 +142,11 @@ void LevelManager::pausedRender()
 }
 
 void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
-    unitConvoys.emplace_back(unitConvoy);
+    unitConvoys->emplace_back(unitConvoy);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
-    zombieList.emplace_back(zombie);
+    zombieList->emplace_back(zombie);
 }
 
 //Handles zoom change
@@ -188,7 +183,7 @@ void LevelManager::clampZoom(){
 }
 
 void LevelManager::updateStats(string keyName, bool forUnit) {
-    for (auto unit : unitConvoys) {
+    for (auto unit : *unitConvoys) {
         unit->updateStats(keyName, forUnit);
     }
 }

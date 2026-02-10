@@ -85,12 +85,12 @@ void MapLoader::loadEntities(XMLElement* layer)
 		entity = entity->NextSiblingElement("entities");
 	}
     loadAllTransfer(layer);
-    for (auto& unit : unitConvoyList) {
+    for (auto& unit : *unitConvoyList) {
         if (typeid(*unit).name() == typeid(UnitObj).name()) { 
             unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
         }
     }
-	for (auto& zombie : zombieList) {
+	for (auto& zombie : *zombieList) {
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoyList);
         zombie->getComponent<nearestComponent>()->setDepot(depot);
 	}
@@ -104,12 +104,12 @@ void MapLoader::loadUnit(XMLElement* entity)
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = 4; // number of tiles
     int height = 4;
-    UnitObj* unit = new UnitObj(x, y, width, height, health, id);
-    addUnitComponents(unit, entity);
+    auto unit = make_shared<UnitObj>(x, y, width, height, health, id);
+    addUnitComponents(unit.get(), entity);
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    unitConvoyList.emplace_back(unit);
+    unitConvoyList->emplace_back(unit);
 }
 
 void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
@@ -137,7 +137,7 @@ void MapLoader::loadConvoy(XMLElement* entity)
     if (entity->FirstChildElement("target_x")) {
         convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    unitConvoyList.emplace_back(convoy);
+    unitConvoyList->emplace_back(convoy);
 }
 
 void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
@@ -165,7 +165,7 @@ void MapLoader::loadZombie(XMLElement* entity)
     if (entity->FirstChildElement("target_x")) {
         zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
-    zombieList.emplace_back(zombie);
+    zombieList->emplace_back(zombie);
 }
 
 void MapLoader::addZombieComponents(ZombieObj* zombie) {
@@ -218,7 +218,7 @@ void MapLoader::loadAllTransfer(XMLElement* layer) {
 }
 
 void MapLoader::loadTransfer(XMLElement* entity) {
-    for (auto unit : unitConvoyList) {
+    for (auto unit : *unitConvoyList) {
         cout << entity->FirstChildElement("Transfering")->GetText() << '\n';
         if (entity->FirstChildElement("Transfering")->GetText() != "- 1") {
             if (XMLElement* resourceTransfer = entity->FirstChildElement("ResourceTransfer")) {
@@ -228,9 +228,9 @@ void MapLoader::loadTransfer(XMLElement* entity) {
                 transferAmount[DOS] = atoi(resourceTransfer->FirstChildElement("DoSChange")->GetText());
                 transferAmount[FUEL] = atoi(resourceTransfer->FirstChildElement("FuelChange")->GetText());
                 transferAmount[SCRAP] = atoi(resourceTransfer->FirstChildElement("ScrapChange")->GetText());
-                for (auto convoy : unitConvoyList) {
+                for (auto convoy : *unitConvoyList) {
                     if (convoy->getID() == atoi(entity->FirstChildElement("Transfering")->GetText())) {
-                        unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, transferAmount);
+                        unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy.get(), transferAmount);
                     }
                 }
             }

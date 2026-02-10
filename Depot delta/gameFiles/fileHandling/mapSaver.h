@@ -25,21 +25,21 @@ public:
 	MapSaver(const char* filename);
 	~MapSaver();
 
-	bool saveUnit(XMLElement* entity, vector<HumanObj*> units);
-	void saveNewUnit(XMLElement* layer, HumanObj* unit);
+	bool saveUnit(XMLElement* entity, vector<shared_ptr<HumanObj>> units);
+	void saveNewUnit(XMLElement* layer, shared_ptr < HumanObj> unit);
 
-	bool saveConvoy(XMLElement* entity, vector<ConvoyObj*> convoys);
+	bool saveConvoy(XMLElement* entity, vector<shared_ptr<ConvoyObj>> convoys);
 
-	bool saveZombie(XMLElement* entity, vector<ZombieObj*> zombie);
-	void saveDepot(XMLElement* entity, DepotObj* depot);
+	bool saveZombie(XMLElement* entity, vector< shared_ptr<ZombieObj>> zombie);
+	void saveDepot(XMLElement* entity, shared_ptr < DepotObj> depot);
 
-	void saveFile(vector<HumanObj*> unitConvoys, DepotObj* depot, vector<ZombieObj*> zombies);
+	void saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < DepotObj> depot, vector< shared_ptr<ZombieObj>> zombies);
 
-	void saveHealth(XMLElement* entity, GameObject* obj);
-	void saveResources(XMLElement* entity, GameObject* obj);
-	void saveResourceTransfer(XMLElement* entity, GameObject* obj);
-	bool saveTransfering(XMLElement* entity, GameObject* target, bool transfering);
-	void saveMovement(XMLElement* entity, GameObject* obj);
+	void saveHealth(XMLElement* entity, shared_ptr < GameObject> obj);
+	void saveResources(XMLElement* entity, shared_ptr < GameObject> obj);
+	void saveResourceTransfer(XMLElement* entity, shared_ptr < GameObject> obj);
+	bool saveTransfering(XMLElement* entity, shared_ptr < GameObject> target, bool transfering);
+	void saveMovement(XMLElement* entity, shared_ptr < GameObject> obj);
 
 private:
 	XMLDocument doc;

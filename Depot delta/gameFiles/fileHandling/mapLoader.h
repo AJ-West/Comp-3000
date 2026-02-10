@@ -48,8 +48,8 @@ public:
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters
-	vector<HumanObj*> getUnitConvoyList() { return unitConvoyList; }
-	vector<ZombieObj*> getZombieList() { return zombieList; }
+	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoyList() { return unitConvoyList; }
+	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
 
 private:
@@ -61,6 +61,6 @@ private:
 	SDL_Texture* tilemapTexture;
 
 	DepotObj* depot;
-	vector<HumanObj*> unitConvoyList;
-	vector<ZombieObj*> zombieList;
+	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoyList = make_shared<vector<shared_ptr<HumanObj>>>();
+	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList = make_shared<vector<shared_ptr<ZombieObj>>>();
 };

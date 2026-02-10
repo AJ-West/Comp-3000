@@ -12,7 +12,7 @@ void UnitObj::renderHover(SDL_Renderer* renderer) {
 	}
 }
 
-void UnitObj::updateTargets(vector<ZombieObj*> list) {
+void UnitObj::updateTargets(shared_ptr<vector<shared_ptr<ZombieObj>>> list) {
 	getComponent<attackComponent>()->setPotentialTargets(list);
 };
 

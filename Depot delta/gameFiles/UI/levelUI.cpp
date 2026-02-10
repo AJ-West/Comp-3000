@@ -74,7 +74,7 @@ void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {
 }
 
 void levelUI::createTechTree() {
-	tree = new TechTree(renderer, manager, manager->getDepot());
+	tree = new TechTree(renderer, manager, manager->getDepot().get());
 }
 
 bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI

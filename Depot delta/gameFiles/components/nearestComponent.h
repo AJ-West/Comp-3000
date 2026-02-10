@@ -11,15 +11,15 @@ public:
 
 	void findClosestTarget() {
 		nearestUnit = nullptr;
-		for (auto unit : nearbyUnits) {
-			if (distanceToUnit(unit) <= sightDistance) {
+		for (auto unit : *nearbyUnits) {
+			if (distanceToUnit(unit.get()) <= sightDistance) {
 				if (!nearestUnit) {
-					nearestUnit = unit;
-					distanceToNearest = distanceToUnit(unit);
+					nearestUnit = unit.get();
+					distanceToNearest = distanceToUnit(unit.get());
 				}
-				else if (distanceToUnit(unit) < distanceToNearest) {
-					nearestUnit = unit;
-					distanceToNearest = distanceToUnit(unit);
+				else if (distanceToUnit(unit.get()) < distanceToNearest) {
+					nearestUnit = unit.get();
+					distanceToNearest = distanceToUnit(unit.get());
 				}
 			}
 		}
@@ -53,7 +53,7 @@ public:
 	}
 
 	//setters
-	void setnearbyUnits(vector<HumanObj*> units) { 
+	void setnearbyUnits(shared_ptr<vector<shared_ptr<HumanObj>>> units) {
 		nearbyUnits = units;
 		if (depot) { // without will try to find a target before completed spawning
 			findClosestTarget();
@@ -65,7 +65,7 @@ public:
 	virtual ~nearestComponent() {}
 
 private:
-	vector<HumanObj*> nearbyUnits;
+	shared_ptr<vector<shared_ptr<HumanObj>>> nearbyUnits;
 	GameObject* nearestUnit = nullptr;
 
 	DepotObj* depot = nullptr;

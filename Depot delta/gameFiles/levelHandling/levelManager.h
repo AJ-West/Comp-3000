@@ -56,11 +56,11 @@ public:
 	void updateStats(string keyName, bool forUnit);
 
 	//getters
-	int getUnitConvoysSize() { return unitConvoys.size(); }
-	vector<HumanObj*> getUnitConvoys() { return unitConvoys; }
-	int getZombiesSize() { return zombieList.size(); }
-	int getNextID() { return unitConvoys.size() + zombieList.size() + 2; } // add 1 for depot and new object for total number of objects
-	DepotObj* getDepot() { return depot; } 
+	int getUnitConvoysSize() { return unitConvoys->size(); }
+	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoys() { return unitConvoys; }
+	int getZombiesSize() { return zombieList->size(); }
+	int getNextID() { return unitConvoys->size() + zombieList->size() + 2; } // add 1 for depot and new object for total number of objects
+	shared_ptr<DepotObj> getDepot() { return depot; }
 
 	//setters
 	void setPaused(bool pause) { paused = pause; }
@@ -72,11 +72,12 @@ private:
 	ZombieSpawner* spawner;
 
 	MapLoader* mapLoader;
-	vector<HumanObj*> unitConvoys;
-	vector<ZombieObj*> zombieList;
-	DepotObj* depot;
-	GameObject* hoveredUnit = nullptr;
-	BuildingObj* building;
+	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoys;
+	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList;
+	shared_ptr<DepotObj> depot;
+	shared_ptr<GameObject> hoveredUnit = nullptr;
+	shared_ptr<BuildingObj> building;
+	shared_ptr<vector<shared_ptr<GameObject>>> allObjects = make_shared<vector<shared_ptr<GameObject>>>();
 
 	HandleSelected* handler;
 

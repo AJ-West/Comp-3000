@@ -13,7 +13,7 @@ public:
 
 	void renderHover(SDL_Renderer* renderer) { cout << "render hover"; } // need at a later date to show zombie health on hover
 
-	virtual void updateTargets(vector<HumanObj*> list) {
+	virtual void updateTargets(shared_ptr<vector<shared_ptr<HumanObj>>> list) {
 		getComponent<nearestComponent>()->setnearbyUnits(list);
 	}
 

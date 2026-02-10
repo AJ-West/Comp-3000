@@ -4,6 +4,7 @@
 class HumanObj : public GameObject {
 public:
 	HumanObj(int x, int y, int width, int height, int health, int id) : GameObject(x, y, width, height, health), ID(id) {}
+	virtual ~HumanObj() = default;
 
 	void onClick();
 

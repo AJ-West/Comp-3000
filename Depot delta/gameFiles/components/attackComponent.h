@@ -20,13 +20,13 @@ public:
 	void checkRange() {
 		SDL_FRect pos = owner->getDimensions();
 		Vec2 own{ pos.x + pos.w / 2, pos.y + pos.h / 2 };
-		for (auto& potTarget : targets) {
+		for (auto& potTarget : *targets) {
 			if (potTarget) {
 				float distance = getDistance(own, potTarget->getPos());
 				if (distance < targetDistance && distance < attackRange) {
-					target = potTarget;
+					target = potTarget.get();
 					targetDistance = distance;
-					owner->setTargetObject(potTarget);
+					owner->setTargetObject(target);
 					cout << "firing" << '\n';
 					return;
 				}
@@ -76,7 +76,7 @@ public:
 		bullets->render(renderer);
 	}
 
-	void setPotentialTargets(vector<ZombieObj*> potTargets) { targets = potTargets; }
+	void setPotentialTargets(shared_ptr<vector<shared_ptr<ZombieObj>>> potTargets) { targets = potTargets; }
 
 	attackComponent(GameObject* obj, int damage, int range) : Component(obj), maxDamage(damage), attackRange(range) {	}
 	virtual ~attackComponent() {}
@@ -87,7 +87,7 @@ private:
 	int attackRange;
 	int attackCooldownMS;
 	int bulletCooldownMS;
-	vector<ZombieObj*> targets;
+	shared_ptr<vector<shared_ptr<ZombieObj>>> targets;
 	ZombieObj* target = nullptr;
 	bulletHandler* bullets = new bulletHandler();
 
