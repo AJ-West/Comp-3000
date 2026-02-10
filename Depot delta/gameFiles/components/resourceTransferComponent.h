@@ -104,7 +104,8 @@ public:
 		float dx = (ownerRect.x + ownerRect.w / 2) - (targetRect.x + targetRect.w / 2);
 		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
 		float distance = sqrt(dx * dx + dy * dy);
-		if (distance <= transferDistance) {
+		//if (distance <= transferDistance) {
+		if (distance <= 1000) {
 			return true;
 		}
 		return false;

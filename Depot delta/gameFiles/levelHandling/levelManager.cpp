@@ -120,21 +120,13 @@ void LevelManager::unpausedRender()
 void LevelManager::pausedRender()
 {    
     mapLoader->renderTileMap(renderer);
-    depot->getComponent<renderComponent>()->update(depot.get());
-    hoveredUnit = nullptr;
-    for (auto& unit : *unitConvoys) {
-        if (unit) {
-            unit->getComponent<renderComponent>()->update(unit.get());
-        }
+    for (auto& obj : *allObjects) {
+        obj->getComponent<renderComponent>()->update(obj.get());
     }
     for (auto& zombie : *zombieList) {
         if (zombie) {
             zombie->getComponent<renderComponent>()->update(zombie.get());
         }
-    }
-    if (hoveredUnit) {
-        UI->renderResourceHover();
-        hoveredUnit->renderHover(renderer);
     }
     UI->render();
     UI->renderTime();

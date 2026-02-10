@@ -1,6 +1,7 @@
 #pragma once
 #include "gameFiles/entities/gameObject.h"
 #include "gameFiles/components/resourceComponent.h"
+#include "gameFiles/components/buttonComponent.h"
 
 class BuildingObj : public GameObject {
 public:

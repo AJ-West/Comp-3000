@@ -58,6 +58,7 @@ public:
 	//getters
 	int getUnitConvoysSize() { return unitConvoys->size(); }
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoys() { return unitConvoys; }
+	shared_ptr<vector<shared_ptr<GameObject>>> getAllObjects() { return allObjects; }
 	int getZombiesSize() { return zombieList->size(); }
 	int getNextID() { return unitConvoys->size() + zombieList->size() + 2; } // add 1 for depot and new object for total number of objects
 	shared_ptr<DepotObj> getDepot() { return depot; }
