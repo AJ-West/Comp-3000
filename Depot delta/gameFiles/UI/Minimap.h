@@ -51,6 +51,7 @@ public:
 			SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
 			SDL_RenderFillRect(renderer, &closeButton);
 			calculateMapPositions();
+			renderCameraPos();
 		}
 	}
 
@@ -69,6 +70,9 @@ public:
 			}
 			else if (typeid(*obj).name() == typeid(ConvoyObj).name()) {
 				SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
+			}
+			else if (typeid(*obj).name() == typeid(BuildingObj).name()) {
+				SDL_SetRenderDrawColor(renderer, 0, 150, 255, 255);
 			}
 			else if (typeid(*obj).name() == typeid(DepotObj).name()) {
 				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
@@ -94,6 +98,13 @@ public:
 			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , iconSize * camera.xScale, iconSize * camera.yScale };
 			SDL_RenderFillRect(renderer, &icon);
 		}
+	}
+
+	void renderCameraPos() {
+		SDL_FRect relCamPos{ camera.dimen.x / worldWidth, camera.dimen.y / worldHeight, camera.dimen.w / worldWidth, camera.dimen.h / worldHeight };
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_FRect icon{ innerSize.x + relCamPos.x * innerSize.w, innerSize.y + relCamPos.y * innerSize.h , relCamPos.w * innerSize.w, relCamPos.h * innerSize.h };
+		SDL_RenderRect(renderer, &icon);
 	}
 
 private:
