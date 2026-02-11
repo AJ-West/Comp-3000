@@ -5,6 +5,8 @@
 
 levelUI::levelUI(SDL_Renderer* renderer, const char* filePath, LevelManager* lManager, dayCycle* gameTime) : UIHandler(renderer, filePath), manager(lManager), time(gameTime) {
 	loadResourceHoverTexture();
+
+	minimap = new Minimap({ 0,0,0,0 }, manager->getAllObjects(), manager->getZombieList());
 }
 levelUI::~levelUI() {}
 
@@ -59,6 +61,7 @@ void levelUI::render() {
 		SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 	}
+	minimap->render(renderer);
 }
 
 void levelUI::textInput(SDL_Keycode key) {

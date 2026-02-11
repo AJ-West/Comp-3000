@@ -16,7 +16,6 @@ BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int ty
 
 //update all components
 void BuildingObj::Update() {
-	cout << alive << '\n';
 	if (alive) {
 		for (auto& pair : getComponents()) {
 			pair.second->update(this);

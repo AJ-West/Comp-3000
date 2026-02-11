@@ -386,5 +386,8 @@
     <ClInclude Include="gameFiles\entities\Buildings\building.h">
       <Filter>Source Files\gameFiles\entities\buildings</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\UI\Minimap.h">
+      <Filter>Source Files\gameFiles\UI%27s</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

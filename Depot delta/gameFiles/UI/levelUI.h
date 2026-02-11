@@ -9,6 +9,7 @@
 #include "gameFiles/UI/resourceBoxes/transferBox.h"
 #include "gameFiles/misc/dayCycle.h"
 #include "gameFiles/levelHandling/levelManager.h"
+#include "gameFiles/UI/Minimap.h"
 
 using namespace std;
 
@@ -45,6 +46,8 @@ public:
 
 private:
 	SDL_Texture* resourceHoverTexture;
+
+	Minimap* minimap;
 
 	LevelManager* manager;
 
