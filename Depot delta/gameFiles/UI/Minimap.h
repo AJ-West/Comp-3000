@@ -62,9 +62,19 @@ public:
 		zombs.join();
 	}
 
-	void objectPositions() {
-		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+	void objectPositions() {		
 		for (auto obj : *allObjects) {
+			if (typeid(*obj).name() == typeid(UnitObj).name()) {
+				SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+			}
+			else if (typeid(*obj).name() == typeid(ConvoyObj).name()) {
+				SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
+			}
+			else if (typeid(*obj).name() == typeid(DepotObj).name()) {
+				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+			}
+
+
 			SDL_FRect dimen = obj->getDimensions();
 			float xProportion = dimen.x / worldWidth;
 			float yProportion = dimen.y / worldHeight;
