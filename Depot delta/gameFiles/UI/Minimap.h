@@ -2,6 +2,8 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 
+#include <thread>
+
 #include "gameFiles/UI/UIElement.h"
 
 class Minimap : public UIElement {
@@ -48,6 +50,39 @@ public:
 			SDL_RenderFillRect(renderer, &innerSize);
 			SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
 			SDL_RenderFillRect(renderer, &closeButton);
+			calculateMapPositions();
+		}
+	}
+
+	void calculateMapPositions() {
+		thread objs(&Minimap::objectPositions, this);
+		thread zombs(&Minimap::zombiePositions, this);
+
+		objs.join();
+		zombs.join();
+	}
+
+	void objectPositions() {
+		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+		for (auto obj : *allObjects) {
+			SDL_FRect dimen = obj->getDimensions();
+			float xProportion = dimen.x / worldWidth;
+			float yProportion = dimen.y / worldHeight;
+
+			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , iconSize * camera.xScale, iconSize * camera.yScale };
+			SDL_RenderFillRect(renderer, &icon);
+		}
+	}
+
+	void zombiePositions() {
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+		for (auto zomb : *allZombies) {
+			SDL_FRect dimen = zomb->getDimensions();
+			float xProportion = dimen.x / worldWidth;
+			float yProportion = dimen.y / worldHeight;
+
+			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , iconSize * camera.xScale, iconSize * camera.yScale };
+			SDL_RenderFillRect(renderer, &icon);
 		}
 	}
 
@@ -59,6 +94,8 @@ private:
 	shared_ptr<vector<shared_ptr<ZombieObj>>> allZombies;
 
 	float scaleFactor = 13.0f / 15.0f;
+
+	float iconSize = 5.0f;
 
 	bool open = true;
 
