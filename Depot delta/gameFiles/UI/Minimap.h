@@ -25,6 +25,11 @@ public:
 			updateInnerSize();
 			updateCloseButton();
 		}
+		else {
+			size.y = size.y + 3*size.h/4;
+			size.w = size.w/4;
+			size.h = size.h/4;
+		}
 	}
 
 	void updateInnerSize() {
@@ -43,9 +48,9 @@ public:
 
 	void render(SDL_Renderer* renderer) {
 		updateSize();
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderFillRect(renderer, &size);
 		if (open) {
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-			SDL_RenderFillRect(renderer, &size);
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 			SDL_RenderFillRect(renderer, &innerSize);
 			SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
@@ -78,7 +83,6 @@ public:
 				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 			}
 
-
 			SDL_FRect dimen = obj->getDimensions();
 			float xProportion = dimen.x / worldWidth;
 			float yProportion = dimen.y / worldHeight;
@@ -108,6 +112,25 @@ public:
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_FRect icon{ innerSize.x + relCamPos.x * innerSize.w, innerSize.y + relCamPos.y * innerSize.h , relCamPos.w * innerSize.w, relCamPos.h * innerSize.h };
 		SDL_RenderRect(renderer, &icon);
+	}
+
+	void toggle() {	open = !open; }
+
+	bool checkForToggle(float x, float y) {
+		if (open) {
+			return checkCloseClick(x, y);
+		}
+		else {
+			return checkClick(x, y);
+		}
+	}
+
+	bool checkCloseClick(float x, float y) {
+		if (x < closeButton.x) return false;
+		if (x > closeButton.x + closeButton.w) return false;
+		if (y < closeButton.y) return false;
+		if (y > closeButton.y + closeButton.h) return false;
+		return true;
 	}
 
 private:

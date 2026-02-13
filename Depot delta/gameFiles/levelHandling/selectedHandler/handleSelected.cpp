@@ -33,6 +33,9 @@ void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 			stateEnum = selectHuman;
 			decideState(manager);
 		}
+		else if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+			UI->checkClickInput();
+		}
 		else if (event.type == SDL_EVENT_MOUSE_WHEEL) {	
 			manager->zoomChange(event);
 		}
