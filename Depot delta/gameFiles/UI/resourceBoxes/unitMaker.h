@@ -72,7 +72,7 @@ public:
 	void makeUnit(vector<int> amounts)
 	{
 		SDL_FRect pos = depot->getDimensions();
-		//Spawn just right of the depot in the center
+		//Spawn just below the depot in the center
 		pos.x = pos.x + pos.w/2 - (30 / 1440.0f * camera.dimen.h);
 		pos.y = pos.y + pos.h;
 		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, 100, manager->getNextID());
@@ -92,9 +92,9 @@ public:
 	void makeConvoy(vector<int> amounts)
 	{
 		SDL_FRect pos = depot->getDimensions();
-		//Spawn just above depot in the center
-		pos.x = pos.x + pos.w;
-		pos.y = pos.y + pos.h / 2;
+		//Spawn just below the depot in the center
+		pos.x = pos.x + pos.w / 2 - (30 / 1440.0f * camera.dimen.h);
+		pos.y = pos.y + pos.h;
 		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, convoyStats.width, convoyStats.height, 100, manager->getNextID());
 		addConvoyComponents(convoy, amounts);
 		manager->addUnitConvoy(convoy);
