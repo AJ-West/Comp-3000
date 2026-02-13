@@ -75,14 +75,14 @@ void transferBox::addArrows() {
 void transferBox::transferDirectionButtonClicked(UIElement* elem) {
 	vector<int> amounts;
 	int i = 0;
-	for (auto elem : elements) { // get value of each resource input
-		if (typeid(*elem).name() == typeid(textInput).name()) {
-			if (elem->getText() != "") {
+	for (auto element : elements) { // get value of each resource input
+		if (typeid(*element).name() == typeid(textInput).name()) {
+			if (element->getText() != "") {
 				if (arrows[i]->getToSecond()) {
-					amounts.push_back(stoi(elem->getText()));
+					amounts.push_back(stoi(element->getText()));
 				}
 				else{
-					amounts.push_back(stoi(elem->getText())*-1);
+					amounts.push_back(stoi(element->getText())*-1);
 				}
 			}
 			else {

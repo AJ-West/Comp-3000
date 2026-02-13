@@ -94,7 +94,8 @@ public:
 		float dx = (ownerRect.x + ownerRect.w / 2) - (targetRect.x + targetRect.w / 2);
 		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
 		float distance = sqrt(dx * dx + dy * dy);
-		if (distance <= transferDistance) {
+		//if (distance <= transferDistance) {
+		if (distance <= 1000) {
 			return true;
 		}
 		return false;
@@ -151,7 +152,7 @@ public:
 		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
 		SDL_FRect ownerRect = owner->getSize();
 		SDL_FRect targetRect = target->getSize();
-		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - camera.dimen.x, targetRect.x + targetRect.w / 2, targetRect.y + targetRect.h / 2);
+		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - camera.dimen.y, targetRect.x + targetRect.w / 2 - camera.dimen.x, targetRect.y + targetRect.h / 2 - camera.dimen.y);
 	}
 
 	//getters

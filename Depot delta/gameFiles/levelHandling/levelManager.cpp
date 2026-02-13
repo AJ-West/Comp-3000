@@ -59,7 +59,7 @@ void LevelManager::unpausedRender()
     time->update();
     mapLoader->renderTileMap(renderer);
     building->Update();
-    if (spawner->checkIfSpawn()) {
+    /*if (spawner->checkIfSpawn()) {
         for (auto& unit : *unitConvoys) {
             if (unit) {
                 if (typeid(*unit).name() == typeid(UnitObj).name()) {
@@ -67,7 +67,7 @@ void LevelManager::unpausedRender()
                 }
             }
         }
-    }
+    }*/
 
     depot->Update();
     hoveredUnit = nullptr;
