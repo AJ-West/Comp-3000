@@ -8487,7 +8487,7 @@
             <Resources>
                 <Personnel>25</Personnel>
                 <Ammunition>0</Ammunition>
-                <DoS>55</DoS>
+                <DoS>60</DoS>
                 <Fuel>41</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
@@ -8511,7 +8511,7 @@
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>10</Ammunition>
-                <DoS>45</DoS>
+                <DoS>40</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
             </Resources>

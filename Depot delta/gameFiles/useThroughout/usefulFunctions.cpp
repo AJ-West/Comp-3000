@@ -35,6 +35,10 @@ void getUIScaledMousePos(float* x, float* y) {
 	*y = *y;
 }
 
+float scaleText(string text) {
+	return static_cast<float>(text.length()) / static_cast<float>(FONT_SIZE);
+}
+
 vector<SDL_Texture*> loadResourceTextures() {
 	vector<SDL_Texture*> resourceTextures;
 	vector<const char*> resourceFiles = {

@@ -35,33 +35,33 @@ public:
 		name = type + std::to_string(unit->getID());
 		SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
 		nameTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, size.w - 4.0f * camera.xScale, 37.0f * camera.yScale };
+		nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
 
 		resources = unit->getComponent<resourceComponent>();
 		personnel = "Personnel: " + std::to_string(resources->getResourcesCount(PERSONNEL));
 		surface = TTF_RenderText_Solid(font, personnel.c_str(), personnel.length(), { 0,0,0,255 });
 		personnelTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		personnelSize = { size.x + 41.0f * camera.xScale, size.y + 302.0f * camera.yScale, size.w - 44.0f * camera.xScale, 36.0f * camera.yScale };
+		personnelSize = { size.x + 41.0f * camera.xScale, size.y + 302.0f * camera.yScale, (size.w - 44.0f * camera.xScale) * scaleText(personnel), 36.0f * camera.yScale};
 
 		ammo = "Ammunition: " + std::to_string(resources->getResourcesCount(AMMUNITION));
 		surface = TTF_RenderText_Solid(font, ammo.c_str(), ammo.length(), { 0,0,0,255 });
 		ammoTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		ammoSize = { size.x + 41.0f * camera.xScale, size.y + 372.0f * camera.yScale, size.w - 44.0f * camera.xScale, 36.0f * camera.yScale };
+		ammoSize = { size.x + 41.0f * camera.xScale, size.y + 350.0f * camera.yScale, (size.w - 44.0f * camera.xScale) * scaleText(ammo), 36.0f * camera.yScale };
 
 		DoS = "Days of supply: " + std::to_string(resources->getResourcesCount(DOS));
 		surface = TTF_RenderText_Solid(font, DoS.c_str(), DoS.length(), { 0,0,0,255 });
 		DoSTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		DoSSize = { size.x + 41.0f * camera.xScale, size.y + 419.0f * camera.yScale, size.w - 44.0f * camera.xScale, 36.0f * camera.yScale };
+		DoSSize = { size.x + 41.0f * camera.xScale, size.y + 398.0f * camera.yScale, (size.w - 44.0f * camera.xScale) * scaleText(DoS), 36.0f * camera.yScale };
 
 		Fuel = "Fuel: " + std::to_string(resources->getResourcesCount(FUEL));
 		surface = TTF_RenderText_Solid(font, Fuel.c_str(), Fuel.length(), { 0,0,0,255 });
 		FuelTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		FuelSize = { size.x + 41.0f * camera.xScale, size.y + 468.0f * camera.yScale, size.w - 44.0f * camera.xScale, 36.0f * camera.yScale };
+		FuelSize = { size.x + 41.0f * camera.xScale, size.y + 446.0f * camera.yScale, (size.w - 44.0f * camera.xScale) * scaleText(Fuel), 36.0f * camera.yScale };
 
 		Scrap = "Scrap: " + std::to_string(resources->getResourcesCount(SCRAP));
 		surface = TTF_RenderText_Solid(font, Scrap.c_str(), Scrap.length(), { 0,0,0,255 });
 		ScrapTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		ScrapSize = { size.x + 41.0f * camera.xScale, size.y + 517.0f * camera.yScale, size.w - 44.0f * camera.xScale, 36.0f * camera.yScale };
+		ScrapSize = { size.x + 41.0f * camera.xScale, size.y + 494.0f * camera.yScale, (size.w - 44.0f * camera.xScale) * scaleText(Scrap), 36.0f * camera.yScale };
 	}
 	~UnitStatsBox(){}
 

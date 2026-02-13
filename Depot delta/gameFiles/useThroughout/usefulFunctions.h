@@ -3,6 +3,7 @@
 #include "gameFiles/useThroughout/variables.h"
 #include <SDL3_image/SDL_image.h>
 #include <vector>
+#include <string>
 
 #ifndef USEFULFUNCTIONS_H
 #define USEFULFUNCTIONS_H
@@ -18,6 +19,8 @@ float getDistance(Vec2 a, Vec2 b);
 
 void getMapScaledMousePos(float* x, float* y);
 void getUIScaledMousePos(float* x, float* y);
+
+float scaleText(string text);
 
 vector<SDL_Texture*> loadResourceTextures();
 
