@@ -133,6 +133,7 @@ void LevelManager::pausedRender()
 
 void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
     unitConvoys->emplace_back(unitConvoy);
+    allObjects->emplace_back(unitConvoy);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
