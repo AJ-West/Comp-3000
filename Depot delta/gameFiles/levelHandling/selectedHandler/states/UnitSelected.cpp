@@ -39,7 +39,9 @@ void UnitSelected::handleInput(SDL_Event event) {
 
 void UnitSelected::leftClick() {
 	if (!handler->getHovered()) { // move unit to click pos
-		selected->clickAway();
+		if (!UI->checkClickInput()) {
+			selected->clickAway();
+		}		
 	}
 	else { // if clicking on another object
 		selected->onClick();

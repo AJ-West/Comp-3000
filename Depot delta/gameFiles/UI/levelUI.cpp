@@ -103,6 +103,7 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	}
 	if (minimap->checkForToggle(cx, cy)) {
 		minimap->toggle();
+		return true;
 	}
 	return false;
 }
