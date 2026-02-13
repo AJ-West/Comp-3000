@@ -83,7 +83,10 @@ public:
 			float xProportion = dimen.x / worldWidth;
 			float yProportion = dimen.y / worldHeight;
 
-			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , iconSize * camera.xScale, iconSize * camera.yScale };
+			float wProportion = dimen.w / worldWidth;
+			float hProportion = dimen.h / worldHeight;
+
+			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , wProportion * innerSize.w, hProportion * innerSize.h };
 			SDL_RenderFillRect(renderer, &icon);
 		}
 	}
