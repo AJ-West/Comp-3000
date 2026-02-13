@@ -75,7 +75,7 @@ public:
 		//Spawn just right of the depot in the center
 		pos.x = pos.x + pos.w/2 - (30 / 1440.0f * camera.dimen.h);
 		pos.y = pos.y + pos.h;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, 4, 4, 100, manager->getNextID());
+		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, 100, manager->getNextID());
 		addUnitComponents(unit, amounts);
 		manager->addUnitConvoy(unit);
 	}
@@ -95,7 +95,7 @@ public:
 		//Spawn just above depot in the center
 		pos.x = pos.x + pos.w;
 		pos.y = pos.y + pos.h / 2;
-		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, 1, 1, 100, manager->getNextID());
+		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, convoyStats.width, convoyStats.height, 100, manager->getNextID());
 		addConvoyComponents(convoy, amounts);
 		manager->addUnitConvoy(convoy);
 	}

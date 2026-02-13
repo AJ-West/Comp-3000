@@ -18,6 +18,9 @@ struct UnitStats { // default
 	std::vector<int> rMax = { 25, 250, 250, 250, 250 };
 	std::vector<int> rCount = { 25, 50, 50, 50, 50 };
 
+	int width = 4; // number of tiles the unit takes up
+	int height = 4; // number of tiles the unit takes up
+
 	int rTransferDistance = 50;
 	std::vector<int> rTransferRate = { 5,5,5,5,5 };
 

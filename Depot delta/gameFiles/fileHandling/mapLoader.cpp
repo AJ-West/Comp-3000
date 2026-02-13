@@ -102,8 +102,8 @@ void MapLoader::loadUnit(XMLElement* entity)
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = 4; // number of tiles
-    int height = 4;
+    int width = unitStats.width; // number of tiles
+    int height = unitStats.height;
     auto unit = make_shared<UnitObj>(x, y, width, height, health, id);
     addUnitComponents(unit.get(), entity);
     if (entity->FirstChildElement("target_x")) {
@@ -130,8 +130,8 @@ void MapLoader::loadConvoy(XMLElement* entity)
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int id = atoi(entity->FirstChildElement("id")->GetText());
-    int width = 4; // number of tiles
-    int height = 4;
+    int width = convoyStats.width; // number of tiles
+    int height = convoyStats.height;
     ConvoyObj* convoy = new ConvoyObj(x, y, width, height, health, id);
     addConvoyComponents(convoy, entity);
     if (entity->FirstChildElement("target_x")) {

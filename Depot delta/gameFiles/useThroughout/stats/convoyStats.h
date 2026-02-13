@@ -14,6 +14,9 @@ struct ConvoyStats { // default
 	std::vector<int> rMax = { 100, 100, 100, 100, 100 };
 	std::vector<int> rCount = { 50, 50, 50, 50, 50 };
 
+	int width = 4; // number of tiles the unit takes up
+	int height = 4; // number of tiles the unit takes up
+
 	int rTransferDistance = 50;
 	std::vector<int> rTransferRate = { 5,5,5,5,5 };
 

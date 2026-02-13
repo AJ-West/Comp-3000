@@ -8503,7 +8503,7 @@
         <entities>
             <name>Basic Convoy</name>
             <id>4</id>
-            <health>60</health>
+            <health>55</health>
             <x>39</x>
             <y>108</y>
             <target_x>71</target_x>
