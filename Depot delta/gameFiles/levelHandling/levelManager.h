@@ -63,6 +63,7 @@ public:
 	int getZombiesSize() { return zombieList->size(); }
 	int getNextID() { return unitConvoys->size() + zombieList->size() + 2; } // add 1 for depot and new object for total number of objects
 	shared_ptr<DepotObj> getDepot() { return depot; }
+	bool getDepotAlive() { return depotAlive; }
 
 	//setters
 	void setPaused(bool pause) { paused = pause; }
@@ -88,5 +89,7 @@ private:
 	bool textInput = false;
 
 	bool paused = false;
+
+	bool depotAlive = true;
 };
 

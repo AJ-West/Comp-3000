@@ -75,6 +75,21 @@ public:
 			break;
 		case Level:
 			lManager->render();
+			if (!lManager->getDepotAlive()) {
+				lManager->saveOnExit();
+				delete lManager;
+				lManager = nullptr;
+				currGameState = Home;
+
+				//rescale the home screen based off zoom
+				backgroundSize.w = camera.dimen.w;
+				backgroundSize.h = camera.dimen.h;
+
+				startButtonSize.x = camera.dimen.w / 2 - camera.dimen.w / 10;
+				startButtonSize.y = camera.dimen.h - camera.dimen.h / 10;
+				startButtonSize.w = camera.dimen.w / 5;
+				startButtonSize.h = camera.dimen.h / 10;
+			}
 			break;
 		}		
 	}
