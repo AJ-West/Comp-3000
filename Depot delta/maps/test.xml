@@ -8487,14 +8487,14 @@
             <Resources>
                 <Personnel>25</Personnel>
                 <Ammunition>0</Ammunition>
-                <DoS>60</DoS>
+                <DoS>85</DoS>
                 <Fuel>41</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
             <Transfering>-1</Transfering>
             <ResourceTransfer>
                 <PersonnelChange>0</PersonnelChange>
-                <AmmunitionChange>15</AmmunitionChange>
+                <AmmunitionChange>0</AmmunitionChange>
                 <DoSChange>0</DoSChange>
                 <FuelChange>0</FuelChange>
                 <ScrapChange>0</ScrapChange>
@@ -8511,14 +8511,14 @@
             <Resources>
                 <Personnel>50</Personnel>
                 <Ammunition>10</Ammunition>
-                <DoS>40</DoS>
+                <DoS>15</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>50</Scrap>
             </Resources>
             <Transfering>-1</Transfering>
             <ResourceTransfer>
                 <PersonnelChange>0</PersonnelChange>
-                <AmmunitionChange>15</AmmunitionChange>
+                <AmmunitionChange>0</AmmunitionChange>
                 <DoSChange>0</DoSChange>
                 <FuelChange>0</FuelChange>
                 <ScrapChange>0</ScrapChange>

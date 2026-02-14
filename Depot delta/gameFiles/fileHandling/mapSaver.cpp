@@ -185,34 +185,37 @@ void MapSaver::saveResourceTransfer(XMLElement* entity, shared_ptr < GameObject>
             XMLElement* transfering = doc.NewElement("Transfering");
             entity->InsertEndChild(transfering);
         }
-        if (saveTransfering(entity, shared_ptr<GameObject>(rTC->getTarget()), rTC->getTransfering())) {
-            if (entity->FirstChildElement("ResourceTransfer")) {
-                XMLElement* resources = entity->FirstChildElement("ResourceTransfer");
-                resources->FirstChildElement("PersonnelChange")->SetText(rTC->getTransferAmount(PERSONNEL));
-                resources->FirstChildElement("AmmunitionChange")->SetText(rTC->getTransferAmount(AMMUNITION));
-                resources->FirstChildElement("DoSChange")->SetText(rTC->getTransferAmount(DOS));
-                resources->FirstChildElement("FuelChange")->SetText(rTC->getTransferAmount(FUEL));
-                resources->FirstChildElement("ScrapChange")->SetText(rTC->getTransferAmount(SCRAP));
-            }
-            else {
-                XMLElement* resources = doc.NewElement("ResourceTransfer");
-                XMLElement* personnel = doc.NewElement("PersonnelChange");
-                XMLElement* ammunition = doc.NewElement("AmmunitionChange");
-                XMLElement* dos = doc.NewElement("DoSChange");
-                XMLElement* fuel = doc.NewElement("FuelChange");
-                XMLElement* scrap = doc.NewElement("ScrapChange");
-                personnel->SetText(rTC->getTransferAmount(PERSONNEL));
-                ammunition->SetText(rTC->getTransferAmount(AMMUNITION));
-                dos->SetText(rTC->getTransferAmount(DOS));
-                fuel->SetText(rTC->getTransferAmount(FUEL));
-                scrap->SetText(rTC->getTransferAmount(SCRAP));
-                resources->InsertEndChild(personnel);
-                resources->InsertEndChild(ammunition);
-                resources->InsertEndChild(dos);
-                resources->InsertEndChild(fuel);
-                resources->InsertEndChild(scrap);
-                entity->InsertEndChild(resources);
-            }
+        int targetID = -1;
+        if (rTC->getTarget()) {
+            targetID = rTC->getTarget()->getID();
+        }
+        entity->FirstChildElement("Transfering")->SetText(targetID);
+        if (entity->FirstChildElement("ResourceTransfer")) {
+            XMLElement* resources = entity->FirstChildElement("ResourceTransfer");
+            resources->FirstChildElement("PersonnelChange")->SetText(rTC->getTransferAmount(PERSONNEL));
+            resources->FirstChildElement("AmmunitionChange")->SetText(rTC->getTransferAmount(AMMUNITION));
+            resources->FirstChildElement("DoSChange")->SetText(rTC->getTransferAmount(DOS));
+            resources->FirstChildElement("FuelChange")->SetText(rTC->getTransferAmount(FUEL));
+            resources->FirstChildElement("ScrapChange")->SetText(rTC->getTransferAmount(SCRAP));
+        }
+        else {
+            XMLElement* resources = doc.NewElement("ResourceTransfer");
+            XMLElement* personnel = doc.NewElement("PersonnelChange");
+            XMLElement* ammunition = doc.NewElement("AmmunitionChange");
+            XMLElement* dos = doc.NewElement("DoSChange");
+            XMLElement* fuel = doc.NewElement("FuelChange");
+            XMLElement* scrap = doc.NewElement("ScrapChange");
+            personnel->SetText(rTC->getTransferAmount(PERSONNEL));
+            ammunition->SetText(rTC->getTransferAmount(AMMUNITION));
+            dos->SetText(rTC->getTransferAmount(DOS));
+            fuel->SetText(rTC->getTransferAmount(FUEL));
+            scrap->SetText(rTC->getTransferAmount(SCRAP));
+            resources->InsertEndChild(personnel);
+            resources->InsertEndChild(ammunition);
+            resources->InsertEndChild(dos);
+            resources->InsertEndChild(fuel);
+            resources->InsertEndChild(scrap);
+            entity->InsertEndChild(resources);
         }
     }
 }
@@ -223,7 +226,11 @@ bool MapSaver::saveTransfering(XMLElement* entity, shared_ptr<GameObject> target
         targetID = target->getID();
     }
     entity->FirstChildElement("Transfering")->SetText(targetID);
-    return targetID != -1;
+    if (targetID != -1) {
+        return true;
+    }
+    return false;
+    //return targetID != -1;
 }
 
 void MapSaver::saveMovement(XMLElement* entity, shared_ptr<GameObject> obj) {
