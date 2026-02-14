@@ -389,5 +389,8 @@
     <ClInclude Include="gameFiles\UI\Minimap.h">
       <Filter>Source Files\gameFiles\UI%27s</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\gameManager.h">
+      <Filter>Source Files\gameFiles</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

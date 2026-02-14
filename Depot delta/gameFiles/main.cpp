@@ -8,7 +8,7 @@ int main()
     init_SDL_environment();
     ImGuiIO& io = init_ImGui_environment();
 
-	LevelManager manager(renderer);
+	GameManager manager(renderer);
 
     //Set up default camera scale for drawing
     camera.xScale = camera.dimen.w / DESIGN_SCALE_X;
@@ -121,7 +121,7 @@ ImGuiIO& init_ImGui_environment() {
     return io;
 }
 
-void handleInput(SDL_Event event, LevelManager* manager){
+void handleInput(SDL_Event event, GameManager* manager){
     ImGui_ImplSDL3_ProcessEvent(&event);
     if (event.type == SDL_EVENT_QUIT) { // exit game
         isRunning = false;

@@ -213,6 +213,7 @@
     <ClInclude Include="gameFiles\entities\Zombies\zombieSpawner.h" />
     <ClInclude Include="gameFiles\fileHandling\mapLoader.h" />
     <ClInclude Include="gameFiles\fileHandling\mapSaver.h" />
+    <ClInclude Include="gameFiles\gameManager.h" />
     <ClInclude Include="gameFiles\levelHandling\levelManager.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\handleSelected.h" />
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\states\depotSelected.h" />

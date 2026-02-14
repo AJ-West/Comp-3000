@@ -15,8 +15,7 @@
 #include <dependencies/imgui/backends/imgui_impl_sdlrenderer3.h>
 
 #include "gameFiles/useThroughout/variables.h"
-#include "gameFiles/fileHandling/mapLoader.h"
-#include "gameFiles/levelHandling/levelManager.h"
+#include "gameFiles/gameManager.h"
 #include "gameFiles/misc/dayCycle.h"
 
 using namespace std;
@@ -29,7 +28,7 @@ void init_SDL_environment();
 //creates ImGui
 ImGuiIO& init_ImGui_environment();
 
-void handleInput(SDL_Event event, LevelManager* manager);
+void handleInput(SDL_Event event, GameManager* manager);
 
 void adjustForZoom(ImGuiIO* io);
 
