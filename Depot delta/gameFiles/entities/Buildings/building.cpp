@@ -9,7 +9,7 @@ BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int ty
     count[rType] *= 3;
 
     AddComponent(make_shared<resourceComponent>(this, max, count, loadResourceTextures()));
-    getComponent<resourceComponent>()->setResourceChange(rType, -5);
+    //getComponent<resourceComponent>()->setResourceChange(rType, -5);
 	AddComponent(make_shared<buttonComponent>(this));
 	AddComponent(make_shared<renderComponent>(this, renderer, "draftArt/building.png"));
 }
@@ -23,6 +23,7 @@ void BuildingObj::Update() {
 	}
 	else {
 		getComponent<renderComponent>()->update(this);
+		getComponent<buttonComponent>()->update(this);
 	}
 }
 
@@ -34,7 +35,7 @@ void BuildingObj::clickAway() {
 	getMapScaledMousePos(&tx, &ty);
 }
 
-void BuildingObj::renderHover(SDL_Renderer* renderer) { // needs removing when creating a subobject for zombie/convoy/unit
+void BuildingObj::renderHover(SDL_Renderer* renderer) {
 	auto rComp = getComponent<resourceComponent>();
 	if (rComp) {
 		SDL_FRect tSize{ 1254.0f * camera.xScale, 60.0f * camera.yScale, 182.0f * camera.xScale, 48.0f * camera.yScale };

@@ -219,18 +219,19 @@ void MapLoader::loadAllTransfer(XMLElement* layer) {
 
 void MapLoader::loadTransfer(XMLElement* entity) {
     for (auto unit : *unitConvoyList) {
-        cout << entity->FirstChildElement("Transfering")->GetText() << '\n';
-        if (entity->FirstChildElement("Transfering")->GetText() != "- 1") {
-            if (XMLElement* resourceTransfer = entity->FirstChildElement("ResourceTransfer")) {
-                vector<int> transferAmount = { 0,0,0,0,0 };
-                transferAmount[PERSONNEL] = atoi(resourceTransfer->FirstChildElement("PersonnelChange")->GetText());
-                transferAmount[AMMUNITION] = atoi(resourceTransfer->FirstChildElement("AmmunitionChange")->GetText());
-                transferAmount[DOS] = atoi(resourceTransfer->FirstChildElement("DoSChange")->GetText());
-                transferAmount[FUEL] = atoi(resourceTransfer->FirstChildElement("FuelChange")->GetText());
-                transferAmount[SCRAP] = atoi(resourceTransfer->FirstChildElement("ScrapChange")->GetText());
-                for (auto convoy : *unitConvoyList) {
-                    if (convoy->getID() == atoi(entity->FirstChildElement("Transfering")->GetText())) {
-                        unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy.get(), transferAmount);
+        if (entity->FirstChildElement("Transfering")) {
+            if (entity->FirstChildElement("Transfering")->GetText() != "- 1") {
+                if (XMLElement* resourceTransfer = entity->FirstChildElement("ResourceTransfer")) {
+                    vector<int> transferAmount = { 0,0,0,0,0 };
+                    transferAmount[PERSONNEL] = atoi(resourceTransfer->FirstChildElement("PersonnelChange")->GetText());
+                    transferAmount[AMMUNITION] = atoi(resourceTransfer->FirstChildElement("AmmunitionChange")->GetText());
+                    transferAmount[DOS] = atoi(resourceTransfer->FirstChildElement("DoSChange")->GetText());
+                    transferAmount[FUEL] = atoi(resourceTransfer->FirstChildElement("FuelChange")->GetText());
+                    transferAmount[SCRAP] = atoi(resourceTransfer->FirstChildElement("ScrapChange")->GetText());
+                    for (auto convoy : *unitConvoyList) {
+                        if (convoy->getID() == atoi(entity->FirstChildElement("Transfering")->GetText())) {
+                            unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy.get(), transferAmount);
+                        }
                     }
                 }
             }

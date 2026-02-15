@@ -101,7 +101,6 @@ void HandleSelected::decideState(LevelManager* manager) {
 void HandleSelected::checkHover(SDL_Event event, LevelManager* manager) {
 	for (auto& obj : *manager->getAllObjects()) {
 		if (obj) {
-			//if(obj->checkHover(event.motion.x, event.motion.y)){
 			if (obj->getHovering()) {
 				hovered = obj.get();
 				return;

@@ -219,6 +219,7 @@ public:
 		string text = currentStrings[current];
 		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+		tSize.w = tSize.w * scaleText(text);
 		SDL_RenderTexture(renderer, texture, NULL, &tSize);
 	}
 

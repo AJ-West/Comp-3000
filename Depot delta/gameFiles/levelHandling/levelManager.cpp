@@ -75,6 +75,11 @@ void LevelManager::unpausedRender()
         return;
     }
     hoveredUnit = nullptr;
+
+    if (building->getHovering()) {
+        hoveredUnit = building;
+    }
+
     for (auto& unit : *unitConvoys) {
         if (unit) {
             unit->Update();
