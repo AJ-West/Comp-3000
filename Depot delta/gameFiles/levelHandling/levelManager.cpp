@@ -7,9 +7,11 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
     mapLoader = new MapLoader("maps/test.xml", renderer);
     unitConvoys = mapLoader->getUnitConvoyList();
+    buildingList = mapLoader->getBuildingList();
     depot = shared_ptr<DepotObj>(mapLoader->getDepot());
     zombieList = mapLoader->getZombieList();
 	allObjects->insert(allObjects->end(), unitConvoys->begin(), unitConvoys->end());
+	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
     time = new dayCycle();
@@ -18,9 +20,6 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     spawner = new ZombieSpawner(this);
 
     handler = new HandleSelected(UI);
-
-    building = make_shared<BuildingObj>(5, 5, 8, 8, 100, PERSONNEL, true, renderer);
-    allObjects->emplace_back(building);
 }
 
 LevelManager::~LevelManager()
@@ -31,7 +30,7 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/test.xml");
-    saver.saveFile(*unitConvoys, depot, *zombieList);
+    saver.saveFile(allObjects, *zombieList);
 }
 
 // Handles user input
@@ -58,7 +57,6 @@ void LevelManager::unpausedRender()
 {
     time->update();
     mapLoader->renderTileMap(renderer);
-    building->Update();
     if (spawner->checkIfSpawn()) {
         for (auto& unit : *unitConvoys) {
             if (unit) {
@@ -76,8 +74,13 @@ void LevelManager::unpausedRender()
     }
     hoveredUnit = nullptr;
 
-    if (building->getHovering()) {
-        hoveredUnit = building;
+    for (auto& building : *buildingList) {
+        if (building) {
+            building->Update();
+            if (building->getHovering()) {
+                hoveredUnit = building;
+            }
+        }
     }
 
     for (auto& unit : *unitConvoys) {

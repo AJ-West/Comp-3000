@@ -76,6 +76,7 @@ private:
 
 	MapLoader* mapLoader;
 	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoys;
+	shared_ptr<vector<shared_ptr<BuildingObj>>> buildingList;
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList;
 	shared_ptr<DepotObj> depot;
 	shared_ptr<GameObject> hoveredUnit = nullptr;

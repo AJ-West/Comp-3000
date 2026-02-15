@@ -1,17 +1,7 @@
 #include "gameFiles/entities/Buildings/building.h"
 
-BuildingObj::BuildingObj(int x, int y, int width, int height, int health, int type, bool used, SDL_Renderer* renderer) : GameObject(x, y, width, height, health), rType(type) {
+BuildingObj::BuildingObj(int x, int y, int width, int height, int health, bool used, int type) : GameObject(x, y, width, height, health), rType(type) {
 	setAlive(used);
-
-    vector<int> max = { 100, 100, 100, 100, 100 };
-    vector<int> count = { 5, 50, 50, 50, 50 };
-    max[rType] *= 3;
-    count[rType] *= 3;
-
-    AddComponent(make_shared<resourceComponent>(this, max, count, loadResourceTextures()));
-    //getComponent<resourceComponent>()->setResourceChange(rType, -5);
-	AddComponent(make_shared<buttonComponent>(this));
-	AddComponent(make_shared<renderComponent>(this, renderer, "draftArt/building.png"));
 }
 
 //update all components

@@ -8,6 +8,7 @@
 #include "string"
 #include "gameFiles/entities/Units/unitObject.h"
 #include "gameFiles/entities/Depot/depotObject.h"
+#include "gameFiles/entities/Buildings/building.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
 #include "gameFiles/entities/Zombies/zombieObject.h"
 
@@ -36,6 +37,7 @@ public:
 	void loadConvoy(XMLElement* layer);
 	void loadZombie(XMLElement* layer);
 	void loadDepot(XMLElement* layer);
+	void loadBuilding(XMLElement* layer);
 
 	void loadAllTransfer(XMLElement* layer);
 	void loadTransfer(XMLElement* entity);
@@ -44,11 +46,13 @@ public:
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
 	void addZombieComponents(ZombieObj* zombie);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
+	void addBuildingComponents(BuildingObj* building, XMLElement* entity);
 
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoyList() { return unitConvoyList; }
+	shared_ptr<vector<shared_ptr<BuildingObj>>> getBuildingList() { return buildingList; }
 	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
 
@@ -62,5 +66,6 @@ private:
 
 	DepotObj* depot;
 	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoyList = make_shared<vector<shared_ptr<HumanObj>>>();
+	shared_ptr<vector<shared_ptr<BuildingObj>>> buildingList = make_shared<vector<shared_ptr<BuildingObj>>>();
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList = make_shared<vector<shared_ptr<ZombieObj>>>();
 };

@@ -73,14 +73,17 @@ void MapLoader::loadEntities(XMLElement* layer)
 		if (name == "Basic unit") {
 			loadUnit(entity);
 		}
-        if (name == "depot") {
+        else if (name == "depot") {
 			loadDepot(entity);
         }
-        if (name == "Basic Convoy") {
+        else if (name == "Basic Convoy") {
             loadConvoy(entity);
         }
-        if (name == "Basic Zombie") {
+        else if (name == "Basic Zombie") {
             loadZombie(entity);
+        }
+        else if (name == "Building") {
+            loadBuilding(entity);
         }
 		entity = entity->NextSiblingElement("entities");
 	}
@@ -204,6 +207,36 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
     depot->getComponent<resourceComponent>()->setResourceChange(DOS, 5);
     depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 5);
     depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 5);
+}
+
+void MapLoader::loadBuilding(XMLElement* entity) {
+    int x = atoi(entity->FirstChildElement("x")->GetText());
+    int y = atoi(entity->FirstChildElement("y")->GetText());
+    int health = atoi(entity->FirstChildElement("health")->GetText());
+    int width = 8; // number of tiles 
+    int height = 8;
+    bool alive = atoi(entity->FirstChildElement("alive")->GetText()) != 0;
+    int type = atoi(entity->FirstChildElement("type")->GetText());
+    BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type);
+    addBuildingComponents(building, entity);
+    buildingList->emplace_back(building);
+}
+
+void MapLoader::addBuildingComponents(BuildingObj* building, XMLElement* entity) {
+    vector<int> max = { 100, 100, 100, 100, 100 };
+    vector<int> count = { 0, 0, 0, 0, 0 };
+    max[atoi(entity->FirstChildElement("type")->GetText())] *= 3;
+    if (entity->FirstChildElement("Resources")) {
+        XMLElement* resources = entity->FirstChildElement("Resources");
+        count[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        count[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        count[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        count[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+    }
+    building->AddComponent(make_shared<resourceComponent>(building, max, count, loadResourceTextures()));
+    building->AddComponent(make_shared<buttonComponent>(building));
+    building->AddComponent(make_shared<renderComponent>(building, renderer, "draftArt/building.png"));
 }
 
 void MapLoader::loadAllTransfer(XMLElement* layer) {

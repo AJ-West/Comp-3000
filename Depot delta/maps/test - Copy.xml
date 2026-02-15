@@ -8463,17 +8463,17 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>90</health>
+            <health>100</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>145</Personnel>
-                <Ammunition>180</Ammunition>
-                <DoS>180</DoS>
-                <Fuel>180</Fuel>
-                <Scrap>180</Scrap>
+                <Personnel>15</Personnel>
+                <Ammunition>50</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>50</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
         </entities>
         <entities>
@@ -8525,9 +8525,9 @@
             </ResourceTransfer>
         </entities>
         <entities eid="95492584">
-            <name>Building</name>
+            <name>building</name>
             <id>4</id>
-            <health>90</health>
+            <health>100</health>
             <x>128</x>
             <y>152</y>
             <originX>0</originX>
@@ -8535,11 +8535,11 @@
             <type>1</type>
             <alive>1</alive>
             <Resources>
-                <Personnel>145</Personnel>
-                <Ammunition>180</Ammunition>
-                <DoS>180</DoS>
-                <Fuel>180</Fuel>
-                <Scrap>180</Scrap>
+                <Personnel>15</Personnel>
+                <Ammunition>50</Ammunition>
+                <DoS>50</DoS>
+                <Fuel>50</Fuel>
+                <Scrap>50</Scrap>
             </Resources>
         </entities>
     </layers>

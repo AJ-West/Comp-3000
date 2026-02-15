@@ -6,7 +6,7 @@
 
 class BuildingObj : public GameObject {
 public:
-	BuildingObj(int x, int y, int width, int height, int health, int type, bool used, SDL_Renderer* renderer);
+	BuildingObj(int x, int y, int width, int height, int health, bool used, int type);
 
 	virtual void Update();
 
@@ -16,8 +16,10 @@ public:
 
 	void renderHover(SDL_Renderer* renderer);
 
-private:
+	//getters
+	int getType() { return rType; }
 
+private:
 	int rType;
 
 	int maxHealth = 300;

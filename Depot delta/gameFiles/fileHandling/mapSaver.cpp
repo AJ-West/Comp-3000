@@ -12,7 +12,13 @@ MapSaver::~MapSaver()
 {
 }
 
-void MapSaver::saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < DepotObj> depot, vector< shared_ptr<ZombieObj>> zombies)
+shared_ptr<GameObject> MapSaver::findObject(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, int id) { // can be optimised by removing objects as they are found???
+    for (auto obj : *allObjects) {
+        if (obj->getID() == id) { return obj; }
+    }
+}
+
+void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector< shared_ptr<ZombieObj>> zombies)
 {
     XMLElement* root = doc.RootElement();
     XMLElement* layer = root->FirstChildElement("layers");
@@ -30,20 +36,27 @@ void MapSaver::saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < D
         vector<int> IDInUse;
 		while (entity) { // identify each entity and save its data
             string name = string(entity->FirstChildElement("name")->GetText());
-            if (name == "Basic unit" || name == "Basic Convoy") {
-                if (!saveUnit(entity, unitConvoys)) {
+            if (name == "Basic Zombie") {
+                if (!saveZombie(entity, zombies)) {
                     deleteEntity = entity;
                 }
-                else {
-                    IDInUse.emplace_back(atoi(entity->FirstChildElement("id")->GetText()));
+            }
+            else {
+                shared_ptr<GameObject> obj = findObject(allObjects, atoi(entity->FirstChildElement("id")->GetText()));
+                if (name == "Basic unit" || name == "Basic Convoy") {
+                    if(obj) {
+                        saveUnit(entity, obj);
+                        IDInUse.emplace_back(atoi(entity->FirstChildElement("id")->GetText()));
+                    }
+                    else {
+                        deleteEntity = entity;
+                    }
                 }
-            }
-            else if (name == "depot") {
-                saveDepot(entity, depot);
-            }
-            else if (name == "Basic Zombie") {
-                if (!saveZombie(entity, zombies)) { 
-                    deleteEntity = entity; 
+                else if (name == "depot") {
+                    saveDepot(entity, obj);
+                }
+                else if (name == "Building") {
+                    saveBuilding(entity, obj);
                 }
             }
             entity = entity->NextSiblingElement("entities");
@@ -53,14 +66,16 @@ void MapSaver::saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < D
             }
         }
         entity = layer->FirstChildElement("entities");
-        for (auto unit : unitConvoys) {
-            bool found = false;
-            auto it = find(IDInUse.begin(), IDInUse.end(), unit->getID());
-            if (it != IDInUse.end()) {
-                found = true;
-            }
-            if (!found) {
-                saveNewUnit(layer, unit);
+        for (auto unit : *allObjects) {
+            if (typeid(unit).name() == typeid(HumanObj).name()) {
+                bool found = false;
+                auto it = find(IDInUse.begin(), IDInUse.end(), unit->getID());
+                if (it != IDInUse.end()) {
+                    found = true;
+                }
+                if (!found) {
+                    saveNewUnit(layer, unit);
+                }
             }
         }
         doc.SaveFile(filename);
@@ -70,21 +85,15 @@ void MapSaver::saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < D
     }
 }
 
-bool MapSaver::saveUnit(XMLElement* entity, vector< shared_ptr<HumanObj>> units)
+void MapSaver::saveUnit(XMLElement* entity, shared_ptr<GameObject> unit)
 {
-    for (auto& unit : units) {
-        if (unit->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
-            saveHealth(entity, unit);
-			saveMovement(entity, unit);
-            saveResources(entity, unit);
-            saveResourceTransfer(entity, unit);
-            return true;
-        }
-    }
-    return false;
+    saveHealth(entity, unit);
+	saveMovement(entity, unit);
+    saveResources(entity, unit);
+    saveResourceTransfer(entity, unit);
 }
 
-void MapSaver::saveNewUnit(XMLElement* layer, shared_ptr < HumanObj> unit) {
+void MapSaver::saveNewUnit(XMLElement* layer, shared_ptr<GameObject> unit) {
     XMLElement* entity = doc.NewElement("entities");
     XMLElement* name = doc.NewElement("name");
     XMLElement* id = doc.NewElement("id");
@@ -112,20 +121,6 @@ void MapSaver::saveNewUnit(XMLElement* layer, shared_ptr < HumanObj> unit) {
     layer->InsertEndChild(entity);
 }
 
-bool MapSaver::saveConvoy(XMLElement* entity, vector< shared_ptr<ConvoyObj>> convoys)
-{
-    for (auto& convoy : convoys) {
-        if (convoy->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
-            saveHealth(entity, convoy);
-			saveMovement(entity, convoy);
-            saveResources(entity, convoy);
-            saveResourceTransfer(entity, convoy);
-            return true;
-        }
-    }
-    return false;
-}
-
 bool MapSaver::saveZombie(XMLElement* entity, vector< shared_ptr<ZombieObj>> zombies) {
     for (auto& zombie : zombies) {
         if (zombie->getID() == atoi(entity->FirstChildElement("id")->GetText())) {
@@ -137,13 +132,21 @@ bool MapSaver::saveZombie(XMLElement* entity, vector< shared_ptr<ZombieObj>> zom
     return false;
 }
 
-void MapSaver::saveDepot(XMLElement* entity, shared_ptr < DepotObj> depot)
+void MapSaver::saveDepot(XMLElement* entity, shared_ptr<GameObject> depot)
 {
     saveHealth(entity, depot);
     saveResources(entity, depot);
+    saveResourceTransfer(entity, depot);
 }
 
-void MapSaver::saveHealth(XMLElement* entity, shared_ptr < GameObject> obj) {
+void MapSaver::saveBuilding(XMLElement* entity, shared_ptr<GameObject> building) {
+    entity->FirstChildElement("alive")->SetText((int)building->getAlive());
+    saveHealth(entity, building);
+    saveResources(entity, building);
+    saveResourceTransfer(entity, building);
+}
+
+void MapSaver::saveHealth(XMLElement* entity, shared_ptr<GameObject> obj) {
     entity->FirstChildElement("health")->SetText(static_cast<int>(obj->getHealth()));
 }
 

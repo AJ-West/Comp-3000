@@ -8,6 +8,7 @@
 #include "string"
 #include "gameFiles/entities/Units/unitObject.h"
 #include "gameFiles/entities/Depot/depotObject.h"
+#include "gameFiles/entities/Buildings/building.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
 #include "gameFiles/entities/Zombies/zombieObject.h"
 
@@ -25,15 +26,16 @@ public:
 	MapSaver(const char* filename);
 	~MapSaver();
 
-	bool saveUnit(XMLElement* entity, vector<shared_ptr<HumanObj>> units);
-	void saveNewUnit(XMLElement* layer, shared_ptr < HumanObj> unit);
+	shared_ptr<GameObject> findObject(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, int id);
 
-	bool saveConvoy(XMLElement* entity, vector<shared_ptr<ConvoyObj>> convoys);
+	void saveUnit(XMLElement* entity, shared_ptr<GameObject> units);
+	void saveNewUnit(XMLElement* layer, shared_ptr<GameObject> unit);
 
 	bool saveZombie(XMLElement* entity, vector< shared_ptr<ZombieObj>> zombie);
-	void saveDepot(XMLElement* entity, shared_ptr < DepotObj> depot);
+	void saveDepot(XMLElement* entity, shared_ptr<GameObject> depot);
+	void saveBuilding(XMLElement* entity, shared_ptr<GameObject> building);
 
-	void saveFile(vector<shared_ptr<HumanObj>> unitConvoys, shared_ptr < DepotObj> depot, vector< shared_ptr<ZombieObj>> zombies);
+	void saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector<shared_ptr<ZombieObj>> zombies);
 
 	void saveHealth(XMLElement* entity, shared_ptr < GameObject> obj);
 	void saveResources(XMLElement* entity, shared_ptr < GameObject> obj);
