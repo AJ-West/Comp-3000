@@ -308,7 +308,7 @@ void MapLoader::loadUnitTech(XMLElement* layer) {
     XMLElement* entity = layer->FirstChildElement("entities");
     while (entity) {
         string keyName = entity->FirstChildElement("keyName")->GetText();
-        unitTechVal[keyName] *= pow(atof(entity->FirstChildElement("keyName")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+        unitTechVal[keyName] *= pow(atof(entity->FirstChildElement("modifyValue")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
         for (auto unit : *unitConvoyList) {
             unit->updateStats(keyName, true);
         }
@@ -320,7 +320,7 @@ void MapLoader::loadConvoyTech(XMLElement* layer) {
     XMLElement* entity = layer->FirstChildElement("entities");
     while (entity) {
         string keyName = entity->FirstChildElement("keyName")->GetText();
-        convoyTechVal[keyName] *= pow(atof(entity->FirstChildElement("keyName")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+        convoyTechVal[keyName] *= pow(atof(entity->FirstChildElement("modifyValue")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
         for (auto convoy : *unitConvoyList) {
             convoy->updateStats(keyName, false);
         }

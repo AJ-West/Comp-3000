@@ -24,50 +24,58 @@ void HumanObj::pathToTarget() {
 
 void HumanObj::updateStats(string keyName, bool forUnit) {
 	if (forUnit) {
-		if (keyName == "increaseUnitDoSEfficiency") { // need to do but requires rework to resource system
-			return;
-		}
-		if (keyName == "increaseUnitFuelEfficiency") { // need to do but requires rework to resource system
-			return;
-		}
 		if (keyName == "increaseRateOfFire") {
 			auto aC = getComponent<attackComponent>();
 			if (aC) {
 				aC->setAttackCooldown(aC->getAttackCooldown() * unitTechVal[keyName]);
 			}
-			return;
 		}
-		if (keyName == "largerBasicInfantry") {
-			return;
+		else if (keyName == "largerBasicInfantry") {
+			auto rC = getComponent<resourceComponent>();
+			if (rC) {
+				rC->setResourceMax(PERSONNEL, rC->getResourcesMax(PERSONNEL) * unitTechVal[keyName]);
+			}
 		}
-		if (keyName == "largerBasicCarryingCapacity") {
-			return;
+		else if (keyName == "largerBasicCarryingCapacity") {
+			auto rC = getComponent<resourceComponent>();
+			if (rC) {
+				rC->setResourceMax(AMMUNITION, rC->getResourcesMax(AMMUNITION) * unitTechVal[keyName]);
+				rC->setResourceMax(DOS, rC->getResourcesMax(DOS) * unitTechVal[keyName]);
+				rC->setResourceMax(FUEL, rC->getResourcesMax(FUEL) * unitTechVal[keyName]);
+				rC->setResourceMax(SCRAP, rC->getResourcesMax(SCRAP) * unitTechVal[keyName]);
+			}
 		}
-		if (keyName == "increaseBasicFuelEfficiency") { // need to do but requires rework to resource system
-			return;
-		}
-		if (keyName == "increaseBasicRateOfFire") {
-			return;
-		}
-		if (keyName == "increaseBasicDamage") {
-			return;
+		else if (keyName == "increaseBasicRateOfFire") {
+			auto rC = getComponent<resourceComponent>();
+			if (rC) {
+				rC->setResourceMax(PERSONNEL, rC->getResourcesMax(PERSONNEL) * unitTechVal[keyName]);
+			}
 		}
 	}
 	else {
 		if (keyName == "increaseConvoyCapacity") {
-			return;
+			auto rC = getComponent<resourceComponent>();
+			if (rC) {
+				rC->setResourceMax(AMMUNITION, rC->getResourcesMax(AMMUNITION) * convoyTechVal[keyName]);
+				rC->setResourceMax(DOS, rC->getResourcesMax(DOS) * convoyTechVal[keyName]);
+				rC->setResourceMax(FUEL, rC->getResourcesMax(FUEL) * convoyTechVal[keyName]);
+				rC->setResourceMax(SCRAP, rC->getResourcesMax(SCRAP) * convoyTechVal[keyName]);
+			}
 		}
-		if (keyName == "increaseConvoyFuelEfficiency") { // need to do but requires rework to resource system
-			return;
+		else if (keyName == "increaseBasicSpeed") {
+			auto mC = getComponent<movementComponent>();
+			if (mC) {
+				mC->setSpeed(mC->getSpeed() * convoyTechVal[keyName]);
+			}
 		}
-		if (keyName == "increaseBasicArmour") {
-			return;
-		}
-		if (keyName == "increaseBasicSpeed") {
-			return;
-		}
-		if (keyName == "increaseBasicCapacity") {
-			return;
+		else if (keyName == "increaseBasicCapacity") {
+			auto rC = getComponent<resourceComponent>();
+			if (rC) {
+				rC->setResourceMax(AMMUNITION, rC->getResourcesMax(AMMUNITION) * convoyTechVal[keyName]);
+				rC->setResourceMax(DOS, rC->getResourcesMax(DOS) * convoyTechVal[keyName]);
+				rC->setResourceMax(FUEL, rC->getResourcesMax(FUEL) * convoyTechVal[keyName]);
+				rC->setResourceMax(SCRAP, rC->getResourcesMax(SCRAP) * convoyTechVal[keyName]);
+			}
 		}
 	}
 }

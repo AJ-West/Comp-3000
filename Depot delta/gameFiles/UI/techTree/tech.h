@@ -26,11 +26,6 @@ public:
 	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList, SDL_Texture* allIcons) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList), Icons(allIcons) {}
 	~Tech(){}
 
-	void checkAffordable(int money){
-		if (money < cost) { status = unaffordable; }
-		else { status = affordable; }
-	}
-
 	void render(SDL_Renderer* renderer) {
 		switch (status) {
 		case affordable:
@@ -40,7 +35,7 @@ public:
 			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 25);
 			break;
 		case locked:
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 25);
+			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 125);
 			break;
 		case purchased:
 			SDL_SetRenderDrawColor(renderer, 0, 0, 100, 25);

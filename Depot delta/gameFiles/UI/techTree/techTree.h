@@ -137,11 +137,13 @@ public:
 	}
 
 	void setAffordable(Tech* tech, int cost) {
-		if (cost < depot->getComponent<resourceComponent>()->getResourcesCount(SCRAP)) {
-			tech->setStatus(affordable);
-		}
-		else {
-			tech->setStatus(unaffordable);
+		if (tech->getStatus() != locked) {
+			if (cost < depot->getComponent<resourceComponent>()->getResourcesCount(SCRAP)) {
+				tech->setStatus(affordable);
+			}
+			else {
+				tech->setStatus(unaffordable);
+			}
 		}
 	}
 
