@@ -60,8 +60,8 @@ void levelUI::render() {
 		}
 		SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
 		SDL_RenderTexture(renderer, texture, NULL, &size);
+		minimap->render(renderer);
 	}
-	minimap->render(renderer);
 }
 
 void levelUI::textInput(SDL_Keycode key) {

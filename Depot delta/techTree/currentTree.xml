@@ -28,7 +28,7 @@
             <keyName>depotHealthIncrease</keyName>
             <description>Increase Depot health by 10%</description>
             <id>1</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.1</modifyValue>
             <!-- 10% production speed increase -->
@@ -42,7 +42,7 @@
             <keyName>fuelProductionIncrease</keyName>
             <description>Increase Fuel production by 5%</description>
             <id>2</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -55,7 +55,7 @@
             <keyName>dosProductionIncrease</keyName>
             <description>Increase DoS production by 5%</description>
             <id>3</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -68,7 +68,7 @@
             <keyName>ammoProductionIncrease</keyName>
             <description>Increase Ammo production by 5%</description>
             <id>4</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -81,7 +81,7 @@
             <keyName>decreaseFuelCosts</keyName>
             <description>Decrease Fuel costs by 10%</description>
             <id>5</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -94,7 +94,7 @@
             <keyName>decreaseDoSCosts</keyName>
             <description>Decrease DoS costs by 10%</description>
             <id>6</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -107,7 +107,7 @@
             <keyName>decreaseAmmoCosts</keyName>
             <description>Decrease Ammo costs by 10%</description>
             <id>7</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
             <cost>200</cost>
@@ -120,7 +120,7 @@
             <keyName>increasePersonnelCapacity</keyName>
             <description>Double personnel capacity</description>
             <id>8</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>50</cost>
@@ -136,7 +136,7 @@
             <keyName>increaseUnitDoSEfficiency</keyName>
             <description>Increase Unit Dos efficiency by 5%</description>
             <id>1</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.95</modifyValue>
             <cost>50</cost>
@@ -149,7 +149,7 @@
             <keyName>increaseUnitFuelEfficiency</keyName>
             <description>Increase Unit Fuel efficiency by 5%</description>
             <id>2</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.95</modifyValue>
             <cost>50</cost>
@@ -162,7 +162,7 @@
             <keyName>increaseRateOfFire</keyName>
             <description>Increase rate of fire by 5%</description>
             <id>3</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -175,7 +175,7 @@
             <keyName>largerBasicInfantry</keyName>
             <description>Double basic units max squad size</description>
             <id>4</id>
-            <status>2</status>
+            <status>1</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>250</cost>
@@ -188,7 +188,7 @@
             <keyName>largerBasicCarryingCapacity</keyName>
             <description>Double carrying capacity of basic units</description>
             <id>5</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>100</cost>
@@ -201,7 +201,7 @@
             <keyName>increaseBasicFuelEfficiency</keyName>
             <description>Increase fuel efficiency by 50% of basic units</description>
             <id>6</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>0.5</modifyValue>
             <cost>150</cost>
@@ -214,7 +214,7 @@
             <keyName>increaseBasicRateOfFire</keyName>
             <description>Increase rate of fire by 20% of basic units</description>
             <id>7</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.2</modifyValue>
             <cost>200</cost>
@@ -227,7 +227,7 @@
             <keyName>increaseBasicDamage</keyName>
             <description>Increase damage by 10% of basic units</description>
             <id>8</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.2</modifyValue>
             <cost>200</cost>
@@ -243,7 +243,7 @@
             <keyName>increaseConvoyCapacity</keyName>
             <description>Increase convoy capacity by 5%</description>
             <id>1</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -256,7 +256,7 @@
             <keyName>increaseConvoyFuelEfficiency</keyName>
             <description>Increase convoy fuel efficiency by 5%</description>
             <id>2</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.05</modifyValue>
             <cost>50</cost>
@@ -269,7 +269,7 @@
             <keyName>increaseBasicArmour</keyName>
             <description>Increase basic convoy armour by 15%</description>
             <id>3</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>
@@ -282,7 +282,7 @@
             <keyName>increaseBasicSpeed</keyName>
             <description>Increase basic convoy speed by 15%</description>
             <id>4</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>
@@ -295,7 +295,7 @@
             <keyName>increaseBasicCapacity</keyName>
             <description>Increase basic convoy capacity by 15%</description>
             <id>5</id>
-            <status>2</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>1.15</modifyValue>
             <cost>200</cost>

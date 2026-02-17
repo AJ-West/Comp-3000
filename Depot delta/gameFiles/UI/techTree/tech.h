@@ -24,9 +24,7 @@ enum listNames {
 class Tech : public UIElement{
 public:
 	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList, SDL_Texture* allIcons) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList), Icons(allIcons) {
-		SDL_Surface* surface = TTF_RenderText_Solid(font, desc.c_str(), desc.length(), { 0,0,0,255 });
-		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		tSize = { size.x - size.w*2, size.y+size.h, size.w * 5, size.h};
+		updateDescription();
 	}
 	~Tech(){}
 
@@ -123,6 +121,13 @@ public:
 		loc.y = listBelong * 32;
 	}
 
+	void updateDescription() {
+		costDescription = "Cost " + to_string(cost) + ": " + description;
+		SDL_Surface* surface = TTF_RenderText_Solid(font, costDescription.c_str(), costDescription.length(), { 0,0,0,255 });
+		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
+		tSize = { size.x - size.w * 2, size.y + size.h, size.w * 5, size.h };
+	}
+
 	//setters
 	void setID(int i) { id = i; }
 	void setStatus(int sStatus) { status = sStatus; }
@@ -153,6 +158,7 @@ private:
 	float modifyValue = 0.0f;
 
 	string description;
+	string costDescription = "";
 	SDL_Texture* descriptionTexture;
 	SDL_FRect tSize;
 	SDL_FRect loc = { 0,0,32,32 };
