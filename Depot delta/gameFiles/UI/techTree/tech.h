@@ -23,9 +23,7 @@ enum listNames {
 
 class Tech : public UIElement{
 public:
-	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList, SDL_Texture* allIcons) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList), Icons(allIcons) {
-		updateDescription();
-	}
+	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList, SDL_Texture* allIcons) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList), Icons(allIcons) {}
 	~Tech(){}
 
 	void checkAffordable(int money){
@@ -122,7 +120,7 @@ public:
 	}
 
 	void updateDescription() {
-		costDescription = "Cost " + to_string(cost) + ": " + description;
+		costDescription = to_string(boughtAmount) + "/" + to_string(purchaseAmount) + " Cost " + to_string(cost) + ": " + description;
 		SDL_Surface* surface = TTF_RenderText_Solid(font, costDescription.c_str(), costDescription.length(), { 0,0,0,255 });
 		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
 		tSize = { size.x - size.w * 2, size.y + size.h, size.w * 5, size.h };

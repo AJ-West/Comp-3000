@@ -158,6 +158,7 @@ public:
 		tech->setPurchaseAmount(atoi(entity->FirstChildElement("purchaseAmount")->GetText()));
 		tech->setBoughtAmount(atoi(entity->FirstChildElement("boughtAmount")->GetText()));
 		tech->calcLoc();
+		tech->updateDescription();
 	}
 
 	void saveTechFile() {
