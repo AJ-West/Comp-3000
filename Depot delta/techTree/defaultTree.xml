@@ -80,7 +80,7 @@
             <name>Decrease Fuel Costs</name>
             <keyName>decreaseFuelCosts</keyName>
             <description>Decrease Fuel costs by 10%</description>
-            <id>6</id>
+            <id>5</id>
             <status>2</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
@@ -93,7 +93,7 @@
             <name>Decrease DoS Costs</name>
             <keyName>decreaseDoSCosts</keyName>
             <description>Decrease DoS costs by 10%</description>
-            <id>7</id>
+            <id>6</id>
             <status>2</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
@@ -106,7 +106,7 @@
             <name>Decrease Ammo Costs</name>
             <keyName>decreaseAmmoCosts</keyName>
             <description>Decrease Ammo costs by 10%</description>
-            <id>8</id>
+            <id>7</id>
             <status>2</status>
             <type>0</type>
             <modifyValue>0.9</modifyValue>
@@ -119,7 +119,7 @@
             <name>Increase personnel capacity</name>
             <keyName>increasePersonnelCapacity</keyName>
             <description>Double personnel capacity</description>
-            <id>9</id>
+            <id>8</id>
             <status>2</status>
             <type>0</type>
             <modifyValue>2</modifyValue>

@@ -21,8 +21,6 @@ enum currentTech {
 class TechTree : public UIElement {
 public:
 	TechTree(SDL_Renderer* renderer, LevelManager* lManager, DepotObj* depObj) : UIElement({ 0, 0, camera.dimen.w, camera.dimen.h }), manager(lManager), depot(depObj) {
-		readTechFile();
-		updateAffordable();
 		// Load resource hover texture
 		SDL_Surface* surface = IMG_Load("techTree/art/blueprint.png");
 		if (!surface) {
@@ -32,6 +30,18 @@ public:
 		background = SDL_CreateTextureFromSurface(renderer, surface);
 		SDL_DestroySurface(surface); // Free the surface after creating the texture
 		if (!background) {
+			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
+			return;
+		}
+
+		surface = IMG_Load("techTree/art/Icons.png");
+		if (!surface) {
+			cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
+			return;
+		}
+		Icons = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_DestroySurface(surface); // Free the surface after creating the texture
+		if (!Icons) {
 			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
 			return;
 		}
@@ -47,6 +57,9 @@ public:
 			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
 			return;
 		}
+
+		readTechFile();
+		updateAffordable();
 
 		//define text box size
 		tSize = { size.x + size.w / 4, size.y, size.w / 2, size.h / 10 };
@@ -94,7 +107,7 @@ public:
 		SDL_FRect pos{ 0,0,0,0 };
 		while (entity) {
 			div_t divV = div(i, 5);
-			pos.w = size.w / 24;
+			pos.w = size.w / 12;
 			pos.h = pos.w;
 			pos.x = size.w / 7 * (divV.rem + 1) + size.w / 14 - pos.w / 2;
 			pos.y = size.h / 3 * divV.quot + size.h / 6 - pos.h / 2;
@@ -104,7 +117,7 @@ public:
 			string keyName = string(entity->FirstChildElement("keyName")->GetText());
 			int cost = atoi(entity->FirstChildElement("cost")->GetText());
 			//Tech* newTech = new Tech(cost, pos, name, keyName);
-			Tech* newTech = new Tech(cost, pos, name, string(entity->FirstChildElement("description")->GetText()), keyName, atoi(entity->FirstChildElement("upgradeLocation")->GetText()));
+			Tech* newTech = new Tech(cost, pos, name, string(entity->FirstChildElement("description")->GetText()), keyName, atoi(entity->FirstChildElement("upgradeLocation")->GetText()), Icons);
 			setValues(entity, newTech, cost);
 			list->emplace_back(newTech);
 			entity = entity->NextSiblingElement("entities");
@@ -144,7 +157,7 @@ public:
 		}
 		tech->setPurchaseAmount(atoi(entity->FirstChildElement("purchaseAmount")->GetText()));
 		tech->setBoughtAmount(atoi(entity->FirstChildElement("boughtAmount")->GetText()));
-
+		tech->calcLoc();
 	}
 
 	void saveTechFile() {
@@ -219,7 +232,6 @@ public:
 		string text = currentStrings[current];
 		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), text.length(), { 0,0,0,255 });
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-		tSize.w = tSize.w * scaleText(text);
 		SDL_RenderTexture(renderer, texture, NULL, &tSize);
 	}
 
@@ -311,6 +323,7 @@ private:
 	SDL_FRect tSize;
 
 	SDL_Texture* background;
+	SDL_Texture* Icons;
 
 	TechArrow* leftArrow;
 	TechArrow* rightArrow;

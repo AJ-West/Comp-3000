@@ -8469,11 +8469,11 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>145</Personnel>
-                <Ammunition>180</Ammunition>
-                <DoS>180</DoS>
-                <Fuel>180</Fuel>
-                <Scrap>180</Scrap>
+                <Personnel>205</Personnel>
+                <Ammunition>240</Ammunition>
+                <DoS>240</DoS>
+                <Fuel>240</Fuel>
+                <Scrap>240</Scrap>
             </Resources>
         </entities>
         <entities>
@@ -8535,11 +8535,11 @@
             <type>1</type>
             <alive>1</alive>
             <Resources>
-                <Personnel>145</Personnel>
-                <Ammunition>180</Ammunition>
-                <DoS>180</DoS>
-                <Fuel>180</Fuel>
-                <Scrap>180</Scrap>
+                <Personnel>205</Personnel>
+                <Ammunition>240</Ammunition>
+                <DoS>240</DoS>
+                <Fuel>240</Fuel>
+                <Scrap>240</Scrap>
             </Resources>
         </entities>
     </layers>

@@ -23,7 +23,7 @@ enum listNames {
 
 class Tech : public UIElement{
 public:
-	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList) {
+	Tech(int tCost, SDL_FRect size, string tName, string desc, string tKeyName, int bList, SDL_Texture* allIcons) : UIElement(size), cost(tCost), name(tName), description(desc), keyName(tKeyName), listBelong(bList), Icons(allIcons) {
 		SDL_Surface* surface = TTF_RenderText_Solid(font, desc.c_str(), desc.length(), { 0,0,0,255 });
 		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
 		tSize = { size.x - size.w*2, size.y+size.h, size.w * 5, size.h};
@@ -38,18 +38,20 @@ public:
 	void render(SDL_Renderer* renderer) {
 		switch (status) {
 		case affordable:
-			SDL_SetRenderDrawColor(renderer, boughtAmount*25, 255, boughtAmount * 25, 255);
+			SDL_SetRenderDrawColor(renderer, boughtAmount*25, 255, boughtAmount * 25, 25);
 			break;
 		case unaffordable:
-			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 25);
 			break;
 		case locked:
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 25);
 			break;
 		case purchased:
-			SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+			SDL_SetRenderDrawColor(renderer, 0, 0, 100, 25);
 			break;
 		}
+		SDL_RenderTexture(renderer, Icons, &loc, &size);
+		//SDL_RenderTexture(renderer, Icons, NULL, &size);
 		SDL_RenderFillRect(renderer, &size);
 	}
 
@@ -116,6 +118,11 @@ public:
 		}
 	}
 
+	void calcLoc() {
+		loc.x = id * 32 - 32;
+		loc.y = listBelong * 32;
+	}
+
 	//setters
 	void setID(int i) { id = i; }
 	void setStatus(int sStatus) { status = sStatus; }
@@ -148,6 +155,9 @@ private:
 	string description;
 	SDL_Texture* descriptionTexture;
 	SDL_FRect tSize;
+	SDL_FRect loc = { 0,0,32,32 };
+
+	SDL_Texture* Icons;
 
 	int purchaseAmount = 0;
 	int boughtAmount = 0;
