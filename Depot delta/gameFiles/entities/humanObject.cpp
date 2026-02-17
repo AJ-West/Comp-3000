@@ -1,5 +1,6 @@
 #include "gameFiles/entities/humanObject.h"
 
+#include "gameFiles/components/attackComponent.h"
 #include "gameFiles/components/resourceComponent.h"
 #include "gameFiles/components/pathfindingComponent.h"
 
@@ -30,6 +31,10 @@ void HumanObj::updateStats(string keyName, bool forUnit) {
 			return;
 		}
 		if (keyName == "increaseRateOfFire") {
+			auto aC = getComponent<attackComponent>();
+			if (aC) {
+				aC->setAttackCooldown(aC->getAttackCooldown() * unitTechVal[keyName]);
+			}
 			return;
 		}
 		if (keyName == "largerBasicInfantry") {

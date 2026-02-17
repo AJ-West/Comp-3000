@@ -43,7 +43,7 @@ public:
 
 	void attack() {
 		Uint32 currentTime = SDL_GetTicks();
-		if (currentTime - lastAttackTime >= owner->getRateOfFire()) {
+		if (currentTime - lastAttackTime >= attackCooldownMS) {
 			lastAttackTime = currentTime;
 			auto rComp = owner->getComponent<resourceComponent>();
 			int count = rComp->getResourcesCount(AMMUNITION);
@@ -76,7 +76,12 @@ public:
 		bullets->render(renderer);
 	}
 
+	//getters
+	int getAttackCooldown() { return attackCooldownMS; }
+
+	//setters
 	void setPotentialTargets(shared_ptr<vector<shared_ptr<ZombieObj>>> potTargets) { targets = potTargets; }
+	void setAttackCooldown(int newCooldown) { attackCooldownMS = newCooldown; }
 
 	attackComponent(GameObject* obj, int damage, int range) : Component(obj), maxDamage(damage), attackRange(range) {	}
 	virtual ~attackComponent() {}
@@ -85,8 +90,8 @@ private:
 	Uint32 lastBulletTime = 0;
 	int maxDamage;
 	int attackRange;
-	int attackCooldownMS;
-	int bulletCooldownMS;
+	int attackCooldownMS = 60;
+	int bulletCooldownMS = 12;
 	shared_ptr<vector<shared_ptr<ZombieObj>>> targets;
 	ZombieObj* target = nullptr;
 	bulletHandler* bullets = new bulletHandler();

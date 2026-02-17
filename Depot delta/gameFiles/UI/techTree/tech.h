@@ -47,7 +47,6 @@ public:
 			break;
 		}
 		SDL_RenderTexture(renderer, Icons, &loc, &size);
-		//SDL_RenderTexture(renderer, Icons, NULL, &size);
 		SDL_RenderFillRect(renderer, &size);
 	}
 

@@ -97,6 +97,8 @@ void MapLoader::loadEntities(XMLElement* layer)
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(unitConvoyList);
         zombie->getComponent<nearestComponent>()->setDepot(depot);
 	}
+
+    loadTechTree();
 }
 
 void MapLoader::loadUnit(XMLElement* entity)
@@ -213,8 +215,8 @@ void MapLoader::loadBuilding(XMLElement* entity) {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
-    int width = 8; // number of tiles 
-    int height = 8;
+    int width = 6; // number of tiles 
+    int height = 6;
     bool alive = atoi(entity->FirstChildElement("alive")->GetText()) != 0;
     int type = atoi(entity->FirstChildElement("type")->GetText());
     BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type);
@@ -236,7 +238,7 @@ void MapLoader::addBuildingComponents(BuildingObj* building, XMLElement* entity)
     }
     building->AddComponent(make_shared<resourceComponent>(building, max, count, loadResourceTextures()));
     building->AddComponent(make_shared<buttonComponent>(building));
-    building->AddComponent(make_shared<renderComponent>(building, renderer, "draftArt/building.png"));
+    building->AddComponent(make_shared<renderComponent>(building, renderer, entity->FirstChildElement("art")->GetText()));
 }
 
 void MapLoader::loadAllTransfer(XMLElement* layer) {
@@ -269,6 +271,60 @@ void MapLoader::loadTransfer(XMLElement* entity) {
                 }
             }
         }
+    }
+}
+
+void MapLoader::loadTechTree() {
+    XMLDocument doc;
+    doc.LoadFile("techTree/currentTree.xml");
+    XMLElement* root = doc.RootElement();
+    XMLElement* layer = root->FirstChildElement("layers");
+    while (layer) {
+        string layerName = string(layer->FirstChildElement("name")->GetText());
+        if (layerName == "depotUpgrades") {
+            loadDepotTech(layer);
+        }
+        else if (layerName == "unitUpgrades") {
+            loadUnitTech(layer);
+        }
+        else if (layerName == "convoyUpgrades") {
+            loadConvoyTech(layer);
+        }
+        layer = layer->NextSiblingElement("layers");
+    }
+}
+
+void MapLoader::loadDepotTech(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string keyName = entity->FirstChildElement("keyName")->GetText();
+        depotTechVal[keyName] *= pow(atof(entity->FirstChildElement("keyName")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+        depot->updateStats(keyName);
+        entity = entity->NextSiblingElement("entities");
+    }
+}
+
+void MapLoader::loadUnitTech(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string keyName = entity->FirstChildElement("keyName")->GetText();
+        unitTechVal[keyName] *= pow(atof(entity->FirstChildElement("keyName")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+        for (auto unit : *unitConvoyList) {
+            unit->updateStats(keyName, true);
+        }
+        entity = entity->NextSiblingElement("entities");
+    }
+}
+
+void MapLoader::loadConvoyTech(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string keyName = entity->FirstChildElement("keyName")->GetText();
+        convoyTechVal[keyName] *= pow(atof(entity->FirstChildElement("keyName")->GetText()), atoi(entity->FirstChildElement("boughtAmount")->GetText()));
+        for (auto convoy : *unitConvoyList) {
+            convoy->updateStats(keyName, false);
+        }
+        entity = entity->NextSiblingElement("entities");
     }
 }
 

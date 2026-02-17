@@ -271,7 +271,7 @@ public:
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
 						techBox->increaseCost();
 						if (techBox->getType() == modifier) {
-							depot->updateStats(techBox->getKeyName());
+							manager->updateStats(techBox->getKeyName(), true);
 						}
 						updateDepotScrap();
 						updateAffordable();
@@ -287,7 +287,7 @@ public:
 						depot->getComponent<resourceComponent>()->decreaseResourceCount(SCRAP, techBox->getCost());
 						techBox->increaseCost();
 						if (techBox->getType() == modifier) {
-							depot->updateStats(techBox->getKeyName());
+							manager->updateStats(techBox->getKeyName(), false);
 						}
 						updateDepotScrap();
 						updateAffordable();

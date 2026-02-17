@@ -187,6 +187,11 @@ void LevelManager::clampZoom(){
 
 void LevelManager::updateStats(string keyName, bool forUnit) {
     for (auto unit : *unitConvoys) {
-        unit->updateStats(keyName, forUnit);
+        if (forUnit && typeid(unit).name() == typeid(UnitObj).name()) {
+            unit->updateStats(keyName, forUnit);
+        }
+        else if (forUnit && typeid(unit).name() == typeid(ConvoyObj).name()) {
+            unit->updateStats(keyName, forUnit);
+        }
     }
 }

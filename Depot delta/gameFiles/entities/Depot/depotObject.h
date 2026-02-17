@@ -53,19 +53,18 @@ public:
 	void updateStats(string keyName) {
 		if (keyName == "depotHealthIncrease") {
 			maxHealth *= depotTechVal[keyName];
-			health *= depotTechVal[keyName];
 			return;
 		}
 		if (keyName == "fuelProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(FUEL, getComponent<resourceComponent>()->getResourceChange(FUEL));
+			getComponent<resourceComponent>()->setResourceChange(FUEL, getComponent<resourceComponent>()->getResourceChange(FUEL)+1* depotTechVal[keyName]);
 			return;
 		}
 		if (keyName == "dosProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(DOS, getComponent<resourceComponent>()->getResourceChange(DOS));
+			getComponent<resourceComponent>()->setResourceChange(DOS, getComponent<resourceComponent>()->getResourceChange(DOS)+1* depotTechVal[keyName]);
 			return;
 		}
 		if (keyName == "ammoProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(AMMUNITION, getComponent<resourceComponent>()->getResourceChange(AMMUNITION));
+			getComponent<resourceComponent>()->setResourceChange(AMMUNITION, getComponent<resourceComponent>()->getResourceChange(AMMUNITION)+1* depotTechVal[keyName]);
 			return;
 		}
 		if (keyName == "decreaseFuelCosts") { // need to do but requires rework to resource system
@@ -78,7 +77,7 @@ public:
 			return;
 		}
 		if (keyName == "increasePersonnelCapacity") {
-			getComponent<resourceComponent>()->setResourceMax(PERSONNEL, getComponent<resourceComponent>()->getResourcesMax(PERSONNEL));
+			getComponent<resourceComponent>()->setResourceMax(PERSONNEL, getComponent<resourceComponent>()->getResourcesMax(PERSONNEL)*2);
 			return;
 		}
 	}

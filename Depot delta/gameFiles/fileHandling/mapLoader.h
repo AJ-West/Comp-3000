@@ -48,6 +48,11 @@ public:
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 	void addBuildingComponents(BuildingObj* building, XMLElement* entity);
 
+	void loadTechTree();
+	void loadDepotTech(XMLElement* layer);
+	void loadUnitTech(XMLElement* layer);
+	void loadConvoyTech(XMLElement* layer);
+
 	void renderTileMap(SDL_Renderer* renderer);
 
 	//getters

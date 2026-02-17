@@ -175,7 +175,7 @@
             <keyName>largerBasicInfantry</keyName>
             <description>Double basic units max squad size</description>
             <id>4</id>
-            <status>1</status>
+            <status>0</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>250</cost>
