@@ -20,15 +20,17 @@ public:
 	void checkRange() {
 		SDL_FRect pos = owner->getDimensions();
 		Vec2 own{ pos.x + pos.w / 2, pos.y + pos.h / 2 };
-		for (auto& potTarget : *targets) {
-			if (potTarget) {
-				float distance = getDistance(own, potTarget->getPos());
-				if (distance < targetDistance && distance < attackRange) {
-					target = potTarget.get();
-					targetDistance = distance;
-					owner->setTargetObject(target);
-					cout << "firing" << '\n';
-					return;
+		if (targets) {
+			for (auto& potTarget : *targets) {
+				if (potTarget) {
+					float distance = getDistance(own, potTarget->getPos());
+					if (distance < targetDistance && distance < attackRange) {
+						target = potTarget.get();
+						targetDistance = distance;
+						owner->setTargetObject(target);
+						cout << "firing" << '\n';
+						return;
+					}
 				}
 			}
 		}

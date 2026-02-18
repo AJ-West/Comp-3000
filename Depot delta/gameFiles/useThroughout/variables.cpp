@@ -11,8 +11,11 @@ int screenHeight = 1080/2;
 int ResolutionWidth = screenWidth/2;
 int ResolutionHeight = screenHeight/2;
 
-int worldWidth = 1984;
-int worldHeight = 1088;
+//int worldWidth = 1984;
+int worldWidth = 3968;
+//int worldHeight = 1088;
+int worldHeight = 2176;
+//const int WORLD_TILE_SIZE = 16;
 const int WORLD_TILE_SIZE = 16;
 const int WORLD_TILE_COLS = worldWidth / WORLD_TILE_SIZE;
 const int WORLD_TILE_ROWS = worldHeight / WORLD_TILE_SIZE;

@@ -53,7 +53,7 @@ struct Camera {
 	int x_dir = 0;
 	int y_dir = 0;
 
-	int speed = 150;
+	int speed = 350;
 
 	void keyDown(SDL_Keycode key) {
 		switch (key) {

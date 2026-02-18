@@ -6,7 +6,7 @@
 
 class BuildingObj : public GameObject {
 public:
-	BuildingObj(int x, int y, int width, int height, int health, bool used, int type);
+	BuildingObj(int x, int y, int width, int height, int health, bool used, int type, int ID);
 
 	virtual void Update();
 
@@ -18,8 +18,11 @@ public:
 
 	//getters
 	int getType() { return rType; }
+	virtual int getID() { return id; }
 
 private:
+	int id;
+
 	int rType;
 
 	int maxHealth = 300;

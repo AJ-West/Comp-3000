@@ -5,7 +5,7 @@
 
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
-    mapLoader = new MapLoader("maps/test.xml", renderer);
+    mapLoader = new MapLoader("maps/demo.xml", renderer);
     unitConvoys = mapLoader->getUnitConvoyList();
     buildingList = mapLoader->getBuildingList();
     depot = shared_ptr<DepotObj>(mapLoader->getDepot());
@@ -29,7 +29,7 @@ LevelManager::~LevelManager()
 //On closing the game saves what is needed to be saved
 void LevelManager::saveOnExit()
 {
-	MapSaver saver("maps/test.xml");
+	MapSaver saver("maps/demo.xml");
     saver.saveFile(allObjects, *zombieList);
 }
 

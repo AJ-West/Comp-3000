@@ -46,10 +46,10 @@ void MapLoader::loadTilemap(XMLElement* layer)
     xCells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
     yCells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
 	grid.resize(yCells, vector<Tile>(xCells));
-    XMLElement* data = layer->FirstChildElement("data");
+    //XMLElement* data = layer->FirstChildElement("data");
 	for (int i = 0; i < yCells; i++) {
 		vector<SDL_FRect> row;
-		for (int j = 0; j < xCells; j++) {
+		/*for (int j = 0; j < xCells; j++) {
 			int pos = atoi(data->GetText()); // position in spritesheet
             div_t loc = div(pos, 8); // gettile value as int then conver to location on tilemap spritesheet
 			SDL_FRect cell;
@@ -60,7 +60,10 @@ void MapLoader::loadTilemap(XMLElement* layer)
 			row.push_back(cell);
             data = data->NextSiblingElement("data");
             if (pos >= 20) { grid[i][j].walkable = true; } // if tile is generic (hardcoded while using basic tilemap)
-		}
+		}*/
+        for (int j = 0; j < xCells; j++) {
+            grid[i][j].walkable = true;
+        }
 		tilemap.push_back(row);
 	}
 }
@@ -204,22 +207,22 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     depot->AddComponent(make_shared<resourceComponent>(depot, max, count, loadResourceTextures()));
-    depot->getComponent<resourceComponent>()->setResourceChange(PERSONNEL, 5);
-    depot->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 5);
-    depot->getComponent<resourceComponent>()->setResourceChange(DOS, 5);
-    depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 5);
-    depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 5);
+    depot->getComponent<resourceComponent>()->setResourceChange(PERSONNEL, 1);
+    depot->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 1);
+    depot->getComponent<resourceComponent>()->setResourceChange(DOS, 1);
+    depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 1);
+    depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 1);
 }
 
 void MapLoader::loadBuilding(XMLElement* entity) {
     int x = atoi(entity->FirstChildElement("x")->GetText());
     int y = atoi(entity->FirstChildElement("y")->GetText());
     int health = atoi(entity->FirstChildElement("health")->GetText());
-    int width = 6; // number of tiles 
-    int height = 6;
+    int width = 8; // number of tiles 
+    int height = 8;
     bool alive = atoi(entity->FirstChildElement("alive")->GetText()) != 0;
     int type = atoi(entity->FirstChildElement("type")->GetText());
-    BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type);
+    BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type, atoi(entity->FirstChildElement("id")->GetText()));
     addBuildingComponents(building, entity);
     buildingList->emplace_back(building);
 }

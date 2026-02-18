@@ -26,13 +26,13 @@ public:
 		if (distanceToUnit(depot) < distanceToNearest) {
 			nearestUnit = nullptr;
 			distanceToNearest = distanceToUnit(depot);
-			owner->setTarget(depot->getPos().x, depot->getPos().x);
+			owner->setTarget(depot->getPos().x, depot->getPos().y);
 			owner->setTargetObject(depot);
 		}
 		if (nearestUnit && distanceToNearest > searchDistance) {
 			nearestUnit = nullptr;
 			distanceToNearest = FLT_MAX;
-			owner->setTarget(depot->getPos().x, depot->getPos().x);
+			owner->setTarget(depot->getPos().x, depot->getPos().y);
 			owner->setTargetObject(depot);
 		}
 		else if (nearestUnit) {

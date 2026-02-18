@@ -1,6 +1,6 @@
 #include "gameFiles/entities/Buildings/building.h"
 
-BuildingObj::BuildingObj(int x, int y, int width, int height, int health, bool used, int type) : GameObject(x, y, width, height, health), rType(type) {
+BuildingObj::BuildingObj(int x, int y, int width, int height, int health, bool used, int type, int ID) : GameObject(x, y, width, height, health), rType(type), id(ID) {
 	setAlive(used);
 }
 

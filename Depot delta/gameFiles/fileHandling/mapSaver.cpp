@@ -14,7 +14,11 @@ MapSaver::~MapSaver()
 
 shared_ptr<GameObject> MapSaver::findObject(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, int id) { // can be optimised by removing objects as they are found???
     for (auto obj : *allObjects) {
-        if (obj->getID() == id) { return obj; }
+        if (obj.get()) {
+            if (obj->getID() == id) {
+                return obj;
+            }
+        }
     }
 }
 
