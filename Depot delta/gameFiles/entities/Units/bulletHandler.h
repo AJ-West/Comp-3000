@@ -7,7 +7,7 @@
 
 struct Bullet {
 	Vec2 pos, vel;
-	int speed = 1;
+	int speed = 5;
 	bool inUse = false;
 	SDL_FRect size = { 0, 0, 5, 5 };
 	int lifetime;
@@ -22,7 +22,7 @@ struct Bullet {
 		//bullet velocity
 		vel = normalise(Vec2{ tVec.x - pVec.x, tVec.y - pVec.y });
 		//how long until the bullet reaches its target
-		lifetime = mag(tVec.sub(pVec))/ mag(vel);
+		lifetime = mag(tVec.sub(pVec))/ (mag(vel)*speed);
 		inUse = true;
 	}
 

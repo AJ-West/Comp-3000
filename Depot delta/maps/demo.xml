@@ -31,18 +31,26 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>1000</health>
+            <health>100</health>
             <x>1856</x>
             <y>960</y>
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>500</Personnel>
-                <Ammunition>500</Ammunition>
-                <DoS>500</DoS>
-                <Fuel>500</Fuel>
-                <Scrap>500</Scrap>
+                <Personnel>5</Personnel>
+                <Ammunition>30</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>0</Scrap>
             </Resources>
+            <Transfering>-1</Transfering>
+            <ResourceTransfer>
+                <PersonnelChange>0</PersonnelChange>
+                <AmmunitionChange>0</AmmunitionChange>
+                <DoSChange>0</DoSChange>
+                <FuelChange>0</FuelChange>
+                <ScrapChange>0</ScrapChange>
+            </ResourceTransfer>
         </entities>
         <entities eid="95492584">
             <name>Building</name>
