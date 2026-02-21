@@ -58,6 +58,8 @@ public:
 			toDelete = true;
 			depot->onClick();
 		}
+
+		selectedElement = elem;
 	}
 
 	bool checkAmounts(vector<int> counts, vector<int> amounts) {

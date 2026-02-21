@@ -33,7 +33,8 @@ void NewUnitState::leftClick() {
 	if (UI->checkClickInput()) {
 		UIElement* selectedElement = UI->getBox()->getSelectedElement();
 		if (typeid(selectedElement).name() == typeid(textInput).name()) { textInput = true; }
-		else { selectedElement->update(); }
+		else { UI->deleteBox(); }
+		//else { selectedElement->update(); }
 		return;
 	}
 	if (!UI->getBox()) { // if box has been removed

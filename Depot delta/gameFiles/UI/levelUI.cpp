@@ -93,11 +93,10 @@ bool levelUI::checkClickInput() { // checks if clicked on an input box in the UI
 	if (box != nullptr) {
 		if (box->checkClick(cx, cy)) {
 			bool clicked = box->findClickedElement(cx, cy);
-			if (clicked && box->getToDelete()) {
-				delete box;
-				box = nullptr;
-				return false;
-			}
+			//if (clicked && box->getToDelete()) {
+				//delete box;
+				//box = nullptr;
+			//}
 			return clicked;
 		}
 	}

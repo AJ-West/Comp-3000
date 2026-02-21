@@ -37,8 +37,8 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>5</Personnel>
-                <Ammunition>30</Ammunition>
+                <Personnel>0</Personnel>
+                <Ammunition>0</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>0</Scrap>

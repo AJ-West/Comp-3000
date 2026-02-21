@@ -22,9 +22,6 @@ enum ObjectType convert(const char* str) {
 void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 	checkHover(event, manager);
 	if (currentState) {
-		//if (stateEnum == selectHuman) {
-
-		//}
 		currentState->handleInput(event);
 		if (currentState->endState()) { decideState(manager); } // sets to nullptr
 	}

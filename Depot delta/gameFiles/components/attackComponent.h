@@ -52,6 +52,7 @@ public:
 			if (count > 0) {
 				rComp->setResourcesCount(AMMUNITION, count - 1);
 				target->takeDamage(owner->getDamage());
+				bullets->spawnBullet(owner->getPos(), target->getDimensions());
 				if (!target->getAlive()) {
 					target = nullptr;
 					owner->setAttacking(false);
