@@ -16,6 +16,8 @@
 #include "gameFiles/components/movementComponent.h"
 #include "gameFiles/components/attackComponent.h"
 
+#include "gameFiles/UI/resourceBoxes/makingStatsBox.h"
+
 class textInput;
 class LevelManager;
 
@@ -43,7 +45,7 @@ public:
 		elements.push_back(new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false));
 		elements.push_back(new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true));
 
-		updateArt();
+		statsBox = new MakingStatsBox({ size.x + 269 * camera.xScale, size.y + 172 * camera.yScale, 482 * camera.xScale, 605 * camera.yScale });
 	}
 	~unitMaker() {}	
 
@@ -88,7 +90,7 @@ public:
 		else {
 			typeIndex = unlockedUnit.getPrevIndex(typeIndex);
 		}
-		updateArt();
+		statsBox->updateArt(typeIndex);
 	}
 
 	virtual void render(SDL_Renderer* renderer) {
@@ -98,28 +100,7 @@ public:
 			elem->render(renderer);
 		}
 		if (selectedElement) { selectedElement->toggleIndicator(); }
-		SDL_RenderTexture(renderer, unitName, NULL, &nameSize);
-	}
-
-	void updateArt() {
-		string name = unlockedUnit.names[typeIndex];
-		SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
-		unitName = SDL_CreateTextureFromSurface(renderer, surface);
-		nameSize = { size.x + 2.0f * camera.xScale, size.y + 25.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
-		/*switch (typeIndex) {
-		case basicUnit:
-			name = unlockedUnit.names[typeIndex];
-			SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
-			unitName = SDL_CreateTextureFromSurface(renderer, surface);
-			nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
-			break;
-		case basicConvoy:
-			name = unlockedUnit.names[typeIndex];
-			SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
-			unitName = SDL_CreateTextureFromSurface(renderer, surface);
-			nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
-			break;
-		}*/
+		statsBox->render(renderer);
 	}
 
 	bool checkAmounts(vector<int> counts, vector<int> amounts) {
@@ -172,10 +153,9 @@ public:
 	}
 
 private:
-	SDL_Texture* unitName;
-	SDL_FRect nameSize{ };
-
 	DepotObj* depot;
+
+	MakingStatsBox* statsBox;
 
 	int typeIndex = 0;
 };

@@ -392,7 +392,7 @@
     <ClInclude Include="gameFiles\gameManager.h">
       <Filter>Source Files\gameFiles</Filter>
     </ClInclude>
-    <ClInclude Include="makingStatsBox.h">
+    <ClInclude Include="gameFiles\UI\resourceBoxes\makingStatsBox.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes\unitMakerBox</Filter>
     </ClInclude>
   </ItemGroup>
