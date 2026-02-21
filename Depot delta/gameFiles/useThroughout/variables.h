@@ -44,6 +44,54 @@ extern int FONT_SIZE;
 
 extern bool isRunning;
 
+enum unitTypeIndex {
+	basicUnit,
+	loackedUnit,
+	basicConvoy,
+};
+
+struct unlockedUnits {
+	//0 is locked, 1 is unlocked
+	vector<int> types{ 1,0,1 };
+	vector<string> names{ "BasicUnit", "lockedUnit", "BasicConvoy"};
+
+	int getNextIndex(int current) { // finds index of next unlocked unit
+		bool foundUnlocked = false;
+		int firstUnlocked = 0;
+		bool afterCurrent = false;
+		for (int i = 0; i < types.size(); i++) {
+			if(types[i] == 1 && (!foundUnlocked || afterCurrent)){
+				firstUnlocked = i;
+				foundUnlocked = true;
+				if (afterCurrent) {
+					break;
+				}
+			}
+			if (current == i) { afterCurrent = true; }
+		}
+		return firstUnlocked;
+	}
+
+	int getPrevIndex(int current) { // finds index of previous unlocked unit
+		bool foundUnlocked = false;
+		int firstUnlocked = 0;
+		bool beforeCurrent = false;
+		for (int i = types.size()-1; i >= 0; i--) {
+			if (types[i] == 1 && (!foundUnlocked || beforeCurrent)) {
+				firstUnlocked = i;
+				foundUnlocked = true;
+				if (beforeCurrent) {
+					break;
+				}
+			}
+			if (current == i) { beforeCurrent = true; }
+		}
+		return firstUnlocked;
+	}
+};
+
+extern unlockedUnits unlockedUnit;
+
 struct Camera {
 	SDL_FRect dimen{0,0,0,0};
 

@@ -9,6 +9,7 @@
 #include "gameFiles/useThroughout/stats/convoyStats.h"
 
 #include "gameFiles/UI/resourceBoxes/resourceBox.h"
+#include "gameFiles/UI/techTree/techArrow.h"
 
 #include "gameFiles/components/renderComponent.h"
 #include "gameFiles/components/buttonComponent.h"
@@ -21,10 +22,28 @@ class LevelManager;
 class unitMaker : public ResourceBox {
 public:
 	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(lManager, rSize), depot(gameDepot) {
+		SDL_Surface* surface = IMG_Load("art/UI/level/newUnitBoard.png");
+		if (!surface) {
+			cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
+			return;
+		}
+		texture = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
+		SDL_DestroySurface(surface); // Free the surface after creating the texture
+		if (!texture) {
+			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
+			return;
+		}
+
 		//add make unit button
 		elements.push_back(new newUnitButton({ size.x + 245.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
 		//add cancel button
 		elements.push_back(new newUnitButton({ size.x + 585.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, false));
+
+		elements.push_back(new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false));
+		elements.push_back(new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true));
+
+		updateArt();
 	}
 	~unitMaker() {}	
 
@@ -60,6 +79,47 @@ public:
 		}
 
 		selectedElement = elem;
+	}
+
+	virtual void arrowClicked(TechArrow* elem) {
+		if (elem->getIncrease()) {
+			typeIndex = unlockedUnit.getNextIndex(typeIndex);
+		}
+		else {
+			typeIndex = unlockedUnit.getPrevIndex(typeIndex);
+		}
+		updateArt();
+	}
+
+	virtual void render(SDL_Renderer* renderer) {
+		SDL_RenderTexture(renderer, texture, NULL, &size);
+		SDL_SetRenderDrawColor(renderer, 163, 149, 123, 255);
+		for (auto elem : elements) {
+			elem->render(renderer);
+		}
+		if (selectedElement) { selectedElement->toggleIndicator(); }
+		SDL_RenderTexture(renderer, unitName, NULL, &nameSize);
+	}
+
+	void updateArt() {
+		string name = unlockedUnit.names[typeIndex];
+		SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
+		unitName = SDL_CreateTextureFromSurface(renderer, surface);
+		nameSize = { size.x + 2.0f * camera.xScale, size.y + 25.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
+		/*switch (typeIndex) {
+		case basicUnit:
+			name = unlockedUnit.names[typeIndex];
+			SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
+			unitName = SDL_CreateTextureFromSurface(renderer, surface);
+			nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
+			break;
+		case basicConvoy:
+			name = unlockedUnit.names[typeIndex];
+			SDL_Surface* surface = TTF_RenderText_Solid(font, name.c_str(), name.length(), { 0,0,0,255 });
+			unitName = SDL_CreateTextureFromSurface(renderer, surface);
+			nameSize = { size.x + 2.0f * camera.xScale, size.y + 3.0f * camera.yScale, (size.w - 4.0f * camera.xScale) * scaleText(name), 37.0f * camera.yScale };
+			break;
+		}*/
 	}
 
 	bool checkAmounts(vector<int> counts, vector<int> amounts) {
@@ -112,5 +172,10 @@ public:
 	}
 
 private:
+	SDL_Texture* unitName;
+	SDL_FRect nameSize{ };
+
 	DepotObj* depot;
+
+	int typeIndex = 0;
 };

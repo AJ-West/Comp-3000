@@ -39,6 +39,8 @@ bool isRunning;
 
 Camera camera = { 0,0, ResolutionWidth, ResolutionHeight };
 
+unlockedUnits unlockedUnit;
+
 std::vector<std::vector<Tile>> grid;
 
 unordered_map<string, float> depotTechVal = {

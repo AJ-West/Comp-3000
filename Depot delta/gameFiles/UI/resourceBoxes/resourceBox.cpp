@@ -1,7 +1,7 @@
 #pragma once
 #include "gameFiles/UI/resourceBoxes/resourceBox.h"
 #include "gameFiles/levelHandling/levelManager.h"
-
+#include "gameFiles/UI/techTree/techArrow.h"
 
 ResourceBox::ResourceBox(LevelManager* lManager, SDL_FRect rSize) : UIElement(rSize), manager(lManager) {
 	//Load transfer box texture - needs replacing in the future with specific unit make box
@@ -57,6 +57,10 @@ bool ResourceBox::findClickedElement(float cx, float cy) {
 			}
 			else if (auto e = dynamic_cast<newUnitButton*>(elem)) {
 				newUnitButtonClicked(elem);
+			}
+			else if (auto e = dynamic_cast<TechArrow*>(elem)) {
+				selectedElement = elem;
+				arrowClicked(dynamic_cast<TechArrow*>(elem));
 			}
 			else {
 				selectedElement = elem;

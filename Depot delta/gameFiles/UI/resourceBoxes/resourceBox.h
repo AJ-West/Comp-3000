@@ -14,6 +14,7 @@
 #include "gameFiles/levelHandling/levelManager.h"
 
 class textInput;
+class TechArrow;
 
 class ResourceBox : public UIElement {
 public:
@@ -24,12 +25,13 @@ public:
 
 	bool update(SDL_Keycode key);
 
-	void render(SDL_Renderer* renderer);
+	virtual void render(SDL_Renderer* renderer);
 
 	bool findClickedElement(float cx, float cy);
 
 	virtual void transferDirectionButtonClicked(UIElement* elem) { cout << "transfer"; }
 	virtual void newUnitButtonClicked(UIElement* elem) { cout << "new unit"; }
+	virtual void arrowClicked(TechArrow* elem) { cout << "arrow"; }
 
 	void unPause();
 
@@ -49,9 +51,9 @@ protected:
 
 	UIElement* selectedElement = nullptr;
 
-private:
 	SDL_Texture* texture = nullptr;
 
+private:
 	SDL_FRect input{ camera.dimen.x + camera.dimen.w / 2 - camera.dimen.w / 20, camera.dimen.y + camera.dimen.h / 2 - camera.dimen.h / 20 , camera.dimen.w / 10 , camera.dimen.h / 10 };
 
 	string text = "";	
