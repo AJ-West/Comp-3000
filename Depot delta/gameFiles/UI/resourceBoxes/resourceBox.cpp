@@ -46,6 +46,7 @@ void ResourceBox::render(SDL_Renderer* renderer) {
 	for (auto elem : elements) {
 		elem->render(renderer);
 	}
+	if (selectedElement) {	selectedElement->toggleIndicator();	}
 }
 
 bool ResourceBox::findClickedElement(float cx, float cy) {

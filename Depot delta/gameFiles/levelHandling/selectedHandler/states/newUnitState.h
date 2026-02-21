@@ -27,5 +27,5 @@ private:
 
 	levelUI* UI;
 
-	bool textInput;
+	bool isTextInput;
 };

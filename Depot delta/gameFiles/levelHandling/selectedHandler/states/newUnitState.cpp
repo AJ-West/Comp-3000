@@ -22,7 +22,7 @@ void NewUnitState::handleInput(SDL_Event event) {
 		}
 	}
 	else if (event.type == SDL_EVENT_KEY_DOWN) {
-		if (textInput) {
+		if (isTextInput) {
 			UI->textInput(event.key.key);
 			return;
 		}
@@ -32,7 +32,7 @@ void NewUnitState::handleInput(SDL_Event event) {
 void NewUnitState::leftClick() {
 	if (UI->checkClickInput()) {
 		UIElement* selectedElement = UI->getBox()->getSelectedElement();
-		if (typeid(selectedElement).name() == typeid(textInput).name()) { textInput = true; }
+		if (typeid(*selectedElement).name() == typeid(textInput).name()) { isTextInput = true; }
 		else { UI->deleteBox(); }
 		//else { selectedElement->update(); }
 		return;

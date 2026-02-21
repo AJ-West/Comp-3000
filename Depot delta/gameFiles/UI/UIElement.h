@@ -22,6 +22,8 @@ public:
 		return true;
 	}
 
+	virtual void toggleIndicator(){}
+
 	virtual void render(SDL_Renderer* renderer) = 0;
 
 	//getters

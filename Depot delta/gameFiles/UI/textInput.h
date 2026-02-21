@@ -29,13 +29,35 @@ public:
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 	}
 
+	virtual void toggleIndicator() {
+		Uint32 currentTime = SDL_GetTicks();
+		if (currentTime - lastIndicatorTime >= indicatorCooldown) {
+			lastIndicatorTime = currentTime;
+			indicator = !indicator;
+			if (indicator) {
+				text = text + "|";
+			}
+			else {
+				if (!text.empty()) {
+					text.pop_back();
+				}
+			}
+		}
+	}
+
 	bool update(SDL_Keycode key) {
 		if (!restrict->checkRestriction(key)) { return false; }
+		if (indicator) { 
+			if (!text.empty()) {
+				text.pop_back();
+			}
+		}
 		if (key == SDLK_BACKSPACE) {
 			if (!text.empty()) { text.pop_back(); }
 			return false;
 		}
 		text = text + SDL_GetKeyName(key);
+		if (indicator) { text = text + '|'; }
 		return false;
 	}
 
@@ -43,6 +65,10 @@ public:
 	string getText() { return text; }
 
 private:
+	bool indicator = false;
+	int indicatorCooldown = 600;
+	Uint32 lastIndicatorTime = 0;
+
 	restriction* restrict;
 
 	string text;
