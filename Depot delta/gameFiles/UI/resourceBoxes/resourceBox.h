@@ -21,7 +21,7 @@ public:
 	ResourceBox(LevelManager* lManager, SDL_FRect rSize);
 	~ResourceBox() {}
 
-	void addTextInputs();
+	virtual void addTextInputs() = 0;
 
 	bool update(SDL_Keycode key);
 

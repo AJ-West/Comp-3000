@@ -37,6 +37,8 @@ public:
 			return;
 		}
 
+		addTextInputs();
+
 		//add make unit button
 		elements.push_back(new newUnitButton({ size.x + size.w/2 - (85.0f * camera.xScale), size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
 
@@ -46,6 +48,19 @@ public:
 		statsBox = new MakingStatsBox({ size.x + 269 * camera.xScale, size.y + 172 * camera.yScale, 482 * camera.xScale, 605 * camera.yScale });
 	}
 	~unitMaker() {}	
+
+	virtual void addTextInputs() {
+		//Personnel count
+		elements.push_back(new textInput({ size.x + 661.0f * camera.xScale, size.y + 491.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+		//Ammo count
+		elements.push_back(new textInput({ size.x + 661.0f * camera.xScale, size.y + 541.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+		//DoS count
+		elements.push_back(new textInput({ size.x + 661.0f * camera.xScale, size.y + 591.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+		//Fuel count
+		elements.push_back(new textInput({ size.x + 661.0f * camera.xScale, size.y + 646.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+		//Scrap count
+		elements.push_back(new textInput({ size.x + 661.0f * camera.xScale, size.y + 695.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+	}
 
 	virtual void newUnitButtonClicked(UIElement* elem) { 
 		vector<int> amounts;

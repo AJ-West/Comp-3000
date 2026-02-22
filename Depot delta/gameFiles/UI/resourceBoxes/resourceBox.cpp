@@ -17,20 +17,6 @@ ResourceBox::ResourceBox(LevelManager* lManager, SDL_FRect rSize) : UIElement(rS
 		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
 		return;
 	}
-	addTextInputs();
-}
-
-void ResourceBox::addTextInputs() {
-	//Personnel count
-	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 516.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
-	//Ammo count
-	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 566.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
-	//DoS count
-	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 616.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
-	//Fuel count
-	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 666.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
-	//Scrap count
-	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 715.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
 }
 
 bool ResourceBox::update(SDL_Keycode key) {

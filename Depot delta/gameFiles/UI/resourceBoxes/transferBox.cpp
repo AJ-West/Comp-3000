@@ -2,6 +2,8 @@
 #include "UnitStatsBox.h"
 
 transferBox::transferBox(LevelManager* lManager, SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy) : ResourceBox(lManager, rSize), unit(sUnit), convoy(sConvoy) {
+	addTextInputs();
+
 	//add convoy->unit button
 	elements.push_back(new transferDirectionButton({ size.x + 415.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
 	//add unit->convoy button
@@ -12,6 +14,19 @@ transferBox::transferBox(LevelManager* lManager, SDL_FRect rSize, GameObject* sU
 	addArrows();
 }
 transferBox::~transferBox() {}
+
+void transferBox::addTextInputs() {
+	//Personnel count
+	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 516.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+	//Ammo count
+	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 566.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+	//DoS count
+	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 616.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+	//Fuel count
+	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 666.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+	//Scrap count
+	elements.push_back(new textInput({ size.x + 478.0f * camera.xScale, size.y + 715.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, new intRestriction()));
+}
 
 void transferBox::addUnitInfo(GameObject* unit, bool second) {
 	if (second) {

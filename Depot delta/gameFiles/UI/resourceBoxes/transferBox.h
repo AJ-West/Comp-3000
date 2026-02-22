@@ -12,6 +12,8 @@ public:
 	transferBox(LevelManager* lManager, SDL_FRect rSize, GameObject* sUnit, GameObject* sConvoy);
 	~transferBox();
 
+	virtual void addTextInputs();
+
 	void addUnitInfo(GameObject* unit, bool second);
 
 	void addArrows();
