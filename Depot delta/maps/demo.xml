@@ -31,17 +31,17 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>95</health>
+            <health>100</health>
             <x>1856</x>
             <y>960</y>
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>48</Personnel>
-                <Ammunition>96</Ammunition>
-                <DoS>96</DoS>
-                <Fuel>96</Fuel>
-                <Scrap>48</Scrap>
+                <Personnel>2</Personnel>
+                <Ammunition>0</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>0</Scrap>
             </Resources>
             <Transfering>-1</Transfering>
             <ResourceTransfer>

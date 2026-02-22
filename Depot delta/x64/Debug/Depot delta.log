@@ -234,16 +234,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/UI/levelUI.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(100,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -515,16 +515,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\textI
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\textInput.h(34,39): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file 'gameFiles/levelHandling/levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/levelManager.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/levelManager.cpp')
   
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\entities\Zombies\zombieSpawner.h(11,22): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
@@ -796,16 +796,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/handleSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/handleSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/handleSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/handleSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/handleSelected.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1059,16 +1059,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/UnitSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/UnitSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/UnitSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/UnitSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/UnitSelected.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1322,16 +1322,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/depotSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/depotSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/depotSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/depotSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/depotSelected.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1585,16 +1585,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/newUnitState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/newUnitState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/newUnitState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/newUnitState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/newUnitState.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -1848,16 +1848,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/transferState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/transferState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/transferState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/transferState.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/transferState.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -2111,16 +2111,16 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHan
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\levelHandling\levelManager.h(64,68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/treeSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/treeSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(121,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(119,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/treeSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/treeSelected.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(141,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\resourceBoxes\unitMaker.h(139,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'gameFiles/levelHandling/selectedHandler/states/treeSelected.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data

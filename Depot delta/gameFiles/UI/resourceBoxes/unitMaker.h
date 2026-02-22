@@ -38,9 +38,7 @@ public:
 		}
 
 		//add make unit button
-		elements.push_back(new newUnitButton({ size.x + 245.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
-		//add cancel button
-		elements.push_back(new newUnitButton({ size.x + 585.0f * camera.xScale, size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, false));
+		elements.push_back(new newUnitButton({ size.x + size.w/2 - (85.0f * camera.xScale), size.y + 788.0f * camera.yScale, 170.0f * camera.xScale , 65.0f * camera.yScale }, true));
 
 		elements.push_back(new TechArrow({ size.x + size.w / 20, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, false));
 		elements.push_back(new TechArrow({ size.x + size.w - size.w / 10, size.y + size.h / 2 - size.h / 20, size.w / 20, size.h / 10 }, true));
@@ -64,10 +62,10 @@ public:
 		auto rComp = depot->getComponent<resourceComponent>();
 		vector<int> counts = rComp->getAllResourceCount();
 		if (checkAmounts(counts, amounts)) {
-			if (elem->update(NULL)) { // make new unit
+			if (typeIndex == basicUnit) { // make new unit
 				makeUnit(amounts);
 			}
-			else { // make new convoy
+			else if (typeIndex == basicConvoy) { // make new convoy
 				makeConvoy(amounts);
 			}
 			// Remove amount values from the depot
