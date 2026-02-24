@@ -43,10 +43,10 @@ void levelUI::renderTime() {
 	if (iHour < 10) {
 		sHour = "0" + sHour;
 	}
-	string countText = sHour + ":" + sMin;
+	string countText = "Day: " + to_string(cTime[day]) + ". " + sHour + ":" + sMin;
 	SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 0,0,0,255 });
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_FRect timeSize{ 62.0f * camera.xScale, 9.0f * camera.yScale, 66.0f * camera.xScale, 30.0f * camera.yScale };
+	SDL_FRect timeSize{ 62.0f * camera.xScale, 9.0f * camera.yScale, 96.0f * camera.xScale, 30.0f * camera.yScale };
 	SDL_RenderTexture(renderer, texture, NULL, &timeSize);
 }
 
