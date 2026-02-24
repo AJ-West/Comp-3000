@@ -34,6 +34,7 @@ public:
 		stats.addComponents(zombie);
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(manager->getUnitConvoys());
 		zombie->getComponent<nearestComponent>()->setDepot(manager->getDepot().get());
+		zombie->getComponent<nearestComponent>()
 		return zombie;
 	}
 

@@ -18,7 +18,7 @@ public:
 	void increaseTime(int period) {
 		dayTime[period] += 1;
 		if (period != day) {
-			if (dayTime[period] == 60 && period != hour) {
+			if (dayTime[period] == 60 && period != hour && period != day) {
 				dayTime[period] = 0;
 				increaseTime(period + 1);
 			}
