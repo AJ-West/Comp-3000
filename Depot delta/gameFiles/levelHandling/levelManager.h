@@ -6,6 +6,9 @@
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3_image/SDL_image.h>
 
+#include <thread>
+#include <chrono>
+
 #include "dependencies/tinyxml2.h"
 
 #include "gameFiles/fileHandling/mapLoader.h"
@@ -55,6 +58,9 @@ public:
 
 	void updateStats(string keyName, bool forUnit);
 
+	void spawnSwarm(int num, int direction);
+	void spawnZombie();
+
 	//getters
 	int getUnitConvoysSize() { return unitConvoys->size(); }
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoys() { return unitConvoys; }
@@ -86,6 +92,13 @@ private:
 	HandleSelected* handler;
 
 	dayCycle* time;
+
+	bool spawningSwarm = false;
+	int swarmLeft = 0;
+	int swarmDirection = 0;
+	Uint32 lastSpawnTime = 0;
+	Uint32 spawnDelay = 500;
+	Vec2 swarmPos = { 0,0 };
 
 	bool textInput = false;
 

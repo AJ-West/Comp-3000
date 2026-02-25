@@ -14,7 +14,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
-    time = new dayCycle(1);
+    time = new dayCycle(5);
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 
     spawner = new ZombieSpawner(this);
@@ -103,6 +103,16 @@ void LevelManager::unpausedRender()
             [](shared_ptr<HumanObj> ptr) { return ptr->getHealth() <= 0; }),
         unitConvoys->end()
     );
+
+    if (spawningSwarm) {
+        Uint32 now = SDL_GetTicks();
+        if (swarmLeft > 0 && now - lastSpawnTime >= spawnDelay) {
+            spawnZombie();
+            swarmLeft--;
+            spawningSwarm = swarmLeft != 0;
+            lastSpawnTime = now;
+        }
+    }
 
     for (auto& zombie : *zombieList) {
         if (zombie) {
@@ -194,4 +204,48 @@ void LevelManager::updateStats(string keyName, bool forUnit) {
             unit->updateStats(keyName, forUnit);
         }
     }
+}
+
+void LevelManager::spawnSwarm(int quantity, int direction) {
+    spawningSwarm = true;
+    swarmLeft = quantity;
+    swarmDirection = direction;
+
+    switch (swarmDirection) {
+    case NORTH:
+        swarmPos = { static_cast<float>(worldWidth) / 2.0f, 0 };
+        break;
+    case NORTHEAST:
+        swarmPos = { static_cast<float>(worldWidth), 0 };
+        break;
+    case EAST:
+        swarmPos = { static_cast<float>(worldWidth), static_cast<float>(worldHeight) / 2.0f };
+        break;
+    case SOUTHEAST:
+        swarmPos = { static_cast<float>(worldWidth), static_cast<float>(worldHeight) };
+        break;
+    case SOUTH:
+        swarmPos = { static_cast<float>(worldWidth) / 2.0f, static_cast<float>(worldHeight) };
+        break;
+    case SOUTHWEST:
+        swarmPos = { 0, static_cast<float>(worldHeight) };
+        break;
+    case WEST:
+        swarmPos = { 0, static_cast<float>(worldHeight) / 2 };
+        break;
+    case NORTHWEST:
+        swarmPos = { 0, 0 };
+        break;
+    }
+}
+
+void LevelManager::spawnZombie() {
+    zombieStats stats;
+    // check for where is valid to spawn will later be done by areas 'claimed' by the player (where their units currently are)
+    Vec2 depotPos = depot->getPos();
+    ZombieObj* zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID());
+    stats.addComponents(zombie, sqrt(worldWidth*worldWidth +worldHeight*worldHeight)); // covers size of map
+    zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
+    zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
+    addZombie(zombie);
 }

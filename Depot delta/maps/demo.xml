@@ -37,11 +37,11 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>103</Personnel>
-                <Ammunition>202</Ammunition>
-                <DoS>202</DoS>
-                <Fuel>202</Fuel>
-                <Scrap>101</Scrap>
+                <Personnel>365</Personnel>
+                <Ammunition>726</Ammunition>
+                <DoS>726</DoS>
+                <Fuel>726</Fuel>
+                <Scrap>363</Scrap>
             </Resources>
             <Transfering>-1</Transfering>
             <ResourceTransfer>

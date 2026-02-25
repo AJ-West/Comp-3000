@@ -168,6 +168,17 @@ enum time {
 	day
 };
 
+enum direction {
+	NORTH,
+	NORTHEAST,
+	EAST,
+	SOUTHEAST,
+	SOUTH,
+	SOUTHWEST,
+	WEST,
+	NORTHWEST
+};
+
 enum ObjectType {
 	Human,
 	Depot

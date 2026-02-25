@@ -78,7 +78,10 @@ public:
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 	void setSightDistance(float dist) { sightDistance = dist; }
 
-	nearestComponent(GameObject* obj) : Component(obj) {}
+	nearestComponent(GameObject* obj, float sight) : Component(obj) {
+		sightDistance = sight;
+		searchDistance = sight + 100.0f;
+	}
 	virtual ~nearestComponent() {}
 
 private:
@@ -91,6 +94,6 @@ private:
 
 	float distanceToNearest = FLT_MAX;
 
-	float sightDistance = 200.0f; // distance to check for nearby units
-	float searchDistance = sightDistance + 100.0f; // distance to search for units
+	float sightDistance; // distance to check for nearby units
+	float searchDistance; // distance to search for units
 };

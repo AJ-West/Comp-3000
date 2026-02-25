@@ -48,6 +48,12 @@ void levelUI::renderTime() {
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FRect timeSize{ 62.0f * camera.xScale, 9.0f * camera.yScale, 96.0f * camera.xScale, 30.0f * camera.yScale };
 	SDL_RenderTexture(renderer, texture, NULL, &timeSize);
+
+	if (time->getSpawnSwarm()) {
+		//manager->spawnSwarmThread(time->getSpawnQuantity(), time->getSpawnDirection());
+		manager->spawnSwarm(time->getSpawnQuantity(), time->getSpawnDirection());
+		time->swarmSpawned();
+	}
 }
 
 void levelUI::render() {

@@ -178,7 +178,7 @@ void MapLoader::loadZombie(XMLElement* entity)
 
 void MapLoader::addZombieComponents(ZombieObj* zombie) {
     zombieStats stats;
-    stats.addComponents(zombie);
+    stats.addComponents(zombie, 50.0f);
 }
 
 void MapLoader::loadDepot(XMLElement* entity)

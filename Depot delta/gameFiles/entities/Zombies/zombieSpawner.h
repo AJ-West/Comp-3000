@@ -31,7 +31,7 @@ public:
 			}
 		}
 		ZombieObj* zombie = new ZombieObj(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID());
-		stats.addComponents(zombie);
+		stats.addComponents(zombie, 50.0f);
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(manager->getUnitConvoys());
 		zombie->getComponent<nearestComponent>()->setDepot(manager->getDepot().get());
 		return zombie;

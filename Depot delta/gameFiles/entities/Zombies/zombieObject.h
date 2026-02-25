@@ -88,10 +88,10 @@ struct zombieStats {
 
 	int size = 4; // how many tiles it takes up
 
-	void addComponents(ZombieObj* zombie) {
+	void addComponents(ZombieObj* zombie, float sightDistance) {
 		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
 		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
 		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
-		zombie->AddComponent(make_shared<nearestComponent>(zombie));
+		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
 	}
 };
