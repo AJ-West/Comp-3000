@@ -44,9 +44,8 @@ public:
 	}
 
 	void attack() {
-		Uint32 currentTime = SDL_GetTicks();
-		if (currentTime - lastAttackTime >= attackCooldownMS) {
-			lastAttackTime = currentTime;
+		if (frameStart - lastAttackTime >= attackCooldownMS) {
+			lastAttackTime = frameStart;
 			auto rComp = owner->getComponent<resourceComponent>();
 			int count = rComp->getResourcesCount(AMMUNITION);
 			if (count > 0) {
@@ -64,8 +63,8 @@ public:
 				owner->setAttacking(false);
 			}
 		}
-		if (currentTime - lastBulletTime >= owner->getRateOfFire()/5) {
-			lastBulletTime = currentTime;
+		if (frameStart - lastBulletTime >= owner->getRateOfFire()/5) {
+			lastBulletTime = frameStart;
 			bullets->spawnBullet(owner->getPos(), target->getDimensions());
 		}
 		renderAttack();

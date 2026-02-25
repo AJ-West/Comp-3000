@@ -8,9 +8,8 @@ public:
 	~ZombieSpawner() {}
 
 	bool checkIfSpawn() {
-		Uint32 currentTime = SDL_GetTicks();
-		if (currentTime - sLastTime >= static_cast<int>(sCooldownMS)) {
-			sLastTime = currentTime;
+		if (frameStart - sLastTime >= static_cast<int>(sCooldownMS)) {
+			sLastTime = frameStart;
 			sCooldownMS *= 0.99;
 			manager->addZombie(spawnZombie());
 			return true;

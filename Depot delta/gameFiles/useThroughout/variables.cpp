@@ -34,6 +34,7 @@ SDL_Window* window;
 SDL_Renderer* renderer;
 TTF_Font* font;
 int FONT_SIZE = 20;
+Uint32 frameStart;
 
 bool isRunning;
 

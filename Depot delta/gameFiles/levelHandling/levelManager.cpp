@@ -84,7 +84,7 @@ void LevelManager::unpausedRender()
     }
 
     for (auto& unit : *unitConvoys) {
-        if (unit) {
+        if (unit && unit->getAlive()) {
             unit->Update();
             if (unit->getHealth() <= 0) {
                 if (unit->getSelected()) {
@@ -96,42 +96,22 @@ void LevelManager::unpausedRender()
                 hoveredUnit = unit;
             }
         }
-    }
-
-    unitConvoys->erase(
-        remove_if(unitConvoys->begin(), unitConvoys->end(),
-            [](shared_ptr<HumanObj> ptr) { return ptr->getHealth() <= 0; }),
-        unitConvoys->end()
-    );
+    }    
 
     if (spawningSwarm) {
-        Uint32 now = SDL_GetTicks();
-        if (swarmLeft > 0 && now - lastSpawnTime >= spawnDelay) {
+        if (swarmLeft > 0 && frameStart - lastSpawnTime >= spawnDelay) {
             spawnZombie();
             swarmLeft--;
             spawningSwarm = swarmLeft != 0;
-            lastSpawnTime = now;
-            for (auto& unit : *unitConvoys) {
-                if (unit) {
-                    if (unit->getUnitOrConvoy() == UNIT) {
-                        unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
-                    }
-                }
-            }
+            lastSpawnTime = frameStart;
         }
     }
 
     for (auto& zombie : *zombieList) {
-        if (zombie) {
+        if (zombie && zombie->getAlive()) {
             zombie->Update();
         }
-    }
-
-    zombieList->erase(
-        remove_if(zombieList->begin(), zombieList->end(),
-            [](shared_ptr<ZombieObj> ptr) { return ptr->getHealth() <= 0; }),
-        zombieList->end()
-    );
+    }   
 
     camera.update();
     if (hoveredUnit) {
@@ -141,6 +121,26 @@ void LevelManager::unpausedRender()
     UI->render();
     UI->renderTime();
     depot->renderResources(renderer);
+
+    frameCounter++;
+
+    if (frameCounter % 30 == 0) {
+        removeDeadFromLists();
+    }
+}
+
+void LevelManager::removeDeadFromLists() {
+    unitConvoys->erase(
+        remove_if(unitConvoys->begin(), unitConvoys->end(),
+            [](shared_ptr<HumanObj> ptr) { return ptr->getHealth() <= 0; }),
+        unitConvoys->end()
+    );
+
+    zombieList->erase(
+        remove_if(zombieList->begin(), zombieList->end(),
+            [](shared_ptr<ZombieObj> ptr) { return ptr->getHealth() <= 0; }),
+        zombieList->end()
+    );
 }
 
 void LevelManager::pausedRender()

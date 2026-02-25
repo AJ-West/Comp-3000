@@ -30,9 +30,8 @@ public:
 	}
 
 	virtual void toggleIndicator() {
-		Uint32 currentTime = SDL_GetTicks();
-		if (currentTime - lastIndicatorTime >= indicatorCooldown) {
-			lastIndicatorTime = currentTime;
+		if (frameStart - lastIndicatorTime >= indicatorCooldown) {
+			lastIndicatorTime = frameStart;
 			indicator = !indicator;
 			if (indicator) {
 				text = text + "|";

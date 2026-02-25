@@ -61,6 +61,8 @@ public:
 	void spawnSwarm(int num, int direction);
 	void spawnZombie();
 
+	void removeDeadFromLists();
+
 	//getters
 	int getUnitConvoysSize() { return unitConvoys->size(); }
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoys() { return unitConvoys; }
@@ -105,5 +107,7 @@ private:
 	bool paused = false;
 
 	bool depotAlive = true;
+
+	int frameCounter = 0;
 };
 

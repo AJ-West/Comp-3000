@@ -22,7 +22,7 @@ int main()
 	Uint32 lastTime = SDL_GetTicks();
 
     while (isRunning) {
-        Uint32 frameStart = SDL_GetTicks();
+        frameStart = SDL_GetTicks();
 
         //handle input
         SDL_Event event;
@@ -30,9 +30,8 @@ int main()
             handleInput(event, &manager);
         }
 
-        Uint32 currentTime = SDL_GetTicks();
-        deltaTime = (currentTime - lastTime) / 1000.0f;
-        lastTime = currentTime;
+        deltaTime = (frameStart - lastTime) / 1000.0f;
+        lastTime = frameStart;
 
         adjustForZoom(&io);
 

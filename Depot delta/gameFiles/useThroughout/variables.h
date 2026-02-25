@@ -41,6 +41,7 @@ extern SDL_Window* window;
 extern SDL_Renderer* renderer;
 extern TTF_Font* font;
 extern int FONT_SIZE;
+extern Uint32 frameStart;
 
 extern bool isRunning;
 
