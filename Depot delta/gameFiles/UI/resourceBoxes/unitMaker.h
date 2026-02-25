@@ -131,7 +131,7 @@ public:
 		//Spawn just below the depot in the center
 		pos.x = pos.x + pos.w/2 - (30 / 1440.0f * camera.dimen.h);
 		pos.y = pos.y + pos.h;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, 100, manager->getNextID());
+		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, unitStats.maxHealth, manager->getNextID());
 		addUnitComponents(unit, amounts);
 		manager->addUnitConvoy(unit);
 	}

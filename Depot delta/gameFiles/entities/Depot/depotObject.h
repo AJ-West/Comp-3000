@@ -55,13 +55,13 @@ public:
 			maxHealth *= depotTechVal[keyName];
 		}
 		else if (keyName == "fuelProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(FUEL, getComponent<resourceComponent>()->getResourceChange(FUEL)+1* depotTechVal[keyName]);
+			getComponent<resourceComponent>()->adjustResourceChange(FUEL, 1* depotTechVal[keyName]);
 		}
 		else if (keyName == "dosProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(DOS, getComponent<resourceComponent>()->getResourceChange(DOS)+1* depotTechVal[keyName]);
+			getComponent<resourceComponent>()->adjustResourceChange(DOS, 1* depotTechVal[keyName]);
 		}
 		else if (keyName == "ammoProductionIncrease") {
-			getComponent<resourceComponent>()->setResourceChange(AMMUNITION, getComponent<resourceComponent>()->getResourceChange(AMMUNITION)+1* depotTechVal[keyName]);
+			getComponent<resourceComponent>()->adjustResourceChange(AMMUNITION, 1* depotTechVal[keyName]);
 		}
 		else if (keyName == "increasePersonnelCapacity") {
 			getComponent<resourceComponent>()->setResourceMax(PERSONNEL, getComponent<resourceComponent>()->getResourcesMax(PERSONNEL)*2);

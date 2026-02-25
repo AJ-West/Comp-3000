@@ -87,6 +87,7 @@ public:
 	void setResourceMax(int index, int amount) { resourcesMax[index] = amount; }
 
 	void decreaseResourceCount(int index, int amount) { resourcesCount[index] -= amount; }
+	void adjustResourceChange(int index, int amount) { resourcesCount[index] += amount; }
 
 	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
 		resourceChange = vector<int>(max.size(), 0);
@@ -95,7 +96,7 @@ public:
 private:
 	vector<int> resourcesMax;	
 	vector<int> resourcesCount;	
-	vector<int> resourceChange;
+	vector<int> resourceChange{0,0,0,0,0};
 	vector<SDL_Texture*> resourceTextures;
 	vector<bool> hasResource = { true, true, true, true, true };
 	vector<bool> tempHasResource = { true, true, true, true, true };

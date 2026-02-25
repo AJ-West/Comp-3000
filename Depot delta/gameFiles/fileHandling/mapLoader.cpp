@@ -218,11 +218,6 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     depot->AddComponent(make_shared<resourceComponent>(depot, max, count, loadResourceTextures()));
-    depot->getComponent<resourceComponent>()->setResourceChange(PERSONNEL, 1);
-    depot->getComponent<resourceComponent>()->setResourceChange(AMMUNITION, 1);
-    depot->getComponent<resourceComponent>()->setResourceChange(DOS, 1);
-    depot->getComponent<resourceComponent>()->setResourceChange(FUEL, 1);
-    depot->getComponent<resourceComponent>()->setResourceChange(SCRAP, 1);
 }
 
 void MapLoader::loadBuilding(XMLElement* entity) {
