@@ -32,6 +32,8 @@ public:
 
 	void loadTilemap(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
+
+	void loadSwarms(XMLElement* layer);
 	
 	void loadUnit(XMLElement* layer);
 	void loadConvoy(XMLElement* layer);
@@ -60,6 +62,10 @@ public:
 	shared_ptr<vector<shared_ptr<BuildingObj>>> getBuildingList() { return buildingList; }
 	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
+	vector<vector<int>> getSwarmTimes() { return swarmTimes; }
+	vector<int> getSwarmQuantity() { return swarmQuantity; }
+	vector<int> getSwarmDirection() { return swarmDirection; }
+
 
 private:
 	int width, height;
@@ -73,4 +79,8 @@ private:
 	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoyList = make_shared<vector<shared_ptr<HumanObj>>>();
 	shared_ptr<vector<shared_ptr<BuildingObj>>> buildingList = make_shared<vector<shared_ptr<BuildingObj>>>();
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList = make_shared<vector<shared_ptr<ZombieObj>>>();
+
+	vector<vector<int>> swarmTimes{};
+	vector<int> swarmQuantity{};
+	vector<int> swarmDirection{};
 };

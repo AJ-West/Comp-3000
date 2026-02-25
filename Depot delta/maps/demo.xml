@@ -20,6 +20,30 @@
         <exportMode>0</exportMode>
         <arrayMode>0</arrayMode>
     </layers>
+    <layers eid="32843350">
+        <name>Swarms</name>
+        <swarmCount>2</swarmCount>
+        <swarm1>
+            <quantity>10</quantity>
+            <direction>0</direction>
+            <time>
+                <day>0</day>
+                <hour>14</hour>
+                <minute>0</minute>
+                <second>0</second>
+            </time>
+        </swarm1>
+        <swarm2>
+            <quantity>10</quantity>
+            <direction>5</direction>
+            <time>
+                <day>1</day>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+            </time>
+        </swarm2>
+    </layers>
     <layers eid="35163212">
         <name>Entities</name>
         <offsetX>0</offsetX>
@@ -31,26 +55,18 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>55</health>
+            <health>1000</health>
             <x>1856</x>
             <y>960</y>
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>365</Personnel>
-                <Ammunition>726</Ammunition>
-                <DoS>726</DoS>
-                <Fuel>726</Fuel>
-                <Scrap>363</Scrap>
+                <Personnel>697</Personnel>
+                <Ammunition>894</Ammunition>
+                <DoS>894</DoS>
+                <Fuel>894</Fuel>
+                <Scrap>697</Scrap>
             </Resources>
-            <Transfering>-1</Transfering>
-            <ResourceTransfer>
-                <PersonnelChange>0</PersonnelChange>
-                <AmmunitionChange>0</AmmunitionChange>
-                <DoSChange>0</DoSChange>
-                <FuelChange>0</FuelChange>
-                <ScrapChange>0</ScrapChange>
-            </ResourceTransfer>
         </entities>
         <entities eid="95492584">
             <name>Building</name>

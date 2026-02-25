@@ -13,6 +13,9 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
         if (layerName == "Tilemap") {
             loadTilemap(layer);
         }
+        else if (layerName == "Swarms") {
+            loadSwarms(layer);
+        }
         else if (layerName == "Entities") {
             loadEntities(layer);
         }
@@ -66,6 +69,29 @@ void MapLoader::loadTilemap(XMLElement* layer)
         }
 		tilemap.push_back(row);
 	}
+}
+
+void MapLoader::loadSwarms(XMLElement* layer) {
+    if (atoi(layer->FirstChildElement("swarmCount")->GetText()) != 0) {
+        int count = 1;
+        string name = "swarm" + to_string(count);
+        XMLElement* entity = layer->FirstChildElement(name.c_str());
+        while (entity) {
+            swarmQuantity.emplace_back(atoi(entity->FirstChildElement("quantity")->GetText()));
+            swarmDirection.emplace_back(atoi(entity->FirstChildElement("direction")->GetText()));
+            XMLElement* time = entity = entity->FirstChildElement("time");
+            vector<int> sTime{0, 0, 0, 0 };
+            sTime[second] = atoi(time->FirstChildElement("second")->GetText());
+            sTime[minute] = atoi(time->FirstChildElement("minute")->GetText());
+            sTime[hour] = atoi(time->FirstChildElement("hour")->GetText());
+            sTime[day] = atoi(time->FirstChildElement("day")->GetText());
+            swarmTimes.emplace_back(sTime);
+
+            count++;
+            name = "swarm" + to_string(count);
+            entity = entity->NextSiblingElement(name.c_str());
+        }
+    }
 }
 
 void MapLoader::loadEntities(XMLElement* layer)

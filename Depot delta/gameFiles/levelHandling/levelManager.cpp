@@ -14,7 +14,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
-    time = new dayCycle(5);
+    time = new dayCycle(5, mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 
     spawner = new ZombieSpawner(this);

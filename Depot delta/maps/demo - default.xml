@@ -20,6 +20,30 @@
         <exportMode>0</exportMode>
         <arrayMode>0</arrayMode>
     </layers>
+    <layers eid="32843350">
+        <name>Swarms</name>
+        <swarmCount>2</swarmCount>
+        <swarm1>
+            <quantity>10</quantity>
+            <direction>0</direction>
+                <time>
+                    <day>0</day>
+                    <hour>14</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
+        </swarm1>
+        <swarm2>
+            <quantity>10</quantity>
+            <direction>5</direction>
+                <time>
+                    <day>1</day>
+                    <hour>0</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
+        </swarm2>
+    </layers>
     <layers eid="35163212">
         <name>Entities</name>
         <offsetX>0</offsetX>
