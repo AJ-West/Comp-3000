@@ -12,13 +12,6 @@
 #include "gameFiles/levelHandling/selectedHandler/states/newUnitState.h"
 #include "gameFiles/levelHandling/selectedHandler/states/treeSelected.h"
 
-enum ObjectType convert(const char* str) {
-	if (strcmp(str, typeid(HumanObj).name()) == 0) return Human;
-	if (strcmp(str, typeid(UnitObj).name()) == 0) return Human;
-	if (strcmp(str, typeid(ConvoyObj).name()) == 0) return Human;
-	if (strcmp(str, typeid(DepotObj).name()) == 0) return Depot;
-};
-
 void HandleSelected::handleInput(SDL_Event event, LevelManager* manager) {
 	checkHover(event, manager);
 	if (currentState) {
@@ -54,16 +47,16 @@ void HandleSelected::decideState(LevelManager* manager) {
 	case selectHuman:
 	case selectDepot:
 		if (hovered) { // if clicked on different unit
-			enum ObjectType type = convert(typeid(*hovered).name());
+			int type = hovered->getType();
 			switch (type)
 			{
-			case Human:
+			case HUMAN:
 				// downcasting check to pass correct object
 				if (HumanObj* human = dynamic_cast<HumanObj*>(hovered)) {
 					setState(make_shared<UnitSelected>(manager, human, this, UI));
 				}
 				break;
-			case Depot:
+			case DEPOT:
 				// downcasting check to pass correct object
 				if (DepotObj* depot = dynamic_cast<DepotObj*>(hovered)) {
 					setState(make_shared<NewUnitState>(manager, depot, this, UI));

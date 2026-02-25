@@ -70,16 +70,18 @@ public:
 
 	void objectPositions() {		
 		for (auto obj : *allObjects) {
-			if (typeid(*obj).name() == typeid(UnitObj).name()) {
-				SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+			if (obj->getType() == HUMAN) {
+				if (obj->getUnitOrConvoy() == UNIT) {
+					SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+				}
+				else {
+					SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
+				}
 			}
-			else if (typeid(*obj).name() == typeid(ConvoyObj).name()) {
-				SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
-			}
-			else if (typeid(*obj).name() == typeid(BuildingObj).name()) {
+			else if (obj->getType() == BUILDING) {
 				SDL_SetRenderDrawColor(renderer, 0, 150, 255, 255);
 			}
-			else if (typeid(*obj).name() == typeid(DepotObj).name()) {
+			else if (obj->getType() == DEPOT) {
 				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 			}
 

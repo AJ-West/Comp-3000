@@ -71,7 +71,7 @@ void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, v
         }
         entity = layer->FirstChildElement("entities");
         for (auto unit : *allObjects) {
-            if (typeid(unit).name() == typeid(HumanObj).name()) {
+            if (unit->getType() == HUMAN) {
                 bool found = false;
                 auto it = find(IDInUse.begin(), IDInUse.end(), unit->getID());
                 if (it != IDInUse.end()) {

@@ -180,8 +180,16 @@ enum direction {
 };
 
 enum ObjectType {
-	Human,
-	Depot
+	NONE,
+	HUMAN,
+	DEPOT,
+	ZOMBIE,
+	BUILDING
+};
+
+enum UnitConvoyTypes {
+	UNIT,
+	CONVOY
 };
 
 enum selectedStates {

@@ -21,7 +21,7 @@ void movementComponent::update(GameObject* owner) { // update position based off
 				} // Avoid overshooting
 				owner->setDimensions({ dimensions.x + dx / distance * moveDist, dimensions.y + dy / distance * moveDist, dimensions.w, dimensions.h });
 			}
-			if (typeid(*owner).name() == typeid(HumanObj).name()) {
+			if (owner->getType() == HUMAN) {
 				owner->getComponent<resourceComponent>()->setResourceChange(FUEL, 0);
 			}
 		}

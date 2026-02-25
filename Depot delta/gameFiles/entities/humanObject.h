@@ -27,6 +27,9 @@ public:
 
 	void updateStats(string keyName, bool forUnit);
 
+	virtual int getType() { return HUMAN; }
+	virtual int getUnitOrConvoy() { return INT_MAX; }
+
 private:
 	int ID;
 	int maxHealth = 100;

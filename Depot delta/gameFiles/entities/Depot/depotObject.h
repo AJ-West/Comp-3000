@@ -68,6 +68,8 @@ public:
 		}
 	}
 
+	virtual int getType() { return DEPOT; }
+
 private:
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + 5, 30, 30 };
 	//SDL_FRect tSize{ 312/ static_cast<float>(ResolutionWidth) *100, 5 / static_cast<float>(ResolutionWidth) * 100, 111 / camera.dimen.w * 100, 30 / camera.dimen.h * 100 };

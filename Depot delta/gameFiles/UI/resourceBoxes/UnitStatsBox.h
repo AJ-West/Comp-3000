@@ -22,14 +22,12 @@ public:
 		unitSize = { size.x + 2.0f * camera.xScale, size.y + 42.0f * camera.yScale, size.w-4.0f*camera.xScale, 232.0f * camera.yScale };
 
 		string type = "";
-		if (typeid(*unit).name() == typeid(UnitObj).name()) {
-			type = "Unit: ";
+		if (unit->getType() == HUMAN) {
+			if (unit->getUnitOrConvoy() == UNIT) { type = "Unit: "; }
+			else{ type = "Convoy: "; }
 		}
 		else if (typeid(*unit).name() == typeid(DepotObj).name()) {
 			type = "Depot: ";
-		}
-		else if (typeid(*unit).name() == typeid(ConvoyObj).name()) {
-			type = "Convoy: ";
 		}
 
 		name = type + std::to_string(unit->getID());

@@ -17,8 +17,9 @@ public:
 	void renderHover(SDL_Renderer* renderer);
 
 	//getters
-	int getType() { return rType; }
+	int getBType() { return rType; }
 	virtual int getID() { return id; }
+	virtual int getType() { return BUILDING; }
 
 private:
 	int id;

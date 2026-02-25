@@ -71,6 +71,8 @@ public:
 		cout << "zombie click away";
 	}
 
+	virtual int getType() { return ZOMBIE; }
+
 private:
 	int ID;
 

@@ -118,7 +118,7 @@ void MapLoader::loadEntities(XMLElement* layer)
 	}
     loadAllTransfer(layer);
     for (auto& unit : *unitConvoyList) {
-        if (typeid(*unit).name() == typeid(UnitObj).name()) { 
+        if (unit->getUnitOrConvoy() == UNIT) {
             unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
         }
     }

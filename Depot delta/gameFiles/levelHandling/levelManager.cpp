@@ -57,15 +57,15 @@ void LevelManager::unpausedRender()
 {
     time->update();
     mapLoader->renderTileMap(renderer);
-    if (spawner->checkIfSpawn()) {
-        for (auto& unit : *unitConvoys) {
-            if (unit) {
-                if (typeid(*unit).name() == typeid(UnitObj).name()) {
-                    unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
-                }
-            }
-        }
-    }
+    //if (spawner->checkIfSpawn()) {
+      //  for (auto& unit : *unitConvoys) {
+        //    if (unit) {
+          //      if (typeid(*unit).name() == typeid(UnitObj).name()) {
+            //        unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+              //  }
+            //}
+        //}
+    //}
 
     depot->Update();
     if (!depot->getAlive()) {
@@ -111,12 +111,18 @@ void LevelManager::unpausedRender()
             swarmLeft--;
             spawningSwarm = swarmLeft != 0;
             lastSpawnTime = now;
+            for (auto& unit : *unitConvoys) {
+                if (unit) {
+                    if (unit->getUnitOrConvoy() == UNIT) {
+                        unit->getComponent<attackComponent>()->setPotentialTargets(zombieList);
+                    }
+                }
+            }
         }
     }
 
     for (auto& zombie : *zombieList) {
         if (zombie) {
-            zombie->updateTargets(unitConvoys);
             zombie->Update();
         }
     }
@@ -197,10 +203,10 @@ void LevelManager::clampZoom(){
 
 void LevelManager::updateStats(string keyName, bool forUnit) {
     for (auto unit : *unitConvoys) {
-        if (forUnit && typeid(unit).name() == typeid(UnitObj).name()) {
+        if (forUnit && unit->getUnitOrConvoy() == UNIT) {
             unit->updateStats(keyName, forUnit);
         }
-        else if (forUnit && typeid(unit).name() == typeid(ConvoyObj).name()) {
+        else if (forUnit && unit->getUnitOrConvoy() == CONVOY) {
             unit->updateStats(keyName, forUnit);
         }
     }

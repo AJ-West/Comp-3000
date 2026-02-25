@@ -119,6 +119,8 @@ public:
 	virtual int getMaxHealth() { return maxHealth; }
 	virtual float getRateOfFire() { return 1.0f; }
 	virtual int getDamage() { return unitTechVal["increaseBasicDamage"]; }
+	virtual int getType() { return NONE; };
+	virtual int getUnitOrConvoy() { return NONE; };
 
 	//virtual setters
 	virtual void setTarget(float x, float y) { cout << "target set"; }

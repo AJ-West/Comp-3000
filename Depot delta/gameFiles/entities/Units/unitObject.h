@@ -13,4 +13,6 @@ public:
 
 	virtual float getRateOfFire();
 	virtual int getDamage();
+
+	virtual int getUnitOrConvoy() { return UnitConvoyTypes::UNIT; }
 };
