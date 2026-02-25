@@ -61,11 +61,11 @@
             <originX>0</originX>
             <originY>0</originY>
             <Resources>
-                <Personnel>746</Personnel>
-                <Ammunition>992</Ammunition>
-                <DoS>992</DoS>
-                <Fuel>992</Fuel>
-                <Scrap>746</Scrap>
+                <Personnel>760</Personnel>
+                <Ammunition>1000</Ammunition>
+                <DoS>1000</DoS>
+                <Fuel>1000</Fuel>
+                <Scrap>760</Scrap>
             </Resources>
         </entities>
         <entities eid="95492584">
