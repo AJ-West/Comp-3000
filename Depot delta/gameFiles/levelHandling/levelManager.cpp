@@ -122,9 +122,7 @@ void LevelManager::unpausedRender()
     UI->renderTime();
     depot->renderResources(renderer);
 
-    frameCounter++;
-
-    if (frameCounter % 30 == 0) {
+    if (frameCount % 30 == 0) {
         removeDeadFromLists();
     }
 }

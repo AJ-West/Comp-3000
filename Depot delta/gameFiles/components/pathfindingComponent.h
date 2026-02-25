@@ -25,38 +25,43 @@ public:
         return true;
 	}
 
-    bool findOrigin(Vec2 target, Vec2 origin) {
-        // for stopping when optimal path found
-        bool foundO = false;
-        // queue for searching (Breadth First Search)
-        std::queue<Vec2> q;
-        // Initialize target cell
-        mGrid[target.y][target.x].cost = 0;
-        q.push(target);
+    bool inBounds(Vec2 next) {
+        return next.x >= 0 && next.x < WORLD_TILE_COLS && next.y >= 0 && next.y < WORLD_TILE_ROWS; // if in bounds
+    }
 
-        // BFS to compute costs while origin not found and all cells have not been checked
-        while (!q.empty() && !foundO) {
-            Vec2 current = q.front(); q.pop();
+    bool findOrigin(Vec2 target, Vec2 origin) {
+        std::deque<Vec2> q;
+
+        mGrid[target.y][target.x].cost = 0;
+        q.push_back(target);
+
+        while (!q.empty()) {
+            Vec2 current = q.front();
+            q.pop_front();
+
             int currentCost = mGrid[current.y][current.x].cost;
 
-            for (auto dir : directions) {
+            for (auto& dir : directions) {
                 Vec2 next = { current.x + dir.x, current.y + dir.y };
-                if (next.x >= 0 && next.x < WORLD_TILE_COLS && // if in bounds
-                    next.y >= 0 && next.y < WORLD_TILE_ROWS &&
-                    mGrid[next.y][next.x].walkable && // if walkable
-                    mGrid[next.y][next.x].cost > currentCost + 1) { // if not visited or found a cheaper path
 
-                    mGrid[next.y][next.x].cost = currentCost + 1;
-                    q.push(next);
-                }
-                if (next.x == origin.x && next.y == origin.y) {
-                    foundO = true;
-                    break;
+                if (!inBounds(next) || !mGrid[next.y][next.x].walkable)
+                    continue;
+
+                int newCost = currentCost + 1;
+
+                if (newCost < mGrid[next.y][next.x].cost) {
+                    mGrid[next.y][next.x].cost = newCost;
+                    q.push_back(next);
+
+                    if (next.x == origin.x && next.y == origin.y)
+                        return true; // early exit
                 }
             }
         }
-		return foundO;
+
+        return false;
     }
+
 
 	void calculateFlowDirections() {
         // Compute flow direction for each cell

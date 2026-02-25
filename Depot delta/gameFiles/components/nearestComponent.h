@@ -6,33 +6,32 @@
 class nearestComponent : public Component {
 public:
 	virtual void update(GameObject* owner) { // update target based off of closest unit (need to add convoys too at later date)
-		if (!checkForClosestUnit() && nearestUnit) {
-			checkCurrentTarget();
+		if (frameCount % 60 == 0) { //check every second instead of every frame
+			if (!checkForClosestUnit() && nearestUnit) {
+				checkCurrentTarget();
+			}
 		}
 	}
 
 	void checkCurrentTarget() {
-		if (nearestUnit && distanceToNearest > searchDistance) {
+		if (nearestUnit && distanceToUnit(nearestUnit) > searchDistance) {
 			nearestUnit = nullptr;
-			distanceToNearest = FLT_MAX;
 			owner->setTarget(owner->getDimensions().x, owner->getDimensions().y);
 			owner->setTargetObject(nullptr);
 		}
 	}
 
 	bool checkForClosestUnit() {
-		nearestUnit = nullptr;
 		bool found = false;
 		for (auto unit : *nearbyUnits) {
-			if (distanceToUnit(unit.get()) <= sightDistance) {
+			float dist = distanceToUnit(unit.get());
+			if (dist <= sightDistance) {
 				if (!nearestUnit) {
 					nearestUnit = unit.get();
-					distanceToNearest = distanceToUnit(unit.get());
 					found = true;
 				}
-				else if (distanceToUnit(unit.get()) < distanceToNearest) {
+				else if (dist < distanceToUnit(nearestUnit)) {
 					nearestUnit = unit.get();
-					distanceToNearest = distanceToUnit(unit.get());
 					found = true;
 				}
 			}
@@ -53,7 +52,6 @@ public:
 		if (found) {
 			owner->setTarget(nearestUnit->getDimensions().x + nearestUnit->getDimensions().w / 2, nearestUnit->getDimensions().y + nearestUnit->getDimensions().h / 2);
 			owner->setTargetObject(nearestUnit);
-			distanceToNearest = distanceToUnit(nearestUnit);
 		}
 		return found;
 	}
@@ -91,8 +89,6 @@ private:
 	DepotObj* depot = nullptr;
 
 	bool nearbyTarget = false;
-
-	float distanceToNearest = FLT_MAX;
 
 	float sightDistance; // distance to check for nearby units
 	float searchDistance; // distance to search for units

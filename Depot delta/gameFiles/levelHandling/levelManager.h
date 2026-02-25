@@ -107,7 +107,5 @@ private:
 	bool paused = false;
 
 	bool depotAlive = true;
-
-	int frameCounter = 0;
 };
 

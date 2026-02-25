@@ -43,6 +43,7 @@ extern TTF_Font* font;
 extern int FONT_SIZE;
 extern Uint32 frameStart;
 
+extern int frameCount;
 extern bool isRunning;
 
 enum unitTypeIndex {

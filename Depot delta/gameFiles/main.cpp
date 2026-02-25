@@ -50,6 +50,7 @@ int main()
         if (frameTime < frameDelay) {
             SDL_Delay(frameDelay - frameTime);
         }
+        frameCount++;
     }
 
 	manager.saveOnExit();

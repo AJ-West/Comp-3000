@@ -49,25 +49,10 @@ void MapLoader::loadTilemap(XMLElement* layer)
     xCells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
     yCells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
 	grid.resize(yCells, vector<Tile>(xCells));
-    //XMLElement* data = layer->FirstChildElement("data");
 	for (int i = 0; i < yCells; i++) {
-		vector<SDL_FRect> row;
-		/*for (int j = 0; j < xCells; j++) {
-			int pos = atoi(data->GetText()); // position in spritesheet
-            div_t loc = div(pos, 8); // gettile value as int then conver to location on tilemap spritesheet
-			SDL_FRect cell;
-			cell.x = loc.rem * tileWidth;
-			cell.y = loc.quot * tileHeight;
-			cell.w = tileWidth;
-			cell.h = tileHeight;
-			row.push_back(cell);
-            data = data->NextSiblingElement("data");
-            if (pos >= 20) { grid[i][j].walkable = true; } // if tile is generic (hardcoded while using basic tilemap)
-		}*/
         for (int j = 0; j < xCells; j++) {
             grid[i][j].walkable = true;
         }
-		tilemap.push_back(row);
 	}
 }
 

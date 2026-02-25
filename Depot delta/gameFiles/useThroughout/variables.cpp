@@ -36,6 +36,7 @@ TTF_Font* font;
 int FONT_SIZE = 20;
 Uint32 frameStart;
 
+int frameCount = 0;
 bool isRunning;
 
 Camera camera = { 0,0, ResolutionWidth, ResolutionHeight };
