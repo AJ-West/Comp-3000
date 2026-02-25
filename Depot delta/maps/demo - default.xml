@@ -22,27 +22,47 @@
     </layers>
     <layers eid="32843350">
         <name>Swarms</name>
-        <swarmCount>2</swarmCount>
+        <swarmCount>4</swarmCount>
         <swarm1>
             <quantity>10</quantity>
             <direction>0</direction>
-                <time>
-                    <day>0</day>
-                    <hour>14</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                </time>
-        </swarm1>
-        <swarm2>
-            <quantity>10</quantity>
-            <direction>5</direction>
                 <time>
                     <day>1</day>
                     <hour>0</hour>
                     <minute>0</minute>
                     <second>0</second>
                 </time>
+        </swarm1>
+        <swarm2>
+            <quantity>20</quantity>
+            <direction>2</direction>
+                <time>
+                    <day>2</day>
+                    <hour>0</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
         </swarm2>
+        <swarm3>
+            <quantity>30</quantity>
+            <direction>4</direction>
+                <time>
+                    <day>3</day>
+                    <hour>0</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
+        </swarm3>
+        <swarm4>
+            <quantity>40</quantity>
+            <direction>6</direction>
+                <time>
+                    <day>4</day>
+                    <hour>0</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
+        </swarm4>
     </layers>
     <layers eid="35163212">
         <name>Entities</name>
