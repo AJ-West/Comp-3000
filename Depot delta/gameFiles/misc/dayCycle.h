@@ -8,7 +8,7 @@ using namespace std;
 
 class dayCycle {
 public:
-	dayCycle() {};
+	dayCycle(int win): winDay(win) {};
 	~dayCycle() {};
 
 	void update() {
@@ -16,9 +16,9 @@ public:
 	}
 
 	void increaseTime(int period) {
-		dayTime[period] += 1;
+		dayTime[period] += timeIncrements[period];
 		if (period != day) {
-			if (dayTime[period] == 60 && period != hour && period != day) {
+			if (dayTime[period] == 60 && period != hour) {
 				dayTime[period] = 0;
 				increaseTime(period + 1);
 			}
@@ -26,6 +26,9 @@ public:
 				dayTime[period] = 0;
 				increaseTime(period + 1);
 			}
+		}
+		else {
+			if (dayTime[day] >= winDay) { cout << "win"; }
 		}
 		if (period == hour) {
 			updateFilter();
@@ -46,6 +49,13 @@ public:
 	vector<int> getDayTime() { return dayTime; }
 
 private:
+	// second = 0, minute = 1, hour = 2, day = 3
 	vector<int> dayTime{ 0,0,12,0 }; // start at midday
+	vector<int> timeIncrements{ 10,1,1,1 }; // start at midday
 	vector<float> rgba{ 0,0,0,100 };
+
+	vector<vector<int>> swarmTimes;
+	vector<int> swarmQuantity;
+
+	int winDay;
 };
