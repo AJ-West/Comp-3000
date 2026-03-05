@@ -115,6 +115,16 @@ public:
 	void initiateTransfer(GameObject* targetobj, vector<int> toTransfer) {
 		target = targetobj;
 		transferAmount = toTransfer;
+
+		if (target->getType() == BUILDING) { // checks if building is alive or is being set to alive else shouldn't be able to transfer resources
+			if (!target->getAlive() && toTransfer[PERSONNEL] >=1) {
+				target->setAlive(true);
+			}
+			else if (!target->getAlive()) {
+				return;
+			}
+		}
+
 		//TO-DO: transfer resources between depot and convoy
 		if (checkDistance()) {
 			transfering = true;

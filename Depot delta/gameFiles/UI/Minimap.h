@@ -78,8 +78,11 @@ public:
 					SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
 				}
 			}
-			else if (obj->getType() == BUILDING) {
+			else if (obj->getType() == BUILDING && obj->getAlive()) {
 				SDL_SetRenderDrawColor(renderer, 0, 150, 255, 255);
+			}
+			else if (obj->getType() == BUILDING) {
+				SDL_SetRenderDrawColor(renderer, 150, 150, 255, 255);
 			}
 			else if (obj->getType() == DEPOT) {
 				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);

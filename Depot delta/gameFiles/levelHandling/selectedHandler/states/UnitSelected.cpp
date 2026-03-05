@@ -45,6 +45,7 @@ void UnitSelected::leftClick() {
 	}
 	else { // if clicking on another object
 		selected->onClick();
+		handler->setStateEnum(selectHuman);
 		deselect();
 	}
 }

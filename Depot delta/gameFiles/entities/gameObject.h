@@ -115,7 +115,7 @@ public:
 
 	//virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };
-	virtual int getID() { return 0; }
+	virtual int getID() { return 1; } // returns depot by default
 	virtual int getMaxHealth() { return maxHealth; }
 	virtual float getRateOfFire() { return 1.0f; }
 	virtual int getDamage() { return unitTechVal["increaseBasicDamage"]; }

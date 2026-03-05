@@ -33,8 +33,10 @@ void NewUnitState::leftClick() {
 	if (UI->checkClickInput()) {
 		UIElement* selectedElement = UI->getBox()->getSelectedElement();
 		if (typeid(*selectedElement).name() == typeid(textInput).name()) { isTextInput = true; }
-		else if (typeid(*selectedElement).name() != typeid(TechArrow).name()) { UI->deleteBox(); }
-		//else { selectedElement->update(); }
+		else if (typeid(*selectedElement).name() != typeid(TechArrow).name()) { // if new unit button
+			UI->deleteBox(); 
+			deselect();
+		}
 		return;
 	}
 	if (!UI->getBox()) { // if box has been removed

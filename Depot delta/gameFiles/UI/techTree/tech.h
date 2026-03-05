@@ -46,7 +46,9 @@ public:
 	}
 
 	void renderHover(SDL_Renderer* renderer) {
-		SDL_RenderTexture(renderer, descriptionTexture, NULL, &tSize);
+		SDL_RenderTexture(renderer, bATexture, NULL, &bASize);
+		SDL_RenderTexture(renderer, costTexture, NULL, &costSize);
+		SDL_RenderTexture(renderer, descTexture, NULL, &descSize);
 	}
 
 	bool buy() { // when clicked
@@ -114,10 +116,25 @@ public:
 	}
 
 	void updateDescription() {
-		costDescription = to_string(boughtAmount) + "/" + to_string(purchaseAmount) + " Cost " + to_string(cost) + ": " + description;
+		costDescription = to_string(boughtAmount) + "/" + to_string(purchaseAmount);
 		SDL_Surface* surface = TTF_RenderText_Solid(font, costDescription.c_str(), costDescription.length(), { 0,0,0,255 });
-		descriptionTexture = SDL_CreateTextureFromSurface(renderer, surface);
-		tSize = { size.x - size.w * 2, size.y + size.h, size.w * 5, size.h };
+		bATexture = SDL_CreateTextureFromSurface(renderer, surface);
+
+		bASize = { size.x + size.w/2, size.y + size.h, size.w * 5 * scaleText(costDescription), size.h / 3};
+		bASize.x -= bASize.w / 2;
+
+		costDescription = "Cost " + to_string(cost);
+		surface = TTF_RenderText_Solid(font, costDescription.c_str(), costDescription.length(), { 0,0,0,255 });
+		costTexture = SDL_CreateTextureFromSurface(renderer, surface);
+
+		costSize = { size.x + size.w / 2, size.y + 4*size.h/3, size.w * 5 * scaleText(costDescription), size.h / 3 };
+		costSize.x -= costSize.w / 2;
+
+		surface = TTF_RenderText_Solid(font, description.c_str(), description.length(), { 0,0,0,255 });
+		descTexture = SDL_CreateTextureFromSurface(renderer, surface);		
+		
+		descSize = { size.x + size.w / 2, size.y + 5 * size.h / 3, size.w * 5 * scaleText(description), size.h / 3 };
+		descSize.x -= descSize.w / 2;
 	}
 
 	//setters
@@ -151,8 +168,12 @@ private:
 
 	string description;
 	string costDescription = "";
-	SDL_Texture* descriptionTexture;
-	SDL_FRect tSize;
+	SDL_Texture* bATexture;
+	SDL_Texture* costTexture;
+	SDL_Texture* descTexture;
+	SDL_FRect bASize;
+	SDL_FRect costSize;
+	SDL_FRect descSize;
 	SDL_FRect loc = { 0,0,32,32 };
 
 	SDL_Texture* Icons;
