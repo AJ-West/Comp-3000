@@ -22,12 +22,15 @@ GameObject* MapSaver::findObject(shared_ptr<vector<shared_ptr<GameObject>>> allO
     }
 }
 
-void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector< shared_ptr<ZombieObj>> zombies)
+void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector< shared_ptr<ZombieObj>> zombies, dayCycle* time)
 {
     XMLElement* root = doc.RootElement();
     XMLElement* layer = root->FirstChildElement("layers");
     bool found = false;
     while (!found && layer) {
+        if (string(layer->FirstChildElement("name")->GetText()) == "Level Details") {
+            saveTime(time, layer->FirstChildElement("time"));
+        }
         if (string(layer->FirstChildElement("name")->GetText()) == "Entities") {
             found = true;
             break;
@@ -86,6 +89,14 @@ void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, v
     else {
         cerr << "Unable to save file! " << endl;
     }
+}
+
+void MapSaver::saveTime(dayCycle* time, XMLElement* entity) {
+    vector<int> currentTime = time->getDayTime();
+    entity->FirstChildElement("day")->SetText(currentTime[day]);
+    entity->FirstChildElement("hour")->SetText(currentTime[hour]);
+    entity->FirstChildElement("minute")->SetText(currentTime[minute]);
+    entity->FirstChildElement("second")->SetText(currentTime[second]);
 }
 
 void MapSaver::saveUnit(XMLElement* entity, GameObject* unit)

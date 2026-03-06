@@ -12,6 +12,8 @@
 #include "gameFiles/entities/Convoys/convoyObject.h"
 #include "gameFiles/entities/Zombies/zombieObject.h"
 
+#include "gameFiles/misc/dayCycle.h"
+
 #include "gameFiles/components/attackComponent.h"
 #include "gameFiles/components/buttonComponent.h"
 #include "gameFiles/components/movementComponent.h"
@@ -31,6 +33,7 @@ public:
 	~MapLoader();
 
 	void loadTilemap(XMLElement* layer);
+	void loadTime(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
 
 	void loadSwarms(XMLElement* layer);
@@ -65,6 +68,7 @@ public:
 	vector<vector<int>> getSwarmTimes() { return swarmTimes; }
 	vector<int> getSwarmQuantity() { return swarmQuantity; }
 	vector<int> getSwarmDirection() { return swarmDirection; }
+	vector<int> getTime() { return time; }
 
 
 private:
@@ -83,4 +87,6 @@ private:
 	vector<vector<int>> swarmTimes{};
 	vector<int> swarmQuantity{};
 	vector<int> swarmDirection{};
+
+	vector<int> time{ 0,0,0,0 };
 };

@@ -11,6 +11,7 @@
 #include "gameFiles/entities/Buildings/building.h"
 #include "gameFiles/entities/Convoys/convoyObject.h"
 #include "gameFiles/entities/Zombies/zombieObject.h"
+#include "gameFiles/misc/dayCycle.h"
 
 #include "gameFiles/components/renderComponent.h"
 #include "gameFiles/components/buttonComponent.h"
@@ -28,6 +29,8 @@ public:
 
 	GameObject* findObject(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, int id);
 
+	void saveTime(dayCycle* time, XMLElement* entity);
+
 	void saveUnit(XMLElement* entity, GameObject* unit);
 	void saveNewUnit(XMLElement* layer, GameObject* unit);
 
@@ -35,7 +38,7 @@ public:
 	void saveDepot(XMLElement* entity, GameObject* depot);
 	void saveBuilding(XMLElement* entity, GameObject* building);
 
-	void saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector<shared_ptr<ZombieObj>> zombies);
+	void saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, vector<shared_ptr<ZombieObj>> zombies, dayCycle* time);
 
 	void saveHealth(XMLElement* entity, GameObject* obj);
 	void saveResources(XMLElement* entity, GameObject* obj);

@@ -21,6 +21,15 @@
         <arrayMode>0</arrayMode>
     </layers>
     <layers eid="32843350">
+        <name>Level Details</name>
+        <time>
+            <day>0</day>
+            <hour>12</hour>
+            <minute>46</minute>
+            <second>30</second>
+        </time>
+    </layers>
+    <layers eid="32843350">
         <name>Swarms</name>
         <swarmCount>2</swarmCount>
         <swarm1>

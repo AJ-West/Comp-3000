@@ -13,6 +13,9 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
         if (layerName == "Tilemap") {
             loadTilemap(layer);
         }
+        else if (layerName == "Level Details") {
+            loadTime(layer->FirstChildElement("time"));
+        }
         else if (layerName == "Swarms") {
             loadSwarms(layer);
         }
@@ -54,6 +57,13 @@ void MapLoader::loadTilemap(XMLElement* layer)
             grid[i][j].walkable = true;
         }
 	}
+}
+
+void MapLoader::loadTime(XMLElement* layer) {
+    time[day] = atoi(layer->FirstChildElement("day")->GetText());
+    time[hour] = atoi(layer->FirstChildElement("hour")->GetText());
+    time[minute] = atoi(layer->FirstChildElement("minute")->GetText());
+    time[second] = atoi(layer->FirstChildElement("second")->GetText());
 }
 
 void MapLoader::loadSwarms(XMLElement* layer) {

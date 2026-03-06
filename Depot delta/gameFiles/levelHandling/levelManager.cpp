@@ -14,7 +14,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
-    time = new dayCycle(5, mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
+    time = new dayCycle(5, mapLoader->getTime(), mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 
     spawner = new ZombieSpawner(this);
@@ -30,7 +30,7 @@ LevelManager::~LevelManager()
 void LevelManager::saveOnExit()
 {
 	MapSaver saver("maps/demo.xml");
-    saver.saveFile(allObjects, *zombieList);
+    saver.saveFile(allObjects, *zombieList, time);
 }
 
 // Handles user input

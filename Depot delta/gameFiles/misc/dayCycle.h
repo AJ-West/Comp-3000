@@ -8,7 +8,7 @@ using namespace std;
 
 class dayCycle {
 public:
-	dayCycle(int win, vector<vector<int>> times, vector<int> quantities, vector<int> direction): winDay(win), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {};
+	dayCycle(int win, vector<int> currentTime, vector<vector<int>> times, vector<int> quantities, vector<int> direction): winDay(win), dayTime(currentTime), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {};
 	~dayCycle() {};
 
 	void update() {
