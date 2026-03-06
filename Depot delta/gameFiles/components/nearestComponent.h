@@ -2,6 +2,7 @@
 #include "gameFiles/entities/gameObject.h"
 #include "gameFiles/entities/Units/unitObject.h"
 #include "gameFiles/entities/Depot/depotObject.h"
+#include "gameFiles/entities/Buildings/building.h"
 
 class nearestComponent : public Component {
 public:
@@ -33,6 +34,21 @@ public:
 				else if (dist < distanceToUnit(nearestUnit)) {
 					nearestUnit = unit.get();
 					found = true;
+				}
+			}
+		}
+		for (auto building : *nearbyBuildings) {
+			if (building->getAlive()) {
+				float dist = distanceToUnit(building.get());
+				if (dist <= sightDistance) {
+					if (!nearestUnit) {
+						nearestUnit = building.get();
+						found = true;
+					}
+					else if (dist < distanceToUnit(nearestUnit)) {
+						nearestUnit = building.get();
+						found = true;
+					}
 				}
 			}
 		}
@@ -73,6 +89,12 @@ public:
 			checkForClosestUnit();
 		}
 	}
+	void setnearbyBuildings(shared_ptr<vector<shared_ptr<BuildingObj>>> buildings) {
+		nearbyBuildings = buildings;
+		if (depot) { // without will try to find a target before completed spawning
+			checkForClosestUnit();
+		}
+	}
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 	void setSightDistance(float dist) { sightDistance = dist; }
 
@@ -84,6 +106,7 @@ public:
 
 private:
 	shared_ptr<vector<shared_ptr<HumanObj>>> nearbyUnits;
+	shared_ptr<vector<shared_ptr<BuildingObj>>> nearbyBuildings;
 	GameObject* nearestUnit = nullptr;
 
 	DepotObj* depot = nullptr;

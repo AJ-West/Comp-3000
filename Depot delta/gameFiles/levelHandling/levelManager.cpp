@@ -250,6 +250,7 @@ void LevelManager::spawnZombie() {
     ZombieObj* zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID());
     stats.addComponents(zombie, sqrt(worldWidth*worldWidth +worldHeight*worldHeight)); // covers size of map
     zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
+    zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
     zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
     addZombie(zombie);
 }
