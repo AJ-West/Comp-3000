@@ -30,6 +30,8 @@ public:
 	virtual int getType() { return HUMAN; }
 	virtual int getUnitOrConvoy() { return INT_MAX; }
 
+	virtual int getVehicleCapacity() { return 1; };
+
 private:
 	int ID;
 	int maxHealth = 100;

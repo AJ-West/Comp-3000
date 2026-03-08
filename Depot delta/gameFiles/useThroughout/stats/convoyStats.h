@@ -20,6 +20,8 @@ struct ConvoyStats { // default
 	int rTransferDistance = 50;
 	std::vector<int> rTransferRate = { 5,5,5,5,5 };
 
+	int vehicleCapacity = 5; // number of people per fuel for movement
+
 	void addComponents(GameObject* convoy) {
 		convoy->AddComponent(make_shared<renderComponent>(convoy, renderer, art));
 		convoy->AddComponent(make_shared<buttonComponent>(convoy));

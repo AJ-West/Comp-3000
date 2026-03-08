@@ -11,7 +11,8 @@ void HumanObj::onClick() {
 void HumanObj::clickAway() { // set target pos to clicked position
 	getMapScaledMousePos(&tx, &ty);
 	pathToTarget();
-	getComponent<resourceComponent>()->adjustResourceChange(FUEL, -1);
+	auto rC = getComponent<resourceComponent>();
+	rC->adjustResourceChange(FUEL, -1 * rC->getResourcesCount(PERSONNEL)/ getVehicleCapacity()); // fuel use increase for every 5 units
 }
 
 void HumanObj::pathToTarget() {

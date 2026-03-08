@@ -23,3 +23,7 @@ float UnitObj::getRateOfFire() {
 int UnitObj::getDamage() {
 	return unitStats.getDamage();
 }
+
+int UnitObj::getVehicleCapacity() { 
+	return unitStats.vehicleCapacity; 
+};

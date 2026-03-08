@@ -8,4 +8,5 @@ public:
 	virtual void renderHover(SDL_Renderer* renderer);
 
 	virtual int getUnitOrConvoy() { return UnitConvoyTypes::CONVOY; }
+	virtual int getVehicleCapacity();
 };

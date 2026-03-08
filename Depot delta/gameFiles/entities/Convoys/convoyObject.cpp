@@ -14,3 +14,7 @@ void ConvoyObj::renderHover(SDL_Renderer* renderer) {
 		rTComp->renderTransferArea();
 	}
 }
+
+int ConvoyObj::getVehicleCapacity() { 
+	return convoyStats.vehicleCapacity;
+};

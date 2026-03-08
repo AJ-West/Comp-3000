@@ -28,6 +28,8 @@ struct UnitStats { // default
 	int aRange = 500;
 	int aCooldown = 500;
 
+	int vehicleCapacity = 5; // number of people per fuel for movement
+
 	void addComponents(GameObject* unit) {
 		unit->AddComponent(make_shared<renderComponent>(unit, renderer, art));
 		unit->AddComponent(make_shared<buttonComponent>(unit));

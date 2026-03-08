@@ -15,4 +15,5 @@ public:
 	virtual int getDamage();
 
 	virtual int getUnitOrConvoy() { return UnitConvoyTypes::UNIT; }
+	virtual int getVehicleCapacity();
 };

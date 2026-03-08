@@ -177,9 +177,6 @@
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp">
       <Filter>Source Files\dependencies\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="gameFiles\entities\humanObject.cpp">
-      <Filter>Source Files\gameFiles\entities</Filter>
-    </ClCompile>
     <ClCompile Include="gameFiles\UI\resourceBoxes\resourceBox.cpp">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes</Filter>
     </ClCompile>
@@ -218,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="gameFiles\entities\Buildings\building.cpp">
       <Filter>Source Files\gameFiles\entities\buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\entities\humanObject.cpp">
+      <Filter>Source Files\gameFiles\entities\humans</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -338,9 +338,6 @@
     <ClInclude Include="gameFiles\main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="gameFiles\entities\humanObject.h">
-      <Filter>Source Files\gameFiles\entities</Filter>
-    </ClInclude>
     <ClInclude Include="gameFiles\levelHandling\selectedHandler\handleSelected.h">
       <Filter>Source Files\gameFiles\level handling\selectedHandler</Filter>
     </ClInclude>
@@ -394,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="gameFiles\UI\resourceBoxes\makingStatsBox.h">
       <Filter>Source Files\gameFiles\UI%27s\Resource boxes\unitMakerBox</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\entities\humanObject.h">
+      <Filter>Source Files\gameFiles\entities\humans</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
