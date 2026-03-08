@@ -45,6 +45,94 @@ MapLoader::~MapLoader()
 {
 }
 
+void MapLoader::readTechFile() {
+    XMLDocument doc;
+    doc.LoadFile("techTree/currentTree.xml");
+    XMLElement* root = doc.RootElement();
+    XMLElement* layer = root->FirstChildElement("layers");
+    while (layer) {
+        string layerName = string(layer->FirstChildElement("name")->GetText());
+        if (layerName == "depotUpgrades") {
+            loadDepotUpgrades(layer);
+        }
+        else if (layerName == "unitUpgrades") {
+            loadUnitUpgrades(layer);
+        }
+        else if (layerName == "convoyUpgrades") {
+            loadConvoyUpgrades(layer);
+        }
+        layer = layer->NextSiblingElement("layers");
+    }
+}
+
+void MapLoader::loadDepotUpgrades(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string name = string(entity->FirstChildElement("name")->GetText());
+        string keyName = string(entity->FirstChildElement("keyName")->GetText());
+        int type = atoi(entity->FirstChildElement("type")->GetText());
+
+        switch (type) {
+        case modifier: {
+            int boughtAmount = atoi(entity->FirstChildElement("boughtAmount")->GetText());
+            if (boughtAmount != 0) {
+                int modifyValue = atoi(entity->FirstChildElement("modifyValue")->GetText());
+                depotTechVal[keyName] *= boughtAmount * modifyValue;
+            }
+            break;
+        }
+        case unlock: // not yet implemented in tech tree
+            break;
+        }
+    }
+}
+
+void MapLoader::loadUnitUpgrades(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string name = string(entity->FirstChildElement("name")->GetText());
+        string keyName = string(entity->FirstChildElement("keyName")->GetText());
+        int type = atoi(entity->FirstChildElement("type")->GetText());
+
+        switch (type) {
+        case modifier: {
+            int boughtAmount = atoi(entity->FirstChildElement("boughtAmount")->GetText());
+            if (boughtAmount != 0) {
+                int modifyValue = atoi(entity->FirstChildElement("modifyValue")->GetText());
+                unitTechVal[keyName] *= boughtAmount * modifyValue;
+            }
+            break;
+        }
+        case unlock: // not yet implemented in tech tree
+            break;
+        }
+    }
+}
+
+void MapLoader::loadConvoyUpgrades(XMLElement* layer) {
+    XMLElement* entity = layer->FirstChildElement("entities");
+    while (entity) {
+        string name = string(entity->FirstChildElement("name")->GetText());
+        string keyName = string(entity->FirstChildElement("keyName")->GetText());
+        int type = atoi(entity->FirstChildElement("type")->GetText());
+
+        switch (type) {
+        case modifier: {
+            int boughtAmount = atoi(entity->FirstChildElement("boughtAmount")->GetText());
+            if (boughtAmount != 0) {
+                int modifyValue = atoi(entity->FirstChildElement("modifyValue")->GetText());
+                convoyTechVal[keyName] *= boughtAmount * modifyValue;
+            }
+            break;
+        }
+        case unlock: // not yet implemented in tech tree
+            break;
+        }
+    }
+}
+
+
+
 void MapLoader::loadTilemap(XMLElement* layer)
 {
     tileWidth = atoi(layer->FirstChildElement("gridCellWidth")->GetText());

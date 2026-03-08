@@ -202,6 +202,11 @@ enum selectedStates {
 	selectTree
 };
 
+enum techType {
+	modifier,
+	unlock
+};
+
 struct Vec2 {
 	float x;
 	float y;

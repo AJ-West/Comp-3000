@@ -1,5 +1,7 @@
 #pragma once
 
+#include "gameFiles/UI/UIElement.h"
+
 #include <cmath>
 #include <unordered_map>
 
@@ -11,10 +13,6 @@ enum techStatus{
 	purchased
 };
 
-enum techType{
-	modifier,
-	unlock
-};
 enum listNames {
 	depotUpgrades,
 	unitUpgrades,

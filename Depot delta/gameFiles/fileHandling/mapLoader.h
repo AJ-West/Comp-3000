@@ -32,6 +32,11 @@ public:
 	MapLoader(const char* filename, SDL_Renderer* renderer);
 	~MapLoader();
 
+	void readTechFile();
+	void loadDepotUpgrades(XMLElement* layer);
+	void loadUnitUpgrades(XMLElement* layer);
+	void loadConvoyUpgrades(XMLElement* layer);
+
 	void loadTilemap(XMLElement* layer);
 	void loadTime(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
