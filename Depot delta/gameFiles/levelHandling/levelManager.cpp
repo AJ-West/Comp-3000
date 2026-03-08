@@ -268,4 +268,5 @@ int LevelManager::getNextID() {
             nextID = zomb->getID() + 1;
         }
     }
+    return nextID;
 }
