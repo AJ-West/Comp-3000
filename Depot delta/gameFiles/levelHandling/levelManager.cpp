@@ -254,3 +254,18 @@ void LevelManager::spawnZombie() {
     zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
     addZombie(zombie);
 }
+
+
+int LevelManager::getNextID() {
+    int nextID = 1;
+    for (auto obj : *allObjects) {
+        if (obj->getID() <= nextID) {
+            nextID = obj->getID() + 1;
+        }
+    }
+    for (auto zomb : *zombieList) {
+        if (zomb->getID() <= nextID) {
+            nextID = zomb->getID() + 1;
+        }
+    }
+}

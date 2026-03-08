@@ -70,7 +70,7 @@ public:
 	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
 	shared_ptr<vector<shared_ptr<BuildingObj>>> getBuildingList() { return buildingList; }
 	int getZombiesSize() { return zombieList->size(); }
-	int getNextID() { return unitConvoys->size() + zombieList->size() + 2; } // add 1 for depot and new object for total number of objects
+	int getNextID();
 	shared_ptr<DepotObj> getDepot() { return depot; }
 	bool getDepotAlive() { return depotAlive; }
 
