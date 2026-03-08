@@ -50,7 +50,7 @@ public:
 			int count = rComp->getResourcesCount(AMMUNITION);
 			if (count > 0) {
 				rComp->setResourcesCount(AMMUNITION, count - 1);
-				target->takeDamage(owner->getDamage());
+				target->takeDamage(owner->getDamage() * rComp->getResourcesCount(PERSONNEL));
 				bullets->spawnBullet(owner->getPos(), target->getDimensions());
 				if (!target->getAlive()) {
 					target = nullptr;
