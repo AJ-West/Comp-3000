@@ -31,7 +31,7 @@ public:
 		Vec2 target = { tx,ty };
 		SDL_FRect size = getDimensions();
 		Vec2 origin = { size.x + size.w / 2, size.y + size.h / 2 };
-		if (checkForAttack(target, origin)) {
+		if (checkForAttack(target, origin) && targetObject) {
 			attack();
 		}
 		else {

@@ -12,10 +12,9 @@
         <name>Tilemap</name>
         <offsetX>0</offsetX>
         <offsetY>0</offsetY>
-        <gridCellWidth>16</gridCellWidth>
-        <gridCellHeight>16</gridCellHeight>
-        <gridCellsX>248</gridCellsX>
-        <gridCellsY>136</gridCellsY>
+        <width>3968</width>
+        <height>2176</height>
+        <gridCellSize>16</gridCellSize>
         <tileset>New Tileset</tileset>
         <exportMode>0</exportMode>
         <arrayMode>0</arrayMode>
