@@ -131,17 +131,16 @@ void MapLoader::loadConvoyUpgrades(XMLElement* layer) {
     }
 }
 
-
-
 void MapLoader::loadTilemap(XMLElement* layer)
 {
-    tileWidth = atoi(layer->FirstChildElement("gridCellWidth")->GetText());
-    tileHeight = atoi(layer->FirstChildElement("gridCellHeight")->GetText());
-    xCells = atoi(layer->FirstChildElement("gridCellsX")->GetText());
-    yCells = atoi(layer->FirstChildElement("gridCellsY")->GetText());
-	grid.resize(yCells, vector<Tile>(xCells));
-	for (int i = 0; i < yCells; i++) {
-        for (int j = 0; j < xCells; j++) {
+    worldWidth = atoi(layer->FirstChildElement("width")->GetText());
+    worldHeight = atoi(layer->FirstChildElement("height")->GetText());
+    WORLD_TILE_SIZE = atoi(layer->FirstChildElement("gridCellSize")->GetText());
+    WORLD_TILE_COLS = worldWidth / WORLD_TILE_SIZE;
+    WORLD_TILE_ROWS = worldHeight / WORLD_TILE_SIZE;
+	grid.resize(WORLD_TILE_ROWS, vector<Tile>(WORLD_TILE_COLS));
+	for (int i = 0; i < WORLD_TILE_ROWS; i++) {
+        for (int j = 0; j < WORLD_TILE_COLS; j++) {
             grid[i][j].walkable = true;
         }
 	}

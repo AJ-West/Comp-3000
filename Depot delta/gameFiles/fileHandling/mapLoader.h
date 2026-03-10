@@ -77,8 +77,6 @@ public:
 
 
 private:
-	int width, height;
-	int xCells, yCells;
     vector<vector<int>> tilelocs;
     vector<vector<SDL_FRect>> tilemap;
 

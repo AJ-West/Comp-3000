@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <root>
     <ogmoVersion>3.4.0</ogmoVersion>
-    <width>3968</width>
-    <height>2176</height>
     <offsetX>0</offsetX>
     <offsetY>0</offsetY>
     <values>
@@ -12,10 +10,9 @@
         <name>Tilemap</name>
         <offsetX>0</offsetX>
         <offsetY>0</offsetY>
-        <gridCellWidth>16</gridCellWidth>
-        <gridCellHeight>16</gridCellHeight>
-        <gridCellsX>248</gridCellsX>
-        <gridCellsY>136</gridCellsY>
+        <width>3968</width>
+        <height>2176</height>
+        <gridCellSize>16</gridCellSize>
         <tileset>New Tileset</tileset>
         <exportMode>0</exportMode>
         <arrayMode>0</arrayMode>
@@ -23,10 +20,10 @@
     <layers eid="32843350">
         <name>Level Details</name>
         <time>
-            <day>0</day>
-            <hour>22</hour>
-            <minute>48</minute>
-            <second>0</second>
+            <day>1</day>
+            <hour>5</hour>
+            <minute>41</minute>
+            <second>20</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -200,10 +197,10 @@
             <name>Basic unit</name>
             <id>2</id>
             <health>100</health>
-            <x>1691</x>
-            <y>1073</y>
-            <target_x>1723</target_x>
-            <target_y>1106</target_y>
+            <x>1723</x>
+            <y>1106</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>2</Personnel>
                 <Ammunition>0</Ammunition>
@@ -248,10 +245,10 @@
             <name>Basic unit</name>
             <id>4</id>
             <health>100</health>
-            <x>1709</x>
-            <y>1179</y>
-            <target_x>1741</target_x>
-            <target_y>1212</target_y>
+            <x>1741</x>
+            <y>1212</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <Resources>
                 <Personnel>2</Personnel>
                 <Ammunition>0</Ammunition>
@@ -267,6 +264,438 @@
                 <FuelChange>0</FuelChange>
                 <ScrapChange>0</ScrapChange>
             </ResourceTransfer>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>2</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>3</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>4</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>5</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>6</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>7</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>8</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>9</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>10</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>11</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>12</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>13</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>14</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>15</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>16</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>17</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>18</id>
+            <health>100</health>
+            <x>2660</x>
+            <y>694</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>19</id>
+            <health>100</health>
+            <x>2639</x>
+            <y>673</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>20</id>
+            <health>100</health>
+            <x>2622</x>
+            <y>655</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>21</id>
+            <health>100</health>
+            <x>2622</x>
+            <y>655</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>22</id>
+            <health>100</health>
+            <x>2603</x>
+            <y>636</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>23</id>
+            <health>100</health>
+            <x>2603</x>
+            <y>636</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>24</id>
+            <health>100</health>
+            <x>2586</x>
+            <y>618</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>25</id>
+            <health>100</health>
+            <x>2586</x>
+            <y>618</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>26</id>
+            <health>100</health>
+            <x>2568</x>
+            <y>599</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>27</id>
+            <health>100</health>
+            <x>2568</x>
+            <y>599</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>28</id>
+            <health>100</health>
+            <x>2551</x>
+            <y>582</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>29</id>
+            <health>100</health>
+            <x>2514</x>
+            <y>544</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>30</id>
+            <health>100</health>
+            <x>2495</x>
+            <y>524</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>31</id>
+            <health>100</health>
+            <x>2495</x>
+            <y>524</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>32</id>
+            <health>100</health>
+            <x>2477</x>
+            <y>506</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>33</id>
+            <health>100</health>
+            <x>2477</x>
+            <y>506</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>34</id>
+            <health>100</health>
+            <x>2438</x>
+            <y>467</y>
+            <target_x>2629</target_x>
+            <target_y>663</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>35</id>
+            <health>100</health>
+            <x>2420</x>
+            <y>449</y>
+            <target_x>2629</target_x>
+            <target_y>663</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>36</id>
+            <health>100</health>
+            <x>2420</x>
+            <y>449</y>
+            <target_x>2629</target_x>
+            <target_y>663</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>37</id>
+            <health>100</health>
+            <x>2402</x>
+            <y>430</y>
+            <target_x>2629</target_x>
+            <target_y>663</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>38</id>
+            <health>100</health>
+            <x>2402</x>
+            <y>430</y>
+            <target_x>2629</target_x>
+            <target_y>663</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>39</id>
+            <health>100</health>
+            <x>1984</x>
+            <y>0</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>40</id>
+            <health>100</health>
+            <x>2354</x>
+            <y>380</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>41</id>
+            <health>100</health>
+            <x>2336</x>
+            <y>361</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>42</id>
+            <health>100</health>
+            <x>2336</x>
+            <y>361</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>43</id>
+            <health>100</health>
+            <x>2318</x>
+            <y>343</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>44</id>
+            <health>100</health>
+            <x>2318</x>
+            <y>343</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>45</id>
+            <health>100</health>
+            <x>2300</x>
+            <y>324</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>46</id>
+            <health>100</health>
+            <x>2300</x>
+            <y>324</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>47</id>
+            <health>100</health>
+            <x>2282</x>
+            <y>305</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>48</id>
+            <health>100</health>
+            <x>2282</x>
+            <y>305</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>49</id>
+            <health>100</health>
+            <x>2264</x>
+            <y>287</y>
+            <target_x>2693</target_x>
+            <target_y>727</target_y>
         </entities>
     </layers>
 </root>

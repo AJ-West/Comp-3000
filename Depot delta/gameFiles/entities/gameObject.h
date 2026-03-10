@@ -37,8 +37,8 @@ public:
 	GameObject(float x, float y, float width, float height, int vHealth): health(vHealth){
 		size.x = x;
 		size.y = y;
-		size.w = width*tileWidth;
-		size.h = height*tileHeight;
+		size.w = width* WORLD_TILE_SIZE;
+		size.h = height* WORLD_TILE_SIZE;
 	}
 
 	//add a component to the GameObject

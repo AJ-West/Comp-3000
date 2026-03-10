@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    directions for swarms:
+	NORTH = 0,
+	NORTHEAST = 1,
+	EAST = 2,
+	SOUTHEAST = 3,
+	SOUTH = 4,
+	SOUTHWEST = 5,
+	WEST = 6,
+	NORTHWEST = 7,
+    ALL = 8
+-->
+<root>
+    <ogmoVersion>3.4.0</ogmoVersion>
+    <offsetX>0</offsetX>
+    <offsetY>0</offsetY>
+    <values>
+        <new_value>true</new_value>
+    </values>
+    <layers eid="32843350">
+        <name>Tilemap</name>
+        <offsetX>0</offsetX>
+        <offsetY>0</offsetY>
+        <width>3968</width>
+        <height>2176</height>
+        <gridCellSize>16</gridCellSize>
+        <tileset>New Tileset</tileset>
+        <exportMode>0</exportMode>
+        <arrayMode>0</arrayMode>
+    </layers>
+    <layers eid="32843350">
+        <name>Level Details</name>
+        <time>
+            <day>0</day>
+            <hour>12</hour>
+            <minute>0</minute>
+            <second>0</second>
+        </time>
+    </layers>
+    <layers eid="32843350">
+        <name>Swarms</name>
+        <swarmCount>1</swarmCount>
+        <swarm1>
+            <quantity>15</quantity>
+            <direction>0</direction> <!-- NORTH -->
+                <time>
+                    <day>1</day>
+                    <hour>12</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                </time>
+        </swarm1>
+    </layers>
+    <layers eid="35163212">
+        <name>Entities</name>
+        <offsetX>0</offsetX>
+        <offsetY>0</offsetY>
+        <gridCellWidth>8</gridCellWidth>
+        <gridCellHeight>8</gridCellHeight>
+        <gridCellsX>248</gridCellsX>
+        <gridCellsY>136</gridCellsY>
+        <entities eid="95492584">
+            <name>depot</name>
+            <id>1</id>
+            <health>1000</health>
+            <x>1856</x>
+            <y>960</y>
+            <originX>0</originX>
+            <originY>0</originY>
+            <Resources>
+                <Personnel>500</Personnel>
+                <Ammunition>500</Ammunition>
+                <DoS>500</DoS>
+                <Fuel>500</Fuel>
+                <Scrap>500</Scrap>
+            </Resources>
+        </entities>
+        <entities eid="95492584">
+            <name>Building</name>
+            <id>2</id>
+            <health>1000</health>
+            <x>923</x>
+            <y>1984</y>
+            <originX>0</originX>
+            <originY>0</originY>
+            <type>1</type>
+            <alive>0</alive>
+            <Resources>
+                <Personnel>0</Personnel>
+                <Ammunition>0</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>0</Scrap>
+            </Resources>
+            <art>draftArt/buildings/ammunition.png</art>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>2</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>3</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>4</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>5</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>6</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>7</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>8</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>9</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>10</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>11</id>
+            <health>100</health>
+            <x>2067</x>
+            <y>86</y>
+        </entities>
+    </layers>
+</root>

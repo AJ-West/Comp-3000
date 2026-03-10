@@ -23,18 +23,14 @@ extern int ResolutionWidth;
 extern int ResolutionHeight;
 extern int worldWidth;
 extern int worldHeight;
-extern const int WORLD_TILE_SIZE;
-extern const int WORLD_TILE_COLS;
-extern const int WORLD_TILE_ROWS;
+extern int WORLD_TILE_SIZE;
+extern int WORLD_TILE_COLS;
+extern int WORLD_TILE_ROWS;
 extern const float DESIGN_SCALE_X;
 extern const float DESIGN_SCALE_Y;
 
 //camera zoom
 extern float zoom;
-
-//Scaling art
-extern float tileWidth;
-extern float tileHeight;
 
 // SDL
 extern SDL_Window* window;
@@ -178,7 +174,8 @@ enum direction {
 	SOUTH,
 	SOUTHWEST,
 	WEST,
-	NORTHWEST
+	NORTHWEST,
+	ALL
 };
 
 enum ObjectType {
