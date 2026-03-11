@@ -10,6 +10,8 @@ using namespace tinyxml2;
 
 int main()
 {
+    system("pause");
+
     srand(time(0));
 
     XMLDocument doc;
@@ -27,16 +29,22 @@ int main()
     }
 
 
-    int quantity = 10; // quantity of zombies to spawn
+    int quantity = 100; // quantity of zombies to spawn
     int ID = 3; // id to start from
 
     // bounds for zombies to be spawned between
-    int xStart = 1600;
-    int yStart = 900;
-    int xEnd = 2200;
-    int yEnd = 1300;
+    int xStart = 0;
+    int yStart = 0;
+    int xEnd = 3968;
+    int yEnd = 2176;
     int xDiff = xEnd - xStart;
     int yDiff = yEnd - yStart;
+
+    //bounds to avoid depot
+    int xIgnoreStart = 1300;
+    int yIgnoreStart = 460;
+    int xIgnoreEnd = 2400;
+    int yIgnoreEnd = 1460;
 
     float sightDistance = 500.0f;
 
@@ -61,9 +69,28 @@ int main()
         health->SetText(maxHealth);
         entity->InsertEndChild(health);
 
-        int xPos = xStart + rand() % xDiff;
-        x->SetText(xPos);
-        int yPos = yStart + rand() % yDiff;  
+        int xPos;
+        int yPos;
+        bool found = false;
+        while (!found) {
+            std::cout << "id: " << ID << '\n';
+            xPos = xStart + rand() % xDiff;
+            yPos = yStart + rand() % yDiff;
+            found = true;
+            if (xPos < xIgnoreEnd && xPos > xIgnoreStart) {
+                std::cout << "1" << '\n';
+                if (yPos < yIgnoreEnd && yPos > yIgnoreStart) {
+                    std::cout << "2" << '\n';
+                    found = false;
+                }
+            }
+            //if (found) {
+              //  std::cout << "x:" << xIgnoreStart << "  " << xPos << "  " << xIgnoreEnd << '\n';
+                //std::cout << "y:" << yIgnoreStart << "  " << yPos << "  " << yIgnoreEnd << '\n';
+            //}
+        }
+
+        x->SetText(xPos); 
         y->SetText(yPos);
         entity->InsertEndChild(x);
         entity->InsertEndChild(y);

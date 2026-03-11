@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <root>
-    <ogmoVersion>3.4.0</ogmoVersion>
-    <width>3968</width>
-    <height>2176</height>
-    <offsetX>0</offsetX>
-    <offsetY>0</offsetY>
-    <values>
-        <new_value>true</new_value>
-    </values>
     <layers eid="32843350">
         <name>Tilemap</name>
-        <offsetX>0</offsetX>
-        <offsetY>0</offsetY>
         <width>3968</width>
         <height>2176</height>
         <gridCellSize>16</gridCellSize>
-        <tileset>New Tileset</tileset>
-        <exportMode>0</exportMode>
-        <arrayMode>0</arrayMode>
     </layers>
     <layers eid="32843350">
         <name>Level Details</name>
@@ -74,20 +61,12 @@
     </layers>
     <layers eid="35163212">
         <name>Entities</name>
-        <offsetX>0</offsetX>
-        <offsetY>0</offsetY>
-        <gridCellWidth>8</gridCellWidth>
-        <gridCellHeight>8</gridCellHeight>
-        <gridCellsX>248</gridCellsX>
-        <gridCellsY>136</gridCellsY>
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
             <health>1000</health>
             <x>1856</x>
             <y>960</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <Resources>
                 <Personnel>500</Personnel>
                 <Ammunition>500</Ammunition>
@@ -102,8 +81,6 @@
             <health>1000</health>
             <x>382</x>
             <y>994</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <type>0</type>
             <alive>0</alive>
             <Resources>
@@ -121,8 +98,6 @@
             <health>1000</health>
             <x>923</x>
             <y>1984</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <type>1</type>
             <alive>0</alive>
             <Resources>
@@ -140,8 +115,6 @@
             <health>1000</health>
             <x>2629</x>
             <y>663</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <type>2</type>
             <alive>0</alive>
             <Resources>
@@ -159,8 +132,6 @@
             <health>1000</health>
             <x>1179</x>
             <y>467</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <type>3</type>
             <alive>0</alive>
             <Resources>
@@ -178,8 +149,6 @@
             <health>1000</health>
             <x>3238</x>
             <y>1323</y>
-            <originX>0</originX>
-            <originY>0</originY>
             <type>4</type>
             <alive>0</alive>
             <Resources>
