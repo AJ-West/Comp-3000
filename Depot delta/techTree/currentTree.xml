@@ -175,7 +175,7 @@
             <keyName>largerBasicInfantry</keyName>
             <description>Double basic units max squad size</description>
             <id>4</id>
-            <status>0</status>
+            <status>1</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>250</cost>
@@ -282,7 +282,7 @@
             <keyName>increaseBasicSpeed</keyName>
             <description>Double basic convoy speed</description>
             <id>4</id>
-            <status>0</status>
+            <status>1</status>
             <type>0</type>
             <modifyValue>2</modifyValue>
             <cost>400</cost>

@@ -23,13 +23,15 @@ public:
 		if (targets) {
 			for (auto& potTarget : *targets) {
 				if (potTarget) {
-					float distance = getDistance(own, potTarget->getPos());
-					if (distance < targetDistance && distance < attackRange) {
-						target = potTarget.get();
-						targetDistance = distance;
-						owner->setTargetObject(target);
-						cout << "firing" << '\n';
-						return;
+					if (potTarget->getAlive()) {
+						float distance = getDistance(own, potTarget->getPos());
+						if (distance < targetDistance && distance < attackRange) {
+							target = potTarget.get();
+							targetDistance = distance;
+							owner->setTargetObject(target);
+							cout << "firing" << '\n';
+							return;
+						}
 					}
 				}
 			}
@@ -51,22 +53,24 @@ public:
 			if (count > 0) {
 				rComp->setResourcesCount(AMMUNITION, count - 1);
 				target->takeDamage(owner->getDamage() * rComp->getResourcesCount(PERSONNEL));
+				soundEffectEngine->play2D("soundEffects/units/gunshot.wav");
 				bullets->spawnBullet(owner->getPos(), target->getDimensions());
+				owner->setAttacking(true);
 				if (!target->getAlive()) {
 					target = nullptr;
 					owner->setAttacking(false);
 					return;
 				}
-				owner->setAttacking(true);
 			}
 			else {
 				owner->setAttacking(false);
 			}
 		}
-		if (frameStart - lastBulletTime >= owner->getRateOfFire()/5) {
-			lastBulletTime = frameStart;
-			bullets->spawnBullet(owner->getPos(), target->getDimensions());
-		}
+		//if (frameStart - lastBulletTime >= owner->getRateOfFire()/5) {
+			//lastBulletTime = frameStart;
+			//bullets->spawnBullet(owner->getPos(), target->getDimensions());
+			//soundEffectEngine->play2D("soundEffects/units/gunshot.wav");
+		//}
 		renderAttack();
 	}
 

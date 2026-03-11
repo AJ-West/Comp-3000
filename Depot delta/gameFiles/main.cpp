@@ -9,6 +9,14 @@ int main()
         std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
         return 1;
     }
+
+    soundEffectEngine = irrklang::createIrrKlangDevice();
+    if (!musicEngine) {
+        std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
+        return 1;
+    }
+
+    // where music is from https://bgillick.itch.io/mech need to check if comercial liscence
     musicEngine->play2D("music/wasteland.wav", true); // looped playback
     musicEngine->setSoundVolume(0.5f);
     
