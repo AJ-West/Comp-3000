@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>1</id>
+        <health>100</health>
+        <x>1633</x>
+        <y>1259</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>2</id>
+        <health>100</health>
+        <x>1545</x>
+        <y>1253</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>3</id>
+        <health>100</health>
+        <x>1241</x>
+        <y>1163</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>4</id>
+        <health>100</health>
+        <x>1540</x>
+        <y>1243</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>5</id>
+        <health>100</health>
+        <x>1779</x>
+        <y>933</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>6</id>
+        <health>100</health>
+        <x>1641</x>
+        <y>1081</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>7</id>
+        <health>100</health>
+        <x>1596</x>
+        <y>1173</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>8</id>
+        <health>100</health>
+        <x>1460</x>
+        <y>1195</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>9</id>
+        <health>100</health>
+        <x>1566</x>
+        <y>906</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>10</id>
+        <health>100</health>
+        <x>1740</x>
+        <y>1084</y>
+        <sight>500</sight>
+    </entities>
+</root>

@@ -178,7 +178,7 @@ void MapSaver::saveBuilding(XMLElement* entity, GameObject* building) {
 }
 
 void MapSaver::saveHealth(XMLElement* entity, GameObject* obj) {
-    entity->FirstChildElement("health")->SetText(static_cast<int>(obj->getHealth()));
+    entity->FirstChildElement("health")->SetText(obj->getHealth());
 }
 
 void MapSaver::saveResources(XMLElement* entity, GameObject* obj) {
