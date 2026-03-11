@@ -14,6 +14,12 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
+    for (auto zombie : *zombieList) { // needs seperate for each due so can set priorities in nearest component
+        zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
+        zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
+        zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
+    }
+
     time = new dayCycle(5, mapLoader->getTime(), mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 

@@ -99,8 +99,8 @@
             <name>Basic Zombie</name>
             <id>2</id>
             <health>100</health>
-            <x>2067</x>
-            <y>86</y>
+            <x>1656</x>
+            <y>960</y>
         </entities>
         <entities>
             <name>Basic Zombie</name>

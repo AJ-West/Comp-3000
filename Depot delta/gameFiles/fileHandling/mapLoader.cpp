@@ -277,17 +277,21 @@ void MapLoader::loadZombie(XMLElement* entity)
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = 4; // number of tiles
     int height = 4;
+    int sight = 500.0f; // default zombie sight
+    if (entity->FirstChildElement("sight")) {
+        sight = atoi(entity->FirstChildElement("sight")->GetText());
+    }
     ZombieObj* zombie = new ZombieObj(x, y, width, height, health, id);
-    addZombieComponents(zombie);
+    addZombieComponents(zombie, sight);
     if (entity->FirstChildElement("target_x")) {
         zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
     zombieList->emplace_back(zombie);
 }
 
-void MapLoader::addZombieComponents(ZombieObj* zombie) {
+void MapLoader::addZombieComponents(ZombieObj* zombie, float sightDistance) {
     zombieStats stats;
-    stats.addComponents(zombie, 50.0f);
+    stats.addComponents(zombie, sightDistance);
 }
 
 void MapLoader::loadDepot(XMLElement* entity)

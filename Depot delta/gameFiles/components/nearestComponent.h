@@ -98,6 +98,9 @@ public:
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 	void setSightDistance(float dist) { sightDistance = dist; }
 
+	//getters
+	float getSightDistance() { return sightDistance; }
+
 	nearestComponent(GameObject* obj, float sight) : Component(obj) {
 		sightDistance = sight;
 		searchDistance = sight + 100.0f;
