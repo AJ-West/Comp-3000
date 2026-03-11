@@ -39,6 +39,10 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
         cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
         return;
     }
+
+    //Sets the camera to focus on the center of the map (where the depot is)
+    camera.dimen.x = worldWidth / 2 - camera.dimen.w / 2;
+    camera.dimen.y = worldHeight / 2 - camera.dimen.h / 2;
 }
 
 MapLoader::~MapLoader()

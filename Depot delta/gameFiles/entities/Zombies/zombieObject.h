@@ -85,7 +85,7 @@ private:
 struct zombieStats {
 	const char* art = "draftArt/basicZombie.png";
 	int movementSpeed = 25;
-	int maxHealth = 100;
+	int maxHealth = 500;
 
 	int size = 4; // how many tiles it takes up
 

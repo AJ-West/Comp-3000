@@ -48,7 +48,7 @@ int main()
 
     float sightDistance = 500.0f;
 
-    int maxHealth = 100;
+    int maxHealth = 500;
 
     for (int i = 0; i < quantity; i++) {
         XMLElement* entity = doc.NewElement("entities");

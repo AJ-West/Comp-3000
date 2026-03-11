@@ -22,9 +22,9 @@
         <name>Level Details</name>
         <time>
             <day>0</day>
-            <hour>14</hour>
-            <minute>36</minute>
-            <second>50</second>
+            <hour>17</hour>
+            <minute>9</minute>
+            <second>40</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -51,9 +51,9 @@
             <y>608</y>
             <Resources>
                 <Personnel>475</Personnel>
-                <Ammunition>305</Ammunition>
-                <DoS>480</DoS>
-                <Fuel>480</Fuel>
+                <Ammunition>307</Ammunition>
+                <DoS>482</DoS>
+                <Fuel>482</Fuel>
                 <Scrap>475</Scrap>
             </Resources>
         </entities>
@@ -89,6 +89,14 @@
                 <Fuel>25</Fuel>
                 <Scrap>25</Scrap>
             </Resources>
+            <Transfering>-1</Transfering>
+            <ResourceTransfer>
+                <PersonnelChange>0</PersonnelChange>
+                <AmmunitionChange>0</AmmunitionChange>
+                <DoSChange>0</DoSChange>
+                <FuelChange>0</FuelChange>
+                <ScrapChange>0</ScrapChange>
+            </ResourceTransfer>
         </entities>
         <entities>
             <name>Basic Zombie</name>
