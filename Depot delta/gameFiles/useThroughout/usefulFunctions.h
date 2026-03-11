@@ -24,4 +24,6 @@ float scaleText(string text);
 
 vector<SDL_Texture*> loadResourceTextures();
 
+SDL_Texture* loadTexture(const char* filename);
+
 #endif

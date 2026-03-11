@@ -5,18 +5,7 @@
 
 ResourceBox::ResourceBox(LevelManager* lManager, SDL_FRect rSize) : UIElement(rSize), manager(lManager) {
 	//Load transfer box texture - needs replacing in the future with specific unit make box
-	SDL_Surface* surface = IMG_Load("art/UI/level/clipboard.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!texture) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
+	texture = loadTexture("art/UI/level/clipboard.png");
 }
 
 bool ResourceBox::update(SDL_Keycode key) {

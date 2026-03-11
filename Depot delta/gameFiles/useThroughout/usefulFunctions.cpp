@@ -49,13 +49,25 @@ vector<SDL_Texture*> loadResourceTextures() {
 		"draftArt/resources/Scrap.png"
 	};
 	for (int i = 0; i < resourceFiles.size(); i++) {
-		SDL_Surface* surface = IMG_Load(resourceFiles[i]);
-		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-		SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-		SDL_DestroySurface(surface); // Free the surface after creating the texture
-		resourceTextures.push_back(texture);
+		resourceTextures.push_back(loadTexture(resourceFiles[i]));
 	}
 	return resourceTextures;
+}
+
+SDL_Texture* loadTexture(const char* filename) {
+	SDL_Surface* surface = IMG_Load(filename);
+	if (!surface) {
+		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
+		return nullptr;
+	}
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
+	SDL_DestroySurface(surface); // Free the surface after creating the texture
+	if (!texture) {
+		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
+		return nullptr;
+	}
+	return texture;
 }
 
 

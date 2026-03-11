@@ -24,18 +24,7 @@ class LevelManager;
 class unitMaker : public ResourceBox {
 public:
 	unitMaker(SDL_FRect rSize, LevelManager* lManager, DepotObj* gameDepot) : ResourceBox(lManager, rSize), depot(gameDepot) {
-		SDL_Surface* surface = IMG_Load("art/UI/level/newUnitBoard.png");
-		if (!surface) {
-			cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-			return;
-		}
-		texture = SDL_CreateTextureFromSurface(renderer, surface);
-		SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-		SDL_DestroySurface(surface); // Free the surface after creating the texture
-		if (!texture) {
-			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-			return;
-		}
+		texture = loadTexture("art/UI/level/newUnitBoard.png");
 
 		addTextInputs();
 

@@ -40,31 +40,8 @@ void transferBox::addUnitInfo(GameObject* unit, bool second) {
 
 void transferBox::addArrows() {
 	//Load transfer box texture - needs replacing in the future with specific unit make box
-	SDL_Surface* surface = IMG_Load("art/UI/level/arrow.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_PIXELART);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!texture) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
-
-	surface = IMG_Load("art/UI/level/flippedArrow.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	SDL_Texture* flippedTexture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_SetTextureScaleMode(flippedTexture, SDL_SCALEMODE_PIXELART);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!flippedTexture) {
-		cerr << "Unable to create flipped texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
+	SDL_Texture* texture = loadTexture("art/UI/level/arrow.png");
+	SDL_Texture* flippedTexture = loadTexture("art/UI/level/flippedArrow.png");
 
 	arrowButton* arrow = new arrowButton({ size.x + 478.0f * camera.xScale, size.y + 541.0f * camera.yScale, 60.0f * camera.xScale , 25.0f * camera.yScale }, texture, flippedTexture);
 	elements.push_back(arrow);

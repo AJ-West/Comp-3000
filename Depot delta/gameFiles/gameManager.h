@@ -17,21 +17,10 @@ public:
 	~GameManager(){}
 
 	void createHomeScreen() {
-		SDL_Surface* surface = IMG_Load("draftArt/TitleScreen/homeScreen.png");
-		if (!surface) {
-			cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-			return;
-		}
-		background = SDL_CreateTextureFromSurface(renderer, surface);
-		SDL_SetTextureScaleMode(background, SDL_SCALEMODE_PIXELART);
-		SDL_DestroySurface(surface); // Free the surface after creating the texture
-		if (!background) {
-			cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-			return;
-		}
+		background = loadTexture("draftArt/TitleScreen/homeScreen.png");
 
 		string startButtonText = "Start";
-		surface = TTF_RenderText_Solid(font, startButtonText.c_str(), startButtonText.length(), { 0,0,0,255 });
+		SDL_Surface* surface = TTF_RenderText_Solid(font, startButtonText.c_str(), startButtonText.length(), { 0,0,0,255 });
 		startButton = SDL_CreateTextureFromSurface(renderer, surface);
 	}
 

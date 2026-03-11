@@ -26,19 +26,7 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
 
     }
 
-    //SDL_Surface* surface = IMG_Load("art/environment/tilemap.png");
-    SDL_Surface* surface = IMG_Load("draftArt/map.png");
-    if (!surface) {
-        cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-        return;
-    }
-    tilemapTexture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_SetTextureScaleMode(tilemapTexture, SDL_SCALEMODE_PIXELART);
-    SDL_DestroySurface(surface); // Free the surface after creating the texture
-    if (!tilemapTexture) {
-        cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-        return;
-    }
+    tilemapTexture = loadTexture("draftArt/map.png");
 
     //Sets the camera to focus on the center of the map (where the depot is)
     camera.dimen.x = worldWidth / 2 - camera.dimen.w / 2;

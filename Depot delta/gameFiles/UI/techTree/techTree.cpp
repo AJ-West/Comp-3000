@@ -3,42 +3,12 @@
 #include "gameFiles/UI/techTree/techTree.h"
 
 TechTree::TechTree(SDL_Renderer* renderer, LevelManager* lManager, DepotObj* depObj) : UIElement({ 0, 0, camera.dimen.w, camera.dimen.h }), manager(lManager), depot(depObj) {
-	// Load resource hover texture
-	SDL_Surface* surface = IMG_Load("techTree/art/blueprint.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	background = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!background) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
-
-	surface = IMG_Load("techTree/art/Icons.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	Icons = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!Icons) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
-
-	surface = IMG_Load("techTree/art/scrap.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	scrap = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!scrap) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
+	// load background
+	background = loadTexture("techTree/art/blueprint.png");
+	// load each tech icon
+	Icons = loadTexture("techTree/art/Icons.png");
+	// load scrap icon
+	scrap = loadTexture("techTree/art/scrap.png");
 
 	readTechFile();
 	updateAffordable();

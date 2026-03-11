@@ -22,9 +22,9 @@
         <name>Level Details</name>
         <time>
             <day>0</day>
-            <hour>17</hour>
-            <minute>9</minute>
-            <second>40</second>
+            <hour>19</hour>
+            <minute>50</minute>
+            <second>50</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -51,9 +51,9 @@
             <y>608</y>
             <Resources>
                 <Personnel>475</Personnel>
-                <Ammunition>307</Ammunition>
-                <DoS>482</DoS>
-                <Fuel>482</Fuel>
+                <Ammunition>312</Ammunition>
+                <DoS>487</DoS>
+                <Fuel>487</Fuel>
                 <Scrap>475</Scrap>
             </Resources>
         </entities>

@@ -12,18 +12,7 @@ levelUI::~levelUI() {}
 
 void levelUI::loadResourceHoverTexture() {
 	// Load resource hover texture
-	SDL_Surface* surface = IMG_Load("art/UI/level/UnitStat.png");
-	if (!surface) {
-		cerr << "Unable to load image! IMG_Error: " << SDL_GetError() << endl;
-		return;
-	}
-	resourceHoverTexture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_SetTextureScaleMode(resourceHoverTexture, SDL_SCALEMODE_PIXELART);
-	SDL_DestroySurface(surface); // Free the surface after creating the texture
-	if (!resourceHoverTexture) {
-		cerr << "Unable to create texture! SDL_Error: " << SDL_GetError() << endl;
-		return;
-	}
+	resourceHoverTexture = loadTexture("art/UI/level/UnitStat.png");
 }
 
 void levelUI::renderResourceHover() {
