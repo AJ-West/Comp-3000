@@ -2,82 +2,82 @@
 <root>
     <entities>
         <name>Basic Zombie</name>
-        <id>1</id>
-        <health>100</health>
-        <x>1633</x>
-        <y>1259</y>
-        <sight>500</sight>
-    </entities>
-    <entities>
-        <name>Basic Zombie</name>
-        <id>2</id>
-        <health>100</health>
-        <x>1545</x>
-        <y>1253</y>
-        <sight>500</sight>
-    </entities>
-    <entities>
-        <name>Basic Zombie</name>
         <id>3</id>
         <health>100</health>
-        <x>1241</x>
-        <y>1163</y>
+        <x>1797</x>
+        <y>1143</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>4</id>
         <health>100</health>
-        <x>1540</x>
-        <y>1243</y>
+        <x>1628</x>
+        <y>1274</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>5</id>
         <health>100</health>
-        <x>1779</x>
-        <y>933</y>
+        <x>1817</x>
+        <y>1100</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>6</id>
         <health>100</health>
-        <x>1641</x>
-        <y>1081</y>
+        <x>2009</x>
+        <y>1233</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>7</id>
         <health>100</health>
-        <x>1596</x>
-        <y>1173</y>
+        <x>2067</x>
+        <y>1093</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>8</id>
         <health>100</health>
-        <x>1460</x>
-        <y>1195</y>
+        <x>1745</x>
+        <y>907</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>9</id>
         <health>100</health>
-        <x>1566</x>
-        <y>906</y>
+        <x>1932</x>
+        <y>1107</y>
         <sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
         <id>10</id>
         <health>100</health>
-        <x>1740</x>
-        <y>1084</y>
+        <x>1916</x>
+        <y>924</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>11</id>
+        <health>100</health>
+        <x>1786</x>
+        <y>1259</y>
+        <sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>12</id>
+        <health>100</health>
+        <x>1946</x>
+        <y>1246</y>
         <sight>500</sight>
     </entities>
 </root>

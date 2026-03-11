@@ -28,12 +28,12 @@ int main()
 
 
     int quantity = 10; // quantity of zombies to spawn
-    int ID = 1; // id to start from
+    int ID = 3; // id to start from
 
     // bounds for zombies to be spawned between
-    int xStart = 1200;
+    int xStart = 1600;
     int yStart = 900;
-    int xEnd = 1800;
+    int xEnd = 2200;
     int yEnd = 1300;
     int xDiff = xEnd - xStart;
     int yDiff = yEnd - yStart;
