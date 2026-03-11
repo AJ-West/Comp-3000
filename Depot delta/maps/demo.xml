@@ -12,30 +12,19 @@
     ALL = 8
 -->
 <root>
-    <ogmoVersion>3.4.0</ogmoVersion>
-    <offsetX>0</offsetX>
-    <offsetY>0</offsetY>
-    <values>
-        <new_value>true</new_value>
-    </values>
     <layers eid="32843350">
         <name>Tilemap</name>
-        <offsetX>0</offsetX>
-        <offsetY>0</offsetY>
-        <width>3968</width>
-        <height>2176</height>
+        <width>2512</width>
+        <height>1472</height>
         <gridCellSize>16</gridCellSize>
-        <tileset>New Tileset</tileset>
-        <exportMode>0</exportMode>
-        <arrayMode>0</arrayMode>
     </layers>
     <layers eid="32843350">
         <name>Level Details</name>
         <time>
-            <day>1</day>
-            <hour>1</hour>
-            <minute>12</minute>
-            <second>20</second>
+            <day>0</day>
+            <hour>12</hour>
+            <minute>0</minute>
+            <second>0</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -55,25 +44,17 @@
     </layers>
     <layers eid="35163212">
         <name>Entities</name>
-        <offsetX>0</offsetX>
-        <offsetY>0</offsetY>
-        <gridCellWidth>8</gridCellWidth>
-        <gridCellHeight>8</gridCellHeight>
-        <gridCellsX>248</gridCellsX>
-        <gridCellsY>136</gridCellsY>
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
             <health>1000</health>
-            <x>1856</x>
-            <y>960</y>
-            <originX>0</originX>
-            <originY>0</originY>
+            <x>1192</x>
+            <y>608</y>
             <Resources>
-                <Personnel>460</Personnel>
-                <Ammunition>464</Ammunition>
-                <DoS>509</DoS>
-                <Fuel>509</Fuel>
+                <Personnel>500</Personnel>
+                <Ammunition>504</Ammunition>
+                <DoS>504</DoS>
+                <Fuel>504</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -81,10 +62,8 @@
             <name>Building</name>
             <id>2</id>
             <health>1000</health>
-            <x>2400</x>
-            <y>1360</y>
-            <originX>0</originX>
-            <originY>0</originY>
+            <x>1500</x>
+            <y>1100</y>
             <type>1</type>
             <alive>0</alive>
             <Resources>
@@ -100,10 +79,8 @@
             <name>Basic Zombie</name>
             <id>2</id>
             <health>100</health>
-            <x>1928</x>
-            <y>1048</y>
-            <target_x>1984</target_x>
-            <target_y>1088</target_y>
+            <x>1200</x>
+            <y>640</y>
             <sight>500</sight>
         </entities>
         <entities>
