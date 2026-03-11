@@ -3,6 +3,14 @@
 int main()
 {
     system("pause");
+
+    musicEngine = irrklang::createIrrKlangDevice();
+    if (!musicEngine) {
+        std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
+        return 1;
+    }
+    musicEngine->play2D("music/wasteland.wav", true); // looped playback
+    musicEngine->setSoundVolume(0.5f);
     
     //initiate the environment
     init_SDL_environment();

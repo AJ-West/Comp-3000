@@ -3,6 +3,9 @@
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
+//Irrklang - need liscence for commercial release
+#include <irrKlang.h>
+
 #include <vector>
 #include <unordered_map>
 
@@ -38,6 +41,10 @@ extern SDL_Renderer* renderer;
 extern TTF_Font* font;
 extern int FONT_SIZE;
 extern Uint32 frameStart;
+
+//Irrklang
+extern irrklang::ISoundEngine* musicEngine;
+extern irrklang::ISoundEngine* soundEffectEngine;
 
 extern int frameCount;
 extern bool isRunning;

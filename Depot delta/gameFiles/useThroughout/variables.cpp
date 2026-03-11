@@ -29,6 +29,10 @@ TTF_Font* font;
 int FONT_SIZE = 20;
 Uint32 frameStart;
 
+//irrklang
+irrklang::ISoundEngine* musicEngine;
+irrklang::ISoundEngine* soundEffectEngine;
+
 int frameCount = 0;
 bool isRunning;
 
