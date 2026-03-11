@@ -33,7 +33,6 @@
         <swarm1>
             <quantity>15</quantity>
             <direction>0</direction>
-            <!-- NORTH -->
             <time>
                 <day>1</day>
                 <hour>12</hour>
@@ -62,7 +61,7 @@
             <name>Building</name>
             <id>2</id>
             <health>1000</health>
-            <x>1500</x>
+            <x>1700</x>
             <y>1100</y>
             <type>1</type>
             <alive>0</alive>
@@ -96,7 +95,7 @@
             <id>4</id>
             <health>100</health>
             <x>1628</x>
-            <y>1274</y>
+            <y>1374</y>
             <sight>500</sight>
         </entities>
         <entities>

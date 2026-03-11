@@ -133,6 +133,7 @@ public:
 		pos.y = pos.y + pos.h;
 		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, unitStats.maxHealth, manager->getNextID());
 		addUnitComponents(unit, amounts);
+		unit->updateTargets(manager->getZombieList());
 		manager->addUnitConvoy(unit);
 	}
 
