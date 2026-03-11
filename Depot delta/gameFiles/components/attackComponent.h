@@ -23,7 +23,7 @@ public:
 		if (targets) {
 			for (auto& potTarget : *targets) {
 				if (potTarget) {
-					if (potTarget->getAlive()) {
+					if (potTarget->getAlive()) { // without will target the zombie it just killed again
 						float distance = getDistance(own, potTarget->getPos());
 						if (distance < targetDistance && distance < attackRange) {
 							target = potTarget.get();
