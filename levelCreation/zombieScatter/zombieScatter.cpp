@@ -10,7 +10,7 @@ using namespace tinyxml2;
 
 int main()
 {
-    system("pause");
+    //system("pause");
 
     srand(time(0));
 
@@ -29,22 +29,22 @@ int main()
     }
 
 
-    int quantity = 100; // quantity of zombies to spawn
+    int quantity = 6; // quantity of zombies to spawn
     int ID = 3; // id to start from
 
     // bounds for zombies to be spawned between
     int xStart = 0;
     int yStart = 0;
-    int xEnd = 3968;
-    int yEnd = 2176;
+    int xEnd = 7936;
+    int yEnd = 4352;
     int xDiff = xEnd - xStart;
     int yDiff = yEnd - yStart;
 
     //bounds to avoid depot
-    int xIgnoreStart = 1300;
-    int yIgnoreStart = 460;
-    int xIgnoreEnd = 2400;
-    int yIgnoreEnd = 1460;
+    int xIgnoreStart = 3404;
+    int yIgnoreStart = 1612;
+    int xIgnoreEnd = 4404;
+    int yIgnoreEnd = 2612;
 
     float sightDistance = 500.0f;
 

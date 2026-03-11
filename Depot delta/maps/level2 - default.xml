@@ -113,40 +113,6 @@
             <name>Building</name>
             <id>4</id>
             <health>1000</health>
-            <x>2629</x>
-            <y>663</y>
-            <type>2</type>
-            <alive>0</alive>
-            <Resources>
-                <Personnel>0</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-            <art>draftArt/buildings/dos.png</art>
-        </entities>
-        <entities eid="95492584">
-            <name>Building</name>
-            <id>5</id>
-            <health>1000</health>
-            <x>1179</x>
-            <y>467</y>
-            <type>3</type>
-            <alive>0</alive>
-            <Resources>
-                <Personnel>0</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-            <art>draftArt/buildings/fuel.png</art>
-        </entities>
-        <entities eid="95492584">
-            <name>Building</name>
-            <id>6</id>
-            <health>1000</health>
             <x>3238</x>
             <y>1323</y>
             <type>4</type>
@@ -159,6 +125,406 @@
                 <Scrap>0</Scrap>
             </Resources>
             <art>draftArt/buildings/scrap.png</art>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>3</id>
+            <health>100</health>
+            <x>832</x>
+            <y>927</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>4</id>
+            <health>100</health>
+            <x>733</x>
+            <y>386</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>5</id>
+            <health>100</health>
+            <x>37</x>
+            <y>1011</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>6</id>
+            <health>100</health>
+            <x>660</x>
+            <y>387</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>7</id>
+            <health>100</health>
+            <x>3502</x>
+            <y>1789</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>8</id>
+            <health>100</health>
+            <x>2281</x>
+            <y>395</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>9</id>
+            <health>100</health>
+            <x>1953</x>
+            <y>1628</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>10</id>
+            <health>100</health>
+            <x>1889</x>
+            <y>1698</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>11</id>
+            <health>100</health>
+            <x>3742</x>
+            <y>735</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>12</id>
+            <health>100</health>
+            <x>1707</x>
+            <y>13</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>13</id>
+            <health>100</health>
+            <x>3396</x>
+            <y>761</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>14</id>
+            <health>100</health>
+            <x>2940</x>
+            <y>124</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>15</id>
+            <health>100</health>
+            <x>2963</x>
+            <y>2040</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>16</id>
+            <health>100</health>
+            <x>1662</x>
+            <y>194</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>17</id>
+            <health>100</health>
+            <x>675</x>
+            <y>1124</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>18</id>
+            <health>100</health>
+            <x>3234</x>
+            <y>1240</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>19</id>
+            <health>100</health>
+            <x>2454</x>
+            <y>1962</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>20</id>
+            <health>100</health>
+            <x>823</x>
+            <y>293</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>21</id>
+            <health>100</health>
+            <x>2507</x>
+            <y>889</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>22</id>
+            <health>100</health>
+            <x>2876</x>
+            <y>508</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>23</id>
+            <health>100</health>
+            <x>2674</x>
+            <y>487</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>24</id>
+            <health>100</health>
+            <x>427</x>
+            <y>747</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>25</id>
+            <health>100</health>
+            <x>2464</x>
+            <y>2124</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>26</id>
+            <health>100</health>
+            <x>3214</x>
+            <y>1643</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>27</id>
+            <health>100</health>
+            <x>2838</x>
+            <y>445</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>28</id>
+            <health>100</health>
+            <x>1154</x>
+            <y>122</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>29</id>
+            <health>100</health>
+            <x>623</x>
+            <y>2149</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>30</id>
+            <health>100</health>
+            <x>2477</x>
+            <y>2123</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>31</id>
+            <health>100</health>
+            <x>2117</x>
+            <y>1737</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>32</id>
+            <health>100</health>
+            <x>3347</x>
+            <y>1187</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>33</id>
+            <health>100</health>
+            <x>3547</x>
+            <y>1261</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>34</id>
+            <health>100</health>
+            <x>3637</x>
+            <y>977</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>35</id>
+            <health>100</health>
+            <x>3923</x>
+            <y>444</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>36</id>
+            <health>100</health>
+            <x>867</x>
+            <y>436</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>37</id>
+            <health>100</health>
+            <x>3489</x>
+            <y>170</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>38</id>
+            <health>100</health>
+            <x>3794</x>
+            <y>1791</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>39</id>
+            <health>100</health>
+            <x>3519</x>
+            <y>1816</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>40</id>
+            <health>100</health>
+            <x>2286</x>
+            <y>57</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>41</id>
+            <health>100</health>
+            <x>2338</x>
+            <y>1784</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>42</id>
+            <health>100</health>
+            <x>1265</x>
+            <y>1032</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>43</id>
+            <health>100</health>
+            <x>309</x>
+            <y>430</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>44</id>
+            <health>100</health>
+            <x>1126</x>
+            <y>1349</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>45</id>
+            <health>100</health>
+            <x>2630</x>
+            <y>852</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>46</id>
+            <health>100</health>
+            <x>38</x>
+            <y>817</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>47</id>
+            <health>100</health>
+            <x>60</x>
+            <y>775</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>48</id>
+            <health>100</health>
+            <x>916</x>
+            <y>1173</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>49</id>
+            <health>100</health>
+            <x>148</x>
+            <y>532</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>50</id>
+            <health>100</health>
+            <x>1420</x>
+            <y>1576</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>51</id>
+            <health>100</health>
+            <x>507</x>
+            <y>638</y>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>52</id>
+            <health>100</health>
+            <x>1917</x>
+            <y>1642</y>
+            <sight>500</sight>
         </entities>
     </layers>
 </root>
