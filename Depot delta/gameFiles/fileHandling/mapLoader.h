@@ -54,7 +54,6 @@ public:
 
 	void addUnitComponents(UnitObj* unit, XMLElement* entity);
 	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
-	void addZombieComponents(ZombieObj* zombie, float sightDistance);
 	void addDepotComponents(DepotObj* unit, XMLElement* entity);
 	void addBuildingComponents(BuildingObj* building, XMLElement* entity);
 

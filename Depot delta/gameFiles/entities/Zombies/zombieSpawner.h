@@ -29,7 +29,7 @@ public:
 				spawnPosFound = true;
 			}
 		}
-		ZombieObj* zombie = new ZombieObj(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID());
+		ZombieObj* zombie = new ZombieObj(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID(), 0);
 		stats.addComponents(zombie, 50.0f);
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(manager->getUnitConvoys());
 		zombie->getComponent<nearestComponent>()->setnearbyBuildings(manager->getBuildingList());

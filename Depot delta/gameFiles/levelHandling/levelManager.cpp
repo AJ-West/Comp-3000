@@ -106,7 +106,7 @@ void LevelManager::unpausedRender()
 
     if (spawningSwarm) {
         if (swarmLeft > 0 && frameStart - lastSpawnTime >= spawnDelay) {
-            spawnZombie();
+            spawnZombie(0);
             swarmLeft--;
             spawningSwarm = swarmLeft != 0;
             lastSpawnTime = frameStart;
@@ -249,12 +249,29 @@ void LevelManager::spawnSwarm(int quantity, int direction) {
     }
 }
 
-void LevelManager::spawnZombie() {
-    zombieStats stats;
+void LevelManager::spawnZombie(int type) {
     // check for where is valid to spawn will later be done by areas 'claimed' by the player (where their units currently are)
     Vec2 depotPos = depot->getPos();
-    ZombieObj* zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID());
-    stats.addComponents(zombie, sqrt(worldWidth*worldWidth +worldHeight*worldHeight)); // covers size of map
+    ZombieObj* zombie;
+    switch (type) {
+    case BRUTE: {
+        bruteZombieStats stats;
+        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        break;
+    }
+    case QUICK: {
+        quickZombieStats stats;
+        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        break;
+    }
+    default: {
+        zombieStats stats;
+        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+    }
+    }  
     zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
     zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
     zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());

@@ -59,7 +59,7 @@ public:
 	void updateStats(string keyName, bool forUnit);
 
 	void spawnSwarm(int num, int direction);
-	void spawnZombie();
+	void spawnZombie(int type);
 
 	void removeDeadFromLists();
 

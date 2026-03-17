@@ -7,25 +7,66 @@
 #include "gameFiles/components/pathfindingComponent.h"
 #include "gameFiles/components/nearestComponent.h"
 
+struct zombieStats {
+	const char* art = "draftArt/basicZombie.png";
+	int movementSpeed = 25;
+	int maxHealth = 500;
+
+	int damage = 5;
+
+	int size = 4; // how many tiles it takes up
+
+	void addComponents(GameObject* zombie, float sightDistance) {
+		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
+		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
+	}
+};
+
+struct bruteZombieStats {
+	const char* art = "draftArt/bruteZombie.png";
+	int movementSpeed = 15;
+	int maxHealth = 5000;
+
+	int damage = 20;
+
+	int size = 8; // how many tiles it takes up
+
+	void addComponents(GameObject* zombie, float sightDistance) {
+		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
+		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
+	}
+};
+
+struct quickZombieStats {
+	const char* art = "draftArt/quickZombie.png";
+	int movementSpeed = 25;
+	int maxHealth = 250;
+
+	int damage = 10;
+
+	int size = 4; // how many tiles it takes up
+
+	void addComponents(GameObject* zombie, float sightDistance) {
+		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
+		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
+	}
+};
+
 class ZombieObj : public GameObject {
 public:
-	ZombieObj(int x, int y, int width, int height, int health, int id) : GameObject(x, y, width, height, health), ID(id) {}
+	ZombieObj(int x, int y, int width, int height, int health, int id, int zType) : GameObject(x, y, width, height, health), ID(id), zombieType(zType) {}
 
 	void renderHover(SDL_Renderer* renderer) { cout << "render hover"; } // need at a later date to show zombie health on hover
 
 	virtual void updateTargets(shared_ptr<vector<shared_ptr<HumanObj>>> list) {
 		getComponent<nearestComponent>()->setnearbyUnits(list);
 	}
-
-	//getters
-	Vec2 getTargetPos() { return Vec2{ tx,ty }; }
-	int getID() { return ID; }
-
-	//setters
-	virtual void setTarget(float x, float y) {
-		tx = x; ty = y;
-		pathToTarget();
-	};
 
 	void pathToTarget() {
 		Vec2 target = { tx,ty };
@@ -49,7 +90,7 @@ public:
 				ty = NULL;
 			}
 			else {
-				targetObject->takeDamage(5);
+				targetObject->takeDamage(getZombieDamage());
 				lastAttackTime = frameStart;
 				attacking = true;
 			}
@@ -70,7 +111,36 @@ public:
 		cout << "zombie click away";
 	}
 
+	//getters
 	virtual int getType() { return ZOMBIE; }
+	Vec2 getTargetPos() { return Vec2{ tx,ty }; }
+	int getID() { return ID; }
+	int getZombieDamage() {
+		switch (zombieType) {
+		case BRUTE: {
+			bruteZombieStats stat;
+			return stat.damage;
+			break;
+		}
+		case QUICK: {
+			quickZombieStats stat;
+			return stat.damage;
+			break;
+		}
+		default: {
+			zombieStats stat;
+			return stat.damage;
+			break;
+		}
+		}
+	}
+
+
+	//setters
+	virtual void setTarget(float x, float y) {
+		tx = x; ty = y;
+		pathToTarget();
+	};
 
 private:
 	int ID;
@@ -80,19 +150,6 @@ private:
 
 	SDL_FRect iSize{ camera.dimen.x + 10, camera.dimen.y + camera.dimen.h - 75, 50, 50 };
 	SDL_FRect tSize{ camera.dimen.x + 60, camera.dimen.y + camera.dimen.h - 75, 100, 50 };
-};
 
-struct zombieStats {
-	const char* art = "draftArt/basicZombie.png";
-	int movementSpeed = 25;
-	int maxHealth = 500;
-
-	int size = 4; // how many tiles it takes up
-
-	void addComponents(ZombieObj* zombie, float sightDistance) {
-		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, "draftArt/basicZombie.png"));
-		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
-		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
-		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
-	}
+	int zombieType;
 };

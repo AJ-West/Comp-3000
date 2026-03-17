@@ -273,17 +273,31 @@ void MapLoader::loadZombie(XMLElement* entity)
     if (entity->FirstChildElement("sight")) {
         sight = atoi(entity->FirstChildElement("sight")->GetText());
     }
-    ZombieObj* zombie = new ZombieObj(x, y, width, height, health, id);
-    addZombieComponents(zombie, sight);
+    ZombieObj* zombie;
+    int type = 2;
+    switch (type) {
+    case BRUTE: {
+        bruteZombieStats stats;
+        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        break;
+    }
+    case QUICK: {
+        quickZombieStats stats;
+        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        break;
+    }
+    default: {
+        zombieStats stats;
+        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+    }
+    }
     if (entity->FirstChildElement("target_x")) {
         zombie->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
     zombieList->emplace_back(zombie);
-}
-
-void MapLoader::addZombieComponents(ZombieObj* zombie, float sightDistance) {
-    zombieStats stats;
-    stats.addComponents(zombie, sightDistance);
 }
 
 void MapLoader::loadDepot(XMLElement* entity)

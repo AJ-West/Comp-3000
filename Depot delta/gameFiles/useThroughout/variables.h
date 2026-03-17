@@ -211,6 +211,12 @@ enum techType {
 	unlock
 };
 
+enum zombieTypes {
+	BASIC,
+	BRUTE,
+	QUICK
+};
+
 struct Vec2 {
 	float x;
 	float y;
