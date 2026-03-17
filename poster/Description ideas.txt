@@ -1,0 +1,12 @@
+From GDD:
+Depot Delta is a Real Time Strategy (RTS) game where you need to manage your resources and personnel to survive incoming waves of zombies. Your supply lines are crucial as this is how you will restock units that are keeping the hordes at bay. With limited survivors and resources to begin with you can adventure to find more but then need to consider how you will return them to the depot so they can help you in the fight. Personal once damaged will need to be rescued by medical units creating a balance of keep fighting or retreat to fight another day as once you lose a unit it is lost for good.  
+
+
+Idea 1 - more descriptive
+Depot Delta is a Real Time Strategy (RTS) focused on logistics and resource management. Convoys are crucial to restock units that are keeping hordes of zombies at bay. With limited survivors and resources you can expand your defence to find more but the further you travel the longer the supply time. Larger units with more personnel are stronger and are better at keeping the hordes at bay however they take up more resources such as fuel or ammunition. Balance expansion with survival and outrun the outbreak outlast the war.
+
+
+
+
+Idea 2 - more enticing:
+Resources running low. Hordes ever growing. The last bastion of humanity is failing. Take charge. Manage the survivors and lead them to a new dawn. Your decision determine the outcome create the cure or succumb to the infection. It is time outrun the outbreak outlast the war.
