@@ -105,11 +105,16 @@ void LevelManager::unpausedRender()
     }    
 
     if (spawningSwarm) {
-        if (swarmLeft > 0 && frameStart - lastSpawnTime >= spawnDelay) {
-            spawnZombie(0);
-            swarmLeft--;
-            spawningSwarm = swarmLeft != 0;
+        if (swarmLeft[swarmTypeIndex] > 0 && frameStart - lastSpawnTime >= spawnDelay) {
+            spawnZombie(swarmTypeIndex);
+            swarmLeft[swarmTypeIndex]--;
             lastSpawnTime = frameStart;
+        }
+        else if(swarmLeft[swarmTypeIndex] == 0){
+            swarmTypeIndex++;
+            if (swarmTypeIndex >= swarmLeft.size()) {
+                spawningSwarm = false;
+            }
         }
     }
 
@@ -216,10 +221,11 @@ void LevelManager::updateStats(string keyName, bool forUnit) {
     }
 }
 
-void LevelManager::spawnSwarm(int quantity, int direction) {
+void LevelManager::spawnSwarm(vector<int> quantity, int direction) {
     spawningSwarm = true;
     swarmLeft = quantity;
     swarmDirection = direction;
+    swarmTypeIndex = 0;
 
     switch (swarmDirection) {
     case NORTH:

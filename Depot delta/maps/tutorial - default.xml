@@ -31,7 +31,9 @@
         <name>Swarms</name>
         <swarmCount>1</swarmCount>
         <swarm1>
-            <quantity>15</quantity>
+            <basicQuantity>15</basicQuantity>
+            <bruteQuantity>0</bruteQuantity>
+            <quickQuantity>0</quickQuantity>
             <direction>0</direction>
             <time>
                 <day>1</day>
@@ -80,6 +82,7 @@
             <health>500</health>
             <x>1200</x>
             <y>640</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -88,6 +91,7 @@
             <health>500</health>
             <x>1797</x>
             <y>1143</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -96,6 +100,7 @@
             <health>500</health>
             <x>1628</x>
             <y>1374</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -104,6 +109,7 @@
             <health>500</health>
             <x>1817</x>
             <y>1100</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -112,6 +118,7 @@
             <health>500</health>
             <x>2009</x>
             <y>1233</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -120,6 +127,7 @@
             <health>500</health>
             <x>2067</x>
             <y>1093</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -128,6 +136,7 @@
             <health>500</health>
             <x>1745</x>
             <y>907</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -136,6 +145,7 @@
             <health>500</health>
             <x>1932</x>
             <y>1107</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -144,6 +154,7 @@
             <health>500</health>
             <x>1916</x>
             <y>924</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -152,6 +163,7 @@
             <health>500</health>
             <x>1786</x>
             <y>1259</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
@@ -160,6 +172,7 @@
             <health>500</health>
             <x>1946</x>
             <y>1246</y>
+            <type>0</type>
             <sight>500</sight>
         </entities>
     </layers>

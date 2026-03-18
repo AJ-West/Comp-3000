@@ -70,7 +70,7 @@ public:
 	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
 	DepotObj* getDepot() { return depot; }
 	vector<vector<int>> getSwarmTimes() { return swarmTimes; }
-	vector<int> getSwarmQuantity() { return swarmQuantity; }
+	vector<vector<int>> getSwarmQuantity() { return swarmQuantity; }
 	vector<int> getSwarmDirection() { return swarmDirection; }
 	vector<int> getTime() { return time; }
 
@@ -87,7 +87,7 @@ private:
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList = make_shared<vector<shared_ptr<ZombieObj>>>();
 
 	vector<vector<int>> swarmTimes{};
-	vector<int> swarmQuantity{};
+	vector<vector<int>> swarmQuantity{};
 	vector<int> swarmDirection{};
 
 	vector<int> time{ 0,0,0,0 };

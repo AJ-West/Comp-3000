@@ -40,7 +40,7 @@ void levelUI::renderTime() {
 
 	if (time->getSpawnSwarm()) {
 		//manager->spawnSwarmThread(time->getSpawnQuantity(), time->getSpawnDirection());
-		manager->spawnSwarm(time->getSpawnQuantity(), time->getSpawnDirection());
+		manager->spawnSwarm(time->getAllSpawnQuantity(), time->getSpawnDirection());
 		time->swarmSpawned();
 	}
 }

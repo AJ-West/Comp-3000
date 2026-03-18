@@ -43,7 +43,7 @@ struct bruteZombieStats {
 
 struct quickZombieStats {
 	const char* art = "draftArt/quickZombie.png";
-	int movementSpeed = 25;
+	int movementSpeed = 50;
 	int maxHealth = 250;
 
 	int damage = 10;
@@ -115,6 +115,7 @@ public:
 	virtual int getType() { return ZOMBIE; }
 	Vec2 getTargetPos() { return Vec2{ tx,ty }; }
 	int getID() { return ID; }
+	int getZombieType() { return zombieType; }
 	int getZombieDamage() {
 		switch (zombieType) {
 		case BRUTE: {

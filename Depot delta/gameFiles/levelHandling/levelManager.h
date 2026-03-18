@@ -58,7 +58,7 @@ public:
 
 	void updateStats(string keyName, bool forUnit);
 
-	void spawnSwarm(int num, int direction);
+	void spawnSwarm(vector<int> num, int direction);
 	void spawnZombie(int type);
 
 	void removeDeadFromLists();
@@ -97,11 +97,12 @@ private:
 	dayCycle* time;
 
 	bool spawningSwarm = false;
-	int swarmLeft = 0;
+	vector<int> swarmLeft = {0};
 	int swarmDirection = 0;
 	Uint32 lastSpawnTime = 0;
 	Uint32 spawnDelay = 500;
 	Vec2 swarmPos = { 0,0 };
+	int swarmTypeIndex = 0;
 
 	bool textInput = false;
 

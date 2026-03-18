@@ -143,8 +143,9 @@ bool MapSaver::saveZombies(XMLElement* layer, vector<shared_ptr<ZombieObj>> zomb
         XMLElement* health = doc.NewElement("health");
         XMLElement* x = doc.NewElement("x");
         XMLElement* y = doc.NewElement("y");
+        XMLElement* type = doc.NewElement("type");
         XMLElement* sight = doc.NewElement("sight");
-
+        
         name->SetText("Basic Zombie");
         entity->InsertEndChild(name);
         id->SetText(zombie->getID());
@@ -152,6 +153,8 @@ bool MapSaver::saveZombies(XMLElement* layer, vector<shared_ptr<ZombieObj>> zomb
         entity->InsertEndChild(health);
         entity->InsertEndChild(x);
         entity->InsertEndChild(y);
+        type->SetText(zombie->getZombieType());
+        entity->InsertEndChild(type);
         sight->SetText(zombie->getComponent<nearestComponent>()->getSightDistance());
         entity->InsertEndChild(sight);
 

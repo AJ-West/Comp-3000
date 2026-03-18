@@ -21,17 +21,19 @@
     <layers eid="32843350">
         <name>Level Details</name>
         <time>
-            <day>1</day>
-            <hour>16</hour>
-            <minute>54</minute>
-            <second>10</second>
+            <day>0</day>
+            <hour>12</hour>
+            <minute>0</minute>
+            <second>0</second>
         </time>
     </layers>
     <layers eid="32843350">
         <name>Swarms</name>
         <swarmCount>1</swarmCount>
         <swarm1>
-            <quantity>15</quantity>
+            <basicQuantity>15</basicQuantity>
+            <bruteQuantity>0</bruteQuantity>
+            <quickQuantity>0</quickQuantity>
             <direction>0</direction>
             <time>
                 <day>1</day>
@@ -50,10 +52,10 @@
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>475</Personnel>
-                <Ammunition>260</Ammunition>
-                <DoS>510</DoS>
-                <Fuel>510</Fuel>
+                <Personnel>500</Personnel>
+                <Ammunition>504</Ammunition>
+                <DoS>504</DoS>
+                <Fuel>504</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -75,528 +77,103 @@
             <art>draftArt/buildings/ammunition.png</art>
         </entities>
         <entities>
-            <name>Basic unit</name>
-            <id>13</id>
-            <health>100</health>
-            <x>1678</x>
-            <y>1003</y>
-            <target_x>1711</target_x>
-            <target_y>1036</target_y>
-            <Resources>
-                <Personnel>25</Personnel>
-                <Ammunition>205</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-            <Transfering>-1</Transfering>
-            <ResourceTransfer>
-                <PersonnelChange>0</PersonnelChange>
-                <AmmunitionChange>0</AmmunitionChange>
-                <DoSChange>0</DoSChange>
-                <FuelChange>0</FuelChange>
-                <ScrapChange>0</ScrapChange>
-            </ResourceTransfer>
-        </entities>
-        <entities>
             <name>Basic Zombie</name>
             <id>2</id>
-            <health>250</health>
-            <x>1285</x>
-            <y>670</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1200</x>
+            <y>640</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>3</id>
-            <health>250</health>
-            <x>1285</x>
-            <y>670</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1797</x>
+            <y>1143</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>4</id>
-            <health>250</health>
-            <x>1283</x>
-            <y>646</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1628</x>
+            <y>1374</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>5</id>
-            <health>250</health>
-            <x>1283</x>
-            <y>646</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1817</x>
+            <y>1100</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>6</id>
-            <health>250</health>
-            <x>1281</x>
-            <y>620</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>2009</x>
+            <y>1233</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>7</id>
-            <health>250</health>
-            <x>1281</x>
-            <y>620</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>2067</x>
+            <y>1093</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>8</id>
-            <health>250</health>
-            <x>1280</x>
-            <y>594</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1745</x>
+            <y>907</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>9</id>
-            <health>250</health>
-            <x>1280</x>
-            <y>594</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1932</x>
+            <y>1107</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>10</id>
-            <health>250</health>
-            <x>1279</x>
-            <y>569</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1916</x>
+            <y>924</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>11</id>
-            <health>250</health>
-            <x>1279</x>
-            <y>569</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <health>500</health>
+            <x>1786</x>
+            <y>1259</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>12</id>
-            <health>250</health>
-            <x>1277</x>
-            <y>543</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>13</id>
-            <health>250</health>
-            <x>1277</x>
-            <y>543</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>14</id>
-            <health>250</health>
-            <x>1276</x>
-            <y>516</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>15</id>
-            <health>250</health>
-            <x>1276</x>
-            <y>516</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>16</id>
-            <health>250</health>
-            <x>1276</x>
-            <y>516</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>17</id>
-            <health>250</health>
-            <x>1271</x>
-            <y>403</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>18</id>
-            <health>250</health>
-            <x>1270</x>
-            <y>377</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>19</id>
-            <health>250</health>
-            <x>1270</x>
-            <y>377</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>20</id>
-            <health>250</health>
-            <x>1268</x>
-            <y>351</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>21</id>
-            <health>250</health>
-            <x>1268</x>
-            <y>351</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>22</id>
-            <health>250</health>
-            <x>1267</x>
-            <y>325</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>23</id>
-            <health>250</health>
-            <x>1267</x>
-            <y>325</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>24</id>
-            <health>250</health>
-            <x>1267</x>
-            <y>303</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>25</id>
-            <health>250</health>
-            <x>1267</x>
-            <y>303</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>26</id>
-            <health>250</health>
-            <x>1271</x>
-            <y>347</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>27</id>
-            <health>250</health>
-            <x>1270</x>
-            <y>321</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>28</id>
-            <health>250</health>
-            <x>1270</x>
-            <y>321</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>29</id>
-            <health>250</health>
-            <x>1269</x>
-            <y>295</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>30</id>
-            <health>250</health>
-            <x>1269</x>
-            <y>295</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>31</id>
-            <health>250</health>
-            <x>1268</x>
-            <y>270</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>32</id>
-            <health>250</health>
-            <x>1268</x>
-            <y>270</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>33</id>
-            <health>250</health>
-            <x>1268</x>
-            <y>270</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>34</id>
-            <health>250</health>
-            <x>1266</x>
-            <y>242</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>35</id>
-            <health>250</health>
-            <x>1266</x>
-            <y>242</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>36</id>
-            <health>250</health>
-            <x>1266</x>
-            <y>221</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>37</id>
             <health>500</health>
-            <x>1265</x>
-            <y>214</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>38</id>
-            <health>500</health>
-            <x>1264</x>
-            <y>188</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>39</id>
-            <health>500</health>
-            <x>1264</x>
-            <y>188</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>40</id>
-            <health>500</health>
-            <x>1263</x>
-            <y>162</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>41</id>
-            <health>500</health>
-            <x>1263</x>
-            <y>162</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>42</id>
-            <health>500</health>
-            <x>1262</x>
-            <y>136</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>43</id>
-            <health>500</health>
-            <x>1262</x>
-            <y>136</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>44</id>
-            <health>500</health>
-            <x>1261</x>
-            <y>110</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>45</id>
-            <health>500</health>
-            <x>1261</x>
-            <y>110</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>46</id>
-            <health>500</health>
-            <x>1259</x>
-            <y>84</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>47</id>
-            <health>500</health>
-            <x>1259</x>
-            <y>84</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>48</id>
-            <health>500</health>
-            <x>1258</x>
-            <y>58</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>49</id>
-            <health>500</health>
-            <x>1258</x>
-            <y>58</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>50</id>
-            <health>500</health>
-            <x>1257</x>
-            <y>33</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>51</id>
-            <health>500</health>
-            <x>1257</x>
-            <y>33</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <sight>2911.5164</sight>
+            <x>1946</x>
+            <y>1246</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
     </layers>
 </root>

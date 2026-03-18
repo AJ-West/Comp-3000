@@ -8,7 +8,7 @@ using namespace std;
 
 class dayCycle {
 public:
-	dayCycle(int win, vector<int> currentTime, vector<vector<int>> times, vector<int> quantities, vector<int> direction): winDay(win), dayTime(currentTime), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {};
+	dayCycle(int win, vector<int> currentTime, vector<vector<int>> times, vector<vector<int>> quantities, vector<int> direction): winDay(win), dayTime(currentTime), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {};
 	~dayCycle() {};
 
 	void update() {
@@ -70,7 +70,8 @@ public:
 	//getters
 	vector<int> getDayTime() { return dayTime; }
 	bool getSpawnSwarm() { return spawnSwarm; }
-	int getSpawnQuantity() { return swarmQuantity[0]; }
+	int getSpawnQuantity(int type) { return swarmQuantity[type][0]; }
+	vector<int> getAllSpawnQuantity() { return swarmQuantity[0]; }
 	int getSpawnDirection() { return swarmDirection[0]; }
 
 private:
@@ -80,7 +81,7 @@ private:
 	vector<float> rgba{ 0,0,0,100 };
 
 	vector<vector<int>> swarmTimes;
-	vector<int> swarmQuantity;
+	vector<vector<int>> swarmQuantity;
 	vector<int> swarmDirection;
 
 	bool spawnSwarm = false;

@@ -151,7 +151,11 @@ void MapLoader::loadSwarms(XMLElement* layer) {
         string name = "swarm" + to_string(count);
         XMLElement* entity = layer->FirstChildElement(name.c_str());
         while (entity) {
-            swarmQuantity.emplace_back(atoi(entity->FirstChildElement("quantity")->GetText()));
+            vector<int> quantities;
+            quantities.emplace_back(atoi(entity->FirstChildElement("basicQuantity")->GetText()));
+            quantities.emplace_back(atoi(entity->FirstChildElement("bruteQuantity")->GetText()));
+            quantities.emplace_back(atoi(entity->FirstChildElement("quickQuantity")->GetText()));
+            swarmQuantity.emplace_back(quantities);
             swarmDirection.emplace_back(atoi(entity->FirstChildElement("direction")->GetText()));
             XMLElement* time = entity = entity->FirstChildElement("time");
             vector<int> sTime{0, 0, 0, 0 };
@@ -274,24 +278,24 @@ void MapLoader::loadZombie(XMLElement* entity)
         sight = atoi(entity->FirstChildElement("sight")->GetText());
     }
     ZombieObj* zombie;
-    int type = 2;
+    int type = atoi(entity->FirstChildElement("type")->GetText());
     switch (type) {
     case BRUTE: {
         bruteZombieStats stats;
         zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
-        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        stats.addComponents(zombie, sight); // covers size of map
         break;
     }
     case QUICK: {
         quickZombieStats stats;
         zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
-        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        stats.addComponents(zombie, sight); // covers size of map
         break;
     }
     default: {
         zombieStats stats;
         zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
-        stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
+        stats.addComponents(zombie, sight); // covers size of map
     }
     }
     if (entity->FirstChildElement("target_x")) {
