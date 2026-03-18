@@ -17,47 +17,7 @@
     </layers>
     <layers eid="32843350">
         <name>Swarms</name>
-        <swarmCount>4</swarmCount>
-        <swarm1>
-            <quantity>10</quantity>
-            <direction>0</direction>
-                <time>
-                    <day>0</day>
-                    <hour>14</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                </time>
-        </swarm1>
-        <swarm2>
-            <quantity>20</quantity>
-            <direction>2</direction>
-                <time>
-                    <day>2</day>
-                    <hour>0</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                </time>
-        </swarm2>
-        <swarm3>
-            <quantity>30</quantity>
-            <direction>4</direction>
-                <time>
-                    <day>3</day>
-                    <hour>0</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                </time>
-        </swarm3>
-        <swarm4>
-            <quantity>40</quantity>
-            <direction>6</direction>
-                <time>
-                    <day>4</day>
-                    <hour>0</hour>
-                    <minute>0</minute>
-                    <second>0</second>
-                </time>
-        </swarm4>
+        <swarmCount>0</swarmCount>
     </layers>
     <layers eid="35163212">
         <name>Entities</name>
@@ -136,7 +96,8 @@
         <health>500</health>
         <x>3207</x>
         <y>1716</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -144,7 +105,8 @@
         <health>500</health>
         <x>3091</x>
         <y>1781</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -152,7 +114,8 @@
         <health>500</health>
         <x>1471</x>
         <y>322</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -160,7 +123,8 @@
         <health>500</health>
         <x>262</x>
         <y>1282</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -168,7 +132,8 @@
         <health>500</health>
         <x>3387</x>
         <y>598</y>
-        <sight>500</sight>
+<type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -176,7 +141,8 @@
         <health>500</health>
         <x>3342</x>
         <y>511</y>
-        <sight>500</sight>
+<type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -184,7 +150,8 @@
         <health>500</health>
         <x>204</x>
         <y>948</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -192,7 +159,8 @@
         <health>500</health>
         <x>3202</x>
         <y>1977</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -200,7 +168,8 @@
         <health>500</health>
         <x>1056</x>
         <y>1783</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -208,7 +177,8 @@
         <health>500</health>
         <x>1472</x>
         <y>2090</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -216,7 +186,8 @@
         <health>500</health>
         <x>910</x>
         <y>679</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -224,7 +195,8 @@
         <health>500</health>
         <x>2817</x>
         <y>564</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -232,7 +204,8 @@
         <health>500</health>
         <x>2629</x>
         <y>586</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -240,7 +213,8 @@
         <health>500</health>
         <x>2689</x>
         <y>440</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -248,7 +222,8 @@
         <health>500</health>
         <x>2667</x>
         <y>380</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -256,7 +231,8 @@
         <health>500</health>
         <x>700</x>
         <y>1105</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -264,7 +240,8 @@
         <health>500</health>
         <x>2692</x>
         <y>578</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -272,7 +249,8 @@
         <health>500</health>
         <x>3061</x>
         <y>1859</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -280,7 +258,8 @@
         <health>500</health>
         <x>1917</x>
         <y>46</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -288,7 +267,8 @@
         <health>500</health>
         <x>2314</x>
         <y>1625</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -296,7 +276,8 @@
         <health>500</health>
         <x>214</x>
         <y>815</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -304,7 +285,8 @@
         <health>500</health>
         <x>2758</x>
         <y>1481</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -312,7 +294,8 @@
         <health>500</health>
         <x>3010</x>
         <y>232</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -320,7 +303,8 @@
         <health>500</health>
         <x>2822</x>
         <y>550</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -328,7 +312,8 @@
         <health>500</health>
         <x>74</x>
         <y>2055</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -336,7 +321,8 @@
         <health>500</health>
         <x>3781</x>
         <y>1113</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -344,7 +330,8 @@
         <health>500</health>
         <x>162</x>
         <y>2027</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -352,7 +339,8 @@
         <health>500</health>
         <x>3094</x>
         <y>2098</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -360,7 +348,8 @@
         <health>500</health>
         <x>753</x>
         <y>814</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -368,7 +357,8 @@
         <health>500</health>
         <x>3704</x>
         <y>71</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -376,7 +366,8 @@
         <health>500</health>
         <x>1221</x>
         <y>824</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -384,7 +375,8 @@
         <health>500</health>
         <x>1289</x>
         <y>1226</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -392,7 +384,8 @@
         <health>500</health>
         <x>728</x>
         <y>1131</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -400,7 +393,8 @@
         <health>500</health>
         <x>3950</x>
         <y>1502</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -408,7 +402,8 @@
         <health>500</health>
         <x>402</x>
         <y>926</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -416,7 +411,8 @@
         <health>500</health>
         <x>761</x>
         <y>555</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -424,7 +420,8 @@
         <health>500</health>
         <x>865</x>
         <y>142</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -432,7 +429,8 @@
         <health>500</health>
         <x>344</x>
         <y>327</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -440,7 +438,8 @@
         <health>500</health>
         <x>190</x>
         <y>446</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -448,7 +447,8 @@
         <health>500</health>
         <x>2690</x>
         <y>1311</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -456,7 +456,8 @@
         <health>500</health>
         <x>2940</x>
         <y>250</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -464,7 +465,8 @@
         <health>500</health>
         <x>303</x>
         <y>1458</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -472,7 +474,8 @@
         <health>500</health>
         <x>566</x>
         <y>1545</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -480,7 +483,8 @@
         <health>500</health>
         <x>3752</x>
         <y>310</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -488,7 +492,8 @@
         <health>500</health>
         <x>3261</x>
         <y>969</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -496,7 +501,8 @@
         <health>500</health>
         <x>559</x>
         <y>141</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -504,7 +510,8 @@
         <health>500</health>
         <x>1844</x>
         <y>42</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -512,7 +519,8 @@
         <health>500</health>
         <x>3571</x>
         <y>1354</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -520,7 +528,8 @@
         <health>500</health>
         <x>1609</x>
         <y>1790</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -528,7 +537,8 @@
         <health>500</health>
         <x>550</x>
         <y>1029</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -536,7 +546,8 @@
         <health>500</health>
         <x>1879</x>
         <y>1606</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -544,7 +555,8 @@
         <health>500</health>
         <x>3833</x>
         <y>1312</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -552,7 +564,8 @@
         <health>500</health>
         <x>2729</x>
         <y>1341</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -560,7 +573,8 @@
         <health>500</health>
         <x>1123</x>
         <y>125</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -568,7 +582,8 @@
         <health>500</health>
         <x>3080</x>
         <y>1432</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -576,7 +591,8 @@
         <health>500</health>
         <x>3665</x>
         <y>414</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -584,7 +600,8 @@
         <health>500</health>
         <x>2491</x>
         <y>773</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -592,7 +609,8 @@
         <health>500</health>
         <x>1076</x>
         <y>1968</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -600,7 +618,8 @@
         <health>500</health>
         <x>2836</x>
         <y>269</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -608,7 +627,8 @@
         <health>500</health>
         <x>3490</x>
         <y>1685</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -616,7 +636,8 @@
         <health>500</health>
         <x>662</x>
         <y>1593</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -624,7 +645,8 @@
         <health>500</health>
         <x>14</x>
         <y>1453</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -632,7 +654,8 @@
         <health>500</health>
         <x>664</x>
         <y>307</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -640,7 +663,8 @@
         <health>500</health>
         <x>617</x>
         <y>1839</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -648,7 +672,8 @@
         <health>500</health>
         <x>2363</x>
         <y>424</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -656,7 +681,8 @@
         <health>500</health>
         <x>1696</x>
         <y>1838</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -664,7 +690,8 @@
         <health>500</health>
         <x>2580</x>
         <y>483</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -672,7 +699,8 @@
         <health>500</health>
         <x>1716</x>
         <y>1587</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -680,7 +708,8 @@
         <health>500</health>
         <x>2077</x>
         <y>351</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -688,7 +717,8 @@
         <health>500</health>
         <x>3466</x>
         <y>1762</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -696,7 +726,8 @@
         <health>500</health>
         <x>3013</x>
         <y>1544</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -704,7 +735,8 @@
         <health>500</health>
         <x>1383</x>
         <y>1671</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -712,7 +744,8 @@
         <health>500</health>
         <x>1252</x>
         <y>1221</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -720,7 +753,8 @@
         <health>500</health>
         <x>2727</x>
         <y>671</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -728,7 +762,8 @@
         <health>500</health>
         <x>3281</x>
         <y>2073</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -736,7 +771,8 @@
         <health>500</health>
         <x>787</x>
         <y>1503</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -744,7 +780,8 @@
         <health>500</health>
         <x>2623</x>
         <y>385</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -752,7 +789,8 @@
         <health>500</health>
         <x>1030</x>
         <y>201</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -760,7 +798,8 @@
         <health>500</health>
         <x>378</x>
         <y>2087</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -768,7 +807,8 @@
         <health>500</health>
         <x>2127</x>
         <y>2174</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -776,7 +816,8 @@
         <health>500</health>
         <x>878</x>
         <y>472</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -784,7 +825,8 @@
         <health>500</health>
         <x>2519</x>
         <y>1875</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -792,7 +834,8 @@
         <health>500</health>
         <x>233</x>
         <y>824</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -800,7 +843,8 @@
         <health>500</health>
         <x>162</x>
         <y>693</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -808,7 +852,8 @@
         <health>500</health>
         <x>732</x>
         <y>1907</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -816,7 +861,8 @@
         <health>500</health>
         <x>3840</x>
         <y>804</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -824,7 +870,8 @@
         <health>500</health>
         <x>3053</x>
         <y>1443</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -832,7 +879,8 @@
         <health>500</health>
         <x>315</x>
         <y>1273</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -840,7 +888,8 @@
         <health>500</health>
         <x>1828</x>
         <y>1623</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -848,7 +897,8 @@
         <health>500</health>
         <x>3829</x>
         <y>1955</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -856,7 +906,8 @@
         <health>500</health>
         <x>3698</x>
         <y>1836</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -864,7 +915,8 @@
         <health>500</health>
         <x>3068</x>
         <y>1353</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -872,7 +924,8 @@
         <health>500</health>
         <x>1435</x>
         <y>2085</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -880,7 +933,8 @@
         <health>500</health>
         <x>1268</x>
         <y>757</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -888,7 +942,8 @@
         <health>500</health>
         <x>2200</x>
         <y>233</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -896,7 +951,8 @@
         <health>500</health>
         <x>3261</x>
         <y>537</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -904,7 +960,8 @@
         <health>500</health>
         <x>232</x>
         <y>1158</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -912,7 +969,8 @@
         <health>500</health>
         <x>1531</x>
         <y>96</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -920,7 +978,8 @@
         <health>500</health>
         <x>370</x>
         <y>775</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
     </entities>
     <entities>
         <name>Basic Zombie</name>
@@ -928,7 +987,17 @@
         <health>500</health>
         <x>896</x>
         <y>1433</y>
-        <sight>500</sight>
+        <type>0</type>
+<sight>500</sight>
+    </entities>
+    <entities>
+        <name>Basic Zombie</name>
+        <id>103</id>
+        <health>5000</health>
+        <x>896</x>
+        <y>1433</y>
+        <type>1</type>
+<sight>500</sight>
     </entities>
     </layers>
 </root>
