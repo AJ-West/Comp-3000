@@ -13,6 +13,9 @@ public:
 		innerSize.y = size.y + size.h / 10;
 		innerSize.w = 8 * size.w / 10;
 		innerSize.h = 8 * size.h / 10;
+
+		outline = loadTexture("art/UI/level/minimap.png");
+		closed = loadTexture("art/UI/level/closeMap.png");
 	}
 	~Minimap(){}
 
@@ -33,8 +36,8 @@ public:
 	}
 
 	void updateInnerSize() {
-		innerSize.x = size.x + size.w / 15;
-		innerSize.y = size.y + size.h / 15;
+		innerSize.x = size.x + size.w / 9;
+		innerSize.y = size.y + size.h / 9;
 		innerSize.w = scaleFactor * size.w;
 		innerSize.h = scaleFactor * size.h;
 	}
@@ -48,15 +51,13 @@ public:
 
 	void render(SDL_Renderer* renderer) {
 		updateSize();
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_RenderFillRect(renderer, &size);
 		if (open) {
-			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-			SDL_RenderFillRect(renderer, &innerSize);
-			SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
-			SDL_RenderFillRect(renderer, &closeButton);
+			SDL_RenderTexture(renderer, outline, NULL, &size);		
 			calculateMapPositions();
 			renderCameraPos();
+		}
+		else {
+			SDL_RenderTexture(renderer, closed, NULL, &size);
 		}
 	}
 
@@ -142,10 +143,13 @@ private:
 	SDL_FRect innerSize{0,0,0,0};
 	SDL_FRect closeButton{ 0,0,0,0 };
 
+	SDL_Texture* outline;
+	SDL_Texture* closed;
+
 	shared_ptr<vector<shared_ptr<GameObject>>> allObjects;
 	shared_ptr<vector<shared_ptr<ZombieObj>>> allZombies;
 
-	float scaleFactor = 13.0f / 15.0f;
+	float scaleFactor = 7.0f / 9.0f;
 
 	float iconSize = 5.0f;
 

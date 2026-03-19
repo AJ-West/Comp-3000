@@ -21,9 +21,9 @@
     <layers eid="32843350">
         <name>Level Details</name>
         <time>
-            <day>0</day>
-            <hour>23</hour>
-            <minute>22</minute>
+            <day>1</day>
+            <hour>12</hour>
+            <minute>14</minute>
             <second>10</second>
         </time>
     </layers>
@@ -53,9 +53,9 @@
             <y>608</y>
             <Resources>
                 <Personnel>500</Personnel>
-                <Ammunition>510</Ammunition>
-                <DoS>510</DoS>
-                <Fuel>510</Fuel>
+                <Ammunition>516</Ammunition>
+                <DoS>516</DoS>
+                <Fuel>516</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -196,6 +196,39 @@
             <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>13</id>
+            <health>500</health>
+            <x>1257</x>
+            <y>23</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
+            <type>0</type>
+            <sight>2911.5164</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>14</id>
+            <health>500</health>
+            <x>1256</x>
+            <y>0</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
+            <type>0</type>
+            <sight>2911.5164</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>15</id>
+            <health>500</health>
+            <x>1256</x>
+            <y>0</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
+            <type>0</type>
+            <sight>2911.5164</sight>
         </entities>
     </layers>
 </root>
