@@ -22,9 +22,9 @@
         <name>Level Details</name>
         <time>
             <day>0</day>
-            <hour>12</hour>
-            <minute>0</minute>
-            <second>0</second>
+            <hour>23</hour>
+            <minute>22</minute>
+            <second>10</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -53,9 +53,9 @@
             <y>608</y>
             <Resources>
                 <Personnel>500</Personnel>
-                <Ammunition>504</Ammunition>
-                <DoS>504</DoS>
-                <Fuel>504</Fuel>
+                <Ammunition>510</Ammunition>
+                <DoS>510</DoS>
+                <Fuel>510</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -80,8 +80,10 @@
             <name>Basic Zombie</name>
             <id>2</id>
             <health>500</health>
-            <x>1200</x>
-            <y>640</y>
+            <x>1288</x>
+            <y>704</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -91,6 +93,8 @@
             <health>500</health>
             <x>1797</x>
             <y>1143</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -100,6 +104,8 @@
             <health>500</health>
             <x>1628</x>
             <y>1374</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -109,6 +115,8 @@
             <health>500</health>
             <x>1817</x>
             <y>1100</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -118,6 +126,8 @@
             <health>500</health>
             <x>2009</x>
             <y>1233</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -127,6 +137,8 @@
             <health>500</health>
             <x>2067</x>
             <y>1093</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -136,6 +148,8 @@
             <health>500</health>
             <x>1745</x>
             <y>907</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -145,6 +159,8 @@
             <health>500</health>
             <x>1932</x>
             <y>1107</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -154,6 +170,8 @@
             <health>500</health>
             <x>1916</x>
             <y>924</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -163,6 +181,8 @@
             <health>500</health>
             <x>1786</x>
             <y>1259</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -172,6 +192,8 @@
             <health>500</health>
             <x>1946</x>
             <y>1246</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>

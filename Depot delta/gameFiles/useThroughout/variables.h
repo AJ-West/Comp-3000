@@ -103,24 +103,24 @@ struct Camera {
 	float xScale;
 	float yScale;
 
-	int x_dir = 0;
-	int y_dir = 0;
+	float x_dir = 0.0f;
+	float y_dir = 0.0f;
 
-	int speed = 350;
+	float speed = 350.0f;
 
 	void keyDown(SDL_Keycode key) {
 		switch (key) {
 		case SDLK_W:
-			y_dir = -1;
+			y_dir = -1.0f;
 			break;
 		case SDLK_S:
-			y_dir = 1;
+			y_dir = 1.0f;
 			break;
 		case SDLK_A:
-			x_dir = -1;
+			x_dir = -1.0f;
 			break;
 		case SDLK_D:
-			x_dir = 1;
+			x_dir = 1.0f;
 			break;
 		default:
 			break;
@@ -130,10 +130,10 @@ struct Camera {
 	void keyUp(SDL_Keycode key) {
 		switch (key) {
 		case SDLK_W: case SDLK_S:
-			y_dir = 0;
+			y_dir = 0.0f;
 			break;
 		case SDLK_A: case SDLK_D:
-			x_dir = 0;
+			x_dir = 0.0f;
 			break;
 		default:
 			break;
@@ -147,8 +147,8 @@ struct Camera {
 	}
 
 	void clamp() {
-		if (dimen.x < 0) dimen.x = 0;
-		if (dimen.y < 0) dimen.y = 0;
+		if (dimen.x < 0.0f) dimen.x = 0.0f;
+		if (dimen.y < 0.0f) dimen.y = 0.0f;
 		if (dimen.x + dimen.w > worldWidth) dimen.x = worldWidth - dimen.w;
 		if (dimen.y + dimen.h > worldHeight) dimen.y = worldHeight - dimen.h;
 	}
