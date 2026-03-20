@@ -16,6 +16,8 @@ public:
 
 	void renderHover(SDL_Renderer* renderer);
 
+	virtual void deathsound() { soundEffectEngine->play2D("soundEffects/voice acting/buildings/destroyed/bd.wav"); }
+
 	//getters
 	int getBType() { return rType; }
 	virtual int getID() { return id; }

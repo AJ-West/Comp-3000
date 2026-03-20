@@ -8,8 +8,19 @@ using namespace std;
 
 class dayCycle {
 public:
-	dayCycle(int win, vector<int> currentTime, vector<vector<int>> times, vector<vector<int>> quantities, vector<int> direction): winDay(win), dayTime(currentTime), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {};
+	dayCycle(int win, vector<int> currentTime, vector<vector<int>> times, vector<vector<int>> quantities, vector<int> direction): winDay(win), dayTime(currentTime), swarmTimes(times), swarmQuantity(quantities), swarmDirection(direction) {
+		calculateWarningTimes();
+	};
 	~dayCycle() {};
+
+	void calculateWarningTimes() {
+		swarmWarnTimes = swarmTimes;
+		int i = 0;
+		for (vector<int> time : swarmWarnTimes) {
+			time[day] -= 1;
+			time.emplace_back(swarmDirection[i]);
+		}
+	}
 
 	void update() {
 		increaseTime(second);
@@ -54,8 +65,51 @@ public:
 		}
 	}
 
+	void checkForSwarmWarning(int time) {
+		if (dayTime[time] > swarmWarnTimes[0][time]) {
+			playWarning(swarmWarnTimes[0][second + 1]); // passes in direction of swarm
+		}
+		else if (dayTime[time] == swarmWarnTimes[0][time] && time != second) {
+			checkForSwarmWarning(time - 1);
+		}
+		else if (dayTime[time] == swarmWarnTimes[0][time] && time == second) {
+			playWarning(swarmWarnTimes[0][second + 1]); // passes in direction of swarm
+		}
+	}
+
+	void playWarning(int direction) {
+		switch (direction) {
+		case NORTH:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/north.wav");
+			break;
+		case NORTHEAST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/ne.wav");
+			break;
+		case EAST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/east.wav");
+			break;
+		case SOUTHEAST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/se.wav");
+			break;
+		case SOUTH:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/south.wav");
+			break;
+		case SOUTHWEST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/sw.wav");
+			break;
+		case WEST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/west.wav");
+			break;
+		case NORTHWEST:
+			soundEffectEngine->play2D("soundEffects/voice acting/zombies/swarm/warnings/nw.wav");
+			break;
+		}
+		swarmWarnTimes.erase(swarmWarnTimes.begin());
+	}
+
 	void swarmSpawned() {
 		spawnSwarm = false;
+		soundEffectEngine->play2D(pickRandomFile(swarmSpawnVAFiles));
 		swarmTimes.erase(swarmTimes.begin());
 		swarmQuantity.erase(swarmQuantity.begin());
 		swarmDirection.erase(swarmDirection.begin());
@@ -83,10 +137,13 @@ private:
 	vector<float> rgba{ 0,0,0,100 };
 
 	vector<vector<int>> swarmTimes;
+	vector<vector<int>> swarmWarnTimes;
 	vector<vector<int>> swarmQuantity;
 	vector<int> swarmDirection;
 
 	bool spawnSwarm = false;
 
 	int winDay;
+
+	vector<const char*> swarmSpawnVAFiles{"soundEffects/voice acting/zombies/swarm/arrived/dtdsha.wav", "soundEffects/voice acting/zombies/swarm/arrived/ftsttve.wav", "soundEffects/voice acting/zombies/swarm/arrived/sih.wav" };
 };

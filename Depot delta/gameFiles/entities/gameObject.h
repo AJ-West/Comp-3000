@@ -84,6 +84,7 @@ public:
 		checkPlayUnderAttack();
 		health -= damage;				
 		if (health <= 0) { 
+			deathSound();
 			alive = false; 
 		}
 	}
@@ -97,6 +98,7 @@ public:
 	}
 
 	virtual void underAttack() {}
+	virtual void deathSound() {}
 
 	GameObject* getTargetObject() { return targetObject; }
 	virtual void setTargetObject(GameObject* object) { targetObject = object; }

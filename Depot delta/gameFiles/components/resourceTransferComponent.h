@@ -118,6 +118,7 @@ public:
 
 		if (target->getType() == BUILDING) { // checks if building is alive or is being set to alive else shouldn't be able to transfer resources
 			if (!target->getAlive() && toTransfer[PERSONNEL] >=1) {
+				soundEffectEngine->play2D(pickRandomFile(buildingsVAFiles));
 				target->setAlive(true);
 			}
 			else if (!target->getAlive()) {
@@ -188,4 +189,6 @@ private:
 	float transferDistance;
 
 	int timeCount = 0;
+
+	vector<const char*> buildingsVAFiles{ "soundEffects/voice acting/buildings/restored/aso.wav", "soundEffects/voice acting/buildings/restored/uara.wav" };
 };
