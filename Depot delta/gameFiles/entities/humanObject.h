@@ -32,6 +32,8 @@ public:
 
 	virtual int getVehicleCapacity() { return 1; };
 
+	virtual void deathSound() { soundEffectEngine->play2D("soundEffects/voice acting/unitsconvoys/death.wav"); }
+
 private:
 	int ID;
 	int maxHealth = 100;
