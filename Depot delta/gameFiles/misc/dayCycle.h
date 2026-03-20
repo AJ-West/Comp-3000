@@ -70,6 +70,8 @@ public:
 	//getters
 	vector<int> getDayTime() { return dayTime; }
 	bool getSpawnSwarm() { return spawnSwarm; }
+	int getSwarmTimeSize() { return swarmTimes.size(); }
+	vector<int> getNextSwarmTime() { return swarmTimes[0]; }
 	int getSpawnQuantity(int type) { return swarmQuantity[type][0]; }
 	vector<int> getAllSpawnQuantity() { return swarmQuantity[0]; }
 	int getSpawnDirection() { return swarmDirection[0]; }

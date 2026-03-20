@@ -25,7 +25,7 @@ public:
 
 	void renderResourceHover();
 
-	void renderTime();
+	void renderTime(bool swarm);
 
 	void render();
 

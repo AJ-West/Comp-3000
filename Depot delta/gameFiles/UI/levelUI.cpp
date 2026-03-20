@@ -20,8 +20,14 @@ void levelUI::renderResourceHover() {
 	SDL_RenderTexture(renderer, resourceHoverTexture, NULL, &size);
 }
 
-void levelUI::renderTime() {
+void levelUI::renderTime(bool swarm) {
 	vector<int> cTime = time->getDayTime();
+	if (swarm && time->getSwarmTimeSize() >= 1) {
+		cTime = time->getNextSwarmTime();
+	}
+	else if(swarm) {
+		return;
+	}
 	int iMin = cTime[minute];
 	string sMin = to_string(iMin);
 	if (iMin < 10) {
@@ -35,7 +41,7 @@ void levelUI::renderTime() {
 	string countText = "Day: " + to_string(cTime[day]) + ". " + sHour + ":" + sMin;
 	SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 0,0,0,255 });
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_FRect timeSize{ 62.0f * camera.xScale, 9.0f * camera.yScale, 96.0f * camera.xScale, 30.0f * camera.yScale };
+	SDL_FRect timeSize{ 62.0f * camera.xScale, 9.0f * camera.yScale + 48.0f * swarm * camera.yScale, 96.0f * camera.xScale, 30.0f * camera.yScale };
 	SDL_RenderTexture(renderer, texture, NULL, &timeSize);
 
 	if (time->getSpawnSwarm()) {
@@ -56,6 +62,8 @@ void levelUI::render() {
 		SDL_FRect size{ 0, 0, camera.dimen.w, camera.dimen.h };
 		SDL_RenderTexture(renderer, texture, NULL, &size);
 		minimap->render(renderer);
+		renderTime(false); // render time
+		renderTime(true); // render next swarm time
 	}
 }
 

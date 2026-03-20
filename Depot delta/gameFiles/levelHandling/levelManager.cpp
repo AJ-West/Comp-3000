@@ -130,7 +130,6 @@ void LevelManager::unpausedRender()
         hoveredUnit->renderHover(renderer);
     }
     UI->render();
-    UI->renderTime();
     depot->renderResources(renderer);
 
     if (frameCount % 30 == 0) {
@@ -164,7 +163,6 @@ void LevelManager::pausedRender()
         }
     }
     UI->render();
-    UI->renderTime();
     depot->renderResources(renderer);
 }
 
