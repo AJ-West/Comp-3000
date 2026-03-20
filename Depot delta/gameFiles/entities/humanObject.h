@@ -35,4 +35,6 @@ public:
 private:
 	int ID;
 	int maxHealth = 100;
+
+	vector<const char*> orderVAFiles{"soundEffects/voice acting/unitsconvoys/orders/etds.wav", "soundEffects/voice acting/unitsconvoys/orders/ftd.wav", "soundEffects/voice acting/unitsconvoys/orders/u.wav" };
 };

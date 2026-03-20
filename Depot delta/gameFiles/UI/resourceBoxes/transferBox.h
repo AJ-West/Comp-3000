@@ -25,4 +25,6 @@ private:
 	GameObject* convoy;
 
 	vector<arrowButton*> arrows;
+
+	vector<const char*> initTransferVAFiles{ "soundEffects/voice acting/unitsconvoys/initiateTransfer/hha.wav", "soundEffects/voice acting/unitsconvoys/initiateTransfer/ri.wav", "soundEffects/voice acting/unitsconvoys/initiateTransfer/sto.wav" };
 };
