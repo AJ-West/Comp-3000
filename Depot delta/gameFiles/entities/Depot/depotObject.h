@@ -43,10 +43,47 @@ public:
 				SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 0,0,0,255 });
 				SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 				SDL_RenderTexture(renderer, texture, NULL, &tSize);
-				//tSize.x += 152 / static_cast<float>(ResolutionWidth) * 100;
 				tSize.x = temp[i+1] * camera.dimen.w;
-				//tSize.x += 31.5;
+
+				checkResources(i, resourceCount, resourceMax); // see if any audio should be played
 			}
+		}
+	}
+
+	void checkResources(int i, vector<int> resourceCount, vector<int> resourceMax) {
+		checkResourceMax(i, resourceCount, resourceMax);
+		if (i == SCRAP) { return; }
+		checkResourceLow(i, resourceCount, resourceMax);
+		checkResourceOut(i, resourceCount, resourceMax);
+	}
+
+	void checkResourceMax(int i, vector<int> resourceCount, vector<int> resourceMax) {
+		if (!justReachedMax[i] && resourceCount[i] == resourceMax[i]) {
+			soundEffectEngine->play2D(pickRandomFile(reachedMaxAudio));
+			justReachedMax[i] = true;
+		}
+		else if (justReachedMax[i] && resourceCount[i] != resourceMax[i]) {
+			justReachedMax[i] = false;
+		}
+	}
+
+	void checkResourceLow(int i, vector<int> resourceCount, vector<int> resourceMax) {
+		if (!justReachedLow[i] && resourceCount[i] <= resourceMax[i]/10) {
+			soundEffectEngine->play2D(pickRandomFile(reachedLowAudio));
+			justReachedLow[i] = true;
+		}
+		else if (justReachedLow[i] && resourceCount[i] > resourceMax[i]/10) {
+			justReachedLow[i] = false;
+		}
+	}
+
+	void checkResourceOut(int i, vector<int> resourceCount, vector<int> resourceMax) {
+		if (!justReachedOut[i] && resourceCount[i] == 0) {
+			soundEffectEngine->play2D(pickRandomFile(reachedOutAudio));
+			justReachedOut[i] = true;
+		}
+		else if (justReachedOut[i] && resourceCount[i] != 0) {
+			justReachedOut[i] = false;
 		}
 	}
 
@@ -81,6 +118,15 @@ private:
 	vector<float> temp{ 464.0f/1440.0f, 0.425, 0.5291, 0.6347, 0.7402, 0 };
 
 	vector<const char*> underAttackAudio{ "soundEffects/voice acting/depot/underAttack/ditd.wav", "soundEffects/voice acting/depot/underAttack/dua.wav", "soundEffects/voice acting/depot/underAttack/zhrtd.wav" };
+
+	vector<bool> justReachedMax{ false, false, false, false, false };
+	vector<const char*> reachedMaxAudio{ "soundEffects/voice acting/depot/maxingResource/personnel.wav", "soundEffects/voice acting/depot/maxingResource/ammo.wav", "soundEffects/voice acting/depot/maxingResource/dos.wav", "soundEffects/voice acting/depot/maxingResource/fuel.wav", "soundEffects/voice acting/depot/maxingResource/scrap.wav" };
+
+	vector<bool> justReachedLow{ false, false, false, false };
+	vector<const char*> reachedLowAudio{ "soundEffects/voice acting/depot/resourcesLow/personnel.wav", "soundEffects/voice acting/depot/resourcesLow/ammo.wav", "soundEffects/voice acting/depot/resourcesLow/dos.wav", "soundEffects/voice acting/depot/resourcesLow/fuel.wav" };
+
+	vector<bool> justReachedOut{ false, false, false, false };
+	vector<const char*> reachedOutAudio{ "soundEffects/voice acting/depot/resourcesOut/personnel.wav", "soundEffects/voice acting/depot/resourcesOut/ammo.wav", "soundEffects/voice acting/depot/resourcesOut/dos.wav", "soundEffects/voice acting/depot/resourcesOut/fuel.wav" };
 
 	//SDL_FRect tSize{ 65, 5, 23, 30 / camera.dimen.h * 100 };
 };
