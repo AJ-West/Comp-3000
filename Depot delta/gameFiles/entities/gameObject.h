@@ -60,6 +60,11 @@ public:
 		for (auto& pair : components) {
 			pair.second->update(this);
 		}
+		if (justAttacked) {
+			if (frameStart - safeDelay >= lastDamaged) {
+				justAttacked = false;
+			}
+		}
 	}
 
 	//might be removable to use button component instead
@@ -76,12 +81,22 @@ public:
 	}
 
 	virtual void takeDamage(int damage) {
-		health -= damage;
+		checkPlayUnderAttack();
+		health -= damage;				
 		if (health <= 0) { 
 			alive = false; 
-			if(selected){}
 		}
 	}
+
+	void checkPlayUnderAttack() { // check for if just attacked signal should be played
+		if (!justAttacked) {
+			justAttacked = true;
+			underAttack();			
+		}
+		lastDamaged = frameStart;
+	}
+
+	virtual void underAttack() {}
 
 	GameObject* getTargetObject() { return targetObject; }
 	virtual void setTargetObject(GameObject* object) { targetObject = object; }
@@ -136,6 +151,10 @@ protected:
 	bool attacking = false;
 
 	bool alive = true;
+	bool justAttacked = false;
+
+	Uint32 lastDamaged = 0;
+	Uint32 safeDelay = 5000; // 5 seconds
 
 	GameObject* targetObject = nullptr;
 

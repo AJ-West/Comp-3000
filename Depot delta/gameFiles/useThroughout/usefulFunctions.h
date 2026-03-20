@@ -4,6 +4,7 @@
 #include <SDL3_image/SDL_image.h>
 #include <vector>
 #include <string>
+#include <filesystem>
 
 #ifndef USEFULFUNCTIONS_H
 #define USEFULFUNCTIONS_H
@@ -25,5 +26,7 @@ float scaleText(string text);
 vector<SDL_Texture*> loadResourceTextures();
 
 SDL_Texture* loadTexture(const char* filename);
+
+const char* pickRandomFile(vector<const char*> filename);
 
 #endif

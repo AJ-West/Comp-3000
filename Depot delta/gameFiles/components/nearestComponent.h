@@ -31,7 +31,7 @@ public:
 					nearestUnit = unit.get();
 					found = true;
 				}
-				else if (dist < distanceToUnit(nearestUnit)) {
+				else if (dist <= distanceToUnit(nearestUnit)) {
 					nearestUnit = unit.get();
 					found = true;
 				}
@@ -45,7 +45,7 @@ public:
 						nearestUnit = building.get();
 						found = true;
 					}
-					else if (dist < distanceToUnit(nearestUnit)) {
+					else if (dist <= distanceToUnit(nearestUnit)) {
 						nearestUnit = building.get();
 						found = true;
 					}
@@ -54,7 +54,7 @@ public:
 		}
 		if (distanceToUnit(depot) <= sightDistance) {
 			if (nearestUnit) {
-				if (distanceToUnit(depot) < distanceToUnit(nearestUnit)) { 
+				if (distanceToUnit(depot) <= distanceToUnit(nearestUnit)) { 
 					nearestUnit = depot;
 					found = true;
 				}

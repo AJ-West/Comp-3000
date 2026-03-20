@@ -68,6 +68,10 @@ public:
 		}
 	}
 
+	virtual void underAttack() {
+		soundEffectEngine->play2D(pickRandomFile(underAttackAudio));
+	}
+
 	virtual int getType() { return DEPOT; }
 
 private:
@@ -75,6 +79,8 @@ private:
 	//SDL_FRect tSize{ 312/ static_cast<float>(ResolutionWidth) *100, 5 / static_cast<float>(ResolutionWidth) * 100, 111 / camera.dimen.w * 100, 30 / camera.dimen.h * 100 };
 	SDL_FRect tSize{ 312.0f * camera.xScale, 9.0f * camera.yScale, 111.0f * camera.xScale, 30.0f * camera.yScale };
 	vector<float> temp{ 464.0f/1440.0f, 0.425, 0.5291, 0.6347, 0.7402, 0 };
+
+	vector<const char*> underAttackAudio{ "soundEffects/voice acting/depot/underAttack/ditd.wav", "soundEffects/voice acting/depot/underAttack/dua.wav", "soundEffects/voice acting/depot/underAttack/zhrtd.wav" };
 
 	//SDL_FRect tSize{ 65, 5, 23, 30 / camera.dimen.h * 100 };
 };

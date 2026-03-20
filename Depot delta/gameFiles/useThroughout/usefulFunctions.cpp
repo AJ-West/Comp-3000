@@ -70,6 +70,10 @@ SDL_Texture* loadTexture(const char* filename) {
 	return texture;
 }
 
+const char* pickRandomFile(vector<const char*> filenames) {
+	int pos = rand() % filenames.size();
+	return filenames[pos];
+}
 
 
 /*
