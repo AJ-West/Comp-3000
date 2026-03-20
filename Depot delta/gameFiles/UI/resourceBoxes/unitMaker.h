@@ -76,6 +76,7 @@ public:
 			for (int i = 0; i < counts.size(); i++) {
 				rComp->setResourcesCount(i, counts[i] - amounts[i]);
 			}
+			soundEffectEngine->play2D("soundEffects/voice acting/unitsconvoys/spawn.wav");
 			unPause();
 			//should remove box on beginning of transfer
 			toDelete = true;

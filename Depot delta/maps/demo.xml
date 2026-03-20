@@ -22,8 +22,8 @@
         <name>Level Details</name>
         <time>
             <day>1</day>
-            <hour>3</hour>
-            <minute>46</minute>
+            <hour>5</hour>
+            <minute>42</minute>
             <second>20</second>
         </time>
     </layers>
@@ -53,9 +53,9 @@
             <y>608</y>
             <Resources>
                 <Personnel>500</Personnel>
-                <Ammunition>528</Ammunition>
-                <DoS>528</DoS>
-                <Fuel>528</Fuel>
+                <Ammunition>529</Ammunition>
+                <DoS>529</DoS>
+                <Fuel>529</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
