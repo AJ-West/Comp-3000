@@ -37,6 +37,12 @@ class ZombieSpawner;
 using namespace std;
 using namespace tinyxml2;
 
+enum winCon {
+	surviveWaves,
+	clearZombies,
+	resourceCount
+};
+
 class LevelManager {
 public:
 	LevelManager (SDL_Renderer* SDL_Renderer);
@@ -62,6 +68,8 @@ public:
 	void spawnZombie(int type);
 
 	void removeDeadFromLists();
+
+	bool checkWin();
 
 	//getters
 	int getUnitConvoysSize() { return unitConvoys->size(); }
@@ -109,5 +117,9 @@ private:
 	bool paused = false;
 
 	bool depotAlive = true;
+
+	vector<bool> winConditions{ false, false, false }; // survive all waves, clear all zombies, get max resources
+	vector<int> winResources{0,0,0,0,0};
+
 };
 

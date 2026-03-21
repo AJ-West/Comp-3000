@@ -113,6 +113,7 @@ public:
 		swarmTimes.erase(swarmTimes.begin());
 		swarmQuantity.erase(swarmQuantity.begin());
 		swarmDirection.erase(swarmDirection.begin());
+		if (swarmTimes.size() == 0) { swarmsLeft = false; }
 	}
 
 	void render(SDL_Renderer* renderer) {
@@ -124,6 +125,7 @@ public:
 	//getters
 	vector<int> getDayTime() { return dayTime; }
 	bool getSpawnSwarm() { return spawnSwarm; }
+	bool getSwarmsLeft() { return swarmsLeft; }
 	int getSwarmTimeSize() { return swarmTimes.size(); }
 	vector<int> getNextSwarmTime() { return swarmTimes[0]; }
 	int getSpawnQuantity(int type) { return swarmQuantity[type][0]; }
@@ -142,6 +144,7 @@ private:
 	vector<int> swarmDirection;
 
 	bool spawnSwarm = false;
+	bool swarmsLeft = true;
 
 	int winDay;
 

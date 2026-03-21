@@ -32,6 +32,28 @@ LevelManager::~LevelManager()
 {
 }
 
+bool LevelManager::checkWin() {
+    bool win = true;
+    if (winConditions[surviveWaves]) {
+        if (time->getSwarmsLeft()) { return false; }
+        else { cout << "all swarms defeated" << '\n'; }
+    }
+    if (winConditions[clearZombies]) {
+        if (zombieList->size() != 0) { return false; }
+        else { cout << "no zombies left" << '\n'; }
+    }
+    if (winConditions[resourceCount]) {
+        int i = 0;
+        vector<int> depotResources = depot->getComponent<resourceComponent>()->getAllResourceCount();
+        for (auto resource : winResources) {
+            if (resource < depotResources[i]) { return false; }
+            i++;
+        }
+        cout << "resource goal met" << '\n'; 
+    }
+    return win;
+}
+
 //On closing the game saves what is needed to be saved
 void LevelManager::saveOnExit()
 {
@@ -134,6 +156,7 @@ void LevelManager::unpausedRender()
 
     if (frameCount % 30 == 0) {
         removeDeadFromLists();
+        checkWin();
     }
 }
 
