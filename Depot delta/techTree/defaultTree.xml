@@ -258,7 +258,7 @@
             <id>2</id>
             <status>3</status>
             <type>0</type>
-            <modifyValue>1.05</modifyValue>
+            <modifyValue>0.95</modifyValue>
             <cost>50</cost>
             <purchaseAmount>3</purchaseAmount>
             <boughtAmount>0</boughtAmount>

@@ -22,6 +22,7 @@ public:
 		tx = x; ty = y;
 		pathToTarget();
 	};
+	virtual void setFuelUseRate(float rate) { fuelUseRate = rate; }
 
 	void pathToTarget();
 
@@ -33,10 +34,13 @@ public:
 	virtual int getVehicleCapacity() { return 1; };
 
 	virtual void deathSound() { soundEffectEngine->play2D("soundEffects/voice acting/unitsconvoys/death.wav"); }
+	
 
 private:
 	int ID;
 	int maxHealth = 100;
+
+	float fuelUseRate = 1.0;
 
 	vector<const char*> orderVAFiles{"soundEffects/voice acting/unitsconvoys/orders/etds.wav", "soundEffects/voice acting/unitsconvoys/orders/ftd.wav", "soundEffects/voice acting/unitsconvoys/orders/u.wav" };
 };

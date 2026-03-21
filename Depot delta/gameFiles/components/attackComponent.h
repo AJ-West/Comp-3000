@@ -51,7 +51,7 @@ public:
 			auto rComp = owner->getComponent<resourceComponent>();
 			int count = rComp->getResourcesCount(AMMUNITION);
 			if (count > 0) {
-				rComp->setResourcesCount(AMMUNITION, count - 1);
+				rComp->setResourcesCount(AMMUNITION, count - (1*rComp->getResourcesCount(PERSONNEL)*depotTechVal["decreaseAmmoCosts"]));
 				target->takeDamage(owner->getDamage() * rComp->getResourcesCount(PERSONNEL));
 				soundEffectEngine->play2D("soundEffects/units/gunshot.wav");
 				bullets->spawnBullet(owner->getPos(), target->getDimensions());

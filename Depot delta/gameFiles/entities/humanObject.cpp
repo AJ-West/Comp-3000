@@ -12,7 +12,12 @@ void HumanObj::clickAway() { // set target pos to clicked position
 	getMapScaledMousePos(&tx, &ty);
 	pathToTarget();
 	auto rC = getComponent<resourceComponent>();
-	rC->adjustResourceChange(FUEL, -1 * rC->getResourcesCount(PERSONNEL)/ getVehicleCapacity()); // fuel use increase for every 5 units
+	if (getType() == UNIT) {
+		rC->adjustResourceChange(FUEL, -1 * rC->getResourcesCount(PERSONNEL) / getVehicleCapacity() * depotTechVal["decreaseFuelCosts"] * unitTechVal["increaseUnitFuelEfficiency"] * unitTechVal["increaseBasicFuelEfficiency"]); // fuel use increase for every 5 units
+	}
+	else { // if convoy
+		rC->adjustResourceChange(FUEL, -1 * rC->getResourcesCount(PERSONNEL) / getVehicleCapacity() * depotTechVal["decreaseFuelCosts"] * convoyTechVal["increaseConvoyFuelEfficiency"]); // fuel use increase for every 5 units
+	}
 	soundEffectEngine->play2D(pickRandomFile(orderVAFiles));
 }
 
