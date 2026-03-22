@@ -14,6 +14,9 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
 	allObjects->emplace_back(depot);
 
+    winConditions = mapLoader->getWinCons();
+    if (winConditions[WINCON::resourceCount]) { winResources = mapLoader->getWinResources(); }
+
     for (auto zombie : *zombieList) { // needs seperate for each due so can set priorities in nearest component
         zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
         zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
@@ -21,6 +24,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     }
 
     time = new dayCycle(5, mapLoader->getTime(), mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
+
     UI = new levelUI(renderer, "art/UI/level/Level.png", this, time);
 
     spawner = new ZombieSpawner(this);
@@ -34,15 +38,15 @@ LevelManager::~LevelManager()
 
 bool LevelManager::checkWin() {
     bool win = true;
-    if (winConditions[surviveWaves]) {
+    if (winConditions[WINCON::surviveWaves]) {
         if (time->getSwarmsLeft()) { return false; }
         else { cout << "all swarms defeated" << '\n'; }
     }
-    if (winConditions[clearZombies]) {
+    if (winConditions[WINCON::clearZombies]) {
         if (zombieList->size() != 0) { return false; }
         else { cout << "no zombies left" << '\n'; }
     }
-    if (winConditions[resourceCount]) {
+    if (winConditions[WINCON::resourceCount]) {
         int i = 0;
         vector<int> depotResources = depot->getComponent<resourceComponent>()->getAllResourceCount();
         for (auto resource : winResources) {

@@ -75,6 +75,9 @@ const char* pickRandomFile(vector<const char*> filenames) {
 	return filenames[pos];
 }
 
+bool charToBool(const char* value) {
+	return strcmp(value, "1") == 0;
+}
 
 /*
 void getScaledMousePos(float* x, float* y) {

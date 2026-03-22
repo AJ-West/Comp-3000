@@ -29,4 +29,6 @@ SDL_Texture* loadTexture(const char* filename);
 
 const char* pickRandomFile(vector<const char*> filename);
 
+bool charToBool(const char* value);
+
 #endif

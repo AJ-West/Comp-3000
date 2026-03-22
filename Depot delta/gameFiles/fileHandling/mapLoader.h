@@ -38,6 +38,7 @@ public:
 	void loadConvoyUpgrades(XMLElement* layer);
 
 	void loadTilemap(XMLElement* layer);
+	void loadWinCons(XMLElement* layer);
 	void loadTime(XMLElement* layer);
 	void loadEntities(XMLElement* layer);
 
@@ -73,6 +74,8 @@ public:
 	vector<vector<int>> getSwarmQuantity() { return swarmQuantity; }
 	vector<int> getSwarmDirection() { return swarmDirection; }
 	vector<int> getTime() { return time; }
+	vector<bool> getWinCons() { return winConditions; }
+	vector<int> getWinResources() { return winResources; }
 
 
 private:
@@ -91,4 +94,7 @@ private:
 	vector<int> swarmDirection{};
 
 	vector<int> time{ 0,0,0,0 };
+
+	vector<bool> winConditions{ false, false, false }; // survive all waves, clear all zombies, get max resources
+	vector<int> winResources{ 0,0,0,0,0 };
 };

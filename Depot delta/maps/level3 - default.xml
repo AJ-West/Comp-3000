@@ -8,6 +8,18 @@
     </layers>
     <layers eid="32843350">
         <name>Level Details</name>
+        <winCondition>
+            <surviveWaves>1</surviveWaves>
+            <clearZombies>1</clearZombies>
+            <resourceCount>1</resourceCount>
+            <Resources>
+                <Personnel>2000</Personnel>
+                <Ammunition>2000</Ammunition>
+                <DoS>2000</DoS>
+                <Fuel>2000</Fuel>
+                <Scrap>2000</Scrap>
+            </Resources>
+        </winCondition>
         <time>
             <day>0</day>
             <hour>12</hour>

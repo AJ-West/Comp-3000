@@ -37,12 +37,6 @@ class ZombieSpawner;
 using namespace std;
 using namespace tinyxml2;
 
-enum winCon {
-	surviveWaves,
-	clearZombies,
-	resourceCount
-};
-
 class LevelManager {
 public:
 	LevelManager (SDL_Renderer* SDL_Renderer);

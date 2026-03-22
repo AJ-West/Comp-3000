@@ -217,6 +217,12 @@ enum zombieTypes {
 	QUICK
 };
 
+enum WINCON {
+	surviveWaves,
+	clearZombies,
+	resourceCount
+};
+
 struct Vec2 {
 	float x;
 	float y;

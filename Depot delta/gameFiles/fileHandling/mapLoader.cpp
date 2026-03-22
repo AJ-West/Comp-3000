@@ -14,6 +14,7 @@ MapLoader::MapLoader(const char* filename, SDL_Renderer* renderer)
             loadTilemap(layer);
         }
         else if (layerName == "Level Details") {
+            loadWinCons(layer->FirstChildElement("winCondition"));
             loadTime(layer->FirstChildElement("time"));
         }
         else if (layerName == "Swarms") {
@@ -136,6 +137,20 @@ void MapLoader::loadTilemap(XMLElement* layer)
             grid[i][j].walkable = true;
         }
 	}
+}
+
+void MapLoader::loadWinCons(XMLElement* layer) {
+    winConditions[WINCON::surviveWaves] = charToBool(layer->FirstChildElement("surviveWaves")->GetText());
+    winConditions[WINCON::clearZombies] = charToBool(layer->FirstChildElement("clearZombies")->GetText());
+    winConditions[WINCON::resourceCount] = charToBool(layer->FirstChildElement("resourceCount")->GetText());
+    if (winConditions[WINCON::resourceCount] && layer->FirstChildElement("Resources")) {
+        XMLElement* resources = layer->FirstChildElement("Resources");
+        winResources[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
+        winResources[AMMUNITION] = atoi(resources->FirstChildElement("Ammunition")->GetText());
+        winResources[DOS] = atoi(resources->FirstChildElement("DoS")->GetText());
+        winResources[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
+        winResources[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
+    }
 }
 
 void MapLoader::loadTime(XMLElement* layer) {
