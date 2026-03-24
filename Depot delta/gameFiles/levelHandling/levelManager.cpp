@@ -109,9 +109,7 @@ void LevelManager::render()
 
 void LevelManager::unpausedRender()
 {
-    if (tutorial) {
-        checkTutorial(UNITNOAMMO);
-    }
+    checkTutorial(UNITNOAMMO);
 
     time->update();
     mapLoader->renderTileMap(renderer);
