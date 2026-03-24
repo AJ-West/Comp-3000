@@ -220,6 +220,7 @@ void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
     unitConvoys->emplace_back(unitConvoy);
     allObjects->emplace_back(unitConvoy);
     checkTutorial(SELECTINGUNIT);
+    checkTutorial(SELECTINGCONVOY);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
@@ -393,6 +394,22 @@ void LevelManager::checkTutorial(int tutorialValue) {
         paused = true;
         tutorial = true;
         tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::SELECTINGCONVOY:
+        bool foundConvoy = false;
+        int index = 0;
+        for (auto& unit : *unitConvoys) {
+            if (unit->getType() == CONVOY) {
+                break;
+            }
+            index++;
+        }
+        if (foundConvoy) {
+            tManager->changeScene(new SelectingConvoyScreen(this, index));
+            paused = true;
+            tutorial = true;
+            tutorialDone[tutorialValue] = true;
+        }
         break;
     }
 }

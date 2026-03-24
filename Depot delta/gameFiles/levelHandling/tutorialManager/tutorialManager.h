@@ -361,3 +361,39 @@ private:
 	vector<SDL_FRect> textPositions;
 	vector<SDL_FRect> targetPositions;
 };
+
+class SelectingConvoyScreen : public TutorialScreen {
+public:
+	SelectingConvoyScreen(LevelManager* lManager, int cIndex) : TutorialScreen(lManager), index(cIndex) {
+		setUpPositions();
+	}
+	~SelectingConvoyScreen() {}
+
+	virtual void setUpPositions() {
+		vector<shared_ptr<HumanObj>> unitconvoys = *manager->getUnitConvoys();
+		// text 0
+		SDL_FRect target = unitconvoys[index]->getDimensions();
+		targetPositions.emplace_back(target);
+		Vec2 targetCenter = { target.x + target.w / 2, target.y + target.h / 2 };
+		SDL_FRect textPos = { targetCenter.x, targetCenter.y - target.h, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		textPos.x -= textPos.w / 2;
+		textPos.y -= textPos.h;
+		textPositions.emplace_back(textPos);
+
+		// text 1
+		targetPositions.emplace_back(target);
+		textPos = { targetCenter.x, targetCenter.y + target.h, camera.dimen.w / 4 * scaleText(texts[1]), camera.dimen.h / 12 };
+		textPos.x -= textPos.w;
+		textPositions.emplace_back(textPos);
+	}
+
+	virtual vector<string> getTexts() { return texts; };
+	virtual vector<SDL_FRect> getTextPositions() { return textPositions; };
+	virtual vector<SDL_FRect> getTargetPositions() { return targetPositions; };
+
+private:
+	int index = 0;
+	vector<string> texts{ "Move the convoy close to the unit", "Right click to initiate transfer" };
+	vector<SDL_FRect> textPositions;
+	vector<SDL_FRect> targetPositions;
+};
