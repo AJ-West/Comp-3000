@@ -27,9 +27,9 @@
         </winCondition>
         <time>
             <day>0</day>
-            <hour>18</hour>
-            <minute>14</minute>
-            <second>40</second>
+            <hour>12</hour>
+            <minute>17</minute>
+            <second>30</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -53,14 +53,14 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>830</health>
+            <health>1000</health>
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>500</Personnel>
-                <Ammunition>568</Ammunition>
-                <DoS>568</DoS>
-                <Fuel>568</Fuel>
+                <Personnel>475</Personnel>
+                <Ammunition>305</Ammunition>
+                <DoS>505</DoS>
+                <Fuel>505</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -82,15 +82,20 @@
             <art>draftArt/buildings/ammunition.png</art>
         </entities>
         <entities>
-            <name>Basic Zombie</name>
-            <id>2</id>
-            <health>500</health>
-            <x>1287</x>
-            <y>703</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <type>0</type>
-            <sight>500</sight>
+            <name>Basic unit</name>
+            <id>13</id>
+            <health>100</health>
+            <x>1312</x>
+            <y>864</y>
+            <target_x>0</target_x>
+            <target_y>0</target_y>
+            <Resources>
+                <Personnel>25</Personnel>
+                <Ammunition>100</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>0</Scrap>
+            </Resources>
         </entities>
         <entities>
             <name>Basic Zombie</name>
@@ -151,10 +156,10 @@
             <name>Basic Zombie</name>
             <id>8</id>
             <health>500</health>
-            <x>1745</x>
-            <y>907</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <x>1722</x>
+            <y>904</y>
+            <target_x>1344</target_x>
+            <target_y>896</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>

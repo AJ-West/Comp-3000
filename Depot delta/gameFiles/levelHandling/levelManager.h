@@ -79,6 +79,7 @@ public:
 	shared_ptr<DepotObj> getDepot() { return depot; }
 	bool getDepotAlive() { return depotAlive; }
 	bool getTutorialUsed(int value) { return tutorialDone[value]; }
+	bool getTutorial() { return tutorial; }
 
 	//setters
 	void setPaused(bool pause) { paused = pause; }

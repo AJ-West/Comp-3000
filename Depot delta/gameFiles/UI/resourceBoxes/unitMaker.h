@@ -78,6 +78,8 @@ public:
 			}
 			soundEffectEngine->play2D("soundEffects/voice acting/unitsconvoys/spawn.wav");
 			unPause();
+			manager->checkTutorial(SELECTINGUNIT);
+			manager->checkTutorial(SELECTINGCONVOY);
 			//should remove box on beginning of transfer
 			toDelete = true;
 			depot->onClick();

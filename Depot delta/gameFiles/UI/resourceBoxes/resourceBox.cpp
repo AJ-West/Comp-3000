@@ -47,4 +47,6 @@ bool ResourceBox::findClickedElement(float cx, float cy) {
 	return false;
 }
 
-void ResourceBox::unPause() { manager->setPaused(false); }
+void ResourceBox::unPause() { 
+	if (!manager->getTutorial()) { manager->setPaused(false); }
+}

@@ -78,9 +78,13 @@ void LevelManager::handleInput(SDL_Event event)
 {
     if (tutorial) {
         if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-            if (!tManager->getNextTutorial() && (!UI->getBox() && !UI->getTree())) {
+            bool nextTutorial = tManager->getNextTutorial();
+            if (!nextTutorial && !UI->getBox() && !UI->getTree()) {
                 tutorial = false;
                 paused = false;
+            }
+            else if (!nextTutorial) {
+                tutorial = false;
             }
         }
     }
@@ -219,8 +223,6 @@ void LevelManager::pausedRender()
 void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
     unitConvoys->emplace_back(unitConvoy);
     allObjects->emplace_back(unitConvoy);
-    checkTutorial(SELECTINGUNIT);
-    checkTutorial(SELECTINGCONVOY);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
