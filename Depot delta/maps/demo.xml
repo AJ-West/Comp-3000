@@ -27,9 +27,9 @@
         </winCondition>
         <time>
             <day>0</day>
-            <hour>12</hour>
-            <minute>0</minute>
-            <second>0</second>
+            <hour>16</hour>
+            <minute>48</minute>
+            <second>50</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -53,14 +53,14 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>1000</health>
+            <health>865</health>
             <x>1192</x>
             <y>608</y>
             <Resources>
                 <Personnel>500</Personnel>
-                <Ammunition>525</Ammunition>
-                <DoS>525</DoS>
-                <Fuel>525</Fuel>
+                <Ammunition>565</Ammunition>
+                <DoS>565</DoS>
+                <Fuel>565</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>
@@ -85,8 +85,8 @@
             <name>Basic Zombie</name>
             <id>2</id>
             <health>500</health>
-            <x>1200</x>
-            <y>640</y>
+            <x>1287</x>
+            <y>703</y>
             <target_x>1320</target_x>
             <target_y>736</target_y>
             <type>0</type>
