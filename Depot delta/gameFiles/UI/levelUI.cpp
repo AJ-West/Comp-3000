@@ -73,6 +73,7 @@ void levelUI::textInput(SDL_Keycode key) {
 
 void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 	box = new transferBox(manager, { 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, sUnit, sConvoy);
+	manager->checkTutorial(RESOURCETRANSFER);
 }
 
 void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {

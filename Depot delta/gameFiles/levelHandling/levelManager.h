@@ -130,9 +130,6 @@ private:
 							  false, false, 
 							  false,
 							  false,
-							  false, false, false,
-							  false,
-							  false, false,
 							  false };
 };
 

@@ -411,5 +411,23 @@ void LevelManager::checkTutorial(int tutorialValue) {
             tutorialDone[tutorialValue] = true;
         }
         break;
+    case tutorialStages::RESOURCETRANSFER:
+        tManager->changeScene(new ResourceTransferScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::BUILDINGS:
+        tManager->changeScene(new BuildingsScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::WINCONDITION:
+        tManager->changeScene(new BuildingsScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
     }
 }

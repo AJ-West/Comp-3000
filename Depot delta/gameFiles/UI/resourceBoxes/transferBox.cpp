@@ -86,6 +86,7 @@ void transferBox::transferDirectionButtonClicked(UIElement* elem) {
 	unit->getComponent<resourceTransferComponent>()->initiateTransfer(convoy, amounts);
 	soundEffectEngine->play2D(pickRandomFile(initTransferVAFiles));
 	unPause();
+	manager->checkTutorial(BUILDINGS);
 	//should remove transfer box on beginning of transfer
 	toDelete = true;
 }
