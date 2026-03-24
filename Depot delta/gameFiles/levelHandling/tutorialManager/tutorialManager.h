@@ -204,7 +204,7 @@ public:
 	virtual vector<SDL_FRect> getTargetPositions() { return targetPositions; };
 
 private:
-	vector<string> texts{ "Personnel - sclaes strength and resource usage", "Ammunition - reuired to attack zombies", "DoS - not implemented", "Fuel - used for faster movement", "Scrap - used for upgrades at Depot" };
+	vector<string> texts{ "Personnel - scales strength and resource usage", "Ammunition - required to attack zombies", "DoS - not implemented", "Fuel - used for faster movement", "Scrap - used for upgrades at Depot" };
 	vector<SDL_FRect> textPositions;
 	vector<SDL_FRect> targetPositions;
 };
@@ -430,6 +430,47 @@ private:
 	vector<SDL_FRect> targetPositions;
 };
 
+class WinConditionScreen : public TutorialScreen {
+public:
+	WinConditionScreen(LevelManager* lManager) : TutorialScreen(lManager) {
+		setUpPositions();
+	}
+	~WinConditionScreen() {}
+
+	virtual void setUpPositions() {
+		// text 0
+		SDL_FRect target{ camera.dimen.w / 2, 2 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		target.x -= target.w / 2;
+		targetPositions.emplace_back(target);
+		SDL_FRect textPos = target;
+		textPositions.emplace_back(textPos);
+
+		// text 1
+		target = { camera.dimen.w / 2, 3 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		target.x -= target.w / 2;
+		targetPositions.emplace_back(target);
+		textPos = target;
+		textPositions.emplace_back(textPos);
+
+		// text 2
+		target = { camera.dimen.w / 2, 4 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		target.x -= target.w / 2;
+		targetPositions.emplace_back(target);
+		textPos = target;
+		textPositions.emplace_back(textPos);
+	}
+
+	virtual vector<string> getTexts() { return texts; };
+	virtual vector<SDL_FRect> getTextPositions() { return textPositions; };
+	virtual vector<SDL_FRect> getTargetPositions() { return targetPositions; };
+
+private:
+	int index = 0;
+	vector<string> texts{ "Clear the map of zombies", "Survive all waves", "Good Luck" };
+	vector<SDL_FRect> textPositions;
+	vector<SDL_FRect> targetPositions;
+};
+
 class BuildingsScreen : public TutorialScreen {
 public:
 	BuildingsScreen(LevelManager* lManager) : TutorialScreen(lManager) {
@@ -471,45 +512,6 @@ private:
 	vector<SDL_FRect> targetPositions;
 };
 
-class WinConditionScreen : public TutorialScreen {
-public:
-	WinConditionScreen(LevelManager* lManager) : TutorialScreen(lManager) {
-		setUpPositions();
-	}
-	~WinConditionScreen() {}
 
-	virtual void setUpPositions() { 
-		// text 0
-		SDL_FRect target{camera.dimen.w/2, 2*camera.dimen.h/5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
-		target.x -= target.w / 2;
-		targetPositions.emplace_back(target);
-		SDL_FRect textPos = target;
-		textPositions.emplace_back(textPos);
-
-		// text 1
-		target = { camera.dimen.w / 2, 3 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
-		target.x -= target.w / 2;
-		targetPositions.emplace_back(target);
-		textPos = target;
-		textPositions.emplace_back(textPos);
-
-		// text 2
-		target = { camera.dimen.w / 2, 4 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
-		target.x -= target.w / 2;
-		targetPositions.emplace_back(target);
-		textPos = target;
-		textPositions.emplace_back(textPos);
-	}
-
-	virtual vector<string> getTexts() { return texts; };
-	virtual vector<SDL_FRect> getTextPositions() { return textPositions; };
-	virtual vector<SDL_FRect> getTargetPositions() { return targetPositions; };
-
-private:
-	int index = 0;
-	vector<string> texts{ "Clear the map of zombies", "Survive all waves", "Good Luck"};
-	vector<SDL_FRect> textPositions;
-	vector<SDL_FRect> targetPositions;
-};
 
 //to do add tutorial for tech tree

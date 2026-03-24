@@ -78,7 +78,7 @@ void LevelManager::handleInput(SDL_Event event)
 {
     if (tutorial) {
         if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-            if (!tManager->getNextTutorial()) {
+            if (!tManager->getNextTutorial() && (!UI->getBox() && !UI->getTree())) {
                 tutorial = false;
                 paused = false;
             }
@@ -395,7 +395,7 @@ void LevelManager::checkTutorial(int tutorialValue) {
         tutorial = true;
         tutorialDone[tutorialValue] = true;
         break;
-    case tutorialStages::SELECTINGCONVOY:
+    case tutorialStages::SELECTINGCONVOY: {
         bool foundConvoy = false;
         int index = 0;
         for (auto& unit : *unitConvoys) {
@@ -411,6 +411,7 @@ void LevelManager::checkTutorial(int tutorialValue) {
             tutorialDone[tutorialValue] = true;
         }
         break;
+    }
     case tutorialStages::RESOURCETRANSFER:
         tManager->changeScene(new ResourceTransferScreen(this));
         paused = true;

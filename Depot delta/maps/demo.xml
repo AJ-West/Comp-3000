@@ -27,9 +27,9 @@
         </winCondition>
         <time>
             <day>0</day>
-            <hour>16</hour>
-            <minute>48</minute>
-            <second>50</second>
+            <hour>18</hour>
+            <minute>14</minute>
+            <second>40</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -53,14 +53,14 @@
         <entities eid="95492584">
             <name>depot</name>
             <id>1</id>
-            <health>865</health>
+            <health>830</health>
             <x>1192</x>
             <y>608</y>
             <Resources>
                 <Personnel>500</Personnel>
-                <Ammunition>565</Ammunition>
-                <DoS>565</DoS>
-                <Fuel>565</Fuel>
+                <Ammunition>568</Ammunition>
+                <DoS>568</DoS>
+                <Fuel>568</Fuel>
                 <Scrap>500</Scrap>
             </Resources>
         </entities>

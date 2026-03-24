@@ -15,10 +15,12 @@ int main()
         std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
         return 1;
     }
+    soundEffectEngine->setSoundVolume(0.0f);
 
     // where music is from https://bgillick.itch.io/mech need to check if comercial liscence
     musicEngine->play2D("music/wasteland.wav", true); // looped playback
-    musicEngine->setSoundVolume(0.5f);
+    //musicEngine->setSoundVolume(0.5f);
+    musicEngine->setSoundVolume(0.0f);
     
     //initiate the environment
     init_SDL_environment();
