@@ -2,6 +2,7 @@
 
 #include "gameFiles/UI/levelUI.h"
 #include "gameFiles/entities/Zombies/zombieSpawner.h"
+#include "gameFiles/levelHandling/tutorialManager/tutorialManager.h"
 
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
@@ -30,6 +31,13 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     spawner = new ZombieSpawner(this);
 
     handler = new HandleSelected(UI);
+
+    tManager = new TutorialManager();
+    if (level == 0) {
+        tManager->changeScene(new DepotPointScreen(this));
+        paused = true;
+        tutorial = true;
+    }
 }
 
 LevelManager::~LevelManager()
@@ -68,7 +76,17 @@ void LevelManager::saveOnExit()
 // Handles user input
 void LevelManager::handleInput(SDL_Event event)
 {
-    handler->handleInput(event, this);
+    if (tutorial) {
+        if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
+            if (!tManager->getNextTutorial()) {
+                tutorial = false;
+                paused = false;
+            }
+        }
+    }
+    else {
+        handler->handleInput(event, this);
+    }
 }
 
 //Renders the screen
@@ -87,6 +105,10 @@ void LevelManager::render()
 
 void LevelManager::unpausedRender()
 {
+    if (tutorial) {
+        checkTutorial(UNITNOAMMO);
+    }
+
     time->update();
     mapLoader->renderTileMap(renderer);
     //if (spawner->checkIfSpawn()) {
@@ -191,11 +213,13 @@ void LevelManager::pausedRender()
     }
     UI->render();
     depot->renderResources(renderer);
+    tManager->render(renderer);
 }
 
 void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
     unitConvoys->emplace_back(unitConvoy);
     allObjects->emplace_back(unitConvoy);
+    checkTutorial(SELECTINGUNIT);
 }
 
 void LevelManager::addZombie(ZombieObj* zombie) {
@@ -309,7 +333,6 @@ void LevelManager::spawnZombie(int type) {
     addZombie(zombie);
 }
 
-
 int LevelManager::getNextID() {
     int nextID = 1;
     for (auto obj : *allObjects) {
@@ -323,4 +346,53 @@ int LevelManager::getNextID() {
         }
     }
     return nextID;
+}
+
+void LevelManager::checkTutorial(int tutorialValue) {
+    if (level != 0) { return; }
+    if (tutorialDone[tutorialValue]) { return; }
+    switch (tutorialValue) {
+    case tutorialStages::DEPOTPOINT:
+        tManager->changeScene(new DepotPointScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::UNITCREATESCREEN:
+        tManager->changeScene(new UnitCreateScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::RESOURCEPOINT:
+        tManager->changeScene(new ResourcePointScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::SELECTINGUNIT:
+        tManager->changeScene(new SelectingUnitScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    case tutorialStages::UNITNOAMMO: {
+        vector<shared_ptr<HumanObj>> units = *getUnitConvoys();
+        if (units.size() >= 0) {
+            if (units[0]->getComponent<resourceComponent>()->getResourcesCount(AMMUNITION) <= 0) {
+                tManager->changeScene(new UnitNoAmmoScreen(this));
+                paused = true;
+                tutorial = true;
+                tutorialDone[tutorialValue] = true;
+            }
+        }
+        break;
+        }
+    case tutorialStages::CREATECONVOY:
+        tManager->changeScene(new CreateConvoyScreen(this));
+        paused = true;
+        tutorial = true;
+        tutorialDone[tutorialValue] = true;
+        break;
+    }
 }

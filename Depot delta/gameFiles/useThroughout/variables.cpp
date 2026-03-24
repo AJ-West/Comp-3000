@@ -6,8 +6,8 @@ const int frameDelay = 1000/ FPS;
 float deltaTime = 0;
 
 // Screen
-int screenWidth = 1920/2;
-int screenHeight = 1080/2;
+int screenWidth = 1280; //= 1920;
+int screenHeight = 720; //= 1080;
 int ResolutionWidth = screenWidth/2;
 int ResolutionHeight = screenHeight/2;
 

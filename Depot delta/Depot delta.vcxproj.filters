@@ -118,6 +118,9 @@
     <Filter Include="Source Files\gameFiles\entities\buildings">
       <UniqueIdentifier>{46b25afd-d90b-4c29-9368-4c2820f6fd8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameFiles\level handling\tutorialHandler">
+      <UniqueIdentifier>{534735b3-e4c6-4c72-a74a-ad6a9ec8fc61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameFiles\main.cpp">
@@ -218,6 +221,9 @@
     </ClCompile>
     <ClCompile Include="gameFiles\entities\humanObject.cpp">
       <Filter>Source Files\gameFiles\entities\humans</Filter>
+    </ClCompile>
+    <ClCompile Include="gameFiles\levelHandling\tutorialManager\tutorialManager.cpp">
+      <Filter>Source Files\gameFiles\level handling\tutorialHandler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +400,9 @@
     </ClInclude>
     <ClInclude Include="gameFiles\entities\humanObject.h">
       <Filter>Source Files\gameFiles\entities\humans</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFiles\levelHandling\tutorialManager\tutorialManager.h">
+      <Filter>Source Files\gameFiles\level handling\tutorialHandler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

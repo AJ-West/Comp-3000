@@ -33,6 +33,7 @@
 
 class levelUI;
 class ZombieSpawner;
+class TutorialManager;
 
 using namespace std;
 using namespace tinyxml2;
@@ -65,6 +66,8 @@ public:
 
 	bool checkWin();
 
+	void checkTutorial(int tutorial);
+
 	//getters
 	int getUnitConvoysSize() { return unitConvoys->size(); }
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoys() { return unitConvoys; }
@@ -75,9 +78,11 @@ public:
 	int getNextID();
 	shared_ptr<DepotObj> getDepot() { return depot; }
 	bool getDepotAlive() { return depotAlive; }
+	bool getTutorialUsed(int value) { return tutorialDone[value]; }
 
 	//setters
 	void setPaused(bool pause) { paused = pause; }
+	void setTutorialUsed(int value) { tutorialDone[value] = 0; }
 
 private:
 	SDL_Renderer* renderer;
@@ -115,5 +120,18 @@ private:
 	vector<bool> winConditions{ false, false, false }; // survive all waves, clear all zombies, get max resources
 	vector<int> winResources{0,0,0,0,0};
 
+	int level = 0;
+	bool tutorial = false;
+	TutorialManager* tManager;
+	vector<bool> tutorialDone{ false, // same as tutorial stages enum
+							  false, false,
+							  false,
+							  false,
+							  false, false,
+							  false,
+							  false, false, false,
+							  false,
+							  false, false,
+							  false };
 };
 

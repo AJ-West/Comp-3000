@@ -77,6 +77,8 @@ void levelUI::createTransferBox(GameObject* sUnit, GameObject* sConvoy) {
 
 void levelUI::createNewUnitBox(DepotObj* gameDepot, LevelManager* lManager) {
 	box = new unitMaker({ 220.0f * camera.xScale, 20.0f * camera.yScale, 1000.0f * camera.xScale, 1000.0f * camera.yScale }, lManager, gameDepot);
+	if (lManager->getTutorialUsed(UNITCREATESCREEN)) { lManager->checkTutorial(CREATECONVOY); }
+	lManager->checkTutorial(UNITCREATESCREEN);
 }
 
 void levelUI::createTechTree() {
