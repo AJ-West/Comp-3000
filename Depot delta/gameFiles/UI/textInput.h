@@ -62,6 +62,11 @@ public:
 
 	//getters
 	string getText() { 
+		if (!text.empty()) {
+			if (text.back() == '|') {
+				text.pop_back();
+			}
+		}
 		return text;
 	}
 

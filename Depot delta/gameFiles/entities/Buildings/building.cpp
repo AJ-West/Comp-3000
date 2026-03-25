@@ -44,5 +44,5 @@ void BuildingObj::produceResources(bool produce) {
 	rComp->setResourceChange(DOS, change);
 	rComp->setResourceChange(FUEL, change);
 	rComp->setResourceChange(SCRAP, change);
-	rComp->adjustResourceChange(rType, change*2);	
+	rComp->setResourceChange(rType, 3);
 }
