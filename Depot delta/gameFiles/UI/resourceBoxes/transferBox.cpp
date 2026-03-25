@@ -89,4 +89,6 @@ void transferBox::transferDirectionButtonClicked(UIElement* elem) {
 	manager->checkTutorial(BUILDINGS);
 	//should remove transfer box on beginning of transfer
 	toDelete = true;
+
+	selectedElement = elem;
 }

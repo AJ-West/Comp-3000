@@ -389,6 +389,10 @@ public:
 		vector<shared_ptr<HumanObj>> unitconvoys = *manager->getUnitConvoys();
 		// text 0
 		SDL_FRect target = unitconvoys[index]->getDimensions();
+		camera.dimen.x = target.x - camera.dimen.w / 2;
+		camera.dimen.y = target.y - camera.dimen.h / 2;
+		target.x -= camera.dimen.x;
+		target.y -= camera.dimen.y;
 		targetPositions.emplace_back(target);
 		Vec2 targetCenter = { target.x + target.w / 2, target.y + target.h / 2 };
 		SDL_FRect textPos = { targetCenter.x, targetCenter.y - target.h, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
@@ -399,7 +403,7 @@ public:
 		// text 1
 		targetPositions.emplace_back(target);
 		textPos = { targetCenter.x, targetCenter.y + target.h, camera.dimen.w / 4 * scaleText(texts[1]), camera.dimen.h / 12 };
-		textPos.x -= textPos.w;
+		textPos.x -= textPos.w / 2;
 		textPositions.emplace_back(textPos);
 	}
 
@@ -431,11 +435,6 @@ public:
 		textPositions.emplace_back(textPos);
 	}
 
-	virtual TutorialScreen* nextTutorial() {
-		manager->setTutorialUsed(RESOURCEPOINT);
-		return new ResourcePointScreen(manager);
-	}
-
 	virtual vector<string> getTexts() { return texts; };
 	virtual vector<SDL_FRect> getTextPositions() { return textPositions; };
 	virtual vector<SDL_FRect> getTargetPositions() { return targetPositions; };
@@ -455,21 +454,21 @@ public:
 
 	virtual void setUpPositions() {
 		// text 0
-		SDL_FRect target{ camera.dimen.w / 2, 2 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		SDL_FRect target{ camera.dimen.w / 2, 1 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
 		target.x -= target.w / 2;
 		targetPositions.emplace_back(target);
 		SDL_FRect textPos = target;
 		textPositions.emplace_back(textPos);
 
 		// text 1
-		target = { camera.dimen.w / 2, 3 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		target = { camera.dimen.w / 2, 2 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
 		target.x -= target.w / 2;
 		targetPositions.emplace_back(target);
 		textPos = target;
 		textPositions.emplace_back(textPos);
 
 		// text 2
-		target = { camera.dimen.w / 2, 4 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
+		target = { camera.dimen.w / 2, 3 * camera.dimen.h / 5, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
 		target.x -= target.w / 2;
 		targetPositions.emplace_back(target);
 		textPos = target;
@@ -498,6 +497,10 @@ public:
 		vector<shared_ptr<BuildingObj>> buildings = *manager->getBuildingList();
 		// text 0
 		SDL_FRect target = buildings[0]->getDimensions();
+		camera.dimen.x = target.x + target.w/2 - camera.dimen.w / 2;
+		camera.dimen.y = target.y + target.h / 2 - camera.dimen.h / 2;
+		target.x -= camera.dimen.x;
+		target.y -= camera.dimen.y;
 		targetPositions.emplace_back(target);
 		Vec2 targetCenter = { target.x + target.w / 2, target.y + target.h / 2 };
 		SDL_FRect textPos = { targetCenter.x, targetCenter.y - target.h, camera.dimen.w / 4 * scaleText(texts[0]), camera.dimen.h / 12 };
@@ -508,7 +511,7 @@ public:
 		// text 1
 		targetPositions.emplace_back(target);
 		textPos = { targetCenter.x, targetCenter.y + target.h, camera.dimen.w / 4 * scaleText(texts[1]), camera.dimen.h / 12 };
-		textPos.x -= textPos.w;
+		textPos.x -= textPos.w/2;
 		textPositions.emplace_back(textPos);
 	}
 

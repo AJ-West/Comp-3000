@@ -379,7 +379,7 @@ void LevelManager::checkTutorial(int tutorialValue) {
         break;
     case tutorialStages::UNITNOAMMO: {
         vector<shared_ptr<HumanObj>> units = *getUnitConvoys();
-        if (units.size() >= 0) {
+        if (units.size() > 0) {
             if (units[0]->getComponent<resourceComponent>()->getResourcesCount(AMMUNITION) <= 0) {
                 tManager->changeScene(new UnitNoAmmoScreen(this));
                 paused = true;
@@ -399,7 +399,8 @@ void LevelManager::checkTutorial(int tutorialValue) {
         bool foundConvoy = false;
         int index = 0;
         for (auto& unit : *unitConvoys) {
-            if (unit->getType() == CONVOY) {
+            if (typeid(*unit).name() == typeid(ConvoyObj).name()) {
+                foundConvoy = true;
                 break;
             }
             index++;

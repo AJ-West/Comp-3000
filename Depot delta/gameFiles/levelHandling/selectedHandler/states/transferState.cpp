@@ -33,6 +33,10 @@ void TransferState::leftClick() {
 	if (UI->checkClickInput()) {
 		UIElement* selectedElement = UI->getBox()->getSelectedElement();
 		if (typeid(selectedElement).name() == typeid(textInput).name()) { textInput = true; }
+		else if (typeid(*selectedElement).name() == typeid(transferDirectionButton).name()) { // if new unit button
+			UI->deleteBox();
+			deselect();
+		}
 		else { selectedElement->update(); }
 		return;
 	}

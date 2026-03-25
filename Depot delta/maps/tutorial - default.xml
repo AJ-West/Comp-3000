@@ -57,11 +57,11 @@
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>500</Personnel>
-                <Ammunition>504</Ammunition>
-                <DoS>504</DoS>
-                <Fuel>504</Fuel>
-                <Scrap>500</Scrap>
+                <Personnel>1000</Personnel>
+                <Ammunition>1000</Ammunition>
+                <DoS>1000</DoS>
+                <Fuel>1000</Fuel>
+                <Scrap>0</Scrap>
             </Resources>
         </entities>
         <entities eid="95492584">

@@ -27,9 +27,9 @@
         </winCondition>
         <time>
             <day>0</day>
-            <hour>14</hour>
-            <minute>10</minute>
-            <second>20</second>
+            <hour>12</hour>
+            <minute>0</minute>
+            <second>0</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -57,11 +57,11 @@
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>475</Personnel>
-                <Ammunition>308</Ammunition>
-                <DoS>508</DoS>
-                <Fuel>508</Fuel>
-                <Scrap>500</Scrap>
+                <Personnel>1000</Personnel>
+                <Ammunition>1000</Ammunition>
+                <DoS>1000</DoS>
+                <Fuel>1000</Fuel>
+                <Scrap>0</Scrap>
             </Resources>
         </entities>
         <entities eid="95492584">
@@ -82,28 +82,13 @@
             <art>draftArt/buildings/ammunition.png</art>
         </entities>
         <entities>
-            <name>Basic unit</name>
-            <id>13</id>
-            <health>100</health>
-            <x>1312</x>
-            <y>864</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <Resources>
-                <Personnel>25</Personnel>
-                <Ammunition>0</Ammunition>
-                <DoS>0</DoS>
-                <Fuel>0</Fuel>
-                <Scrap>0</Scrap>
-            </Resources>
-            <Transfering>-1</Transfering>
-            <ResourceTransfer>
-                <PersonnelChange>0</PersonnelChange>
-                <AmmunitionChange>0</AmmunitionChange>
-                <DoSChange>0</DoSChange>
-                <FuelChange>0</FuelChange>
-                <ScrapChange>0</ScrapChange>
-            </ResourceTransfer>
+            <name>Basic Zombie</name>
+            <id>2</id>
+            <health>500</health>
+            <x>1200</x>
+            <y>640</y>
+            <type>0</type>
+            <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
@@ -111,8 +96,6 @@
             <health>500</health>
             <x>1797</x>
             <y>1143</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -122,8 +105,6 @@
             <health>500</health>
             <x>1628</x>
             <y>1374</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -133,8 +114,6 @@
             <health>500</health>
             <x>1817</x>
             <y>1100</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -144,8 +123,6 @@
             <health>500</health>
             <x>2009</x>
             <y>1233</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -155,8 +132,15 @@
             <health>500</health>
             <x>2067</x>
             <y>1093</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <type>0</type>
+            <sight>500</sight>
+        </entities>
+        <entities>
+            <name>Basic Zombie</name>
+            <id>8</id>
+            <health>500</health>
+            <x>1745</x>
+            <y>907</y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -166,8 +150,6 @@
             <health>500</health>
             <x>1932</x>
             <y>1107</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -177,8 +159,6 @@
             <health>500</health>
             <x>1916</x>
             <y>924</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -188,8 +168,6 @@
             <health>500</health>
             <x>1786</x>
             <y>1259</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -199,8 +177,6 @@
             <health>500</health>
             <x>1946</x>
             <y>1246</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
