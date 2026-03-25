@@ -44,9 +44,13 @@ void UnitSelected::leftClick() {
 		}		
 	}
 	else { // if clicking on another object
-		selected->onClick();
-		handler->setStateEnum(selectHuman);
-		deselect();
+#ifdef _DEBUG // needs removing and fixing the issue by replacing .get with native shared ptrs to avoid vfptr = 0xddddd
+		if (!isVfptrFreed(selected)) {
+			selected->onClick();
+			handler->setStateEnum(selectHuman);
+			deselect();
+		}
+#endif
 	}
 }
 
