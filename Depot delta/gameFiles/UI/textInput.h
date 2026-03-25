@@ -61,7 +61,9 @@ public:
 	}
 
 	//getters
-	string getText() { return text; }
+	string getText() { 
+		return text;
+	}
 
 private:
 	bool indicator = false;

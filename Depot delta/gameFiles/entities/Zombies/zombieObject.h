@@ -10,7 +10,7 @@
 struct zombieStats {
 	const char* art = "draftArt/basicZombie.png";
 	int movementSpeed = 25;
-	int maxHealth = 500;
+	int maxHealth = 250;
 
 	int damage = 5;
 
@@ -27,7 +27,7 @@ struct zombieStats {
 struct bruteZombieStats {
 	const char* art = "draftArt/bruteZombie.png";
 	int movementSpeed = 15;
-	int maxHealth = 5000;
+	int maxHealth = 2500;
 
 	int damage = 20;
 
@@ -44,7 +44,7 @@ struct bruteZombieStats {
 struct quickZombieStats {
 	const char* art = "draftArt/quickZombie.png";
 	int movementSpeed = 50;
-	int maxHealth = 250;
+	int maxHealth = 150;
 
 	int damage = 10;
 

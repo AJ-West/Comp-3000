@@ -27,7 +27,7 @@ public:
 	virtual void render(SDL_Renderer* renderer) = 0;
 
 	//getters
-	virtual string getText() { return "N/A"; }
+	virtual string getText() { return "0"; }
 	virtual SDL_FRect getSize() { return size; }
 
 protected:
