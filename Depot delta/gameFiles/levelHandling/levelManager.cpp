@@ -134,7 +134,7 @@ void LevelManager::unpausedRender()
         if (building) {
             building->Update();
             if (building->getHovering()) {
-                hoveredUnit = building;
+                hoveredUnit = building.get();
             }
         }
     }
@@ -149,7 +149,7 @@ void LevelManager::unpausedRender()
                 }
             }
             else if (unit->getHovering()) {
-                hoveredUnit = unit;
+                hoveredUnit = unit.get();
             }
         }
     }    

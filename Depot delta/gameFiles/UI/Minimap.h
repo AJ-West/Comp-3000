@@ -62,42 +62,49 @@ public:
 	}
 
 	void calculateMapPositions() {
-		thread objs(&Minimap::objectPositions, this);
-		thread zombs(&Minimap::zombiePositions, this);
+		//thread objs(&Minimap::objectPositions, this);
+		//thread zombs(&Minimap::zombiePositions, this);
 
-		objs.join();
-		zombs.join();
+		//objs.join();
+		//zombs.join();
+		objectPositions();
+		zombiePositions();
 	}
 
 	void objectPositions() {		
 		for (auto obj : *allObjects) {
-			if (obj->getType() == HUMAN) {
-				if (obj->getUnitOrConvoy() == UNIT) {
-					SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+#ifdef _DEBUG // needs removing and fixing the issue by replacing .get with native shared ptrs to avoid vfptr = 0xddddd
+			if (!isVfptrFreed(obj.get())) {
+				if (obj->getType() == HUMAN) {
+					if (obj->getUnitOrConvoy() == UNIT) {
+						SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+					}
+					else {
+						SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
+					}
 				}
-				else {
-					SDL_SetRenderDrawColor(renderer, 255, 150, 0, 255);
+				else if (obj->getType() == BUILDING && obj->getAlive()) {
+					SDL_SetRenderDrawColor(renderer, 0, 150, 255, 255);
 				}
-			}
-			else if (obj->getType() == BUILDING && obj->getAlive()) {
-				SDL_SetRenderDrawColor(renderer, 0, 150, 255, 255);
-			}
-			else if (obj->getType() == BUILDING) {
-				SDL_SetRenderDrawColor(renderer, 150, 150, 255, 255);
-			}
-			else if (obj->getType() == DEPOT) {
-				SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-			}
+				else if (obj->getType() == BUILDING) {
+					SDL_SetRenderDrawColor(renderer, 150, 150, 255, 255);
+				}
+				else if (obj->getType() == DEPOT) {
+					SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+				}
 
-			SDL_FRect dimen = obj->getDimensions();
-			float xProportion = dimen.x / worldWidth;
-			float yProportion = dimen.y / worldHeight;
 
-			float wProportion = dimen.w / worldWidth;
-			float hProportion = dimen.h / worldHeight;
+				SDL_FRect dimen = obj->getDimensions();
+				float xProportion = dimen.x / worldWidth;
+				float yProportion = dimen.y / worldHeight;
 
-			SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , wProportion * innerSize.w, hProportion * innerSize.h };
-			SDL_RenderFillRect(renderer, &icon);
+				float wProportion = dimen.w / worldWidth;
+				float hProportion = dimen.h / worldHeight;
+
+				SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , wProportion * innerSize.w, hProportion * innerSize.h };
+				SDL_RenderFillRect(renderer, &icon);
+			}
+#endif
 		}
 	}
 

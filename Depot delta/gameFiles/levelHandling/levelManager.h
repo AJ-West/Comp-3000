@@ -96,7 +96,7 @@ private:
 	shared_ptr<vector<shared_ptr<BuildingObj>>> buildingList;
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList;
 	shared_ptr<DepotObj> depot;
-	shared_ptr<GameObject> hoveredUnit = nullptr;
+	GameObject* hoveredUnit = nullptr;
 	shared_ptr<BuildingObj> building;
 	shared_ptr<vector<shared_ptr<GameObject>>> allObjects = make_shared<vector<shared_ptr<GameObject>>>();
 

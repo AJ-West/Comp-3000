@@ -50,7 +50,7 @@ public:
 				}
 				if (increase) {
 					if (transferAmount[i] < transferNum) { // if transferNum would transfer more than requested
-						transferNum = transferAmount[i];
+						transferNum = transferAmount[i] - transferNum;
 					}
 					ownerResComp->setResourceChange(i, -transferNum);
 					targetResComp->setResourceChange(i, transferNum);
@@ -106,13 +106,14 @@ public:
 		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
 		float distance = sqrt(dx * dx + dy * dy);
 		//if (distance <= transferDistance) {
-		if (distance <= 1000) {
+		if (distance <= 250) {
 			return true;
 		}
 		return false;
 	}
 
 	void initiateTransfer(GameObject* targetobj, vector<int> toTransfer) {
+		stopTransfer(); // stop transfer at start to stop one convoy being involved in multiple transfers at once
 		target = targetobj;
 		transferAmount = toTransfer;
 
@@ -145,6 +146,16 @@ public:
 	}
 
 	void stopTransfer() {
+		if (owner) {
+			if (owner->getType() == DEPOT || owner->getType() == BUILDING) {
+				owner->produceResources(true);
+			}
+		}
+		if (target) {
+			if (target->getType() == DEPOT || target->getType() == BUILDING) {
+				target->produceResources(true);
+			}
+		}
 		transfering = false;
 		target = nullptr;
 		ownerResComp = nullptr;

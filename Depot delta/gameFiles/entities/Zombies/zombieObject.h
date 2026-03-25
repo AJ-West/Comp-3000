@@ -86,6 +86,7 @@ public:
 		if (frameStart - lastAttackTime >= attackCooldownMS) {
 			if (targetObject->getHealth() <= 0) {
 				targetObject = nullptr;
+				getComponent<nearestComponent>()->setNearestUnit(nullptr);
 				tx = NULL;
 				ty = NULL;
 			}

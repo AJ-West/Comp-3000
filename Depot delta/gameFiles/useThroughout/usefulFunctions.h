@@ -31,4 +31,8 @@ const char* pickRandomFile(vector<const char*> filename);
 
 bool charToBool(const char* value);
 
+#ifdef _DEBUG
+bool isVfptrFreed(const void* obj);
+#endif
+
 #endif

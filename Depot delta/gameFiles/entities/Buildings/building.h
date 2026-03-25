@@ -18,10 +18,18 @@ public:
 
 	virtual void deathsound() { soundEffectEngine->play2D("soundEffects/voice acting/buildings/destroyed/bd.wav"); }
 
+	virtual void produceResources(bool produce);
+
 	//getters
 	int getBType() { return rType; }
 	virtual int getID() { return id; }
 	virtual int getType() { return BUILDING; }
+
+	//setters
+	virtual void setAlive(bool life) { 
+		alive = life;
+		produceResources(life);
+	}
 
 private:
 	int id;

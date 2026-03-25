@@ -1,7 +1,7 @@
 #include "gameFiles/entities/Buildings/building.h"
 
 BuildingObj::BuildingObj(int x, int y, int width, int height, int health, bool used, int type, int ID) : GameObject(x, y, width, height, health), rType(type), id(ID) {
-	setAlive(used);
+	alive = used;
 }
 
 //update all components
@@ -31,4 +31,18 @@ void BuildingObj::renderHover(SDL_Renderer* renderer) {
 		SDL_FRect tSize{ 1254.0f * camera.xScale, 60.0f * camera.yScale, 182.0f * camera.xScale, 48.0f * camera.yScale };
 		rComp->renderResources(renderer, tSize);
 	}
+}
+
+void BuildingObj::produceResources(bool produce) {
+	auto rComp = getComponent<resourceComponent>();
+	int change = -1;
+	if (produce) {
+		change = 1;
+	}
+	rComp->setResourceChange(PERSONNEL, change);
+	rComp->setResourceChange(AMMUNITION, change);
+	rComp->setResourceChange(DOS, change);
+	rComp->setResourceChange(FUEL, change);
+	rComp->setResourceChange(SCRAP, change);
+	rComp->adjustResourceChange(rType, change*2);	
 }

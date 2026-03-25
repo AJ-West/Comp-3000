@@ -8,7 +8,7 @@
 class attackComponent : public Component {// renderers the object
 public:
 	virtual void update(GameObject* owner) { // render the current frame
-		if (target == nullptr) { checkRange(); }
+		if (target.get() == nullptr) { checkRange(); }
 		else { 
 			if (checkResources()) {
 				bullets->update();
@@ -26,9 +26,9 @@ public:
 					if (potTarget->getAlive()) { // without will target the zombie it just killed again
 						float distance = getDistance(own, potTarget->getPos());
 						if (distance < targetDistance && distance < attackRange) {
-							target = potTarget.get();
+							target = potTarget;
 							targetDistance = distance;
-							owner->setTargetObject(target);
+							owner->setTargetObject(target.get());
 							cout << "firing" << '\n';
 							return;
 						}
@@ -50,7 +50,7 @@ public:
 			lastAttackTime = frameStart;
 			auto rComp = owner->getComponent<resourceComponent>();
 			int count = rComp->getResourcesCount(AMMUNITION);
-			if (count > 0) {
+			if (count > 0 && target) {
 				rComp->setResourcesCount(AMMUNITION, count - (1*rComp->getResourcesCount(PERSONNEL)*depotTechVal["decreaseAmmoCosts"]));
 				target->takeDamage(owner->getDamage() * rComp->getResourcesCount(PERSONNEL));
 				soundEffectEngine->play2D("soundEffects/units/gunshot.wav");
@@ -63,6 +63,7 @@ public:
 				}
 			}
 			else {
+				target = nullptr;
 				owner->setAttacking(false);
 			}
 		}
@@ -99,7 +100,7 @@ private:
 	int attackCooldownMS = 60;
 	int bulletCooldownMS = 12;
 	shared_ptr<vector<shared_ptr<ZombieObj>>> targets;
-	ZombieObj* target = nullptr;
+	shared_ptr<ZombieObj> target = nullptr;
 	bulletHandler* bullets = new bulletHandler();
 
 	float targetDistance = INT_MAX;

@@ -105,6 +105,15 @@ public:
 		}
 	}
 
+	void produceResources(bool produce) {
+		auto rComp = getComponent<resourceComponent>();
+		rComp->setResourceChange(PERSONNEL, 1);
+		rComp->setResourceChange(AMMUNITION, 1 * depotTechVal["ammoProductionIncrease"]);
+		rComp->setResourceChange(DOS, 1 * depotTechVal["dosProductionIncrease"]);
+		rComp->setResourceChange(FUEL, 1 * depotTechVal["fuelProductionIncrease"]);
+		rComp->setResourceChange(SCRAP, 1);
+	}
+
 	virtual void underAttack() {
 		soundEffectEngine->play2D(pickRandomFile(underAttackAudio));
 	}

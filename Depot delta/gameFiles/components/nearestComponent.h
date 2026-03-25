@@ -24,6 +24,9 @@ public:
 
 	bool checkForClosestUnit() {
 		bool found = false;
+		if (nearestUnit) {
+			if (!nearestUnit->getAlive()) { nearestUnit = nullptr; }
+		}
 		for (auto unit : *nearbyUnits) {
 			float dist = distanceToUnit(unit.get());
 			if (dist <= sightDistance) {
@@ -97,6 +100,12 @@ public:
 	}
 	void setDepot(DepotObj* dDepot) {depot = dDepot;}
 	void setSightDistance(float dist) { sightDistance = dist; }
+	void setNearestUnit(GameObject* unit) { 
+		nearestUnit = unit;
+		if (!nearestUnit) {
+			nearbyTarget = false;
+		}
+	}
 
 	//getters
 	float getSightDistance() { return sightDistance; }

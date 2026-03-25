@@ -345,6 +345,11 @@ void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
     depot->AddComponent(make_shared<resourceComponent>(depot, max, count, loadResourceTextures()));
+    auto rComp = depot->getComponent<resourceComponent>();
+    rComp->setResourceChange(PERSONNEL, 1);
+    rComp->setResourceChange(AMMUNITION, 1);
+    rComp->setResourceChange(DOS, 1);
+    rComp->setResourceChange(FUEL, 1);
 }
 
 void MapLoader::loadBuilding(XMLElement* entity) {
@@ -357,6 +362,15 @@ void MapLoader::loadBuilding(XMLElement* entity) {
     int type = atoi(entity->FirstChildElement("type")->GetText());
     BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type, atoi(entity->FirstChildElement("id")->GetText()));
     addBuildingComponents(building, entity);
+    if (alive) {
+        auto rComp = building->getComponent<resourceComponent>();
+        rComp->adjustResourceChange(PERSONNEL, 1);
+        rComp->adjustResourceChange(AMMUNITION, 1);
+        rComp->adjustResourceChange(DOS, 1);
+        rComp->adjustResourceChange(FUEL, 1);
+        rComp->adjustResourceChange(SCRAP, 1);
+        rComp->adjustResourceChange(type, 2);
+    }
     buildingList->emplace_back(building);
 }
 

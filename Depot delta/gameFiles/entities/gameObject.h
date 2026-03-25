@@ -106,6 +106,8 @@ public:
 	virtual void updateTargets(vector<ZombieObj*> list) {};
 	virtual void updateTargets(vector<GameObject*> list) {};
 
+	virtual void produceResources(bool produce) {}
+
 	// Pure virtual functions
 	virtual void renderHover(SDL_Renderer* renderer) = 0;
 	virtual void clickAway() { cout << "clickAway"; }; // used for when clicking away from the selected object
@@ -128,7 +130,7 @@ public:
 	void setDimensions(SDL_FRect newSize) { size = newSize; }
 	void setHovering(bool hover) { hovering = hover; }
 	void setAttacking(bool attack) { attacking = attack; }
-	void setAlive(bool life) { alive = life; }
+	virtual void setAlive(bool life) { alive = life; }
 
 	//virtual getters
 	virtual Vec2 getTargetPos() { return Vec2{NULL, NULL}; };

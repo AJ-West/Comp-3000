@@ -79,6 +79,14 @@ bool charToBool(const char* value) {
 	return strcmp(value, "1") == 0;
 }
 
+#ifdef _DEBUG
+bool isVfptrFreed(const void* obj) {
+	if (!obj) return false; // Null check
+	const void* vfptr = *reinterpret_cast<const void* const*>(obj);
+	return reinterpret_cast<uintptr_t>(vfptr) == 0xDDDDDDDDDDDDDDDDULL;
+}
+#endif
+
 /*
 void getScaledMousePos(float* x, float* y) {
 	float mx = 0, my = 0;
