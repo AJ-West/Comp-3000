@@ -26,10 +26,10 @@
             <resourceCount>0</resourceCount>
         </winCondition>
         <time>
-            <day>0</day>
-            <hour>19</hour>
-            <minute>54</minute>
-            <second>30</second>
+            <day>1</day>
+            <hour>0</hour>
+            <minute>45</minute>
+            <second>40</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -57,7 +57,7 @@
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>1018</Personnel>
+                <Personnel>970</Personnel>
                 <Ammunition>1000</Ammunition>
                 <DoS>1000</DoS>
                 <Fuel>1000</Fuel>
@@ -67,28 +67,36 @@
         <entities eid="95492584">
             <name>Building</name>
             <id>2</id>
-            <health>1000</health>
+            <health>0</health>
             <x>1700</x>
             <y>1100</y>
             <type>1</type>
-            <alive>0</alive>
+            <alive>1</alive>
             <Resources>
-                <Personnel>0</Personnel>
+                <Personnel>25</Personnel>
                 <Ammunition>0</Ammunition>
                 <DoS>0</DoS>
                 <Fuel>0</Fuel>
                 <Scrap>0</Scrap>
             </Resources>
             <art>draftArt/buildings/ammunition.png</art>
+            <Transfering>-1</Transfering>
+            <ResourceTransfer>
+                <PersonnelChange>0</PersonnelChange>
+                <AmmunitionChange>0</AmmunitionChange>
+                <DoSChange>0</DoSChange>
+                <FuelChange>0</FuelChange>
+                <ScrapChange>0</ScrapChange>
+            </ResourceTransfer>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>3</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -96,10 +104,10 @@
             <name>Basic Zombie</name>
             <id>4</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -107,10 +115,10 @@
             <name>Basic Zombie</name>
             <id>5</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -118,10 +126,10 @@
             <name>Basic Zombie</name>
             <id>6</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -129,10 +137,10 @@
             <name>Basic Zombie</name>
             <id>7</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -140,10 +148,10 @@
             <name>Basic Zombie</name>
             <id>8</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -151,10 +159,10 @@
             <name>Basic Zombie</name>
             <id>9</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -162,10 +170,10 @@
             <name>Basic Zombie</name>
             <id>10</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -173,10 +181,10 @@
             <name>Basic Zombie</name>
             <id>11</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
@@ -184,10 +192,10 @@
             <name>Basic Zombie</name>
             <id>12</id>
             <health>1</health>
-            <x>1570</x>
-            <y>931</y>
-            <target_x>1602.3485</target_x>
-            <target_y>963.38385</target_y>
+            <x>1307</x>
+            <y>836</y>
+            <target_x>1320</target_x>
+            <target_y>736</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>

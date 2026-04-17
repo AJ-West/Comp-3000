@@ -92,7 +92,7 @@ public:
 				ty = NULL;
 			}
 			else {
-				targetObject.lock().get()->takeDamage(getZombieDamage());
+				targetObject.lock()->takeDamage(getZombieDamage());
 				lastAttackTime = frameStart;
 				attacking = true;
 			}
