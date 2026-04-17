@@ -50,7 +50,7 @@ public:
 	void unpausedRender();
 	void pausedRender();
 
-	void addUnitConvoy(HumanObj* unitConvoy);
+	void addUnitConvoy(weak_ptr<HumanObj> unitConvoy);
 	void addZombie(ZombieObj* zombie);
 
 	//Handle game zoom

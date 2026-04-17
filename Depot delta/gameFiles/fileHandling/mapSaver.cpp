@@ -50,8 +50,13 @@ void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, v
                 GameObject* obj = findObject(allObjects, atoi(entity->FirstChildElement("id")->GetText()));
                 if (name == "Basic unit" || name == "Basic Convoy") {
                     if(obj) {
-                        saveUnit(entity, obj);
-                        IDInUse.emplace_back(atoi(entity->FirstChildElement("id")->GetText()));
+                        if (obj->getAlive() && !(obj->getHealth() <= 0)) {
+                            saveUnit(entity, obj);
+                            IDInUse.emplace_back(atoi(entity->FirstChildElement("id")->GetText()));
+                        }
+                        else {
+                            deleteEntity = entity;
+                        }
                     }
                     else {
                         deleteEntity = entity;
@@ -78,7 +83,7 @@ void MapSaver::saveFile(shared_ptr<vector<shared_ptr<GameObject>>> allObjects, v
                 if (it != IDInUse.end()) {
                     found = true;
                 }
-                if (!found) {
+                if (!found && unit.get()->getHealth() > 0) {
                     saveNewUnit(layer, unit.get());
                 }
             }
@@ -101,10 +106,12 @@ void MapSaver::saveTime(dayCycle* time, XMLElement* entity) {
 
 void MapSaver::saveUnit(XMLElement* entity, GameObject* unit)
 {
-    saveHealth(entity, unit);
-	saveMovement(entity, unit);
-    saveResources(entity, unit);
-    saveResourceTransfer(entity, unit);
+    if (unit->getAlive() && unit->getHealth() > 0) {
+        saveHealth(entity, unit);
+        saveMovement(entity, unit);
+        saveResources(entity, unit);
+        saveResourceTransfer(entity, unit);
+    }
 }
 
 void MapSaver::saveNewUnit(XMLElement* layer, GameObject* unit) {

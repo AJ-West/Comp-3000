@@ -218,7 +218,7 @@ void LevelManager::pausedRender()
     tManager->render(renderer);
 }
 
-void LevelManager::addUnitConvoy(HumanObj* unitConvoy) {
+void LevelManager::addUnitConvoy(weak_ptr<HumanObj> unitConvoy) {
     unitConvoys->emplace_back(unitConvoy);
     allObjects->emplace_back(unitConvoy);
 }

@@ -126,7 +126,7 @@ public:
 		auto unit = make_shared<UnitObj>(pos.x, pos.y, unitStats.width, unitStats.height, unitStats.maxHealth, manager->getNextID());
 		addUnitComponents(unit, amounts);
 		unit.get()->updateTargets(manager->getZombieList());
-		manager->addUnitConvoy(unit.get()); // might not work 
+		manager->addUnitConvoy(unit); // might not work 
 	}
 
 	void addUnitComponents(weak_ptr<UnitObj> unit, vector<int> amounts) {
@@ -146,7 +146,7 @@ public:
 		pos.y = pos.y + pos.h;
 		auto convoy = make_shared<ConvoyObj>(pos.x, pos.y, convoyStats.width, convoyStats.height, 100, manager->getNextID());
 		addConvoyComponents(convoy, amounts);
-		manager->addUnitConvoy(convoy.get()); // might not work
+		manager->addUnitConvoy(convoy); // might not work
 	}
 
 	void addConvoyComponents(weak_ptr<ConvoyObj> convoy, vector<int> amounts) {

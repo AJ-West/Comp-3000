@@ -73,8 +73,6 @@ public:
 
 	void objectPositions() {		
 		for (auto obj : *allObjects) {
-#ifdef _DEBUG // needs removing and fixing the issue by replacing .get with native shared ptrs to avoid vfptr = 0xddddd
-			if (!isVfptrFreed(obj.get())) {
 				if (obj->getType() == HUMAN) {
 					if (obj->getUnitOrConvoy() == UNIT) {
 						SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
@@ -103,8 +101,6 @@ public:
 
 				SDL_FRect icon{ innerSize.x + xProportion * innerSize.w, innerSize.y + yProportion * innerSize.h , wProportion * innerSize.w, hProportion * innerSize.h };
 				SDL_RenderFillRect(renderer, &icon);
-			}
-#endif
 		}
 	}
 
