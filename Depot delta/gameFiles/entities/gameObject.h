@@ -24,12 +24,13 @@ class ZombieObj;
 
 class Component {
 public:
-	virtual void update(GameObject* owner) = 0;//to be implemented by derived components
+	virtual void update() = 0;//to be implemented by derived components
 
-	template <typename T> Component(T* obj) : owner(obj) {};
+	//template <typename T> Component(T* obj) : owner(obj) {};
+	Component(weak_ptr<GameObject> obj) : owner(obj) {};
 	virtual ~Component() = default;
 protected:
-	GameObject* owner;
+	weak_ptr<GameObject> owner;
 };
 
 class GameObject { 
@@ -58,7 +59,7 @@ public:
 	//update all components
 	virtual void Update() {
 		for (auto& pair : components) {
-			pair.second->update(this);
+			pair.second->update();
 		}
 		if (justAttacked) {
 			if (frameStart - safeDelay >= lastDamaged) {
@@ -100,8 +101,9 @@ public:
 	virtual void underAttack() {}
 	virtual void deathSound() {}
 
-	GameObject* getTargetObject() { return targetObject; }
-	virtual void setTargetObject(GameObject* object) { targetObject = object; }
+	weak_ptr<GameObject> getTargetObject() { return targetObject; }
+	virtual void setTargetObject(weak_ptr<GameObject> object) { targetObject = object; }
+	virtual void removeTargetObject() { targetObject.reset(); }
 
 	virtual void updateTargets(vector<ZombieObj*> list) {};
 	virtual void updateTargets(vector<GameObject*> list) {};
@@ -160,7 +162,7 @@ protected:
 	Uint32 lastDamaged = 0;
 	Uint32 safeDelay = 5000; // 5 seconds
 
-	GameObject* targetObject = nullptr;
+	weak_ptr<GameObject> targetObject;
 
 private:
 	bool isHover = false;

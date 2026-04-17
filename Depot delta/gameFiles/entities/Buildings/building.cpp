@@ -8,12 +8,12 @@ BuildingObj::BuildingObj(int x, int y, int width, int height, int health, bool u
 void BuildingObj::Update() {
 	if (alive) {
 		for (auto& pair : getComponents()) {
-			pair.second->update(this);
+			pair.second->update();
 		}
 	}
 	else {
-		getComponent<renderComponent>()->update(this);
-		getComponent<buttonComponent>()->update(this);
+		getComponent<renderComponent>()->update();
+		getComponent<buttonComponent>()->update();
 	}
 }
 

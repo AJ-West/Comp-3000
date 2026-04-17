@@ -123,13 +123,13 @@ public:
 		//Spawn just below the depot in the center
 		pos.x = pos.x + pos.w/2 - (30 / 1440.0f * camera.dimen.h);
 		pos.y = pos.y + pos.h;
-		UnitObj* unit = new UnitObj(pos.x, pos.y, unitStats.width, unitStats.height, unitStats.maxHealth, manager->getNextID());
+		auto unit = make_shared<UnitObj>(pos.x, pos.y, unitStats.width, unitStats.height, unitStats.maxHealth, manager->getNextID());
 		addUnitComponents(unit, amounts);
-		unit->updateTargets(manager->getZombieList());
-		manager->addUnitConvoy(unit);
+		unit.get()->updateTargets(manager->getZombieList());
+		manager->addUnitConvoy(unit.get()); // might not work 
 	}
 
-	void addUnitComponents(UnitObj* unit, vector<int> amounts) {
+	void addUnitComponents(weak_ptr<UnitObj> unit, vector<int> amounts) {
 		unitStats.rCount[PERSONNEL] = amounts[PERSONNEL];
 		unitStats.rCount[AMMUNITION] = amounts[AMMUNITION];
 		unitStats.rCount[DOS] = amounts[DOS];
@@ -144,12 +144,12 @@ public:
 		//Spawn just below the depot in the center
 		pos.x = pos.x + pos.w / 2 - (30 / 1440.0f * camera.dimen.h);
 		pos.y = pos.y + pos.h;
-		ConvoyObj* convoy = new ConvoyObj(pos.x, pos.y, convoyStats.width, convoyStats.height, 100, manager->getNextID());
+		auto convoy = make_shared<ConvoyObj>(pos.x, pos.y, convoyStats.width, convoyStats.height, 100, manager->getNextID());
 		addConvoyComponents(convoy, amounts);
-		manager->addUnitConvoy(convoy);
+		manager->addUnitConvoy(convoy.get()); // might not work
 	}
 
-	void addConvoyComponents(ConvoyObj* convoy, vector<int> amounts) {
+	void addConvoyComponents(weak_ptr<ConvoyObj> convoy, vector<int> amounts) {
 		convoyStats.rCount[PERSONNEL] = amounts[PERSONNEL];
 		convoyStats.rCount[AMMUNITION] = amounts[AMMUNITION];
 		convoyStats.rCount[DOS] = amounts[DOS];

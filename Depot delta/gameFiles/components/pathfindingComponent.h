@@ -3,7 +3,7 @@
 
 class pathfindingComponent : public Component { // flow field pathfinding
 public:
-	virtual void update(GameObject* owner) {}
+	virtual void update() {}
 
 	bool computeFlowField(Vec2 target, Vec2 origin) {
         // Reset grid
@@ -96,7 +96,7 @@ public:
 		return grid[position.y][position.x].direction;
 	}
 
-	pathfindingComponent(GameObject* obj, vector<vector<Tile>> worldGrid) : Component(obj), mGrid(worldGrid){}
+	pathfindingComponent(weak_ptr<GameObject> obj, vector<vector<Tile>> worldGrid) : Component(obj), mGrid(worldGrid){}
 	virtual ~pathfindingComponent() {}
 
 private:

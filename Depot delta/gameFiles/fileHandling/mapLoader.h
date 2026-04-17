@@ -53,10 +53,10 @@ public:
 	void loadAllTransfer(XMLElement* layer);
 	void loadTransfer(XMLElement* entity);
 
-	void addUnitComponents(UnitObj* unit, XMLElement* entity);
-	void addConvoyComponents(ConvoyObj* convoy, XMLElement* entity);
-	void addDepotComponents(DepotObj* unit, XMLElement* entity);
-	void addBuildingComponents(BuildingObj* building, XMLElement* entity);
+	void addUnitComponents(weak_ptr<UnitObj> unit, XMLElement* entity);
+	void addConvoyComponents(weak_ptr<ConvoyObj> convoy, XMLElement* entity);
+	void addDepotComponents(XMLElement* entity);
+	void addBuildingComponents(weak_ptr<BuildingObj> building, XMLElement* entity);
 
 	void loadTechTree();
 	void loadDepotTech(XMLElement* layer);
@@ -69,7 +69,7 @@ public:
 	shared_ptr<vector<shared_ptr<HumanObj>>> getUnitConvoyList() { return unitConvoyList; }
 	shared_ptr<vector<shared_ptr<BuildingObj>>> getBuildingList() { return buildingList; }
 	shared_ptr<vector<shared_ptr<ZombieObj>>> getZombieList() { return zombieList; }
-	DepotObj* getDepot() { return depot; }
+	shared_ptr<DepotObj> getDepot() { return depot; }
 	vector<vector<int>> getSwarmTimes() { return swarmTimes; }
 	vector<vector<int>> getSwarmQuantity() { return swarmQuantity; }
 	vector<int> getSwarmDirection() { return swarmDirection; }
@@ -84,7 +84,7 @@ private:
 
 	SDL_Texture* tilemapTexture;
 
-	DepotObj* depot;
+	shared_ptr<DepotObj> depot;
 	shared_ptr<vector<shared_ptr<HumanObj>>> unitConvoyList = make_shared<vector<shared_ptr<HumanObj>>>();
 	shared_ptr<vector<shared_ptr<BuildingObj>>> buildingList = make_shared<vector<shared_ptr<BuildingObj>>>();
 	shared_ptr<vector<shared_ptr<ZombieObj>>> zombieList = make_shared<vector<shared_ptr<ZombieObj>>>();

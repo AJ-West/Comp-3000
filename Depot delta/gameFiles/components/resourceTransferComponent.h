@@ -5,7 +5,7 @@
 
 class resourceTransferComponent : public Component {// renderers the object
 public:
-	virtual void update(GameObject* owner) { // render the current frame
+	virtual void update() { // render the current frame
 		if (transfering) { 
 			renderTransferIndicator();
 			checkTime();
@@ -89,7 +89,7 @@ public:
 	}
 
 	bool checkDistance() {
-		SDL_FRect ownerRect = owner->getSize();
+		SDL_FRect ownerRect = owner.lock()->getSize();
 		SDL_FRect targetRect = target->getSize();
 		float dx = (ownerRect.x + ownerRect.w / 2) - (targetRect.x + targetRect.w / 2);
 		float dy = (ownerRect.y + ownerRect.h / 2) - (targetRect.y + targetRect.h / 2);
@@ -130,7 +130,7 @@ public:
 		//TO-DO: transfer resources between depot and convoy
 		if (checkDistance()) {
 			transfering = true;
-			ownerResComp = owner->getComponent<resourceComponent>();
+			ownerResComp = owner.lock()->getComponent<resourceComponent>();
 			targetResComp = target->getComponent<resourceComponent>();
 			cout << "Initiating resource transfer" << endl;
 		}
@@ -146,9 +146,9 @@ public:
 	}
 
 	void stopTransfer() {
-		if (owner) {
-			if (owner->getType() == DEPOT || owner->getType() == BUILDING) {
-				owner->produceResources(true);
+		if (owner.lock().get()) {
+			if (owner.lock()->getType() == DEPOT || owner.lock()->getType() == BUILDING) {
+				owner.lock()->produceResources(true);
 			}
 		}
 		if (target) {
@@ -165,14 +165,14 @@ public:
 
 	void renderTransferArea() {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 100); // Green color
-		SDL_FRect ownerRect = owner->getSize();
+		SDL_FRect ownerRect = owner.lock()->getSize();
 		SDL_FRect indicatorRect = { ownerRect.x + ownerRect.w / 2 - transferDistance / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - transferDistance / 2 - camera.dimen.y, transferDistance, transferDistance };
 		SDL_RenderFillRect(renderer, &indicatorRect);
 	}
 
 	void renderTransferIndicator() {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
-		SDL_FRect ownerRect = owner->getSize();
+		SDL_FRect ownerRect = owner.lock()->getSize();
 		SDL_FRect targetRect = target->getSize();
 		SDL_RenderLine(renderer, ownerRect.x + ownerRect.w / 2 - camera.dimen.x, ownerRect.y + ownerRect.h / 2 - camera.dimen.y, targetRect.x + targetRect.w / 2 - camera.dimen.x, targetRect.y + targetRect.h / 2 - camera.dimen.y);
 	}
@@ -182,7 +182,7 @@ public:
 	bool getTransfering() { return transfering; }
 	int getTransferAmount(int index) { return transferAmount[index]; }
 
-	resourceTransferComponent(GameObject* obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
+	resourceTransferComponent(weak_ptr<GameObject> obj, SDL_Renderer* SDL_Renderer, float distance, vector<int> resourceTransferRate) : Component(obj), renderer(SDL_Renderer), transferDistance(distance), transferRate(resourceTransferRate) {	}
 	virtual ~resourceTransferComponent() {}
 private:
 	GameObject* target = nullptr;

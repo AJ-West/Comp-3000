@@ -6,12 +6,12 @@ using namespace std;
 
 class buttonComponent: public Component{
 public:
-	void update(GameObject* owner) override {
-		owner->setHovering(isWithinRect());
+	void update() override {
+		owner.lock()->setHovering(isWithinRect());
 	}	
 
 	bool isWithinRect() {
-		SDL_FRect rect = owner->getDimensions();
+		SDL_FRect rect = owner.lock()->getDimensions();
 		float x, y;
 		getMapScaledMousePos(&x, &y);
 		if (x < rect.x) return false;
@@ -21,6 +21,6 @@ public:
 		return true;
 	}
 
-	buttonComponent(GameObject* obj) :Component(obj) {}
+	buttonComponent(weak_ptr<GameObject> obj) :Component(obj) {}
 	~buttonComponent() {}
 };

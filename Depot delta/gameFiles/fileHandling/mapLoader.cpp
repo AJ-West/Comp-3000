@@ -233,14 +233,14 @@ void MapLoader::loadUnit(XMLElement* entity)
     int width = unitStats.width; // number of tiles
     int height = unitStats.height;
     auto unit = make_shared<UnitObj>(x, y, width, height, health, id);
-    addUnitComponents(unit.get(), entity);
+    addUnitComponents(unit, entity);
     if (entity->FirstChildElement("target_x")) {
         unit->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
     }
     unitConvoyList->emplace_back(unit);
 }
 
-void MapLoader::addUnitComponents(UnitObj* unit, XMLElement* entity) {
+void MapLoader::addUnitComponents(weak_ptr<UnitObj> unit, XMLElement* entity) {
     if (entity->FirstChildElement("Resources")) {
 		XMLElement* resources = entity->FirstChildElement("Resources");
         unitStats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
@@ -260,7 +260,7 @@ void MapLoader::loadConvoy(XMLElement* entity)
     int id = atoi(entity->FirstChildElement("id")->GetText());
     int width = convoyStats.width; // number of tiles
     int height = convoyStats.height;
-    ConvoyObj* convoy = new ConvoyObj(x, y, width, height, health, id);
+    auto convoy = make_shared<ConvoyObj>(x, y, width, height, health, id);
     addConvoyComponents(convoy, entity);
     if (entity->FirstChildElement("target_x")) {
         convoy->setTarget(atoi(entity->FirstChildElement("target_x")->GetText()), atoi(entity->FirstChildElement("target_y")->GetText()));
@@ -268,7 +268,7 @@ void MapLoader::loadConvoy(XMLElement* entity)
     unitConvoyList->emplace_back(convoy);
 }
 
-void MapLoader::addConvoyComponents(ConvoyObj* convoy, XMLElement* entity) {
+void MapLoader::addConvoyComponents(weak_ptr<ConvoyObj> convoy, XMLElement* entity) {
     if (entity->FirstChildElement("Resources")) {
         XMLElement* resources = entity->FirstChildElement("Resources");
         convoyStats.rCount[PERSONNEL] = atoi(resources->FirstChildElement("Personnel")->GetText());
@@ -292,24 +292,24 @@ void MapLoader::loadZombie(XMLElement* entity)
     if (entity->FirstChildElement("sight")) {
         sight = atoi(entity->FirstChildElement("sight")->GetText());
     }
-    ZombieObj* zombie;
+    shared_ptr<ZombieObj> zombie;
     int type = atoi(entity->FirstChildElement("type")->GetText());
     switch (type) {
     case BRUTE: {
         bruteZombieStats stats;
-        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        zombie = make_shared<ZombieObj>(x, y, stats.size, stats.size, stats.maxHealth, id, type);
         stats.addComponents(zombie, sight); // covers size of map
         break;
     }
     case QUICK: {
         quickZombieStats stats;
-        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        zombie = make_shared<ZombieObj>(x, y, stats.size, stats.size, stats.maxHealth, id, type);
         stats.addComponents(zombie, sight); // covers size of map
         break;
     }
     default: {
         zombieStats stats;
-        zombie = new ZombieObj(x, y, stats.size, stats.size, stats.maxHealth, id, type);
+        zombie = make_shared<ZombieObj>(x, y, stats.size, stats.size, stats.maxHealth, id, type);
         stats.addComponents(zombie, sight); // covers size of map
     }
     }
@@ -326,11 +326,11 @@ void MapLoader::loadDepot(XMLElement* entity)
     int health = atoi(entity->FirstChildElement("health")->GetText());
     int width = 16; // number of tiles 
     int height = 16;
-    depot = new DepotObj(x, y, width, height, health);
-	addDepotComponents(depot, entity);
+    depot = make_shared<DepotObj>(x, y, width, height, health);
+	addDepotComponents(entity);
 }
 
-void MapLoader::addDepotComponents(DepotObj* depot, XMLElement* entity) {
+void MapLoader::addDepotComponents(XMLElement* entity) {
     depot->AddComponent(make_shared<renderComponent>(depot, renderer, "draftArt/depot.png"));
     depot->AddComponent(make_shared<buttonComponent>(depot));
     depot->AddComponent(make_shared<movementComponent>(depot, 50));
@@ -360,7 +360,7 @@ void MapLoader::loadBuilding(XMLElement* entity) {
     int height = 8;
     bool alive = atoi(entity->FirstChildElement("alive")->GetText()) != 0;
     int type = atoi(entity->FirstChildElement("type")->GetText());
-    BuildingObj* building = new BuildingObj(x, y, width, height, health, alive, type, atoi(entity->FirstChildElement("id")->GetText()));
+    auto building = make_shared<BuildingObj>(x, y, width, height, health, alive, type, atoi(entity->FirstChildElement("id")->GetText()));
     addBuildingComponents(building, entity);
     if (alive) {
         auto rComp = building->getComponent<resourceComponent>();
@@ -374,7 +374,7 @@ void MapLoader::loadBuilding(XMLElement* entity) {
     buildingList->emplace_back(building);
 }
 
-void MapLoader::addBuildingComponents(BuildingObj* building, XMLElement* entity) {
+void MapLoader::addBuildingComponents(weak_ptr<BuildingObj> building, XMLElement* entity) {
     vector<int> max = { 100, 100, 100, 100, 100 };
     vector<int> count = { 0, 0, 0, 0, 0 };
     max[atoi(entity->FirstChildElement("type")->GetText())] *= 3;
@@ -386,9 +386,9 @@ void MapLoader::addBuildingComponents(BuildingObj* building, XMLElement* entity)
         count[FUEL] = atoi(resources->FirstChildElement("Fuel")->GetText());
         count[SCRAP] = atoi(resources->FirstChildElement("Scrap")->GetText());
     }
-    building->AddComponent(make_shared<resourceComponent>(building, max, count, loadResourceTextures()));
-    building->AddComponent(make_shared<buttonComponent>(building));
-    building->AddComponent(make_shared<renderComponent>(building, renderer, entity->FirstChildElement("art")->GetText()));
+    building.lock()->AddComponent(make_shared<resourceComponent>(building, max, count, loadResourceTextures()));
+    building.lock()->AddComponent(make_shared<buttonComponent>(building));
+    building.lock()->AddComponent(make_shared<renderComponent>(building, renderer, entity->FirstChildElement("art")->GetText()));
 }
 
 void MapLoader::loadAllTransfer(XMLElement* layer) {

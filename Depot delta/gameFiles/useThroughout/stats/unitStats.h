@@ -30,14 +30,14 @@ struct UnitStats { // default
 
 	int vehicleCapacity = 5; // number of people per fuel for movement
 
-	void addComponents(GameObject* unit) {
-		unit->AddComponent(make_shared<renderComponent>(unit, renderer, art));
-		unit->AddComponent(make_shared<buttonComponent>(unit));
-		unit->AddComponent(make_shared<movementComponent>(unit, movementSpeed));
-		unit->AddComponent(make_shared<resourceComponent>(unit, rMax, rCount, loadResourceTextures()));
-		unit->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, rTransferDistance, rTransferRate));
-		unit->AddComponent(make_shared<pathfindingComponent>(unit, grid));
-		unit->AddComponent(make_shared<attackComponent>(unit, aDamage, aRange));
+	void addComponents(weak_ptr<GameObject> unit) {
+		unit.lock()->AddComponent(make_shared<renderComponent>(unit, renderer, art));
+		unit.lock()->AddComponent(make_shared<buttonComponent>(unit));
+		unit.lock()->AddComponent(make_shared<movementComponent>(unit, movementSpeed));
+		unit.lock()->AddComponent(make_shared<resourceComponent>(unit, rMax, rCount, loadResourceTextures()));
+		unit.lock()->AddComponent(make_shared<resourceTransferComponent>(unit, renderer, rTransferDistance, rTransferRate));
+		unit.lock()->AddComponent(make_shared<pathfindingComponent>(unit, grid));
+		unit.lock()->AddComponent(make_shared<attackComponent>(unit, aDamage, aRange));
 	}
 
 	float getROF() { // get rate of fire modifier

@@ -17,7 +17,7 @@ struct zombieStats {
 
 	int size = 4; // how many tiles it takes up
 
-	void addComponents(GameObject* zombie, float sightDistance) {
+	void addComponents(shared_ptr<GameObject> zombie, float sightDistance) {
 		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
 		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
 		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
@@ -34,11 +34,11 @@ struct bruteZombieStats {
 
 	int size = 8; // how many tiles it takes up
 
-	void addComponents(GameObject* zombie, float sightDistance) {
-		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
-		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
-		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
-		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
+	void addComponents(weak_ptr<GameObject> zombie, float sightDistance) {
+		zombie.lock()->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
+		zombie.lock()->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie.lock()->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie.lock()->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
 	}
 };
 
@@ -51,11 +51,11 @@ struct quickZombieStats {
 
 	int size = 4; // how many tiles it takes up
 
-	void addComponents(GameObject* zombie, float sightDistance) {
-		zombie->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
-		zombie->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
-		zombie->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
-		zombie->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
+	void addComponents(weak_ptr<GameObject> zombie, float sightDistance) {
+		zombie.lock()->AddComponent(make_shared<renderComponent>(zombie, renderer, art));
+		zombie.lock()->AddComponent(make_shared<movementComponent>(zombie, movementSpeed));
+		zombie.lock()->AddComponent(make_shared<pathfindingComponent>(zombie, grid));
+		zombie.lock()->AddComponent(make_shared<nearestComponent>(zombie, sightDistance));
 	}
 };
 
@@ -73,7 +73,7 @@ public:
 		Vec2 target = { tx,ty };
 		SDL_FRect size = getDimensions();
 		Vec2 origin = { size.x + size.w / 2, size.y + size.h / 2 };
-		if (checkForAttack(target, origin) && targetObject) {
+		if (checkForAttack(target, origin) && targetObject.lock().get()) {
 			attack();
 		}
 		else {
@@ -85,14 +85,14 @@ public:
 
 	void attack() {
 		if (frameStart - lastAttackTime >= attackCooldownMS) {
-			if (targetObject->getHealth() <= 0) {
-				targetObject = nullptr;
-				getComponent<nearestComponent>()->setNearestUnit(nullptr);
+			if (targetObject.lock().get()->getHealth() <= 0) {
+				targetObject.reset();
+				getComponent<nearestComponent>()->removeNearestUnit();
 				tx = NULL;
 				ty = NULL;
 			}
 			else {
-				targetObject->takeDamage(getZombieDamage());
+				targetObject.lock().get()->takeDamage(getZombieDamage());
 				lastAttackTime = frameStart;
 				attacking = true;
 			}

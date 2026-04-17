@@ -22,13 +22,13 @@ struct ConvoyStats { // default
 
 	int vehicleCapacity = 5; // number of people per fuel for movement
 
-	void addComponents(GameObject* convoy) {
-		convoy->AddComponent(make_shared<renderComponent>(convoy, renderer, art));
-		convoy->AddComponent(make_shared<buttonComponent>(convoy));
-		convoy->AddComponent(make_shared<movementComponent>(convoy, movementSpeed));
-		convoy->AddComponent(make_shared<resourceComponent>(convoy, rMax, rCount, loadResourceTextures()));
-		convoy->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, rTransferDistance, rTransferRate));
-		convoy->AddComponent(make_shared<pathfindingComponent>(convoy, grid));
+	void addComponents(weak_ptr<GameObject> convoy) {
+		convoy.lock()->AddComponent(make_shared<renderComponent>(convoy, renderer, art));
+		convoy.lock()->AddComponent(make_shared<buttonComponent>(convoy));
+		convoy.lock()->AddComponent(make_shared<movementComponent>(convoy, movementSpeed));
+		convoy.lock()->AddComponent(make_shared<resourceComponent>(convoy, rMax, rCount, loadResourceTextures()));
+		convoy.lock()->AddComponent(make_shared<resourceTransferComponent>(convoy, renderer, rTransferDistance, rTransferRate));
+		convoy.lock()->AddComponent(make_shared<pathfindingComponent>(convoy, grid));
 	}
 };
 

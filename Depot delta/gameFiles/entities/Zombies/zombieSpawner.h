@@ -17,7 +17,7 @@ public:
 		return false;
 	}
 
-	ZombieObj* spawnZombie() {
+	ZombieObj* spawnZombie() { // may want to return a shared ptr
 		zombieStats stats;
 		// check for where is valid to spawn will later be done by areas 'claimed' by the player (where their units currently are)
 		bool spawnPosFound = false;
@@ -29,12 +29,12 @@ public:
 				spawnPosFound = true;
 			}
 		}
-		ZombieObj* zombie = new ZombieObj(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID(), 0);
+		shared_ptr<ZombieObj> zombie = make_shared<ZombieObj>(pos.x, pos.y, stats.size, stats.size, stats.maxHealth, manager->getNextID(), 0);
 		stats.addComponents(zombie, 50.0f);
 		zombie->getComponent<nearestComponent>()->setnearbyUnits(manager->getUnitConvoys());
 		zombie->getComponent<nearestComponent>()->setnearbyBuildings(manager->getBuildingList());
-		zombie->getComponent<nearestComponent>()->setDepot(manager->getDepot().get());
-		return zombie;
+		zombie->getComponent<nearestComponent>()->setDepot(manager->getDepot());
+		return zombie.get();
 	}
 
 private:

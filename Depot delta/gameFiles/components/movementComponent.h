@@ -5,9 +5,9 @@
 
 class movementComponent : public Component {
 public:
-	virtual void update(GameObject* owner);
+	virtual void update();
 
-	movementComponent(GameObject* obj, float objSpeed) : Component(obj), speed(objSpeed){}
+	movementComponent(weak_ptr<GameObject> obj, float objSpeed) : Component(obj), speed(objSpeed){}
 	virtual ~movementComponent() {}
 
 	//setters

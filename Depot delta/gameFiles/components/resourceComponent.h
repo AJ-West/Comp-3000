@@ -5,7 +5,7 @@
 
 class resourceComponent : public Component {// renderers the object
 public:
-	virtual void update(GameObject* owner) { // render the current frame
+	virtual void update() { // render the current frame
 		checkTime();
 	}
 
@@ -21,7 +21,7 @@ public:
 		clampResources(PERSONNEL);
 		if (hasResource[PERSONNEL] != tempHasResource[PERSONNEL]) {
 			hasResource[PERSONNEL] = tempHasResource[PERSONNEL];
-			owner->setAlive(hasResource[PERSONNEL]);
+			owner.lock()->setAlive(hasResource[PERSONNEL]);
 		}
 		clampResources(AMMUNITION);
 		clampResources(DOS);
@@ -46,7 +46,7 @@ public:
 
 	void checkFuel() {
 		hasResource[FUEL] = tempHasResource[FUEL];
-		auto mComp = owner->getComponent<movementComponent>();
+		auto mComp = owner.lock()->getComponent<movementComponent>();
 		if (mComp) {
 			if (hasResource[FUEL]) {
 				mComp->setSpeed(mComp->getSpeed() * 2);
@@ -59,7 +59,7 @@ public:
 	}
 
 	void renderResources(SDL_Renderer* renderer, SDL_FRect tSize) {
-		string countText = to_string(owner->getHealth()) + "/" + to_string(owner->getMaxHealth());
+		string countText = to_string(owner.lock()->getHealth()) + "/" + to_string(owner.lock()->getMaxHealth());
 		SDL_Surface* surface = TTF_RenderText_Solid(font, countText.c_str(), countText.length(), { 0,0,0,255 });
 		SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 		SDL_RenderTexture(renderer, texture, NULL, &tSize);
@@ -89,7 +89,7 @@ public:
 	void decreaseResourceCount(int index, int amount) { resourcesCount[index] -= amount; }
 	void adjustResourceChange(int index, int amount) { resourcesCount[index] += amount; }
 
-	resourceComponent(GameObject* obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
+	resourceComponent(weak_ptr<GameObject> obj, vector<int> max, vector<int> count, vector<SDL_Texture*> textures): Component(obj), resourcesMax(max), resourcesCount(count), resourceTextures(textures) {
 		resourceChange = vector<int>(max.size(), 0);
 	}
 	virtual ~resourceComponent() {}

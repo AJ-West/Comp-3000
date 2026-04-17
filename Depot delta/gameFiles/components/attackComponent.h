@@ -7,7 +7,7 @@
 
 class attackComponent : public Component {// renderers the object
 public:
-	virtual void update(GameObject* owner) { // render the current frame
+	virtual void update() { // render the current frame
 		if (target.get() == nullptr) { checkRange(); }
 		else { 
 			if (checkResources()) {
@@ -18,7 +18,7 @@ public:
 	}
 
 	void checkRange() {
-		SDL_FRect pos = owner->getDimensions();
+		SDL_FRect pos = owner.lock()->getDimensions();
 		Vec2 own{ pos.x + pos.w / 2, pos.y + pos.h / 2 };
 		if (targets) {
 			for (auto& potTarget : *targets) {
@@ -28,7 +28,7 @@ public:
 						if (distance < targetDistance && distance < attackRange) {
 							target = potTarget;
 							targetDistance = distance;
-							owner->setTargetObject(target.get());
+							owner.lock()->setTargetObject(target);
 							cout << "firing" << '\n';
 							return;
 						}
@@ -39,7 +39,7 @@ public:
 	}
 
 	bool checkResources() {
-		if (owner->getComponent<resourceComponent>()->getResourcesCount(AMMUNITION) <= 0) {
+		if (owner.lock()->getComponent<resourceComponent>()->getResourcesCount(AMMUNITION) <= 0) {
 			return false;
 		}
 		return true;
@@ -48,23 +48,23 @@ public:
 	void attack() {
 		if (frameStart - lastAttackTime >= attackCooldownMS) {
 			lastAttackTime = frameStart;
-			auto rComp = owner->getComponent<resourceComponent>();
+			auto rComp = owner.lock()->getComponent<resourceComponent>();
 			int count = rComp->getResourcesCount(AMMUNITION);
 			if (count > 0 && target) {
 				rComp->setResourcesCount(AMMUNITION, count - (1*rComp->getResourcesCount(PERSONNEL)*depotTechVal["decreaseAmmoCosts"]));
-				target->takeDamage(owner->getDamage() * rComp->getResourcesCount(PERSONNEL));
+				target->takeDamage(owner.lock()->getDamage() * rComp->getResourcesCount(PERSONNEL));
 				soundEffectEngine->play2D("soundEffects/units/gunshot.wav");
-				bullets->spawnBullet(owner->getPos(), target->getDimensions());
-				owner->setAttacking(true);
+				bullets->spawnBullet(owner.lock()->getPos(), target->getDimensions());
+				owner.lock()->setAttacking(true);
 				if (!target->getAlive()) {
 					target = nullptr;
-					owner->setAttacking(false);
+					owner.lock()->setAttacking(false);
 					return;
 				}
 			}
 			else {
 				target = nullptr;
-				owner->setAttacking(false);
+				owner.lock()->setAttacking(false);
 			}
 		}
 		//if (frameStart - lastBulletTime >= owner->getRateOfFire()/5) {
@@ -77,7 +77,7 @@ public:
 
 	void renderAttack() {
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		Vec2 ownerPos = owner->getPos();
+		Vec2 ownerPos = owner.lock()->getPos();
 		Vec2 targetPos = target->getPos();
 		SDL_RenderLine(renderer, ownerPos.x - camera.dimen.x, ownerPos.y - camera.dimen.y, targetPos.x - camera.dimen.x, targetPos.y - camera.dimen.y);
 		bullets->render(renderer);
@@ -90,7 +90,7 @@ public:
 	void setPotentialTargets(shared_ptr<vector<shared_ptr<ZombieObj>>> potTargets) { targets = potTargets; }
 	void setAttackCooldown(int newCooldown) { attackCooldownMS = newCooldown; }
 
-	attackComponent(GameObject* obj, int damage, int range) : Component(obj), maxDamage(damage), attackRange(range) {	}
+	attackComponent(weak_ptr<GameObject> obj, int damage, int range) : Component(obj), maxDamage(damage), attackRange(range) {	}
 	virtual ~attackComponent() {}
 private:
 	Uint32 lastAttackTime = 0;

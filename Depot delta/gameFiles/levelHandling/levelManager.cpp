@@ -9,7 +9,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     mapLoader = new MapLoader("maps/demo.xml", renderer);
     unitConvoys = mapLoader->getUnitConvoyList();
     buildingList = mapLoader->getBuildingList();
-    depot = shared_ptr<DepotObj>(mapLoader->getDepot());
+    depot = mapLoader->getDepot();
     zombieList = mapLoader->getZombieList();
 	allObjects->insert(allObjects->end(), unitConvoys->begin(), unitConvoys->end());
 	allObjects->insert(allObjects->end(), buildingList->begin(), buildingList->end());
@@ -21,7 +21,7 @@ LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
     for (auto zombie : *zombieList) { // needs seperate for each due so can set priorities in nearest component
         zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
         zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
-        zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
+        zombie->getComponent<nearestComponent>()->setDepot(getDepot());
     }
 
     time = new dayCycle(5, mapLoader->getTime(), mapLoader->getSwarmTimes(), mapLoader->getSwarmQuantity(), mapLoader->getSwarmDirection());
@@ -206,11 +206,11 @@ void LevelManager::pausedRender()
 {    
     mapLoader->renderTileMap(renderer);
     for (auto& obj : *allObjects) {
-        obj->getComponent<renderComponent>()->update(obj.get());
+        obj->getComponent<renderComponent>()->update();
     }
     for (auto& zombie : *zombieList) {
         if (zombie) {
-            zombie->getComponent<renderComponent>()->update(zombie.get());
+            zombie->getComponent<renderComponent>()->update();
         }
     }
     UI->render();
@@ -308,30 +308,30 @@ void LevelManager::spawnSwarm(vector<int> quantity, int direction) {
 void LevelManager::spawnZombie(int type) {
     // check for where is valid to spawn will later be done by areas 'claimed' by the player (where their units currently are)
     Vec2 depotPos = depot->getPos();
-    ZombieObj* zombie;
+    shared_ptr<ZombieObj> zombie;
     switch (type) {
     case BRUTE: {
         bruteZombieStats stats;
-        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        zombie = make_shared<ZombieObj>(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
         stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
         break;
     }
     case QUICK: {
         quickZombieStats stats;
-        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        zombie = make_shared<ZombieObj>(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
         stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
         break;
     }
     default: {
         zombieStats stats;
-        zombie = new ZombieObj(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
+        zombie = make_shared<ZombieObj>(swarmPos.x, swarmPos.y, stats.size, stats.size, stats.maxHealth, getNextID(), type);
         stats.addComponents(zombie, sqrt(worldWidth * worldWidth + worldHeight * worldHeight)); // covers size of map
     }
     }  
     zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
     zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
-    zombie->getComponent<nearestComponent>()->setDepot(getDepot().get());
-    addZombie(zombie);
+    zombie->getComponent<nearestComponent>()->setDepot(getDepot());
+    addZombie(zombie.get());
 }
 
 int LevelManager::getNextID() {
