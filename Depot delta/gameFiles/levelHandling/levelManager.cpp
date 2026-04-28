@@ -6,7 +6,7 @@
 
 LevelManager::LevelManager(SDL_Renderer* SDL_Renderer) : renderer(SDL_Renderer)
 {
-    mapLoader = new MapLoader("maps/demo.xml", renderer);
+    mapLoader = new MapLoader("maps/active.xml", renderer);
     unitConvoys = mapLoader->getUnitConvoyList();
     buildingList = mapLoader->getBuildingList();
     depot = mapLoader->getDepot();
@@ -69,7 +69,7 @@ bool LevelManager::checkWin() {
 //On closing the game saves what is needed to be saved
 void LevelManager::saveOnExit()
 {
-	MapSaver saver("maps/demo.xml");
+	MapSaver saver("maps/active.xml");
     saver.saveFile(allObjects, *zombieList, time);
 }
 

@@ -1,6 +1,9 @@
 #pragma once
 #include <SDL3/SDL.h>
 
+#include <iostream>
+#include <fstream>
+
 #include "gameFiles/levelHandling/levelManager.h"
 #include "gameFiles/UI/techTree/techTree.h"
 
@@ -79,6 +82,20 @@ public:
 				int clicked = checkLevelClick();
 				if (clicked != NOLVL) {
 					currGameState = Level;
+					switch (clicked) {
+					case TUTORIAL:
+						copyFile("maps/tutorial.xml");
+						break;
+					case LEVEL1:
+						copyFile("maps/level1.xml");
+						break;
+					case LEVEL2:
+						copyFile("maps/level2.xml");
+						break;
+					case LEVEL3:
+						copyFile("maps/level3.xml");
+						break;
+					}
 					lManager = new LevelManager(renderer);
 				}
 			}
@@ -164,6 +181,23 @@ public:
 
 		SDL_RenderFillRect(renderer, &conButtonSize);
 		SDL_RenderTexture(renderer, conButton, NULL, &conButtonSize);
+	}
+
+	bool copyFile(const std::string& src) {
+		std::ifstream in(src, std::ios::binary);
+		std::ofstream out("maps/active.xml", std::ios::binary);
+
+		if (!in) {
+			std::cerr << "Error: Cannot open source file: " << src << "\n";
+			return false;
+		}
+		if (!out) {
+			std::cerr << "Error: Cannot open destination file: maps/active.xml" << "\n";
+			return false;
+		}
+
+		out << in.rdbuf(); // Copy contents
+		return true;
 	}
 
 	void saveOnExit() {
