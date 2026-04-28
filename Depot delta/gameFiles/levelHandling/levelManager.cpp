@@ -142,6 +142,7 @@ void LevelManager::unpausedRender()
     for (auto& unit : *unitConvoys) {
         if (unit && unit->getAlive()) {
             unit->Update();
+            unit->checkResources();
             if (unit->getHealth() <= 0) {
                 if (unit->getSelected()) {
                     handler->setStateEnum(INT_MAX);

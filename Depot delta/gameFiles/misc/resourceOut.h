@@ -68,6 +68,6 @@ private:
 
 	SDL_Texture* texture;
 
-	SDL_FRect dimen{ 0,0,48,48 };
+	SDL_FRect dimen{ 0,0,36,36 };
 	SDL_FRect texturePos{ 0,0,24,24 };
 };

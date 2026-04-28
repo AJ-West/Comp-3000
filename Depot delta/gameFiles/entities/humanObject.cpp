@@ -86,3 +86,26 @@ void HumanObj::updateStats(string keyName, bool forUnit) {
 		}
 	}
 }
+
+void HumanObj::checkResources() {
+	auto rComp = getComponent<resourceComponent>();
+	vector<int> resourceCount = rComp->getAllResourceCount();
+
+	for (int i = 0; i < resourceCount.size()-1; i++) { // check if any resource other than scrap has just ran out
+		if (!justReachedOut[i] && resourceCount[i] == 0) {
+			justReachedOut[i] = true;
+			resourceOut = new ResourceOut(this, i);
+		}
+		else if (justReachedOut[i] && resourceCount[i] != 0) {
+			justReachedOut[i] = false;
+		}
+	}
+	
+	if (resourceOut) { // if a resource has just ran out show the icon for it
+		resourceOut->update(renderer);
+		if (!resourceOut->getAlive()) {
+			delete resourceOut;
+			resourceOut = nullptr;
+		}
+	}
+}

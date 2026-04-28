@@ -1,5 +1,6 @@
 #pragma once
 #include "gameFiles/entities/gameObject.h"
+#include "gameFiles/misc/resourceOut.h"
 
 class HumanObj : public GameObject {
 public:
@@ -35,6 +36,7 @@ public:
 
 	virtual void deathSound() { soundEffectEngine->play2D("soundEffects/voice acting/unitsconvoys/death.wav"); }
 	
+	void checkResources();
 
 private:
 	int ID;
@@ -43,4 +45,7 @@ private:
 	float fuelUseRate = 1.0;
 
 	vector<const char*> orderVAFiles{"soundEffects/voice acting/unitsconvoys/orders/etds.wav", "soundEffects/voice acting/unitsconvoys/orders/ftd.wav", "soundEffects/voice acting/unitsconvoys/orders/u.wav" };
+
+	vector<bool> justReachedOut{ false, false, false, false };
+	ResourceOut* resourceOut = nullptr;
 };
