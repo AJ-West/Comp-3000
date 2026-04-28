@@ -404,5 +404,8 @@
     <ClInclude Include="gameFiles\levelHandling\tutorialManager\tutorialManager.h">
       <Filter>Source Files\gameFiles\level handling\tutorialHandler</Filter>
     </ClInclude>
+    <ClInclude Include="gameFiles\misc\resourceOut.h">
+      <Filter>Source Files\gameFiles\misc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

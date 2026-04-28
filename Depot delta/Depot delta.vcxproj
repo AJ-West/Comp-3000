@@ -231,6 +231,7 @@
     <ClInclude Include="gameFiles\levelHandling\tutorialManager\tutorialManager.h" />
     <ClInclude Include="gameFiles\main.h" />
     <ClInclude Include="gameFiles\misc\dayCycle.h" />
+    <ClInclude Include="gameFiles\misc\resourceOut.h" />
     <ClInclude Include="gameFiles\UI\levelUI.h" />
     <ClInclude Include="gameFiles\UI\Minimap.h" />
     <ClInclude Include="gameFiles\UI\resourceBoxes\arrowButton.h" />

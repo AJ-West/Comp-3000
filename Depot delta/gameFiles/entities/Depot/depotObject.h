@@ -1,6 +1,7 @@
 #pragma once
 #include "gameFiles/entities/gameObject.h"
 #include "gameFiles/components/resourceComponent.h"
+#include "gameFiles/misc/resourceOut.h"
 
 class DepotObj : public GameObject{
 public:
@@ -48,6 +49,13 @@ public:
 				checkResources(i, resourceCount, resourceMax); // see if any audio should be played
 			}
 		}
+		if (resourceOut) {
+			resourceOut->update(renderer);
+			if (!resourceOut->getAlive()) {
+				delete resourceOut;
+				resourceOut = nullptr;
+			}
+		}
 	}
 
 	void checkResources(int i, vector<int> resourceCount, vector<int> resourceMax) {
@@ -81,6 +89,7 @@ public:
 		if (!justReachedOut[i] && resourceCount[i] == 0) {
 			soundEffectEngine->play2D(pickRandomFile(reachedOutAudio));
 			justReachedOut[i] = true;
+			resourceOut = new ResourceOut(this, i);
 		}
 		else if (justReachedOut[i] && resourceCount[i] != 0) {
 			justReachedOut[i] = false;
@@ -136,6 +145,8 @@ private:
 
 	vector<bool> justReachedOut{ false, false, false, false };
 	vector<const char*> reachedOutAudio{ "soundEffects/voice acting/depot/resourcesOut/personnel.wav", "soundEffects/voice acting/depot/resourcesOut/ammo.wav", "soundEffects/voice acting/depot/resourcesOut/dos.wav", "soundEffects/voice acting/depot/resourcesOut/fuel.wav" };
+
+	ResourceOut* resourceOut = nullptr;
 
 	//SDL_FRect tSize{ 65, 5, 23, 30 / camera.dimen.h * 100 };
 };
