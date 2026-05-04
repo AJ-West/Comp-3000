@@ -5,6 +5,9 @@
 
 Depot Delta is a Real Time Strategy (RTS) game where you need to manage your resources and personnel to survive incoming waves of zombies. Your supply lines are crucial as this is how you will restock units that are keeping the hordes at bay. With limited survivors and resources to begin with you can adventure to find more but then need to consider how you will return them to the depot so they can help you in the fight. Personal once damaged will need to be rescued by medical units creating a balance of keep fighting or retreat to fight another day as once you lose a unit it is lost for good. 
 
+## Poster
+<img width="3178" height="2245" alt="10809998" src="https://github.com/user-attachments/assets/beb55181-6226-4682-b117-c05536e1c124" />
+
 
 ## Inspirations and Motivation
 The main inspiration for this game is during my placement year within the MoD I was involved with a variety of logistic based wargames. This made me think about my experience of RTS games such as Call of war, company of heroes or Planetary annihilation titans. In these games you have a central pool of resources you can use anywhere where in the wargames we had to balance combat with ensuring resources were brought to the units and it added another layer for the enemy to target. I feel as though this could add a layer to RTS games that isn’t currently there.
@@ -76,7 +79,6 @@ Google Gemini was used to develop the artwork due to how time-consuming art can 
 
 XML files are used to store the levels for DD which are handled by using TinyXML2 [11]. XML was used due to its ability to clearly store large quantities of data compared to other options such as JSON. XML files are used for each level as well as the tech tree. A current level xml files stores the current progress of the player in a level.
 For designing the levels when using pixelart, Ogmo editor was used for the placing on objects and map design. This allowed for designing tile map levels placing each object manually. Pivoting to the new art theme made Ogmo obsolete due to no longer using a tile map. A new way to place zombies into the level was required without typing the position for every zombie in the XML file (potential of hundreds of zombies per level). A software which spawned a given number of zombies of given types was created. 
-
 
 
 ## Object Orientated Design
