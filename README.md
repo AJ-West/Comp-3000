@@ -92,23 +92,23 @@ Objects in Depot Delta refer to the different type of units, convoys, buildings 
 ### Component Game programming pattern
 Components inherit from the component class and are used to create reusable selectable code snippets for the different objects in the game. There are currently 7 different components used in DD:
 - Attack component
-  Works out the closest zombie to attack
-  Checks the attack delay for if the unit can attack
+  - Works out the closest zombie to attack
+  - Checks the attack delay for if the unit can attack
 -	Button component
-  Checks for clicking on a unit
+  - Checks for clicking on a unit
 -	Nearest component
-  Used by zombies to find the nearest target for them
+  - Used by zombies to find the nearest target for them
 -	Pathfinding component
-  Calculates the objects flow field
+  - Calculates the objects flow field
 -	Render component
-  Renders the object during runtime
+  - Renders the object during runtime
 -	Resource component
-  Stores the objects resources
-  Handles adjusting resources when appropriate
+  - Stores the objects resources
+  - Handles adjusting resources when appropriate
 -	Resource transfer component
-  Checks if transfers can/can’t be done
-  Initiates the transfers 
-  Handles current transfers
+  - Checks if transfers can/can’t be done
+  - Initiates the transfers 
+  - Handles current transfers
 
 <img width="975" height="739" alt="image" src="https://github.com/user-attachments/assets/5a5eb280-b4a3-4d2d-b867-998c1d10be49" />
 
