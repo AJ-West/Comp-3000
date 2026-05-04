@@ -95,7 +95,7 @@ Components inherit from the component class and are used to create reusable sele
   - Works out the closest zombie to attack
   - Checks the attack delay for if the unit can attack
 -	Button component
--	 Checks for clicking on a unit
+  - Checks for clicking on a unit
 -	Nearest component
   - Used by zombies to find the nearest target for them
 -	Pathfinding component
