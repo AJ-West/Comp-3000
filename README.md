@@ -5,6 +5,13 @@
 
 Depot Delta is a Real Time Strategy (RTS) game where you need to manage your resources and personnel to survive incoming waves of zombies. Your supply lines are crucial as this is how you will restock units that are keeping the hordes at bay. With limited survivors and resources to begin with you can adventure to find more but then need to consider how you will return them to the depot so they can help you in the fight. Personal once damaged will need to be rescued by medical units creating a balance of keep fighting or retreat to fight another day as once you lose a unit it is lost for good. 
 
+## Running the code
+### Build the project
+If you clone the repository to build the project you will need to link the SDL, SDL_ttf and SDL_image projects to the project. These you should install the latest SDL3 version for. Once the projects are linked check that they are referenced by the main project. I cannot include my versions of SDL because they are too large for this repository. This project to build is not my deliverable and I would prefer you not to keep the project install where not necessary as I do plan to release the game publically so once marking is done will be turning this repository private.
+
+### Run the executable
+Inside the executable folder there is Depot delta.exe. Double click this to run the game. This is my main deliverable.
+
 ## Poster
 <img width="3178" height="2245" alt="10809998" src="https://github.com/user-attachments/assets/beb55181-6226-4682-b117-c05536e1c124" />
 
