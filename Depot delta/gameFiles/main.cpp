@@ -2,8 +2,6 @@
 
 int main()
 {
-    system("pause");
-
     musicEngine = irrklang::createIrrKlangDevice();
     if (!musicEngine) {
         std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
@@ -15,12 +13,11 @@ int main()
         std::cerr << "Failed to load irrKlang DLL or initialize sound engine." << std::endl;
         return 1;
     }
-    soundEffectEngine->setSoundVolume(0.0f);
+    soundEffectEngine->setSoundVolume(0.5f);
 
     // where music is from https://bgillick.itch.io/mech need to check if comercial liscence
     musicEngine->play2D("music/wasteland.wav", true); // looped playback
-    //musicEngine->setSoundVolume(0.5f);
-    musicEngine->setSoundVolume(0.0f);
+    musicEngine->setSoundVolume(0.5f);
     
     //initiate the environment
     init_SDL_environment();
@@ -34,8 +31,6 @@ int main()
     
     //set random seed
     srand(static_cast<unsigned int>(time(0)));
-
-    //dayCycle cycle;
 
 	Uint32 lastTime = SDL_GetTicks();
 
@@ -57,8 +52,7 @@ int main()
 
 		SDL_RenderClear(renderer);
         manager.render();
-        //cycle.update();
-        //cycle.render(renderer);
+
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         ImGui_ImplSDLRenderer3_RenderDrawData(ImGui::GetDrawData(), renderer);
 		SDL_RenderPresent(renderer);

@@ -224,7 +224,7 @@ void LevelManager::addUnitConvoy(weak_ptr<HumanObj> unitConvoy) {
     allObjects->emplace_back(unitConvoy);
 }
 
-void LevelManager::addZombie(ZombieObj* zombie) {
+void LevelManager::addZombie(shared_ptr<ZombieObj> zombie) {
     zombieList->emplace_back(zombie);
 }
 
@@ -332,7 +332,7 @@ void LevelManager::spawnZombie(int type) {
     zombie->getComponent<nearestComponent>()->setnearbyUnits(getUnitConvoys());
     zombie->getComponent<nearestComponent>()->setnearbyBuildings(buildingList);
     zombie->getComponent<nearestComponent>()->setDepot(getDepot());
-    addZombie(zombie.get());
+    addZombie(zombie);
 }
 
 int LevelManager::getNextID() {

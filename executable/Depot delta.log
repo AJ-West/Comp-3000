@@ -4739,15 +4739,15 @@ C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techT
 C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\UI\techTree\tech.h(113,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'gameFiles/main.cpp')
   
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(40,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(43,34): warning C4244: '=': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(67,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(68,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(89,17): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(94,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(111,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(119,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(119,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(37,18): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(40,34): warning C4244: '=': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(64,26): warning C4244: 'initializing': conversion from 'Uint64' to 'Uint32', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(65,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(86,17): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(91,24): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'int' can equal the given constant
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(108,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(116,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\gamin\Documents\Final year uni\Comp-3000\Depot delta\gameFiles\main.cpp(116,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         [

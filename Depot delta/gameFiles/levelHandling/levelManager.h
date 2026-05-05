@@ -51,7 +51,7 @@ public:
 	void pausedRender();
 
 	void addUnitConvoy(weak_ptr<HumanObj> unitConvoy);
-	void addZombie(ZombieObj* zombie);
+	void addZombie(shared_ptr<ZombieObj> zombie);
 
 	//Handle game zoom
 	void zoomChange(SDL_Event event);

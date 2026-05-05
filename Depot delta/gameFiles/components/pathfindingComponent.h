@@ -1,7 +1,7 @@
 #pragma once
 #include "gameFiles/entities/gameObject.h"
 
-class pathfindingComponent : public Component { // flow field pathfinding
+class pathfindingComponent : public Component { // flow field pathfinding used AI to debug and optimize
 public:
 	virtual void update() {}
 
