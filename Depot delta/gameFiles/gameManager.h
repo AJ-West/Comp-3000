@@ -183,7 +183,7 @@ public:
 		SDL_RenderTexture(renderer, conButton, NULL, &conButtonSize);
 	}
 
-	bool copyFile(const std::string& src) {
+	bool copyFile(const std::string& src) { // AI assisted
 		std::ifstream in(src, std::ios::binary);
 		std::ofstream out("maps/active.xml", std::ios::binary);
 
@@ -231,7 +231,6 @@ private:
 
 	SDL_FRect conButtonSize{ 2*camera.dimen.w / 3 - camera.dimen.w / 10, camera.dimen.h/3 - camera.dimen.h / 10, camera.dimen.w / 5, camera.dimen.h / 10 }; // continue
 	SDL_Texture* conButton;
-
 
 	LevelManager* lManager;
 

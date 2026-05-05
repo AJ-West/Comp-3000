@@ -167,7 +167,6 @@ protected:
 private:
 	bool isHover = false;
 
-	//unordered_map<string, shared_ptr<Component>> components;// Store components
 	map<type_index, shared_ptr<Component>> components;// Store components
 
 	SDL_Texture texture;

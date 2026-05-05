@@ -29,6 +29,7 @@ public:
         return next.x >= 0 && next.x < WORLD_TILE_COLS && next.y >= 0 && next.y < WORLD_TILE_ROWS; // if in bounds
     }
 
+    //calculates costs of cells while finding the origin point
     bool findOrigin(Vec2 target, Vec2 origin) {
         std::deque<Vec2> q;
 
@@ -54,7 +55,7 @@ public:
                     q.push_back(next);
 
                     if (next.x == origin.x && next.y == origin.y)
-                        return true; // early exit
+                        return true; // early exit on finding origin
                 }
             }
         }

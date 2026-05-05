@@ -27,9 +27,9 @@
         </winCondition>
         <time>
             <day>0</day>
-            <hour>12</hour>
+            <hour>19</hour>
             <minute>15</minute>
-            <second>10</second>
+            <second>0</second>
         </time>
     </layers>
     <layers eid="32843350">
@@ -57,10 +57,10 @@
             <x>1192</x>
             <y>608</y>
             <Resources>
-                <Personnel>1001</Personnel>
-                <Ammunition>1000</Ammunition>
+                <Personnel>918</Personnel>
+                <Ammunition>892</Ammunition>
                 <DoS>1000</DoS>
-                <Fuel>1000</Fuel>
+                <Fuel>988</Fuel>
                 <Scrap>0</Scrap>
             </Resources>
         </entities>
@@ -82,53 +82,52 @@
             <art>draftArt/buildings/ammunition.png</art>
         </entities>
         <entities>
-            <name>Basic Zombie</name>
-            <id>2</id>
-            <health>1</health>
-            <x>1229</x>
-            <y>661</y>
-            <target_x>1320</target_x>
-            <target_y>736</target_y>
-            <type>0</type>
-            <sight>500</sight>
+            <name>Basic unit</name>
+            <id>13</id>
+            <health>100</health>
+            <x>1469</x>
+            <y>992</y>
+            <target_x>1501.77</target_x>
+            <target_y>1024.9344</target_y>
+            <Resources>
+                <Personnel>25</Personnel>
+                <Ammunition>0</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>0</Fuel>
+                <Scrap>0</Scrap>
+            </Resources>
         </entities>
         <entities>
-            <name>Basic Zombie</name>
-            <id>3</id>
-            <health>1</health>
-            <x>1797</x>
-            <y>1143</y>
+            <name>Basic Convoy</name>
+            <id>2</id>
+            <health>100</health>
+            <x>1312</x>
+            <y>864</y>
             <target_x>0</target_x>
             <target_y>0</target_y>
-            <type>0</type>
-            <sight>500</sight>
+            <Resources>
+                <Personnel>100</Personnel>
+                <Ammunition>0</Ammunition>
+                <DoS>0</DoS>
+                <Fuel>25</Fuel>
+                <Scrap>0</Scrap>
+            </Resources>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>4</id>
-            <health>1</health>
-            <x>1628</x>
-            <y>1374</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <type>0</type>
-            <sight>500</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
-            <id>5</id>
-            <health>1</health>
-            <x>1817</x>
-            <y>1100</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>250</health>
+            <x>1501</x>
+            <y>1072</y>
+            <target_x>1501.0695</target_x>
+            <target_y>1024.5093</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>6</id>
-            <health>1</health>
+            <health>250</health>
             <x>2009</x>
             <y>1233</y>
             <target_x>0</target_x>
@@ -139,7 +138,7 @@
         <entities>
             <name>Basic Zombie</name>
             <id>7</id>
-            <health>1</health>
+            <health>250</health>
             <x>2067</x>
             <y>1093</y>
             <target_x>0</target_x>
@@ -149,52 +148,41 @@
         </entities>
         <entities>
             <name>Basic Zombie</name>
-            <id>8</id>
-            <health>1</health>
-            <x>1745</x>
-            <y>907</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
-            <type>0</type>
-            <sight>500</sight>
-        </entities>
-        <entities>
-            <name>Basic Zombie</name>
             <id>9</id>
-            <health>1</health>
-            <x>1932</x>
-            <y>1107</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>250</health>
+            <x>1661</x>
+            <y>1040</y>
+            <target_x>1501.0695</target_x>
+            <target_y>1024.5093</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>10</id>
-            <health>1</health>
-            <x>1916</x>
-            <y>924</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>250</health>
+            <x>1616</x>
+            <y>969</y>
+            <target_x>1501.0695</target_x>
+            <target_y>1024.5093</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>11</id>
-            <health>1</health>
-            <x>1786</x>
-            <y>1259</y>
-            <target_x>0</target_x>
-            <target_y>0</target_y>
+            <health>250</health>
+            <x>1535</x>
+            <y>1048</y>
+            <target_x>1501.0695</target_x>
+            <target_y>1024.5093</target_y>
             <type>0</type>
             <sight>500</sight>
         </entities>
         <entities>
             <name>Basic Zombie</name>
             <id>12</id>
-            <health>1</health>
+            <health>250</health>
             <x>1946</x>
             <y>1246</y>
             <target_x>0</target_x>

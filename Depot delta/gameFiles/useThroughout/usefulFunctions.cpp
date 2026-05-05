@@ -19,10 +19,11 @@ float getDistance(Vec2 a, Vec2 b) {
 	return sqrt(xDist * xDist + yDist * yDist);
 }
 
+// gets mouse click position on map
 void getMapScaledMousePos(float* x, float* y) {
 	float mx, my;
 	SDL_GetMouseState(&mx, &my);
-	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y);
+	SDL_RenderCoordinatesFromWindow(renderer, mx, my, x, y); // gets the click relative to camera zoom/offset
 	*x = *x + camera.dimen.x;
 	*y = *y + camera.dimen.y;
 }

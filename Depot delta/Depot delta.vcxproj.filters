@@ -129,9 +129,6 @@
     <ClCompile Include="gameFiles\components\movementComponent.cpp">
       <Filter>Source Files\gameFiles\components\movementComponent</Filter>
     </ClCompile>
-    <ClCompile Include="gameFiles\entities\Zombies\zombieObject.cpp">
-      <Filter>Source Files\gameFiles\entities\zombies</Filter>
-    </ClCompile>
     <ClCompile Include="gameFiles\fileHandling\mapLoader.cpp">
       <Filter>Source Files\gameFiles\fileHandling\loading</Filter>
     </ClCompile>

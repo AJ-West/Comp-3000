@@ -10,8 +10,7 @@
 struct zombieStats {
 	const char* art = "draftArt/basicZombie.png";
 	int movementSpeed = 25;
-	//int maxHealth = 250;
-	int maxHealth = 1;
+	int maxHealth = 250;
 
 	int damage = 5;
 
@@ -137,7 +136,6 @@ public:
 		}
 		}
 	}
-
 
 	//setters
 	virtual void setTarget(float x, float y) {

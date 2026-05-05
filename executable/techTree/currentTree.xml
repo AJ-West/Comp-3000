@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Enums used:
+
+    enum status{
+        affordable,
+        unaffordable,
+        unlocked,
+        locked,
+        purchased
+    };
+
+    enum type{
+        modifier,
+        unlock
+    };
+    enum upgradeLocation {
+        depotUpgrades,
+        unitUpgrades,
+        convoyUpgrades
+    };
+-->
+<root>
+    <layers>
+        <name>depotUpgrades</name>
+        <entities>
+            <name>Increase Depot health</name>
+            <keyName>depotHealthIncrease</keyName>
+            <description>Increase Depot health by 10%</description>
+            <id>1</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.1</modifyValue>
+            <!-- 10% production speed increase -->
+            <cost>100</cost>
+            <purchaseAmount>10</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Fuel production</name>
+            <keyName>fuelProductionIncrease</keyName>
+            <description>Increase Fuel production by 5%</description>
+            <id>2</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase DoS production</name>
+            <keyName>dosProductionIncrease</keyName>
+            <description>Increase DoS production by 5%</description>
+            <id>3</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Ammo production</name>
+            <keyName>ammoProductionIncrease</keyName>
+            <description>Increase Ammo production by 5%</description>
+            <id>4</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Fuel Costs</name>
+            <keyName>decreaseFuelCosts</keyName>
+            <description>Decrease Fuel costs by 10%</description>
+            <id>5</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease DoS Costs</name>
+            <keyName>decreaseDoSCosts</keyName>
+            <description>Decrease DoS costs by 10%</description>
+            <id>6</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Decrease Ammo Costs</name>
+            <keyName>decreaseAmmoCosts</keyName>
+            <description>Decrease Ammo costs by 10%</description>
+            <id>7</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.9</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase personnel capacity</name>
+            <keyName>increasePersonnelCapacity</keyName>
+            <description>Double personnel capacity</description>
+            <id>8</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>0</upgradeLocation>
+        </entities>
+    </layers>
+    <layers>
+        <name>unitUpgrades</name>
+        <entities>
+            <name>Increase Unit Dos efficiency</name>
+            <keyName>increaseUnitDoSEfficiency</keyName>
+            <description>Increase Unit Dos efficiency by 5%</description>
+            <id>1</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.95</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase Unit Fuel efficiency</name>
+            <keyName>increaseUnitFuelEfficiency</keyName>
+            <description>Increase Unit Fuel efficiency by 5%</description>
+            <id>2</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.95</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase rate of fire</name>
+            <keyName>increaseRateOfFire</keyName>
+            <description>Increase rate of fire by 5%</description>
+            <id>3</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Larger basic Infantry</name>
+            <keyName>largerBasicInfantry</keyName>
+            <description>Double basic units max squad size</description>
+            <id>4</id>
+            <status>1</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>250</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Larger carrying capacity</name>
+            <keyName>largerBasicCarryingCapacity</keyName>
+            <description>Double carrying capacity of basic units</description>
+            <id>5</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>100</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase fuel efficiency</name>
+            <keyName>increaseBasicFuelEfficiency</keyName>
+            <description>Increase fuel efficiency by 50% of basic units</description>
+            <id>6</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>0.5</modifyValue>
+            <cost>150</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase rate of fire</name>
+            <keyName>increaseBasicRateOfFire</keyName>
+            <description>Increase rate of fire by 20% of basic units</description>
+            <id>7</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.2</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase damage</name>
+            <keyName>increaseBasicDamage</keyName>
+            <description>Double damage of basic units</description>
+            <id>8</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>1</upgradeLocation>
+        </entities>
+    </layers>
+    <layers>
+        <name>convoyUpgrades</name>
+        <entities>
+            <name>Increase capacity</name>
+            <keyName>increaseConvoyCapacity</keyName>
+            <description>Increase convoy capacity by 5%</description>
+            <id>1</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>2</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase fuel efficiency</name>
+            <keyName>increaseConvoyFuelEfficiency</keyName>
+            <description>Increase convoy fuel efficiency by 5%</description>
+            <id>2</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>1.05</modifyValue>
+            <cost>50</cost>
+            <purchaseAmount>3</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>2</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase armour</name>
+            <keyName>increaseBasicArmour</keyName>
+            <description>Increase basic convoy armour by 15%</description>
+            <id>3</id>
+            <status>3</status>
+            <type>0</type>
+            <modifyValue>1.15</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>2</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase speed</name>
+            <keyName>increaseBasicSpeed</keyName>
+            <description>Double basic convoy speed</description>
+            <id>4</id>
+            <status>1</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>400</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>2</upgradeLocation>
+        </entities>
+        <entities>
+            <name>Increase capacity</name>
+            <keyName>increaseBasicCapacity</keyName>
+            <description>Double basic convoy capacity</description>
+            <id>5</id>
+            <status>0</status>
+            <type>0</type>
+            <modifyValue>2</modifyValue>
+            <cost>200</cost>
+            <purchaseAmount>1</purchaseAmount>
+            <boughtAmount>0</boughtAmount>
+            <upgradeLocation>2</upgradeLocation>
+        </entities>
+    </layers>
+</root>

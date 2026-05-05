@@ -158,7 +158,6 @@
     <ClCompile Include="gameFiles\entities\Convoys\convoyObject.cpp" />
     <ClCompile Include="gameFiles\entities\humanObject.cpp" />
     <ClCompile Include="gameFiles\entities\Units\unitObject.cpp" />
-    <ClCompile Include="gameFiles\entities\Zombies\zombieObject.cpp" />
     <ClCompile Include="gameFiles\fileHandling\mapLoader.cpp" />
     <ClCompile Include="gameFiles\fileHandling\mapSaver.cpp" />
     <ClCompile Include="gameFiles\levelHandling\levelManager.cpp" />
